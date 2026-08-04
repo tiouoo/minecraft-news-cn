@@ -2,6 +2,34 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft: Bedrock Edition 26.40 Changelog",
+      "version": "26.40",
+      "patchNoteType": "retail",
+      "date": "2026-08-04T15:46:00.457Z",
+      "image": {
+        "title": "26.40.jpg",
+        "url": "/v2/images/26.40.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/db6cb09d335d0f1dbe1b296d1ff0fa8cd5a112f7b65a739baa72e1babced89c8.json",
+      "id": "db6cb09d335d0f1dbe1b296d1ff0fa8cd5a112f7b65a739baa72e1babced89c8",
+      "shortText": "It's time for another Minecraft: Bedrock Edition update! This release brings a wide range of bug fixes, gameplay improvements, accessibility updates, and technical enhancements for creators. From boats requiring fewer hits to break, to minecarts back in or",
+      "needsTranslation": false
+    },
+    {
+      "title": "26.30 - Chaos Cubed",
+      "version": "26.30",
+      "patchNoteType": "retail",
+      "date": "2026-06-16T15:39:44.434Z",
+      "image": {
+        "title": "26.30.jpg",
+        "url": "/v2/images/26.30.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6.json",
+      "id": "f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6",
+      "shortText": "Chaos Cubed has landed in Minecraft! Hunt for vibrant Sulfur springs in the Overworld to discover a striking cave biome hidden below. Swim in bubbling Sulfur pools if you dare, build with colorful Cinnabar and Sulfur, but best of all – uncover the Sulfur C",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft: Bedrock Edition 26.20 Changelog",
       "version": "26.20",
       "patchNoteType": "retail",
