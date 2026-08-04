@@ -1,0 +1,261 @@
+<p>快来体验建筑与探索方面的最新测试功能！现在你可以在部分废弃营地中找到各类地图，还可以合成16种颜色的混凝土楼梯与混凝土台阶。以上内容现已在 26.3 快照 7 版本推出！</p>
+<p>祝你探索愉快！</p>
+<h1>新特性</h1>
+<ul>
+<li>为全部混凝土方块添加了混凝土楼梯与混凝土台阶</li>
+<li>废弃营地中新增了探险家地图</li>
+</ul>
+<h2>废弃营地探险家地图</h2>
+<ul>
+<li>新增可显示其他废弃营地位置的地图，生成于以下生物群系：
+<ul>
+<li>竹林</li>
+<li>樱花林</li>
+<li>桦木森林</li>
+<li>斑驳森林</li>
+<li>花林</li>
+<li>苍白花园</li>
+<li>沼泽</li>
+<li>风袭森林</li>
+</ul>
+</li>
+<li>新增指向以下结构的地图：
+<ul>
+<li>远古城市</li>
+<li>试炼密室</li>
+<li>废弃矿井</li>
+<li>沙漠金字塔</li>
+<li>丛林金字塔</li>
+<li>暖洋遗迹</li>
+<li>林地府邸</li>
+</ul>
+</li>
+</ul>
+<h1>改动</h1>
+<ul>
+<li>坐垫在放置、破坏或被交互时不再阻止振动发生</li>
+<li>更新了废弃营地木桶的战利品表</li>
+<li>废弃营地箱子战利品表中将烟花火箭替换为火药</li>
+<li>地图上的玩家图标现已可以始终显示玩家面朝的方向</li>
+<li>领域服务器现已支持在未来加拿大、墨西哥、南非以及美国亚利桑那州的额外服务器区域可用时启用这些区域</li>
+</ul>
+<h2>探险家地图</h2>
+<ul>
+<li>探险家地图现在为独立物品，不再是重命名后的已填充地图，每种地图拥有专属图标：
+<ul>
+<li>海洋探险家地图</li>
+<li>林地探险家地图</li>
+<li>试炼探险家地图</li>
+<li>丛林探险家地图</li>
+<li>沼泽探险家地图</li>
+<li>沙漠村庄地图</li>
+<li>平原村庄地图</li>
+<li>稀树草原村庄地图</li>
+<li>积雪村庄地图</li>
+<li>针叶林村庄地图</li>
+<li>埋藏的宝藏地图</li>
+<li>远古城市地图</li>
+<li>废弃矿井地图</li>
+<li>沙漠金字塔地图</li>
+<li>废弃营地地图</li>
+<li>暖洋遗迹地图</li>
+</ul>
+</li>
+<li>地图与空地图拥有了新图标</li>
+<li>这些物品无法从创造模式物品栏获取</li>
+<li>旧世界中原有的探险家地图在加载时会转换为对应的新物品</li>
+<li>探险家地图依旧可以在工作台复制，复制产物保留自身物品类型</li>
+<li>探险家地图与埋藏的宝藏地图不再能够放大缩小，无论是在工作台还是制图台均不可用
+<ul>
+<li>此前埋藏的宝藏地图在两处均可缩放</li>
+<li>此前探险家地图可在制图台缩放</li>
+<li>只有标签 <code>#minecraft:extendable_maps</code> 内的地图才允许缩放</li>
+</ul>
+</li>
+</ul>
+<h1>技术性改动</h1>
+<ul>
+<li>数据包版本现已更新至 115.0</li>
+<li>资源包版本现已更新至 95.0</li>
+<li><code>level.dat</code> 文件新增 <code>version_history</code> 列表，用于记录该文件过往的数据版本</li>
+</ul>
+<h1>数据包版本 115.0</h1>
+<ul>
+<li>以下方块状态字段已重命名
+<ul>
+<li><code>Name</code> 重命名为 <code>id</code></li>
+<li><code>Properties</code> 重命名为 <code>properties</code></li>
+</ul>
+</li>
+<li>方块的默认方块状态现在可以直接使用方块ID的紧凑形式引用</li>
+<li><code>minecraft:exploration_map</code> 不再修改其所作用物品的物品类型</li>
+</ul>
+<h2>命令</h2>
+<h3><code>swing</code> 命令改动</h3>
+<ul>
+<li>对玩家使用该命令时，不再重置玩家的攻击强度</li>
+<li>新增可选参数，用于指定播放的挥动动画
+<ul>
+<li>可选值：<code>whack</code>（挥击）、<code>stab</code>（刺击）</li>
+<li>省略该参数时，默认为 <code>whack</code></li>
+</ul>
+</li>
+<li>新增参数，用于设置挥动动画的持续时长（如提供该参数）
+<ul>
+<li>格式：正数时间值（默认单位为刻）</li>
+<li>省略该参数时，默认为 <code>6t</code></li>
+</ul>
+</li>
+</ul>
+<h2>数据组件</h2>
+<h3>新增 <code>minecraft:attack_animation</code></h3>
+<ul>
+<li>物品用于攻击实体时播放的动画</li>
+<li>格式：包含如下字段的对象：
+<ul>
+<li><code>type</code> — 挥动动画类型，可选 <code>whack</code> 或 <code>stab</code></li>
+<li><code>duration</code> — 正整数，动画持续刻数</li>
+</ul>
+</li>
+</ul>
+<h3>新增 <code>minecraft:interact_animation</code></h3>
+<ul>
+<li>物品用于与方块/实体交互时播放的动画</li>
+<li>格式与 <code>minecraft:attack_animation</code> 一致</li>
+</ul>
+<h3>移除 <code>minecraft:swing_animation</code></h3>
+<ul>
+<li>该组件已被 <code>minecraft:attack_animation</code> 和 <code>minecraft:interact_animation</code> 替代
+<ul>
+<li>已移除 <code>none</code> 挥动动画类型</li>
+<li>世界中已存在的物品会自动迁移为默认的 <code>whack</code>（挥击）</li>
+<li>将这两个新组件设置为相同值，功能上将等价于旧组件，但存在以下例外：
+<ul>
+<li><code>/swing</code> 命令 — 动画类型现在由命令参数指定</li>
+<li>实体掉落的物品</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>移除 <code>minecraft:map_color</code></h3>
+<ul>
+<li>地图不再使用着色叠加层进行绘制，该组件已无作用对象</li>
+<li>加载旧地图时会移除该组件</li>
+<li>对应资源包部分也移除了 <code>minecraft:map_color</code> 着色源，详见资源包章节</li>
+</ul>
+<h2>战利品函数</h2>
+<h3><code>minecraft:exploration_map</code> 改动</h3>
+<ul>
+<li>移除了 <code>map_color</code> 字段</li>
+<li>该函数不再修改作用物品的类型，仅向现有物品附加地图数据
+<ul>
+<li>旧版本需要传入 <code>minecraft:map</code>，输出 <code>minecraft:filled_map</code></li>
+<li>生成何种物品现在由战利品条目或村民交易自行决定；制作探险家地图的数据包需要将物品从 <code>minecraft:map</code> 修改为 <code>minecraft:filled_map</code>（或对应探险家地图物品）</li>
+<li>若未找到匹配的结构，物品不会附带 <code>minecraft:map_id</code>。原版战利品表与村民交易使用 <code>minecraft:filtered</code> 搭配 <code>minecraft:discard_item</code> 将这类无效物品丢弃，你的数据包也应照此处理</li>
+</ul>
+</li>
+</ul>
+<h2>密度函数</h2>
+<ul>
+<li>密度函数与噪声不再使用双精度浮点数运算，改为单精度浮点数
+<ul>
+<li>该改动影响全部中间计算步骤，不只是最终结果</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>开发者注</strong>：我们了解部分数据包利用了浮点数舍入细节，本次改动可能会影响部分配置。针对我们已知的场景，我们已经提供替代实现。如果你遇到无法继续实现的场景，欢迎前往 <a href=https://feedback.minecraft.net rel="noopener noreferrer"target=_blank>feedback.minecraft.net</a> 或者反馈 Discord 服务器 <a href=https://discord.com/invite/minecraftfeedback rel="noopener noreferrer"target=_blank>discord.com/invite/minecraftfeedback</a> 向我们反馈。</p>
+</blockquote>
+<h2>标签</h2>
+<h3>方块标签</h3>
+<ul>
+<li>新增 <code>#concrete_stairs</code> — 全部混凝土楼梯方块</li>
+<li>新增 <code>#concrete_slabs</code> — 全部混凝土台阶方块</li>
+</ul>
+<h3>物品标签</h3>
+<ul>
+<li>新增 <code>#concrete_stairs</code> — 全部混凝土楼梯物品</li>
+<li>新增 <code>#concrete_slabs</code> — 全部混凝土台阶物品</li>
+<li>新增 <code>#cloneable_maps</code> — 已填充地图、全部探险家地图以及埋藏的宝藏地图，用于地图复制配方的输入条件</li>
+<li>新增 <code>#extendable_maps</code> — 可使用纸张在工作台或制图台放大缩小的地图</li>
+</ul>
+<h1>资源包版本 95.0</h1>
+<h2>物品精灵贴图</h2>
+<ul>
+<li>移除 <code>item/filled_map_markings.png</code></li>
+</ul>
+<h2>地图精灵贴图</h2>
+<ul>
+<li>新增地图纹理：
+<ul>
+<li><code>abandoned_camp.png</code></li>
+<li><code>ancient_city.png</code></li>
+<li><code>desert_pyramid.png</code></li>
+<li><code>mineshaft.png</code></li>
+<li><code>warm_ocean_ruins.png</code></li>
+</ul>
+</li>
+<li>更新以下图标，用于在地图上展示玩家朝向：
+<ul>
+<li><code>/player.png</code></li>
+<li><code>/player_off_limits.png</code></li>
+<li><code>/player_off_map.png</code></li>
+</ul>
+</li>
+</ul>
+<h2>物品模型</h2>
+<h3>着色源</h3>
+<ul>
+<li>移除 <code>minecraft:map_color</code>
+<ul>
+<li>该着色源读取的 <code>minecraft:map_color</code> 组件已被移除</li>
+</ul>
+</li>
+</ul>
+<h3>与顺序无关透明度（OIT）相关着色器改动</h3>
+<p>重命名定义项：</p>
+<ul>
+<li><code>OIT_WAVELET_RANK</code> — 原名为 <code>WAVELET_RANK</code></li>
+<li><code>OIT_COEFF_COUNT</code> — 原名为 <code>COEFF_COUNT</code></li>
+<li><code>OIT_COEFF_ATTACHMENT_COUNT</code> — 原名为 <code>COEFF_ATTACHMENT_COUNT</code></li>
+</ul>
+<h1>26.3 快照 7 修复的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-121375 rel="noopener noreferrer"target=_blank>MC‑121375</a> — macOS 上的 Command（⌘）键在按键绑定界面显示为“Win”</li>
+<li><a href=https://bugs.mojang.com/browse/MC-189953 rel="noopener noreferrer"target=_blank>MC‑189953</a> — macOS 上的 Super 键在按键绑定界面显示为“Win”</li>
+<li><a href=https://bugs.mojang.com/browse/MC-218156 rel="noopener noreferrer"target=_blank>MC‑218156</a> — 沉船与海洋遗迹可以生成附带空白埋藏宝藏地图的箱子</li>
+<li><a href=https://bugs.mojang.com/browse/MC-276079 rel="noopener noreferrer"target=_blank>MC‑276079</a> — 向客户端发送挥动数据包会导致客户端回发数据包至服务端</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302271 rel="noopener noreferrer"target=_blank>MC‑302271</a> — 嗅探器在重新登录后停止嗅探行为</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302661 rel="noopener noreferrer"target=_blank>MC‑302661</a> — 手持长矛与方块交互时播放长矛刺击动画</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302687 rel="noopener noreferrer"target=_blank>MC‑302687</a> — 手持长矛从物品栏丢弃物品时播放长矛刺击动画</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302705 rel="noopener noreferrer"target=_blank>MC‑302705</a> — 主手持有长矛会改变副手物品的手部动画速度</li>
+<li><a href=https://bugs.mojang.com/browse/MC-304213 rel="noopener noreferrer"target=_blank>MC‑304213</a> — 僵尸、尸壳与溺尸手持长矛时伸出错误的手臂</li>
+<li><a href=https://bugs.mojang.com/browse/MC-304920 rel="noopener noreferrer"target=_blank>MC‑304920</a> — 左手为主手时，第三人称视角下长矛显示异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309644 rel="noopener noreferrer"target=_blank>MC‑309644</a> — 部分间歇泉羽流粒子纹理颜色不一致</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309671 rel="noopener noreferrer"target=_blank>MC‑309671</a> — 架生蘑菇使用错误音效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309679 rel="noopener noreferrer"target=_blank>MC‑309679</a> — 坐垫可以实现透视方块效果</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309732 rel="noopener noreferrer"target=_blank>MC‑309732</a> — <code>straw_bed_head</code> 方块模型重复存放在两个目录</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309797 rel="noopener noreferrer"target=_blank>MC‑309797</a> — 玩家头部与方块相交时，坐垫可以放置进完整方块内部</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309875 rel="noopener noreferrer"target=_blank>MC‑309875</a> — “改进透明度”选项提示框的新翻译被错误回退</li>
+<li><a href=https://bugs.mojang.com/browse/MC-309931 rel="noopener noreferrer"target=_blank>MC‑309931</a> — 放置后的坐垫朝向不一致</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310057 rel="noopener noreferrer"target=_blank>MC‑310057</a> — 在暂停菜单打开进度界面时按下进度快捷键会同时关闭两个界面</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310062 rel="noopener noreferrer"target=_blank>MC‑310062</a> — 犰狳不会跟随手持蜘蛛眼的玩家</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310094 rel="noopener noreferrer"target=_blank>MC‑310094</a> — 小键盘小数点按键在按键绑定菜单显示为“key.keyboard.99”</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310105 rel="noopener noreferrer"target=_blank>MC‑310105</a> — Menu 菜单键在按键绑定菜单显示为“key.keyboard.101”</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310109 rel="noopener noreferrer"target=_blank>MC‑310109</a> — 小键盘加减号按键依旧没有“小键盘”前缀</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310110 rel="noopener noreferrer"target=_blank>MC‑310110</a> — 小键盘左右括号按键依旧没有“小键盘”前缀</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310112 rel="noopener noreferrer"target=_blank>MC‑310112</a> — 在旁观模式下附身实体时使用下界传送门，会传送到错误位置</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310118 rel="noopener noreferrer"target=_blank>MC‑310118</a> — Vulkan渲染后端下按下 Win+D 最小化全部窗口后游戏画面停止刷新</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310337 rel="noopener noreferrer"target=_blank>MC‑310337</a> — 游戏日志输出的 <code>pack.mcmeta</code> 的最低格式版本号错误</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310358 rel="noopener noreferrer"target=_blank>MC‑310358</a> — <code>depthBiasEnable</code> 的生效条件在 OpenGL 与 Vulkan 下表现不一致</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310529 rel="noopener noreferrer"target=_blank>MC‑310529</a> — 调整游戏窗口大小时世界选项界面UI错乱</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310532 rel="noopener noreferrer"target=_blank>MC‑310532</a> — 尝试锁定世界难度时会重置难度</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310536 rel="noopener noreferrer"target=_blank>MC‑310536</a> — 世界选项界面的分类标题格式与其他设置界面不一致</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310550 rel="noopener noreferrer"target=_blank>MC‑310550</a> — macOS 下 Command+W 现在会关闭游戏窗口</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310553 rel="noopener noreferrer"target=_blank>MC‑310553</a> — <code>campsite_wooded_badlands_4</code> 与 <code>campsite_swamp_2</code> 废弃营地结构内存在互相重叠的坐垫</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310556 rel="noopener noreferrer"target=_blank>MC‑310556</a> — kwin_wayland 桌面环境下，即便关闭“退出快捷键”选项，Alt+F4 依旧会关闭游戏窗口</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310590 rel="noopener noreferrer"target=_blank>MC‑310590</a> — 给玩家添加 <code>entity_outline</code> 后重启游戏进入同一世界会造成游戏崩溃</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310595 rel="noopener noreferrer"target=_blank>MC‑310595</a> — macOS 的 Option 键在按键绑定界面显示为“Alt”</li>
+<li><a href=https://bugs.mojang.com/browse/MC-310610 rel="noopener noreferrer"target=_blank>MC‑310610</a> — 部分废弃营地结构中存在水下的氧化铜宝箱，但并未被水浸没</li>
+</ul>

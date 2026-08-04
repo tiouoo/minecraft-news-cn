@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Snapshot 7",
+      "version": "26.3-snapshot-7",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-7 540x540.jpg",
+        "url": "/v2/images/26.3snapshot7540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2.json",
+      "id": "50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2",
+      "date": "2026-08-04T14:00:02.101Z",
+      "shortText": "快来体验进入测试阶段的最终版新功能，提升你的建造与探索体验！你现在可以在部分废弃营地中找到各式各样的地图，还可以合成 16 种颜色的混凝土楼梯与混凝土台阶。该内容现已上 26.3 快照 7！祝你探索愉快！新特性 新增混凝土 S",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 6",
       "version": "26.3-snapshot-6",
       "type": "snapshot",
