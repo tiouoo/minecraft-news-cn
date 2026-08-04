@@ -1,0 +1,163 @@
+<p>在本快照中，我们对红石线做了一些更改，并修复了大量漏洞。</p>
+<h1>20w18a 的更改</h1>
+<ul>
+<li>红石线更改</li>
+<li>标靶方块现在会传导红石信号</li>
+</ul>
+<p>​</p>
+<h2>红石线</h2>
+<p>红石线的方块状态、渲染和行为现在更加一致。红石会向所有视觉上连接的方向提供信号，而不会向没有视觉连接的方向提供信号。
+​</p>
+<ul>
+<li>单条红石线现在显示为十字形。</li>
+<li>位于方块顶部、被从下方转向的红石线现在会向其转向的方向提供信号。例如，转向线上方的栅栏门会接收到信号。</li>
+<li>过去，向上转向到非导电方块上的红石线仅会进行视觉转向。现在这种转向也会应用到行为上。</li>
+<li>被转向越过方块的红石线现在总会向该方块提供信号。当信号强度为 1 时最为明显。</li>
+</ul>
+<p>​<img src="https://launchercontent.mojang.com/images/RedstoneChanges3_741x421.png" alt="1.15.2 与快照 20w18a 的对比"></p>
+<h1>20w18a 中的技术性更改</h1>
+<ul>
+<li>为 server.properties 添加了 <code>enable-status</code> 选项，将其设为 <code>false</code> 时，将不回复来自客户端的状态请求。这会使服务器在多人游戏界面中显示为离线。</li>
+<li>添加了对服务器向客户端发送实体数据量的控制</li>
+<li>进度系统更改</li>
+</ul>
+<p>​</p>
+<h2>实体广播</h2>
+<p>现在可以控制服务器在多大范围内向客户端发送实体数据。
+​</p>
+<ul>
+<li>添加了 <code>entity-broadcast-range-percentage</code> 服务器属性，用于控制实体在距离多近时才会发送给客户端。值越高，实体在离玩家更远的地方可见，但会产生更多网络流量。该值指定为默认值的百分比，例如 <code>50</code> 表示默认范围的一半。</li>
+</ul>
+<p>​</p>
+<h2>进度</h2>
+<ul>
+<li>为每个触发器（除了 <code>impossible</code>）添加了 <code>player</code> 检查</li>
+<li>触发器中的实体检查现在可以使用战利品表条件语法</li>
+</ul>
+<p>​</p>
+<h3>扩展的实体检查</h3>
+<p>触发器中的实体检查现在可以使用战利品表条件语法。旧写法：</p>
+<pre><code class="language-json">{
+  "trigger": "minecraft:player_killed_entity",
+  "conditions": {
+    "entity": {
+      "type": "minecraft:blaze"
+    }
+  }
+}
+</code></pre>
+<p>现在等同于：</p>
+<pre><code class="language-json">{
+  "trigger": "minecraft:player_killed_entity",
+  "conditions": {
+    "entity": [
+      {
+        "condition": "minecraft:entity_properties",
+        "predicate": {
+          "type": "minecraft:blaze"
+        },
+        "entity": "this"
+      }
+    ]
+  }
+}
+</code></pre>
+<p><strong>注 1</strong>：与战利品表一样，顶层数组中的所有条件都必须满足，整个条件才会触发。
+​
+<strong>注 2</strong>：要使用新功能，顶层元素必须是 JSON 数组。JSON 对象则按旧写法解释。<br>
+​
+扩展触发器的完整列表：</p>
+<ul>
+<li>每个触发器中的新字段 <code>player</code></li>
+<li><code>bred_animals</code> - <code>parent</code>, <code>partner</code>, <code>child</code></li>
+<li><code>channeled_lightning</code> - <code>victims</code></li>
+<li><code>cured_zombie_villager</code> - <code>zombie</code>, <code>villager</code></li>
+<li><code>fishing_rod_hooked</code> - <code>entity</code></li>
+<li><code>killed_by_crossbow</code> - <code>victims</code></li>
+<li><code>player_killed_entity</code> - <code>entity</code></li>
+<li><code>entity_killed_player</code> - <code>entity</code></li>
+<li><code>player_hurt_entity</code> - <code>entity</code></li>
+<li><code>summoned_entity</code> - <code>entity</code></li>
+<li><code>tame_animal</code> - <code>entity</code></li>
+<li><code>target_hit</code> - <code>projectile</code></li>
+<li><code>villager_trade</code> - <code>villager</code></li>
+</ul>
+<p>​</p>
+<h3>其他触发器更改</h3>
+<ul>
+<li>由于新增了 <code>player</code>，<code>location</code>、<code>slept_in_bed</code>、<code>hero_of_the_village</code>、<code>voluntary_exile</code> 的现有内容现在可以放在 <code>location</code> 字段中，而不必放在顶层对象中。旧语法仍受支持，但已弃用。</li>
+</ul>
+<p>​</p>
+<h1>20w18a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-11211" target="_blank" rel="noopener noreferrer">MC-11211</a> 当对准 y=255 方块的顶部时，无法执行许多右键操作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111381" target="_blank" rel="noopener noreferrer">MC-111381</a> 潜影贝的渲染旋转在 onInitialSpawn 方法中设置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143904" target="_blank" rel="noopener noreferrer">MC-143904</a> 将非铁轨方块添加到“rails”方块标签后，在其上放置矿车会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147255" target="_blank" rel="noopener noreferrer">MC-147255</a> 主世界中的床在下界荒地生物群系中会爆炸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162385" target="_blank" rel="noopener noreferrer">MC-162385</a> 标题文本的背景不会随文本一起淡出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166269" target="_blank" rel="noopener noreferrer">MC-166269</a> 湿透的狼在甩干水后瞬间变黑</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166296" target="_blank" rel="noopener noreferrer">MC-166296</a> 生物拾取并装备物品时不播放装备音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170840" target="_blank" rel="noopener noreferrer">MC-170840</a> 灵魂沙峡谷和诡异森林中的生成速率异常</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170944" target="_blank" rel="noopener noreferrer">MC-170944</a> /locatebiome 消息不适用于所有生物群系名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171523" target="_blank" rel="noopener noreferrer">MC-171523</a> 诡异和绯红墙挂告示牌的字符串不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172172" target="_blank" rel="noopener noreferrer">MC-172172</a> 成年猪灵在跟随玩家时会旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172253" target="_blank" rel="noopener noreferrer">MC-172253</a> 猪灵装备物品时不播放装备音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173067" target="_blank" rel="noopener noreferrer">MC-173067</a> 世界生成期间放置包含营火的结构时出现 NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173198" target="_blank" rel="noopener noreferrer">MC-173198</a> 标靶方块是透明的，且不传导红石信号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173385" target="_blank" rel="noopener noreferrer">MC-173385</a> 新的下界光照系统不影响流体、实体类方块（如箱子）和实体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173747" target="_blank" rel="noopener noreferrer">MC-173747</a> 盔甲附魔闪光不渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174573" target="_blank" rel="noopener noreferrer">MC-174573</a> 下界藤蔓在使用时运时能掉落多份（免费复制）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174593" target="_blank" rel="noopener noreferrer">MC-174593</a> “从脚手架掉下来”的复数形式不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174811" target="_blank" rel="noopener noreferrer">MC-174811</a> 僵尸猪灵能够在下界疣块上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175107" target="_blank" rel="noopener noreferrer">MC-175107</a> 在生存模式中可以获得不祥之兆 VI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175740" target="_blank" rel="noopener noreferrer">MC-175740</a> 当发射器对 #beehives 标签中的非蜂巢方块使用时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175741" target="_blank" rel="noopener noreferrer">MC-175741</a> 当猫试图在 #beds 标签中的非床方块睡觉时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176028" target="_blank" rel="noopener noreferrer">MC-176028</a> 炽足兽可以以三只或更多堆叠生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176032" target="_blank" rel="noopener noreferrer">MC-176032</a> 炽足兽可以浮空</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176135" target="_blank" rel="noopener noreferrer">MC-176135</a> 骑乘其他实体的炽足兽不会感到寒冷</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176203" target="_blank" rel="noopener noreferrer">MC-176203</a> 具有漂浮效果的炽足兽在熔岩上行走时不会漂浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176459" target="_blank" rel="noopener noreferrer">MC-176459</a> 幼年炽足兽可以带着鞍生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176468" target="_blank" rel="noopener noreferrer">MC-176468</a> 成年炽足兽可以带着鞍生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177105" target="_blank" rel="noopener noreferrer">MC-177105</a> 猪灵、疣猪兽、僵尸疣猪兽和村民会看着目标的脚而不是头</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177127" target="_blank" rel="noopener noreferrer">MC-177127</a> 字幕“末地传送门已开启！”中不必要的感叹号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177173" target="_blank" rel="noopener noreferrer">MC-177173</a> 幼年僵尸疣猪兽的年龄状态值未存储在 NBT 标签中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177561" target="_blank" rel="noopener noreferrer">MC-177561</a> 在 y=255 处的磁石顶部使用的指南针在磁石被破坏后不会损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177771" target="_blank" rel="noopener noreferrer">MC-177771</a> “death.attack.fireworks.item”显示原始翻译字符串（未被翻译）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177790" target="_blank" rel="noopener noreferrer">MC-177790</a> 猪灵旗帜被命名为 block.minecraft.banner.piglin.[<colour>]</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177794" target="_blank" rel="noopener noreferrer">MC-177794</a> 将地球图案添加到旗帜上时并不需要地球旗帜图案</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177816" target="_blank" rel="noopener noreferrer">MC-177816</a> 无法访问/删除 level 的提示文本应使用“world”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177911" target="_blank" rel="noopener noreferrer">MC-177911</a> 洞穴生成器不会切穿黑石</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177951" target="_blank" rel="noopener noreferrer">MC-177951</a> 当点火物品对 #campfires 标签中的非营火方块使用时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177976" target="_blank" rel="noopener noreferrer">MC-177976</a> 幼年猪灵能够捡起灵魂营火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178013" target="_blank" rel="noopener noreferrer">MC-178013</a> 骑着炽足兽的僵尸猪灵会消失，留下带有鞍的炽足兽</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178129" target="_blank" rel="noopener noreferrer">MC-178129</a> 实体转化字幕使用的时态不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178336" target="_blank" rel="noopener noreferrer">MC-178336</a> 消息“你没有家床或重生锚，或者它被阻挡了”没有明确说明你的重生锚可能已耗尽</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178817" target="_blank" rel="noopener noreferrer">MC-178817</a> “锁链方块”没有“含水”状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178943" target="_blank" rel="noopener noreferrer">MC-178943</a> 在堡垒遗迹中生成的猪灵/疣猪兽能够跑赢玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178949" target="_blank" rel="noopener noreferrer">MC-178949</a> 堡垒遗迹无法在超平坦世界中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179839" target="_blank" rel="noopener noreferrer">MC-179839</a> 聊天文本渲染在盔甲条后面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179841" target="_blank" rel="noopener noreferrer">MC-179841</a> 优化世界时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179845" target="_blank" rel="noopener noreferrer">MC-179845</a> 在某些位置，雨水会穿过任何方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179847" target="_blank" rel="noopener noreferrer">MC-179847</a> 疣猪兽和猪灵会旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179850" target="_blank" rel="noopener noreferrer">MC-179850</a> 实体距离 100% 和 500% 之间没有区别</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179858" target="_blank" rel="noopener noreferrer">MC-179858</a> 地图显示类似石头的图案，但实际并不存在</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179863" target="_blank" rel="noopener noreferrer">MC-179863</a> 将属性 minecraft:generic.max_health 的值设为 0 或更低会导致死亡后无限死亡循环</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179866" target="_blank" rel="noopener noreferrer">MC-179866</a> 在某些位置，即使应该下雪也会下雨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179868" target="_blank" rel="noopener noreferrer">MC-179868</a> 前往可写书上一页时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179883" target="_blank" rel="noopener noreferrer">MC-179883</a> 原始 JSON 文本会重复实体名称中“extra”的组件</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179886" target="_blank" rel="noopener noreferrer">MC-179886</a> 世界选择界面中不会出现开始按钮覆盖层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179905" target="_blank" rel="noopener noreferrer">MC-179905</a> 游戏规则界面的标题缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179952" target="_blank" rel="noopener noreferrer">MC-179952</a> 高度图数据不会转换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179954" target="_blank" rel="noopener noreferrer">MC-179954</a> 按键绑定没有正确插入到演示信息框文本中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180030" target="_blank" rel="noopener noreferrer">MC-180030</a> 成年疣猪兽僵尸化而成的成年僵尸疣猪兽造成与幼年相同的伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180100" target="_blank" rel="noopener noreferrer">MC-180100</a> 雨水粒子在特定条件下显示为黑色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180110" target="_blank" rel="noopener noreferrer">MC-180110</a> JSON 文本中的下划线和删除线并不总能正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180125" target="_blank" rel="noopener noreferrer">MC-180125</a> 非 BMP 字符的字间距不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180135" target="_blank" rel="noopener noreferrer">MC-180135</a> 空聊天消息不会显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180138" target="_blank" rel="noopener noreferrer">MC-180138</a> 聊天中的长消息不再具有悬挂缩进</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180246" target="_blank" rel="noopener noreferrer">MC-180246</a> “Game rules”中的“r”没有大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180248" target="_blank" rel="noopener noreferrer">MC-180248</a> “Upgrade gear”中的“g”没有大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180299" target="_blank" rel="noopener noreferrer">MC-180299</a> “Disable Elytra movement check”中的“Elytra”大小写不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180353" target="_blank" rel="noopener noreferrer">MC-180353</a> 聊天背景渲染在调试菜单前面，但聊天文本渲染在它后面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181296" target="_blank" rel="noopener noreferrer">MC-181296</a> 使用“程序员的艺术”时，全景图显示错误的覆盖层</li>
+</ul>

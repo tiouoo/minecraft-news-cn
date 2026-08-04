@@ -1,0 +1,58 @@
+<p>In this week's Snapshot we're taking a break from new features to improve ones we've already added, including fixes to Commands and the ability to use Loot Tables with Decorated Pots.</p>
+<h1>Changes</h1>
+<ul>
+<li>Copper Doors &#x26; Copper Trapdoors has updated textures</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 23</li>
+</ul>
+<h1>Data Pack Version 23</h1>
+<ul>
+<li>Decorated Pots can now utilize loot tables and will read from the <code>LootTable</code> tag key</li>
+<li>Additional changes to command functions</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>tick</code></h3>
+<ul>
+<li>The <code>&#x3C;time></code> parameter in the <code>tick step</code> command is now optional. The default value is 1</li>
+</ul>
+<h3><code>return</code></h3>
+<ul>
+<li><code>return run</code> will now always return<ul>
+<li>If there are no valid results from returned command, function containing <code>return run</code> will fail (i.e. <code>success=0</code> and <code>result=0</code>)</li>
+</ul></li>
+<li><code>return run</code> will now propagate success value together with results value (previously it always set success to <code>1</code>)</li>
+<li><code>return run</code> now also allows storing values - that means <code>execute store ... run return run some_command</code> will both store value and return it outside function</li>
+<li>New subcommand <code>return fail</code> is added to make whole function fail (i.e. return <code>success=0</code> and <code>result=0</code>)</li>
+</ul>
+<h3><code>function</code></h3>
+<ul>
+<li>If <code>function &#x3C;function tag></code> runs multiple functions in combination with <code>return run</code>, execution will stop after first <code>return</code> in any of the functions</li>
+<li>A single call to the <code>function</code> command will always have return when run with <code>return run</code><ul>
+<li>For example, <code>return run execute [split context] run function &#x3C;some function with conditional return></code> will always return after processing the first context</li>
+</ul></li>
+</ul>
+<h3><code>execute if|unless function</code></h3>
+<ul>
+<li><code>execute if|unless function</code> will no longer always fail if all functions had no return<ul>
+<li>If there were no <code>returns</code> in called functions, <code>if</code> will fail and <code>unless</code> will pass</li>
+<li>First <code>return</code> in any of called functions will return (for a single context)</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w44a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-219293" target="_blank" rel="noopener noreferrer">MC-219293</a> When teleporting via Chorus Fruit, the burping and teleporting sounds play at the wrong location</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265805" target="_blank" rel="noopener noreferrer">MC-265805</a> Executing a tail-recursive function consumes memory resources linearly with recursion depth</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266052" target="_blank" rel="noopener noreferrer">MC-266052</a> Subtitles for turning copper bulb on or off display raw translation string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266053" target="_blank" rel="noopener noreferrer">MC-266053</a> Subtitles for opening or closing a copper trapdoor display raw translation string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266064" target="_blank" rel="noopener noreferrer">MC-266064</a> Footsteps on Polished Tuff create missing subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266084" target="_blank" rel="noopener noreferrer">MC-266084</a> Top of copper doors include an open part of the window</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266086" target="_blank" rel="noopener noreferrer">MC-266086</a> Tuff bricks do not properly align with other bricks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266105" target="_blank" rel="noopener noreferrer">MC-266105</a> Bat head upside down when spawned while ticks are frozen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266112" target="_blank" rel="noopener noreferrer">MC-266112</a> New Bat's ears are lower than the official render and Bedrock's</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266117" target="_blank" rel="noopener noreferrer">MC-266117</a> Chiseled copper cannot be stonecut from cut copper blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266147" target="_blank" rel="noopener noreferrer">MC-266147</a> Copper Door item texture is inconsistent with the block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266197" target="_blank" rel="noopener noreferrer">MC-266197</a> The "Transfer Now" button in the realms menu cannot be selected via keyboard navigation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266215" target="_blank" rel="noopener noreferrer">MC-266215</a> The pivot point of the head of the new bats is different from that of Bedrock's</li>
+</ul>

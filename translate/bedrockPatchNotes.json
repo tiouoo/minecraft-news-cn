@@ -1,0 +1,1043 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "title": "26.30 - Chaos Cubed",
+      "version": "26.30",
+      "patchNoteType": "retail",
+      "date": "2026-06-16T15:39:44.434Z",
+      "image": {
+        "title": "26.30.jpg",
+        "url": "/v2/images/26.30.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6.json",
+      "id": "f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6",
+      "shortText": "Chaos Cubed 已登陆 Minecraft！在主世界中寻找鲜艳的硫磺泉，发现隐藏在下方的引人注目的洞穴生物群系。如果你胆子够大，可以在冒泡的硫磺池中畅游，用色彩斑斓的朱砂和硫磺进行建造，但最重要的是——揭开硫磺立",
+      "needsTranslation": false
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.20 Changelog",
+      "version": "26.20",
+      "patchNoteType": "retail",
+      "date": "2026-05-05T15:41:47.683Z",
+      "image": {
+        "title": "26.20.jpg",
+        "url": "/v2/images/26.20.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/836e028cbc075d74fafc83c998f151bca82287c30b0b74649bc2ef1e9d5c1665.json",
+      "id": "836e028cbc075d74fafc83c998f151bca82287c30b0b74649bc2ef1e9d5c1665",
+      "shortText": "今天我们为您带来了一个令人兴奋的版本——因为在测试中的混乱与方块之外，本版本还推出了隐藏式字幕！隐藏式字幕一直是备受期待的功能——现在您可以亲自体验，并可自定义",
+      "needsTranslation": false
+    },
+    {
+      "title": "26.10 - Tiny Takeover",
+      "version": "26.10",
+      "patchNoteType": "retail",
+      "date": "2026-03-24T16:03:49.423Z",
+      "image": {
+        "title": "26.10.png",
+        "url": "/v2/images/26.10.png"
+      },
+      "contentPath": "bedrockPatchNotes/a85e4952d3b347bbdf41dd131e838a6adfe4a3226a94aebcf71339a50b69ba81.json",
+      "id": "a85e4952d3b347bbdf41dd131e838a6adfe4a3226a94aebcf71339a50b69ba81",
+      "shortText": "无论您是否准备好，Tiny Takeover 更新已到来！幼年生物的新版本已席卷 Minecraft，在各生物群系和建筑中引发可爱过载。聆听融化心灵的声音，为您的宠物制作命名牌，并让幼崽永远保持年幼，使用",
+      "needsTranslation": false
+    },
+    {
+      "title": "26.0 Update",
+      "version": "26.0",
+      "patchNoteType": "retail",
+      "date": "2026-02-10",
+      "image": {
+        "title": "26.0.jpg",
+        "url": "/v2/images/26.0.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/8d2342d74297decc49a0ea75d35410b7147876e46bbe4314ea9631e1f8e945a9.json",
+      "id": "8d2342d74297decc49a0ea75d35410b7147876e46bbe4314ea9631e1f8e945a9",
+      "shortText": "今天我不确定该从何说起——进入测试的幼年生物重新设计和可制作的命名牌？还是本版本是第一个采用我们新编号系统的版本？事实上，何必选择！在这个版本中我们进入了 26.0，而那",
+      "needsTranslation": false
+    },
+    {
+      "title": "1.21.130 - Mounts of Mayhem",
+      "version": "1.21.130",
+      "patchNoteType": "retail",
+      "date": "2025-12-09",
+      "image": {
+        "title": "1.21.130.png",
+        "url": "/v2/images/1.21.130.png"
+      },
+      "contentPath": "bedrockPatchNotes/75e38bfa18dddbddb4d3e2e75edcc9947d858a1e76ec413000616cd0195cb933.json",
+      "id": "75e38bfa18dddbddb4d3e2e75edcc9947d858a1e76ec413000616cd0195cb933",
+      "shortText": "今天 Mounts of Mayhem 冲入 Minecraft，带来了一把可挥舞的新武器、可驯服的坐骑、要面对的敌人，以及需要掌握的策略！挑战者们在烈日下、夜空下以及海洋深处等待——而每一次交锋都需要一个崭新",
+      "needsTranslation": false
+    },
+    {
+      "title": "1.21.120 Update",
+      "version": "1.21.120",
+      "patchNoteType": "retail",
+      "date": "2025-10-28T15:41:47.069Z",
+      "image": {
+        "title": "1.21.120.png",
+        "url": "/v2/images/1.21.120.png"
+      },
+      "contentPath": "bedrockPatchNotes/afd40959c629647ba573474a43938611d0a195fe43509b8d2faaf53adb3653f6.json",
+      "id": "afd40959c629647ba573474a43938611d0a195fe43509b8d2faaf53adb3653f6",
+      "shortText": "当您与坐骑一起制造混乱时，我们一直在修复 bug 并实施重要的修复！除了添加动画灯笼纹理外，铜傀儡雕像现在放置在发光物品展示框中时会发光，并且与铜傀",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.111 - The Copper Age",
+      "version": "1.21.111",
+      "patchNoteType": "retail",
+      "date": "2025-09-30",
+      "image": {
+        "title": "1.21.111.jpg",
+        "url": "/v2/images/1.21.111.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/2fc70ab38598b311f5f1619f0a40c1ee0d0bee7289be3ad178eb6ff17f9f6ead.json",
+      "id": "2fc70ab38598b311f5f1619f0a40c1ee0d0bee7289be3ad178eb6ff17f9f6ead",
+      "shortText": "Minecraft 已进入铜器时代！用各种色调的铜来表达自我，将这种多用途金属转化为实用的工具、闪亮的盔甲、璀璨的光源、氧化的装饰、智能的储物装置，甚至是活泼的机械伙伴——被称为铜",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.100 Update",
+      "version": "1.21.100",
+      "patchNoteType": "retail",
+      "date": "2025-08-05",
+      "image": {
+        "title": "1.21.100_540.jpg",
+        "url": "/v2/images/1.21.100540.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/44f3ea0e8212a9132dca5b35889e9d3544477d97b301962adabd941c42bbe51b.json",
+      "id": "44f3ea0e8212a9132dca5b35889e9d3544477d97b301962adabd941c42bbe51b",
+      "shortText": "哐！哐！哐！如果您以为那是铜傀儡在尝试爵士健美操的声音，那就错了。实际上是我们深入挖掘实验性特性时，发现主世界是平坦的。等等，这也不对？但平坦世界",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.90 - Chase the Skies",
+      "version": "1.21.90",
+      "patchNoteType": "retail",
+      "date": "2025-06-17",
+      "image": {
+        "title": "1.21.90.jpg",
+        "url": "/v2/images/1.21.90.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/ce65f9b19e61286f8bf18613ae3d2353d3826811cea843216ac41266514b8341.json",
+      "id": "ce65f9b19e61286f8bf18613ae3d2353d3826811cea843216ac41266514b8341",
+      "shortText": "在我们的 Chase the Skies 更新中，体验在主世界上空翱翔的乐趣！这次更新不仅为 Minecraft 带来了令人兴奋的飞行坐骑，还开启了天空供您探索、建造等等。用心培育您的小恶魂，它会让您翱",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.80 Update",
+      "version": "1.21.80",
+      "patchNoteType": "retail",
+      "date": "2025-05-06",
+      "image": {
+        "title": "1.21.80.jpg",
+        "url": "/v2/images/1.21.80.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/d6541fe97a38fdb0bf89d8556dab89f5b76df1f6c56b63966f82d378ea3fdeba.json",
+      "id": "d6541fe97a38fdb0bf89d8556dab89f5b76df1f6c56b63966f82d378ea3fdeba",
+      "shortText": "您是否曾眺望主世界，只希望它...更平坦一些？好消息！平坦世界预设现在已在 Bedrock Edition 中可用！无论您喜欢在一张白纸上建造，还是对尖锐的景观有抵触情绪，现在您都可以拥",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.70 Update",
+      "version": "1.21.70",
+      "patchNoteType": "retail",
+      "date": "2025-03-25T15:57:06.452Z",
+      "image": {
+        "title": "1.21.70.jpg",
+        "url": "/v2/images/1.21.70.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/30e779273d6d1591b0f179ffbfd876dba962fa49b9516a2f6333e40189d6abfe.json",
+      "id": "30e779273d6d1591b0f179ffbfd876dba962fa49b9516a2f6333e40189d6abfe",
+      "shortText": "Spring to Life 更新带来了更多理由去探索远近各地！温暖的风席卷了各生物群系，带来了新的生物变种、环境音效和葱郁的植物供您发现。与毛茸茸的猪交朋友，惊叹于闪闪发光的萤火虫灌木，聆听",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.60 Update",
+      "version": "1.21.60",
+      "patchNoteType": "retail",
+      "date": "2025-02-11T16:51:46.830Z",
+      "image": {
+        "title": "1.21.60.jpg",
+        "url": "/v2/images/1.21.60.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/a0ff524bba299d1f1761f384cd3812f5e7989f05307f4f59a24ab320c5ceb6f7.json",
+      "id": "a0ff524bba299d1f1761f384cd3812f5e7989f05307f4f59a24ab320c5ceb6f7",
+      "shortText": "抓紧了，因为这份更新日志可是件大事！我们不仅修复了一堆 bug，还有几项功能可在实验性开关中使用。来认识一下小跑进入主世界的两种新猪变种，让树叶从树",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.50 Update",
+      "version": "1.21.50",
+      "patchNoteType": "retail",
+      "date": "2024-12-03",
+      "image": {
+        "title": "1.21.50.png",
+        "url": "/v2/images/1.21.50.png"
+      },
+      "contentPath": "bedrockPatchNotes/ad129a698d744275a3f18073ac578319f728d11a54fa464313fde1f132314aef.json",
+      "id": "ad129a698d744275a3f18073ac578319f728d11a54fa464313fde1f132314aef",
+      "shortText": "嘘！我正躲在苍白橡木树后写这份更新日志——而且我必须非常安静，因为 Garden Awakens 更新终于来了——嘎枝正在主世界各地的苍白之园中生成！Garden Awakens 带来了一个诡异的生物群",
+      "needsTranslation": null
+    },
+    {
+      "title": "Minecraft 1.21.40 Bedrock Changelog",
+      "version": "1.21.40",
+      "patchNoteType": "retail",
+      "date": "2024-10-22T15:09:32.338Z",
+      "image": {
+        "title": "1.21.40_launcher.jpg",
+        "url": "/v2/images/1.21.40launcher.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/cfde52315b4e304ad035c8d763f9b4a9161126e6efe77afd5c88773bc96d513f.json",
+      "id": "cfde52315b4e304ad035c8d763f9b4a9161126e6efe77afd5c88773bc96d513f",
+      "shortText": "今天标志着我们第三个游戏更新的发布：Bundles of Bravery！以节省空间的收纳袋和最困难的生存模式（硬核模式！）为特色，这次更新完全关乎踏上新冒险、一路上收集您能收集的一切，并",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.31 Update",
+      "version": "1.21.31",
+      "patchNoteType": "retail",
+      "date": "2024-09-30T17:06:16.880Z",
+      "image": {
+        "title": "1.21.31.png",
+        "url": "/v2/images/1.21.31.png"
+      },
+      "contentPath": "bedrockPatchNotes/62560d8d6d794b8cade50d94729c434b0ca65d8ae8703bfcb6e2fa3843a69a36.json",
+      "id": "62560d8d6d794b8cade50d94729c434b0ca65d8ae8703bfcb6e2fa3843a69a36",
+      "shortText": "修复：修复了游戏过程中可能发生的若干崩溃修复了仅使用第二个槽位与村民交易时可能发生的崩溃 (MCPE-186676)修复了某些命令无法识别特定方块或物品名称的问题修复了一",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.30 Update",
+      "version": "1.21.30",
+      "patchNoteType": "retail",
+      "date": "2024-09-17T15:58:09.183Z",
+      "image": {
+        "title": "1.21.30.jpg",
+        "url": "/v2/images/1.21.30.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/ee91e1ac2f3650f928c2c0dca81050e975f75756cd1784eefa1d268ee1662ada.json",
+      "id": "ee91e1ac2f3650f928c2c0dca81050e975f75756cd1784eefa1d268ee1662ada",
+      "shortText": "Minecraft 体验的新版本已发布，带来了各种易用性改进和修复！在本周的更新日志中，村民们终于可以安睡了，狐狸们获得了更多生命值，而且我们还有大量关于——",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.23 Update",
+      "version": "1.21.23",
+      "patchNoteType": "retail",
+      "date": "2024-09-03T17:37:24.718Z",
+      "image": {
+        "title": "1.21.23.png",
+        "url": "/v2/images/1.21.23.png"
+      },
+      "contentPath": "bedrockPatchNotes/b349820d34c02c22f6c19d0816e5fe195bead53f9c08b15f411667febd69aeec.json",
+      "id": "b349820d34c02c22f6c19d0816e5fe195bead53f9c08b15f411667febd69aeec",
+      "shortText": "修复：修复了游戏过程中可能发生的若干崩溃",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.22 Update",
+      "version": "1.21.22",
+      "patchNoteType": "retail",
+      "date": "2024-08-26T21:27:34.598Z",
+      "image": {
+        "title": "1.21.22.png",
+        "url": "/v2/images/1.21.22.png"
+      },
+      "contentPath": "bedrockPatchNotes/3dc2ff3e3d78452bbeea3995468a97e50cabac911975483cc40eeff6021452ea.json",
+      "id": "3dc2ff3e3d78452bbeea3995468a97e50cabac911975483cc40eeff6021452ea",
+      "shortText": "新版本已发布，以解决 1.21.20 版本的一些问题。修复：修复了游戏过程中可能发生的若干崩溃改进了从 Marketplace 加载附加组件的方式修复了所有自定义方块在 UI 中旋转 180 度的 bug",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.21 Update",
+      "version": "1.21.21",
+      "patchNoteType": "retail",
+      "date": "2024-08-16T16:45:22.691Z",
+      "image": {
+        "title": "1.21.21.png",
+        "url": "/v2/images/1.21.21.png"
+      },
+      "contentPath": "bedrockPatchNotes/9e5fdc83e6b05c677d7dbf48fd72050e81fcc01fb40b4786a124d963ba8f2e72.json",
+      "id": "9e5fdc83e6b05c677d7dbf48fd72050e81fcc01fb40b4786a124d963ba8f2e72",
+      "shortText": "新版本已发布，以解决连接 Realms 的问题。修复：提高了连接 Realms 的可靠性",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.20 Update",
+      "version": "1.21.20",
+      "patchNoteType": "retail",
+      "date": "2024-08-13T15:51:31.802Z",
+      "image": {
+        "title": "1.21.20.png",
+        "url": "/v2/images/1.21.20.png"
+      },
+      "contentPath": "bedrockPatchNotes/b85e7f1b0347075968336e7c9ec2d542bd938c326129344d516705c027572655.json",
+      "id": "b85e7f1b0347075968336e7c9ec2d542bd938c326129344d516705c027572655",
+      "shortText": "Minecraft 体验的新版本已发布，带来了各种易用性改进和修复！修复和更改：性能 / 稳定性：修复了若干与下载内容卡住相关的 bug，包括以下错误：",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.2 Update",
+      "version": "1.21.2",
+      "patchNoteType": "retail",
+      "date": "2024-07-09T16:01:53.124Z",
+      "image": {
+        "title": "1.21.2.png",
+        "url": "/v2/images/1.21.2.png"
+      },
+      "contentPath": "bedrockPatchNotes/84eff81cda0311a53b74ffe65e5b4889c38cf28a6b5f1c4f6f120e74d2636a79.json",
+      "id": "84eff81cda0311a53b74ffe65e5b4889c38cf28a6b5f1c4f6f120e74d2636a79",
+      "shortText": "新的热修复现已可用，以解决自 1.21 更新以来遇到的一些主要问题。功能和 bug 修复：不祥试炼刷怪笼由不祥试炼刷怪笼生成的生物现在会掉落它们捡起的物品 (MCPE-182630)不祥宝库稀",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.1 Update",
+      "version": "1.21.1",
+      "patchNoteType": "retail",
+      "date": "2024-06-21T15:27:37.283Z",
+      "image": {
+        "title": "1.21.1.png",
+        "url": "/v2/images/1.21.1.png"
+      },
+      "contentPath": "bedrockPatchNotes/9c87662fe67411d52ec0479b6a9bace84609d91d6a094316a117e3a31baeb9a1.json",
+      "id": "9c87662fe67411d52ec0479b6a9bace84609d91d6a094316a117e3a31baeb9a1",
+      "shortText": "修复：修复了在 PlayStation®4 上玩分屏多人游戏时可能发生的硬锁问题修复了全新安装 Minecraft 的玩家需要重启才能看到 Realms Stories 的 bug",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21 Update - Tricky Trials",
+      "version": "1.21.0",
+      "patchNoteType": "retail",
+      "date": "2024-06-13T15:52:56.810Z",
+      "image": {
+        "title": "1.21.0.png",
+        "url": "/v2/images/1.21.0.png"
+      },
+      "contentPath": "bedrockPatchNotes/cc4c9452ca14bf8d4e6af2d9cb3d37802f6db5d63c702128329e6f0dd887589c.json",
+      "id": "cc4c9452ca14bf8d4e6af2d9cb3d37802f6db5d63c702128329e6f0dd887589c",
+      "shortText": "新特性：添加了名为试炼密室的新地下结构添加了 2 种新生物旋风沼骸添加了新武器：重锤添加了 3 种重锤独占的附魔致密破甲风涌添加了以下方块：合成器试炼刷怪笼不祥试",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.81 Update",
+      "version": "1.20.81",
+      "patchNoteType": "retail",
+      "date": "2024-04-29T16:03:14.177Z",
+      "image": {
+        "title": "1.20.81.png",
+        "url": "/v2/images/1.20.81.png"
+      },
+      "contentPath": "bedrockPatchNotes/74f28a4f4ecd2fa2eb9d5e43cb1a7dee84d45fd5fc68db3d714383d8285f892a.json",
+      "id": "74f28a4f4ecd2fa2eb9d5e43cb1a7dee84d45fd5fc68db3d714383d8285f892a",
+      "shortText": "新版本现已可用，以解决 1.20.80 更新引入的稳定性问题。修复：修复了游戏过程中可能发生的若干崩溃传送后相机不再滞后一帧",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.80 Update",
+      "version": "1.20.80",
+      "patchNoteType": "retail",
+      "date": "2024-04-23",
+      "image": {
+        "title": "1.20.80.png",
+        "url": "/v2/images/1.20.80.png"
+      },
+      "contentPath": "bedrockPatchNotes/15b27cf2fecd6583799007a57e39c0c2c6d04c0a416c7da47510bc1140b31e32.json",
+      "id": "15b27cf2fecd6583799007a57e39c0c2c6d04c0a416c7da47510bc1140b31e32",
+      "shortText": "八种新的狼变种、狼甲和犰狳今天已加入 Minecraft！来认识一下犰狳，这是一种在热带草原或恶地生物群系中发现的生物，并用它的鳞甲制作狼甲！到各处探索，收集全部九种狼变",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.73 Update",
+      "version": "1.20.73",
+      "patchNoteType": "retail",
+      "date": "2024-04-01",
+      "image": {
+        "title": "1.20.73.png",
+        "url": "/v2/images/1.20.73.png"
+      },
+      "contentPath": "bedrockPatchNotes/e19f9e9e628dd65677f28241ec0cc090692437ef6b4dcff5f701db4e5b016a62.json",
+      "id": "e19f9e9e628dd65677f28241ec0cc090692437ef6b4dcff5f701db4e5b016a62",
+      "shortText": "新版本现已可用，以解决 1.20.70 更新引入的稳定性问题。修复：修复了游戏过程中可能发生的一个崩溃",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.72 Update",
+      "version": "1.20.72",
+      "patchNoteType": "retail",
+      "date": "2024-03-25T23:12:29.965Z",
+      "image": {
+        "title": "1.20.72.png",
+        "url": "/v2/images/1.20.72.png"
+      },
+      "contentPath": "bedrockPatchNotes/1cee2814868e10feba2f20679613b7a585b62bf802d6d0b6ab2ade758dcc3914.json",
+      "id": "1cee2814868e10feba2f20679613b7a585b62bf802d6d0b6ab2ade758dcc3914",
+      "shortText": "新版本现已可用，以解决 1.20.70 更新引入的稳定性问题。修复：修复了游戏过程中可能发生的若干崩溃",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.70 Update",
+      "version": "1.20.70",
+      "patchNoteType": "retail",
+      "date": "2024-03-12",
+      "image": {
+        "title": "1.20.70.png",
+        "url": "/v2/images/1.20.70.png"
+      },
+      "contentPath": "bedrockPatchNotes/f03aaa34bacc53bea4c99b3bb016e9c2f2c3e41d41f2b3b15b75e2c72c3e25dc.json",
+      "id": "f03aaa34bacc53bea4c99b3bb016e9c2f2c3e41d41f2b3b15b75e2c72c3e25dc",
+      "shortText": "原版一致性：生物狼现在可以承受与 Java Edition 中相同数量的伤害与其像 Java Edition 中目前所做的那样，将玩家或箭以外的实体对已驯服的狼造成的所有伤害减半，已驯服的狼的最大生命值已",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.62 Update",
+      "version": "1.20.62",
+      "patchNoteType": "retail",
+      "date": "2024-02-15",
+      "image": {
+        "title": "launcher_r20u6h1.png",
+        "url": "/v2/images/launcherr20u6h1.png"
+      },
+      "contentPath": "bedrockPatchNotes/cd015638036b9ebfac1a5e70e8214e518f5ddeeb91c6f66631fd5f1aa2e82fe8.json",
+      "id": "cd015638036b9ebfac1a5e70e8214e518f5ddeeb91c6f66631fd5f1aa2e82fe8",
+      "shortText": "新版本现已可用，以解决 1.20.60 更新引入的崩溃问题。修复：修复了游戏过程中可能发生的若干崩溃",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.60 Update",
+      "version": "1.20.60",
+      "patchNoteType": "retail",
+      "date": "2024-02-06",
+      "image": {
+        "title": "1.20.60.png",
+        "url": "/v2/images/1.20.60.png"
+      },
+      "contentPath": "bedrockPatchNotes/49f17064062fbb55ca64b02e5f54d2ca0c7068b63af3a98419d8c506617e0f60.json",
+      "id": "49f17064062fbb55ca64b02e5f54d2ca0c7068b63af3a98419d8c506617e0f60",
+      "shortText": "Minecraft 的新更新现已可用，带来了若干更改、修复和实验性特性！来看看本版本的亮点：修复了大量 bug 和一致性更改来自即将推出的 1.21 更新的实验性特性，包括",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.51 Update",
+      "version": "1.20.51",
+      "patchNoteType": "retail",
+      "date": "2023-12-14",
+      "image": {
+        "url": "/v2/images/4bR6pBOPfKGkXW9fmKEVxr12051.jpeg",
+        "title": "1-20-51"
+      },
+      "contentPath": "bedrockPatchNotes/7BgoMfh4ljip1yIUblEcvI.json",
+      "id": "7BgoMfh4ljip1yIUblEcvI",
+      "shortText": "Minecraft: Bedrock Edition 的热修复现已可用，解决了最新更新引入的一些问题。\n修复：\n\n修复了在 Realms 上游戏时可能发生的崩溃\n物品不再可能在切换选择后复制"
+    },
+    {
+      "title": "1.20.50 Update",
+      "version": "1.20.50",
+      "patchNoteType": "retail",
+      "date": "2023-12-05",
+      "image": {
+        "url": "/v2/images/4cbQFTsJyawjt2Pl4gsKArr20u5launcher.jpeg",
+        "title": "r20u5 launcher"
+      },
+      "contentPath": "bedrockPatchNotes/5LOlDazW4jrv1xGBYMhbWP.json",
+      "id": "5LOlDazW4jrv1xGBYMhbWP",
+      "shortText": "最新的 Minecraft 更新为蝙蝠带来了全新外观，可打碎的罐子以及一些新的实验性特性，如合成器方块。让我们来看看亮点！\n\n蝙蝠有了全新的外观\n对饰纹陶罐的改进，例如能够"
+    },
+    {
+      "title": "1.20.41 Update",
+      "version": "1.20.41",
+      "patchNoteType": "retail",
+      "date": "2023-11-02",
+      "image": {
+        "url": "/v2/images/1Rmj9y5K9AjNV52KpkbMx4launcherr20u4h1.jpeg",
+        "title": "launcher r20u4h1"
+      },
+      "contentPath": "bedrockPatchNotes/3aYbOsIrp6Lx5axYPqbPdc.json",
+      "id": "3aYbOsIrp6Lx5axYPqbPdc",
+      "shortText": "新版本已发布，以解决 1.20.40 更新引入的一些问题。\n修复：\n\n修复了在做其他事情一段时间后加入 Realm 时可能发生的崩溃\n修复了加入精选服务器时可能发生的崩溃"
+    },
+    {
+      "title": "1.20.40 Update",
+      "version": "1.20.40",
+      "patchNoteType": "retail",
+      "date": "2023-10-24",
+      "image": {
+        "url": "/v2/images/655KMGBvViSE4lY0qtXV6xr20u4launcher.jpeg",
+        "title": "r20u4 launcher"
+      },
+      "contentPath": "bedrockPatchNotes/5KOCcohrDIRudWXZPuyGCc.json",
+      "id": "5KOCcohrDIRudWXZPuyGCc",
+      "shortText": "新版本已发布，为游戏带来了若干更改！以下是亮点：\n\n实验性：重新平衡了若干村民交易\n更新并改进了若干游戏内音效\n调整了进入和离开水面时的溅水声\n水桶可"
+    },
+    {
+      "title": "1.20.32 Update",
+      "version": "1.20.32",
+      "patchNoteType": "retail",
+      "date": "2023-10-05",
+      "image": {
+        "url": "/v2/images/5noUirXuH9XGio5BdCnhOplauncherr20u3h2.jpeg",
+        "title": "launcher r20u3h2"
+      },
+      "contentPath": "bedrockPatchNotes/4tjNUkNlgFhZ6Xsyh49pxf.json",
+      "id": "4tjNUkNlgFhZ6Xsyh49pxf",
+      "shortText": "修复：\n\n修复了在 iOS 上“§”文本修饰符在换行符旁边时覆盖文本的问题 (MCPE-174480)\n修复了连续放置多个告示牌时导致键盘无响应的问题 (MCPE-175072)\n按钮和其他一些非完整方块在"
+    },
+    {
+      "title": "1.20.31 Update",
+      "version": "1.20.31",
+      "patchNoteType": "retail",
+      "date": "2023-09-26",
+      "image": {
+        "url": "/v2/images/3xzIsGS00AAOgHacCrTpzIlauncherr20u3h1.jpeg",
+        "title": "launcher r20u3h1"
+      },
+      "contentPath": "bedrockPatchNotes/7A1AYwW0FwJ9a9FxoIY5CB.json",
+      "id": "7A1AYwW0FwJ9a9FxoIY5CB",
+      "shortText": "修复：\n\n修复了打开 Realms Plus 页面时可能发生的崩溃\n改进了村民聚集时的服务器性能 (MCPE-175100)\n修复了长时间开启游戏后导致 Marketplace 无法访问的问题"
+    },
+    {
+      "title": "1.20.30 Update",
+      "version": "1.20.30",
+      "patchNoteType": "retail",
+      "date": "2023-09-19",
+      "image": {
+        "url": "/v2/images/1vcIoAtFGRi7z2lrhkN55glauncherr20u3.jpeg",
+        "title": "launcher r20u3"
+      },
+      "contentPath": "bedrockPatchNotes/5t5YfmjI2OGvuzsjqpf2vc.json",
+      "id": "5t5YfmjI2OGvuzsjqpf2vc",
+      "shortText": "新版本已发布，为游戏带来了若干更改！以下是亮点：\n\n更新了“您已死亡”体验\n玩家现在可以在单格方块空隙下匍匐前进\n新的“配方已解锁”通知现在会告诉您何时发现了新的合成"
+    },
+    {
+      "title": "1.20.12 Update",
+      "version": "1.20.12",
+      "patchNoteType": "retail",
+      "date": "2023-07-18",
+      "image": {
+        "url": "/v2/images/6q57OmGaVM5lrH7NwhDCuRlauncherr20u1h2.jpeg",
+        "title": "launcher r20u1h2"
+      },
+      "contentPath": "bedrockPatchNotes/75o3xX1oiSZ3tRWXAeOePU.json",
+      "id": "75o3xX1oiSZ3tRWXAeOePU",
+      "shortText": "新版本已发布，以解决 1.20.10 更新引入的一些问题。\n修复：\n\n修复了 1.20.10 发布时的资源包崩溃\n修复了在 iOS 上可能发生的崩溃\n修复了与“放弃的连接”相关的连接稳定性"
+    },
+    {
+      "title": "1.20.10 Update",
+      "version": "1.20.10",
+      "patchNoteType": "retail",
+      "date": "2023-07-11",
+      "image": {
+        "url": "/v2/images/6pVhs25895t1do1EKBHcOQpatchnotesr20u1.jpeg",
+        "title": "patchnotes r20u1"
+      },
+      "contentPath": "bedrockPatchNotes/J4Caugu8hPbMLZrzO9Q9r.json",
+      "id": "J4Caugu8hPbMLZrzO9Q9r",
+      "shortText": "Minecraft 的新更新已可游玩！自发布 Trails &#x26; Tales 更新以来，团队一直在努力对游戏进行更多改进。以下是部分亮点：\n\n玩家现在可以在 1.5 格方块空隙下潜行\n铲子现在"
+    },
+    {
+      "title": "1.20.1 Update",
+      "version": "1.20.1",
+      "patchNoteType": "retail",
+      "date": "2023-06-21",
+      "image": {
+        "url": "/v2/images/4XnuiZspsijGuZuEyZV8Gvlauncherr120h1.jpeg",
+        "title": "launcher r120h1"
+      },
+      "contentPath": "bedrockPatchNotes/7GxQyLOOgd69mLvBEvbbCF.json",
+      "id": "7GxQyLOOgd69mLvBEvbbCF",
+      "shortText": "新版本已发布，以解决 1.20 更新引入的一些问题。\n修复：\n\n提高了在 Nintendo Switch 上解锁成就的可靠性 (MCPE-163948)\n世界更新后，船现在保留了搭载乘客的能力"
+    },
+    {
+      "title": "1.20.0 Update - Trails & Tales",
+      "version": "1.20.0",
+      "patchNoteType": "retail",
+      "date": "2023-06-07",
+      "image": {
+        "url": "/v2/images/32rSrRgUjIfpNDkdyaXsVTlauncherr20.jpeg",
+        "title": "launcher r20"
+      },
+      "contentPath": "bedrockPatchNotes/4tqZfkdpK36qqlA1jGGR4s.json",
+      "id": "4tqZfkdpK36qqlA1jGGR4s",
+      "shortText": "足迹与故事更新让你的故事栩栩如生！与同伴一起骑乘骆驼去寻找考古遗址或樱花树林。孵化嗅探兽蛋让它从灭绝中归来。制作可播放的生物声音，用竹子合成，修剪你的盔甲，"
+    },
+    {
+      "title": "1.19.83 Update",
+      "version": "1.19.83",
+      "patchNoteType": "retail",
+      "date": "2023-05-17",
+      "image": {
+        "url": "/v2/images/5DInzTaBlzNlZtgLVQWvzRlauncherr19u8h3.jpeg",
+        "title": "launcher r19u8h3"
+      },
+      "contentPath": "bedrockPatchNotes/LJnVVyHoWihu9hro0DwbH.json",
+      "id": "LJnVVyHoWihu9hro0DwbH",
+      "shortText": "新的更新已发布，用于解决 1.19.80 更新引入的一些问题。\n\n修复了游戏过程中可能发生的几次崩溃\n物品栏光标不再在拨动左摇杆时跳到随机位置 (MCPE-169176"
+    },
+    {
+      "title": "1.19.81 Update",
+      "version": "1.19.81",
+      "patchNoteType": "retail",
+      "date": "2023-04-27",
+      "image": {
+        "url": "/v2/images/494YPmtVgeW8p2E4Ngbdgwlauncherr19u8h1.jpeg",
+        "title": "launcher r19u8h1"
+      },
+      "contentPath": "bedrockPatchNotes/7mnWcsd4rnwg4V753vXf4g.json",
+      "id": "7mnWcsd4rnwg4V753vXf4g",
+      "shortText": "新的更新已发布，用于解决 1.19.80 更新引入的一些问题。\n修复：\n\n修复了在 Realms 上使用 '/tell' 命令（以及其他一些命令）时可能发生的崩溃\n修复了购买按钮无限加载的问题 "
+    },
+    {
+      "title": "1.19.80 Update",
+      "version": "1.19.80",
+      "patchNoteType": "retail",
+      "date": "2023-04-26",
+      "image": {
+        "url": "/v2/images/18SePubsq78F4k2Bv5QpWmLauncherR19U8.jpeg",
+        "title": "Launcher R19U8"
+      },
+      "contentPath": "bedrockPatchNotes/7sJl6BUDYOzYYgfRO5ndAB.json",
+      "id": "7sJl6BUDYOzYYgfRO5ndAB",
+      "shortText": "新的易用性更新来了，包含各种更改、修复和实验性特性！让我们来看看亮点：\n\n修复了游戏过程中可能发生的多次崩溃\n添加了调整物品附魔光辉强度的设置 "
+    },
+    {
+      "title": "1.19.73 Update",
+      "version": "1.19.73",
+      "patchNoteType": "retail",
+      "date": "2023-03-29",
+      "image": {
+        "url": "/v2/images/62Uzm0d4MZXfhgkWrOlogrlauncherr19u7h3.jpeg",
+        "title": "launcher r19u7h3"
+      },
+      "contentPath": "bedrockPatchNotes/ifbEMz1Vst9WeWwUx9iFD.json",
+      "id": "ifbEMz1Vst9WeWwUx9iFD",
+      "shortText": "已发布一个更新，修复了自 1.19.70 发布以来出现的几个问题。\n修复：\n\n修复了游戏过程中可能发生的几次崩溃\n修复了使用传送命令的命令方块可能发生的崩溃"
+    },
+    {
+      "title": "1.19.71 Update",
+      "version": "1.19.71",
+      "patchNoteType": "retail",
+      "date": "2023-03-17",
+      "image": {
+        "url": "/v2/images/uZmDzxqShDArnzytpq61Olauncherr19u7h1.jpeg",
+        "title": "launcher r19u7h1"
+      },
+      "contentPath": "bedrockPatchNotes/7fNoJ2zOxYH2MxOq6kpw64.json",
+      "id": "7fNoJ2zOxYH2MxOq6kpw64",
+      "shortText": "已发布一个更新，修复了自 1.19.70 发布以来出现的几个问题。\n修复：\n\n修复了启动加载时游戏可能卡在 66% 的问题 (MCPE-168284)\n修复了可能发生的崩溃"
+    },
+    {
+      "title": "1.19.70 Update",
+      "version": "1.19.70",
+      "patchNoteType": "retail",
+      "date": "2023-03-14",
+      "image": {
+        "url": "/v2/images/3LNRJFNiL9HFDCIJyQ3dswlauncherr19u7.jpeg",
+        "title": "launcher r19u7"
+      },
+      "contentPath": "bedrockPatchNotes/1BFc89ztG4j4FXYUKtS2fM.json",
+      "id": "1BFc89ztG4j4FXYUKtS2fM",
+      "shortText": "最新的 Minecraft 更新已到来！此版本为游戏带来了多项易用性改进、马匹繁殖的更改，以及即将到来的 1.20 更新中的考古和嗅探兽的早期实验性特性。让我们"
+    },
+    {
+      "title": "1.19.63 Update",
+      "version": "1.19.63",
+      "patchNoteType": "retail",
+      "date": "2023-02-24",
+      "image": {
+        "url": "/v2/images/5LOT7HOhwVPskzpM8pUV1Elauncherr19u6h3.jpeg",
+        "title": "launcher r19u6h3"
+      },
+      "contentPath": "bedrockPatchNotes/2Ch0WP0XeaEyeDYzkUp41t.json",
+      "id": "2Ch0WP0XeaEyeDYzkUp41t",
+      "shortText": "新的更新可用，解决了自 1.19.60 发布以来出现的一些问题。\n修复：\n\n修复了在 Nintendo Switch 上游玩时导致持续卡顿的问题 (MCPE-166760)\n修复了在 iOS 上游玩时可能发生的崩溃"
+    },
+    {
+      "title": "1.19.62 Update",
+      "version": "1.19.62",
+      "patchNoteType": "retail",
+      "date": "2023-02-16",
+      "image": {
+        "url": "/v2/images/2LuhkQBWvztPJqsLkYOBkQlauncherr19u6h2.jpeg",
+        "title": "launcher r19u6h2"
+      },
+      "contentPath": "bedrockPatchNotes/12D9q6fuZB80UAryVsMVbL.json",
+      "id": "12D9q6fuZB80UAryVsMVbL",
+      "shortText": "新的更新可用，解决了自 1.19.60 发布以来出现的一些问题。\n修复：\n\n修复了游戏过程中可能发生的崩溃\n修复了在 Realms 上从模板创建世界时发生的崩溃\n修复了服务器无法"
+    },
+    {
+      "title": "1.19.60 Update",
+      "version": "1.19.60",
+      "patchNoteType": "retail",
+      "date": "2023-02-07",
+      "image": {
+        "url": "/v2/images/50t7qO51GWujVZU5JlFYhlauncherr19u6.jpeg",
+        "title": "launcher r19u6"
+      },
+      "contentPath": "bedrockPatchNotes/5B3NqUP95vgX3k77eyCgk4.json",
+      "id": "5B3NqUP95vgX3k77eyCgk4",
+      "shortText": "是时候推出 Minecraft Bedrock Edition 的新更新了！这一次，我们专注于易用性改进，对游戏进行了相当多的修复，包括社区报告的 70 多个 bug。还有不少原版一致性调整和"
+    },
+    {
+      "title": "1.19.51 Update",
+      "version": "1.19.51",
+      "patchNoteType": "retail",
+      "date": "2022-12-13",
+      "image": {
+        "url": "/v2/images/2BI3u5BVdPC1WJZ3voskBllauncherr19u5h1.jpeg",
+        "title": "launcher r19u5h1"
+      },
+      "contentPath": "bedrockPatchNotes/kdGB9BP2WPd5nc4ObPNar.json",
+      "id": "kdGB9BP2WPd5nc4ObPNar",
+      "shortText": "修复：\n\n修复了游戏过程中可能发生的崩溃\n活塞不再能重新创建在移动过程中被销毁的移动方块\n马不再能被推过顶部有地毯的栅栏 (MCPE-164717)\n触摸控制选择屏幕将不再出"
+    },
+    {
+      "title": "1.19.50 Update",
+      "version": "1.19.50",
+      "patchNoteType": "retail",
+      "date": "2022-11-29",
+      "image": {
+        "url": "/v2/images/60F7Fe5sC216Aqjnz1XhPilauncherr19u5.jpeg",
+        "title": "launcher r19u5"
+      },
+      "contentPath": "bedrockPatchNotes/b41BV5n8b3pwrmKkj2z85.json",
+      "id": "b41BV5n8b3pwrmKkj2z85",
+      "shortText": "Minecraft 的新更新已发布，将旁观模式完全引入游戏！对于使用触摸控制的玩家，你会发现一些新的控制方案，让你设备上的游戏体验更好。新的默认角色皮肤已"
+    },
+    {
+      "title": "1.19.41 Update",
+      "version": "1.19.41",
+      "patchNoteType": "retail",
+      "date": "2022-11-03",
+      "image": {
+        "url": "/v2/images/52pRZzpmkYSB8q92GOouT3launcherr19u4h1.jpeg",
+        "title": "launcher r19u4h1"
+      },
+      "contentPath": "bedrockPatchNotes/2R5I5avTP8FqljPCf8XJJB.json",
+      "id": "2R5I5avTP8FqljPCf8XJJB",
+      "shortText": "新的更新可用，解决了自 1.19.40 发布以来出现的一些问题。\n修复：\n\n修复了 Xbox Series X|S 主机上由于错误呈现帧导致恢复后卡顿的问题 (MCPE-155879)\n修复了的亮度"
+    },
+    {
+      "title": "1.19.40 Update",
+      "version": "1.19.40",
+      "patchNoteType": "retail",
+      "date": "2022-10-25",
+      "image": {
+        "url": "/v2/images/5LgiBmytUcV6KFHGlOlvSDlauncherr19u4.jpeg",
+        "title": "launcher r19u4"
+      },
+      "contentPath": "bedrockPatchNotes/1B1WSaVHEz1p3fjmRd39nJ.json",
+      "id": "1B1WSaVHEz1p3fjmRd39nJ",
+      "shortText": "Minecraft 的新更新可用，带来各种游戏性改进、原版一致性更改和 bug 修复。\n原版一致性：\n通用\n\n被重命名的武器击杀现在会生成包含物品名称的死亡消息\n被生物"
+    },
+    {
+      "title": "1.19.31 Update",
+      "version": "1.19.31",
+      "patchNoteType": "retail",
+      "date": "2022-10-04",
+      "image": {
+        "url": "/v2/images/59xRxAWg3wHGXb5ofSQqrolauncherr19u3h1.jpeg",
+        "title": "launcher r19u3h1"
+      },
+      "contentPath": "bedrockPatchNotes/6iE1JuQtA7MLzjx0Q6e2jF.json",
+      "id": "6iE1JuQtA7MLzjx0Q6e2jF",
+      "shortText": "新的更新可用，解决了自 1.19.30 发布以来出现的一些问题。\n修复：\n\n修复了游戏过程中可能发生的几次崩溃\n修复了地图上的地形被黑色像素替换的问题 (MCPE-162421)\n修复了一个 bug，解除"
+    },
+    {
+      "title": "1.19.30 Update",
+      "version": "1.19.30",
+      "patchNoteType": "retail",
+      "date": "2022-09-20",
+      "image": {
+        "url": "/v2/images/7cre7urqNWj5HdCojf32YYlauncherr19u3.jpeg",
+        "title": "launcher r19u3"
+      },
+      "contentPath": "bedrockPatchNotes/4N44qXfYBGOAA0DOPsLqcO.json",
+      "id": "4N44qXfYBGOAA0DOPsLqcO",
+      "shortText": "原版一致性：\n游戏性\n\n修改了火球实体的碰撞箱以匹配 Java Edition\n附魔台现在在附魔物品时会发出声音\n紫水晶方块不再在跳离时发出声音\n修复了西瓜的底部纹理"
+    },
+    {
+      "title": "1.19.22 Update",
+      "version": "1.19.22",
+      "patchNoteType": "retail",
+      "date": "2022-09-01",
+      "image": {
+        "url": "/v2/images/67QOwkBYz6liyI1twx6UNBlauncherr19u2h2.jpeg",
+        "title": "launcher r19u2h2"
+      },
+      "contentPath": "bedrockPatchNotes/1mqMzy6o7sxGomWkFC6neD.json",
+      "id": "1mqMzy6o7sxGomWkFC6neD",
+      "shortText": "新的更新已发布，用于解决自 1.19.20 发布以来出现的另外几个问题。\n修复：\n\n修复了在某些设备上加载应用了纹理包的世界时可能发生的崩溃 (MCPE-160800)\n修复了一个 bug，删除"
+    },
+    {
+      "title": "1.19.21 Update",
+      "version": "1.19.21",
+      "patchNoteType": "retail",
+      "date": "2022-08-23",
+      "image": {
+        "url": "/v2/images/2mo5QFv6nW4Xzig4o0DVhGlauncherr19u2h1.jpeg",
+        "title": "launcher r19u2h1"
+      },
+      "contentPath": "bedrockPatchNotes/5XgXFYc0CX85HCv0U3rOqk.json",
+      "id": "5XgXFYc0CX85HCv0U3rOqk",
+      "shortText": "Minecraft 上有新的更新可用，用于解决自 1.19.20 版本发布以来的一些问题。\n修复：\n\n修复了游戏过程中可能发生的几次崩溃\n修复了一个导致村民职业不反映在服装上的问题 (MCPE-1604"
+    },
+    {
+      "title": "1.19.20 Update",
+      "version": "1.19.20",
+      "patchNoteType": "retail",
+      "date": "2022-08-09",
+      "image": {
+        "url": "/v2/images/4yCQ6zzuxGQXTLQ2RJtg3Qlauncherr19u2.jpeg",
+        "title": "launcher r19u2"
+      },
+      "contentPath": "bedrockPatchNotes/3f6dUSUUcNYft4jAxwVTRU.json",
+      "id": "3f6dUSUUcNYft4jAxwVTRU",
+      "shortText": "Minecraft 的新更新现已可用，引入了大量更改和修复！\n新特性：\n\n在 Nintendo Switch 上添加了更新的创建新世界屏幕\n\n更改：\n\n在 iOS 上添加了对鼠标中键点击的支持\n僵尸现在有 10% 的几率"
+    },
+    {
+      "title": "1.19.11 Update",
+      "version": "1.19.11",
+      "patchNoteType": "retail",
+      "date": "2022-07-26",
+      "image": {
+        "url": "/v2/images/2EPrgamC3KU72LlHR10WUllauncherr19u1h1.jpeg",
+        "title": "launcher r19u1h1"
+      },
+      "contentPath": "bedrockPatchNotes/3ut4Wl5MM3ZIp1dbtGT3fX.json",
+      "id": "3ut4Wl5MM3ZIp1dbtGT3fX",
+      "shortText": "Minecraft 上有新的更新可用，用于解决自 1.19.10 版本发布以来的一些问题。\n修复：\n\n修复了一个 bug，如果生物保存的 y 坐标大于或等于 25，可能导致生物无法加载到世界中\n修复了不正确的纹理渲染"
+    },
+    {
+      "title": "1.19.10 Update",
+      "version": "1.19.10",
+      "date": "2022-07-12",
+      "image": {
+        "url": "/v2/images/1VeqDwA8x9KPqrccwdfp2plauncherr19u1.jpeg",
+        "title": "launcher r19u1"
+      },
+      "contentPath": "bedrockPatchNotes/46RUEyiYqfMBKlbDmPgOOw.json",
+      "id": "46RUEyiYqfMBKlbDmPgOOw",
+      "shortText": "Minecraft 的新更新现已可用，包含悦灵繁殖、定位生物群系命令功能和大量新改进。\n新特性：\n悦灵繁殖\n\n当悦灵听到唱片机播放时，它会做跳舞动画\n如果唱片机"
+    },
+    {
+      "title": "1.19.2 Update",
+      "version": "1.19.2",
+      "date": "2022-06-25",
+      "image": {
+        "url": "/v2/images/4nsEShOojVgWwEAHopdX2Slauncherr19h2.jpeg",
+        "title": "launcher r19h2"
+      },
+      "contentPath": "bedrockPatchNotes/2rAVXm8eTuXCdxaSek59W7.json",
+      "id": "2rAVXm8eTuXCdxaSek59W7",
+      "shortText": "Minecraft 的新更新可用，解决了自 1.19.0 发布以来出现的一些问题。\n修复：\n\n修复了游戏过程中可能发生的几次崩溃\n修复了某些平坦世界上的一个 bug，0 以下的地形被意外"
+    },
+    {
+      "title": "1.19.0 Update - The Wild Update",
+      "version": "1.19.0",
+      "date": "2022-06-07",
+      "image": {
+        "url": "/v2/images/Z6FjNeVNbgFS4s0AEjjJVlauncherr19.jpeg",
+        "title": "launcher r19"
+      },
+      "contentPath": "bedrockPatchNotes/18eQHqCAmqYaKjfS7d7Yo2.json",
+      "id": "18eQHqCAmqYaKjfS7d7Yo2",
+      "shortText": "在荒野更新中设定你的冒险目标，漫无目的地游荡，或寻找新事物！\n\n在深暗之域中小心行走，否则有唤醒监守者的风险\n爬到红树顶部，与青蛙一起在沼泽中跳跃\n寻找悦灵来帮助收集物"
+    },
+    {
+      "title": "1.18.31 Update",
+      "version": "1.18.31",
+      "date": "2022-04-27",
+      "image": {
+        "url": "/v2/images/6BDMYl08UDPb1GAdCfZRJulauncher11831.jpeg",
+        "title": "launcher 1-18-31"
+      },
+      "contentPath": "bedrockPatchNotes/1DifPN2h96s98aiQYeJohP.json",
+      "id": "1DifPN2h96s98aiQYeJohP",
+      "shortText": "Minecraft 的新更新可用，解决了自 1.18.30 发布以来出现的一些问题。\n更改：\n\n引入旁观模式实验性开关。玩家现在可以尝试旁观模式的早期开发版本\n目前，我们"
+    },
+    {
+      "title": "1.18.30 Update",
+      "version": "1.18.30",
+      "date": "2022-04-19",
+      "image": {
+        "url": "/v2/images/3GynS4Px6cwSgNkK2WBT7elauncherr18u3.jpeg",
+        "title": "launcher r18u3"
+      },
+      "contentPath": "bedrockPatchNotes/7eBJdHibh46KypJC88NV6R.json",
+      "id": "7eBJdHibh46KypJC88NV6R",
+      "shortText": "Minecraft 的新更新现已可用，包含大量新改进：\n\n更新的创建新世界体验将从今天开始逐步向玩家推出\n现在可以使用 64 位种子创建世界\n许多改进伤害和"
+    },
+    {
+      "title": "1.18.12 Update",
+      "version": "1.18.12",
+      "date": "2022-02-16",
+      "image": {
+        "url": "/v2/images/31V7EYfNwpyucZaZhByHgylauncherr18u1h2.jpeg",
+        "title": "launcher r18u1h2"
+      },
+      "contentPath": "bedrockPatchNotes/3a8t7dmaTL1i0JSfZhOqM0.json",
+      "id": "3a8t7dmaTL1i0JSfZhOqM0",
+      "shortText": "Minecraft 的新更新可用，解决了自 1.18.10 发布以来出现的一些主要问题。\n修复：\n\n改进了玩家移动的平滑度 (MCPE-152176)\n修复了一个 bug，0.0 处的动画时间轴事件有时不会"
+    },
+    {
+      "title": "1.18.10 Update",
+      "version": "1.18.10",
+      "date": "2022-02-08",
+      "image": {
+        "url": "/v2/images/43CM0I6FTGPqlSyybk8gI7launcher1.18.10.jpeg",
+        "title": "launcher 1.18.10"
+      },
+      "contentPath": "bedrockPatchNotes/3a9JfL11LYIxNdEuDzeTyR.json",
+      "id": "3a9JfL11LYIxNdEuDzeTyR",
+      "shortText": "是时候推出新的 Minecraft 游戏更新了！这一次，我们带来了大量的修复和易用性更改。有超过 100 项修复，内容很多。让我们来看看亮点！\n\n添加了地球旗帜图案\n铁傀儡现在显示"
+    },
+    {
+      "title": "1.18.2 Update",
+      "version": "1.18.2",
+      "date": "2021-12-09",
+      "image": {
+        "url": "/v2/images/79prceonQAz2lKpi2RCUsGlauncherr18h2.jpeg",
+        "title": "launcher r18h2"
+      },
+      "contentPath": "bedrockPatchNotes/5wglhaSKyg7LyiyewZdFIW.json",
+      "id": "5wglhaSKyg7LyiyewZdFIW",
+      "shortText": "Minecraft 的新更新现已可用，解决了自洞穴与山崖：第二部分发布以来发现的一些问题。\n修复：\n\n修复了影响 PlayStation 上某些大型世界存档的问题，导致纹理损坏和数据丢失，在"
+    },
+    {
+      "title": "1.18.1 Update",
+      "version": "1.18.1",
+      "date": "2021-12-06",
+      "image": {
+        "url": "/v2/images/301jVfbprIF3veqLskClaapatchnotesr18h1.jpeg",
+        "title": "patchnotes r18h1"
+      },
+      "contentPath": "bedrockPatchNotes/7oaf4Pqx0nqC8rVDJRpqf9.json",
+      "id": "7oaf4Pqx0nqC8rVDJRpqf9",
+      "shortText": "Minecraft 的新更新现已可用，解决了自洞穴与山崖：第二部分发布以来发现的一些问题。\n修复：\n\n修复了在 Realms 上聊天和游玩时可能发生的崩溃\n减少了生成的钻石矿石数量"
+    },
+    {
+      "title": "1.18.0 Update - Caves & Cliffs: Part II",
+      "version": "1.18.0",
+      "date": "2021-11-30",
+      "image": {
+        "url": "/v2/images/5WaGZ3Xmk2MnRexm2ZAccZlauncher1.18.0.jpeg",
+        "title": "launcher 1.18.0"
+      },
+      "contentPath": "bedrockPatchNotes/1aUuVloReoujxiu7W7YsWH.json",
+      "id": "1aUuVloReoujxiu7W7YsWH",
+      "shortText": "这一天到来了，Minecraft 洞穴与山崖：第二部分已正式向世界发布！的确，当我们都能启动我们的设备并看到新更新准备好下载和游玩时，这是非常特别的一天。它代表了多年的辛勤工作"
+    },
+    {
+      "title": "1.17.41 Update",
+      "version": "1.17.41",
+      "date": "2021-10-26",
+      "image": {
+        "url": "/v2/images/3uas3eQLO8kdMAnf4obWFc1.17.41Update.jpeg",
+        "title": "1.17.41 Update"
+      },
+      "contentPath": "bedrockPatchNotes/2lwTDiZAUIJqFgCmNG42Gj.json",
+      "id": "2lwTDiZAUIJqFgCmNG42Gj",
+      "shortText": "修复：\n\n修复了在 PlayStation 上游玩时启动分屏会话可能发生的崩溃\n修复了导致某些世界尺寸大幅增加、造成高内存使用的问题 (MCPE-143156)\n\n"
+    },
+    {
+      "title": "1.17.40 Update",
+      "version": "1.17.40",
+      "date": "2021-10-20",
+      "image": {
+        "url": "/v2/images/2FoSRcCfXQwMINRRKsDTDGBedrock1.17.40.jpeg",
+        "title": "Bedrock 1.17.40"
+      },
+      "contentPath": "bedrockPatchNotes/1SEgEneQj5sW0K7jL4h9Gk.json",
+      "id": "1SEgEneQj5sW0K7jL4h9Gk",
+      "shortText": "1.17.40 更新已到来！此版本为游戏带来了新的 bug 修复，以及一些新的实验性特性。\n实验性特性：\n提醒：我们仍在调整世界生成，特性可能会更改。请记得定期备份"
+    },
+    {
+      "title": "1.17.34 Update",
+      "version": "1.17.34",
+      "date": "2021-10-06",
+      "image": {
+        "url": "/v2/images/1w1JLIEjUvp3bE447vpuV8Bedrock1.17.34.jpeg",
+        "title": "Bedrock 1.17.34"
+      },
+      "contentPath": "bedrockPatchNotes/4NYFodNvky77oEFREdrkUe.json",
+      "id": "4NYFodNvky77oEFREdrkUe",
+      "shortText": "Minecraft 的新更新可用，用于解决兑换代码的问题。\n修复：\n\n修复了兑换零售代码后已拥有的内容未出现在物品栏的问题\n\n"
+    },
+    {
+      "title": "1.17.32 Update",
+      "version": "1.17.32",
+      "date": "2021-10-01",
+      "image": {
+        "url": "/v2/images/4hy44oTZeZlsSqNo9z0gbYBedrock1.17.32.jpeg",
+        "title": "Bedrock 1.17.32"
+      },
+      "contentPath": "bedrockPatchNotes/4TWIzIhnHXjUuyldT4hOLx.json",
+      "id": "4TWIzIhnHXjUuyldT4hOLx",
+      "shortText": "Minecraft 的新热修复现已可用，包含多项修复以改善你的游戏体验。\n修复：\n\n修复了游戏过程中可能发生的几次崩溃\n修复了导航 Marketplace 侧边栏时可能发生的崩溃\n修复了内容问题"
+    },
+    {
+      "title": "1.17.30 Update",
+      "version": "1.17.30",
+      "date": "2021-09-22",
+      "image": {
+        "url": "/v2/images/2xilUFgWQarXcudT8DxW4gBedrock1.17.30image.jpeg",
+        "title": "Bedrock 1.17.30 image"
+      },
+      "contentPath": "bedrockPatchNotes/5TdtSB7TZtw2EiuYWOQHjG.json",
+      "id": "5TdtSB7TZtw2EiuYWOQHjG",
+      "shortText": "Minecraft 1.17.30 更新的时候到了！团队一直在努力修复 bug 和更改洞穴与山崖：第一部分的体验。喜欢冒险的玩家甚至可以查看实验性世界生成，发现最高的山峰"
+    },
+    {
+      "title": "1.17.11 Update",
+      "version": "1.17.11",
+      "date": "2021-08-10",
+      "image": {
+        "url": "/v2/images/6yiaO5w1Imb359Bctg9wOtBedrock1.17.11.jpeg",
+        "title": "Bedrock 1.17.11"
+      },
+      "contentPath": "bedrockPatchNotes/2zOCfCWGLlC87WxEDk2Xfs.json",
+      "id": "2zOCfCWGLlC87WxEDk2Xfs",
+      "shortText": "修复：\n\n玩家不再在某些情况下从末地返回主世界后立即死亡并重生 (MCPE-135226)\n玩家不再在某些情况下在末地死亡后进入末地传送门时死亡并卡在重生屏"
+    },
+    {
+      "title": "1.17.10 Update",
+      "version": "1.17.10",
+      "date": "2021-07-14",
+      "image": {
+        "url": "/v2/images/ZJhBIbkseV1JNmP6dFwHpBedrock1.17.10.jpeg",
+        "title": "Bedrock 1.17.10"
+      },
+      "contentPath": "bedrockPatchNotes/5Lzb0dUMMx67Uoa4KwkeXN.json",
+      "id": "5Lzb0dUMMx67Uoa4KwkeXN",
+      "shortText": "欢迎来到 Minecraft 1.17.10 更新！自洞穴与山崖：第一部分发布以来，团队一直在努力改进游戏性。我们还引入了一些有趣的新内容，以及一些洞穴与山崖：第二部分特性作为"
+    },
+    {
+      "title": "1.17.2 Update",
+      "version": "1.17.2",
+      "date": "2021-06-23",
+      "image": {
+        "url": "/v2/images/4OGJ7wkUuaSkvtpz3B8H1vBedrock1.17.2.jpeg",
+        "title": "Bedrock 1.17.2"
+      },
+      "contentPath": "bedrockPatchNotes/STpDEEWkB37RHRkzAv4d9.json",
+      "id": "STpDEEWkB37RHRkzAv4d9",
+      "shortText": "修复：\n\n安山岩、闪长岩和钻石矿石现在以预期数量生成，与 1.17.0 版本之前一样 (MCPE-127555, MCPE-130185)\n\n"
+    },
+    {
+      "title": "1.17.0 Update - Caves & Cliffs: Part I",
+      "version": "1.17.0",
+      "date": "2021-06-09",
+      "image": {
+        "url": "/v2/images/2admghFnyjRMErVNOZtndeBedrock1.17.0.jpeg",
+        "title": "Bedrock 1.17.0"
+      },
+      "contentPath": "bedrockPatchNotes/2riBWi5UnQguOu08miv0eP.json",
+      "id": "2riBWi5UnQguOu08miv0eP",
+      "shortText": "探索洞穴与山崖更新第一部分中的有趣生物、方块和物品！潜入水下与美西螈并肩作战，与发光鱿鱼一起游泳。当你到达更高的地方时，要小心行走，因为山羊可能会撞击你！想要建造"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<p>我们正在对本快照中的玩家举报工具进行一些重要更新，以更好地保护我们玩家的在线安全。</p>
+<p>玩 Minecraft 应该为每个人带来包容且安全的体验，因此，除了游戏内聊天消息之外，你现在还可以在 Java 版中举报违反我们社区标准的玩家皮肤和用户名。</p>
+<p>与聊天举报一样，没有任何自动化流程。任何被举报的皮肤或用户名都将由一组训练有素的 Minecraft 审核员手动审查，他们会根据提交的证据来判断该皮肤和/或用户名是否违反了我们的社区标准。违反这些标准的皮肤将从 Minecraft 中移除，并且任何玩家都无法再使用。违反这些标准的用户名，玩家必须更改后才能在共享服务器或 Realm 上在线游玩；但单人游戏模式仍然可以访问。要了解更多相关信息和其他安全政策，包括有关封禁程序、申诉流程以及我们如何处理恶意或重复举报的更多细节，请访问我们的专属 FAQ 页面。</p>
+<h1>新特性</h1>
+<h2>玩家皮肤与名称举报</h2>
+<ul>
+<li>现在可以在社交互动界面中举报玩家皮肤和名称</li>
+<li>如果某个皮肤或名称被举报，并被发现违反<a href="https://www.minecraft.net/community-standards" target="_blank" rel="noopener noreferrer">社区标准</a>，我们的人工审核团队可以采取以下几种方式：<ul>
+<li>禁止任何玩家使用该皮肤</li>
+<li>禁止任何玩家使用该名称</li>
+<li>对于屡次违规的玩家，暂停其在线游玩资格</li>
+</ul></li>
+<li>当皮肤被禁用时，拥有该皮肤的玩家：<ul>
+<li>其皮肤将被移除</li>
+<li>在启动游戏时会收到通知</li>
+<li>将自动分配一个默认皮肤</li>
+<li>仍然可以玩多人游戏和单人游戏</li>
+<li>可以随时选择新的自定义皮肤</li>
+</ul></li>
+<li>当玩家的名称被禁用时，该玩家：<ul>
+<li>需要选择一个新名称</li>
+<li>在启动游戏时会收到通知</li>
+<li>在更改名称之前无法在线游玩</li>
+<li>仍然可以玩单人游戏</li>
+</ul></li>
+<li>被禁用的皮肤或名称将来不能被任何玩家使用</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>海绵和湿海绵现在拥有自己专属的自定义声音</li>
+<li>用于判断生物能否攻击玩家或其他生物的计算方式已更改</li>
+<li>新增了“讲述人快捷键”辅助功能选项<ul>
+<li>允许通过<code>Ctrl+B</code>切换讲述人的开启和关闭</li>
+</ul></li>
+<li>新增了“我要举报他们”玩家举报类别</li>
+<li>已撤销一项更改，该更改曾使盔甲纹饰图案会被底层盔甲纹理覆盖</li>
+</ul>
+<h2>生物攻击范围更改</h2>
+<p>用于判断生物能否攻击玩家或其他生物的计算方式已更改。以前，生物的水平宽度用于确定其攻击范围，而高度不产生任何影响。现在，生物可以攻击的区域是其碰撞箱在水平方向上的延伸。</p>
+<p>以下是一些新规则会影响生物攻击范围的情况：</p>
+<ul>
+<li>如果生物完全位于你下方或完全位于你上方，它将无法攻击到你</li>
+<li>当你骑乘中等体型的生物（如马）时，你将受到保护，免受小型生物（如幼年僵尸）的攻击</li>
+<li>当你骑乘高大体型的生物（如骆驼）时，你将受到保护，免受标准体型生物（如僵尸）的攻击</li>
+<li>此外，劫掠兽将不再能隔着几个方块厚的墙壁攻击你</li>
+<li>然而，要逃离末影人，你需要至少站在离地面 3 格高的位置，而不是以前的 1.5 格</li>
+<li>生物将能够用其碰撞箱底部攻击你，前提是你的头部在范围内</li>
+<li>用于困住敌对生物的建筑可能需要调整才能确保安全</li>
+</ul>
+<p>此更改不影响玩家的攻击范围，生物仍然需要看到其目标才能发动攻击。我们相信这个新系统将更加直观，并带来更一致的行为，我们欢迎对这一更改的所有反馈。</p>
+<h1>技术性更改</h1>
+<ul>
+<li>调试屏幕上的图表现在可以通过 F3+1（饼图）、F3+2（FPS 和 TPS）和 F3+3（带宽和 ping）切换，而无需在打开屏幕时按住 Shift、Alt 或 Ctrl</li>
+</ul>
+<h2>数据包更改</h2>
+<ul>
+<li>为盔甲纹饰图案添加了<code>decal</code>字段（默认值：<code>false</code>）<ul>
+<li>如果为<code>true</code>，图案纹理将根据底层盔甲进行遮罩</li>
+</ul></li>
+</ul>
+<h1>修复 23w33a 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-2310" target="_blank" rel="noopener noreferrer">MC-2310</a> 错误的攻击半径计算会隔着方块或在角落处伤害/杀死实体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-112133" target="_blank" rel="noopener noreferrer">MC-112133</a> 食用紫颂果不会重置掉落距离</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118616" target="_blank" rel="noopener noreferrer">MC-118616</a> 岩浆怪和史莱姆的声音不受“敌对生物”音量滑块控制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122645" target="_blank" rel="noopener noreferrer">MC-122645</a> 讲述人快捷键无法自定义或禁用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-125046" target="_blank" rel="noopener noreferrer">MC-125046</a> 使用铁砧重命名的任何物品都会生成“RepairCost”NBT 标签，这可能导致物品无法正常堆叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181109" target="_blank" rel="noopener noreferrer">MC-181109</a> 砂轮会添加 RepairCost: 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182820" target="_blank" rel="noopener noreferrer">MC-182820</a> 中继器和比较器虽然主要由石头制成，但放置/破坏时却使用木头声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197473" target="_blank" rel="noopener noreferrer">MC-197473</a> 重命名后的方块实体无法正常堆叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200484" target="_blank" rel="noopener noreferrer">MC-200484</a> 唱片机虽然主要由木头制成，却使用石头声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214126" target="_blank" rel="noopener noreferrer">MC-214126</a> 蜜蜂不会对孢子花或紫颂花进行授粉</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217628" target="_blank" rel="noopener noreferrer">MC-217628</a> 拉杆使用木头声音而非石头声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217629" target="_blank" rel="noopener noreferrer">MC-217629</a> 绊线钩使用石头声音，而非木头声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257909" target="_blank" rel="noopener noreferrer">MC-257909</a> 僵尸疣猪兽、疣猪兽和熊猫仍然可以攻击骑着骆驼的玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264741" target="_blank" rel="noopener noreferrer">MC-264741</a> 卸下装备的振动仅在创造模式下有效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264743" target="_blank" rel="noopener noreferrer">MC-264743</a> 调试屏幕上显示已启用调试图表的“Debug”行没有提到 ping 和网络流量图表</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264746" target="_blank" rel="noopener noreferrer">MC-264746</a> 盔甲纹饰不再渲染其第二层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264753" target="_blank" rel="noopener noreferrer">MC-264753</a> 锁链头盔上的眼睛纹饰现在完全没有效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264773" target="_blank" rel="noopener noreferrer">MC-264773</a> 网络流量图表中有一个错位的标签，与最小 B/s 速率文本重叠</li>
+</ul>

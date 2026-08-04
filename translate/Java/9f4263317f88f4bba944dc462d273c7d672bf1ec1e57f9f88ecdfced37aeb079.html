@@ -1,0 +1,109 @@
+<p>在这个美好的快照星期二，斯德哥尔摩的夏天终于来了 - 但似乎我们的一些开发者太怀念那些美丽、灰蒙蒙、多雨的天空了，执意要给 Minecraft 中的云朵换一个新外观。真是令人眼前一亮！
+<h1>新内容</h1>
+<ul>
+<li>更新了天空中云朵的图案
+<li>马、驴和骡现在可以通过喂食胡萝卜来治疗、成长并提高驯服度
+</ul>
+<h2>音乐与音效</h2>
+<ul>
+<li>为拴绳断开时添加了一个新音效
+<li>为剪下鞍、马铠和羊驼地毯添加了新的自定义音效
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 78
+<li>资源包版本现在为 62
+</ul>
+<h1>数据包版本 78</h1>
+<h2>对话框</h2>
+<ul>
+<li><code>run_command</code> 点击操作现在会正确关闭对话框和书本界面，即使该命令不需要更高权限
+<li>对话框现在在所有情况下关闭时都能正确返回之前的非对话框界面
+<li>当警告界面可见时，如果客户端收到新对话框，它不会替换当前警告界面；但当用户点击“返回”按钮时，会恢复显示新对话框
+<li>对话框中的元素尺寸现在受到限制：
+<ul>
+<li>按钮 - 在 <code>1</code> 到 <code>1024</code>（含）之间
+<li><code>minecraft:plain_message</code> 对话框主体 - 在 <code>1</code> 到 <code>1024</code>（含）之间
+<li><code>minecraft:item</code> 对话框主体
+<ul>
+<li><code>description</code> 的 <code>width</code> - 在 <code>1</code> 到 <code>1024</code>（含）之间
+<li><code>width</code> - 在 <code>1</code> 到 <code>256</code>（含）之间
+<li><code>height</code> - 在 <code>1</code> 到 <code>256</code>（含）之间
+</ul>
+<li><code>minecraft:text</code> 输入控件 - 在 <code>1</code> 到 <code>1024</code>（含）之间
+<li><code>minecraft:single_option</code> 输入控件 - 在 <code>1</code> 到 <code>1024</code>（含）之间
+<li><code>minecraft:number_range</code> 输入控件 - 在 <code>1</code> 到 <code>1024</code>（含）之间
+</ul>
+</ul>
+<h3><code>minecraft:text</code> 输入控件</h3>
+<ul>
+<li><code>max_length</code> - 输入的最大长度，正整数，默认值为 32
+<li><code>multiline</code> - 如果存在，则允许用户输入多行，可选对象，包含以下字段：
+<ul>
+<li><code>max_lines</code> - 如果存在，则限制最大行数，可选正整数
+<li><code>height</code> - 输入框高度，可选整数，范围在 <code>1</code> 到 <code>512</code> 之间
+<ul>
+<li>如果省略此字段，但存在 <code>max_lines</code>，则高度将设置为适合最大行数
+<li>如果此字段和 <code>max_lines</code> 均省略，则默认高度适合 4 行
+</ul>
+</ul>
+</ul>
+<h3><code>minecraft:number_range</code> 输入控件</h3>
+<ul>
+<li><code>steps</code> 字段已被新字段取代：
+<ul>
+<li><code>step</code> - 步长，可选正浮点数
+<ul>
+<li>如果存在，则只允许 <code>initial + &#60any integer> * step</code> 这样的值
+<li>如果不存在，则允许范围内的任意值
+</ul>
+</ul>
+<li><code>initial</code> - 如果未指定，现在默认使用范围的中点
+</ul>
+<h3><code>minecraft:multi_action_input_form</code> 对话框类型</h3>
+<ul>
+<li>添加了新字段 <code>columns</code> - 描述列数的正整数，默认值：<code>2</code>
+</ul>
+<h1>资源包版本 62</h1>
+<h2>音效</h2>
+<ul>
+<li>为拴绳断开时添加了 <code>entity/leashknot/break</code>
+<li>以下音效已重命名：
+<ul>
+<li><code>entity/leashknot/break1</code> -> <code>entity/leashknot/unleash1</code>
+<li><code>entity/leashknot/break2</code> -> <code>entity/leashknot/unleash2</code>
+<li><code>entity/leashknot/break3</code> -> <code>entity/leashknot/unleash3</code>
+<li><code>entity/leashknot/place1</code> -> <code>entity/leashknot/leash1</code>
+<li><code>entity/leashknot/place2</code> -> <code>entity/leashknot/leash2</code>
+<li><code>entity/leashknot/place3</code> -> <code>entity/leashknot/leash3</code>
+</ul>
+<li>为剪下鞍、马铠和羊驼地毯添加了以下音效：
+<ul>
+<li><code>mob/horse/armor_unequip</code>
+<li><code>mob/horse/saddle_unequip</code>
+<li><code>mob/llama/unequip</code>
+</ul>
+</ul>
+<h1>修复 25w21a 中的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-36696 rel="noopener noreferrer"target=_blank>MC-36696</a> 点击菜单界面上的统计信息按钮会使游戏推进 1 个游戏刻
+<li><a href=https://bugs.mojang.com/browse/MC-112730 rel="noopener noreferrer"target=_blank>MC-112730</a> 信标光束和结构方块每帧渲染两次
+<li><a href=https://bugs.mojang.com/browse/MC-236464 rel="noopener noreferrer"target=_blank>MC-236464</a> 从玩家下方发出的信标光束在重新加载区块后不可见
+<li><a href=https://bugs.mojang.com/browse/MC-258336 rel="noopener noreferrer"target=_blank>MC-258336</a> 在线程化和半阻塞区块构建器上，冰霜行者会在区块边界附近频繁导致视觉损坏
+<li><a href=https://bugs.mojang.com/browse/MC-296337 rel="noopener noreferrer"target=_blank>MC-296337</a> 矿车会导致内存使用量增加和崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-297264 rel="noopener noreferrer"target=_blank>MC-297264</a> 猫的品种不再基于种子生成
+<li><a href=https://bugs.mojang.com/browse/MC-297336 rel="noopener noreferrer"target=_blank>MC-297336</a> 掷向角落时，附魔之瓶产生的经验球极易卡在方块内部
+<li><a href=https://bugs.mojang.com/browse/MC-297615 rel="noopener noreferrer"target=_blank>MC-297615</a> 尝试加入已关闭的 Realm 时出现未翻译的错误信息
+<li><a href=https://bugs.mojang.com/browse/MC-297803 rel="noopener noreferrer"target=_blank>MC-297803</a> 字符串“menu.custom_screen_info.contents”将“personal”误拼为“pesonal”
+<li><a href=https://bugs.mojang.com/browse/MC-297806 rel="noopener noreferrer"target=_blank>MC-297806</a> music.game.swamp.labyrinthine 拼错了歌曲标题
+<li><a href=https://bugs.mojang.com/browse/MC-297808 rel="noopener noreferrer"target=_blank>MC-297808</a> music.game.oxygene 缺少抑音符号
+<li><a href=https://bugs.mojang.com/browse/MC-297812 rel="noopener noreferrer"target=_blank>MC-297812</a> 粗体文本的渲染效果与之前版本不同
+<li><a href=https://bugs.mojang.com/browse/MC-297813 rel="noopener noreferrer"target=_blank>MC-297813</a> 制作人员名单中没有列出 Amos Roddy
+<li><a href=https://bugs.mojang.com/browse/MC-297823 rel="noopener noreferrer"target=_blank>MC-297823</a> music.game.mice_on_venus 使用了错误的大小写
+<li><a href=https://bugs.mojang.com/browse/MC-297845 rel="noopener noreferrer"target=_blank>MC-297845</a> 在单人游戏中点击“统计信息”按钮时，直到恢复游戏后才会播放按钮点击音效
+<li><a href=https://bugs.mojang.com/browse/MC-297846 rel="noopener noreferrer"target=_blank>MC-297846</a> 当音乐音量滑块设为 0 时，暂停菜单中的音乐提示会闪烁
+<li><a href=https://bugs.mojang.com/browse/MC-297875 rel="noopener noreferrer"target=_blank>MC-297875</a> 聊天消息中，带下划线文字的文字阴影与下方的文字重叠
+<li><a href=https://bugs.mojang.com/browse/MC-297888 rel="noopener noreferrer"target=_blank>MC-297888</a> 文本在不同字体间不再以一致的顺序渲染
+<li><a href=https://bugs.mojang.com/browse/MC-297917 rel="noopener noreferrer"target=_blank>MC-297917</a> 显示包含极宽按钮的对话框时，客户端停止响应
+<li><a href=https://bugs.mojang.com/browse/MC-297977 rel="noopener noreferrer"target=_blank>MC-297977</a> 对话框列布局在网格与溢出线性布局之间有多余的间距
+</ul>

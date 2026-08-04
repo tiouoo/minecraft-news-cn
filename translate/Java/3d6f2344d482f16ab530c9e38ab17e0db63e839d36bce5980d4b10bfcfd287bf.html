@@ -1,0 +1,120 @@
+<p>铜器时代即将到来，是时候迎来本次更新的第一个预发布版了。本次发布包含更多铜傀儡的改进、对展示假人的一些更改以及多项漏洞修复。预发布版不遵循常规的周二发布安排，请留意下一个版本。
+<h1>更改</h1>
+<h2>方块、物品和实体的小调整</h2>
+<ul><li>铜傀儡现在作为乘客时，只会尝试打开相邻方块的箱子</ul>
+<h2>Minecraft 服务器管理协议</h2>
+<ul><li>通知现在使用 <code>minecraft:notification/</code> 前缀，而不是 <code>notification:</code></ul>
+<h1>技术性更改</h1>
+<ul><li>数据包版本现在为 87.1</ul>
+<h1>数据包版本 87.1</h1>
+<h2>展示假人</h2>
+<ul><li>展示假人的描述文本现在可以配置
+<li>展示假人现在接受来自生成物品的 <code>minecraft:profile</code> 组件</ul>
+<h3>修改后的数据字段</h3>
+<ul><li><code>profile</code> - 现在与 <code>minecraft:profile</code> 组件具有相同格式（该组件已扩展以允许覆盖），默认为 <code>{}</code>（即 <code>id</code> 和 <code>name</code> 均缺失的静态档案）</ul>
+<h3>新增数据字段</h3>
+<ul><li><code>pose</code> - 展示假人的姿势
+<ul><li>有效值：<code>standing</code>、<code>crouching</code>、<code>swimming</code>、<code>fall_flying</code>、<code>sleeping</code></ul>
+<li><code>immovable</code> - 可选布尔值，指定展示假人无法被移动（默认为 <code>false</code>）
+<li><code>description</code> - 可选文本组件，显示在玩家 <code>below_score</code> 分数会显示的位置
+<ul><li>如果省略，则显示默认的“NPC”（<code>entity.minecraft.mannequin.label</code>）文本</ul>
+<li><code>hide_description</code> - 可选布尔值，指定完全不显示任何描述
+<ul><li>隐藏描述的展示假人会显示为玩家没有 <code>below_score</code> 显示的状态</ul>
+</ul>
+<h2>命令</h2>
+<ul>
+<li><code>spawnpoint</code> 命令现在可选地接受 <code>pitch</code> 参数
+<li><code>setworldspawn</code> 命令不再局限于主世界
+<ul><li>这意味着玩家在没有床或重生锚时，可以在例如下界重生
+<li>它现在也接受可选的 <code>pitch</code> 参数</ul>
+<li>服务器命令现在默认从重生维度运行，而不是始终在主世界
+<li><code>fetchprofile</code> 命令现在还会打印可点击文本，以召唤具有已解析档案的展示假人
+</ul>
+<h2>数据组件</h2>
+<h3>修改的 <code>minecraft:profile</code></h3>
+<ul>
+<li>档案现在还可以包含额外字段，用于替换各种渲染所使用的值
+<li>如果省略任何字段，则使用已解析档案中的值，即使该档案解析为默认皮肤
+<li>新字段
+<ul>
+<li><code>texture</code> - 可选命名空间 ID，用于渲染的皮肤纹理
+<ul>
+<li>皮肤相对于 <code>textures</code> 文件夹指定，并带有 <code>.png</code> 后缀
+<li>例如 <code>entity/player/wide/steve</code> 将使用默认的宽版 Steve 皮肤
+</ul>
+<li><code>cape</code> - 可选命名空间 ID，用于渲染的披风纹理
+<ul>
+<li>指定时，使用与 <code>texture</code> 字段相同的格式
+</ul>
+<li><code>elytra</code> - 可选命名空间 ID，用于渲染的鞘翅纹理
+<ul>
+<li>指定时，使用与 <code>texture</code> 字段相同的格式
+<li>如果此值既未作为覆盖提供，也不在玩家档案中，使用此档案的展示假人将会使用披风纹理；如果披风纹理也不存在，则穿戴鞘翅时使用默认鞘翅纹理
+</ul>
+<li><code>model</code> - 可选模型类型，<code>wide</code> 或 <code>slim</code> 之一
+</ul>
+</ul>
+<h2>实体数据</h2>
+<h3>修改的 <code>minecraft:player</code></h3>
+<ul>
+<li>对 <code>respawn</code> 对象的更改
+<ul>
+<li><code>angle</code> 已重命名为 <code>yaw</code>，现在是必填字段
+<li>新增 <code>pitch</code> 作为必填字段
+<li><code>dimension</code> 现在是必填字段
+</ul>
+</ul>
+<h2>战利品函数</h2>
+<h3><code>minecraft:copy_name</code></h3>
+<ul>
+<li><code>source</code> 字段现在接受新的上下文值：
+<ul>
+<li><code>direct_attacker</code>
+<li><code>target_entity</code>
+<li><code>interacting_entity</code>
+</ul>
+</ul>
+<h3><code>minecraft:copy_components</code></h3>
+<ul>
+<li><code>source</code> 字段现在接受新的上下文值：
+<ul>
+<li><code>this</code>
+<li><code>attacker</code>
+<li><code>direct_attacker</code>
+<li><code>attacking_player</code>
+<li><code>target_entity</code>
+<li><code>interacting_entity</code>
+<li><code>tool</code>
+</ul>
+</ul>
+<h1>1.21.9 预发布版 1 中修复的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-160528 rel="noopener noreferrer"target=_blank>MC-160528</a> 末地传送门不会抵消摔落伤害
+<li><a href=https://bugs.mojang.com/browse/MC-243759 rel="noopener noreferrer"target=_blank>MC-243759</a> 如果爆炸与实体眼睛的距离为 0，爆炸不会伤害该实体
+<li><a href=https://bugs.mojang.com/browse/MC-300257 rel="noopener noreferrer"target=_blank>MC-300257</a> 闪电不会重置铜傀儡的氧化
+<li><a href=https://bugs.mojang.com/browse/MC-300294 rel="noopener noreferrer"target=_blank>MC-300294</a> 铜傀儡寻路到箱子的方式不正确
+<li><a href=https://bugs.mojang.com/browse/MC-300687 rel="noopener noreferrer"target=_blank>MC-300687</a> 创造模式物品栏中的铜链和铜栏杆排序不正确
+<li><a href=https://bugs.mojang.com/browse/MC-300881 rel="noopener noreferrer"target=_blank>MC-300881</a> 皮肤举报界面中的皮肤预览不再可交互
+<li><a href=https://bugs.mojang.com/browse/MC-301409 rel="noopener noreferrer"target=_blank>MC-301409</a> 火焰弹和风弹被爆炸偏转时，其加速度强度减半
+<li><a href=https://bugs.mojang.com/browse/MC-301414 rel="noopener noreferrer"target=_blank>MC-301414</a> 刮去双层箱子上的氧化时，未直接交互的那一半箱子不会产生粒子
+<li><a href=https://bugs.mojang.com/browse/MC-301424 rel="noopener noreferrer"target=_blank>MC-301424</a> 资源包中 entity_data 物品组件检测损坏
+<li><a href=https://bugs.mojang.com/browse/MC-301541 rel="noopener noreferrer"target=_blank>MC-301541</a> 铜傀儡在矿车中时不再整理物品
+<li><a href=https://bugs.mojang.com/browse/MC-301569 rel="noopener noreferrer"target=_blank>MC-301569</a> 铜箱子及其所有变体的声音过于安静，且与之前相比音质较差
+<li><a href=https://bugs.mojang.com/browse/MC-301573 rel="noopener noreferrer"target=_blank>MC-301573</a> 跨维度的相对传送行为不一致
+<li><a href=https://bugs.mojang.com/browse/MC-301798 rel="noopener noreferrer"target=_blank>MC-301798</a> 当箱子上方有特定的透明/非完整方块时，铜傀儡不会打开这些箱子
+<li><a href=https://bugs.mojang.com/browse/MC-301814 rel="noopener noreferrer"target=_blank>MC-301814</a> CustomNameVisible 对展示假人不生效（针对名称，而非 NPC 注释）
+<li><a href=https://bugs.mojang.com/browse/MC-301815 rel="noopener noreferrer"target=_blank>MC-301815</a> 使用刷怪蛋时，展示假人的数据有时会丢失
+<li><a href=https://bugs.mojang.com/browse/MC-301819 rel="noopener noreferrer"target=_blank>MC-301819</a> 展示假人在队伍中且被骑乘时，其名称标签可见
+<li><a href=https://bugs.mojang.com/browse/MC-301862 rel="noopener noreferrer"target=_blank>MC-301862</a> 在聊天中点击命令建议时，偶尔会选中新单词的一半
+<li><a href=https://bugs.mojang.com/browse/MC-301883 rel="noopener noreferrer"target=_blank>MC-301883</a> 实体以某一轴上 Motion 值大于 10 穿过传送门时，其 Motion 标签会被重置
+<li><a href=https://bugs.mojang.com/browse/MC-301893 rel="noopener noreferrer"target=_blank>MC-301893</a> 当铜傀儡被玩家拴绳后氧化成雕像时，不会掉落拴绳
+<li><a href=https://bugs.mojang.com/browse/MC-301951 rel="noopener noreferrer"target=_blank>MC-301951</a> 服务器管理协议文档中 operator_user_permission_level 的描述具有误导性
+<li><a href=https://bugs.mojang.com/browse/MC-301979 rel="noopener noreferrer"target=_blank>MC-301979</a> 铜傀儡不再正确检查箱子
+<li><a href=https://bugs.mojang.com/browse/MC-301984 rel="noopener noreferrer"target=_blank>MC-301984</a> 将玩家传送到其自身位置现在会抖动/卡住
+<li><a href=https://bugs.mojang.com/browse/MC-301991 rel="noopener noreferrer"target=_blank>MC-301991</a> deprecated.json 中有一些重命名的键指向文本值，而不是新键
+<li><a href=https://bugs.mojang.com/browse/MC-302032 rel="noopener noreferrer"target=_blank>MC-302032</a> 除非提供 id 或 name，否则静态档案不再解析纹理数据
+<li><a href=https://bugs.mojang.com/browse/MC-302089 rel="noopener noreferrer"target=_blank>MC-302089</a> 当飞行生物在调试模式下开始寻路时，游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-302092 rel="noopener noreferrer"target=_blank>MC-302092</a> 当将楼梯添加到 #bars 标签后，在楼梯旁边放置铁栏杆时崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-302094 rel="noopener noreferrer"target=_blank>MC-302094</a> 将方块添加到 #copper_chests 标签后，再将其放在真实铜箱子旁边时崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-302095 rel="noopener noreferrer"target=_blank>MC-302095</a> 将方块添加到 #lightning_rods 标签并对其召唤闪电时崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-302096 rel="noopener noreferrer"target=_blank>MC-302096</a> 将方块添加到 #wooden_shelves 标签，将其放在木质架旁边，然后为该架子提供红石信号时崩溃</ul>

@@ -1,0 +1,12 @@
+<p>我们以另一个预发布版开启本周，包括一些音乐和快乐恶魂的漏洞修复。《追猎天空》更新即将到来，预发布计划可能每周包含不止一个预发布版。</p>
+<h1>更改</h1>
+<h2>音乐与声音</h2>
+<ul><li>以下声音分类已重命名：<ul><li>友好生物 -> 友好生物<li>敌对生物 -> 敌对生物</ul></ul>
+<h1>技术性更改</h1>
+<h2>对话框</h2>
+<h3>对话框描述格式</h3>
+<h4>输入控件类型</h4>
+<h5><code>minecraft:text</code></h5>
+<ul><li><p>输出值：<ul><li>作为模板替换时：内容中的特殊字符会被转义以符合 SNBT 字面量（注意：<code>'</code> 和 <code>"</code> 都会被转义）</ul><li><p>对于 <code>multiline</code> 字段：<ul><li>如果省略了 <code>height</code> 字段，但存在 <code>max_lines</code>，则为了适应最大行数而选择的高度不能超过 <code>512</code></ul></ul>
+<h1>修复 1.21.6 预发布版 2 中的漏洞</h1>
+<ul><li><a href=https://bugs.mojang.com/browse/MC-217887 rel="noopener noreferrer"target=_blank>MC-217887</a> 在 1.9-pre1 或更早版本中编写的未签名书籍无法正确升级<li><a href=https://bugs.mojang.com/browse/MC-297575 rel="noopener noreferrer"target=_blank>MC-297575</a> 拥有 NBT 标签 NoAI 设为 true 的快乐恶魂无法被玩家控制<li><a href=https://bugs.mojang.com/browse/MC-297591 rel="noopener noreferrer"target=_blank>MC-297591</a> 末影珍珠可能会意外停下<li><a href=https://bugs.mojang.com/browse/MC-298104 rel="noopener noreferrer"target=_blank>MC-298104</a> 多行文本输入控件的 max_lines 字段不受限制，会导致游戏卡顿<li><a href=https://bugs.mojang.com/browse/MC-298144 rel="noopener noreferrer"target=_blank>MC-298144</a> minecraft:text 输入类型的初始值仅限 32 个字符，无论 max_length 字段如何<li><a href=https://bugs.mojang.com/browse/MC-298155 rel="noopener noreferrer"target=_blank>MC-298155</a> 使用多行文本输入的对话框 command_template 会导致玩家因聊天中出现非法字符（即 \n）而被踢出服务器<li><a href=https://bugs.mojang.com/browse/MC-298209 rel="noopener noreferrer"target=_blank>MC-298209</a> 玩家接触快乐恶魂身体时无法移动<li><a href=https://bugs.mojang.com/browse/MC-298301 rel="noopener noreferrer"target=_blank>MC-298301</a> 在对话框中，光标闪烁会将多行文本输入控件中光标右侧的所有字符向右移动<li><a href=https://bugs.mojang.com/browse/MC-298307 rel="noopener noreferrer"target=_blank>MC-298307</a> 在创造模式下进出苍白花园会导致当前音乐曲目持续无声<li><a href=https://bugs.mojang.com/browse/MC-298358 rel="noopener noreferrer"target=_blank>MC-298358</a> 骑着生物进入细雪时，玩家不再受到应有的影响<li><a href=https://bugs.mojang.com/browse/MC-298361 rel="noopener noreferrer"target=_blank>MC-298361</a> 玩家骑乘快乐恶魂时，退出下界传送门后会来回传送<li><a href=https://bugs.mojang.com/browse/MC-298368 rel="noopener noreferrer"target=_blank>MC-298368</a> "music_notes.png.mcmeta" 包含一个不存在的额外索引，导致出现警告<li><a href=https://bugs.mojang.com/browse/MC-298394 rel="noopener noreferrer"target=_blank>MC-298394</a> 在细雪中的冻结效果非常不一致且抖动<li><a href=https://bugs.mojang.com/browse/MC-298422 rel="noopener noreferrer"target=_blank>MC-298422</a> 在某些情况下，恶魂和快乐恶魂不会受到有害方块造成的伤害</ul>

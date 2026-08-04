@@ -1,0 +1,54 @@
+<p>堡垒遗迹，或者猪灵们会称之为“甜蜜的家”的地方，终于来了！本快照引入了猪灵的家园。如果你搜遍世界，或许还能找到一些旧传送门的废墟。</p>
+<h1>20w16a 的新特性</h1>
+<ul>
+<li>新增堡垒遗迹！</li>
+<li>新增废弃传送门</li>
+<li>新增锁链方块</li>
+<li>新增一张名为“Pigstep”的音乐唱片，由 Lena Raine 创作，只能在堡垒遗迹中找到</li>
+</ul>
+<h2>堡垒遗迹</h2>
+<p>什么东西由黑石制成，并且到处都是猪灵和疣猪兽？堡垒遗迹！</p>
+<ul>
+<li>新增 4 种不同的堡垒遗迹类型：桥、疣猪兽棚、居住单元和藏宝室</li>
+<li>你可以在下界的所有生物群系中找到这些大型结构，除了玄武岩三角洲那些布满灰烬的危险高塔</li>
+<li>探索、搜刮并征服一座堡垒遗迹，将其称为你的家……但要小心，猪灵可不欢迎入侵者偷走他们的东西</li>
+</ul>
+<h2>废弃传送门</h2>
+<p>远古下界传送门的破碎残骸。想知道是谁建造了它们？</p>
+<ul>
+<li>它们可以在主世界或下界的任何生物群系中找到</li>
+<li>有些隐藏在地下、海底或沙中</li>
+</ul>
+<h1>20w16a 的更改</h1>
+<ul>
+<li>猪灵旗帜图案现在可以在堡垒遗迹中找到</li>
+<li>增加了熔岩湖的数量，使三角洲更“三角洲”化</li>
+</ul>
+<h1>20w16a 的技术性更改</h1>
+<ul>
+<li>在 GUI 中新增了一个按钮，可根据给定的生成深度，从拼图方块开始生成拼图结构。</li>
+<li>将结构方块每个轴的最大尺寸从 32 扩展到 48</li>
+<li>新增一个 JMX MBean 来监控专用服务器的刻时长</li>
+</ul>
+<h2>JMX 监控</h2>
+<p>现在可以通过 JMX 监控服务器刻时长。
+这样做的原因是 JMX 是一种众所周知且受支持的监控技术，具有现成的集成和工具。</p>
+<p>这使服务器管理员可以使用普通的 JMX 客户端和仪表盘来挂接警报和绘图工具。</p>
+<h3>启用 JMX 监控</h3>
+<ul>
+<li>在 server.properties 文件中新增了一个标志 <code>enable-jmx-monitoring</code>，如果设置为 <code>true</code>，将暴露一个对象名称为 <code>net.minecraft.server:type=Server</code> 的 MBean，以及两个属性 <code>averageTickTime</code> 和 <code>tickTimes</code>，以毫秒为单位暴露刻时长。</li>
+<li>要在 Java 运行时上启用 JMX，你还需要在启动时添加几个 JVM 标志，如 <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html" target="_blank" rel="noopener noreferrer">此处</a> 所述。</li>
+</ul>
+<h1>20w16a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-37557" target="_blank" rel="noopener noreferrer">MC-37557</a> 加载世界时，有时会播放矿车声音/显示字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-91163" target="_blank" rel="noopener noreferrer">MC-91163</a> 当玩家距离太远而无法听到声音时，某些字幕仍会显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154617" target="_blank" rel="noopener noreferrer">MC-154617</a> 服务器因 rcon 而在停止时挂起</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171020" target="_blank" rel="noopener noreferrer">MC-171020</a> 新的下界生物群系在 buffet 世界中无法正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175919" target="_blank" rel="noopener noreferrer">MC-175919</a> 村民有时会停止耕种</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177136" target="_blank" rel="noopener noreferrer">MC-177136</a> 所有指南针和磁石指南针都指向同一个目标，无论它是什么类型的指南针</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177238" target="_blank" rel="noopener noreferrer">MC-177238</a> 自 20w14a 起，saves/ 中的 Windows 符号链接不再被跟随</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177253" target="_blank" rel="noopener noreferrer">MC-177253</a> 如果 set_attributes 函数包含未定义的属性，运行该函数会抛出 java.lang.NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177316" target="_blank" rel="noopener noreferrer">MC-177316</a> 物品展示框中的磁石指南针在转动后不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178368" target="_blank" rel="noopener noreferrer">MC-178368</a> 当放入物品展示框中的磁石指南针旋转时，指南针不会工作</li>
+</ul>

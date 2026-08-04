@@ -1,0 +1,182 @@
+<p>The first 1.17 pre-release is here!</p>
+<p>From now on, you should mostly see bugs being fixed. In addition to that, pre-releases doesn't follow the regular snapshot cadence of releasing on Wednesdays, so keep an eye out!</p>
+<p>Addtionally, based on feedback from the community, we have decided to include candles in part 1 of Caves &#x26; Cliffs again. Candles will become available in Bedrock shortly after the release of part 1.</p>
+<h1>New Features in 1.17 Pre-release 1</h1>
+<ul>
+<li>Added new advancements</li>
+</ul>
+<h2>Advancements</h2>
+<ul>
+<li>Added "Whatever Floats Your Goat!" for floating in a boat with a goat</li>
+<li>Added "Wax on" for applying wax to a Copper block!</li>
+<li>Added "Wax off" for scraping wax off a Copper block!</li>
+<li>Added "The Cutest Predator" for catching an axolotl in a bucket!</li>
+<li>Added "The Healing Power of Friendship!" for teaming up with an axolotl and winning a fight</li>
+<li>Added "Glow and Behold" for making a sign glow</li>
+<li>Added "Light as a Rabbit" for walking on powder snow with leather boots</li>
+<li>Added "Surge Protector!" for having a lightning strike a lightning rod near a villager without setting the area on fire</li>
+<li>Added "Is it a Bird?" for looking at a parrot through a spyglass</li>
+<li>Added "Is it a Balloon?" for looking at a ghast through a spyglass</li>
+<li>Added "Is it a Plane?" for looking at a dragon through a spyglass</li>
+</ul>
+<h1>Changes in 1.17 Pre-release 1</h1>
+<ul>
+<li>Candles have been added back to the creative inventory</li>
+<li>Recipes for crafting and dying candles are once again available</li>
+<li>Candles now have a different texture when lit</li>
+<li>Glowing text on signs now has an outer glow, making text in dark colors more visible in the dark</li>
+<li>Holding down the space bar now increases the scroll speed in the credits</li>
+</ul>
+<h1>The Caves &#x26; Cliffs Preview</h1>
+<p>Download the <a href="https://launcher.mojang.com/v1/objects/233aa01c6db99ffcf95594e384e72671ae279ced/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">updated datapack</a>.</p>
+<h1>Technical changes in 1.17 Pre-release 1</h1>
+<ul>
+<li>Added <code>started_riding</code>, <code>lightning_strike</code> and <code>using_item</code> advancement triggers</li>
+<li>Added <code>source</code> condition to <code>effects_changed</code> trigger</li>
+<li>Added <code>lightning_bolt</code> sub-predicate</li>
+<li>Added <code>passenger</code>, <code>stepping_on</code> and <code>lightning_bolt</code> properties to entity predicate</li>
+<li>Added <code>looking_at</code> condition to player sub-predicate</li>
+<li>Expanded <code>item</code> field on item predicate to <code>items</code></li>
+<li>Expanded <code>block</code> field on block predicate to <code>blocks</code></li>
+<li>Added F3+L shortcut to generate and persist performance metrics from in-game<ul>
+<li>F3+L on single-player worlds will also include reports for the integrated server</li>
+</ul></li>
+<li>Removed debug report command (use perf start/stop for server performance measurement)</li>
+<li>perf start/stop command on dedicated servers will now generate and persist server performance metrics</li>
+</ul>
+<h2>Advancements</h2>
+<h3>New triggers</h3>
+<h4><code>started_riding</code></h4>
+<ul>
+<li>Triggered when player starts riding a vehicle or entity starts riding vehicle currently ridden by player</li>
+<li>Conditions:<ul>
+<li><code>player</code> - either a player that started riding or one of boat passengers</li>
+</ul></li>
+</ul>
+<h4><code>lightning_strike</code></h4>
+<ul>
+<li>Triggered when lighting finishes (i.e. entity disappears)</li>
+<li>Triggers for any player on server</li>
+<li>Conditions<ul>
+<li><code>player</code> - player for which this trigger runs</li>
+<li><code>lightning</code> - predicate for lightning entity</li>
+<li><code>bystander</code> - predicate for one of the entities in certain area around strike not hurt by it</li>
+</ul></li>
+</ul>
+<h4><code>using_item</code></h4>
+<ul>
+<li>Triggered for every tick of using items (like crossbows, spyglass, fishing rods, etc)</li>
+<li>Conditions<ul>
+<li><code>player</code> - players that uses item</li>
+<li><code>item</code> - item being used</li>
+</ul></li>
+</ul>
+<h3>Changed triggers</h3>
+<h4><code>effects_changed</code></h4>
+<ul>
+<li>Added <code>source</code> triggers that matches entity that triggered the change</li>
+<li>Might be empty when:<ul>
+<li>there is no entity (for example, effect gained from beacon)</li>
+<li>the effect is self-applied</li>
+<li>effect is removed</li>
+</ul></li>
+</ul>
+<h3>Changed predicates</h3>
+<h4>Item predicate</h4>
+<ul>
+<li><code>item</code> field expended to <code>items</code>, now accepting array of item types</li>
+</ul>
+<h4>Block predicate</h4>
+<ul>
+<li><code>block</code> field expended to <code>blocks</code>, now accepting array of block types</li>
+</ul>
+<h4>Entity predicate</h4>
+<ul>
+<li><code>passenger</code> - new sub-predicate for passenger directly riding this vehicle (if present, must match one or more)</li>
+<li><code>stepping_on</code> - location predicate for block entity is currently standing on</li>
+<li><code>lightning_bolt</code> - sub-predicate valid only for lightning bolt entity</li>
+</ul>
+<h4>Player predicate</h4>
+<ul>
+<li><code>looking_at</code> - entity currently viewed by player<ul>
+<li>uses same line-of-sight rules as attacking mobs</li>
+<li>actual detection radius might be changed in future</li>
+</ul></li>
+</ul>
+<h3>Lightning bolt</h3>
+<ul>
+<li><code>blocks_set_on_fire</code> - range check for of blocks set on fire by this entity</li>
+<li><code>entity_struck</code> - predicate for entities struck by this lightning (if present, must match one or more)</li>
+</ul>
+<h2>Performance metrics reporting</h2>
+<p>These will be saved to a zip file in <code>debug/profiling/&#x3C;yyyy-MM-dd_HH.mm.ss-[levelname]-[version]>.zip</code> and could be used for performance regression analysis if included in bug reports.</p>
+<p>The exact metrics, output format, and names are susceptible to change between versions. Our plan is to continue iterating on which metrics to capture.</p>
+<h3>Client F3+L shortcut</h3>
+<p>Pressing F3+L while in the game will start a recording for 10 seconds capturing metrics such as tick durations, used heap sizes and other more detailed stats.</p>
+<p>Pressing F3+L before the 10-second limit will end the recording early.</p>
+<p>This shortcut is always available to clients, even on multi-player servers where it will record client-side performance.</p>
+<h3>Dedicated Server perf start/stop command</h3>
+<p><code>perf start</code> will start a recording for 10 seconds capturing metrics such as tick durations, used heap sizes and other more detailed stats.</p>
+<p><code>perf stop</code> before the 10-second limit will end the recording early.</p>
+<h1>Bugs fixed in 1.17 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-19690" target="_blank" rel="noopener noreferrer">MC-19690</a> Reducing maxHealth / max_health can cause fake death</li>
+<li><a href="https://bugs.mojang.com/browse/MC-65587" target="_blank" rel="noopener noreferrer">MC-65587</a> Lag spike while loading player head textures/player skins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-104897" target="_blank" rel="noopener noreferrer">MC-104897</a> End crystals placed on exit portals generated before 1.9 do not respawn the ender dragon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117708" target="_blank" rel="noopener noreferrer">MC-117708</a> Credits background jitters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118757" target="_blank" rel="noopener noreferrer">MC-118757</a> Increasing Game State Rain Level values make the game increasingly laggier and distorts UI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148809" target="_blank" rel="noopener noreferrer">MC-148809</a> Structure block data length limited to 12</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163945" target="_blank" rel="noopener noreferrer">MC-163945</a> Intersecting structures can create corrupted block entities (spawner / chest)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189336" target="_blank" rel="noopener noreferrer">MC-189336</a> Shifting around servers in the server list crashes the game (ArrayIndexOutOfBoundsException)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192889" target="_blank" rel="noopener noreferrer">MC-192889</a> When placing certain heads or putting them in entities' head slot the game stutters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197942" target="_blank" rel="noopener noreferrer">MC-197942</a> Leaves change to stone near Lava Pool (Recurrence of MC-48340)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198957" target="_blank" rel="noopener noreferrer">MC-198957</a> End Portal Frames change to Stone near Lava Pool</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202249" target="_blank" rel="noopener noreferrer">MC-202249</a> Angering passive mobs in new nether chunks very far away from previously generated chunks, then entering a nether portal causes server to completely freeze</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203131" target="_blank" rel="noopener noreferrer">MC-203131</a> Setting the weight in Template Pool to high values will lag world and can cause out of memory error.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203558" target="_blank" rel="noopener noreferrer">MC-203558</a> Lighting a candle is sometimes delayed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203661" target="_blank" rel="noopener noreferrer">MC-203661</a> Flowing liquids look very dark through tinted glass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203704" target="_blank" rel="noopener noreferrer">MC-203704</a> Candles don't show flame animations when particles are set to "Minimal"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204649" target="_blank" rel="noopener noreferrer">MC-204649</a> Amethyst blocks don't make chime sounds when walked on by certain mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205035" target="_blank" rel="noopener noreferrer">MC-205035</a> Powder Snow Bucket is not grouped with Snowball or buckets in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208604" target="_blank" rel="noopener noreferrer">MC-208604</a> While the mainhand is empty and there's a loaded crossbow in the offhand, the mainhand will appear invisible</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209819" target="_blank" rel="noopener noreferrer">MC-209819</a> Server crash when pathfinding to player that is teleporting away</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211601" target="_blank" rel="noopener noreferrer">MC-211601</a> Entities are loaded after scheduled ticks are processed causing detector rails, pressure plates, etc. to turn off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212142" target="_blank" rel="noopener noreferrer">MC-212142</a> Applying glow ink on signs doesn't render the text bright without also having applied a custom color</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212146" target="_blank" rel="noopener noreferrer">MC-212146</a> Glow lichen can generate floating inside underground structures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212207" target="_blank" rel="noopener noreferrer">MC-212207</a> Geodes generating inside icebergs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213062" target="_blank" rel="noopener noreferrer">MC-213062</a> A ruined portal generated in an end portal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213799" target="_blank" rel="noopener noreferrer">MC-213799</a> Dripleaf isn't properly held in the player's hand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214057" target="_blank" rel="noopener noreferrer">MC-214057</a> Entities no longer showing flame animation when in water/lava at the same time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214636" target="_blank" rel="noopener noreferrer">MC-214636</a> Small dripleaf leafs can overlap each other and cause z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214684" target="_blank" rel="noopener noreferrer">MC-214684</a> Azaleas cannot be placed in flower pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216276" target="_blank" rel="noopener noreferrer">MC-216276</a> Lava pools break bedrock with custom world generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218112" target="_blank" rel="noopener noreferrer">MC-218112</a> SynchedEntityData is using locks incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218831" target="_blank" rel="noopener noreferrer">MC-218831</a> Lots of missing shaders in the game assets</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218972" target="_blank" rel="noopener noreferrer">MC-218972</a> The glowing effect outline omits parts of entities if the entity is invisible</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219762" target="_blank" rel="noopener noreferrer">MC-219762</a> More performant noise blending algorithm in BlendedNoise</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221554" target="_blank" rel="noopener noreferrer">MC-221554</a> When searching, the goat spawn egg appears in the middle of the different boat types</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221820" target="_blank" rel="noopener noreferrer">MC-221820</a> Inconsistency: Enderman is able to pick up flowering azalea, while unable to hold normal azalea bush.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223021" target="_blank" rel="noopener noreferrer">MC-223021</a> glShaderSource fails on some AMD drivers resulting in a crash on 1.17</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223843" target="_blank" rel="noopener noreferrer">MC-223843</a> Mycelium inside enderman_holdable.json twice</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224159" target="_blank" rel="noopener noreferrer">MC-224159</a> Absorbtion hearts don't have the wither heart effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224445" target="_blank" rel="noopener noreferrer">MC-224445</a> Reloading resource packs with fabulous graphics causes screen to become black, after a few times causes crash for AMD drivers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224778" target="_blank" rel="noopener noreferrer">MC-224778</a> Game crashes when there is a block with no facing block state in #wall_corals and a warm ocean tries to generate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224861" target="_blank" rel="noopener noreferrer">MC-224861</a> Falling blocks disappear for a moment when landing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224862" target="_blank" rel="noopener noreferrer">MC-224862</a> Azalea and Flowering Azaleas can take bone meal despite being on clay</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225010" target="_blank" rel="noopener noreferrer">MC-225010</a> Closing the inventory in creative mode while having an item on the cursor turns it into a ghost item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225129" target="_blank" rel="noopener noreferrer">MC-225129</a> Players do not despawn until they respawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225193" target="_blank" rel="noopener noreferrer">MC-225193</a> Goats will attempt to ram entities that are outside of the world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225315" target="_blank" rel="noopener noreferrer">MC-225315</a> Selected text on signs blinks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225404" target="_blank" rel="noopener noreferrer">MC-225404</a> The axe is still an appropriate tool for moss carpets</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225722" target="_blank" rel="noopener noreferrer">MC-225722</a> java.lang.IllegalArgumentException: bound must be positive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225773" target="_blank" rel="noopener noreferrer">MC-225773</a> Axolotls can make ambient noises when they're playing dead</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225843" target="_blank" rel="noopener noreferrer">MC-225843</a> Snow layers can still generate floating over lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225850" target="_blank" rel="noopener noreferrer">MC-225850</a> Grass, tall grass, flower, double flower, fern, large fern and tree can generate on sand or gravel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225853" target="_blank" rel="noopener noreferrer">MC-225853</a> Minecraft sometimes crashes when trying to start 21w20a for the first time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225895" target="_blank" rel="noopener noreferrer">MC-225895</a> Floating grass can still generate above lava lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225916" target="_blank" rel="noopener noreferrer">MC-225916</a> Non-waxed oxidized copper blocks don't require at least stone tier to be mined</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225919" target="_blank" rel="noopener noreferrer">MC-225919</a> Coal Ore from fossils can generate through bedrock</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225929" target="_blank" rel="noopener noreferrer">MC-225929</a> Item statistic sorting not functioning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225978" target="_blank" rel="noopener noreferrer">MC-225978</a> Non-waxed weathered copper blocks appear twice in needs_stone_tool.json</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226192" target="_blank" rel="noopener noreferrer">MC-226192</a> Crash upon attempting to create a new scoreboard objective: java.lang.NullPointerException: Cannot invoke "String.toLowerCase(java.util.Locale)" because "â˜ƒ" is null</li>
+</ul>

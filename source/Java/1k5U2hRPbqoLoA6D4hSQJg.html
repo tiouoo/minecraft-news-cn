@@ -1,0 +1,16 @@
+<p>This pre-release fixes an exploit found regarding contextual chat evidence when creating a Player Report.</p>
+<h1>Technical changes in 1.19.1 Pre-Release 4</h1>
+<ul>
+<li>Custom servers can hide player chat messages from display via a new network packet<ul>
+<li>This does not delete player chat messages from chat logs</li>
+</ul></li>
+<li>Insecure chat messages logged in the server are prefixed with a <code>[Not Secure]</code> tag</li>
+<li>The order of chat messages are now cryptographically verified<ul>
+<li>This will be used for validating the context of chat messages for Player Reports</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 1.19.1 Pre-Release 4</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253743" target="_blank" rel="noopener noreferrer">MC-253743</a> The server console doesn't state if chat messages aren't secure or have been modified</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253813" target="_blank" rel="noopener noreferrer">MC-253813</a> Chat commands with entity selectors often reported as "This message is not secure"</li>
+</ul>

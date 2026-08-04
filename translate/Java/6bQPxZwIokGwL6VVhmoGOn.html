@@ -1,0 +1,37 @@
+<p>我们现在正在为 Minecraft 1.19.1 发布预发布版 5。此预发布版包含针对玩家举报上下文已知漏洞的剩余修复。它还修复了其他一些崩溃和错误。</p>
+<h1>1.19.1 预发布版 5 中的更改</h1>
+<h2>聊天</h2>
+<ul>
+<li>在编写聊天消息时，所显示聊天消息的签名状态将使用彩色指示器显示<ul>
+<li>指示器将出现在聊天输入字段的左侧，或聊天预览的左侧（如果正在使用聊天预览）</li>
+<li>当显示的消息已签名时，指示器为绿色</li>
+<li>当聊天预览已启用且预览等待签名时，指示器为橙色</li>
+</ul></li>
+<li>当预览等待签名时，聊天预览的背景也会显示略微淡化</li>
+</ul>
+<h2>聊天预览</h2>
+<ul>
+<li>新增“发送时”（On Send）聊天预览选项，仅在尝试发送消息时更新聊天预览<ul>
+<li>要确认发送消息，需要再次按 Enter/Return 键</li>
+<li>之前的“ON”设置已更名为“修改时”（On Modified）</li>
+</ul></li>
+<li>“修改时”（On Modified）模式在服务器未修改消息时不再显示预览</li>
+<li>聊天预览现已在单人游戏中启用，并在使用具有选择器替换的命令（如 <code>/say</code>）时显示</li>
+<li>被预览的悬停事件和点击事件现在会以实心背景高亮显示</li>
+</ul>
+<h1>1.19.1 预发布版 5 中的技术更改</h1>
+<ul>
+<li><code>team_msg_command</code> 聊天类型已被拆分为 <code>team_msg_command_incoming</code> 和 <code>team_msg_command_outgoing</code></li>
+</ul>
+<h1>1.19.1 预发布版 5 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-130243" target="_blank" rel="noopener noreferrer">MC-130243</a> /debug stop 消息使用操作系统区域设置特定的数字格式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149047" target="_blank" rel="noopener noreferrer">MC-149047</a> 滚动灵敏度滑块标签使用操作系统区域设置进行数字格式化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252546" target="_blank" rel="noopener noreferrer">MC-252546</a> 与 1.18.2 相比，音频质量较差</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252702" target="_blank" rel="noopener noreferrer">MC-252702</a> 当系统处于阿拉伯语、波斯语或相邻格式时，尝试启动 1.19 会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253223" target="_blank" rel="noopener noreferrer">MC-253223</a> “gui.abuseReport.reason.terrorism_or_violent_extremism.description”字符串中错误使用了一个介词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253888" target="_blank" rel="noopener noreferrer">MC-253888</a> 服务器在聊天举报中篡改过的消息会被签名并可被举报</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253950" target="_blank" rel="noopener noreferrer">MC-253950</a> 在输入聊天消息后过快发送，无法对最终正确的聊天预览进行签名</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253997" target="_blank" rel="noopener noreferrer">MC-253997</a> “即将发生的伤害 - 威胁伤害他人”举报类别的当前描述似乎与其标题不符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254089" target="_blank" rel="noopener noreferrer">MC-254089</a> 聊天预览组件允许服务器“隐藏”内容</li>
+</ul>

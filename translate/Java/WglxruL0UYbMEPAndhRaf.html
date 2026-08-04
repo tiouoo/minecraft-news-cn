@@ -1,0 +1,88 @@
+<p>Minecraft: Java Edition 现在提供了另一个快照。此快照带来了一些游戏玩法更改和一些技术性调整，例如 place 命令和加密签名的聊天命令。</p>
+<p>玩得开心！</p>
+<h1>22w18a 中的更改</h1>
+<ul>
+<li>悦灵现在即使看不见它们喜欢的玩家也会跟随</li>
+<li>悦灵只有在玩家距离超过 64 格时才会丢失目标</li>
+<li>音爆粒子的纹理已更新</li>
+<li>振动监听器（如幽匿感测体、幽匿尖啸体和循声守卫）现在会监听最近的振动，而不是同一游戏刻中的第一个振动</li>
+</ul>
+<h1>22w18a 中的技术更改</h1>
+<ul>
+<li>织布机中可用的旗帜图案现在可以通过标签控制（<code>banner_pattern/no_item_required</code> 用于无图案物品，<code>banner_pattern/pattern_item/*</code> 用于特定的旗帜图案物品）</li>
+<li>服务器现在可以为客户端定义不同的聊天样式格式</li>
+<li>移除了 <code>placefeature</code> 命令</li>
+<li>添加了 <code>place</code> 命令</li>
+<li>捆绑的 Java 运行时已升级到 17.0.3</li>
+<li>移除了战利品表函数 <code>set_goat_horn_sound</code></li>
+<li>添加了战利品表函数 <code>set_instrument</code></li>
+<li>来自 <code>/say</code>、<code>/msg</code>、<code>/teammsg</code> 和 <code>/me</code> 命令的聊天现在也都经过加密签名</li>
+</ul>
+<h2>聊天类型</h2>
+<ul>
+<li>服务器现在可以通过 <code>chat_type</code> 注册表控制不同的聊天样式格式<ul>
+<li>这些会在客户端加入服务器时同步到客户端</li>
+<li>可以定义翻译键或翻译格式，例如 <code>chat.type.text</code> 或 <code>%s says: "%s"</code><ul>
+<li>聊天同样可以选择性地使用自定义翻译键或格式进行朗读</li>
+</ul></li>
+<li>整个消息可以应用格式，例如斜体或特定颜色（但目前不支持点击或悬停事件）</li>
+</ul></li>
+</ul>
+<h2>place 命令</h2>
+<p>新命令替代了 <code>placefeature</code>，可以在指定位置放置地物、拼图方块和结构。语法：</p>
+<pre><code>place feature &#x3C;feature> [pos]
+place jigsaw &#x3C;pool> &#x3C;start> &#x3C;depth> [pos]
+place structure &#x3C;structure> [pos]
+</code></pre>
+<p>参数：</p>
+<ul>
+<li><code>feature</code>：要尝试放置的地物的命名空间 ID</li>
+<li><code>structure</code>：要尝试生成的结构的命名空间 ID</li>
+<li><code>pool</code>：开始生成的模板池的命名空间 ID</li>
+<li><code>start</code>：用作起始锚点的拼图方块的命名空间 ID 名称</li>
+<li><code>depth</code>：放置期间要遍历的拼图连接的最大数量</li>
+<li><code>pos</code>：用作生成原点的位置（如果省略，则使用 <code>~ ~ ~</code>）</li>
+</ul>
+<h2>战利品表</h2>
+<h3>新函数</h3>
+<h4><code>set_instrument</code></h4>
+<p>将乐器物品所需的物品标签设置为从标签中随机选择的值。</p>
+<p>参数：</p>
+<ul>
+<li><code>options</code> —— 一个标签引用，指定要随机选择的乐器选项</li>
+</ul>
+<h1>22w18a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-207935" target="_blank" rel="noopener noreferrer">MC-207935</a> —— 同时产生的振动不会按预期触发</li>
+<li><a href="https://bugs.mojang.com/browse/MC-232009" target="_blank" rel="noopener noreferrer">MC-232009</a> —— Minecraft 无法正确解析 SRV 记录</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249021" target="_blank" rel="noopener noreferrer">MC-249021</a> —— Realms 菜单中的邀请和新闻按钮显示不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249129" target="_blank" rel="noopener noreferrer">MC-249129</a> —— 青蛙的行走动画不会随其移动速度而变化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249175" target="_blank" rel="noopener noreferrer">MC-249175</a> —— 对单个方块空间中的多个幽匿脉络使用精准采集锄时，只会掉落一个幽匿脉络</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249454" target="_blank" rel="noopener noreferrer">MC-249454</a> —— 如果不掉落经验的幼年生物在幽匿催发体周围死亡，幽匿催发体会传播幽匿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249732" target="_blank" rel="noopener noreferrer">MC-249732</a> —— 悦灵在世界重启后会丢失捡起的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249740" target="_blank" rel="noopener noreferrer">MC-249740</a> —— 拴在栅栏上的悦灵不会移动，也拒绝捡起物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249784" target="_blank" rel="noopener noreferrer">MC-249784</a> —— 远古城市可能被含水层淹没</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249857" target="_blank" rel="noopener noreferrer">MC-249857</a> —— 一致性问题：悦灵在 Java 版中不会紧密跟随玩家/音符盒</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250139" target="_blank" rel="noopener noreferrer">MC-250139</a> —— 雪层不能放置在泥巴顶部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250143" target="_blank" rel="noopener noreferrer">MC-250143</a> —— “Sneak 100”进度的描述不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250144" target="_blank" rel="noopener noreferrer">MC-250144</a> —— “Sneak 100”进度将幽匿尖啸体视为能“听见”玩家的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250145" target="_blank" rel="noopener noreferrer">MC-250145</a> —— 游戏暂停时，循声守卫/青蛙会继续播放动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250163" target="_blank" rel="noopener noreferrer">MC-250163</a> —— 循声守卫死后仍能检测事物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250183" target="_blank" rel="noopener noreferrer">MC-250183</a> —— 循声守卫被点燃的苦力怕激怒后会继续咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250198" target="_blank" rel="noopener noreferrer">MC-250198</a> —— 当被激怒的循声守卫的目标遭受非自然死亡时，循声守卫会继续咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250207" target="_blank" rel="noopener noreferrer">MC-250207</a> —— 循声守卫会继续对已断线的玩家咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250216" target="_blank" rel="noopener noreferrer">MC-250216</a> —— 循声守卫会继续对未加载区块中的目标咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250218" target="_blank" rel="noopener noreferrer">MC-250218</a> —— 循声守卫会继续对已消失的目标咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250244" target="_blank" rel="noopener noreferrer">MC-250244</a> —— 当目标进入下界传送门、末地传送门或末地折跃门时，循声守卫会继续咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250245" target="_blank" rel="noopener noreferrer">MC-250245</a> —— 即使玩家已进入另一个维度，循声守卫的音爆攻击仍能击中玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250292" target="_blank" rel="noopener noreferrer">MC-250292</a> —— 循声守卫有时会在被敌人/攻击/声音淹没时僵住</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250506" target="_blank" rel="noopener noreferrer">MC-250506</a> —— 在 y = 0 以下生长时，红树树叶可能出现在更高的高度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250557" target="_blank" rel="noopener noreferrer">MC-250557</a> —— 如果悦灵的物品栏中装有相同类型但 NBT 不同的物品堆叠，悦灵会永远卡在试图捡起物品堆叠的状态（反之亦然）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250864" target="_blank" rel="noopener noreferrer">MC-250864</a> —— 当数据包中存在 .DS_Store 文件时，游戏无法加载世界生成设置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250926" target="_blank" rel="noopener noreferrer">MC-250926</a> —— 创造模式的销毁物品栏位中有一个山羊角 / 创造模式物品栏的所有标签页中都包含山羊角</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250937" target="_blank" rel="noopener noreferrer">MC-250937</a> —— 单人游戏中用户皮肤无法加载</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250939" target="_blank" rel="noopener noreferrer">MC-250939</a> —— 使用带有无效声音变体的山羊角时游戏崩溃 / java.lang.ArrayIndexOutOfBoundsException: Index &lt;index&gt; out of bounds for length 8<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-250954" target="_blank" rel="noopener noreferrer">MC-250954</a> —— 在单人游戏中，玩家被分配了一个新的 UUID</li>
+</ul></li>
+<li><a href="https://bugs.mojang.com/browse/MC-250974" target="_blank" rel="noopener noreferrer">MC-250974</a> —— 打开/创建世界时出现 MinecraftClientHttpException</li>
+</ul>

@@ -1,0 +1,144 @@
+<p>在这个快照中，我们为你带来了一个新的进度、遥测更新，以及一个持续了 11 年之久的 Bug 修复！</p>
+<p>祝你步步高升！</p>
+<h1>新特性</h1>
+<h2>新进度</h2>
+<h3>冒险进度</h3>
+<ul>
+<li><code>The Power of Books</code>：使用比较器读取雕纹书架的信号强度</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>为方便使用，锻造台不再需要先将锻造模板放入模板槽才能在其他槽位中放置物品堆叠</li>
+<li>唱片机已添加到红石方块创造标签页中</li>
+</ul>
+<h2>脚步声音</h2>
+<ul>
+<li>在方块上行走时现在总会播放脚步声<ul>
+<li>此前如果你沿着方块边缘行走，而旁边是空气或流体，则不会播放脚步声</li>
+</ul></li>
+<li>在海底行走时，会以较低的音量和音调为你所行走的方块产生脚步声</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 15，涵盖了告示牌数据格式、物品展示方向以及进度的更改</li>
+<li>进度触发器更改：<ul>
+<li>新增 <code>recipe_crafted</code></li>
+<li>更改了 <code>placed_block</code>、<code>item_used_on_block</code> 和 <code>allay_drop_item_on_block</code> 触发器的格式</li>
+</ul></li>
+<li>战利品表条件/谓词更改：<ul>
+<li>将 <code>alternative</code> 重命名为 <code>any_of</code></li>
+<li>新增 <code>all_of</code></li>
+</ul></li>
+<li>遥测更新<ul>
+<li>每个事件都新增了一个属性：<code>launcher_name</code></li>
+<li><code>world_loaded</code> 事件现在有一个新属性：<code>realms_map_content</code></li>
+<li>新增两个可选择加入的遥测事件：<code>game_load_times</code> 和 <code>advancement_made</code></li>
+</ul></li>
+</ul>
+<h2>进度</h2>
+<h3>更改的触发器</h3>
+<ul>
+<li><code>placed_block</code>、<code>item_used_on_block</code> 和 <code>allay_drop_item_on_block</code> 中的所有字段都已合并为单个 <code>location</code> 字段</li>
+<li>新的 <code>location</code> 类似于 <code>player</code> 字段——它是一个战利品条件/谓词的列表</li>
+<li>此列表中的所有条件都必须满足，触发器才会运行</li>
+<li>条件在一个名为 <code>advancement_location</code> 的新战利品上下文中进行评估。它可以访问：<ul>
+<li>玩家作为 <code>this</code> 实体</li>
+<li>放置方块的位置</li>
+<li>放置/交互方块的状态</li>
+<li>手持/使用的物品作为“工具”</li>
+</ul></li>
+<li>迁移指南：<ul>
+<li>旧 <code>location</code> 字段的内容应迁移到 <code>location_check</code> 条件</li>
+<li><code>item</code> 字段的内容应迁移到 <code>match_tool</code> 条件</li>
+<li><code>block</code> + <code>state</code> 字段的内容应迁移到 <code>block_state_property</code> 条件</li>
+</ul></li>
+</ul>
+<p><strong>示例</strong>（来自 <code>make_a_sign_glow</code> 进度）：</p>
+<p>之前：</p>
+<pre><code>{
+    "conditions": {
+        "item": {
+            "items": [
+                "minecraft:glow_ink_sac"
+            ]
+        },
+        "location": {
+            "block": {
+                "tag": "minecraft:all_signs"
+            }
+        }
+    },
+    "trigger": "minecraft:item_used_on_block"
+}
+</code></pre>
+<p>之后：</p>
+<pre><code>{
+    "conditions": {
+        "location": [
+            {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                    "items": [
+                        "minecraft:glow_ink_sac"
+                    ]
+                }
+            },
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "tag": "minecraft:all_signs"
+                    }
+                }
+            }
+        ]
+    },
+    "trigger": "minecraft:item_used_on_block"
+}
+</code></pre>
+<h2>战利品表</h2>
+<h3><code>any_of</code>/<code>all_of</code></h3>
+<ul>
+<li>战利品条件 <code>alternative</code> 已重命名为 <code>any_of</code></li>
+<li>新增战利品条件 <code>all_of</code>，仅当所有子条件都通过时才通过。其语法与 <code>any_of</code> 相同</li>
+</ul>
+<h2>遥测</h2>
+<p>此版本包含一个新的全局属性，随每个事件发送；必需的 WorldLoaded 事件中的一个新属性，以及两个新的可选择加入的事件。更新的必需事件将帮助我们更有效地排查启动器错误，并了解 Java Realms 内容的互动方式。更新的可选事件将有助于为游戏设计决策提供信息，并使我们能够跟踪和改进游戏加载速度。</p>
+<h3>所有事件</h3>
+<ul>
+<li>新增属性：<code>launcher_name</code><ul>
+<li>此属性基于 <code>minecraft.launcher.brand</code> 系统属性设置。这将帮助我们更有效地排查与游戏启动相关的错误，因为我们将能够看到问题源自 Minecraft 启动器还是第三方程序。</li>
+</ul></li>
+</ul>
+<h3>更新的必需事件</h3>
+<ul>
+<li><code>world_loaded</code><ul>
+<li>新增属性：<code>realms_map_content</code><ul>
+<li>当加载到 Realms Map Content 世界（小游戏）时，<code>world_loaded</code> 事件将收到该地图的名称。这是为了帮助我们了解 Java Realms 用户如何与 Java Realms 冒险或小地图内容互动。</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>新的可选事件</h3>
+<ul>
+<li><code>advancement_made</code><ul>
+<li>当玩家完成一个进度时触发此事件，使我们能够看到进度 ID 和完成进度的时间。这帮助我们工作室了解玩家的进度和极限，从而为游戏设计提供信息。</li>
+</ul></li>
+<li><code>game_load_times</code><ul>
+<li>在游戏客户端加载时触发的事件，包含客户端加载所花费的时间。这样我们就可以致力于改进和减少加载游戏客户端所需的时间。</li>
+</ul></li>
+</ul>
+<h1>快照 23w18a 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1133" target="_blank" rel="noopener noreferrer">MC-1133</a> 玩家是否受到某种效果的影响是基于玩家中心下方方块的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-48923" target="_blank" rel="noopener noreferrer">MC-48923</a> 史莱姆/岩浆怪不受跳跃提升药水效果的影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257269" target="_blank" rel="noopener noreferrer">MC-257269</a> 幽匿感测体检测到玩家在地毯和羊毛之间行走</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261417" target="_blank" rel="noopener noreferrer">MC-261417</a> 嗅探兽躺下时其碰撞箱未进行调整</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261952" target="_blank" rel="noopener noreferrer">MC-261952</a> 时钟在附魔且处于非自然维度时快速闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262003" target="_blank" rel="noopener noreferrer">MC-262003</a> 收纳袋工具提示未显示其界面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262067" target="_blank" rel="noopener noreferrer">MC-262067</a> 嗅探兽产生的挖掘粒子类型取决于其所在方块的类型，而不是其挖掘的方块的类型</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262069" target="_blank" rel="noopener noreferrer">MC-262069</a> 嗅探兽在目标方块被破坏后仍继续挖掘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262104" target="_blank" rel="noopener noreferrer">MC-262104</a> FPS 图表的渲染性能似乎比以前更差</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262123" target="_blank" rel="noopener noreferrer">MC-262123</a> 23w17a 中引入的新进度的标题大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262133" target="_blank" rel="noopener noreferrer">MC-262133</a> 在暴露虚空的已清除区域上方移动时出现严重的卡顿峰值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262218" target="_blank" rel="noopener noreferrer">MC-262218</a> 23w17a 中方块光照更新未能正确跨越区块边界</li>
+</ul>

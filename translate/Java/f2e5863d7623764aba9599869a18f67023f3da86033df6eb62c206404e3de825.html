@@ -1,0 +1,537 @@
+<p>哦，我们多么渴望发布室啊！我们带着本季度的第一个快照版本回来了，为你带来今年第三次游戏内容更新中的一大波功能。测试铜傀儡和铜箱子，打造一个更整洁、更生动的基地，看着你的帮手氧化并变成雕像，还能摆出可爱的、能发出红石信号的姿势。使用全新的置物架打造功能性装饰，并试试铜制武器、工具和盔甲。更棒的是，此版本还包括铜马铠和会氧化的避雷针，此外还有大量漏洞修复和技术更改。</p>
+<p>挖矿愉快！</p>
+<h1>新特性</h1>
+<ul>
+<li>新增铜箱子
+<li>新增铜傀儡
+<li>新增铜傀儡雕像方块
+<li>新增铜制装备
+<li>新增置物架
+</ul>
+<h2>铜箱子</h2>
+<ul>
+<li>铜箱子是一种新型箱子，拥有涂蜡和氧化变种
+<li>铜箱子会随时间氧化，并可以像其他铜块一样涂蜡
+<li>铜箱子可以使用箱子和铜锭合成
+</ul>
+<h2>铜傀儡</h2>
+<ul>
+<li>铜傀儡是一种新生物，可以通过在铜块顶部放置南瓜灯或雕刻南瓜来生成
+<li>铜傀儡会随时间氧化，并可以像铜块一样涂蜡
+<li>如果铜傀儡完全氧化且未涂蜡，就会变成铜傀儡雕像方块
+<ul>
+<li>变成铜傀儡雕像时，铜傀儡会掉落其持有的任何物品
+<li>如果使用命名牌命名，变成铜傀儡雕像的铜傀儡会保留其名称
+</ul>
+<li>铜傀儡可以帮助将物品分类放入箱子
+<li>空手与铜傀儡交互会使其掉落携带的物品
+</ul>
+<h3>铜傀儡物品分类</h3>
+<ul>
+<li>如果铜傀儡没有持有物品，它会寻找附近的铜箱子，尝试拾取物品
+<ul>
+<li>铜傀儡会在任何氧化和涂蜡的铜箱子变种中拾取物品
+<li>它一次最多可以从一组中拾取16个物品
+<li>铜箱子中的任何物品都可以被拾取
+</ul>
+<li>如果铜傀儡持有物品，它会寻找附近的箱子，尝试将物品放入
+<ul>
+<li>铜傀儡会在箱子和陷阱箱中寻找可以放置物品的位置
+<li>如果箱子是空的，或者箱子中装有与它手中物品同类型的物品，它就可以将物品放入箱子
+</ul>
+<li>铜傀儡会依次访问最多10个箱子或铜箱子，尝试拾取或放置物品
+<li>如果没有找到匹配的箱子，铜傀儡会闲置7秒后再次尝试
+<li>铜傀儡周围寻找箱子的区域为水平32格、垂直8格
+</ul>
+<h2>铜傀儡雕像方块</h2>
+<ul>
+<li>铜傀儡雕像方块是一种新型装饰性方块，拥有涂蜡和氧化变种
+<li>铜傀儡雕像方块会随时间氧化，并可以像铜块一样涂蜡
+<li>可以通过与其交互来改变方块的姿势
+<li>如果使用斧头与没有氧化的铜傀儡雕像方块交互，方块会变成铜傀儡
+<li>每种姿势都会发出红石比较器信号
+</ul>
+<h2>避雷针</h2>
+<ul>
+<li>避雷针现在会像其他铜块一样氧化，铜傀儡身上的避雷针也是如此
+</ul>
+<h2>铜制装备</h2>
+<ul>
+<li>新增铜粒
+<li>新增铜制盔甲
+<ul>
+<li>新增铜头盔、铜胸甲、铜护腿和铜靴子
+<li>铜制盔甲的耐久度高于皮革和金质盔甲
+<li>铜制盔甲的附魔能力略低于铁质盔甲
+</ul>
+<li>新增铜制工具和武器
+<ul>
+<li>新增铜斧、铜锄、铜镐、铜锹和铜剑
+<li>铜制工具和武器与石制工具和武器造成相同伤害，但耐久度更高
+<li>铜制工具比石制工具效率更高，也更耐用
+<li>铜制工具的附魔能力高于钻石，但略低于铁
+</ul>
+<li>铜制装备可以使用铜锭合成
+<li>铜制装备可以使用铜锭修复
+<li>铜制装备在熔炼时会变成铜粒
+<li>新增铜马铠
+<ul>
+<li>与铁马铠具有相同的战利品表和生成概率
+<li>盔甲韧性：4
+</ul>
+</ul>
+<h2>置物架</h2>
+<ul>
+<li>置物架是一种新型装饰性方块，有以下变种：
+<ul>
+<li>橡木
+<li>云杉木
+<li>白桦木
+<li>丛林木
+<li>金合欢木
+<li>深色橡木
+<li>红树木
+<li>樱花木
+<li>苍白橡木
+<li>竹
+<li>绯红木
+<li>诡异木
+</ul>
+<li>置物架可以使用六个同种的去皮原木、去皮菌柄或去皮竹块合成，放在合成格的第一行和第三行
+<ul>
+<li>此配方产出6个置物架
+</ul>
+<li>置物架最多可以存储3组物品：
+<ul>
+<li>与置物架正面的3个槽位中任意一个交互，会将玩家主手物品与该槽位中的内容交换
+<li>置物架会像物品展示框一样，将其包含的所有物品显示在正面
+</ul>
+<li>当置物架被红石充能时，其正面纹理会改变以表示已充能；当彼此相邻放置时，最多3个被充能的置物架会连接起来
+<ul>
+<li>与单个被充能的置物架交互，会将其所有内容与玩家快捷栏中最右侧的3个物品交换
+<li>与两个连接的置物架交互，会将其内容与玩家快捷栏中最右侧的6个物品交换
+<li>与三个连接的置物架交互，会将其内容与玩家快捷栏中的所有物品交换
+<li>玩家与哪个连接的置物架交互并不重要
+</ul>
+</ul>
+<h2>辅助功能</h2>
+<ul>
+<li>“攻击/破坏”和“使用物品/放置方块”键位现在可切换，意味着它们可以在控制界面中设置为“按住”或“切换”
+<li>在鼠标设置界面中新增“反转鼠标X轴”选项，该选项会反转鼠标X轴
+<li>在控制界面中新增“疾跑窗口”选项，它表示双击前进键激活疾跑的时间窗口（以游戏刻为单位）
+</ul>
+<h1>更改</h1>
+<ul>
+<li>当难度设置为和平时，怪物刷怪蛋现在会有工具提示警告
+<ul>
+<li>尝试使用刷怪蛋时，生物不再会生成1刻
+</ul>
+<li>调试屏幕经过重新设计，信息更简洁，且更可配置
+<li>世界加载和“出生点区块”的更改
+<li>任何有玩家活动、强制加载区块、活动传送门或飞行中的末影珍珠的维度将被视为“活跃”，并将继续处理其中的区块和实体
+<ul>
+<li>以前，这仅适用于玩家在该维度中或区块被强制加载的情况
+</ul>
+</ul>
+<h2>世界加载和出生点区块</h2>
+<ul>
+<li>固定“出生点区块”的概念已被移除
+<li>游戏将确保在玩家加入或服务器启动之前完全加载以下区块，方式与以前的出生点区块相同：
+<ul>
+<li>通过<code>forceload</code>命令加载的区块
+<li>因传送门活动而活跃的区块
+<li>在单人游戏中投掷的末影珍珠（仅单人游戏）
+<li>玩家周围的一小片区块（仅单人游戏）
+<li>分配全局世界出生点所需的区块（仅世界创建时）
+</ul>
+<li>世界加载界面现在会显示玩家即将被放入的区块，而不是世界出生点周围加载的区块
+<li>加载界面现在还包含进度条
+<ul>
+<li>该进度条涵盖了上述所有类型的区块加载
+</ul>
+</ul>
+<blockquote><p><strong>开发者注：</strong> <em>出生点区块会给所有玩家带来内存和性能开销，而它们最初保持出生点区域准备好供玩家快速加入的技术目的已不再适用。</em></p></blockquote>
+<blockquote><p><em>然而，我们也想承认，多年来出生点区块为各种巧妙的装置和农场提供了可能，因此仅仅移除它们而不在游戏中加入其他机制来支持这些设计，从来都不是一个可选方案。</em></p></blockquote>
+<blockquote><p><em>我们相信，出生点区块所占据的特殊地位现在已被其他区块加载方式所填补，例如使用传送门或末影珍珠，尤其是在此快照中对游戏在世界开始运转前如何加载这些区块所做的更改。</em></p></blockquote>
+<h2>声音</h2>
+<ul>
+<li>快乐恶魂的声音现在可以在64格外听到
+<li>箱子的声音现在以较低音量播放
+<li>播放声音的音量现在会遵从声音源的音量值
+<li>“语音/说话”声音源已改称为“旁白/语音”
+</ul>
+<h2>UI</h2>
+<h3>调试屏幕</h3>
+<ul>
+<li>与之前一样，按下F3即可打开调试屏幕
+<li>现在可以在游戏中的任何位置打开它，而不仅仅是在游戏世界中
+<li>它现在默认显示较少的信息
+<li>新增了调试选项屏幕，可通过按F3 + F5打开
+<ul>
+<li>它可以用来配置应显示哪些调试信息
+<li>对于每个项目，你可以选择将其关闭、在调试屏幕（F3）打开时可见，或者即使调试屏幕关闭也始终可见
+<li>一些以前可用的调试功能，例如区块边界渲染或实体碰撞箱渲染，现在可以通过此调试选项屏幕切换
+<li>一些以前社区无法使用的调试功能，例如八叉树可视化，现在可以通过调试选项屏幕使用
+<li>调试选项屏幕的状态会在游戏启动之间保存
+<li>调试选项屏幕具有以下预设配置：
+<ul>
+<li><code>Default</code>将所有内容重置为默认状态
+<li><code>Performance</code>显示简单的性能指标，包括始终在屏幕上可见的FPS计数器
+</ul>
+</ul>
+</ul>
+<blockquote><p><strong>开发者注：</strong> <em>以前，每帧收集用于渲染F3屏幕的信息会带来显著的性能开销。因此，打开屏幕查看FPS会明显降低FPS。现在，在<code>Performance</code>配置中查看FPS应该不会影响游戏性能。</em></p></blockquote>
+<h2>辅助功能</h2>
+<ul>
+<li>在辅助功能设置界面中添加了一个通往控制界面的按钮
+<ul>
+<li>“自动跳跃”选项以及“潜行”和“疾跑”开关已从辅助功能设置界面中移除
+</ul>
+<li>“显示字幕”选项已改称为“隐藏式字幕”，以更准确地描述其功能
+<li>染料颜色现在有了更新后的图标
+<ul>
+<li>这样做的目的是增强整个染料系列的视觉一致性，同时保持不同的形状，以支持色盲辅助功能
+</ul>
+</ul>
+<h2>性能改进</h2>
+<ul>
+<li>实体渲染顺序得到了改进，以显著提升性能
+<ul>
+<li>在生物密集的区域（如刷怪场），你会明显感到游戏更加流畅
+<li>如果你的大部分卡顿来自实体以外的因素，例如在远离大量生物的情况下以高渲染距离游玩，FPS不会有太大提升
+</ul>
+</ul>
+<blockquote><p><strong>开发者注：</strong> <em>这个改动非常大，如果因此引入了一些排序问题，我们也不会感到惊讶。例如，某个生物的某个部分渲染得太早或太晚，导致不可见或视觉异常。请多多尝试，并报告你遇到的漏洞！</em></p></blockquote>
+<h1>技术更改</h1>
+<ul>
+<li>包版本现在拥有次版本号
+<li>数据包版本现在是82.0
+<li>资源包版本现在是65.0
+</ul>
+<h2>包格式</h2>
+<ul>
+<li>数据包和资源包的包版本现在拥有次版本号
+<ul>
+<li>游戏包版本的次版本号递增是向后兼容的，这意味着为同一主版本先前迭代制作的所有包都将继续工作
+</ul>
+<li>包可以在次版本号上设置兼容性要求，以防它们依赖于某个次版本号中引入的资源
+</ul>
+<h3>包元数据</h3>
+<p>pack.mcmeta格式已更新：</p>
+<ul>
+<li><code>supported_formats</code>字段已被移除
+<ul>
+<li>如果你的包声明支持以前格式的包版本（数据包&#60 82，资源包&#60 65），则仍然需要它
+<li>否则，不允许使用，必须移除
+</ul>
+<li><code>pack_format</code>字段现在为可选
+<ul>
+<li>如果你的包声明支持以前格式的包版本（数据包&#60 82，资源包&#60 65），则仍然需要它
+</ul>
+<li>新增必填字段<code>min_format</code>——指定支持的最低版本
+<ul>
+<li>完整版本由两个整数的列表指定，例如<code>[74, 1]</code>
+<li>指定单个整数将被解释为该主版本，例如<code>74</code>与<code>[74, 0]</code>相同
+<li>指定只包含一个整数的列表与单独指定该整数含义相同
+</ul>
+<li>新增必填字段<code>max_format</code>——指定支持的最高版本
+<ul>
+<li>完整版本由两个整数的列表指定，例如<code>[74, 1]</code>
+<li>指定单个整数将被解释为任意次版本，即次版本号为<code>0x7fffffff</code>
+<li>指定只包含一个整数的列表与单独指定该整数含义相同
+</ul>
+<li>对于叠加层条目：
+<ul>
+<li><code>formats</code>字段已被移除
+<ul>
+<li>如果你的包包含任何涵盖以前格式（数据包&#60 82，资源包&#60 65）的叠加层范围，则所有叠加层定义中仍需要它
+<li>否则，不允许使用，必须移除
+</ul>
+<li>新增必填字段<code>min_format</code>和<code>max_format</code>，其格式与上面<code>pack</code>部分中同名字段的格式相同
+</ul>
+</ul>
+<h1>数据包版本82.0</h1>
+<h2>命令</h2>
+<ul>
+<li>当难度设置为和平时，尝试使用<code>summon</code>命令召唤怪物现在会失败
+</ul>
+<h2>游戏规则</h2>
+<ul>
+<li>移除了<code>spawnChunkRadius</code>游戏规则
+</ul>
+<h2>数据组件</h2>
+<h3><code>blocks_attacks</code>物品组件</h3>
+<ul>
+<li>如果攻击中减少的伤害为<code>0</code>（例如由于<code>angle</code>阈值不匹配），该物品不再会在攻击中被禁用，也不会因格挡造成击退
+</ul>
+<h2>战利品表</h2>
+<ul>
+<li>新增<code>minecraft:entity_interact</code>战利品表类型，它接受以下参数：
+<ul>
+<li><code>target_entity</code>——被交互的实体
+<li><code>interacting_entity</code>——与<code>target_entity</code>交互的可选实体
+<li><code>tool</code>——用于与<code>target_entity</code>交互的工具
+</ul>
+<li>新增<code>minecraft:block_interact</code>战利品表类型，它接受以下参数：
+<ul>
+<li><code>block_state</code>——被交互的方块实体的方块状态
+<li><code>block_entity</code>——被交互的可选方块实体
+<li><code>interacting_entity</code>——与<code>block_state</code>交互的可选实体
+<li><code>tool</code>——用于与<code>block_state</code>交互的可选工具
+</ul>
+<li>战利品表中指定目标实体的字段（例如<code>entity_properties.entity</code>）现在还可以将<code>target_entity</code>和<code>interacting_entity</code>参数类型作为目标
+<li>新增<code>charged_creeper/root</code>战利品表，用于实体被闪电苦力怕杀死时的掉落物
+<ul>
+<li>此战利品表会根据被击杀的生物，将掉落物分派到以下战利品表：
+<ul>
+<li><code>charged_creeper/piglin</code>
+<li><code>charged_creeper/creeper</code>
+<li><code>charged_creeper/skeleton</code>
+<li><code>charged_creeper/wither_skeleton</code>
+<li><code>charged_creeper/zombie</code>
+</ul>
+<li>一旦任何被击杀的生物从此战利品表中掉落了物品，被同一只苦力怕击杀的其他生物将不再从此战利品表中掉落物品
+</ul>
+<li>新增<code>brush/armadillo</code>战利品表，用于刷扫犰狳时的掉落物
+<li>新增<code>gameplay/turtle_grow</code>战利品表，用于海龟成长为成年个体时的掉落物
+<li>新增<code>harvest/beehive</code>战利品表，用于使用剪刀收获蜂箱或蜂巢时的掉落物
+<li>新增<code>harvest/cave_vine</code>战利品表，用于通过交互收获带有发光浆果的洞穴藤蔓时的掉落物
+<li>新增<code>carve/pumpkin</code>战利品表，用于使用剪刀雕刻南瓜时的掉落物
+</ul>
+<h2>世界生成</h2>
+<ul>
+<li><code>noise_settings</code>定义中的<code>initial_density_without_jaggedness</code>字段已被<code>preliminary_surface_level</code>字段取代
+<ul>
+<li><code>initial_density_without_jaggedness</code>是一个3D密度函数，通过扫描第一个密度大于<code>0.390625</code>的点来确定近似表面高度
+<li><code>preliminary_surface_level</code>是一个2D密度函数，应生成近似表面的y高度
+<li>可以使用<code>minecraft:find_top_surface</code>密度函数来复现之前的扫描
+</ul>
+</ul>
+<h3>密度函数</h3>
+<h4>新增<code>minecraft:find_top_surface</code></h4>
+<ul>
+<li>近似计算给定密度函数的最顶部表面
+<li>它从上限扫描到下限，以找到密度从负变为正的点
+<ul>
+<li>为了获得最佳性能，上限应尽可能接近实际表面
+<li>上限绝不应低于实际表面
+</ul>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>density</code>——用于近似其表面的密度函数
+<li><code>upper_bound</code>——提供最高可能y值的2D密度函数
+<li><code>lower_bound</code>——整数，最低可能y值
+<li><code>cell_height</code>——正整数，定义扫描网格分辨率
+</ul>
+<h4>新增<code>minecraft:invert</code></h4>
+<ul>
+<li>解析为<code>1/argument</code>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>argument</code>——密度函数
+</ul>
+<h3>拼图结构</h3>
+<ul>
+<li><code>max_distance_from_center</code>字段现在可以在垂直轴上指定与水平轴不同的限制
+<ul>
+<li>这可以通过一个具有以下字段的对象来指定：
+<ul>
+<li><code>horizontal</code>——必填整数，介于<code>1</code>和<code>128</code>之间
+<li><code>vertical</code>——可选整数，介于<code>1</code>和<code>4096</code>之间（默认值：<code>4096</code>）
+<li>例如：<code>"max_distance_from_center": { "horizontal": 20, "vertical": 500 }</code>
+</ul>
+<li>仍然支持以前使用单个内联值同时指定水平和垂直距离的格式
+</ul>
+</ul>
+<h2>标签</h2>
+<h3>方块标签</h3>
+<ul>
+<li>新增<code>#copper_chests</code>——所有铜箱子方块
+<li>新增<code>#copper</code>——所有铜方块
+<li>新增<code>#incorrect_for_copper_tool</code>——所有使用铜制工具时不会掉落物品的方块
+<li>新增<code>#copper_golem_statues</code>——所有铜傀儡雕像方块
+</ul>
+<h3>物品标签</h3>
+<ul>
+<li>新增<code>#copper_chests</code>——所有铜箱子方块物品
+<li>新增<code>#copper</code>——所有铜方块物品
+<li>新增<code>#copper_tool_materials</code>——所有铜制工具材料
+<li>新增<code>#repairs_copper_armor</code>——所有可以修复铜制盔甲的物品
+<li>新增<code>#copper_golem_statues</code>——所有铜傀儡雕像方块物品
+</ul>
+<h1>资源包版本65.0</h1>
+<h2>方块贴图</h2>
+<ul>
+<li>新增方块贴图：
+<ul>
+<li><code>copper</code>
+<li><code>copper_left</code>
+<li><code>copper_right</code>
+<li><code>exposed_copper</code>
+<li><code>exposed_copper_left</code>
+<li><code>exposed_copper_right</code>
+<li><code>weathered_copper</code>
+<li><code>weathered_copper_left</code>
+<li><code>weathered_copper_right</code>
+<li><code>oxidized_copper</code>
+<li><code>oxidized_copper_left</code>
+<li><code>oxidized_copper_right</code>
+<li><code>acacia_shelf</code>
+<li><code>bamboo_shelf</code>
+<li><code>birch_shelf</code>
+<li><code>cherry_shelf</code>
+<li><code>crimson_shelf</code>
+<li><code>dark_oak_shelf</code>
+<li><code>jungle_shelf</code>
+<li><code>mangrove_shelf</code>
+<li><code>oak_shelf</code>
+<li><code>pale_oak_shelf</code>
+<li><code>spruce_shelf</code>
+<li><code>warped_shelf</code>
+</ul>
+</ul>
+<h2>实体贴图</h2>
+<ul>
+<li>新增实体贴图：
+<ul>
+<li><code>copper_golem</code>
+<li><code>exposed_copper_golem</code>
+<li><code>weathered_copper_golem</code>
+<li><code>oxidized_copper_golem</code>
+<li><code>copper_golem_eyes</code>
+<li><code>exposed_copper_golem_eyes</code>
+<li><code>weathered_copper_golem_eyes</code>
+<li><code>oxidized_copper_golem_eyes</code>
+</ul>
+</ul>
+<h2>物品贴图</h2>
+<ul>
+<li>新增物品贴图：
+<ul>
+<li><code>copper_axe</code>
+<li><code>copper_boots</code>
+<li><code>copper_chestplate</code>
+<li><code>copper_golem_spawn_egg</code>
+<li><code>copper_helmet</code>
+<li><code>copper_hoe</code>
+<li><code>copper_leggings</code>
+<li><code>copper_nugget</code>
+<li><code>copper_pickaxe</code>
+<li><code>copper_shovel</code>
+<li><code>copper_sword</code>
+</ul>
+</ul>
+<h3>音效事件</h3>
+<ul>
+<li>新增音效事件：
+<ul>
+<li><code>block.copper_chest.open</code>
+<li><code>block.copper_chest.close</code>
+<li><code>block.copper_chest_weathered.open</code>
+<li><code>block.copper_chest_weathered.close</code>
+<li><code>block.copper_chest_oxidized.open</code>
+<li><code>block.copper_chest_oxidized.close</code>
+<li><code>entity.copper_golem.step</code>
+<li><code>entity.copper_golem.hurt</code>
+<li><code>entity.copper_golem.death</code>
+<li><code>entity.copper_golem.spin</code>
+<li><code>entity.copper_golem_weathered.step</code>
+<li><code>entity.copper_golem_weathered.hurt</code>
+<li><code>entity.copper_golem_weathered.death</code>
+<li><code>entity.copper_golem_weathered.spin</code>
+<li><code>entity.copper_golem_oxidized.step</code>
+<li><code>entity.copper_golem_oxidized.hurt</code>
+<li><code>entity.copper_golem_oxidized.death</code>
+<li><code>entity.copper_golem_oxidized.spin</code>
+<li><code>item.armor.equip_copper</code>
+<li><code>entity.copper_golem.spawn</code>
+<li><code>entity.copper_golem.no_item_get</code>
+<li><code>entity.copper_golem.no_item_not_get</code>
+<li><code>entity.copper_golem.item_drop</code>
+<li><code>entity.copper_golem.item_no_drop</code>
+<li><code>entity.copper_golem_become_statue</code>
+<li><code>block.copper_golem_statue.break</code>
+<li><code>block.copper_golem_statue.place</code>
+<li><code>block.copper_golem_statue.hit</code>
+<li><code>block.copper_golem_statue.fall</code>
+<li><code>block.copper_golem_statue.step</code>
+<li><code>block.shelf.activate</code>
+<li><code>block.shelf.deactivate</code>
+<li><code>block.shelf.multi_swap</code>
+<li><code>block.shelf.place_item</code>
+<li><code>block.shelf.single_swap</code>
+</ul>
+</ul>
+<h2>着色器与后处理效果</h2>
+<blockquote><p><strong>开发者注：</strong> <em>虽然资源包中覆盖核心着色器是可能的，但这被认为不受支持，并且不是资源包的预期功能。这些着色器作为游戏内部实现的一部分存在，因此，随着游戏内部结构的发展，它们可能随时发生变化。我们理解，覆盖核心着色器被用于实现非常酷的资源包功能，其中许多功能缺乏受支持的替代方案。我们希望将来能提供更好的、受支持的替代方案。</em></p></blockquote>
+<h3>全屏渲染阶段的更改</h3>
+<ul>
+<li>以下顶点着色器已被移除，并替换为<code>core/screenquad.vsh</code>：
+<ul>
+<li><code>core/blit_screen.vsh</code>
+<li><code>post/blit.vsh</code>
+<li><code>post/blur.vsh</code>
+<li><code>post/invert.vsh</code>
+<li><code>post/sobel.vsh</code>
+<li><code>post/screenquad.vsh</code>
+</ul>
+<li>用于后处理效果、光照贴图生成和全屏位块传送的顶点着色器不再接收<code>Position</code>属性，而是必须通过<code>gl_VertexID</code>分配顶点坐标
+<li>此外，这些渲染阶段仅使用3个顶点执行，而不是完整的四边形
+</ul>
+<h1>修复了25w31a中的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-46634 rel="noopener noreferrer"target=_blank>MC-46634</a> 雷声音量不受天气音量设置影响
+<li><a href=https://bugs.mojang.com/browse/MC-73881 rel="noopener noreferrer"target=_blank>MC-73881</a> 在和平难度下召唤怪物时，怪物会生成1刻
+<li><a href=https://bugs.mojang.com/browse/MC-89142 rel="noopener noreferrer"target=_blank>MC-89142</a> 将跳跃键改为“Enter”后，玩家在完成聊天行输入后会跳跃
+<li><a href=https://bugs.mojang.com/browse/MC-94610 rel="noopener noreferrer"target=_blank>MC-94610</a> 缺少闪电苦力怕掉落生物头颅的战利品表条目
+<li><a href=https://bugs.mojang.com/browse/MC-98200 rel="noopener noreferrer"target=_blank>MC-98200</a> 高音量的/playsound命令会忽略除主音量之外的所有声音滑块
+<li><a href=https://bugs.mojang.com/browse/MC-183776 rel="noopener noreferrer"target=_blank>MC-183776</a> 使用F3+F4切换游戏模式后，需要按两次F3才能切换调试屏幕
+<li><a href=https://bugs.mojang.com/browse/MC-192907 rel="noopener noreferrer"target=_blank>MC-192907</a> 聊天界面打开时，无法切换F3调试菜单
+<li><a href=https://bugs.mojang.com/browse/MC-196443 rel="noopener noreferrer"target=_blank>MC-196443</a> 当reducedDebugInfo为true时，按下F3+B和F3+G仍会在聊天中告知玩家这些功能已切换，尽管实际上什么也不会发生
+<li><a href=https://bugs.mojang.com/browse/MC-197247 rel="noopener noreferrer"target=_blank>MC-197247</a> 使用F3+D清除待处理行后，新消息仍会保留之前的延迟
+<li><a href=https://bugs.mojang.com/browse/MC-203401 rel="noopener noreferrer"target=_blank>MC-203401</a> 无法禁用/重新配置双击前进键疾跑
+<li><a href=https://bugs.mojang.com/browse/MC-220842 rel="noopener noreferrer"target=_blank>MC-220842</a> 在旁观带有着色器效果的生物时打开游戏模式切换器，会切换该效果
+<li><a href=https://bugs.mojang.com/browse/MC-234479 rel="noopener noreferrer"target=_blank>MC-234479</a> 即使同一玩家已经收到邀请或已经加入，你仍然可以多次邀请其加入你的Realms
+<li><a href=https://bugs.mojang.com/browse/MC-235780 rel="noopener noreferrer"target=_blank>MC-235780</a> 当鼠标悬停在“完成”或“取消”按钮上时，信标GUI会错误地显示“信标”提示文本
+<li><a href=https://bugs.mojang.com/browse/MC-237016 rel="noopener noreferrer"target=_blank>MC-237016</a> 即使游戏已暂停，聊天延迟功能仍会继续输出消息
+<li><a href=https://bugs.mojang.com/browse/MC-237843 rel="noopener noreferrer"target=_blank>MC-237843</a> 玩家在查看终末之诗时可能会被判定为挂机而被踢出
+<li><a href=https://bugs.mojang.com/browse/MC-259692 rel="noopener noreferrer"target=_blank>MC-259692</a> 在界面刚刚关闭后松开潜行或疾跑的输入键时，潜行和疾跑状态会被意外激活或切换
+<li><a href=https://bugs.mojang.com/browse/MC-259935 rel="noopener noreferrer"target=_blank>MC-259935</a> 即使生物群系的降水类型设置为NONE，也可能会下雪
+<li><a href=https://bugs.mojang.com/browse/MC-260822 rel="noopener noreferrer"target=_blank>MC-260822</a> 信标GUI中的“完成”和“取消”按钮在鼠标悬停时不再显示提示文本
+<li><a href=https://bugs.mojang.com/browse/MC-261387 rel="noopener noreferrer"target=_blank>MC-261387</a> 红树林放置中冗余的block_predicate_filter检查
+<li><a href=https://bugs.mojang.com/browse/MC-262000 rel="noopener noreferrer"target=_blank>MC-262000</a> 未使用的纹理：misc/white.png
+<li><a href=https://bugs.mojang.com/browse/MC-263597 rel="noopener noreferrer"target=_blank>MC-263597</a> 末影龙的复活音效无法通过敌对生物音量滑块调低
+<li><a href=https://bugs.mojang.com/browse/MC-269838 rel="noopener noreferrer"target=_blank>MC-269838</a> 从被剪刀剪过的南瓜掉落南瓜种子是硬编码的
+<li><a href=https://bugs.mojang.com/browse/MC-269839 rel="noopener noreferrer"target=_blank>MC-269839</a> 从被剪刀剪过的蜂巢和蜂箱掉落蜜脾是硬编码的
+<li><a href=https://bugs.mojang.com/browse/MC-270918 rel="noopener noreferrer"target=_blank>MC-270918</a> 生物头颅的战利品表缺少用于custom_name的copy_components战利品函数
+<li><a href=https://bugs.mojang.com/browse/MC-275244 rel="noopener noreferrer"target=_blank>MC-275244</a> 将configured_carver文件中的“width_smoothness”设置为0会导致游戏冻结或崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-275432 rel="noopener noreferrer"target=_blank>MC-275432</a> 在界面中难以看清字幕
+<li><a href=https://bugs.mojang.com/browse/MC-276568 rel="noopener noreferrer"target=_blank>MC-276568</a> 会生成盔甲纹饰图集的mipmap版本
+<li><a href=https://bugs.mojang.com/browse/MC-276629 rel="noopener noreferrer"target=_blank>MC-276629</a> 洞穴藤蔓掉落发光浆果似乎是硬编码的
+<li><a href=https://bugs.mojang.com/browse/MC-276759 rel="noopener noreferrer"target=_blank>MC-276759</a> 刷扫犰狳掉落鳞甲是硬编码的
+<li><a href=https://bugs.mojang.com/browse/MC-277447 rel="noopener noreferrer"target=_blank>MC-277447</a> Minecraft会为箱子生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277450 rel="noopener noreferrer"target=_blank>MC-277450</a> Minecraft会为潜影盒生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277470 rel="noopener noreferrer"target=_blank>MC-277470</a> Minecraft会为床生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277471 rel="noopener noreferrer"target=_blank>MC-277471</a> Minecraft会为告示牌生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277473 rel="noopener noreferrer"target=_blank>MC-277473</a> Minecraft会为饰纹陶罐生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277481 rel="noopener noreferrer"target=_blank>MC-277481</a> Minecraft会为旗帜生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277483 rel="noopener noreferrer"target=_blank>MC-277483</a> Minecraft会为盾牌生成mipmap纹理，但不会使用它们
+<li><a href=https://bugs.mojang.com/browse/MC-277770 rel="noopener noreferrer"target=_blank>MC-277770</a> block_age处理器类型总是将台阶的“type”属性修改为bottom
+<li><a href=https://bugs.mojang.com/browse/MC-278965 rel="noopener noreferrer"target=_blank>MC-278965</a> 樱花树林不属于#stronghold_biased_to标签
+<li><a href=https://bugs.mojang.com/browse/MC-279793 rel="noopener noreferrer"target=_blank>MC-279793</a> 骑上马、驴、骡、僵尸马、骷髅马和骆驼时，不再强制你面向前方
+<li><a href=https://bugs.mojang.com/browse/MC-289348 rel="noopener noreferrer"target=_blank>MC-289348</a> 如果末地维度中没有玩家，重新登录后末影珍珠会停止加载末地中的区块
+<li><a href=https://bugs.mojang.com/browse/MC-297593 rel="noopener noreferrer"target=_blank>MC-297593</a> 炼药锅现在会在从下方接触时施加所盛物质的效果
+<li><a href=https://bugs.mojang.com/browse/MC-298274 rel="noopener noreferrer"target=_blank>MC-298274</a> 某些无效命令会显示“错误见下文”，但没有任何附加信息
+<li><a href=https://bugs.mojang.com/browse/MC-298732 rel="noopener noreferrer"target=_blank>MC-298732</a> 光标不再显示在非最后一行的行尾
+<li><a href=https://bugs.mojang.com/browse/MC-298805 rel="noopener noreferrer"target=_blank>MC-298805</a> 即使盾牌没有格挡攻击，斧头也会禁用盾牌
+<li><a href=https://bugs.mojang.com/browse/MC-298883 rel="noopener noreferrer"target=_blank>MC-298883</a> 在Realms中通过TAB导航选择当前世界槽位时，该槽位不会被高亮显示
+<li><a href=https://bugs.mojang.com/browse/MC-299450 rel="noopener noreferrer"target=_blank>MC-299450</a> 在书与笔界面中，你不再能通过双击选择字符
+<li><a href=https://bugs.mojang.com/browse/MC-299451 rel="noopener noreferrer"target=_blank>MC-299451</a> 切换页面时，书与笔中的页面不再自动获得焦点
+<li><a href=https://bugs.mojang.com/browse/MC-299566 rel="noopener noreferrer"target=_blank>MC-299566</a> 书与笔界面中的光标位置过于偏左
+<li><a href=https://bugs.mojang.com/browse/MC-299628 rel="noopener noreferrer"target=_blank>MC-299628</a> 世界加载时，骑乘状态的玩家/生物会触发幽匿感测体
+<li><a href=https://bugs.mojang.com/browse/MC-299782 rel="noopener noreferrer"target=_blank>MC-299782</a> 保存在拼图结构中的僵尸村民在世界生成时会忘记其生物群系变体和职业
+<li><a href=https://bugs.mojang.com/browse/MC-299896 rel="noopener noreferrer"target=_blank>MC-299896</a> 你可以将已过期Realms的世界切换到空槽位，这会误导性地提示创建世界，尽管没有有效的Realms订阅
+<li><a href=https://bugs.mojang.com/browse/MC-300021 rel="noopener noreferrer"target=_blank>MC-300021</a> 村民界面中的某些元素现在渲染在光标物品之上
+</ul>

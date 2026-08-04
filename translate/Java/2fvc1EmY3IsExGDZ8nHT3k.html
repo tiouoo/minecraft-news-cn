@@ -1,0 +1,26 @@
+<p>我们现在为Minecraft 1.19.1发布了预发布版6，其中包含对幽匿传感器和幽匿催化体的一些小调整，以及错误修复和对聊天签名系统的改进。</p>
+<h1>1.19.1预发布版6中的更改</h1>
+<ul>
+<li>幽匿催化体现在将掉落5点经验值，而不是20点</li>
+<li>用于发送消息的签名指示器的颜色已调整，以提高可访问性</li>
+</ul>
+<h1>1.19.1预发布版6中的技术更改</h1>
+<ul>
+<li>文本组件的<code>run_command</code>点击事件不再支持任何发送聊天消息的命令<ul>
+<li>应改用<code>/tellraw</code></li>
+</ul></li>
+</ul>
+<h1>1.19.1预发布版6中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-148149" target="_blank" rel="noopener noreferrer">MC-148149</a> Linux系统在打开链接时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207077" target="_blank" rel="noopener noreferrer">MC-207077</a> 加载带有音符盒和物品栏中note NBT的1.13之前版本世界时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235614" target="_blank" rel="noopener noreferrer">MC-235614</a> 数据包中引用不存在的谓词导致java.lang.NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252190" target="_blank" rel="noopener noreferrer">MC-252190</a> 玩家丢弃的物品产生振动取决于物品落地时你是否潜行，而不是你丢弃物品时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252258" target="_blank" rel="noopener noreferrer">MC-252258</a> 羊毛块/地毯物品会产生振动，除非由潜行的玩家丢弃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252265" target="_blank" rel="noopener noreferrer">MC-252265</a> --server参数在某些服务器上导致java.lang.NullPointerException崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253402" target="_blank" rel="noopener noreferrer">MC-253402</a> 当你死亡时同时按住Shift右键点击快捷栏中的物品放入箱子会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254255" target="_blank" rel="noopener noreferrer">MC-254255</a> 在睡觉时开启聊天预览并尝试发送消息时无法在聊天中打字</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254261" target="_blank" rel="noopener noreferrer">MC-254261</a> “聊天预览字段的背景不透明度框在睡觉时渲染在‘离开床’按钮后面”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254284" target="_blank" rel="noopener noreferrer">MC-254284</a> 发送带有无效消息类型ID的聊天数据包会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254349" target="_blank" rel="noopener noreferrer">MC-254349</a> 在模组服务器上将染料放入织布机时崩溃</li>
+</ul>

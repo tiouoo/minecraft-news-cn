@@ -1,0 +1,583 @@
+<p>We're now releasing 1.20.3 for Minecraft: Java Edition. This release comes with new functionality for Decorated Pots, a new look for the Bat and improvements to Shields.</p>
+<p>This release also includes new features for map makers and pack creators like Scoreboard Display Names and extensions for the <code>execute</code> and <code>return</code> commands and a new administrative tool: the <code>tick</code> command.</p>
+<p>The optional Update 1.21 Experiment also shows up in this version as a sneak preview of features for the next major version of Minecraft.</p>
+<h1>Changes</h1>
+<ul>
+<li>Decorated Pots can now store items, and can be smashed by projectiles</li>
+<li>When a player is blocking with a shield, the arm with the shield now follows the direction the player is looking at, when viewed from third-person perspective</li>
+<li>The Bat now has a new look</li>
+<li>Added an accessibility option that allows to hide the yellow splash texts in the main menu</li>
+<li>Added a recovery screen for worlds with missing data (for example, if saving failed due to an unexpected shutdown)</li>
+<li>Other minor tweaks</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_image_2_tn.jpg" alt="Minecraft Java Edition 1.20.3 Image 2 Thumbnail"></p>
+<h2>Decorated Pots</h2>
+<ul>
+<li>Decorated Pots now store up to a single stack of items</li>
+<li>Hoppers, Droppers and Minecarts with Hoppers can now insert and/or extract items from Decorated Pots</li>
+<li>Comparators can now read the number of items in Decorated Pots</li>
+<li>Players can interact with Decorated Pots to insert items into them</li>
+<li>Decorated Pots have no GUI, and need to be broken to retrieve or discover their content by players</li>
+<li>Player interactions with Decorated Pots cause the Decorated Pot to wobble and trigger the vibration frequency of 11</li>
+<li>Decorated Pots can be smashed by projectiles which cause them to shatter and drop their content</li>
+<li>Decorated Pots now stack up to 64</li>
+</ul>
+<h2>Bat</h2>
+<ul>
+<li>The Bat has an updated model, animations and texture</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_image_1_tn.jpg" alt="Minecraft Java Edition 1.20.3 Image 1 Thumbnail"></p>
+<h2>Minor Tweaks</h2>
+<ul>
+<li>Monster Spawner now renders their inner faces when looking inside</li>
+<li>Thrown Ender Pearls produce a teleportation sound on impact</li>
+<li>Small tweaks to the Telemetry Data Collection screen</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 26</li>
+<li>The Resource Pack version is now 22</li>
+<li>A few minor changes to chat component serialization</li>
+<li>The name of non-living entities will now be shown if targeted and a CustomName is set, or always displayed if CustomNameVisible is set, similar to living entities</li>
+<li>Changes to downloaded/world resource pack handling</li>
+</ul>
+<h2>Chat Components</h2>
+<h3>Serialization</h3>
+<ul>
+<li>Plain-text chat components (text, no sibilings, no stylings) are now always serialized as strings instead of <code>{"text': "blah"}</code></li>
+<li>Chat components now serialize to NBT when sent over network</li>
+<li>Chat components now have an optional <code>type</code> value (allowed values: <code>text</code>, <code>translatable</code>, <code>score</code>, <code>nbt</code>, <code>keybind</code>, <code>selector</code>) to speed up parsing and improve error checking</li>
+<li>Similarily, components of type <code>nbt</code> now have a <code>source</code> field with allowed values <code>entity</code>, <code>block</code>, <code>storage</code></li>
+<li>The <code>id</code> field in <code>show_entity</code> <code>hoverEvent</code> style now also accepts UUIDs as an array of 4 ints</li>
+<li>Numeric and boolean arguments for <code>translate</code> components are no longer converted to strings</li>
+<li>The following JSON component representations are no longer accepted:<ul>
+<li><code>null</code></li>
+<li><code>[]</code></li>
+</ul></li>
+<li>Errors in the following style fields are no longer silently ignored:<ul>
+<li><code>color</code></li>
+<li><code>clickEvent</code></li>
+<li><code>hoverEvent</code></li>
+<li><code>hoverEvent[action=show_entity].contents.name</code></li>
+<li><code>hoverEvent[action=show_item].contents.tag</code></li>
+</ul></li>
+</ul>
+<h2>World Resource Packs</h2>
+<p>Changes have been made to world resource packs (<code>resources.zip</code>), Realms resource packs and resource packs controlled by dedicated servers.</p>
+<h3>User Interface</h3>
+<ul>
+<li>The download screen has been replaced with a toast</li>
+<li>World resource pack application now starts together with chunk loading</li>
+</ul>
+<h3>Local Storage</h3>
+<p>Downloaded packs are now stored in the <code>downloads</code> directory (with a different file organization than the old <code>server-resource-packs</code>)</p>
+<ul>
+<li>Only up to 20 files are cached</li>
+<li>Inside this directory there is also log file (<code>log.json</code>) that stores information about downloaded files for debug purposes</li>
+</ul>
+<h3>Server Config</h3>
+<p>Downloaded packs now have a unique id (GUID/UUID) that can be used to differentiate them</p>
+<ul>
+<li>For dedicated server packs, this value can be configured with the <code>resource-pack-id</code> option in <code>server.properties</code></li>
+<li>If the value is missing, it will be generated based on the pack URL</li>
+<li>If the hash of a pack is not set, this pack will be redownloaded before every application<ul>
+<li>Previously, if the hash was missing, the latest downloaded version of pack was applied</li>
+</ul></li>
+</ul>
+<h3>Packets</h3>
+<p>Some additional options have been added for 3rd-party servers software:</p>
+<ul>
+<li>The client can now accept multiple server resource packs</li>
+<li>A new packet was added to un-apply server resource packs</li>
+<li>The client now sends additional updates about packs (like download success)</li>
+<li>Resource packs are no longer cleaned when entering configuration phase</li>
+</ul>
+<h1>Data Pack Version 19</h1>
+<h2>Tags</h2>
+<ul>
+<li>Added <code>can_breathe_under_water</code> entity type tag which disables drowning</li>
+<li>Added <code>can_break_armor_stand</code> damage type tag for damage types that can incrementally knock down armor stands</li>
+</ul>
+<h1>Data Pack Version 20</h1>
+<ul>
+<li>Changed <code>function</code> command results</li>
+<li>Adjusted check for gamerule <code>maxCommandChainLength</code></li>
+<li>Added new gamerule <code>maxCommandForkCount</code></li>
+<li>Reintroduced form of the <code>execute</code> command: <code>execute if function</code></li>
+<li>Reintroduced form of the <code>return</code> command: <code>return run</code></li>
+<li>Decorated Pots with the <code>cracked</code> state set to true will always shatter when broken</li>
+<li>Added new <code>dust_plume</code> particle type</li>
+</ul>
+<h2>Commands</h2>
+<h3>Functions</h3>
+<p>(See further changes in Pack Version 23)</p>
+<ul>
+<li>The <code>function</code> command has been changed to better accomodate new <code>return</code> command</li>
+<li>Functions no longer have any result unless they use <code>return</code> or there was error during lookup or instantiation<ul>
+<li>That means the <code>function</code> command will no longer return (or even display) the number of commands run during execution</li>
+<li>Error conditions:<ul>
+<li>Calling a non-existent function</li>
+<li>Calling an empty function tag</li>
+<li>Macro instantiation failures</li>
+</ul></li>
+</ul></li>
+<li>"Result" in this context means values that would be stored with <code>execute store</code></li>
+<li>The previous behavior where every command in a function would perform a store if a function was called with <code>execute store ... run function</code> has been removed<ul>
+<li>A single call to <code>function</code> will now store at most once (zero times if <code>return</code> was not called)</li>
+<li>For function tags with multiple entries, function results will be accumulated, but partial results will be stored at the end of every function</li>
+</ul></li>
+</ul>
+<h4>Limits</h4>
+<p>Existing limits for functions have been refined to accomodate new execution rules and prevent wider range of exploits:</p>
+<ul>
+<li>Limits now apply even for commands run from the server console or chat input (so it will now always behave as if they were placed in a function)<ul>
+<li>For example, all functions called by <code>execute as @e run function</code> will count towards the same limit</li>
+<li>Executions from command blocks still count as separate ones</li>
+</ul></li>
+<li>The <code>maxCommandChainLength</code> limit for functions will now count "operations" like:<ul>
+<li>execution of command for a single context</li>
+<li>execution of a stage in <code>execute</code> (no matter how many contexts were modified)</li>
+<li>invocation of function</li>
+</ul></li>
+<li>A new limit with game rule called <code>maxCommandForkCount</code> now restricts the total amount of contexts that can be created by single state of functions like <code>execute</code><ul>
+<li>For example: if there are 5 entities in world, <code>execute as @e</code> creates 5 contexts, while <code>execute as @e at @e</code> creates 5*5 = 25 contexts</li>
+</ul></li>
+</ul>
+<h3><code>execute if function</code></h3>
+<p>An <code>execute</code> sub-command that runs a function or function tag and matches the return value(s).
+This is a reintroduction of functionality removed in a previous version.
+If a tag is given, all functions run regardless of the results of prior functions.</p>
+<p>Syntax:
+<code>execute if|unless function &#x3C;function> &#x3C;continuation></code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>function</code>: The function or tag to run</li>
+</ul>
+<h4>Matching</h4>
+<p>The matching of the result value of the function(s) that run:</p>
+<ul>
+<li>At least one of the functions must succeed for the match to succeed</li>
+<li>A succeessful call is defined as a function that:<ul>
+<li>Uses the <code>return</code> command to return a value</li>
+<li>The return value is not 0</li>
+</ul></li>
+<li>If no functions exited with <code>return</code>, neither <code>if</code> or <code>unless</code> will run</li>
+</ul>
+<h3><code>return run</code></h3>
+<p>A form of the <code>return</code> command is now available, <code>return run</code>.
+This is a reintroduction of functionality removed in a previous version.</p>
+<p>Syntax:
+<code>return run &#x3C;command></code></p>
+<p>This takes the <code>result</code> value from running the specified <code>command</code> and returns that as the return value of the function.</p>
+<ul>
+<li>If the command did not return any value (like, for example, a call to a <code>function</code> without <code>return</code>), return will not execute and function will continue execution (changed in Data Pack Version 23)</li>
+<li>If the given command fails, the return value is <code>0</code></li>
+<li>In all other aspects, it works like <code>return</code> with a specified return value</li>
+<li>In case of a fork (for example <code>return run execute as @e run some_command</code>), the first execution of the command will return<ul>
+<li>If there are no executions (for example in <code>return run execute if entity @e[something_impossible] run some_command</code>), the function will not return and will continue execution (changed in Data Pack Version 23)</li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 21</h1>
+<ul>
+<li>Introduced Jigsaw structure pool aliases, which can be used to rewire pool selection</li>
+<li>Added field <code>block_state</code> to <code>tnt</code> entity to allow replacement of rendered block model</li>
+<li>Renamed field <code>Fuse</code> to <code>fuse</code> on <code>tnt</code> entity</li>
+<li>Added <code>playersNetherPortalDefaultDelay</code> and <code>playersNetherPortalCreativeDelay</code> game rules to control time (in ticks) that a player needs to stand in a Nether portal before changing dimensions</li>
+<li>Added new game rule <code>projectilesCanBreakBlocks</code> to control whether impact projectiles will destroy blocks that are destructible by them, i.e. Chorus Flowers, Pointed Dripstone and Decorated Pots</li>
+<li>Added <code>white_smoke</code> particle type</li>
+</ul>
+<h2>Jigsaw Pool Aliases</h2>
+<ul>
+<li>Added optional <code>pool_aliases</code> list to Jigsaw structures</li>
+<li>Aliases represent the possibility to rewire Jigsaw pool connections by redirecting pool references on individual structure instances</li>
+<li>Alias variants are represented in <code>type</code> and is one of:<ul>
+<li><code>direct</code> 1:1 mapping from an alias to a new pool<ul>
+<li><code>alias</code> pool to replace</li>
+<li><code>target</code> pool to replace with</li>
+</ul></li>
+<li><code>random</code> 1:n mapping where a pool from <code>n</code> is randomly selected for the structure instance<ul>
+<li><code>alias</code> pool to replace</li>
+<li><code>targets</code> randomized list of candidate pools to replace <code>alias</code> with</li>
+</ul></li>
+<li><code>random_group</code><ul>
+<li><code>groups</code> each group is a randomized list of above alias types</li>
+<li>only one group is selected per structure instance</li>
+<li>this enables modelling selections such as "if pool X is replaced with X1, also replace pool Y with Y1"</li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 22</h1>
+<ul>
+<li>Added <code>tick</code> command</li>
+<li>Added two new input fields for Selection Priority and Placement Priority in the Jigsaw block edit screen</li>
+<li>Added <code>item</code> to <code>minecraft:arrow</code> and <code>minecraft:spectral_arrow</code>, this is the item that will be picked up</li>
+<li>Renamed <code>Trident</code> to <code>item</code> in <code>minecraft:trident</code></li>
+</ul>
+<h2><code>tick</code> Command</h2>
+<p>Added a new <code>tick</code> command. This is an adminstative and debugging command that allows
+control of the ticking flow and measuring the performance of the game.
+The command requires elevated permissions (admins and above) and so it is not by default available in command blocks and datapacks.</p>
+<p>Syntax:</p>
+<p><code>tick query</code> - outputs the current target ticking rate, with information about the tick times performance.</p>
+<p><code>tick rate &#x3C;rate></code> - sets a custom target ticking rate to the specified value. The value must be greater than 1.0
+and lower than 10000.0. Setting a very low tick rate can cause the game to feel unresponsive and
+setting too high tick rate for your system can cause
+the game to crash as the game now assumes it is constantly falling behind the ticking target. Please use <code>tick query</code>
+or <code>&#x3C;F3> + 2</code> (Integrated server only) debug screen to measure the performance of the game and adjust the tick rate accordingly.
+Setting a tick target lower than the default <code>20.0</code> will also cause the players to be simulated
+at a lower rate (including player movement and input controls), while
+setting a higher tick rate will cause the players to be simulated at the default rate of <code>20</code> ticks per second to maintain
+the expected responsiveness of the game, but can cause artifacts in entities interpolation.</p>
+<p><code>tick freeze</code> - freezes all gameplay elements, except for players and any entity a player is riding.
+This is useful for debugging and isolating issues with the game allowing the player to move around freely and inspect the world.</p>
+<p><code>tick step [&#x3C;time>]</code> - Only works when the game is frozen. It runs the game for the specified number of ticks and then freezes the game again.
+This allows to step through the game a set amount of ticks at a time. If no time is given, steps 1 tick.</p>
+<p><code>tick step stop</code> - stops the current stepping process, and re-freezes the game.</p>
+<p><code>tick unfreeze</code> - unfreezes the game and resumes all gameplay elements.</p>
+<p><code>tick sprint &#x3C;time></code> - runs the game while ignoring the set ticking target rate (meaning that the game will run
+as fast as possible) for the specified number of ticks. At the end of the sprint, the game will resume
+the previous ticking target and display performance information about the tick times while sprinting. This
+is especially useful for testing gameplay elements that are time-dependent, such as Redstone contraptions,
+or mob behaviour in isolated environments that allow for much faster simulation.</p>
+<p><code>tick sprint stop</code> - stops the current tick sprint, and resumes the previous ticking target.</p>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_image_3_tn.jpg" alt="Minecraft Java Edition 1.20.3 Image 3 Thumbnail"></p>
+<h2>Jigsaw Selection &#x26; Placement Priority</h2>
+<ul>
+<li>Selection Priority<ul>
+<li>When the parent piece is being processed for connections, this controls the order in which this Jigsaw block attempts to connect to its target piece</li>
+<li>Jigsaws will be processed in descending priority order and randomly within the same priority</li>
+</ul></li>
+<li>Placement Priority<ul>
+<li>When this Jigsaw block connects to a piece, this is the order in which that piece is processed for connections in the wider structure</li>
+<li>Pieces will be processed in descending priority order with the default insertion order breaking ties within the same priority</li>
+</ul></li>
+<li>This functionality has been added to support the ability for Jigsaw structures to generate branches in a depth-first order, as well as give finer control over ordering of connections</li>
+<li>All existing Jigsaw blocks will default their Selection and Placement Priority to 0, resulting in the same behaviour as before these two configurable values were introduced</li>
+</ul>
+<h1>Data Pack Version 23</h1>
+<ul>
+<li>Decorated Pots can now utilize loot tables and will read from the <code>LootTable</code> tag key</li>
+<li>Additional changes to command functions</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>return</code></h3>
+<ul>
+<li><code>return run</code> will now always return<ul>
+<li>If there are no valid results from the returned command, the function containing the <code>return run</code> will fail (i.e. <code>success=0</code> and <code>result=0</code>)</li>
+</ul></li>
+<li><code>return run</code> will now propagate the success value together with the results value (previously it always set success to <code>1</code>)</li>
+<li><code>return run</code> now also allows storing values - that means <code>execute store ... run return run some_command</code> will both store the value and return it outside the function</li>
+<li>A new subcommand <code>return fail</code> has been added to make the whole function fail (i.e. return <code>success=0</code> and <code>result=0</code>)</li>
+</ul>
+<h3><code>function</code></h3>
+<ul>
+<li>If <code>function &#x3C;function tag></code> runs multiple functions in combination with <code>return run</code>, execution will stop after first <code>return</code> in any of the functions</li>
+<li>A single call to the <code>function</code> command will always return when run with <code>return run</code><ul>
+<li>For example, <code>return run execute [split context] run function &#x3C;some function with conditional return></code> will always return after processing the first context</li>
+</ul></li>
+</ul>
+<h3><code>execute if|unless function</code></h3>
+<ul>
+<li><code>execute if|unless function</code> no longer always fails if none of the functions had a <code>return</code><ul>
+<li>If there were no <code>returns</code> in called functions, <code>if</code> will fail and <code>unless</code> will pass</li>
+<li>The first <code>return</code> in any of called functions will return (for a single context)</li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 24</h1>
+<ul>
+<li>Increased maximum value of Jigsaw structure variable <code>size</code> from 7 to 20</li>
+</ul>
+<h1>Data Pack Version 25</h1>
+<ul>
+<li>Added individual display names for scoreboard entries</li>
+<li>Scoreboard sidebar will now render even when if there are no scores in selected objective</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>scoreboard</code></h3>
+<h4>Display Names</h4>
+<p>Each entry in a scoreboard can now have a custom display name.</p>
+<ul>
+<li>These values are kept separate per objective and score holder</li>
+<li>If the name is not present, the score holder name is used (i.e. the old behavior)</li>
+<li>If the score is reset or the whole objective is removed, the name is not preserved</li>
+<li>Team decorations will still be applied to names as normal</li>
+<li>Subcommands for managing names:<ul>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective> &#x3C;text component></code> - set display name</li>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective></code> - clear display name</li>
+</ul></li>
+</ul>
+<h4>Display Name Auto-Update</h4>
+<p>To make display name management easier, objectives can also be configured to auto-update display names on every score update.</p>
+<ul>
+<li>This option is disabled by default</li>
+<li>If a score holder has no display name (because it can't be attributed to any currently loaded entity), the current name is preserved</li>
+<li>Command to control auto-update for objective:<ul>
+<li><code>scoreboard objectives modify &#x3C;scoreboard> displayautoupdate [true|false]</code></li>
+</ul></li>
+</ul>
+<h4>Number Formatting</h4>
+<p>Scores in numeric form can now be formatted.</p>
+<ul>
+<li>Formats can be set for both objectives and individual scores</li>
+<li>Scores with set formats will render the same in all context (sidebar, under player name, etc.)</li>
+<li>Subcommands for managing formats:<ul>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat &#x3C;format></code> - set the default format for an objective</li>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat</code> - clear the default format for an objective</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score> &#x3C;format></code> - set the format for a specific score holder</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score></code> - clear the format for a specific score holder</li>
+</ul></li>
+<li>Formats:<ul>
+<li><code>styled &#x3C;style></code> - the score will be displayed with selected style (like <code>{"bold":true}</code>)</li>
+<li><code>fixed &#x3C;text component></code> - the score will be replaced with the text component</li>
+<li><code>blank</code> - the score will not be displayed</li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 26</h1>
+<ul>
+<li>Renamed <code>minecraft:grass</code> block and item to <code>minecraft:short_grass</code></li>
+</ul>
+<h1>Resource Pack Version 19</h1>
+<ul>
+<li>Added block model, item model and block state definitions for <code>crafter</code></li>
+<li>Added GUI container texture and sprites for <code>crafter</code></li>
+<li>Added <code>white_smoke</code> particle definition</li>
+</ul>
+<h1>Resource Pack Version 20</h1>
+<ul>
+<li><code>bat.png</code> has been updated for the new Bat model with new texture mapping</li>
+<li>Added block models, items models and block state definitions for the following blocks:<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>tuff_stairs</code></li>
+<li><code>tuff_slab</code></li>
+<li><code>tuff_wall</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>polished_tuff_stairs</code></li>
+<li><code>polished_tuff_slab</code></li>
+<li><code>polished_tuff_wall</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>tuff_brick_stairs</code></li>
+<li><code>tuff_brick_slab</code></li>
+<li><code>tuff_brick_wall</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+<li>Added unique sprites for the following blocks:<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+</ul>
+<h1>Resource Pack Version 21</h1>
+<ul>
+<li>The <code>uniform</code> font has been updated to use Unifont 15.1.04 (from 15.0.06)</li>
+<li>The only supported texture format is now <code>.png</code></li>
+</ul>
+<h2>Breeze Mob</h2>
+<ul>
+<li>Added entity models and textures for experimental Breeze mob:<ul>
+<li><code>breeze</code>, <code>wind_charge</code></li>
+</ul></li>
+<li>Added shader:<ul>
+<li><code>breeze_wind</code></li>
+</ul></li>
+</ul>
+<h1>Resource Pack Version 22</h1>
+<ul>
+<li>Renamed <code>minecraft:grass</code> block and item to <code>minecraft:short_grass</code></li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Crafter</h2>
+<ul>
+<li>The Crafter is a new block that enables the crafting of items and blocks via Redstone</li>
+<li>The Crafter will eject one crafted item at a time when powered by a Redstone pulse</li>
+<li>Upon receiving a signal, the Crafter will eject the recipe result from the front face</li>
+<li>If the output result has multiple types of items, all the result items will be ejected together</li>
+<li>When placed, the front face of the Crafter will face towards the Player</li>
+</ul>
+<h3>Crafter User Interface</h3>
+<ul>
+<li>The Crafter has a 3x3 interactable crafting grid</li>
+<li>The Crafter’s crafting grid slots are toggleable, meaning that the player can change the behavior of a slot by interacting with it while not holding an item</li>
+<li>A slot that is ‘toggled’ cannot hold any items<ul>
+<li>Other blocks such as Hoppers and Droppers also cannot place items into them</li>
+</ul></li>
+<li>Unlike the Crafting Table, the Crafter displays a preview of the crafted item which will be crafted and ejected on the next Redstone pulse, but cannot be manually taken out by the player</li>
+<li>The Crafter User Interface is shared between all players interacting with it, meaning that multiple players can interact with the Crafter at the same time, similar to Chests and Hoppers</li>
+</ul>
+<h3>Crafter Interaction with Other Blocks</h3>
+<ul>
+<li>The signal strength of a Comparator reading a Crafter is 0-9, where each non-empty or toggled slot adds 1 strength</li>
+<li>Hoppers and Minecarts with Hoppers can be used to both insert and extract items from the Crafter</li>
+<li>Droppers can be used to insert items into the Crafter</li>
+<li>Items inserted from another block (ex: Hopper, Dropper) will fill the Crafter's slots based on these rules:<ul>
+<li>Prioritize the first empty slot (from left-to-right, top-to-bottom)</li>
+<li>If there are no empty slots then prioritize the smallest stack of the same item (pick the first if there are multiple)</li>
+<li>If there is a toggled slot it will be skipped. The item will then be moved into the container</li>
+<li>If the item cannot be moved, it will be ejected into the world</li>
+</ul></li>
+<li>Items are removed from Crafters by Hoppers and Minecarts with Hoppers in the same order as from other containers like Chests</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_experimental_3_tn.jpg" alt="Minecraft Java Edition 1.20.3 Experimental Image 3 Thumbnail"></p>
+<h2>Copper Family</h2>
+<p>The Copper family of blocks has been expanded, including:</p>
+<ul>
+<li>Chiseled Copper</li>
+<li>Copper Grate</li>
+<li>Copper Bulb</li>
+<li>Copper Door</li>
+<li>Copper Trapdoor</li>
+<li>Oxidized and waxed variants of all of the above</li>
+</ul>
+<h3>Chiseled Copper</h3>
+<ul>
+<li>Crafted with 2 Cut Copper Slabs of a shared oxidation level</li>
+<li>Can be crafted in the Stonecutter</li>
+</ul>
+<h3>Copper Grate</h3>
+<ul>
+<li>A new type of decorative block unique to the Copper family</li>
+<li>Crafted with 4 Copper Blocks of a shared oxidation level<ul>
+<li>Can be crafted in the Stonecutter</li>
+</ul></li>
+<li>Properties:<ul>
+<li>Transparent and allows light to pass through</li>
+<li>Mobs cannot suffocate inside them</li>
+<li>Cannot conduct Redstone</li>
+<li>Hostile mobs cannot naturally spawn on them</li>
+<li>Can hold Water</li>
+</ul></li>
+</ul>
+<h3>Copper Bulb</h3>
+<ul>
+<li>A light-emitting block that can toggle its light emission through Redstone pulses</li>
+<li>Oxidizes like other Copper blocks, and emits light based on oxidation level<ul>
+<li>Copper Bulb: Light level 15</li>
+<li>Exposed Copper Bulb: Light level 12</li>
+<li>Weathered Copper Bulb: Light level 8</li>
+<li>Oxidized Copper Bulb: Light level 4</li>
+</ul></li>
+<li>When placed, its light is off by default<ul>
+<li>While the Copper Bulb is unpowered, it will toggle its light on or off when it receives a Redstone pulse</li>
+<li>Copper Bulb light will stay on even when the Redstone source is removed until it receives another Redstone pulse to toggle it off</li>
+</ul></li>
+<li>A Redstone crystal will glow in the center of Copper Bulbs while it is powered by a Redstone signal</li>
+<li>Comparators will read a signal strength of 15 if the Copper Bulb's light is on</li>
+<li>Copper Bulbs do not conduct Redstone power</li>
+<li>The crafting recipe for 4 Copper Bulbs is:<ul>
+<li>3 Copper Blocks of a shared oxidation level</li>
+<li>1 Blaze Rod</li>
+<li>1 Redstone Dust</li>
+</ul></li>
+</ul>
+<h3>Copper Doors and Trapdoors</h3>
+<ul>
+<li>Copper variants of Doors and Trapdoors that can oxidize over time and be waxed</li>
+<li>Works like wooden doors in that they can be opened and closed with interaction, as well as Redstone</li>
+<li>Crafted with Copper Blocks that have a shared oxidation level</li>
+</ul>
+<h2>Tuff Family</h2>
+<p>Tuff has been expanded to have its own family of blocks, including:</p>
+<ul>
+<li>Stair, Slab, Wall and Chiseled variants</li>
+<li>Tuff Bricks with Stair, Slab, Wall and Chiseled variants</li>
+<li>Polished Tuff with Stair, Slab and Wall variants</li>
+</ul>
+<p>All Tuff variants can be crafted in the Stonecutter.</p>
+<h2>Added Breeze Mob</h2>
+<ul>
+<li>The Breeze is a cunning hostile mob spawned by the Trial Spawner in some rooms within the Trial Chambers</li>
+<li>The Breeze moves primarily by leaping around its target</li>
+<li>An aggressive adversary, the Breeze shoots volatile wind energy in the form of Wind Charge projectiles at its target</li>
+<li>Wind Charges deal a small amount of damage when colliding directly with an entity</li>
+<li>After colliding with an entity or a block, Wind Charge projectiles produce a Wind Burst, which knocks back entities in the area</li>
+<li>Wind Charges break decorated pots and chorus flower blocks upon collision</li>
+<li>Wind Bursts also have the effect of 'activating' certain blocks:<ul>
+<li>Non-Iron Doors and Trapdoors are flipped</li>
+<li>Fence Gates are flipped</li>
+<li>Buttons are pressed</li>
+<li>Levers are flipped</li>
+<li>Bells are rung and swung</li>
+<li>Lit Candles are extinguished</li>
+</ul></li>
+<li>Wind Bursts do not have any effect on Iron Doors, Iron Trapdoors, or any block being held in its position by a Redstone signal</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_experimental_1_tn.jpg" alt="Minecraft Java Edition 1.20.3 Experimental Image 1 Thumbnail"></p>
+<h2>Trial Spawner</h2>
+<ul>
+<li>The Trial Spawner is a new variant of Monster Spawners that ejects rewards upon completion</li>
+<li>The challenge level will increase for each new player a Trial Spawner notices nearby<ul>
+<li>The challenge level will not decrease until it is reset during a Trial Spawner's cooldown</li>
+</ul></li>
+<li>Unlike normal Spawners, a Trial Spawner will spawn a limited number of mobs proportional to its current challenge level<ul>
+<li>It can only spawn a mob at positions that are within line of sight</li>
+<li>It can spawn a mob regardless of any light level requirement the mob has</li>
+<li>Spawned mobs are persistent</li>
+</ul></li>
+<li>Once all mobs are defeated, the Trial Spawner will eject a set of rewards proportional to the current challenge level<ul>
+<li>After the rewards have been ejected, the Trial Spawner goes into cooldown for 30 minutes, during which it will no longer spawn mobs</li>
+</ul></li>
+<li>Trial Spawners cannot be crafted nor obtained by players in Survival - instead, they can be found naturally placed throughout Trial Chambers</li>
+<li>Trial Spawners are extremely slow to mine and resistant to explosions, and will not drop even with Silk Touch</li>
+<li>When placed in Creative, Trial Spawners have no mob type set by default<ul>
+<li>The mob type can be set by interacting with it while holding a Spawn Egg</li>
+</ul></li>
+<li>Creative and Spectator players cannot be detected or noticed by Trial Spawners</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1.20.3_experimental_2_tn.jpg" alt="Minecraft Java Edition 1.20.3 Experimental Image 2 Thumbnail"></p>
+<h2>Trial Chambers</h2>
+<ul>
+<li>Trial Chambers are a new structure in the Overworld where players can explore and take on combat challenges<ul>
+<li>Trial Chambers are made out of a variety of Copper and Tuff blocks, and can be found in different sizes</li>
+<li>Trial Chambers are a relatively common find throughout the Deepslate layer of the underground</li>
+</ul></li>
+<li>The layout of each Trial Chamber is procedurally generated, and can include traps, Reward Chests and a variety of combat areas<ul>
+<li>Supply Chests can be found between different rooms, and give you blocks and items which help you navigate your trials</li>
+<li>Reward Chests are guarded by challenges in each room, and can be a source of many high level enchanted books and equipment</li>
+<li>The loot found in Reward Chests are still being iterated, and are absolutely not final</li>
+</ul></li>
+<li>Each Trial Chamber will include Trial Spawners with a melee, small melee, or ranged category:<ul>
+<li>Melee<ul>
+<li>Zombie</li>
+<li>Husk</li>
+<li>Slime</li>
+</ul></li>
+<li>Small Melee<ul>
+<li>Spider</li>
+<li>Cave Spider</li>
+<li>Baby Zombie</li>
+<li>Silverfish</li>
+</ul></li>
+<li>Ranged<ul>
+<li>Skeleton</li>
+<li>Stray</li>
+<li>Skeleton with Poison Tipped Arrows</li>
+</ul></li>
+</ul></li>
+<li>Each Trial Spawner category will only use one mob for the entire structure when generated, and these mobs are randomized for each Trial Chamber<ul>
+<li>For example, one Trial Chamber might only spawn Zombies, Cave Spiders and Strays, while another might only spawn Slimes, Silverfish and Skeletons</li>
+<li>The exceptions to this are some Trial Spawners in unique rooms which always spawn Breezes</li>
+</ul></li>
+<li>Natural mob spawning does not occur within Trial Chambers</li>
+</ul>
+<h3>Known Issues</h3>
+<ul>
+<li>The corridors sometimes end with a dead end</li>
+<li>Aquifers, Lush Caves, and Sculk Veins sometimes intersect with the Trial Chamber</li>
+</ul>
+<h2>Trial Key</h2>
+<ul>
+<li>An item that can only be obtained from Trial Spawners</li>
+<li>Trial Keys do not currently have any functionality</li>
+</ul>
+<h1>Fixed bugs in 1.20.3</h1>
+<p>Around 85 bugs were fixed in this release. View the <a href="https://bugs.mojang.com/issues/?filter=27936" target="_blank" rel="noopener noreferrer">list on the issue tracker</a>.</p>

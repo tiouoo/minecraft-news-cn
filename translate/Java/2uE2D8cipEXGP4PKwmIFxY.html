@@ -1,0 +1,135 @@
+<p>是时候推出 1.16 预发布版了！</p>
+<p>从现在开始，你会看到我们主要在修复漏洞。此外，预发布版不一定遵循我们通常每周三发布的节奏，所以请保持关注！</p>
+<h1>1.16 预发布版 1 的新特性</h1>
+<ul>
+<li>新增了“极佳”图形选项——为一些透明元素使用逐像素混合层</li>
+</ul>
+<h1>1.16 预发布版 1 的更改</h1>
+<ul>
+<li>现在可以在创造模式下给牛和哞菇挤奶</li>
+<li>现在可以在创造模式下从哞菇获取蘑菇煲</li>
+<li>在创造模式下对水使用空桶时，现在会获得水桶。如果你的物品栏中已经有水桶，对水使用空桶时不会获得额外水桶</li>
+<li>当任何村民被闪电击中时，转化成的女巫不再会消失</li>
+<li>新增了 gamerule universalAnger（默认禁用），该规则会使被激怒的中立生物攻击附近的任何玩家，而不仅仅是激怒它们的玩家。与禁用 forgiveDeadPlayers 搭配使用效果最佳</li>
+<li>新增了 gamerule forgiveDeadPlayers（默认启用），该规则会使被激怒的中立生物在目标玩家附近死亡后停止愤怒</li>
+<li>僵尸猪灵不再攻击无辜的旁观者（除非你启用 gamerule universalAnger）</li>
+<li>僵尸猪灵会在目标玩家附近死亡后停止愤怒（除非你禁用 gamerule forgiveDeadPlayers）</li>
+</ul>
+<h1>1.16 预发布版 1 的技术性更改</h1>
+<ul>
+<li>现在可以通过数据包添加或修改锻造配方</li>
+<li>游戏现在会检测关键数据包问题，如缺少必需的标签，并阻止世界加载</li>
+</ul>
+<h2>数据包选择</h2>
+<ul>
+<li>现在可以在创建世界之前选择数据包</li>
+<li>“复制世界”选项也会复制源世界中的数据包</li>
+</ul>
+<h2>包选择界面</h2>
+<ul>
+<li>现在可以将包直接拖放到数据包和资源包选择界面上</li>
+<li>拖放的文件和目录将被复制到相应位置</li>
+</ul>
+<h2>锻造配方</h2>
+<p>现在有了一种 <code>smithing</code> 配方类型。此类配方用于锻造台，将一种物品类型升级为另一种类型，并保留标签。</p>
+<ul>
+<li><code>base</code> - 指定要升级物品的材料</li>
+<li><code>addition</code> - 指定可触发升级的合法物品的材料</li>
+<li><code>result</code> - 指定升级后物品类型的物品</li>
+</ul>
+<h1>1.16 预发布版 1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-4520" target="_blank" rel="noopener noreferrer">MC-4520</a> 带有攻击性的中立生物在世界重载后变回中立状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-9856" target="_blank" rel="noopener noreferrer">MC-9856</a> 你无法在创造模式下拾取水/熔岩桶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-36322" target="_blank" rel="noopener noreferrer">MC-36322</a> 无法在创造模式下给牛挤奶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64623" target="_blank" rel="noopener noreferrer">MC-64623</a> 闪电不能被选择器选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-69032" target="_blank" rel="noopener noreferrer">MC-69032</a> 当某个生物击中僵尸猪灵，且该生物死亡后，僵尸猪灵会攻击你</li>
+<li><a href="https://bugs.mojang.com/browse/MC-90969" target="_blank" rel="noopener noreferrer">MC-90969</a> 无法在创造模式下从哞菇获取蘑菇煲 / 从牛获取牛奶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-106968" target="_blank" rel="noopener noreferrer">MC-106968</a> 雪傀儡不会受到喷溅型或滞留型水瓶的伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127004" target="_blank" rel="noopener noreferrer">MC-127004</a> 从远处观看含水方块时会出现 z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138675" target="_blank" rel="noopener noreferrer">MC-138675</a> 凋灵之首会对创造模式下的玩家施加凋灵效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138713" target="_blank" rel="noopener noreferrer">MC-138713</a> “成双成对”进度不需要驴或骡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-158906" target="_blank" rel="noopener noreferrer">MC-158906</a> 在床上睡觉后，玩家不会位于方块中心</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159500" target="_blank" rel="noopener noreferrer">MC-159500</a> 敌对生物攻击蜜蜂时，也会导致蜜蜂攻击玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-161969" target="_blank" rel="noopener noreferrer">MC-161969</a> 强制转换问题：在高坐标下向末地传送门框架添加末影之眼会导致粒子失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163950" target="_blank" rel="noopener noreferrer">MC-163950</a> 与水相邻的冰在远处观看时出现 z-fighting 问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164692" target="_blank" rel="noopener noreferrer">MC-164692</a> 进入船时不会播放手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165669" target="_blank" rel="noopener noreferrer">MC-165669</a> 当你透过生物瞄准方块并使用刷怪蛋时，会播放手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165734" target="_blank" rel="noopener noreferrer">MC-165734</a> 不在轨道上的动力矿车使用不兼容物品时仍会显示手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166188" target="_blank" rel="noopener noreferrer">MC-166188</a> 蜜蜂死后仍在攻击玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166524" target="_blank" rel="noopener noreferrer">MC-166524</a> 尝试用与羊相同颜色的染料给羊染色时会显示手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167042" target="_blank" rel="noopener noreferrer">MC-167042</a> 强制转换问题：篝火火星在高坐标下生成的位置会失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167044" target="_blank" rel="noopener noreferrer">MC-167044</a> 强制转换问题：在某些情况下，高坐标距离下附魔台的书籍不会为玩家打开</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167046" target="_blank" rel="noopener noreferrer">MC-167046</a> 强制转换问题：高坐标下熔岩火星粒子和熔岩爆裂声在生成时失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167047" target="_blank" rel="noopener noreferrer">MC-167047</a> 强制转换问题：被其他爆炸点燃的 TNT 方块在高坐标下失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167091" target="_blank" rel="noopener noreferrer">MC-167091</a> 强制转换问题：从树叶滴落的水粒子在高坐标下失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167195" target="_blank" rel="noopener noreferrer">MC-167195</a> 蜜蜂在生存模式中被一击杀死时会对玩家产生仇恨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167971" target="_blank" rel="noopener noreferrer">MC-167971</a> 强制转换问题：红石中继器发射的粒子在高坐标下失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168675" target="_blank" rel="noopener noreferrer">MC-168675</a> 更改全屏设置后，关闭视频设置菜单时本应更新的设置不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170872" target="_blank" rel="noopener noreferrer">MC-170872</a> 强制转换问题：下界生物群系粒子会出现精度损失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170944" target="_blank" rel="noopener noreferrer">MC-170944</a> /locatebiome 消息无法容纳所有生物群系名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171035" target="_blank" rel="noopener noreferrer">MC-171035</a> 强制转换问题：降雨产生的粒子在高坐标下失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171037" target="_blank" rel="noopener noreferrer">MC-171037</a> 强制转换问题：下雨时熔岩产生的烟雾在高坐标下失去精度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171663" target="_blank" rel="noopener noreferrer">MC-171663</a> 对失业村民右键点击有时会导致村民获得职业后手臂动画停止</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171683" target="_blank" rel="noopener noreferrer">MC-171683</a> 绯红木门和诡异木门无法使用透明纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172259" target="_blank" rel="noopener noreferrer">MC-172259</a> 幼年疣猪兽/僵尸疣猪兽的头部略微高于颈部，看起来头部部分悬空</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172531" target="_blank" rel="noopener noreferrer">MC-172531</a> 小型生物会卡在栅栏拐角处</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172610" target="_blank" rel="noopener noreferrer">MC-172610</a> 当没有透过可骑乘生物瞄准方块时使用刷怪蛋，玩家会开始骑乘该生物并生成一只幼年生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174815" target="_blank" rel="noopener noreferrer">MC-174815</a> 猪灵不会自动攻击凋灵</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175028" target="_blank" rel="noopener noreferrer">MC-175028</a> 有时疣猪兽不会躲避诡异菌</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175215" target="_blank" rel="noopener noreferrer">MC-175215</a> 水下引爆重生锚时会破坏方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175409" target="_blank" rel="noopener noreferrer">MC-175409</a> 当你从灵魂沙或灵魂土上漂浮/飞起时，灵魂疾行“效果”仍然存在</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175476" target="_blank" rel="noopener noreferrer">MC-175476</a> 重生锚不会剔除方块面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175911" target="_blank" rel="noopener noreferrer">MC-175911</a> 离开灵魂方块后灵魂疾行效果仍然持续</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176041" target="_blank" rel="noopener noreferrer">MC-176041</a> 瞄准熔岩时对炽足兽使用刷怪蛋会同时生成幼年和成年炽足兽</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176188" target="_blank" rel="noopener noreferrer">MC-176188</a> 炽足兽不会受到喷溅型或滞留型水瓶的伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176225" target="_blank" rel="noopener noreferrer">MC-176225</a> 加速幼年炽足兽成长时不会显示手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176470" target="_blank" rel="noopener noreferrer">MC-176470</a> 在下界重生不会使僵尸猪灵解除仇恨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176637" target="_blank" rel="noopener noreferrer">MC-176637</a> 在 Mojang 加载界面关闭游戏会导致 NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176640" target="_blank" rel="noopener noreferrer">MC-176640</a> 你可以将重生点设置在危险方块内</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178567" target="_blank" rel="noopener noreferrer">MC-178567</a> 给羊剪毛时再次不会显示手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178618" target="_blank" rel="noopener noreferrer">MC-178618</a> 给棕色哞菇喂花时不会播放手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178961" target="_blank" rel="noopener noreferrer">MC-178961</a> /loot ... fish ... 命令不再有任何功能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179561" target="_blank" rel="noopener noreferrer">MC-179561</a> 撤退的幼年疣猪兽有时不会向玩家的反方向寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180111" target="_blank" rel="noopener noreferrer">MC-180111</a> 因被玩家攻击以外的原因而愤怒的疣猪兽会无视放置的驱避物。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180922" target="_blank" rel="noopener noreferrer">MC-180922</a> 使用刷怪蛋右键点击生物以生成幼年变种时，如果没有透过生物瞄准方块，不会播放手臂挥动动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182308" target="_blank" rel="noopener noreferrer">MC-182308</a> 鸡骑士无法消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182748" target="_blank" rel="noopener noreferrer">MC-182748</a> 强制转换问题：红石粉粒子在高坐标下生成在错误位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182883" target="_blank" rel="noopener noreferrer">MC-182883</a> 统一性问题：幼年疣猪兽不会跟随成年疣猪兽</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183766" target="_blank" rel="noopener noreferrer">MC-183766</a> “谁在切洋葱”的大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183767" target="_blank" rel="noopener noreferrer">MC-183767</a> 原版数据包中“郑重承诺”进度的文件名不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183792" target="_blank" rel="noopener noreferrer">MC-183792</a> piglin_loved 物品标签包含不必要的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183821" target="_blank" rel="noopener noreferrer">MC-183821</a> “游戏模式切换器”底部的提示文本未居中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183825" target="_blank" rel="noopener noreferrer">MC-183825</a> 新的下界挑战不会给予经验值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183893" target="_blank" rel="noopener noreferrer">MC-183893</a> 金粒不在 #piglin_loved 标签下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184679" target="_blank" rel="noopener noreferrer">MC-184679</a> 使用自定义世界生成时，温度写入错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184947" target="_blank" rel="noopener noreferrer">MC-184947</a> 从某些世界导入或导出世界生成设置时可以看到回车符号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185095" target="_blank" rel="noopener noreferrer">MC-185095</a> “thrown_item_picked_up_by_entity”进度触发器对玩家无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185377" target="_blank" rel="noopener noreferrer">MC-185377</a> 对海带使用骨粉会产生一大片粒子，而不是仅在海带方块空间内</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185480" target="_blank" rel="noopener noreferrer">MC-185480</a> 强制转换问题：下雨时篝火散发的烟雾粒子在高坐标下形成在错误位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186062" target="_blank" rel="noopener noreferrer">MC-186062</a> 加载资源时出现警告“在指定着色器程序中找不到名为 InSize 的 uniform。”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186064" target="_blank" rel="noopener noreferrer">MC-186064</a> 对某些用户而言，云会渲染在所有对象的前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186067" target="_blank" rel="noopener noreferrer">MC-186067</a> 一些结构的战利品箱不包含任何物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186071" target="_blank" rel="noopener noreferrer">MC-186071</a> 关闭云时，云仍然可见且渲染不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186074" target="_blank" rel="noopener noreferrer">MC-186074</a> 使用某些显卡时，粒子与透明方块的渲染顺序错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186075" target="_blank" rel="noopener noreferrer">MC-186075</a> 最新快照中的 GPU 使用率明显高于之前，导致一些用户卡顿或崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186080" target="_blank" rel="noopener noreferrer">MC-186080</a> 在某些显卡上，实体、方块实体和物品会渲染为黑色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186088" target="_blank" rel="noopener noreferrer">MC-186088</a> 方块碰撞箱再次导致半透明方块不会在其后方渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186089" target="_blank" rel="noopener noreferrer">MC-186089</a> 函数在实体标签之前加载，导致加载错误。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186101" target="_blank" rel="noopener noreferrer">MC-186101</a> 函数中的某些命令导致 NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186108" target="_blank" rel="noopener noreferrer">MC-186108</a> 附魔闪光不会渲染在掉落/抛出的物品上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186109" target="_blank" rel="noopener noreferrer">MC-186109</a> 你可以在单人世界中使用多人游戏命令</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186124" target="_blank" rel="noopener noreferrer">MC-186124</a> 闪电不会渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186204" target="_blank" rel="noopener noreferrer">MC-186204</a> 物品会渲染在其他实体、透明方块和具有特殊渲染器的方块的前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186253" target="_blank" rel="noopener noreferrer">MC-186253</a> 手持半透明方块时，后方的水、云、粒子和已放置的半透明方块在第三人称模式下会不可见。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186274" target="_blank" rel="noopener noreferrer">MC-186274</a> 末影龙死亡时的紫色光芒不会出现</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186284" target="_blank" rel="noopener noreferrer">MC-186284</a> 在 20w22a 中玩家的视角是颠倒的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186314" target="_blank" rel="noopener noreferrer">MC-186314</a> 村民会执着于潜在的工作站点</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186335" target="_blank" rel="noopener noreferrer">MC-186335</a> 蜜蜂在蜂箱/蜂巢内的年龄计算出错</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186455" target="_blank" rel="noopener noreferrer">MC-186455</a> 没有经验的持久化村民在转化为女巫后可能会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186464" target="_blank" rel="noopener noreferrer">MC-186464</a> 已启用的数据包仍会出现在“/datapack enable”列表中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186478" target="_blank" rel="noopener noreferrer">MC-186478</a> 加入世界时，minecraft:tick 标签不起作用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186480" target="_blank" rel="noopener noreferrer">MC-186480</a> 当方块被活塞移动时，粘液块和蜂蜜块的内部部分再次消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186600" target="_blank" rel="noopener noreferrer">MC-186600</a> 下界金矿石在地图上显示为灰色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186696" target="_blank" rel="noopener noreferrer">MC-186696</a> 在 F5 模式下，不死图腾会导致屏幕出现红色或蓝色色调</li>
+</ul>

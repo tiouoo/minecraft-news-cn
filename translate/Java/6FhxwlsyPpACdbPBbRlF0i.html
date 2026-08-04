@@ -1,0 +1,683 @@
+<p>我们现在为 Minecraft: Java Edition 发布 1.19.4。此版本带来了马匹繁殖与唱片机的改进、药水的新外观、新的无障碍功能，以及许多新的技术能力，例如 damage 和 ride 命令、展示实体和交互实体。</p>
+<p>update_1_20 实验也已更新，首次展示嗅探兽、考古、盔甲纹饰和樱花树林特性。</p>
+<h1>更改</h1>
+<ul>
+<li>更新了马的繁殖</li>
+<li>唱片机已改为与基岩版保持一致</li>
+<li>手持盔甲或鞘翅物品时进行交互，现在会与已装备的装备交换</li>
+<li>受伤时的视角倾斜现在基于所受伤害的方向</li>
+<li>调整了药水的颜色，使不同类型的药水更容易区分</li>
+<li>药水不再有附魔闪光，因为它会遮挡药水内容的颜色</li>
+<li>物品和盔甲上的附魔闪光现在更加柔和</li>
+<li>盔甲架在放置和破坏时现在会保留自定义名称</li>
+<li>恼鬼在空手时现在使用单独的蓄力动画</li>
+<li>调整了配方解锁机制，让新玩家更容易发现重要的合成配方</li>
+<li>更新了创建新世界界面</li>
+<li>新增无障碍选项和改进</li>
+<li>更新了领域界面，使其更符合单人游戏和多人游戏界面</li>
+<li>为领域添加了通知系统，用于告知你关于领域的重要信息</li>
+<li>在选项菜单中添加了“制作人员与声明”按钮</li>
+</ul>
+<h2>马、驴和羊驼</h2>
+<p>幼崽的速度、跳跃高度和生命值现在会基于双亲属性的平均值产生变异，而不再偏向于可能的平均值。</p>
+<p>这一改动使马的繁殖成为获得优秀马匹的可行途径——只要玩家从优良的双亲开始，并投入足够的时间和金胡萝卜。</p>
+<h2>唱片机</h2>
+<ul>
+<li>播放音乐唱片时，在其上方发出音符粒子</li>
+<li>播放音乐唱片时，会发出强度为 15 的红石信号</li>
+<li>投掷器和漏斗现在可以与其交互</li>
+</ul>
+<h2>创造模式菜单</h2>
+<ul>
+<li>在创造模式菜单中添加了画作变种</li>
+<li>带有预定义变种的画作现在在悬停时会在物品描述中显示作者和标题</li>
+</ul>
+<h2>配方解锁</h2>
+<ul>
+<li>创建新世界后立即解锁工作台配方</li>
+<li>木棍不再解锁弩的配方</li>
+<li>木棍不再解锁灵魂营火的配方</li>
+</ul>
+<h2>更新的创建新世界界面</h2>
+<ul>
+<li>该界面现在分为三个标签页<ul>
+<li>“游戏”标签页可以设置世界名称、游戏模式、难度以及是否允许作弊</li>
+<li>“世界”标签页可以设置世界类型和种子，并可切换结构生成和奖励箱</li>
+<li>“更多”标签页提供对游戏规则和数据包选择界面的访问</li>
+</ul></li>
+<li>可以使用键盘按 Ctrl+Tab 和 Ctrl+Shift+Tab 切换标签页</li>
+<li>也可以按 Ctrl+Tab 加数字编号跳转到特定标签页<ul>
+<li>例如，Ctrl+2 跳到第二个标签页</li>
+</ul></li>
+<li>移除了编辑世界界面中的“导入设置”按钮和相应的“导出设置”按钮</li>
+<li>新增了一个界面，可轻松启用/禁用实验性功能<ul>
+<li>该界面始终可以在“更多”标签页下找到</li>
+<li>在快照中，可以在“游戏”标签页下找到快捷按钮</li>
+</ul></li>
+</ul>
+<h2>无障碍功能</h2>
+<ul>
+<li>为首次启动游戏的玩家添加了无障碍功能引导界面</li>
+<li>自动跳跃现在默认关闭</li>
+<li>添加了方向键导航</li>
+<li>添加了高对比度资源包</li>
+<li>资源包界面现在可以通过键盘导航</li>
+<li>更改了菜单界面中提示框的定位方式，使按钮仍然可读</li>
+<li>在按键绑定界面中添加了提示框，标明哪些按键绑定冲突</li>
+<li>添加了“受伤视角倾斜”无障碍选项，控制受伤时视角抖动的程度</li>
+<li>在无障碍菜单中添加了两个新选项，用于调整附魔闪光的速度和透明度</li>
+<li>添加了“通知显示时间”无障碍选项，用于更改解锁配方、进度、字幕和选中物品名称等通知的显示时长</li>
+</ul>
+<h3>方向键导航</h3>
+<ul>
+<li>现在可以使用方向键在菜单界面中导航</li>
+<li>使用方向键导航时，需要按 Enter 或 Space 激活滑块，才能开始更改数值</li>
+</ul>
+<h3>高对比度资源包</h3>
+<ul>
+<li>添加了一个内置资源包，用于增强 UI 元素的对比度</li>
+<li>在无障碍菜单中添加了一个选项，用于启用高对比度资源包</li>
+<li>目前这只会影响菜单界面，但我们将来也会将其扩展到游戏界面</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现为 12</li>
+<li>资源包版本现为 13</li>
+<li>添加了一组用于展示物品、方块和文本的实体</li>
+<li>添加了用于检测交互和攻击的实体</li>
+<li>添加了数据驱动的伤害类型</li>
+<li>添加了用于对实体造成伤害的 <code>damage</code> 命令</li>
+<li>添加了 <code>ride</code> 命令，用于骑乘和解除骑乘实体</li>
+<li><code>clone</code> 命令现在支持在不同维度之间进行克隆</li>
+<li><code>data modify</code> 命令现在可以使用新的 <code>string</code> 数据源</li>
+<li>新的 <code>execute</code> 子命令：<code>if dimension</code>、<code>if loaded</code>、<code>on</code>、<code>positioned over</code>、<code>summon</code></li>
+<li>添加了一种新类型的图集配置源：<code>paletted_permutations</code></li>
+<li>按 F3+S 现在会将动态纹理（如图集、地图等）的内容转储到 <code>screenshots/debug/</code></li>
+<li>为 <code>translate</code> 文本组件添加了 <code>fallback</code> 字段</li>
+<li><code>translate</code> 格式中的越界参数不再被静默忽略</li>
+<li>添加了以下游戏事件：<ul>
+<li><code>entity_dismount</code>，振动频率为 6</li>
+<li><code>entity_mount</code>，振动频率为 7</li>
+</ul></li>
+<li>更改了以下游戏事件：<ul>
+<li><code>item_interact_finish</code> 现在的振动频率为 2，而不是 14</li>
+</ul></li>
+<li>从 <code>options.txt</code> 中移除了 <code>heldItemTooltips</code> 选项</li>
+<li>添加了一项网络协议功能，可强制在同一客户端 tick 内处理一批数据包</li>
+<li>为专用服务器命令行添加了 <code>--pidFile</code> 参数，用于将进程 ID 写入文件</li>
+<li>原版资源包的 en_us 语言文件现在按按键的字母数字顺序排序</li>
+<li>为配方添加了 <code>show_notification</code> 字段<ul>
+<li>接受一个布尔值，决定解锁此配方时是否显示通知</li>
+<li>未指定时默认为 <code>true</code></li>
+</ul></li>
+<li>为更新的下界合金升级配方添加了新的配方类型 <code>smithing_transform</code></li>
+<li>为新的盔甲纹饰配方添加了新的配方类型 <code>smithing_trim</code></li>
+<li>为新的饰纹陶罐配方添加了新的配方类型 <code>crafting_decorated_pot</code></li>
+<li>为盔甲纹饰系统添加了新的注册表 <code>trim_pattern</code> 和 <code>trim_material</code></li>
+<li>锻造台暂时有两种菜单类型<ul>
+<li>没有锻造模板槽位的旧菜单已重命名为 <code>legacy_smithing</code><ul>
+<li>当盔甲纹饰功能不再是实验性功能时，该菜单将被移除</li>
+</ul></li>
+<li>添加了带有锻造模板槽位的新菜单，名为 <code>smithing</code></li>
+</ul></li>
+<li>在 <code>HideFlags</code> NBT 字段中添加了新标志（值 128），用于隐藏盔甲纹饰物品提示框</li>
+</ul>
+<h2>资源包格式</h2>
+<ul>
+<li>附魔闪光现在有两个独立的纹理文件：<code>enchanted_glint_entity.png</code> 和 <code>enchanted_glint_item.png</code></li>
+<li>用于动态缩放按钮和滑块的纹理格式已更新，始终在左侧和右侧包含固定的 20px 边框</li>
+<li>滑块纹理现在在单独的 <code>slider.png</code> 文件中定义</li>
+<li>创建新世界界面现在使用独立的 <code>light_dirt_background.png</code> 作为背景，与其他界面不同</li>
+</ul>
+<h2>命令</h2>
+<h3><code>clone</code></h3>
+<p>clone 命令现在支持指定源维度和目标维度。</p>
+<p>新语法：</p>
+<p><code>clone [from &#x3C;sourceDimension>] &#x3C;begin> &#x3C;end> [to &#x3C;targetDimension>] &#x3C;destination> ...</code></p>
+<p>参数：</p>
+<ul>
+<li><code>sourceDimension</code>：要从中克隆的维度 ID</li>
+<li><code>targetDimension</code>：要克隆到的维度 ID</li>
+</ul>
+<h3><code>damage</code></h3>
+<p>用于对实体造成伤害的新命令。</p>
+<p>语法：</p>
+<ul>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [at &#x3C;location>]</code></li>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [by &#x3C;entity>] [from &#x3C;cause>]</code></li>
+</ul>
+<p>参数：</p>
+<ul>
+<li><code>target</code>：要伤害的实体</li>
+<li><code>amount</code>：造成的伤害量</li>
+<li><code>damageType</code>：造成的伤害类型<ul>
+<li>这决定了伤害如何影响实体，以及显示哪条死亡消息</li>
+</ul></li>
+<li><code>entity</code>：造成伤害的实体</li>
+<li><code>cause</code>：间接伤害时的伤害原因<ul>
+<li>例如：被箭射中时，<code>entity</code> 是箭矢投射物，而 <code>cause</code> 可能是骷髅</li>
+</ul></li>
+<li><code>location</code>：伤害来源的位置（当没有实体造成伤害时）<ul>
+<li>例如，<code>location</code> 可能代表床在下界爆炸的位置</li>
+</ul></li>
+</ul>
+<h3><code>data</code></h3>
+<p>新的数据源可用：</p>
+<ul>
+<li><code>string &#x3C;entity|block|storage> [path] [start] [end]</code> - 将值作为文本读取，结果为字符串值</li>
+</ul>
+<p>新参数：</p>
+<ul>
+<li><code>start</code>：字符串开头要包含的第一个字符的索引</li>
+<li><code>end</code>：字符串末尾要排除的第一个字符的索引</li>
+</ul>
+<h3><code>effect</code></h3>
+<ul>
+<li><code>infinite</code> 现在是效果持续时间的有效选项<ul>
+<li>无限效果持续时间在玩家物品栏视图中显示为“∞”</li>
+</ul></li>
+</ul>
+<h3><code>execute</code></h3>
+<h4><code>execute if|unless</code></h4>
+<p><code>execute if|unless</code> 子命令新增以下可用条件：</p>
+<ul>
+<li><code>execute if|unless loaded &#x3C;pos></code> - 检查给定位置是否已完全加载（包括方块和实体）</li>
+<li><code>execute if|unless dimension &#x3C;dimension></code> - 检查执行是否在匹配的维度中</li>
+</ul>
+<p>参数：</p>
+<ul>
+<li><code>pos</code>：要检查的方块位置</li>
+<li><code>dimension</code>：维度 ID</li>
+</ul>
+<h4><code>execute on</code></h4>
+<p>新的 <code>execute</code> 子命令，用于根据与当前执行实体的关系选择实体：</p>
+<ul>
+<li><code>execute on &#x3C;relation></code></li>
+</ul>
+<p>关系：</p>
+<ul>
+<li><code>vehicle</code> - 执行实体正在骑乘的实体</li>
+<li><code>passengers</code> - 所有直接骑乘执行实体的实体（不包括次级乘客）</li>
+<li><code>controller</code> - 控制执行实体的实体（例如：船上的第一名乘客）</li>
+<li><code>owner</code> - 执行实体的主人，如果它是可驯服动物（如猫、狼或鹦鹉）</li>
+<li><code>leasher</code> - 用拴绳牵引执行实体的实体（如果拴在栅栏上，则可能是拴绳结）</li>
+<li><code>target</code> - 执行实体的攻击目标</li>
+<li><code>attacker</code> - 在之前 5 秒内伤害过执行实体的最近实体</li>
+<li><code>origin</code>：<ul>
+<li>射手，如果执行实体是投射物（如箭、火球、三叉戟、烟花、投掷药水等）</li>
+<li>投掷者，如果执行实体是物品</li>
+<li>效果来源，如果执行实体是区域效果云</li>
+<li>点燃者，如果执行实体是已点燃的 TNT</li>
+<li>召唤者，如果执行实体是唤魔者尖牙或恼鬼</li>
+</ul></li>
+</ul>
+<p>如果该关系不适用于执行实体，或没有匹配的实体，选择器将返回零个元素。</p>
+<h4><code>execute positioned over</code></h4>
+<p>新的 <code>execute</code> 子命令，用于查找高度图顶部的坐标。将执行位置的高度更改为给定高度图的顶部。</p>
+<p>语法：</p>
+<ul>
+<li><code>execute positioned over &#x3C;heightmap></code></li>
+</ul>
+<h5>高度图</h5>
+<p>高度图根据某些标准记录一列方块中的最高位置。可用选项：</p>
+<ul>
+<li><code>world_surface</code>：任何非空气方块</li>
+<li><code>motion_blocking</code>：任何阻挡移动的材料（例如忽略花和草）</li>
+<li><code>motion_blocking_no_leaves</code>：任何非树叶的阻挡移动材料</li>
+<li><code>ocean_floor</code>：任何非流体的阻挡移动材料</li>
+</ul>
+<h4><code>execute summon</code></h4>
+<p>新的 <code>execute</code> 子命令，用于召唤新实体并将其上下文（<code>@s</code>）绑定到该实体。旨在简化实体设置，减少对原始 NBT 编辑的需求。</p>
+<p>语法：</p>
+<ul>
+<li><code>execute summon &#x3C;entity id></code></li>
+</ul>
+<h3><code>fillbiome</code></h3>
+<ul>
+<li>优化了使用 <code>fillbiome</code> 命令时传输的网络数据量</li>
+</ul>
+<h2><code>title</code></h2>
+<ul>
+<li><code>title times</code> 的所有时间参数现在都是时间持续时间，支持 <code>t</code>、<code>s</code> 和 <code>d</code> 后缀</li>
+</ul>
+<h3><code>weather</code></h3>
+<ul>
+<li>天气变化的持续时间在未指定时，现在会与游戏常规天气循环一致</li>
+<li><code>duration</code> 参数现在是 tick 为单位的时间持续时间，支持 <code>t</code>、<code>s</code> 和 <code>d</code> 后缀<ul>
+<li>要保留现有功能，你需要在已有命令中添加 <code>s</code> 后缀</li>
+</ul></li>
+</ul>
+<h3><code>ride</code></h3>
+<p>允许实体开始或停止骑乘其他实体的新命令。</p>
+<p>语法：</p>
+<ul>
+<li><code>ride &#x3C;target> mount &#x3C;vehicle></code><ul>
+<li>使单个目标骑乘单个载具</li>
+<li>在以下情况下，命令会失败：<ul>
+<li><code>vehicle</code> 是玩家</li>
+<li><code>target</code> 已经在骑乘载具</li>
+<li><code>target</code> 和 <code>vehicle</code> 是同一实体</li>
+<li><code>vehicle</code> 已经是 <code>target</code> 的乘客（直接或间接）</li>
+</ul></li>
+</ul></li>
+<li><code>ride &#x3C;target> dismount</code><ul>
+<li>使 <code>target</code> 从其骑乘的任何载具上下来</li>
+<li>如果 <code>target</code> 没有骑乘任何东西，则失败</li>
+</ul></li>
+</ul>
+<h2>伤害类型</h2>
+<p>伤害类型是一个可以通过数据包扩展的新注册表。伤害类型决定了游戏如何处理伤害，包括伤害具有哪些属性，以及实体因该类伤害死亡时使用哪条死亡消息。</p>
+<p>示例：</p>
+<pre><code>{
+  "exhaustion": 0.1,
+  "message_id": "arrow",
+  "scaling": "when_caused_by_living_non_player"
+}
+</code></pre>
+<p>字段：</p>
+<ul>
+<li><code>message_id</code>：由该伤害类型造成的死亡所使用的消息 ID<ul>
+<li>将与其他字符串片段组合形成翻译键</li>
+</ul></li>
+<li><code>exhaustion</code>：该伤害类型造成的饥饿值消耗量</li>
+<li><code>scaling</code>：该伤害类型是否随难度等级调整。可能的值：<ul>
+<li><code>never</code>：伤害始终相同</li>
+<li><code>always</code>：伤害始终随难度调整</li>
+<li><code>when_caused_by_living_non_player</code>：如果伤害由非玩家的生物造成，则伤害随难度调整</li>
+</ul></li>
+<li><code>effects</code>：可选字段，控制对玩家造成伤害时的表现方式。可能的值：<ul>
+<li><code>hurt</code>（默认）：默认受伤音效</li>
+<li><code>thorns</code>：荆棘受伤音效</li>
+<li><code>drowning</code>：溺水音效</li>
+<li><code>burning</code>：单个 tick 的燃烧音效</li>
+<li><code>poking</code>：浆果丛刺扎音效</li>
+<li><code>freezing</code>：冰冻 tick 音效</li>
+</ul></li>
+<li><code>death_message_type</code>：可选字段，控制是否使用特殊的死亡消息变种。可能的值：<ul>
+<li><code>default</code>（默认）：不应用特殊死亡消息逻辑</li>
+<li><code>fall_variants</code>：显示摔落伤害死亡的变种消息，而不是普通死亡消息，例如 <code>death.fell.assist.item</code></li>
+<li><code>intentional_game_design</code>：显示“有意的游戏设计”消息，而不是普通死亡消息</li>
+</ul></li>
+</ul>
+<p>伤害类型标签控制着来自不同来源的伤害如何被解释的许多方面。</p>
+<h2>谓词</h2>
+<h3>伤害类型谓词</h3>
+<p>以下字段已从伤害类型谓词中移除：<code>is_projectile</code>、<code>is_explosion</code>、<code>bypasses_armor</code>、<code>bypasses_invulnerability</code>、<code>bypasses_magic</code>、<code>is_fire</code>、<code>is_magic</code>、<code>is_lightning</code>。</p>
+<p>添加了一个新的 <code>tags</code> 数组，当所有条目匹配时谓词匹配。每个条目有两个字段：</p>
+<ul>
+<li><code>id</code>：伤害类型标签的 ID</li>
+<li><code>expected</code>：谓词匹配时，伤害预期具有或不具有该标签</li>
+</ul>
+<h2>游戏规则</h2>
+<ul>
+<li>添加了 <code>commandModificationBlockLimit</code>，控制 <code>clone</code>、<code>fill</code> 和 <code>fillbiome</code> 单次执行中更改的最大方块数</li>
+<li>添加了 <code>doVinesSpread</code> 游戏规则，决定藤蔓是否会蔓延到附近的方块<ul>
+<li>默认为 <code>true</code></li>
+</ul></li>
+</ul>
+<h2>文本组件</h2>
+<p>为 <code>translate</code> 文本组件添加了可选的 <code>fallback</code> 字段。</p>
+<ul>
+<li>新字段是一个字符串，当翻译缺失时将用作替代</li>
+<li>如果缺少 <code>fallback</code>，则保留旧行为（即使用键本身作为翻译）</li>
+</ul>
+<h2>展示实体</h2>
+<p>添加了三种新实体，用于灵活展示物品、方块和文本</p>
+<ul>
+<li>这些实体与 <code>marker</code> 类似，不会 tick，也没有碰撞或物理效果</li>
+<li>模型在实体位置渲染，围绕 X 和 Y 轴正常旋转（因此可以通过传送命令控制），同时还支持额外的任意模型变换</li>
+</ul>
+<h3>通用数据类型</h3>
+<p>展示实体的标签内容包含一些具有复杂结构的新数据类型。任何形式都可以用于修改数据，但只有一种形式用于保存。</p>
+<h4>变换</h4>
+<p>任意仿射变换。</p>
+<ul>
+<li>矩阵形式：由 16 个数字组成的数组，描述行主序矩阵</li>
+<li>分解形式（用于保存）：包含以下字段的对象：<ul>
+<li><code>translation</code> - 3D 向量</li>
+<li><code>left_rotation</code>、<code>right_rotation</code> - <code>rotation</code></li>
+<li><code>scale</code> - 3D 向量</li>
+<li>变换按 <code>translation</code>、<code>left_rotation</code>、<code>scale</code>、<code>right_rotation</code> 的顺序组合</li>
+</ul></li>
+</ul>
+<h4>旋转</h4>
+<ul>
+<li>四元数形式（用于保存）：由 4 个数字组成的数组，描述分量 (x, y, z, w)</li>
+<li>轴角形式：包含以下字段的对象：<ul>
+<li><code>axis</code> - 单位 3D 向量</li>
+<li><code>angle</code> - 以弧度为单位</li>
+</ul></li>
+</ul>
+<h3>插值</h3>
+<p>展示实体的某些属性可以进行插值。这意味着客户端会看到随时间逐渐变化，而不是瞬时跳跃。</p>
+<p>展示实体会跟踪插值属性的当前值和先前值：</p>
+<ul>
+<li>所有标记为“interpolated”的属性都属于同一个插值集合</li>
+<li>对插值属性的任何更新都会导致插值集合中的所有值被保存为“当前”值<ul>
+<li>未更改属性值的 data 命令执行（即使该值存在于 NBT 中）不计为更新</li>
+<li>更新最多每 tick 向客户端同步一次，因此命令中的多次更新仍算作一次更新</li>
+</ul></li>
+<li>更新前生成的最后一个值会被保存为“先前”值</li>
+<li>如果启用插值，实体将在 <code>interpolation_duration</code> tick 内从“先前”值过渡到“当前”值</li>
+<li>可以通过写入 <code>start_interpolation</code> 字段来启动插值（该字段通常不存在于 NBT 中）<ul>
+<li>此字段的值是客户端收到更新与插值开始之间的延迟（以 tick 为单位）</li>
+<li><code>0</code> tick 表示插值将在收到更新后的下一个客户端 tick 开始</li>
+<li>正值会进一步增加此延迟</li>
+</ul></li>
+<li>在收到更新后的 <code>start_interpolation</code> + <code>interpolation_duration</code> tick 时，插值将结束（实体完全处于“当前”状态）</li>
+<li>可以在不设置 <code>start_interpolation</code> 的情况下更新插值目标，但其行为仍会像是在上次更新 <code>start_interpolation</code> 时启动的<ul>
+<li>这意味着，如果更新了值，但自上次 <code>start_interpolation</code> 更新以来已过去超过 <code>interpolation_duration</code> tick，实体将立即跳到新值</li>
+</ul></li>
+</ul>
+<h3>通用属性</h3>
+<p>所有展示实体类型都具有以下字段：</p>
+<ul>
+<li><code>transformation</code> - 应用于模型的变换（在正常实体方向之后）。默认为单位变换。可插值</li>
+<li><code>billboard</code> - 控制实体在渲染时是否应转向面向玩家的选项：<ul>
+<li><code>fixed</code> - 不旋转（默认）</li>
+<li><code>vertical</code> - 实体可以围绕其垂直轴旋转</li>
+<li><code>horizontal</code> - 实体可以围绕其水平轴旋转</li>
+<li><code>center</code> - 实体可以围绕其中心点旋转</li>
+</ul></li>
+<li><code>brightness</code> - 如果存在，则覆盖用于渲染的光照值。默认省略（意味着渲染使用实体位置的光照值）。对象有两个字段：<ul>
+<li><code>sky</code> - 天空光照值，0..15</li>
+<li><code>block</code> - 方块光照值，0..15</li>
+</ul></li>
+<li><code>view_range</code> - 该实体的最大视距。实际距离取决于客户端的渲染距离和实体距离缩放。默认值为 1.0（与火球大致相同）</li>
+<li><code>shadow_radius</code> - 阴影大小。默认为 0（无阴影）。可插值</li>
+<li><code>shadow_strength</code> - 阴影强度。控制阴影不透明度与下方方块距离的关系。默认为 1。可插值</li>
+<li><code>width</code>、<code>height</code> - 描述剔除包围盒的大小<ul>
+<li>包围盒垂直方向从 <code>y</code> 延伸到 <code>y+height</code>，水平方向从实体位置向各个方向延伸 <code>width/2</code></li>
+<li>如果任一字段设置为 <code>0</code>，则禁用剔除</li>
+<li>两者默认为 <code>0</code></li>
+</ul></li>
+<li><code>glow_color_override</code> - 覆盖发光边框颜色。默认为 <code>-1</code>（使用队伍颜色）。忽略 Alpha 分量</li>
+</ul>
+<h3><code>item_display</code></h3>
+<p>展示单个物品堆叠。</p>
+<ul>
+<li>可以通过命令设置 <code>container.0</code> 槽位来更改物品堆叠</li>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>item</code> - 要展示的物品堆叠。格式与物品栏中相同（示例：<code>{id: "minecraft:dirt", Count: 1}</code>）</li>
+<li><code>item_display</code> - 描述应用于物品的物品模型变换（如模型 JSON 的 <code>display</code> 部分所定义）<ul>
+<li>值：<code>none</code>（默认）、<code>thirdperson_lefthand</code>、<code>thirdperson_righthand</code>、<code>firstperson_lefthand</code>、<code>firstperson_righthand</code>、<code>head</code>、<code>gui</code>、<code>ground</code>、<code>fixed</code></li>
+</ul></li>
+</ul>
+<h3><code>block_display</code></h3>
+<p>展示一个方块状态。</p>
+<ul>
+<li>不会展示所有方块实体，即使它们通常会在方块放置时生成（如箱子）</li>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>block_state</code> - 要展示的方块状态。格式与末影人手持物品相同（示例 <code>{Name:"minecraft:dirt"}</code>）</li>
+</ul>
+<h3><code>text_display</code></h3>
+<p>展示一个文本组件。</p>
+<p>字段：</p>
+<ul>
+<li><code>text</code> - 要展示的文本。组件使用展示实体的上下文进行解析</li>
+<li><code>line_width</code> - 用于换行的行宽（注意：也可以使用 <code>\n</code> 字符添加新行）。默认为 200</li>
+<li><code>text_opacity</code> - 渲染文本的不透明度（Alpha 分量）。默认为 255。可插值</li>
+<li><code>background</code> - 背景颜色。包含 Alpha 通道。默认为 0x40000000。可插值</li>
+<li><code>default_background</code> - 如果为 true，渲染使用默认文本背景颜色（与聊天中相同）。默认为 false</li>
+<li><code>shadow</code> - 文本是否应带阴影显示。默认为 false</li>
+<li><code>see_through</code> - 文本是否应透过方块可见。默认为 false</li>
+<li><code>alignment</code> - 文本应如何对齐<ul>
+<li>值：<code>center</code>（默认）、<code>left</code>、<code>right</code></li>
+</ul></li>
+</ul>
+<p>注意：文本展示背景使用新的着色器类型 <code>rendertype_text_background</code> 和 <code>rendertype_text_background_see_through</code>。</p>
+<h2>交互实体</h2>
+<p>一种记录攻击（“左键”）和交互（“右键”）的新实体类型。交互实体不可见，且具有自定义尺寸。</p>
+<p>字段：</p>
+<ul>
+<li><code>width</code>：实体包围盒的宽度（默认 <code>1</code>）</li>
+<li><code>height</code>：实体包围盒的高度（默认 <code>1</code>）</li>
+<li><code>attack</code>：记录对该实体的最近一次攻击操作</li>
+<li><code>interaction</code>：记录对该实体的最近一次交互操作</li>
+<li><code>response</code>：布尔值，指定交互是否应触发响应（手臂摆动、音效等 - 默认 <code>false</code>）</li>
+</ul>
+<h3>操作格式</h3>
+<p>存储操作时，它始终有两个字段：</p>
+<ul>
+<li><code>player</code>：执行操作的玩家的 UUID（以标准整数数组格式存储）</li>
+<li><code>timestamp</code>：事件发生时的游戏 tick 时间戳（以 long 存储）</li>
+</ul>
+<h3>进度触发器</h3>
+<ul>
+<li>与交互实体交互会触发 <code>player_interacted_with_entity</code></li>
+<li>攻击交互实体会触发 <code>player_hurt_entity</code></li>
+</ul>
+<h3>与交互实体一起使用 <code>execute on</code></h3>
+<p>交互实体会将最后与其交互的玩家作为目标。这使得以下操作成为可能：</p>
+<ul>
+<li><code>execute on attacker</code>：以最后攻击该实体的玩家身份执行</li>
+<li><code>execute on target</code>：以最后与该实体交互的玩家身份执行</li>
+</ul>
+<h2>标签</h2>
+<h3>方块行为</h3>
+<ul>
+<li>火在某些生物群系中会更快熄灭，现在由 <code>increased_fire_burnout</code> 生物群系标签控制</li>
+</ul>
+<h3>生物生成</h3>
+<ul>
+<li><code>only_allows_snow_and_gold_rabbits</code> 生物群系标签已重命名为 <code>spawns_gold_rabbits</code>，以匹配其行为</li>
+<li>白色兔子变种现在由 <code>spawns_white_rabbits</code> 生物群系标签控制</li>
+<li>狐狸变种现在由 <code>spawns_snow_foxes</code> 生物群系标签控制</li>
+</ul>
+<h3>生物行为</h3>
+<ul>
+<li>雪傀儡在温暖生物群系中融化现在由 <code>snow_golem_melts</code> 生物群系标签控制</li>
+<li>现在只有 <code>dismounts_underwater</code> 实体标签中的生物才会在水下强制骑乘者解除骑乘</li>
+</ul>
+<h2>网络协议</h2>
+<ul>
+<li>客户端在接收登录数据包时现在会重置其安全聊天会话状态</li>
+</ul>
+<h3>数据包捆绑</h3>
+<ul>
+<li>在客户端方向的游戏协议中添加了新的分隔数据包</li>
+<li>两个分隔符之间的所有数据包保证在同一 tick 内处理</li>
+<li>出于安全原因，此功能在服务器方向不受支持</li>
+</ul>
+<h2>调色板排列</h2>
+<ul>
+<li><code>paletted_permutations</code> 是一种新类型的图集配置源，用于根据一组调色板在内存中动态生成新纹理</li>
+<li>调色板允许你交换纹理的颜色，而无需在资源包中提供纹理变种的所有文件</li>
+<li>这对于盔甲纹饰等功能非常有用，你可以更改盔甲部分的颜色，而无需为每种颜色创建新纹理</li>
+<li><code>paletted_permutations</code> 源有一组必需参数：<ul>
+<li><code>textures</code> 基础纹理的命名空间位置列表<ul>
+<li>这些纹理将用于生成经过调色板修改的变种</li>
+</ul></li>
+<li><code>palette_key</code> 调色板键文件的命名空间位置<ul>
+<li>调色板键用于定义我们要用下面定义的调色板替换的关键像素颜色集合</li>
+</ul></li>
+<li><code>permutations</code> 从后缀到颜色调色板文件命名空间位置的排列映射<ul>
+<li>后缀将附加到输出变种纹理的资源位置的开头，使用 <code>_</code> 字符分隔后缀和基础纹理名称</li>
+<li>调色板是一个包含一组像素的纹理文件，用于替换每个基础纹理中与调色板键匹配的像素</li>
+<li>每个调色板中的像素数量必须与此源定义的 <code>palette_key</code> 的像素数量相同</li>
+<li>键匹配通过比较 <code>palette_key</code> 中每个像素的 RGB 值与调色板中每个像素的 RGB 值来完成</li>
+<li>键匹配时忽略 Alpha 通道，但在生成的纹理中，Alpha 通道会与调色板的 Alpha 通道相乘</li>
+<li>不匹配 <code>palette_key</code> 的像素将原样复制到生成的纹理中</li>
+</ul></li>
+</ul></li>
+<li>定义 <code>paletted_permutations</code> 源后，你可以在资源包的其他资源中引用这些命名空间的输出纹理</li>
+</ul>
+<p>例如，如果你有以下 <code>paletted_permutations</code> 源：</p>
+<pre><code>{
+    "type": "paletted_permutations",
+    "textures": [
+        "minecraft:item/leather_helmet",
+        "minecraft:item/leather_chestplate",
+        "minecraft:item/leather_leggings",
+        "minecraft:item/leather_boots"
+    ],
+    "palette_key": "minecraft:colormap/color_palettes/leather_armor_color_key",
+    "permutations": {
+        "red": "minecraft:colormap/color_palettes/red",
+        "green": "minecraft:colormap/color_palettes/green",
+        "blue": "minecraft:colormap/color_palettes/blue"
+    }
+}
+</code></pre>
+<p>然后你可以像这样在其他资源中引用生成的纹理：</p>
+<pre><code>{
+    "textures": {
+        "layer0": "minecraft:item/leather_helmet_red",
+        "layer1": "minecraft:item/leather_chestplate_green",
+        "layer2": "minecraft:item/leather_boots_blue"
+    }
+}
+</code></pre>
+<h2>纹饰图案与材料</h2>
+<ul>
+<li>盔甲的纹饰图案和材料分别由服务器通过 <code>trim_pattern</code> 和 <code>trim_material</code> 注册表定义<ul>
+<li>因此，可以通过数据包添加新的纹饰图案和材料</li>
+</ul></li>
+<li>这些会在客户端加入服务器时同步到客户端<ul>
+<li>但是，客户端必须同时拥有相应的资源包才能看到这些已注册的纹饰图案和材料</li>
+<li>这些纹理的路径根据 pattern json 的文件名推断，并将尝试在与纹饰图案的 <code>name</code> 字段相同的命名空间内查找纹理</li>
+</ul></li>
+<li>纹饰图案定义以下数据：<ul>
+<li><code>asset_id</code>，一个用于推断纹理位置和本地化的命名空间 ID</li>
+<li><code>template_item</code>，用于应用纹饰图案的锻造模板物品的 ID</li>
+<li><code>description</code>，一个文本组件，用于在悬停盔甲物品堆叠时显示盔甲纹饰的图案名称</li>
+</ul></li>
+<li>纹饰材料定义以下数据：<ul>
+<li><code>asset_name</code>，用作盔甲纹饰纹理位置后缀的字符串</li>
+<li><code>ingredient</code>，用于应用纹饰材料的材料物品的 ID</li>
+<li><code>item_model_index</code>，一个浮点数，定义每个盔甲物品模型为了更改此材料的视觉效果而应针对的物品模型覆盖</li>
+<li><code>override_armor_materials</code>，一个可选的盔甲材料到覆盖调色板的映射<ul>
+<li>映射键是此纹饰材料想用不同调色板覆盖的盔甲材料</li>
+<li>映射值是将此纹饰材料应用于具有相应盔甲材料的盔甲件时使用的调色板名称</li>
+</ul></li>
+<li><code>description</code>，一个文本组件，用于在悬停盔甲物品堆叠时显示盔甲纹饰的材料名称<ul>
+<li>此描述中定义的样式也会应用于盔甲纹饰图案的 <code>description</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>实验性功能</h1>
+<p>以下更改仅在开启一个或多个实验时生效，可以通过激活相应的实验性数据包，或在创建世界时在“实验”界面中开启。</p>
+<ul>
+<li>添加了锻造模板物品</li>
+<li>重新设计了锻造台</li>
+<li>更改了下界合金装备的合成方式</li>
+<li>添加了新的盔甲纹饰系统，用于在视觉上自定义你的盔甲</li>
+<li>添加了嗅探兽生物和火把花</li>
+<li>添加了樱花树林生物群系</li>
+<li>添加了考古系统</li>
+<li>生物头颅现在可以无需潜行地放置在音符盒顶部</li>
+</ul>
+<h2>锻造模板</h2>
+<ul>
+<li>锻造台已被重新设计为进行装备实体升级和修改的工作站</li>
+<li>除了用于组合装备和材料的槽位外，现在还有一个必需的槽位，用于放置称为锻造模板的物品类型</li>
+<li>锻造模板定义了你将对装备进行的升级类型<ul>
+<li>它既指定了你可以升级哪些类型的物品，也指定了哪些材料可以用于自定义升级</li>
+<li>目前有两类锻造模板：盔甲纹饰和下界合金升级</li>
+</ul></li>
+<li>锻造模板在锻造台中用于升级物品时会被消耗</li>
+<li>你可以在工作台中用 7 个钻石 + 1 个模板对应的材料方块 + 1 个锻造模板来合成一个锻造模板的副本，输出 2 个相同的锻造模板</li>
+</ul>
+<h2>下界合金装备</h2>
+<ul>
+<li>下界合金装备的合成现在还需要下界合金升级锻造模板</li>
+<li>下界合金升级锻造模板可以在所有堡垒遗迹的箱子中随机找到，并且每个藏宝室堡垒遗迹中保证有 2 个</li>
+<li>这一改动是出于多种原因：<ul>
+<li>增加玩家在下界合金之前使用钻石装备的时间</li>
+<li>使下界合金装备成为游戏进程中更重要的成就</li>
+<li>使下界合金更自然地融入新的锻造台合成系统</li>
+</ul></li>
+</ul>
+<h2>盔甲纹饰</h2>
+<ul>
+<li>你现在可以在锻造台上使用各种独特的纹饰来在视觉上自定义你的盔甲</li>
+<li>盔甲纹饰纯粹是视觉上的，没有游戏玩法加成，只能应用于头盔、胸甲、护腿和靴子<ul>
+<li>所有纹饰图案在盔甲物品图标上视觉相同，但颜色仍会根据纹饰材料而变化</li>
+<li>要查看一件盔甲具有哪种纹饰图案，你可以在物品栏中悬停在该物品上</li>
+</ul></li>
+<li>盔甲纹饰锻造模板可以在世界各地找到，以下每个结构都包含其独特的锻造模板：<ul>
+<li>掠夺者前哨站：哨兵盔甲纹饰</li>
+<li>沙漠神殿：沙丘盔甲纹饰</li>
+<li>沉船：海岸盔甲纹饰</li>
+<li>丛林神庙：荒野盔甲纹饰</li>
+<li>海底神殿：潮汐盔甲纹饰</li>
+<li>远古城市：守护盔甲纹饰</li>
+<li>林地府邸：恼鬼盔甲纹饰</li>
+<li>下界要塞：肋骨盔甲纹饰</li>
+<li>堡垒遗迹：猪鼻盔甲纹饰</li>
+<li>要塞：眼眸盔甲纹饰</li>
+<li>末地城：尖塔盔甲纹饰</li>
+</ul></li>
+<li>锻造模板在其对应结构的箱子中生成<ul>
+<li>海底神殿没有箱子，远古守卫者有时会在死亡时掉落锻造模板</li>
+</ul></li>
+<li>有些盔甲纹饰锻造模板比其他模板更稀有，所以要多留意它们，让你的朋友刮目相看！</li>
+<li>盔甲纹饰有两个属性：图案和材料<ul>
+<li>图案由用于应用纹饰的锻造模板定义，代表纹饰的视觉图案</li>
+<li>材料由你用于应用纹饰的材料定义，代表纹饰的颜色</li>
+</ul></li>
+<li>可用于定义盔甲纹饰颜色的材料如下：<ul>
+<li>铁、铜、金、青金石、绿宝石、钻石、下界合金、红石、紫水晶、石英</li>
+</ul></li>
+</ul>
+<h2>嗅探兽</h2>
+<ul>
+<li>嗅探兽是 Minecraft Live 2022 的生物投票获胜者</li>
+<li>嗅探兽无法被引诱或驯服</li>
+<li>嗅探兽是被动、友好的生物</li>
+<li>嗅探兽会嗅闻空气，并偶尔挖掘种子，产出火把花种子</li>
+<li>可以通过喂食火把花种子来繁殖嗅探兽</li>
+<li>嗅探兽目前仅在创造模式物品栏中作为生成蛋提供</li>
+</ul>
+<h2>火把花</h2>
+<ul>
+<li>火把花种子可以种在耕地上，长成一朵花</li>
+<li>种子可用于繁殖两只嗅探兽</li>
+<li>长成的花可以收获并重新种植，也可以合成染料</li>
+</ul>
+<h2>樱花树林</h2>
+<ul>
+<li>添加了新的樱花树林生物群系，其中有美丽的樱花树<ul>
+<li>该生物群系可以在山脉中找到，与草甸类似的位置</li>
+</ul></li>
+<li>添加了新的樱花木系列，以及所有可以制作的相应木制物品</li>
+<li>樱花树叶下方会飘落粉红色粒子</li>
+<li>添加了新的粉红色花簇方块，地面有大量粉红色花朵<ul>
+<li>每个粉红色花簇方块最多可包含 4 片花瓣</li>
+<li>对其使用骨粉会增加花瓣数量</li>
+<li>在方块上放置花瓣会增加花瓣数量</li>
+<li>挖掘该方块会掉落与方块中花瓣数量相同的花瓣</li>
+</ul></li>
+</ul>
+<h2>考古</h2>
+<h3>刷子</h3>
+<ul>
+<li>刷子是一种可合成的物品，你可以用它来刷东西</li>
+</ul>
+<h3>可疑的沙子</h3>
+<ul>
+<li>可以在沙漠神殿和沙漠水井中找到</li>
+<li>这种脆弱的方块很难发现，也很容易破坏，所以要小心！</li>
+<li>用刷子刷可疑的沙子会提取出很久以前埋藏的物品</li>
+</ul>
+<h3>陶片</h3>
+<ul>
+<li>陶片上带有图案</li>
+<li>它们无法合成，只能通过刷可疑的沙子获得</li>
+</ul>
+<h3>饰纹陶罐</h3>
+<ul>
+<li>将四个陶片合成在一起会得到一个饰纹陶罐，每面都有一个图案</li>
+<li>在饰纹陶罐配方中，红砖物品可以替代陶片<ul>
+<li>用红砖物品制作的面不会有图案</li>
+</ul></li>
+<li>使用任何破坏方块的工具敲碎饰纹陶罐，将其打碎并取回陶片<ul>
+<li>徒手、使用精准采集工具或任何其他物品击打陶罐，会掉落一个完整的陶罐</li>
+</ul></li>
+</ul>
+<h1>1.19.4 中修复的漏洞</h1>
+<p>本版本修复了约 150 个漏洞。查看<a href="https://bugs.mojang.com/issues/?filter=27608" target="_blank" rel="noopener noreferrer">问题追踪器上的列表</a>。</p>

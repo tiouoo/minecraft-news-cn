@@ -1,0 +1,44 @@
+<h1>Changes in 1.15.2</h1>
+<ul>
+<li>Bees no longer anger when a nearby nest/hive is destroyed using a silk touch tool</li>
+<li>Added <code>doPatrolSpawning</code> and <code>doTraderSpawning</code> game rules that control spawning of patrols and wandering traders, respectively</li>
+<li>Added <code>gui_light</code> option in block models to allow controlling light when rendering model as item in GUI<ul>
+<li>Controls light when rendering block model inside slot. If set to <code>side</code>, model will be rendered like block. If set to <code>front</code>, model is shaded like flat item</li>
+</ul></li>
+<li>Any birch or oak sapling grown near a flower within 2 blocks distance on the same y-level has a 5% chance of having a bee nest</li>
+<li>Bee Nests now have a 2% chance of spawning in Flower Forests</li>
+<li>Bee Nests now have a 0.2% chance of spawning in Forest, Wooded Hills, Birch Forest, Tall Birch Forest, Birch Forest Hills, and Tall Birch Hills biomes</li>
+<li>Fixed bugs</li>
+</ul>
+<h1>Fixed bugs in 1.15.2</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-169825" target="_blank" rel="noopener noreferrer">MC-169825</a> - “Multiplayer (3rd party)” shows in window title when disconnecting from a singleplayer world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169839" target="_blank" rel="noopener noreferrer">MC-169839</a> - Certain potion effects that override lower level effects don’t get removed after their duration ends</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169840" target="_blank" rel="noopener noreferrer">MC-169840</a> - Drinking a level 1 potion under a level 2 beacon and leaving results in the effect being lost</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169848" target="_blank" rel="noopener noreferrer">MC-169848</a> - Crashes when trying to create Beehive From planted tree</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169886" target="_blank" rel="noopener noreferrer">MC-169886</a> - No older world protection in 1.15.2 PR 1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-862" target="_blank" rel="noopener noreferrer">MC-862</a> - Spawn protection doesn’t work for item frames, paintings and armor stands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-1541" target="_blank" rel="noopener noreferrer">MC-1541</a> - Beacon effect removes potion effect of the same type</li>
+<li><a href="https://bugs.mojang.com/browse/MC-51053" target="_blank" rel="noopener noreferrer">MC-51053</a> - Furnace minecarts lose power after navigating corners</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150575" target="_blank" rel="noopener noreferrer">MC-150575</a> - Concrete powder does not turn into concrete when letting it fall beside water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153987" target="_blank" rel="noopener noreferrer">MC-153987</a> - Falling down ladders while wearing elytra</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165695" target="_blank" rel="noopener noreferrer">MC-165695</a> - Hoppers harvesting honeycomb from bee hives and bee nests only pick up one honeycomb</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166312" target="_blank" rel="noopener noreferrer">MC-166312</a> - Loom UI pattern icons are too dark</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166319" target="_blank" rel="noopener noreferrer">MC-166319</a> - B on “Open in browser” is lowercase in link confirmation GUI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166324" target="_blank" rel="noopener noreferrer">MC-166324</a> - “Raw input” button has lowercase “i”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166722" target="_blank" rel="noopener noreferrer">MC-166722</a> - Some custom item models appear dark in the inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167018" target="_blank" rel="noopener noreferrer">MC-167018</a> - Misplaced pixel in critical hit particle texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167079" target="_blank" rel="noopener noreferrer">MC-167079</a> - Horse Armor texture is off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167201" target="_blank" rel="noopener noreferrer">MC-167201</a> - Invisible glowing entities do not respect their team color</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167219" target="_blank" rel="noopener noreferrer">MC-167219</a> - Reloading a resource pack enough times will cause intense lag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167220" target="_blank" rel="noopener noreferrer">MC-167220</a> - Items on marker armor stands no longer glow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167235" target="_blank" rel="noopener noreferrer">MC-167235</a> - Distance from where you can enter a bed is off center</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167344" target="_blank" rel="noopener noreferrer">MC-167344</a> - com.mojang.blaze3d.platform.ClipboardManager leaks direct buffers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167416" target="_blank" rel="noopener noreferrer">MC-167416</a> - Distance from where a monster will stop you from sleeping is off center</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167444" target="_blank" rel="noopener noreferrer">MC-167444</a> - iron_golem_crackiness_* textures show up on invisible iron golems that are damaged</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167709" target="_blank" rel="noopener noreferrer">MC-167709</a> - Bees that ride a boat, minecart or other entities when entering their hive or nest can’t leave the hive or nest ever again</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168091" target="_blank" rel="noopener noreferrer">MC-168091</a> - Concrete powder doesn’t convert into concrete when dropped into deep water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168230" target="_blank" rel="noopener noreferrer">MC-168230</a> - End crystal beam is dark / desaturated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168467" target="_blank" rel="noopener noreferrer">MC-168467</a> - Bees do not remember how many crops they’ve pollinated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169157" target="_blank" rel="noopener noreferrer">MC-169157</a> - Breaking a hive with obstructed front makes bees vanish</li>
+</ul>

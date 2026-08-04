@@ -1,0 +1,115 @@
+<p>我们现在发布了 Minecraft 1.19.4 的第一个预发布版。此预发布版包含一个新的高对比度辅助功能设置、对创建世界选项卡界面的一些更新、一个新的 execute 子命令、对启动性能的改进，以及大量漏洞修复！</p>
+<p>在 1.19.4 的剩余开发周期中，你应该会看到大部分是漏洞修复。此外，预发布版不会遵循常规的每周三发布快照的节奏，所以请留意下一个预发布版。</p>
+<p>挖矿愉快！</p>
+<h1>重要提示</h1>
+<ul>
+<li>在之前的快照（23w07a）中创建的实验性 1.20 世界无法再在此版本中打开</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>物品栏中物品的附魔闪光现在更加明显</li>
+<li>“闪光强度”设置的默认值已降低至 75%</li>
+<li>药水不再有附魔闪光，因为它会掩盖药水内容的颜色</li>
+<li>为 Realms 添加了一个通知系统，用于告知你关于你的 Realm 的重要信息</li>
+</ul>
+<h2>辅助功能</h2>
+<ul>
+<li>添加了一个内置资源包，可增强 UI 元素的对比度<ul>
+<li>该资源包可以在辅助功能选项界面中启用，也可以手动在资源包界面中启用</li>
+<li>目前这仅在菜单中可用，但我们未来也会考虑将其带到游戏内界面中</li>
+</ul></li>
+</ul>
+<h2>更新后的创建新世界界面</h2>
+<ul>
+<li>创建新世界界面中的选项卡栏外观已更新<ul>
+<li>选项卡现在拥有独特的视觉效果，而不是传统的按钮</li>
+<li>选项卡现在对齐到屏幕中央</li>
+<li>内容已对齐到屏幕顶部</li>
+</ul></li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>资源包版本现在是 13</li>
+<li>更改了以下游戏事件：<ul>
+<li><code>item_interact_finish</code> 现在的振动频率为 2，而不是 14</li>
+</ul></li>
+<li>新伤害类型标签：<code>bypasses_cooldown</code> - 具有此标签的伤害类型将绕过受到伤害后的常规无敌时间</li>
+<li>新实体类型标签：<code>fall_damage_immune</code> - 具有此标签的实体类型不会受到坠落伤害</li>
+</ul>
+<h2>资源包格式</h2>
+<ul>
+<li>附魔闪光现在有两个独立的纹理文件：<code>enchanted_glint_entity.png</code> 和 <code>enchanted_glint_item.png</code></li>
+</ul>
+<h2>命令</h2>
+<h4><code>execute positioned over</code></h4>
+<p>新的 <code>execute</code> 子命令，用于查找高度图顶部的位置。将执行位置的高度更改为指定高度图顶部。语法：</p>
+<ul>
+<li><code>execute positioned over &#x3C;heightmap></code></li>
+</ul>
+<h5>高度图</h5>
+<p>高度图根据某些标准记录一列方块中的最高位置。可用选项：</p>
+<ul>
+<li><code>world_surface</code>：任何非空气方块</li>
+<li><code>motion_blocking</code>：任何阻挡运动的材料（例如忽略花和草）</li>
+<li><code>motion_blocking_no_leaves</code>：任何非树叶的阻挡运动材料</li>
+<li><code>ocean_floor</code>：任何非流体的阻挡运动材料</li>
+</ul>
+<h1>实验性功能的更改</h1>
+<ul>
+<li>刷子的合成配方现在使用羽毛、铜锭和木棍垂直排列</li>
+<li>嗅探兽刷怪蛋的颜色已更新</li>
+<li>由全部砖块制成的饰纹陶罐的配方现在可以在配方书中找到</li>
+</ul>
+<h1>修复 1.19.4 预发布版 1 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-106484" target="_blank" rel="noopener noreferrer">MC-106484</a> 某些药水无法通过颜色区分</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132200" target="_blank" rel="noopener noreferrer">MC-132200</a> 通过命令将漏斗召唤到已充能的位置时，会出现幽灵方块漏斗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253210" target="_blank" rel="noopener noreferrer">MC-253210</a> 山羊受到坠落伤害时会惊慌失措</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253211" target="_blank" rel="noopener noreferrer">MC-253211</a> 青蛙受到坠落伤害时会惊慌失措</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256484" target="_blank" rel="noopener noreferrer">MC-256484</a> 坐下的骆驼不会站起来并开始跟随用它们最喜欢的食物引诱它们的玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256489" target="_blank" rel="noopener noreferrer">MC-256489</a> 处于繁殖状态的坐着的骆驼不会尝试站起来并相互靠近以进行繁殖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256731" target="_blank" rel="noopener noreferrer">MC-256731</a> 骆驼恢复时的声音不受“友好生物”音量滑块控制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256861" target="_blank" rel="noopener noreferrer">MC-256861</a> 骆驼受到坠落伤害时会惊慌失措</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259192" target="_blank" rel="noopener noreferrer">MC-259192</a> 以过快速度运行 /ride 并手动下骑时，服务器/客户端位置会不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259246" target="_blank" rel="noopener noreferrer">MC-259246</a> 骑乘末影龙时乘客位置过高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259576" target="_blank" rel="noopener noreferrer">MC-259576</a> 幻翼上乘客的骑乘位置过高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259613" target="_blank" rel="noopener noreferrer">MC-259613</a> 即使将“闪光强度”设置为 100%，某些物品上的附魔闪光也几乎不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259630" target="_blank" rel="noopener noreferrer">MC-259630</a> 骑着骆驼、马和骡子穿过水面时，它们会高高弹入空中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259882" target="_blank" rel="noopener noreferrer">MC-259882</a> 美西螈杀死生物后不再给予附近玩家生命恢复效果，也不再授予“友谊的治愈力量！”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259893" target="_blank" rel="noopener noreferrer">MC-259893</a> 按钮上的长文本滚动太快</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259917" target="_blank" rel="noopener noreferrer">MC-259917</a> 在 /damage 中使用 minecraft:fall 伤害类型时，免疫坠落伤害的实体仍会受到伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259918" target="_blank" rel="noopener noreferrer">MC-259918</a> 文本滚动速度对无障碍不够友好</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259920" target="_blank" rel="noopener noreferrer">MC-259920</a> “ITEM_INTERACT_FINISH”游戏事件会覆盖其他游戏事件，导致一些动作无法产生它们预期的振动频率</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260030" target="_blank" rel="noopener noreferrer">MC-260030</a> 启动 data.Main 进行数据生成时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260033" target="_blank" rel="noopener noreferrer">MC-260033</a> 火把花不能用来合成迷之炖菜</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260035" target="_blank" rel="noopener noreferrer">MC-260035</a> 鸡和鹦鹉不会被火把花种子引诱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260051" target="_blank" rel="noopener noreferrer">MC-260051</a> 蜜蜂不会被粉瓣花和火把花引诱，也不会尝试对其授粉</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260059" target="_blank" rel="noopener noreferrer">MC-260059</a> 猪似乎不会在樱花树林生物群系中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260071" target="_blank" rel="noopener noreferrer">MC-260071</a> 嗅探兽的挖掘声在过远的距离外就能听到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260089" target="_blank" rel="noopener noreferrer">MC-260089</a> 嗅探兽受到坠落伤害时会惊慌失措</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260092" target="_blank" rel="noopener noreferrer">MC-260092</a> 嗅探兽的碰撞箱过小，导致从某些角度看不到嗅探兽，尽管它们显示在屏幕上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260098" target="_blank" rel="noopener noreferrer">MC-260098</a> 嗅探兽不计入“成双成对”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260102" target="_blank" rel="noopener noreferrer">MC-260102</a> 火把花种子不会计入“播种者”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260107" target="_blank" rel="noopener noreferrer">MC-260107</a> 嗅探兽无法正常游泳，并且在水中时它们的行走动画会冻结</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260109" target="_blank" rel="noopener noreferrer">MC-260109</a> 嗅探兽不会转动头部看向玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260118" target="_blank" rel="noopener noreferrer">MC-260118</a> 在世界创建界面中禁用实验性功能会导致包验证失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260121" target="_blank" rel="noopener noreferrer">MC-260121</a> 将漏斗放在正在播放音乐的唱片机上时，漏斗对其他玩家是幽灵方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260125" target="_blank" rel="noopener noreferrer">MC-260125</a> 嗅探兽的头部偶尔会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260126" target="_blank" rel="noopener noreferrer">MC-260126</a> 对成熟的火把花作物使用选取方块功能会给予火把花种子而非植物物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260149" target="_blank" rel="noopener noreferrer">MC-260149</a> 樱花原木不能用于合成营火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260156" target="_blank" rel="noopener noreferrer">MC-260156</a> 火把花生长后被破坏的声音与放置后被破坏的声音不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260157" target="_blank" rel="noopener noreferrer">MC-260157</a> 在现有快照服务器上，樱花树林生物群系无法通过 “/locate” 找到，也不会生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260168" target="_blank" rel="noopener noreferrer">MC-260168</a> 火把花作物不属于 #crops 方块标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260171" target="_blank" rel="noopener noreferrer">MC-260171</a> 樱花树叶和粉瓣花不属于 #flower 方块标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260172" target="_blank" rel="noopener noreferrer">MC-260172</a> 火把花不属于 #flowers 方块或物品标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260181" target="_blank" rel="noopener noreferrer">MC-260181</a> 火把花种子在创造模式物品栏中没有与其他种子归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260185" target="_blank" rel="noopener noreferrer">MC-260185</a> 粉瓣花无法被瞬间挖掘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260189" target="_blank" rel="noopener noreferrer">MC-260189</a> 樱花树苗不属于 #saplings 物品标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260191" target="_blank" rel="noopener noreferrer">MC-260191</a> 樱花树叶不属于 #leaves 和 #complete_find_tree_tutorial 物品标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260192" target="_blank" rel="noopener noreferrer">MC-260192</a> 无法使用樱花原木或樱花木制作木炭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260193" target="_blank" rel="noopener noreferrer">MC-260193</a> 樱花原木和樱花木不能用作熔炉的燃料</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260194" target="_blank" rel="noopener noreferrer">MC-260194</a> 即使世界已创建，创建新世界界面仍会出现；点击按钮会导致冻结或崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260195" target="_blank" rel="noopener noreferrer">MC-260195</a> 樱花原木和樱花木未包含在 #log、#logs_that_burn 和 #complete_find_tree_tutorial 物品标签中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260209" target="_blank" rel="noopener noreferrer">MC-260209</a> breaks_decorated_pots 物品标签位于原版数据包中，而非 1.20</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260210" target="_blank" rel="noopener noreferrer">MC-260210</a> 刷子配方位于原版数据包中，而非 1.20</li>
+</ul>

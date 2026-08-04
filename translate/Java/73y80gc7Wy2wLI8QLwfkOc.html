@@ -1,0 +1,97 @@
+<p>准备好在上一个 Minecraft：Java 版快照中释放出酷炫的羊鸣声吧！我们带来了山羊角的甜美音效。同时，循声守卫和悦灵也有一些改动。</p>
+<p>如果你对聊天的技术层面感兴趣，请务必查看聊天签名方面的更改。</p>
+<p>祝您玩得愉快！</p>
+<h1>22w17a 中的新特性</h1>
+<ul>
+<li>新增山羊角！</li>
+</ul>
+<h2>山羊角</h2>
+<ul>
+<li>当山羊撞击树木或其它山羊生成地自然生成的硬质方块（原木、石头、浮冰、铁矿石、铜矿石或绿宝石矿石）时，会掉落一个山羊角<ul>
+<li>其它实心方块山羊并不熟悉，因此不会去撞击</li>
+</ul></li>
+<li>使用山羊角可发出响彻远方的声音</li>
+<li>每只山羊角根据其来源山羊的不同拥有各自独特的声音</li>
+<li>共有 8 种山羊角变体，其中 4 种为尖叫山羊独有</li>
+<li>山羊角有时会在掠夺者前哨站中生成</li>
+</ul>
+<h1>22w17a 中的更改</h1>
+<ul>
+<li>悦灵与音符盒连接时的效果现在通过振动粒子更好地呈现</li>
+<li>悦灵与音符盒连接时现在可再次被羊毛块阻挡</li>
+<li>将 Realms 中选中的世界的微妙高亮效果替换为清晰的绿色勾选标记</li>
+<li>更新了酿造台的底部 UV 和纹理，以匹配基岩版中的图形修复</li>
+<li>由玩家点燃的 TNT 引发的爆炸现在会使被破坏的方块（如矿石方块和幽匿块）掉落经验<ul>
+<li>我们将持续关注此改动的反馈，可能在未来更新中加以调整</li>
+</ul></li>
+<li>幽匿方块现在具有极低的抗爆性</li>
+<li>循声守卫平衡性调整</li>
+</ul>
+<h2>循声守卫</h2>
+<ul>
+<li>其远程攻击现在将：<ul>
+<li>穿透盾牌和护甲</li>
+<li>造成 10 点伤害而非 30 点，冷却时间从 5 秒减少到 2 秒</li>
+<li>显示自定义死亡信息</li>
+</ul></li>
+<li>循声守卫死亡时现在会掉落一个幽匿催发体</li>
+</ul>
+<h1>22w17a 中的技术性更改</h1>
+<ul>
+<li>签名聊天</li>
+<li>移除了 <code>dampenable_vibrations</code> 游戏事件标签</li>
+</ul>
+<h2>多人游戏安全聊天签名</h2>
+<p>这是为游戏内聊天提供更高安全性和玩家保护功能的第一步。我们非常期待听到您的想法，但请记住，许多功能（例如由服务器驱动的聊天消息样式）仍然缺失。</p>
+<ul>
+<li>玩家之间的聊天消息现在经过加密签名</li>
+<li>玩家启动游戏时会获得一个 Mojang 提供的密钥对</li>
+<li>服务器可以通过在 <code>server.properties</code> 中设置 <code>enforce-secure-profile=true</code> 来要求玩家拥有 Mojang 签名的公钥<ul>
+<li>强制执行安全配置文件将阻止没有 Mojang 签名公钥的玩家连接</li>
+<li>默认情况下此设置为 <code>false</code>，允许没有 Mojang 签名公钥的玩家连接</li>
+</ul></li>
+<li>聊天样式现在通过服务器资源包使用翻译键 <code>chat.type.text</code> 进行处理</li>
+</ul>
+<h1>22w17a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-13103" target="_blank" rel="noopener noreferrer">MC-13103</a> 狼/狗/猫的口鼻部出现纹理 Z 冲突</li>
+<li><a href="https://bugs.mojang.com/browse/MC-53312" target="_blank" rel="noopener noreferrer">MC-53312</a> 灾厄村民/(僵尸)村民/女巫的长袍不会渲染最后两行像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-106627" target="_blank" rel="noopener noreferrer">MC-106627</a> 皮革帽纹理覆盖层未正确对齐</li>
+<li><a href="https://bugs.mojang.com/browse/MC-141064" target="_blank" rel="noopener noreferrer">MC-141064</a> 神职人员衣领 Z 冲突</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176840" target="_blank" rel="noopener noreferrer">MC-176840</a> 矿石被炸毁时不再掉落经验</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207309" target="_blank" rel="noopener noreferrer">MC-207309</a> 落下的实体如矿车和盔甲架会触发幽匿感测体，但船不会</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208597" target="_blank" rel="noopener noreferrer">MC-208597</a> 船在羊毛上行驶时会被幽匿感测体检测到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208771" target="_blank" rel="noopener noreferrer">MC-208771</a> 投射物落在羊毛上会触发幽匿感测体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210712" target="_blank" rel="noopener noreferrer">MC-210712</a> 在船上向后移动时幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210901" target="_blank" rel="noopener noreferrer">MC-210901</a> 实体在冰上滑行时幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248161" target="_blank" rel="noopener noreferrer">MC-248161</a> 武器匠僵尸村民纹理中残留有普通武器匠纹理的多余像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248292" target="_blank" rel="noopener noreferrer">MC-248292</a> 羊驼使用 1.14 之前的箱子纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248555" target="_blank" rel="noopener noreferrer">MC-248555</a> (僵尸)村民纹理之间存在不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248556" target="_blank" rel="noopener noreferrer">MC-248556</a> 热带草原僵尸村民缺少身体纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248557" target="_blank" rel="noopener noreferrer">MC-248557</a> 热带草原村民身体定义的像素与基础村民纹理相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248561" target="_blank" rel="noopener noreferrer">MC-248561</a> 卫道士交叉手臂元素在与其他手臂元素接触的面上存在颜色错误的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248562" target="_blank" rel="noopener noreferrer">MC-248562</a> 铁傀儡纹理中有未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249032" target="_blank" rel="noopener noreferrer">MC-249032</a> 栅栏物品模型的栏杆与放置后的方块不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249039" target="_blank" rel="noopener noreferrer">MC-249039</a> “半格”盔甲条图标纹理不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249190" target="_blank" rel="noopener noreferrer">MC-249190</a> 幽匿方块被炸毁时不会掉落经验球</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249262" target="_blank" rel="noopener noreferrer">MC-249262</a> 生物在灵魂沙或泥巴上死亡时，幽匿无法替换这些方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249669" target="_blank" rel="noopener noreferrer">MC-249669</a> tadpole.png 中存在未使用的蛙卵纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249745" target="_blank" rel="noopener noreferrer">MC-249745</a> 如果悦灵持有物品，则可以使用发射器为其装备盔甲</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249780" target="_blank" rel="noopener noreferrer">MC-249780</a> 需要支撑的方块可能在远古城市中浮空生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249919" target="_blank" rel="noopener noreferrer">MC-249919</a> 远古城市中的柱子可能生成含水楼梯</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250000" target="_blank" rel="noopener noreferrer">MC-250000</a> 悦灵和村民从物品堆中取物且无法将整组物品放入背包时，会生成幽灵物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250027" target="_blank" rel="noopener noreferrer">MC-250027</a> 悦灵检查喜爱的音符盒时忽略维度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250075" target="_blank" rel="noopener noreferrer">MC-250075</a> 红树木根中内部的两个平面比应有的尺寸小</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250076" target="_blank" rel="noopener noreferrer">MC-250076</a> 红树木根内部的两个平面禁用了着色，而其它平面并未禁用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250165" target="_blank" rel="noopener noreferrer">MC-250165</a> 在某些单一生物群系中执行 /locate stronghold 会导致意外错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250240" target="_blank" rel="noopener noreferrer">MC-250240</a> 青蛙张嘴时，背部周围可见 Z 冲突</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250288" target="_blank" rel="noopener noreferrer">MC-250288</a> 远古城市结构中的某些方块只能被幽匿脉络覆盖，无法转化为幽匿方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250321" target="_blank" rel="noopener noreferrer">MC-250321</a> 飞行和水生生物在特定方块中寻路导致崩溃 || 游戏在 tick 实体时崩溃 错误：java.lang.NullPointerException: Cannot invoke "dnm.a()" because "$$1" is null</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250331" target="_blank" rel="noopener noreferrer">MC-250331</a> 区块渲染重绘时出现故障/不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250339" target="_blank" rel="noopener noreferrer">MC-250339</a> 多人游戏服务器中画的位置偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250379" target="_blank" rel="noopener noreferrer">MC-250379</a> 传送盔甲架导致视觉不同步和异常行为</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250400" target="_blank" rel="noopener noreferrer">MC-250400</a> 方块和物品可能导致世界以隐形方式渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250411" target="_blank" rel="noopener noreferrer">MC-250411</a> 幽匿可以在远古城市结构中传播，并将顶部灵魂沙替换为火，扑灭火焰</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250429" target="_blank" rel="noopener noreferrer">MC-250429</a> 讲述人不正确地叙述聊天</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250460" target="_blank" rel="noopener noreferrer">MC-250460</a> 玩家的渲染对其他玩家延迟</li>
+</ul>

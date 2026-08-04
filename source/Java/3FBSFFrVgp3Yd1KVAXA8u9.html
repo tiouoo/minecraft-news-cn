@@ -1,0 +1,267 @@
+<p>Today we are bringing you the <code>damage</code> command and new display entities.</p>
+<p>Damage safely!</p>
+<h1>Changes</h1>
+<ul>
+<li>Jukeboxes now emit a note particle above them while playing a music disc to match Bedrock</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Added a new option in the Accessibility menu called Damage Tilt for controlling the amount of camera shake when being hurt</li>
+<li>Added a tooltip in the Key Binds screen that specifies which keybinds are conflicting</li>
+<li>"Notification Display Time" accessibility option was renamed to "Notification Time"</li>
+</ul>
+<h2>Updated Create New World Screen</h2>
+<ul>
+<li>Tabs can be switched with the keyboard by pressing Ctrl+Tab and Ctrl+Shift+Tab</li>
+<li>Specific tabs can also be navigated to by pressing Ctrl+Tab Number<ul>
+<li>For example, Ctrl+2 navigates to the second tab</li>
+</ul></li>
+<li>Added a screen to easily enable/disable experimental features<ul>
+<li>The screen can always be found under the More-tab</li>
+<li>In snapshots a shortcut button can be found under the Game-tab</li>
+</ul></li>
+</ul>
+<h2>Creative menu</h2>
+<ul>
+<li>Added painting variants to creative menu</li>
+<li>Paintings with pre-defined variant will now display author and title in description when hovered over</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>Added display entities for flexible display of items, blocks and text</li>
+<li>Added a <code>damage</code> command for applying damage to entities</li>
+<li>Added <code>--pidFile</code> argument to dedicated server command line for printing process id to file</li>
+<li>Added the following game events:<ul>
+<li><code>entity_dismount</code> with a vibration frequency of 6</li>
+<li><code>entity_mount</code> with a vibration frequency of 7</li>
+</ul></li>
+<li>Added a group of entities to display items, blocks and text</li>
+<li>Added <code>execute summon</code> to allow customization of a newly spawned entity</li>
+</ul>
+<h2>Display entities</h2>
+<p>Three new entities have been added for flexible display of items, blocks and text</p>
+<ul>
+<li>Those entities, similarily to <code>marker</code>, don't tick and have no collisions or physics</li>
+<li>Models render at entity position, with normal rotation around X and Y axis (so it can be controlled by teleport commands), but also with additional arbitrary model transform</li>
+</ul>
+<h3>Common data types</h3>
+<p>Tag contents for those entities include some new data types with complex structure.
+Any form can be used for modifying data, but only one form is used for saving.</p>
+<h4><code>rotation</code></h4>
+<ul>
+<li>Quaternion form (used for saving): array of 4 numbers, describing  components (x, y, z, w)</li>
+<li>Axis-angle form: object with following fields:<ul>
+<li><code>axis</code> - 3d vector</li>
+<li><code>angle</code> - in radians</li>
+</ul></li>
+</ul>
+<h3><code>transformation</code></h3>
+<p>Arbitrary affine transform</p>
+<ul>
+<li>Matrix form: array of 16 numbers, describing row-major matrix</li>
+<li>Decomposed form (used for saving): object with following fields:<ul>
+<li><code>translation</code> - 3d vector</li>
+<li><code>left_rotation</code>, <code>right_rotation</code> - <code>rotation</code></li>
+<li><code>scale</code> - 3d vector</li>
+<li>Transforms are composed in order <code>translation</code>, <code>left_rotation</code>, <code>scale</code>, <code>right_rotation</code></li>
+</ul></li>
+</ul>
+<h3>Interpolation</h3>
+<p>Some properties of display entites can be interpolated. That means that clients will see gradual changes over time instead of instantenous jumps.</p>
+<p>Display entities keep track of current and previous values of interpolated values:</p>
+<ul>
+<li>All properties marked as "interpolated" are part of a single interpolation set</li>
+<li>Any update to interpolated property will cause all values of interpolation set to be saved as "current"<ul>
+<li>Data command executions that do not change value of property (even if it's present in NBT) do not count as updates</li>
+<li>Updates are synchronized to clients at most once per tick, so multiple updates within command will still count as single update</li>
+</ul></li>
+<li>Previous current values are saved as "previous"</li>
+<li>If interpolation is enabled, entity will transition between "previous" and "current" values over time</li>
+<li>Start of interpolation (entity fully in "previous" state) is defined by field <code>interpolation_start</code> (game time, in ticks)<ul>
+<li>Set to <code>-1</code> to load current game time instead)</li>
+</ul></li>
+<li>End of interpolation (entity fully in "current" state) is defined as <code>interpolation_start</code> + <code>interpolation_duration</code> (in ticks)</li>
+</ul>
+<h3>Common properties</h3>
+<p>Every entity in family has the following fields:</p>
+<ul>
+<li><code>transformation</code> - <code>transformation</code> applied to model (after normal entity orientation). Defaults to identity. Interpolated</li>
+<li><code>billboard</code> - option to control if entity should pivot to face player when rendered:<ul>
+<li><code>fixed</code> - no rotation (default)</li>
+<li><code>vertical</code> - entity can pivot around vertical axis</li>
+<li><code>horizontal</code> - entity can pivot around horizontal axis</li>
+<li><code>center</code> - entity can pivot around center point</li>
+</ul></li>
+<li><code>brightness</code> - if present, overrides light values used for rendering. Omited by default (which means rendering uses values from entity position). Object has two fields:<ul>
+<li><code>sky</code> - value of skylight, 0..15</li>
+<li><code>block</code> - value of block light, 0..15</li>
+</ul></li>
+<li><code>view_range</code> - maximum view range of this entity. Actual distance depends on client-side render distance and entity distance scalling. Default value 1.0 (roughly the same as fireball)</li>
+<li><code>shadow_radius</code> - size of shadow. Defaults to 0 (no shadow). Interpolated</li>
+<li><code>shadow_strength</code> - strength of the shadow. Controls the opacity of the shadow as a function of distance to block below. Defaults to 1. Interpolated</li>
+<li><code>width</code>, <code>height</code> - describe size of culling bounding box. Bounding box spans vertically <code>y</code> to <code>y+height</code> and horizontally <code>width/2</code> in all directions from entity position. If either field is set to 0, culling is disabled. Both default to 0</li>
+<li><code>glow_color_override</code> - override glow border color. Defaults to 0 (use team color)</li>
+</ul>
+<h3><code>item_display</code></h3>
+<p>Displays a single item stack.</p>
+<ul>
+<li>Stack can be changed with commands by setting slot <code>inventory.0</code></li>
+</ul>
+<p>Fields:</p>
+<ul>
+<li><code>item</code> - item stack to display. Same format as in inventory (example: <code>{id: "minecraft:dirt", Count: 1}</code>)</li>
+<li><code>item_display</code> - describes item model transform applied to item (as defined in <code>display</code> section in model JSON)<ul>
+<li>Values: <code>none</code> (default), <code>thirdperson_lefthand</code>, <code>thirdperson_righthand</code>, <code>firstperson_lefthand</code>, <code>firstperson_righthand</code>, <code>head</code>, <code>gui</code>, <code>ground</code>, <code>fixed</code></li>
+</ul></li>
+</ul>
+<h3><code>block_display</code></h3>
+<p>Displays a block state.</p>
+<ul>
+<li>Does not display block entities, even if they would normally be created on block placement (like chest)</li>
+</ul>
+<p>Fields:</p>
+<ul>
+<li><code>block_state</code> - block state to display. Same format as item held by endermen (example <code>{Name:"minecraft:dirt"}</code>)</li>
+</ul>
+<h3><code>text_display</code></h3>
+<p>Displays a text component.</p>
+<p>Fields:</p>
+<ul>
+<li><code>text</code> - text to display. Components are resolved with the context of the display entity</li>
+<li><code>line_width</code> - line width used to split lines (note: new line can be also addded with <code>\n</code> characters). Defaults to 200</li>
+<li><code>text_opacity</code> - opacity (alpha component) of rendered text. Defaults to 255. Interpolated</li>
+<li><code>background</code> - color of background. Includes alpha channel. Defaults to 0x40000000. Interpolated</li>
+<li><code>default_background</code> - if true, rendering uses default text background color (same as in chat). Defaults to false</li>
+<li><code>shadow</code> - should text be displayed with shadow. Defaults to false</li>
+<li><code>see_through</code> - should text be visible through blocks. Defaults to false</li>
+<li><code>alignment</code> - how text should be aligned<ul>
+<li>Values: <code>center</code> (default), <code>left</code>, <code>right</code></li>
+</ul></li>
+</ul>
+<p>Note: text display backgrounds uses new shader types <code>rendertype_text_background</code> and <code>rendertype_text_background_see_through</code></p>
+<h2>Damage Types</h2>
+<p>Damage Types are a new registry that can be extended through data packs. A Damage Type determines how damage is handled
+by the game. This includes which attributes the damage has as well as which death message is used when an entity dies
+due to that type of damage.</p>
+<p>Example:</p>
+<pre><code>{
+  "exhaustion": 0.1,
+  "message_id": "arrow",
+  "scaling": "when_caused_by_living_non_player"
+}
+</code></pre>
+<p>Fields:</p>
+<ul>
+<li><code>message_id</code>: The message id used for deaths caused by this damage type<ul>
+<li>Will be combined with other string fragments to form a translation key</li>
+</ul></li>
+<li><code>exhaustion</code>: The amount of hunger exhaustion caused by this damage type</li>
+<li><code>scaling</code>: Whether this damage type scales with difficulty levels. Possible values:<ul>
+<li><code>never</code>: Damage is always the same</li>
+<li><code>always</code>: Damage always scales with difficulty</li>
+<li><code>when_caused_by_living_non_player</code>: Damage scales with difficulty if it was caused by a living entity who is not a player</li>
+</ul></li>
+<li><code>effects</code>: Optional field controlling how damage manifests when inflicted on players. Possible values:<ul>
+<li><code>hurt</code> (default): the default hurt sound</li>
+<li><code>thorns</code>: Thorns hurt sound</li>
+<li><code>drowning</code>: Drowning sound</li>
+<li><code>burning</code>: A single tick of burning sound</li>
+<li><code>poking</code>: Berry bush poke sound</li>
+<li><code>freezing</code>: Freeze tick sound</li>
+</ul></li>
+<li><code>death_message_type</code>: Optional field that controls if special death message variants are used. Possible values:<ul>
+<li><code>default</code> (default): No special death message logic is applied</li>
+<li><code>fall_variants</code>: Show a variant of fall damage death instead of a regular death message, e.g. <code>death.fell.assist.item</code></li>
+<li><code>intentional_game_design</code>: Show the intentional game design message instead of a regular death message</li>
+</ul></li>
+</ul>
+<p>Damage type tags control many aspects of how damage from different sources are interpreted.</p>
+<h2>Commands</h2>
+<h3><code>damage</code></h3>
+<p>New command to apply damage to entities.</p>
+<p>Syntax:</p>
+<ul>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [at &#x3C;location>]</code></li>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [by &#x3C;entity>] [from &#x3C;cause>]</code></li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li><code>target</code>: The entity to damage</li>
+<li><code>amount</code>: Amount of damage to inflict</li>
+<li><code>damageType</code>: The type of damage to inflict<ul>
+<li>This determines how the damage affects the entity as well as which death message is displayed</li>
+</ul></li>
+<li><code>entity</code>: The entity inflicting the damage</li>
+<li><code>cause</code>: The cause of the damage, in the case of indirect damage<ul>
+<li>Example: When shot by an arrow, the <code>entity</code> is the Arrow projectile while <code>cause</code> might be a Skeleton</li>
+</ul></li>
+<li><code>location</code>: The location the damage originated at (when no entity caused the damage)<ul>
+<li>For instance, <code>location</code> might represent the location of a Bed exploding in the Nether</li>
+</ul></li>
+</ul>
+<h3><code>execute summon</code></h3>
+<p>New <code>execute</code> sub-command for summoning new entity and binding context (<code>@s</code>) to it. Meant to simplify entity setup and reduce need for raw NBT editing.</p>
+<ul>
+<li><code>execute summon &#x3C;entity id></code></li>
+</ul>
+<h2>Predicates</h2>
+<h3>Damage Type Predicates</h3>
+<p>The following fields have been removed from damage type predicates: <code>is_projectile</code>, <code>is_explosion</code>, <code>bypasses_armor</code>,
+<code>bypasses_invulnerability</code>, <code>bypasses_magic</code>, <code>is_fire</code>, <code>is_magic</code>, <code>is_lightning</code>.</p>
+<p>A new <code>tags</code> array has been added. Each entry has two fields:</p>
+<ul>
+<li><code>id</code>: The ID of a damage type tag</li>
+<li><code>expected</code>: Whether the damage is expected to have or not have the tag for the predicate to match</li>
+</ul>
+<h2>Game Rules</h2>
+<ul>
+<li>Added <code>doVinesSpread</code> game rule, determining if vines will spread to nearby blocks<ul>
+<li>Defaults to <code>true</code></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w06a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-12729" target="_blank" rel="noopener noreferrer">MC-12729</a> Z-fighting can be seen on leggings and boots worn by entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-145765" target="_blank" rel="noopener noreferrer">MC-145765</a> Both "Text Background" settings strings are overflowing the buttons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156443" target="_blank" rel="noopener noreferrer">MC-156443</a> In some languages, text is too long and escapes buttons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198874" target="_blank" rel="noopener noreferrer">MC-198874</a> Opening a Minecart with Hopper provokes Piglins, even though opening a Hopper doesn't provoke them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209622" target="_blank" rel="noopener noreferrer">MC-209622</a> Sculk sensors do not detect item frame / glow item frame interactions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209896" target="_blank" rel="noopener noreferrer">MC-209896</a> Sculk sensors are not activated upon placing glowstone into respawn anchors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209929" target="_blank" rel="noopener noreferrer">MC-209929</a> Sculk sensors are not activated upon filling composters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210276" target="_blank" rel="noopener noreferrer">MC-210276</a> Sculk sensors are not activated upon trampling farmland</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210294" target="_blank" rel="noopener noreferrer">MC-210294</a> Sculk sensors are not activated upon mounting or dismounting any non-biological entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210334" target="_blank" rel="noopener noreferrer">MC-210334</a> Sculk sensors are not activated upon sheep being dyed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210707" target="_blank" rel="noopener noreferrer">MC-210707</a> Sculk sensors are not activated upon closing chest boats, chest rafts, or chest minecarts</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210715" target="_blank" rel="noopener noreferrer">MC-210715</a> Sculk sensors are not activated upon attaching or removing leads from entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212501" target="_blank" rel="noopener noreferrer">MC-212501</a> Sculk sensors are not activated upon collecting books from lecterns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213803" target="_blank" rel="noopener noreferrer">MC-213803</a> Sculk sensors are not activated upon harvesting glow berries from cave vines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215767" target="_blank" rel="noopener noreferrer">MC-215767</a> Sculk sensors do not detect turtles laying an egg</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233972" target="_blank" rel="noopener noreferrer">MC-233972</a> Text can appear outside of buttons in the key binds menu when assigning keys to functions or when multiple functions are assigned to the same key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236988" target="_blank" rel="noopener noreferrer">MC-236988</a> Sculk sensors are not activated upon using shears on cave/twisting/weeping vines or kelp</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237450" target="_blank" rel="noopener noreferrer">MC-237450</a> The "Simulation Distance" text can appear outside of its slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237879" target="_blank" rel="noopener noreferrer">MC-237879</a> Sculk sensors are not activated upon villagers working with composters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249878" target="_blank" rel="noopener noreferrer">MC-249878</a> Text can appear outside of the "Device" button within the music and sound options menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251917" target="_blank" rel="noopener noreferrer">MC-251917</a> No gear equipping sound or subtitle when a shield is placed into the offhand slot</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251934" target="_blank" rel="noopener noreferrer">MC-251934</a> Sculk sensors are not activated upon frogs laying frogspawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252434" target="_blank" rel="noopener noreferrer">MC-252434</a> Sculk sensors are activated when interacting with fences while holding leads</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257873" target="_blank" rel="noopener noreferrer">MC-257873</a> Swapping an armor piece with an armor piece of the same type doesn't play its equipping sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258156" target="_blank" rel="noopener noreferrer">MC-258156</a> The Warden does not deal the same amount of damage to the player and entities in difficult mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258622" target="_blank" rel="noopener noreferrer">MC-258622</a> Fire charge isn't in the Ingredients tab in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259193" target="_blank" rel="noopener noreferrer">MC-259193</a> The "Notification Display Time" text can appear outside of its slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259195" target="_blank" rel="noopener noreferrer">MC-259195</a> Using /ride on an entity in another dimension causes client/server desync</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259197" target="_blank" rel="noopener noreferrer">MC-259197</a> The damage tilt effect isn't accessible-friendly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259221" target="_blank" rel="noopener noreferrer">MC-259221</a> Using the "/ride" command on invalid entities teleports players to their position</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259224" target="_blank" rel="noopener noreferrer">MC-259224</a> Blocking attacks with shields causes the damage tilt to play and red damage tint to show</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259227" target="_blank" rel="noopener noreferrer">MC-259227</a> /execute if loaded <pos> alone always fails</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259233" target="_blank" rel="noopener noreferrer">MC-259233</a> Argument error messages for low values are inconsistently spelled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259245" target="_blank" rel="noopener noreferrer">MC-259245</a> An enderman ridden with /ride constantly teleports if the player looks at the enderman's eyes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259247" target="_blank" rel="noopener noreferrer">MC-259247</a> The execute on owner sub-command does not select the owner of a horse, donkey, llama, or mule</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259360" target="_blank" rel="noopener noreferrer">MC-259360</a> The "selectWorld.mapFeatures.info" string is missing a comma after the word "Shipwrecks"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259432" target="_blank" rel="noopener noreferrer">MC-259432</a> Single missing pixel in 'chestplate_trim' item texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259442" target="_blank" rel="noopener noreferrer">MC-259442</a> Can't shift click items into second anvil slot</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259454" target="_blank" rel="noopener noreferrer">MC-259454</a> Loot table for hoglin stable chests uses the loot table for bridge chests instead</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259468" target="_blank" rel="noopener noreferrer">MC-259468</a> empty_slot_amethyst_shard does not show in Smithing Table slot</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259599" target="_blank" rel="noopener noreferrer">MC-259599</a> Curse of Binding armor can be removed by swapping armor with right click in hotbar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259635" target="_blank" rel="noopener noreferrer">MC-259635</a> The color palettes for "iron" and "iron_darker" trims are flipped</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259640" target="_blank" rel="noopener noreferrer">MC-259640</a> The lightest three colors of "iron" and "iron_darker" color palettes are identical</li>
+</ul>

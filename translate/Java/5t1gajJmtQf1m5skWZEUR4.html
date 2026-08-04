@@ -1,0 +1,60 @@
+<p>我们现在发布 Minecraft: Java Edition 1.17.1。此版本更改了洞穴与山崖：第一部分的某些行为，并修复了一些漏洞和关键问题。</p>
+<h1>1.17.1 中的更改</h1>
+<ul>
+<li>蓝色美西螈现在只能通过繁殖获得</li>
+<li>非尖叫山羊在繁殖时现在有极小的概率生出尖叫山羊</li>
+<li>山羊跳跃或冲撞时，其身上的状态效果现在也会生效</li>
+<li>将溺尸掉落铜锭的概率提高到 11%，每级抢夺额外增加 2%</li>
+<li>细雪现在填充炼药锅的速度是原来的 2 倍（不过仍然很慢！）</li>
+<li>僵尸、僵尸村民、尸壳和溺尸不再会捡起荧光墨囊</li>
+</ul>
+<h1>1.17.1 中的技术更改</h1>
+<ul>
+<li>现在会记录已命名生物的死亡</li>
+<li>在基于 DNS 的重定向情况下，客户端将发送实际用于连接的主机名（这恢复了 1.17 之前的行为）</li>
+</ul>
+<h1>1.17.1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-123654" target="_blank" rel="noopener noreferrer">MC-123654</a> - “当渲染距离低于 4 时，太阳、月亮和/或云不会显示”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131290" target="_blank" rel="noopener noreferrer">MC-131290</a> - “附魔保存为 short 类型，但加载为整数类型并以此运作”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156155" target="_blank" rel="noopener noreferrer">MC-156155</a> - “土耳其里拉符号（₺）在游戏中显示为 □”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194736" target="_blank" rel="noopener noreferrer">MC-194736</a> - “U+00B7 的文本映射重复”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-196999" target="_blank" rel="noopener noreferrer">MC-196999</a> - “U+1FEC 在 Minecraft 字体中不正确”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213986" target="_blank" rel="noopener noreferrer">MC-213986</a> - “可以使用活塞和发射器利用细雪创建幽灵方块”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219018" target="_blank" rel="noopener noreferrer">MC-219018</a> - “使用 /item 可以创建幽灵物品（服务器无法正确更新客户端物品栏）”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219290" target="_blank" rel="noopener noreferrer">MC-219290</a> - “方解石与其他方块相比声音太轻”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221656" target="_blank" rel="noopener noreferrer">MC-221656</a> - “创造模式下获得的美西螈桶/热带鱼桶只会生成一种美西螈/热带鱼”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222731" target="_blank" rel="noopener noreferrer">MC-222731</a> - “被捕获的美西螈会不断试图离开水”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223350" target="_blank" rel="noopener noreferrer">MC-223350</a> - “已加载的区块有时不会渲染，直到玩家稍微移动头部”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223368" target="_blank" rel="noopener noreferrer">MC-223368</a> - “力量与虚弱药水/自定义攻击伤害属性不会改变山羊造成的伤害”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224894" target="_blank" rel="noopener noreferrer">MC-224894</a> - “光照票被过早释放”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225816" target="_blank" rel="noopener noreferrer">MC-225816</a> - “垂根作为物品实体时显示得过大”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226461" target="_blank" rel="noopener noreferrer">MC-226461</a> - “熔岩池附近的原木会被石头替换”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226505" target="_blank" rel="noopener noreferrer">MC-226505</a> - “山羊的长跳不受跳跃提升效果影响”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226512" target="_blank" rel="noopener noreferrer">MC-226512</a> - “山羊冲撞实体时不使用手持物品的伤害”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226926" target="_blank" rel="noopener noreferrer">MC-226926</a> - “绿宝石矿石生成得过于频繁”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226948" target="_blank" rel="noopener noreferrer">MC-226948</a> - “凋灵现在会受到药水效果影响”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227387" target="_blank" rel="noopener noreferrer">MC-227387</a> - “世界生成数据包可能会导致游戏崩溃或卡死”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227435" target="_blank" rel="noopener noreferrer">MC-227435</a> - “在服务器上放置不存在玩家的头颅时出现卡顿”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227483" target="_blank" rel="noopener noreferrer">MC-227483</a> - “root_system 地物配置的编解码器使用了错误的字段”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227520" target="_blank" rel="noopener noreferrer">MC-227520</a> - “主世界化石总是在基岩层生成”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227557" target="_blank" rel="noopener noreferrer">MC-227557</a> - “世界转换后，末地传送门纹理显得拉伸”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227618" target="_blank" rel="noopener noreferrer">MC-227618</a> - “对高海草使用小型垂滴叶时，其会被消耗而不会被放置”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227651" target="_blank" rel="noopener noreferrer">MC-227651</a> - “青金石矿石的熔炼和高炉烧炼配方的组名拼写错误”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227821" target="_blank" rel="noopener noreferrer">MC-227821</a> - “在删除上一个领域后立即尝试创建/编辑领域时客户端崩溃”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227891" target="_blank" rel="noopener noreferrer">MC-227891</a> - “玩家退出服务器时，末影珍珠会消失”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228219" target="_blank" rel="noopener noreferrer">MC-228219</a> - “投掷的末影珍珠在进入末地出口传送门时消失”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228343" target="_blank" rel="noopener noreferrer">MC-228343</a> - “当找不到 random_selector 的默认地物时抛出 java.lang.NullPointerException”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228430" target="_blank" rel="noopener noreferrer">MC-228430</a> - “启动游戏时出现非常长的加载暂停（‘Failed to add PDH Counter’，由 oshi 导致）”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228599" target="_blank" rel="noopener noreferrer">MC-228599</a> - “试图在流动的水中行走会使玩家不断从游泳切换为正常模式”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228802" target="_blank" rel="noopener noreferrer">MC-228802</a> - “服务器上区块无法加载 / 无法调用 ‘cmq.a(int, int, int)’，因为 ‘☃’ 为空”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228828" target="_blank" rel="noopener noreferrer">MC-228828</a> - “启动游戏时指定 --server 参数会导致游戏崩溃”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228858" target="_blank" rel="noopener noreferrer">MC-228858</a> - “即使被命名并拴绳，美西螈也会消失”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229169" target="_blank" rel="noopener noreferrer">MC-229169</a> - “猪灵不再能听到玩家隔着墙壁破坏受保护方块的声音”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229191" target="_blank" rel="noopener noreferrer">MC-229191</a> - “钻石矿石的生成分布在 1.16.5 和 1.17 之间发生了变化”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229246" target="_blank" rel="noopener noreferrer">MC-229246</a> - “隔着墙攻击其中一个后，猪灵和猪灵蛮兵不再会呼叫其他猪灵”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229299" target="_blank" rel="noopener noreferrer">MC-229299</a> - “蓝色美西螈可以自然生成”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229441" target="_blank" rel="noopener noreferrer">MC-229441</a> - “你可以通过杀死村民来偷取其手持的用于交易的物品”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229614" target="_blank" rel="noopener noreferrer">MC-229614</a> - “流浪商人获得的热带鱼只有白色 kob”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230716" target="_blank" rel="noopener noreferrer">MC-230716</a> - “‘death.attack.dryout’和‘death.attack.dryout.player’显示原始翻译字符串（未翻译）”</li>
+</ul>

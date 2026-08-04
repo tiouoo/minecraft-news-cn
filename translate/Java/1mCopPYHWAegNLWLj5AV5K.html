@@ -1,0 +1,133 @@
+<p>在本周的快照中，我们对饰纹陶罐进行了改进！</p>
+<p>此外，从现在开始，Realms 也将在快照中可用！任何拥有有效 Realms 订阅的玩家都有资格创建一个免费的快照 Realm。该快照 Realm 将与你的常规 Realm 分开，以防止任何问题影响你的常规 Realm。有关快照 Realm 运作方式的更多信息，请参阅 <a href="https://help.minecraft.net/hc/en-us/articles/20143730191245" target="_blank" rel="noopener noreferrer">Minecraft：Java 版快照常见问题</a>中的 Realms。</p>
+<h1>新特性</h1>
+<h2>快照 Realm</h2>
+<ul>
+<li>Realms 现在可用于快照、预发布版和发布候选版本</li>
+<li>Realm 上最后游玩的世界的版本会显示在 Realms 列表中</li>
+<li>实验性功能可用于新创建的世界</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>饰纹陶罐现在可以存储物品，并且可以被弹射物击碎</li>
+</ul>
+<h2>饰纹陶罐</h2>
+<ul>
+<li>饰纹陶罐现在最多可存储一组物品</li>
+<li>漏斗、漏斗矿车和投掷器现在可以向饰纹陶罐中放入和/或取出物品</li>
+<li>比较器现在可以读取饰纹陶罐中的物品数量</li>
+<li>玩家可以与饰纹陶罐互动以将物品放入其中</li>
+<li>饰纹陶罐没有 GUI，玩家需要将其打破才能取回或发现其中的物品</li>
+<li>玩家与饰纹陶罐互动时，饰纹陶罐会摇晃，并触发振动频率 11</li>
+<li>饰纹陶罐可以被弹射物击碎，导致其破碎并掉落其中的物品</li>
+<li>饰纹陶罐现在最多堆叠 64 个</li>
+</ul>
+<p>我们想听听你对这些饰纹陶罐改进的反馈——请在我们的<a href="https://feedback.minecraft.net/hc/en-us/community/posts/20289952762637-Let-s-talk-about-Decorated-Pot-improvements-" target="_blank" rel="noopener noreferrer">专用反馈站点帖子</a>中告诉我们你的想法！</p>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 20</li>
+<li>非生物实体的名称现在会在被注视且设置了 CustomName 时显示，或者如果设置了 CustomNameVisible 则始终显示，与生物实体类似</li>
+</ul>
+<h1>数据包版本 20</h1>
+<ul>
+<li>更改了 <code>function</code> 命令的结果</li>
+<li>调整了对游戏规则 <code>maxCommandChainLength</code> 的检查</li>
+<li>添加了新的游戏规则 <code>maxCommandForkCount</code></li>
+<li>重新引入了 <code>execute</code> 命令的形式：<code>execute if function</code></li>
+<li>重新引入了 <code>return</code> 命令的形式：<code>return run</code></li>
+<li>将 <code>cracked</code> 状态设为 true 的饰纹陶罐在破坏时总会破碎</li>
+<li>添加了新的 <code>dust_plume</code> 粒子类型</li>
+</ul>
+<h2>命令</h2>
+<h3>函数</h3>
+<ul>
+<li><code>function</code> 命令已更改，以更好地适应新的 <code>return</code> 命令</li>
+<li>函数不再有任何结果，除非它们使用 <code>return</code>，或者在查找或实例化过程中出现错误<ul>
+<li>这意味着 <code>function</code> 命令将不再返回（甚至显示）执行期间运行的命令数量</li>
+<li>错误条件：<ul>
+<li>调用不存在的函数</li>
+<li>调用空的函数标签</li>
+<li>宏实例化失败</li>
+</ul></li>
+</ul></li>
+<li>此处的“结果”指会通过 <code>execute store</code> 存储的值</li>
+<li>之前，如果函数是通过 <code>execute store ... run function</code> 调用的，那么函数中的每条命令都会执行存储；这一行为已被移除<ul>
+<li>这意味着单次调用 <code>function</code> 最多存储一次（如果未调用 <code>return</code> 则为零次）</li>
+<li>对于包含多个条目的函数标签，函数结果将累积，但部分结果会在每个函数末尾存储</li>
+</ul></li>
+</ul>
+<h4>限制</h4>
+<p>现有的函数限制已经过调整，以适应新的执行规则并防止更大范围的利用：</p>
+<ul>
+<li>即使从命令行运行，限制也适用（因此现在其行为总是会像被放在函数中一样）<ul>
+<li>例如，由 <code>execute as @e run function</code> 调用的所有函数都将计入同一限制</li>
+<li>来自命令方块的执行仍计为单独的执行</li>
+</ul></li>
+<li>函数的 <code>maxCommandChainLength</code> 限制现在将计算“操作”，例如：<ul>
+<li>为单个上下文执行命令</li>
+<li>在 <code>execute</code> 中执行一个阶段（无论修改了多少个上下文）</li>
+<li>调用函数</li>
+</ul></li>
+<li>新的游戏规则 <code>maxCommandForkCount</code> 限制了像 <code>execute</code> 这样的函数单次执行状态可以创建的上下文总量<ul>
+<li>示例：如果世界中有 5 个实体，<code>execute as @e</code> 会创建 5 个上下文，而 <code>execute as @e at @e</code> 会创建 5*5 = 25 个上下文</li>
+</ul></li>
+</ul>
+<h3><code>execute if function</code></h3>
+<p>一个 <code>execute</code> 子命令，用于运行函数或函数标签并匹配返回值。这是对先前版本中移除功能的重新引入。如果给定的是标签，则无论先前函数的结果如何，所有函数都会运行。</p>
+<p>语法：
+<code>execute if|unless function &#x3C;function> &#x3C;continuation></code></p>
+<p>参数：</p>
+<ul>
+<li><code>function</code>：要运行的函数或标签</li>
+</ul>
+<h4>匹配</h4>
+<p>对运行的函数的返回值进行匹配：</p>
+<ul>
+<li>至少有一个函数必须成功，匹配才能成功</li>
+<li>成功的调用定义为满足以下条件的函数：<ul>
+<li>使用 <code>return</code> 命令返回值</li>
+<li>返回值不为 0</li>
+</ul></li>
+<li>如果没有函数通过 <code>return</code> 退出，则 <code>if</code> 和 <code>unless</code> 都不会运行</li>
+</ul>
+<h3><code>return run</code></h3>
+<p>现在可以使用 <code>return</code> 命令的一种形式：<code>return run</code>。这是对先前版本中移除功能的重新引入。</p>
+<p>语法：
+<code>return run &#x3C;command></code></p>
+<p>这会从运行指定 <code>command</code> 中获取 <code>result</code> 值，并将其作为函数的返回值返回。</p>
+<ul>
+<li>如果命令未返回任何值（例如，调用 <code>function</code> 时没有 <code>return</code>），则 return 不会执行，函数将继续执行</li>
+<li>如果给定命令失败，则返回值为 <code>0</code></li>
+<li>在其他所有方面，它的工作方式与带指定返回值的 <code>return</code> 相同</li>
+<li>在发生分支时（例如 <code>return run execute as @e run some_command</code>），命令的第一次执行将触发 return<ul>
+<li>如果没有执行（例如在 <code>return run execute if @e[something_impossible] run some_command</code> 中），函数将不会返回，并将继续执行</li>
+</ul></li>
+</ul>
+<h1>快照 23w41a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-16937" target="_blank" rel="noopener noreferrer">MC-16937</a> 当 PvP 被禁用时，向下界传送门射箭可能会伤害任何人</li>
+<li><a href="https://bugs.mojang.com/browse/MC-50319" target="_blank" rel="noopener noreferrer">MC-50319</a> 玩家拥有的弹射物在离开传送门时会失去玩家所有权</li>
+<li><a href="https://bugs.mojang.com/browse/MC-81656" target="_blank" rel="noopener noreferrer">MC-81656</a> 决定凋灵之首是否为蓝色的字段不会保存到 NBT，也不会从 NBT 读取</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118403" target="_blank" rel="noopener noreferrer">MC-118403</a> 唤魔者召唤的恼鬼不会被应用唤魔者的队伍</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143266" target="_blank" rel="noopener noreferrer">MC-143266</a> 嵌套函数调用在将命令排队之前会重新评估 maxCommandChainLength</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143269" target="_blank" rel="noopener noreferrer">MC-143269</a> 当已排队 maxCommandChainLength 条命令时，嵌套的中间函数会被跳过</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189227" target="_blank" rel="noopener noreferrer">MC-189227</a> 首次游玩教程使用了旧纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198113" target="_blank" rel="noopener noreferrer">MC-198113</a> 不完整的命令不会阻止函数加载</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233276" target="_blank" rel="noopener noreferrer">MC-233276</a> 你可以给具有最大驯服度的成年驴、马、羊驼或骡喂食，且不会播放手部动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234323" target="_blank" rel="noopener noreferrer">MC-234323</a> 文本解析的性能问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236501" target="_blank" rel="noopener noreferrer">MC-236501</a> 重命名的矿车和船不会在世界中显示其名称标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249408" target="_blank" rel="noopener noreferrer">MC-249408</a> 箱子船在放置时会丢失其名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257786" target="_blank" rel="noopener noreferrer">MC-257786</a> 游戏处理玩家离开 Realms 群组或接受/拒绝 Realms 邀请需要很长时间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260576" target="_blank" rel="noopener noreferrer">MC-260576</a> 不完整的 'execute summon' 命令仍会运行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261682" target="_blank" rel="noopener noreferrer">MC-261682</a> 当方块超出范围时，刷扫仍可继续</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262105" target="_blank" rel="noopener noreferrer">MC-262105</a> 当玩家视线非常接近实体碰撞箱时，实体可能会阻挡刷扫动作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263575" target="_blank" rel="noopener noreferrer">MC-263575</a> 当从可疑的沙子/沙砾中取出物品时，该方块不会受重力影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263660" target="_blank" rel="noopener noreferrer">MC-263660</a> “告示牌晃动”字幕对于告示牌和悬挂式告示牌相同，导致翻译问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a> 在另一个函数内部时，return 命令无法运行函数</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> 仅当命令不以 return run 开头时，函数才返回命令的输出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a> 从函数运行时，“/execute if function”总是失败，而“/execute unless function”总是成功</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264880" target="_blank" rel="noopener noreferrer">MC-264880</a> GUI 滑块在程序员美术资源下使用了新纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265516" target="_blank" rel="noopener noreferrer">MC-265516</a> 在某些 Realms 菜单中，“取消”按钮可以通过键盘导航取消选中，尽管它是该菜单中唯一的元素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265647" target="_blank" rel="noopener noreferrer">MC-265647</a> 在船上时盾牌手臂位置不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265656" target="_blank" rel="noopener noreferrer">MC-265656</a> 南瓜不再能被剪刀剪</li>
+</ul>

@@ -1,0 +1,23 @@
+<p>Minecraft 1.20 的预发布版 7 现已在 Minecraft 启动器中提供。此预发布版添加了对符号链接的验证并修复了一个错误。</p>
+<h2>更改</h2>
+<p>为了提高安全性，游戏现在会检测世界目录中使用的符号链接。有关详细说明，请查看我们的<a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">帮助文章</a>。</p>
+<ul>
+<li>如果符号链接的目标不在用户配置的允许列表中，游戏将不会继续加载世界<ul>
+<li>注意：世界目录本身仍然可以被链接</li>
+</ul></li>
+<li>允许的符号链接目标列表存储在客户端或服务器顶层目录的 <code>allowed_symlinks.txt</code> 文件中</li>
+<li>该文件包含条目（每行一个），允许使用以下格式：<ul>
+<li>以 <code>#</code> 开头的行是注释，将被忽略</li>
+<li><code>[type]pattern</code>，其中 <code>type</code> 可以是 <code>glob</code>、<code>regex</code> 或 <code>prefix</code><ul>
+<li><code>prefix</code> 匹配路径开头与给定模式匹配（因此对于 <code>/test</code>，路径 <code>/test</code>、<code>/test/</code> 和 <code>/test/foo.txt</code> 都会匹配）</li>
+<li><code>regex</code> 将正则表达式与整个路径匹配</li>
+<li><code>glob</code> 使用操作系统特定的路径匹配机制（例如，<code>*.txt</code> 通常匹配具有 <code>txt</code> 扩展名的文件）</li>
+<li>注意：路径将使用操作系统特定的分隔符</li>
+</ul></li>
+<li><code>pattern</code>，使用默认的 <code>prefix</code> 类型</li>
+</ul></li>
+</ul>
+<h1>1.20 预发布版 7 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-257778" target="_blank" rel="noopener noreferrer">MC-257778</a> 竹马赛克台阶和楼梯不在 #slabs 和 #stairs 方块及物品标签中</li>
+</ul>

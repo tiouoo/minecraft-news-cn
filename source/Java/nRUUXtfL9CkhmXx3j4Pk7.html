@@ -1,0 +1,121 @@
+<p>Minecraft Snapshot 22w45a is now out and about. This snapshot introduces the <a href="https://www.minecraft.net/article/introducing-new-default-skins" target="_blank" rel="noopener noreferrer">new default skins</a> for offline players, bamboo blocks, and a visual refresh for the Vex. On top of that, there’s some additional creative inventory tweaks.</p>
+<p>Happy mining!</p>
+<h1>New Features in 22w45a</h1>
+<ul>
+<li>Added new default skins for offline players</li>
+<li>Added Block of Bamboo and Stripped Block of Bamboo<ul>
+<li>Block of Bamboo can be crafted from 9 Bamboo and can be stripped like other wood logs</li>
+<li>Bamboo Planks crafted from Block of Bamboo yield only 2 planks compared to 4 for wood logs</li>
+</ul></li>
+</ul>
+<h1>Changes in 22w45a</h1>
+<ul>
+<li>The Vex now has a new look</li>
+<li>The Wild update music has been tweaked to be slightly less loud</li>
+<li>When opening, Shulker Boxes will pop off blocks which are attached to opened faces (such as Torches)<ul>
+<li>Blocks that require support cannot be placed on these open faces while the Shulker Box is open</li>
+</ul></li>
+<li>"Teleport to Team Member" option in spectator menu now only shows up for teams with viable target players</li>
+<li>Added Operator Items Tab option in the Controls menu which is off by default</li>
+<li>Creative Inventory changes</li>
+</ul>
+<h2>Vex</h2>
+<ul>
+<li>Changes to Vex model and textures<ul>
+<li>The Vex retains a slightly oversized hitbox to make it easier to fight</li>
+</ul></li>
+</ul>
+<h2>Creative Inventory changes</h2>
+<ul>
+<li>Operator-only items now appear in a new Operator Utilities tab if you have both:<ul>
+<li>Operator Items Tab option in Controls menu set to <code>ON</code></li>
+<li>The required operator permissions</li>
+<li>The tab is hidden if operator permissions are lost while inventory is open</li>
+<li>Now also includes Structure Blocks and all light levels of Light Blocks</li>
+</ul></li>
+<li>Added a Colored Blocks tab<ul>
+<li>Contains all blocks with 16 color variants</li>
+<li>Moved all colored blocks from Building Blocks tab to this tab instead to make that tab less sizeable</li>
+</ul></li>
+<li>Consumables tab has been renamed to Food &#x26; Drinks tab to have a more straightforward name</li>
+<li>Crafting tab has been renamed to Ingredients tab since not all items are used in crafting</li>
+<li>Reordered<ul>
+<li>Natural Blocks<ul>
+<li>More consistency between types for the top section</li>
+<li>Moved eggs to be between seeds and single-block plants</li>
+<li>Placed climbable plants above double-block plants</li>
+</ul></li>
+<li>Food &#x26; Drinks<ul>
+<li>Cooked versions of raw food are now right next to each other</li>
+</ul></li>
+<li>Redstone Blocks<ul>
+<li>Less cluttered</li>
+<li>Higher importance items up the top</li>
+<li>Removed variants of Doors, Trapdoors, Buttons and Boats that don't have any functional difference</li>
+</ul></li>
+<li>Ingredients<ul>
+<li>Placed Lapis in the same order as ore blocks</li>
+</ul></li>
+</ul></li>
+<li>Moved<ul>
+<li>Bottle o' Experience from the Tools &#x26; Utilities tab to the Ingredients tab next to enchanting books</li>
+</ul></li>
+<li>Added<ul>
+<li>All axes to the Combat tab (they still remain in the Tools &#x26; Utilities tab as well)</li>
+<li>All possible Suspicious Stews to the Consumables tab<ul>
+<li>The tooltip will show the effect of a stew before it's picked up from the Creative Inventory</li>
+<li>Only stews with effects available via crafting or Mooshrooms are listed</li>
+</ul></li>
+<li>Pressure Plates and Buttons of each type to the Building Blocks tab</li>
+<li>Almost all lighting blocks to the top of the Functional Blocks tab</li>
+<li>All 3 flight durations of Fireworks to Tools &#x26; Utilities tab, and the Combat tab next to Crossbow</li>
+<li>Eye of Ender next to End Portal Frame block in Functional tab for better ease of use</li>
+</ul></li>
+<li>Tooltips for all items in Creative Menu outside single-category tabs will show categories where this item can be found<ul>
+<li>Previously this only happened on the search tab</li>
+</ul></li>
+</ul>
+<h1>Technical Changes in 22w45a</h1>
+<ul>
+<li>The <code>/publish</code> command has new arguments to enable commands and set the default gamemode<ul>
+<li>New syntax: <code>/publish [allowCommands] [gamemode] [port]</code></li>
+</ul></li>
+<li>Changes to the Open to LAN screen<ul>
+<li>The screen now allows selecting the port on which to host the LAN world</li>
+<li>The game mode and allow cheats buttons are now initialized with the default values of the world</li>
+</ul></li>
+<li>The Resource Pack version is now 12</li>
+</ul>
+<h1>Fixed bugs in 22w45a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-80032" target="_blank" rel="noopener noreferrer">MC-80032</a> Horses can suffocate when going through nether portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118140" target="_blank" rel="noopener noreferrer">MC-118140</a> Result map tooltip when zooming out a map shows previous zoom value instead of new one</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127110" target="_blank" rel="noopener noreferrer">MC-127110</a> You can't empty water buckets into waterlogged blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177523" target="_blank" rel="noopener noreferrer">MC-177523</a> Enderman angry/screaming sound event subtitled identically to idle sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193360" target="_blank" rel="noopener noreferrer">MC-193360</a> Inconsistent eye level between piglins or zombified piglins and piglin brutes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200000" target="_blank" rel="noopener noreferrer">MC-200000</a> Merchant trade select packet (C2S) does not check for negative indices</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235414" target="_blank" rel="noopener noreferrer">MC-235414</a> Player desynchronization with Nether Portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244550" target="_blank" rel="noopener noreferrer">MC-244550</a> Empty Tags match Empty Slots in Shaped Recipes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255370" target="_blank" rel="noopener noreferrer">MC-255370</a> Chat hover &#x26; click events are offset if "Line Spacing" chat setting is used</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255743" target="_blank" rel="noopener noreferrer">MC-255743</a> Bees' path finding system may cause performance issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256461" target="_blank" rel="noopener noreferrer">MC-256461</a> Camel's back of neck is visible during the sit down animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256511" target="_blank" rel="noopener noreferrer">MC-256511</a> Non-controlling passengers can make camels dash</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256516" target="_blank" rel="noopener noreferrer">MC-256516</a> Inconsistent textures with jungle hanging signs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256532" target="_blank" rel="noopener noreferrer">MC-256532</a> Sounds for Bamboo, Crimson and Warped hanging signs use the generic wood sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256616" target="_blank" rel="noopener noreferrer">MC-256616</a> Weighted pressure plates make incorrect sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256674" target="_blank" rel="noopener noreferrer">MC-256674</a> FileAlreadyExistsException if the resourcepacks directory is a symbolic link</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256765" target="_blank" rel="noopener noreferrer">MC-256765</a> References to chat reporting in singleplayer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256854" target="_blank" rel="noopener noreferrer">MC-256854</a> Error in any model file causes resource reload fail now</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256884" target="_blank" rel="noopener noreferrer">MC-256884</a> Mobs don't shoot correctly from crossbows</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256885" target="_blank" rel="noopener noreferrer">MC-256885</a> The word "messages" within the "gui.chatSelection.fold" string is always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256888" target="_blank" rel="noopener noreferrer">MC-256888</a> New network protocols prevent logging into offline servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256903" target="_blank" rel="noopener noreferrer">MC-256903</a> Lodestone compass's enchantment glint is scaled incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256917" target="_blank" rel="noopener noreferrer">MC-256917</a> Death message from explosions by TNT and TNT minecarts that are not the cause of a player or another mob has changed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256951" target="_blank" rel="noopener noreferrer">MC-256951</a> TNT Minecarts don't record what caused its explosion</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256961" target="_blank" rel="noopener noreferrer">MC-256961</a> Multishot shoots projectiles backwards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256990" target="_blank" rel="noopener noreferrer">MC-256990</a> Superflat Worlds can use Disabled Blocks as part of their layers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257102" target="_blank" rel="noopener noreferrer">MC-257102</a> Missing Structure Block in creative tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257104" target="_blank" rel="noopener noreferrer">MC-257104</a> "Lava" in gamerule.lavaSourceConversion is misspelled as "Lave"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257118" target="_blank" rel="noopener noreferrer">MC-257118</a> Buttons are placed different than pressure plates in Creative Inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257234" target="_blank" rel="noopener noreferrer">MC-257234</a> Applying bone meal to warped or crimson fungus crashes client on multiplayer</li>
+</ul>

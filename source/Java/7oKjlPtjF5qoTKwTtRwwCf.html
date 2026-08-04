@@ -1,0 +1,107 @@
+<p>Time for an Advanced snapshot! In this snapshot, you can also open worlds from previous versions again - with one big warning! The blending technology we intend to introduce for Caves &#x26; Cliffs: Part II is not yet available. If you open an old world in this snapshot it will be upgraded with air under the current bottom of the world and visible chunk borders to new areas.</p>
+<p><strong>We highly recommend backing up your world before loading it in this snapshot.</strong></p>
+<h1>New Features in 21w39a</h1>
+<ul>
+<li>Added Caves &#x26; Cliffs: Part II Advancements</li>
+</ul>
+<h2>Advancements</h2>
+<ul>
+<li>Added "Caves &#x26; Cliffs" for falling from top to bottom of the Overworld</li>
+<li>Added "Feels like home" for riding strider on lava for 50 blocks in the Overworld</li>
+<li>Added "Star Trader" for trading with a villager at the build height limit</li>
+<li>Added "Sound of Music" for playing music with a jukebox in a Meadow biome</li>
+</ul>
+<h1>Changes in 21w39a</h1>
+<ul>
+<li>Tweaked peaks to make small mountains look more like proper jagged mountain peaks instead of flat hilly mounds</li>
+<li>The lone trees in Meadows now always contain a bee nest</li>
+<li>Drowned can spawn in aquifers inside dripstone caves</li>
+<li>Zombies don't spawn in dripstone caves</li>
+<li>Buried treasure chests can now contain water breathing potions</li>
+<li>Changed default brightness to 50</li>
+<li>Redesigned how effects look in the inventory screen, to allow them to show even with recipe book open</li>
+<li></li>
+</ul>
+<h2>Effects</h2>
+<ul>
+<li>Your list of effects are now shown to the right of your inventory, instead of the left side</li>
+<li>When the inventory effects list is visible, it will be hidden from the game view to reduce screen clutter</li>
+<li>There's now two modes of seeing the effect list: compact and classic<ul>
+<li>Classic is the pre-existing list of effects, one after another</li>
+<li>Compact is a single icon for each effect, suitable for small screen estate</li>
+</ul></li>
+<li>The game will automatically switch between the two looks to suit the available screen estate (including having the recipe book open)</li>
+</ul>
+<h1>Technical Changes in 21w39a</h1>
+<ul>
+<li>Added <code>fall_from_height</code> and <code>ride_entity_distance</code> advancement triggers</li>
+<li>Changed <code>nether_travel</code> to match other similar triggers</li>
+<li>Added new loot table function <code>set_potion</code></li>
+<li>Changes to the on-disk chunk format</li>
+<li>Resource pack format has been increased to 8</li>
+<li>Standalone <code>server.jar</code> now bundles contains individual libraries instead of being flat archive</li>
+</ul>
+<h2>Advancements</h2>
+<h3>New triggers</h3>
+<h4><code>fall_from_height</code></h4>
+<ul>
+<li>Triggered when a player lands after falling</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+<li><code>start_position</code> - location predicate for last position before falling started</li>
+<li><code>distance</code> - predicate for distance between <code>start_position</code> and player</li>
+</ul></li>
+</ul>
+<h4><code>ride_entity_in_lava</code></h4>
+<ul>
+<li>Triggered for every tick when player rides in lava</li>
+<li>Conditions<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+<li><code>start_position</code> - position where riding started (first tick on lava)</li>
+<li><code>distance</code> - predicate for distance between <code>start_position</code> and player</li>
+</ul></li>
+</ul>
+<h3>Changed triggers</h3>
+<h4><code>nether_travel</code></h4>
+<ul>
+<li><code>entered</code> condition renamed to <code>start_position</code></li>
+<li><code>exited</code> has been removed, since it was identical to <code>player.location</code></li>
+</ul>
+<h2>Loot Tables</h2>
+<h3>New functions</h3>
+<h4><code>set_potion</code></h4>
+<p>Sets <code>Potion</code> tag on any item</p>
+<h5>Parameters:</h5>
+<ul>
+<li><code>id</code> - potion id</li>
+</ul>
+<h2>World Data: Chunk Format</h2>
+<ul>
+<li>Chunk's <code>Level.Sections[].BlockStates</code> &#x26; <code>Level.Sections[].Palette</code> have moved to a container structure in <code>Level.Sections[].block_states</code></li>
+<li>Chunk's <code>Level.Biomes</code> are now paletted and live in a similar container structure in <code>Level.Sections[].biomes</code></li>
+<li>Chunk's <code>Level.CarvingMasks[]</code> is now <code>long[]</code> instead of <code>byte[]</code></li>
+</ul>
+<h2>Resource Pack format</h2>
+<ul>
+<li><code>minecraft/textures/gui/container/inventory.png</code> now contains an extra sprite for a thin-layout version of the effect list in the inventory</li>
+</ul>
+<h2>Server bundling</h2>
+<ul>
+<li><code>server.jar</code> now bundles individual libraries instead of merging all the files into single archive</li>
+<li>This change is meant to solve certain problems related to Java modules</li>
+<li>On startup, <code>server.jar</code> will unpack libraries into directory configured by <code>bundlerRepoDir</code> (default: working directory)</li>
+<li>To run different main class than server, use <code>bundlerMainClass</code> property (for example <code>java -DbundlerMainClass=net.minecraft.data.Main -jar server.jar --reports</code>) or unpack jar manually and use contents of <code>META-INF/classpath-joined</code> for command line</li>
+</ul>
+<h1>Fixed bugs in 21w39a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-116359" target="_blank" rel="noopener noreferrer">MC-116359</a> Status effects aren't displayed in inventory when recipe book is open</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149822" target="_blank" rel="noopener noreferrer">MC-149822</a> Bottom border on status effect displays in the inventory is missing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193348" target="_blank" rel="noopener noreferrer">MC-193348</a> Status effect bars shift the player's inventory in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-196723" target="_blank" rel="noopener noreferrer">MC-196723</a> Potion effects obtained in creative mode while in inventory do not show up until reopening inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214894" target="_blank" rel="noopener noreferrer">MC-214894</a> Bamboo generates in caves under jungles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214959" target="_blank" rel="noopener noreferrer">MC-214959</a> Sugar cane generated in cave</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218167" target="_blank" rel="noopener noreferrer">MC-218167</a> Chatting causes lag to occur</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236755" target="_blank" rel="noopener noreferrer">MC-236755</a> "Feature Placement" Crash /  java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236903" target="_blank" rel="noopener noreferrer">MC-236903</a> Naturally generated cave vines have an age between 17-25</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237505" target="_blank" rel="noopener noreferrer">MC-237505</a> Certain Biome Builder debug values do not change</li>
+</ul>

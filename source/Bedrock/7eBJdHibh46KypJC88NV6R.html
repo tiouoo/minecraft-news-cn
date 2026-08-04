@@ -1,0 +1,327 @@
+<p>A new update is now available for Minecraft, featuring a swath of new improvements:</p>
+<ul>
+<li>An updated Create New World experience will gradually be rolled out to players starting today</li>
+<li>Worlds can now be created with 64-bit seeds</li>
+<li>Many changes to improve damage and hunger calculations</li>
+<li>New Experimental Features to try like the Deep Dark and Warden</li>
+<li>Too many bug fixes and quality of life improvements to list!</li>
+</ul>
+<h1>Changes:</h1>
+<h2>Updated Create New World Experience</h2>
+<p>Create New World is being updated with improved navigation, more descriptions, and a new look and feel. It'll be rolled out gradually across Android, iOS, Windows, and Xbox starting today.</p>
+<p>We're still working on some things, like support for other platforms, screen narration, the trial version of the game, and the Japanese language. We need some more time to work on these features in order to provide the best possible experience.</p>
+<p>We would love to hear what you think! Share your feedback on the <a href="https://feedback.minecraft.net/hc/en-us/community/topics/360000280611-User-Interface-Input-Methods-and-Menu-Options" target="_blank" rel="noopener noreferrer">Feedback Site</a> and put "Create New World" in the title so we can find it.</p>
+<h2>Realms World Storage</h2>
+<ul>
+<li>We are cleaning up expired Realms that have been collecting dust. Realms that have been canceled for more than 18 months will be deleted. Find out more at <a href="https://aka.ms/expired-realms-update" target="_blank" rel="noopener noreferrer">aka.ms/expired-realms-update</a></li>
+</ul>
+<h2>RenderDragon</h2>
+<ul>
+<li>The new Minecraft Bedrock rendering engine, RenderDragon, is now live on Android, iOS, Switch, and Windows 10 UWP x86 builds! Consolidating onto our new graphics engine will allow us to continue investing in future performance and stability improvements, as well as exciting new features for Minecraft!</li>
+<li>This technical update shouldn't impact gameplay or experience, but if you run into any new issues, please file feedback so the team can investigate</li>
+</ul>
+<h1>Vanilla Parity:</h1>
+<h2>World Generation</h2>
+<ul>
+<li>Worlds can now be created with 64-bit seeds (-9223372036854775808 to 9223372036854775807). These seeds can be used between Bedrock Edition and Java Edition to produce the same world (<a href="https://bugs.mojang.com/browse/MCPE-144994" target="_blank" rel="noopener noreferrer">MCPE-144994</a>, <a href="https://bugs.mojang.com/browse/MCPE-148168" target="_blank" rel="noopener noreferrer">MCPE-148168</a>)</li>
+<li>Non-numeric seed UI inputs now produce the same seeds as Java Edition</li>
+<li>Acacia Trees now grow Leaves on every branch below Y = 0 (<a href="https://bugs.mojang.com/browse/MCPE-151836" target="_blank" rel="noopener noreferrer">MCPE-151386</a>)</li>
+</ul>
+<h2>Gameplay</h2>
+<ul>
+<li>Tweaked hunger depletion rate to better match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-56031" target="_blank" rel="noopener noreferrer">MCPE-56031</a>)<ul>
+<li>Players can now properly lose hunger when sprinting or swimming</li>
+<li>Players lose significantly less hunger when jumping</li>
+<li>Exhaustion rates can now be tweaked in Behavior Packs</li>
+</ul></li>
+<li>Players flying in Creative mode are no longer pushed by liquid current (<a href="https://bugs.mojang.com/browse/MCPE-84592" target="_blank" rel="noopener noreferrer">MCPE-84592</a>)</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Shulkers now have a chance to spawn another Shulker when hit by a Shulker projectile (<a href="https://bugs.mojang.com/browse/MCPE-104826" target="_blank" rel="noopener noreferrer">MCPE-104826</a>)</li>
+<li>When a mob picks up an item, the item can now be seen slightly "pulled" towards the mob right as it picks it up. This matches the behavior of Java Edition</li>
+<li>Drowned can no longer spawn where the block light level is above 0 (<a href="https://bugs.mojang.com/browse/MCPE-150148" target="_blank" rel="noopener noreferrer">MCPE-150148</a>)</li>
+<li>Bees no longer become angry when Beehives are destroyed by Silk Touch (<a href="https://bugs.mojang.com/browse/MCPE-83550" target="_blank" rel="noopener noreferrer">MCPE-83550</a>)</li>
+<li>Untamed Wolves can now be leashed (<a href="https://bugs.mojang.com/browse/MCPE-82050" target="_blank" rel="noopener noreferrer">MCPE-82050</a>)</li>
+<li>Mobs can no longer spawn on Campfires (<a href="https://bugs.mojang.com/browse/MCPE-152770" target="_blank" rel="noopener noreferrer">MCPE-152770</a>)</li>
+<li>The Ravager now targets and attacks the Wandering Trader (<a href="https://bugs.mojang.com/browse/MCPE-44606" target="_blank" rel="noopener noreferrer">MCPE-44606</a>)</li>
+<li>Mobs spawned from a Dispenser are now persistent (<a href="https://bugs.mojang.com/browse/MCPE-110521" target="_blank" rel="noopener noreferrer">MCPE-110521</a>)</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Falling blocks once again have full-block hitbox</li>
+<li>Changed block tick rates for Cactus, Chorus Flower, Crops, Grass, Pointed Dripstone, and Saplings to match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-145612" target="_blank" rel="noopener noreferrer">MCPE-145612</a>)</li>
+<li>Cauldrons now only fill with water and lava by Dripstones that are below water and lava source blocks</li>
+<li>TNT blocks now correctly move in a random X/Z direction once lit</li>
+<li>Glow Lichen no longer generates hanging in the air inside Strongholds (<a href="https://bugs.mojang.com/browse/MCPE-123448" target="_blank" rel="noopener noreferrer">MCPE-123448</a>)</li>
+<li>Glow Lichen now correctly checks for the face of the block they are attached to be a full block</li>
+<li>Glow Lichen can now be attached to Leaves</li>
+<li>Blocks such as Glow Lichen, Torches, and Redstone can no longer be placed on or attached to Brewing Stands</li>
+<li>Blocks such as Glow Lichen, Torches, and Redstone can now be placed on or attached to Trapdoors, depending on their state</li>
+<li>Azaleas and Lily Pads are now broken by flowing water (<a href="https://bugs.mojang.com/browse/MCPE-152040" target="_blank" rel="noopener noreferrer">MCPE-152040</a>)</li>
+</ul>
+<h2>Items</h2>
+<ul>
+<li>The player's arm no longer twitches while charging a bow (<a href="https://bugs.mojang.com/browse/MCPE-148486" target="_blank" rel="noopener noreferrer">MCPE-148486</a>)</li>
+<li>Nether Brick, Iron/Gold Nuggets, Red/Brown Mushroom Blocks, and Chorus Plant/Flower Blocks can no longer be used as fuel in Furnaces (<a href="https://bugs.mojang.com/browse/MCPE-114216" target="_blank" rel="noopener noreferrer">MCPE-114216</a>)</li>
+<li>Water and Lava Buckets can now be used on waterlogged blocks, such as Light Blocks or Big Dripleaves (<a href="https://bugs.mojang.com/browse/MCPE-148392" target="_blank" rel="noopener noreferrer">MCPE-148392</a>)</li>
+</ul>
+<h2>Combat and Damage</h2>
+<ul>
+<li>Improved accuracy of damage calculations</li>
+<li>Fixed some issues where damage invulnerability wasn't being applied properly</li>
+<li>The camera now shakes the same way it does in Java Edition when the player receives damage (<a href="https://bugs.mojang.com/browse/MCPE-118310" target="_blank" rel="noopener noreferrer">MCPE-118510</a>)</li>
+<li>Fixed an issue where the Protection enchantments mitigated too much damage. This has been changed to match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-113191" target="_blank" rel="noopener noreferrer">MCPE-113191</a>)</li>
+<li>Absorption Hearts no longer stay yellow while under the Wither effect (<a href="https://bugs.mojang.com/browse/MCPE-131852" target="_blank" rel="noopener noreferrer">MCPE-131852</a>)</li>
+<li>Added armor toughness</li>
+<li>Diamond Armor and Netherite Armor now have a toughness value of 2 and 3 respectively</li>
+<li>Tweaked armor reduction calculation to account for toughness</li>
+<li>Netherite Armor will now reduce more damage than Diamond Armor</li>
+<li>Lowered the amount of knockback resistance granted by Netherite Armor (<a href="https://bugs.mojang.com/browse/MCPE-109408" target="_blank" rel="noopener noreferrer">MCPE-109408</a>)</li>
+<li>Punching deals less damage now, to better match the Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-152713" target="_blank" rel="noopener noreferrer">MCPE-152713</a>)</li>
+<li>Damage is now calculated more accurately by properly calculating and storing partial damage for larger damage</li>
+<li>Mobs across higher and lower difficulties had their damage adjusted slightly accordingly</li>
+<li>Mobs with knockback resistance (e.g. Ravager or Zoglin) now receive less knockback when hit by an Iron Golem</li>
+<li>Armor and protection reduction calculations have been made more accurate</li>
+<li>Dragon's Breath attack now properly deals damage (<a href="https://bugs.mojang.com/browse/MCPE-94317" target="_blank" rel="noopener noreferrer">MCPE-94317</a>)</li>
+<li>Protection Enchantment now properly works on most damage types (<a href="https://bugs.mojang.com/browse/MCPE-40651" target="_blank" rel="noopener noreferrer">MCPE-40651</a>)</li>
+<li>Landing on a Stalagmite is now properly considered fall damage (<a href="https://bugs.mojang.com/browse/MCPE-151192" target="_blank" rel="noopener noreferrer">MCPE-151192</a>)</li>
+<li>Blaze Fireball will deal knockback on impact (<a href="https://bugs.mojang.com/browse/MCPE-82421" target="_blank" rel="noopener noreferrer">MCPE-82421</a>)</li>
+<li>Blaze fireballs, Fang attack damage, and Shulker bullets now deal consistent damage across all difficulties</li>
+<li>Small Magma Cubes do slightly more damage, from 2 to 3 on normal</li>
+<li>Spiders deal slightly less damage, from 3 to 2 on normal (<a href="https://bugs.mojang.com/browse/MCPE-94878" target="_blank" rel="noopener noreferrer">MCPE-94878</a>)</li>
+<li>Baby Zoglins deal slightly less damage, from 1 to 0.5 on normal</li>
+<li>Baby Hoglins now attack players for 0.5 damage on normal (<a href="https://bugs.mojang.com/browse/MCPE-152577" target="_blank" rel="noopener noreferrer">MCPE-152577</a>)</li>
+<li>Skeleton melee attack does slightly less damage, from 3 to 2 on normal</li>
+<li>Wolves deal slightly more damage, from 3 to 4 on normal</li>
+<li>Fixed an issue that was causing entities to not be protected from fire damage by the Fire Resistance effect</li>
+<li>Fixed a desync issue that could sometimes cause health to regenerate only visually</li>
+</ul>
+<h2>Villagers</h2>
+<ul>
+<li>Updated Villager trade tables for Armorer, Cleric, Fisherman, Shepherd, Toolsmith, and Weaponsmith to match Java Edition<ul>
+<li>Fishermen Boat trades now change wood type based on Villager biome type</li>
+<li>Clerics now offer Glowstone instead of Glowstone Dust</li>
+<li>Weaponsmith enchanted Iron Sword trade moved to Novice</li>
+<li>Armorer Diamond trade moved to Journeyman</li>
+</ul></li>
+<li>Villagers no longer share Seeds and Beetroot Seeds</li>
+<li>Cartographers now always unlock Woodland Explorer Map trade (<a href="https://bugs.mojang.com/browse/MCPE-152725" target="_blank" rel="noopener noreferrer">MCPE-152725</a>)</li>
+<li>Fixed an error where Journeymen Clerics would offer Glowstone Dust instead of Glowstone Blocks (<a href="https://bugs.mojang.com/browse/MCPE-57524" target="_blank" rel="noopener noreferrer">MCPE-57524</a>)</li>
+<li>Farmer Villagers can now use Bone Meal on crops and can turn excess Seeds into Bone Meal at their Composter (<a href="https://bugs.mojang.com/browse/MCPE-74079" target="_blank" rel="noopener noreferrer">MCPE-74079</a>)</li>
+</ul>
+<h1>Experimental Features:</h1>
+<p><strong>Reminder:</strong> Remember to <strong>make regular backup copies</strong> of your favorite worlds before enabling experimental features!</p>
+<p>Please keep in mind that these features are work in progress, still under in development, and subject to change. If you activate them, your world might crash, break, or not work with future updates. Experimental features cannot be turned off after world creation.</p>
+<p>For more information, please see the article about enabling experimental features at <a href="https://aka.ms/MCExperimentalFeatures" target="_blank" rel="noopener noreferrer">aka.ms/MCExperimentalFeatures</a>.</p>
+<h2>Deep Dark Biome</h2>
+<ul>
+<li>Dimly lit and eerie, the Deep Dark is sure to strike fear into the hearts of even the bravest players</li>
+</ul>
+<h2>Ancient Cities</h2>
+<ul>
+<li>Wander the halls of these long-abandoned structures in the Deep Dark depths to uncover relics long forgotten</li>
+</ul>
+<h2>Warden</h2>
+<ul>
+<li>The horror of the Deep Dark! A creature with no eyes, roughly resembling the Sculk that can be found throughout the Deep Dark, the Warden is an unstoppable force of nature that inhabits this biome</li>
+</ul>
+<h2>Sculk Blocks</h2>
+<ul>
+<li>A new variety of blocks that can be found in the Deep Dark</li>
+</ul>
+<h2>Darkness Effect</h2>
+<ul>
+<li>A new mob effect unique to the Warden and Sculk Shrieker, which will afflict players with the effect when nearby</li>
+<li>Lowers the gamma down at an equivalent of "Moody" while having this effect</li>
+</ul>
+<h2>Allay</h2>
+<ul>
+<li>Allays will collect all the surrounding items that match the item they are holding</li>
+<li>Allays will like a player who hands them an item and will bring the items they collect to their liked player</li>
+</ul>
+<h2>Boat with Chest</h2>
+<ul>
+<li>Function similarly to Minecart Chests, but in Boats instead, so you can take a journey on the water and carry your things with you</li>
+</ul>
+<h2>Goat Horn</h2>
+<ul>
+<li>Dropped when a Goat with at least one horn rams these blocks: Stone, Packed ice, Iron Ore, Copper Ore, Emerald Ore, or any kind of wood log from the Overworld</li>
+</ul>
+<h2>Axe Changes</h2>
+<ul>
+<li>Attacks with Axes towards a raised Shield will disable the Shield for 5 seconds</li>
+</ul>
+<h2>Spectator Mode</h2>
+<ul>
+<li>This update contains early functionality for Spectator Mode - a much-wanted feature we're adding to Minecraft: Bedrock Edition. This will launch after the upcoming 1.19 update has shipped, but we'll be testing it further in upcoming Betas and Previews. We recommend not relying on this in-development feature, which was not meant to be included in the release. We won't be accepting bug reports related to Spectator Mode until our first iteration is released, as the feature is likely to change during development.</li>
+</ul>
+<h1>Known Issues:</h1>
+<ul>
+<li>Teleporting entities into unloaded chunks removes them from the world. This will be fixed in an upcoming update</li>
+<li>Players are unable to invert the camera Y-axis when playing with touch controls. This will be fixed in an upcoming update</li>
+</ul>
+<h1>Fixes:</h1>
+<h2>Performance / Stability</h2>
+<ul>
+<li>Fixed a crash that could occur during gameplay</li>
+<li>Fixed a crash that could occur when uploading corrupted worlds to Realms</li>
+<li>Fixed a crash that could occur upon leaving the Zooming menu in the Dressing Room</li>
+<li>Fixed a crash that could occur when hovering over the search bar in the crafting menu when playing with a controller</li>
+<li>Fixed a crash that could occur on Android devices when suspending or resuming the app</li>
+<li>Fixed a crash that could occur when stopping a Bedrock Dedicated Server (<a href="https://bugs.mojang.com/browse/BDS-16742" target="_blank" rel="noopener noreferrer">BDS-16742</a>)</li>
+</ul>
+<h2>Gameplay</h2>
+<ul>
+<li>Fixed an issue where the Mending enchantment would not always correctly consume XP Orbs to repair (<a href="https://bugs.mojang.com/browse/MCPE-120119" target="_blank" rel="noopener noreferrer">MCPE-120119</a>)</li>
+<li>Players in Visitor Mode can no longer break Paintings and Minecarts (<a href="https://bugs.mojang.com/browse/MCPE-132869" target="_blank" rel="noopener noreferrer">MCPE-132869</a>)</li>
+<li>Teleporting vertically beyond the visibility distance now loads terrain correctly (<a href="https://bugs.mojang.com/browse/MCPE-150021" target="_blank" rel="noopener noreferrer">MCPE-150021</a>)</li>
+<li>Fixed a bug where the player could switch to gliding when riding in certain scenarios (<a href="https://bugs.mojang.com/browse/MCPE-147904" target="_blank" rel="noopener noreferrer">MCPE-147904</a>)</li>
+<li>Crouch (sneak) state is now reset when player dies to avoid getting stuck in crouch state after respawning</li>
+<li>The player's position when rejoining a world will remain the same if they quit while in lava (<a href="https://bugs.mojang.com/browse/MCPE-124219" target="_blank" rel="noopener noreferrer">MCPE-124219</a>)</li>
+<li>Players can now fly down through Ladders and other climbable blocks such as Vines in Creative mode without stopping (<a href="https://bugs.mojang.com/browse/MCPE-82480" target="_blank" rel="noopener noreferrer">MCPE-82480</a>)</li>
+<li>Fixed a Furnace exploit where items could be duplicated if the output slot was selected (<a href="https://bugs.mojang.com/browse/MCPE-152411" target="_blank" rel="noopener noreferrer">MCPE-152411</a>)</li>
+<li>Fire that existed before the Fire Tick game rule is enabled will continue to spread again (<a href="https://bugs.mojang.com/browse/MCPE-140396" target="_blank" rel="noopener noreferrer">MCPE-140396</a>)</li>
+<li>Vertical field of view is no longer halved in horizontal split screen, making items such as Book &#x26; Quill easier to view when playing in split screen</li>
+<li>Fixed tick range check excluding chunks that were actually in range</li>
+</ul>
+<h2>World Generation</h2>
+<ul>
+<li>Fixed duplicate End Crystals spawning on top of End Spikes (<a href="https://bugs.mojang.com/browse/MCPE-147817" target="_blank" rel="noopener noreferrer">MCPE-147817</a>)</li>
+<li>Improved surrounding terrain for structures such as Villages during world generation (<a href="https://bugs.mojang.com/browse/MCPE-145659" target="_blank" rel="noopener noreferrer">MCPE-145659</a>)</li>
+<li>Fixed underwater lava lakes not turned into Obsidian during world generation (<a href="https://bugs.mojang.com/browse/MCPE-128022" target="_blank" rel="noopener noreferrer">MCPE-128022</a>)</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Villagers no longer avoid Zombified Piglins (<a href="https://bugs.mojang.com/browse/MCPE-94102" target="_blank" rel="noopener noreferrer">MCPE-94102</a>)</li>
+<li>Fixed an issue where Villagers did not hold the item they would trade when presented with Emeralds by the player (<a href="https://bugs.mojang.com/browse/MCPE-150303" target="_blank" rel="noopener noreferrer">MCPE-150303</a>)</li>
+<li>Mobs are now able to path over Azalea blocks (<a href="https://bugs.mojang.com/browse/MCPE-129373" target="_blank" rel="noopener noreferrer">MCPE-129373</a>)</li>
+<li>Mobs are now able to path over Dripleaf blocks and properly pathfind on top of them, when not fully tilted</li>
+<li>Mobs are now able to path over Pointed Dripstone blocks and properly pathfind on top of them (<a href="https://bugs.mojang.com/browse/MCPE-133270" target="_blank" rel="noopener noreferrer">MCPE-133270</a>)</li>
+<li>Mobs can now move properly on top of solid partial blocks, like Bells, Brewing Stands, and Enchanting Tables</li>
+<li>Mobs can now jump from high enough solid partial blocks to full ones at a higher position</li>
+<li>Mobs can now jump over fences if they are standing on an adjacent slab or on another block high enough</li>
+<li>Mobs can now move through less than half-block tall Top Snow even when the ceiling, if any, is as tall as the mobs themselves (<a href="https://bugs.mojang.com/browse/MCPE-148355" target="_blank" rel="noopener noreferrer">MCPE-148355</a>)</li>
+<li>Fixed a bug in the Glow Squid's texture where the glow map in the alpha channel was incorrect, causing patches of non-glowing texture to be seen (<a href="https://bugs.mojang.com/browse/MCPE-117507" target="_blank" rel="noopener noreferrer">MCPE-117507</a>)</li>
+<li>Fixed an issue where players could not access a Villager's trades while holding a spawn egg (<a href="https://bugs.mojang.com/browse/MCPE-76153" target="_blank" rel="noopener noreferrer">MCPE-76153</a>)</li>
+<li>Fixed an issue where Witches spawned during Village raids could despawn during the raid (<a href="https://bugs.mojang.com/browse/MCPE-149883" target="_blank" rel="noopener noreferrer">MCPE-149883</a>)</li>
+<li>Cod, Salmon, Pufferfish, Tropical Fish, and Dolphins once again spawn in deep variants of ocean biomes (<a href="https://bugs.mojang.com/browse/MCPE-150191" target="_blank" rel="noopener noreferrer">MCPE-150191</a>)</li>
+<li>Fixed Fangs from Evoker spells not being spawnable in blocks with no bounding boxes</li>
+<li>Changed the spawning logic for Iron Golems and Cats to make it easier for them to spawn in roofed areas, like underground villages (<a href="https://bugs.mojang.com/browse/MCPE-142292" target="_blank" rel="noopener noreferrer">MCPE-142292</a>)</li>
+<li>Fixed an issue where some large mobs in Marketplace maps could get stuck</li>
+<li>Shulkers no longer like to occupy the same block as another Shulker (<a href="https://bugs.mojang.com/browse/MCPE-43972" target="_blank" rel="noopener noreferrer">MCPE-43972</a>)</li>
+<li>Shulkers now prioritize attaching to neighboring block faces before trying to teleport away</li>
+<li>Shulkers now stay attached to the current attached blockface if it is valid, instead of switching to upright position</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Fixed a lighting bug where light level 1 incorrectly dropped to 0 when placing blocks in light level 1 with multiple light sources (<a href="https://bugs.mojang.com/browse/MCPE-151266" target="_blank" rel="noopener noreferrer">MCPE-151266</a>)</li>
+<li>TNT no longer disappears when ignited with the 'TNT Explodes' game rule disabled and the 'Fire Spreads' game rule enabled (<a href="https://bugs.mojang.com/browse/MCPE-82485" target="_blank" rel="noopener noreferrer">MCPE-82485</a>)</li>
+<li>Gravity affected blocks now fall on Top Snow when placed above it instead of hovering over it (<a href="https://bugs.mojang.com/browse/MCPE-151407" target="_blank" rel="noopener noreferrer">MCPE-151407</a>)</li>
+<li>Fixed an issue with resource drops occasionally remaining black after breaking and placing a block quickly in its place</li>
+<li>Top Snow no longer clips with the block beneath when falling</li>
+<li>Fixed an issue where interacting with the Bell while holding a chargeable item would not continuously ring it (<a href="https://bugs.mojang.com/browse/MCPE-56968" target="_blank" rel="noopener noreferrer">MCPE-56968</a>)</li>
+<li>Fixed an issue where projectiles would 'bounce' off of Bells in strange ways (<a href="https://bugs.mojang.com/browse/MCPE-47847" target="_blank" rel="noopener noreferrer">MCPE-47847</a>)</li>
+<li>Removed water from the extra-block when placing an Amethyst cluster (<a href="https://bugs.mojang.com/browse/MCPE-148394" target="_blank" rel="noopener noreferrer">MCPE-148394</a>)</li>
+<li>Scaffolding can no longer be placed without support on y=0 (<a href="https://bugs.mojang.com/browse/MCPE-150765" target="_blank" rel="noopener noreferrer">MCPE-150765</a>)</li>
+<li>Observers placed facing Double Chests no longer send out a Redstone pulse when reloading/re-entering a chunk</li>
+<li>Save Structure Blocks now correctly detect Corner Structure Blocks at negative Y levels (<a href="https://bugs.mojang.com/browse/MCPE-151511" target="_blank" rel="noopener noreferrer">MCPE-151511</a>)</li>
+<li>Breaking a layer of snow placed in the same block as a flower no longer destroys the flower (<a href="https://bugs.mojang.com/browse/MCPE-151512" target="_blank" rel="noopener noreferrer">MCPE-151512</a>)</li>
+</ul>
+<h2>Items</h2>
+<ul>
+<li>Custom armor can now be equipped with the "Use" button when different armor is already equipped (<a href="https://bugs.mojang.com/browse/MCPE-" target="_blank" rel="noopener noreferrer">MCPE-125323</a>)</li>
+</ul>
+<h2>Graphical</h2>
+<ul>
+<li>Fixed an issue that caused some emotes to have unintended rotations when near the end of their animation (<a href="https://bugs.mojang.com/browse/MCPE-134328" target="_blank" rel="noopener noreferrer">MCPE-134328</a>)</li>
+<li>Fixed a case where ray tracing resources would be destroyed prematurely on level exit from an RTX-enabled world</li>
+<li>Fixed the stage 3 carrot texture not showing up in-game, due to an incorrect filename (<a href="https://bugs.mojang.com/browse/MCPE-152175" target="_blank" rel="noopener noreferrer">MCPE-152175</a>)</li>
+<li>Fixed a bug where the Shield blocking animation stopped playing smoothly after blocking once (<a href="https://bugs.mojang.com/browse/MCPE-149838" target="_blank" rel="noopener noreferrer">MCPE-149838</a>)</li>
+<li>Fixed the crosshair disappearing when Outline Selection for blocks is disabled</li>
+<li>Players that are on fire now render fire in front of the player on the inventory screen regardless of in-game camera perspective (<a href="https://bugs.mojang.com/browse/MCPE-147777" target="_blank" rel="noopener noreferrer">MCPE-147777</a>)</li>
+<li>Fixed a highlight effect on Leather Armor appearing on paper dolls when using higher anti-aliasing (<a href="https://bugs.mojang.com/browse/MCPE-75321" target="_blank" rel="noopener noreferrer">MCPE-75321</a>)</li>
+</ul>
+<h2>User Interface</h2>
+<ul>
+<li>Added an option in Video Settings to toggle anti-aliasing on the Nintendo Switch (<a href="https://bugs.mojang.com/browse/MCPE-123352" target="_blank" rel="noopener noreferrer">MCPE-123352</a>)</li>
+<li>Fixed the loading screen when suspending and resuming the game while playing split-screen on Nintendo Switch</li>
+<li>Increased line spacing on the "Realms Plus subscription has expired" screen</li>
+<li>Chat changes:<ul>
+<li>Control + Backspace will now erase the whole word before the caret</li>
+<li>Control + Delete will now erase the whole word after the caret</li>
+<li>Control + Left Arrow will now move the caret to the beginning of the word before the caret</li>
+<li>Control + Right Arrow will now move the caret to the beginning of the next word after the caret</li>
+</ul></li>
+<li>When first opening the inventory screen in Pocket UI, we now default to the "Craftable" tab on the left-hand side, and the crafting grid on the right-hand side</li>
+<li>Removed the question mark button on the Pocket UI inventory screen</li>
+<li>Accessing the recipe book from the Inventory screen now only shows items that can be crafted from that screen's 2x2 crafting grid</li>
+<li>Players can now use auto-move to equip or unequip armor in Crafting Table's menu while in Pocket UI (<a href="https://bugs.mojang.com/browse/MCPE-148970" target="_blank" rel="noopener noreferrer">MCPE-148970</a>)</li>
+<li>Updated generic controller face button icons on mobile devices</li>
+<li>Fixed a bug where the label above the inventory screen crafting grid in Pocket UI would get truncated in some languages</li>
+<li>Fixed an issue in Pocket UI where items could be dropped unintentionally in blocks with custom UIs, and resized those screens to allow for dropping items on the sides instead</li>
+<li>Improved contrast on multiple UI elements</li>
+<li>Fixed an issue with the screen reader looping on the Play screen when you had a Realms invite</li>
+<li>Download popup no longer flickers when closed</li>
+<li>Added warning popup on Marketplace pages when attempting to equip skin pack skin while character creator item is equipped</li>
+<li>Fixed issue where info and buttons did not appear for downloaded skin packs (<a href="https://bugs.mojang.com/browse/MCPE-152216" target="_blank" rel="noopener noreferrer">MCPE-152216</a>)</li>
+</ul>
+<h1>Technical Updates:</h1>
+<h2>Updated Add-On Template Packs</h2>
+<ul>
+<li>Updated Add-On templates for 1.18.30 with new resources, behaviors, and documentation, are available to download at <a href="https://aka.ms/MCAddonPacks" target="_blank" rel="noopener noreferrer">aka.ms/MCAddonPacks</a></li>
+</ul>
+<h2>RenderDragon</h2>
+<ul>
+<li>With the release of RenderDragon for Android, iOS, Nintendo Switch, and Win10 UWP x86, HAL will no longer be available on these platforms. We know the community has found ways to build shaders on top of HAL and with this change, these shaders will no longer function. We understand that this is a valuable feature for players and the creator community, and we are working on how we may be able to deliver this sort of creative capability to players and creators in an officially supported way. While we have nothing to share right now, look out for more details in the future.</li>
+</ul>
+<h2>Additional Modding Capabilities Experiment/JavaScript APIs</h2>
+<ul>
+<li><strong>Important!</strong> In this release, we are removing the Additional Modding Capabilities experiment. This experiment contained experimental JavaScript APIs launched in 2018 - and with this removal, JavaScript within worlds associated with this API will no longer function. GameTest Framework - a separate JavaScript API - should not be impacted, nor should behavior pack/resource pack type add-ons more broadly.</li>
+<li>You can read more about this <a href="https://aka.ms/mcamc" target="_blank" rel="noopener noreferrer">via this article</a>.</li>
+</ul>
+<h2>Changes</h2>
+<ul>
+<li>A world with "StorageVersion" 8 or lower will be increased to 9 and have its "RandomSeed" upgraded from using only the lower 32 bits of a 64-bit number to using the full 64-bit range while still representing the same number. This is only relevant for negative 32-bit seeds, which need a sign bit extension</li>
+<li>The world loading screen now shows progress when loading ticking areas marked for preload</li>
+<li>Experimental: Volume definitions are now stored and read from Behavior Packs instead of being part of the level directory</li>
+<li>Experimental: Added an optional "mob_amount" parameter to the Damage Event Response that specifies a unique damage amount when used by mobs</li>
+<li>Due to engine limitations, "minecraft:geometry" data used for blocks with the Holiday Creator Features experimental toggle are now restricted to only allow geometry in the [0,0,0] to [15,15,15] space. Any blocks loaded from Behavior Packs that exceed this limit will render as the info_update block and show a content error in the log</li>
+<li>The Interact component now has two new fields, GiveItem and TakeItem, specifying if it is possible to give/take items from an entities main hand slot. Taking the item also drops the inventory of the mob</li>
+<li>Removed preventsjumpingcomponent from data-driven blocks</li>
+<li>Removed BlockImmovable, BlockBreakOnPush, and BlockOnlyPistonPush components from data-driven blocks</li>
+<li>Limited the number of elements in the crafting_tagsfield of CraftingTableComponent to 64</li>
+</ul>
+<h2>Fixes</h2>
+<ul>
+<li>Biome-specific fog settings can once again be defined</li>
+<li>Fixed actor definition identifiers not being recognized if the item or block name contains "."</li>
+<li>Mobs that are riding a boat, for example, can no longer use JumpToBlockGoal (<a href="https://bugs.mojang.com/browse/MCPE-150750" target="_blank" rel="noopener noreferrer">MCPE-150750</a>)</li>
+<li>Custom mobs with a format version lower than 1.18.20 and using the minecraft:behavior.knockback_roarcomponent will parse like before if it contains an extra field that the engine didn't expect</li>
+<li>Fixed an issue in the Knockback goal where the incorrect owner was being passed into the filter evaluate function</li>
+<li>Weapon events are now correctly applied when the weapons are used by mobs (<a href="https://bugs.mojang.com/browse/MCPE-118692" target="_blank" rel="noopener noreferrer">MCPE-118692</a>)</li>
+<li>JumpToBlock behavior is now correctly affected by JumpBoost mob effect (<a href="https://bugs.mojang.com/browse/MCPE-137432" target="_blank" rel="noopener noreferrer">MCPE-137432</a>)</li>
+<li>Fixed a case where experimental BlockCollisionComponents did not allow partial specification</li>
+<li>Rotation when riding a mob that has a locked rotation will no longer unexpectedly snap to one side when that mob is rotating</li>
+</ul>
+<h2>Commands</h2>
+<ul>
+<li>Fixed an issue that would cause commands to affect players in all dimensions (<a href="https://bugs.mojang.com/browse/MCPE-152218" target="_blank" rel="noopener noreferrer">MCPE-152218</a>)</li>
+<li>Added the "hasitem" filter for target selector of entities. This allows the player to target entities based on the items that have in their inventory or are wearing</li>
+<li>Added '/tickingarea' command preload overload</li>
+<li>The '/tickingarea' command no longer modifies areas from entities with the tick_world component</li>
+<li>Entities must now be loaded for an area to be considered fully loaded and ticking</li>
+<li>Added a new '/volumearea ' command to create, remove, and list volumes in the world</li>
+<li>Using '/playanimation' command now properly plays animations on the paper doll and inventory character (<a href="https://bugs.mojang.com/browse/MCPE-137353" target="_blank" rel="noopener noreferrer">MCPE-137353</a>)</li>
+<li>Correct error output is now displayed when attempting to use the '/loot' spawn command when passing in the position of an unloaded area and there is 0 loot to drop</li>
+<li>Added '/loot ' command insert loot and insert kill overload</li>
+</ul>
+<h2>AI Goals</h2>
+<ul>
+<li>Exposed new data parameter "calculate_new_path_radius" for GoHomeGoal. This is for specifying a distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home</li>
+<li>Added Knockback Height Cap value to KnockbackRoarGoal</li>
+</ul>
+<h2>Additional Changes</h2>
+<ul>
+<li>More technical changes can be found in the <a href="https://feedback.minecraft.net/hc/en-us/articles/5520890863245" target="_blank" rel="noopener noreferrer">full changelog</a></li>
+</ul>

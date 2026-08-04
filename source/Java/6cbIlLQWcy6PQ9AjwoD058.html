@@ -1,0 +1,18 @@
+<p>Here is the first (and hopefully last) release candidate for 1.19.4. Unless something critical pops up, no further changes will be made for the full release, which is planned for next week.</p>
+<p>Happy mining!</p>
+<h1>Technical Changes</h1>
+<p>Changes to display entity interpolation:</p>
+<ul>
+<li>interpolation always starts at the beginning on client tick</li>
+<li>field <code>interpolation_start</code> is replaced with <code>start_interpolation</code>, with a different meaning</li>
+<li><code>start_interpolation</code> describes amount of ticks from the start of next client tick after receiving an update to start of interpolation<ul>
+<li>for example value <code>0</code> means that interpolation will start at the beginning of next client tick after receiving the update</li>
+</ul></li>
+<li><code>start_interpolation</code> is not stored in entity data<ul>
+<li>when using data commands, if interpolated value is updated, but <code>start_interpolation</code> is not present in modified tag, interpolation will continue from the time of previous update, but with new values</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 1.19.4-rc1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-260857" target="_blank" rel="noopener noreferrer">MC-260857</a> Display entities summoned with initial transformation interpolate incorrectly from default transformation during next transformation</li>
+</ul>

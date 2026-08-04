@@ -1,0 +1,63 @@
+<p>The first 1.18 pre-release is here!</p>
+<p>From now on, you should mostly see bugs being fixed. In addition to that, pre-releases don't follow the regular snapshot cadence of releasing on Wednesdays, so keep an eye out!</p>
+<p>That being said, this pre-release introduces biome blending, which means that you should no longer find harsh borders between new and old terrain. On top of that, we've also reintroduced the Amplified and Large Biome world types.</p>
+<p>Happy mining!</p>
+<h1>Changes in 1.18 Pre-Release 1</h1>
+<ul>
+<li>Amplified and Large biome worlds have been adapted to the new terrain and are now once again available in the Create World screen</li>
+<li>Removed world types "Caves" and "Floating islands" from the world creation screen</li>
+<li>The transition between new and old terrain is less "cliffy"<ul>
+<li>Will surface height blend? Yes</li>
+<li>Will biomes blend? Yes</li>
+<li>Will caves blend? Your mileage may vary</li>
+</ul></li>
+</ul>
+<h1>Technical changes in 1.18 Pre-Release 1</h1>
+<ul>
+<li><code>--report</code> option in data generator now creates full worldgen reference files instead of just biomes</li>
+</ul>
+<h1>Fixed bugs in 1.18 Pre-Release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-46584" target="_blank" rel="noopener noreferrer">MC-46584</a> Clicking and dragging MOUSE3 (Mouse wheel) over item slots incorrectly attempts to place full stacks in survival</li>
+<li><a href="https://bugs.mojang.com/browse/MC-53444" target="_blank" rel="noopener noreferrer">MC-53444</a> You can get outside of the worldborder by mounting a rideable entity (boat, pig, etc.) outside of it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-54119" target="_blank" rel="noopener noreferrer">MC-54119</a> Can place/take water/lava/lilypads outside worldborder and inside spawn protection</li>
+<li><a href="https://bugs.mojang.com/browse/MC-62550" target="_blank" rel="noopener noreferrer">MC-62550</a> Worldborder not correctly initialized for the End and Nether</li>
+<li><a href="https://bugs.mojang.com/browse/MC-96535" target="_blank" rel="noopener noreferrer">MC-96535</a> Ambient property of potion effects with ShowParticles:0b is not disregarded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113425" target="_blank" rel="noopener noreferrer">MC-113425</a> Player can interact with entities outside the worldborder</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117800" target="_blank" rel="noopener noreferrer">MC-117800</a> Half bed can be placed outside the worldborder</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121997" target="_blank" rel="noopener noreferrer">MC-121997</a> Every dimension's world border is operating independently, and doesn't appear where it actually is</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131808" target="_blank" rel="noopener noreferrer">MC-131808</a> Forests don't spawn trees near the positive edges, but overstretch bounds on the negative edges</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136523" target="_blank" rel="noopener noreferrer">MC-136523</a> Invisible world border in the end dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187174" target="_blank" rel="noopener noreferrer">MC-187174</a> Worldborder does not take nether coordinates into account</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206660" target="_blank" rel="noopener noreferrer">MC-206660</a> Stalactites don't fall properly if there are blocks directly below it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215139" target="_blank" rel="noopener noreferrer">MC-215139</a> Some water in caves will not start flowing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219035" target="_blank" rel="noopener noreferrer">MC-219035</a> Fossil structures can't generate in far east and south blocks of a chunk</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222388" target="_blank" rel="noopener noreferrer">MC-222388</a> Acacia trees under y=0 often grow with bare branches</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229013" target="_blank" rel="noopener noreferrer">MC-229013</a> Lava lake decorator config is unused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229517" target="_blank" rel="noopener noreferrer">MC-229517</a> Conversion sounds for strays &#x26; drowned is controlled by Friendly Creatures mixer, not Hostile Creatures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231666" target="_blank" rel="noopener noreferrer">MC-231666</a> Dragon egg can teleport to outside the world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236610" target="_blank" rel="noopener noreferrer">MC-236610</a> Lava lakes generate without stone around</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236628" target="_blank" rel="noopener noreferrer">MC-236628</a> Lava pools cause sand to fall now instead of putting sandstone beneath it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236652" target="_blank" rel="noopener noreferrer">MC-236652</a> Weather can sometimes be incorrect within a biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236803" target="_blank" rel="noopener noreferrer">MC-236803</a> Extremely low amount of pillager spawns in outpost on jagged peaks, groves, snowy slopes &#x26; frozen peaks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237040" target="_blank" rel="noopener noreferrer">MC-237040</a> Falling blocks still sometimes disappear for a moment when landing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237598" target="_blank" rel="noopener noreferrer">MC-237598</a> Projectiles glitch around in the air when exiting simulation distance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237621" target="_blank" rel="noopener noreferrer">MC-237621</a> Missing biome definitions in some peak grid cells causes unintended ocean placement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237791" target="_blank" rel="noopener noreferrer">MC-237791</a> Villager spawn eggs used on grove, frozen peaks, snowy slopes and jagged peaks don't spawn snowy plains villagers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237954" target="_blank" rel="noopener noreferrer">MC-237954</a> The "Sound of Music" and "Feels like home" advancements are internally located in the incorrect tab folder</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238038" target="_blank" rel="noopener noreferrer">MC-238038</a> Newly added advancements' namespace IDs do not match their translation keys</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238972" target="_blank" rel="noopener noreferrer">MC-238972</a> Deserts generate with little or no sandstone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239714" target="_blank" rel="noopener noreferrer">MC-239714</a> Doing /locate desert_pryamid in a desert superflat world freezes the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239851" target="_blank" rel="noopener noreferrer">MC-239851</a> Upgrading old worlds causes leaves to change to surface builder blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239852" target="_blank" rel="noopener noreferrer">MC-239852</a> Lava pools intersecting strongholds can cause end portal frames to be deleted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240021" target="_blank" rel="noopener noreferrer">MC-240021</a> Cullface arguments in cauldrons are excessive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240481" target="_blank" rel="noopener noreferrer">MC-240481</a> Deepslate doesn't generate in the new cave generation under old chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240482" target="_blank" rel="noopener noreferrer">MC-240482</a> There is no bedrock in the overworld in old chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240495" target="_blank" rel="noopener noreferrer">MC-240495</a> Deepslate does not generate below Y=0 in Badlands or Wooded Badlands Biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240503" target="_blank" rel="noopener noreferrer">MC-240503</a> Bedrock doesn`t generate in Badlands or Wooded Badlands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240516" target="_blank" rel="noopener noreferrer">MC-240516</a> Noise cave carvers don't generate below old chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240531" target="_blank" rel="noopener noreferrer">MC-240531</a> Block simulation distance is always 8 chunks regardless of the slider's value</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240534" target="_blank" rel="noopener noreferrer">MC-240534</a> Clicking a JFR link copies full server-side path to clipboard</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240631" target="_blank" rel="noopener noreferrer">MC-240631</a> Extremely slow End terrain generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240998" target="_blank" rel="noopener noreferrer">MC-240998</a> Portals no longer load chunks as non entity processing</li>
+</ul>

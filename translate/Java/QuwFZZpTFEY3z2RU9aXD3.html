@@ -1,0 +1,183 @@
+<p>新年新快照 - 我们现已发布 Minecraft 1.20.5 的第三个快照。本次更新带来了犰狳、旋风人的一些改动，以及无障碍功能改进。</p>
+<p>除了大量漏洞修复外，我们还对出生点区块的处理方式进行了更改。</p>
+<p>出生点区块是主世界中位于世界出生点的一片区域，始终加载在内存中。这对部分玩家很有用，但会占用更多计算机资源，并使游戏加载和运行变慢。（你可以在<a href="https://minecraft.wiki/w/Spawn_chunk" target="_blank" rel="noopener noreferrer">社区 wiki</a>上了解更多关于出生点区块的信息！）</p>
+<p>在本快照中，我们通过添加新的游戏规则 <code>spawnChunkRadius</code> 使出生点区块的大小可配置。新的默认值为 2（即 48x48 方块区域）。这比之前的区域小 98%，将为大多数玩家带来显著的性能提升。</p>
+<p>如果你希望出生点区块像以前一样工作，可以使用游戏规则将出生点区块半径值改为 10。这将使你的出生点区块与之前相同，但你会错失性能提升。</p>
+<p>我们很乐意听取你对此更改以及新默认设置对你有何影响的反馈。</p>
+<p><a href="https://aka.ms/spawnchunksfeedback" target="_blank" rel="noopener noreferrer">聊聊出生点区块吧！</a></p>
+<h1>新特性</h1>
+<h2>犰狳</h2>
+<p>犰狳视觉更新！我们收集了第一个犰狳快照的反馈，犰狳、犰狳鳞甲和狼铠的外观下一步调整现已到来。</p>
+<ul>
+<li>犰狳现在也会在恶地生成</li>
+</ul>
+<h3>犰狳蜷缩行为</h3>
+<ul>
+<li>蜘蛛和洞穴蜘蛛现在会逃离未处于蜷缩状态的犰狳</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>调整了狼项圈层的纹理，使其与新的狼铠更加一致</li>
+</ul>
+<h2>无障碍功能</h2>
+<ul>
+<li>使用 Tab 或方向键导航时，进入或退出任何菜单现在始终会设置默认焦点</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本更新至 28</li>
+<li>资源包版本更新至 24</li>
+<li>自定义村民交易现在可配置为接受与预期物品标签不同的物品，方法是在交易的 NBT 中添加 <code>ignoreTags: true</code></li>
+<li>当实体离开或进入末地时，到达区域现在会保持加载 15 秒，与下界传送门的行为一致</li>
+<li>添加了传送数据包</li>
+<li>添加了 Cookie 数据包</li>
+<li>减小了出生点区块的默认大小，并使该值可配置</li>
+</ul>
+<h2>传送数据包</h2>
+<ul>
+<li>自定义服务器现在可以通过新数据包请求客户端连接到另一台服务器</li>
+<li>客户端被传送时，会以新的传送意图（ID 3）连接到目标服务器</li>
+<li>默认情况下，服务器不会接受传入的传送请求，并将断开客户端连接</li>
+<li>可以通过在 <code>server.properties</code> 文件中将 <code>accepts-transfers</code> 属性设置为 <code>true</code> 来更改此行为</li>
+<li>资源包会跨传送保留</li>
+<li>在传送的情况下，自定义服务器可以使用新标志跳过身份验证</li>
+</ul>
+<h2>Cookie 数据包</h2>
+<ul>
+<li>Cookie 数据包允许自定义服务器在客户端上请求和存储数据<ul>
+<li>每个 Cookie 最大为 5 KiB</li>
+<li>可以在登录、配置和游戏阶段请求 Cookie，但仅在配置和游戏阶段存储</li>
+</ul></li>
+<li>Cookie 会在服务器传送期间保留，但不会在玩家断开连接时保留<ul>
+<li>这使得服务器可以将身份验证或自定义游戏数据等信息传递给新服务器</li>
+</ul></li>
+</ul>
+<h2>出生点区块更改</h2>
+<ul>
+<li>出生点区块的大小从半径 10（19x19 实体滴答区块）更改为半径 2（3x3 实体滴答区块）<ul>
+<li>这样做是为了减少内存使用、加载时间和 CPU 占用</li>
+<li>我们选择不完全移除出生点区块，以便目前使用此功能的玩家可以继续使用</li>
+</ul></li>
+<li>添加了新的游戏规则 <code>spawnChunkRadius</code> 来设置出生点区块的大小<ul>
+<li>可能的值为 0 到 32，其中 0 完全禁用出生点区块，10 等同于此更改前的功能</li>
+<li>默认值为 2，等同于 3x3 实体滴答区块</li>
+</ul></li>
+</ul>
+<h1>数据包版本 28</h1>
+<ul>
+<li><code>minecraft:sweeping</code> 附魔已重命名为 <code>minecraft:sweeping_edge</code></li>
+<li>添加了进度触发器 <code>default_block_use</code>，当玩家与方块进行默认交互时触发，例如开门</li>
+<li>添加了进度触发器 <code>any_block_use</code>，当玩家与方块进行任何类型的交互时触发，例如在方块上使用物品或默认使用方块</li>
+</ul>
+<h2>标签</h2>
+<h3>物品标签</h3>
+<p>新的物品标签，控制哪些附魔可以添加到哪些装备上：</p>
+<ul>
+<li><code>minecraft:enchantable/foot_armor</code></li>
+<li><code>minecraft:enchantable/leg_armor</code></li>
+<li><code>minecraft:enchantable/chest_armor</code></li>
+<li><code>minecraft:enchantable/head_armor</code></li>
+<li><code>minecraft:enchantable/armor</code></li>
+<li><code>minecraft:enchantable/weapon</code></li>
+<li><code>minecraft:enchantable/sword</code></li>
+<li><code>minecraft:enchantable/mining</code></li>
+<li><code>minecraft:enchantable/mining_loot</code></li>
+<li><code>minecraft:enchantable/fishing</code></li>
+<li><code>minecraft:enchantable/trident</code></li>
+<li><code>minecraft:enchantable/durability</code></li>
+<li><code>minecraft:enchantable/bow</code></li>
+<li><code>minecraft:enchantable/equippable</code></li>
+<li><code>minecraft:enchantable/crossbow</code></li>
+<li><code>minecraft:enchantable/vanishing</code></li>
+</ul>
+<h3>实体类型标签：</h3>
+<ul>
+<li>添加了 <code>minecraft:ignores_poison_and_regen</code>，用于不受中毒和再生效果影响的实体</li>
+<li>添加了 <code>minecraft:illager_friends</code>，用于被灾厄村民视为盟友的实体（除非处于不同队伍）</li>
+<li>添加了 <code>minecraft:inverted_healing_and_harm</code>，用于治疗和伤害效果含义相反的实体</li>
+<li>添加了 <code>minecraft:not_scary_for_pufferfish</code>，用于不会导致河豚膨胀的实体</li>
+<li>添加了 <code>minecraft:sensitive_to_bane_of_arthropods</code>，用于对节肢杀手敏感的实体</li>
+<li>添加了 <code>minecraft:sensitive_to_impaling</code>，用于对穿刺敏感的实体</li>
+<li>添加了 <code>minecraft:wither_friends</code>，用于凋灵不会攻击且无法伤害凋灵的实体</li>
+</ul>
+<h1>资源包版本 24</h1>
+<ul>
+<li><code>ttf</code> 字体提供程序变换已调整，以具有更合理的默认值<ul>
+<li><code>shift</code> 不再双重应用，现在直接表示游戏 UI 中的像素数</li>
+<li>字体 EM 方形现在适配到游戏 UI 中的 <code>size</code> 像素，而不是字体上升部和字体下降部之间</li>
+<li>字体基线位置与默认字体一致（行顶下方 7 像素）</li>
+<li>这意味着通常，任何具有 <code>size</code> 为 9 且没有 <code>shift</code> 的字体在默认情况下应该看起来正确</li>
+</ul></li>
+</ul>
+<h1>实验性特性</h1>
+<h2>旋风人</h2>
+<ul>
+<li>旋风人现在会偏转所有弹射物</li>
+<li>偏转的弹射物现在会朝射击者的方向偏转</li>
+</ul>
+<h2>交易再平衡</h2>
+<ul>
+<li>在交易再平衡实验中，购买盔甲的村民现在会忽略耐久度，并且可以购买损坏的盔甲</li>
+</ul>
+<h1>快照 24w03a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-153160" target="_blank" rel="noopener noreferrer">MC-153160</a> 如果 NBT 数据不匹配，村民不会自动填充物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155857" target="_blank" rel="noopener noreferrer">MC-155857</a> /team 命令不影响灾厄村民和女巫的 AI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171981" target="_blank" rel="noopener noreferrer">MC-171981</a> 燃料时间映射每次在熔炉中放置物品时都会重新创建，而不是被缓存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187372" target="_blank" rel="noopener noreferrer">MC-187372</a> 调试屏幕中帧率限制/垂直同步与图形级别之间没有空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260889" target="_blank" rel="noopener noreferrer">MC-260889</a> 玩家可以在超出触及范围的方块上使用水桶和熔岩桶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261596" target="_blank" rel="noopener noreferrer">MC-261596</a> 工作台搜索键盘快捷键不工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265273" target="_blank" rel="noopener noreferrer">MC-265273</a> 创建世界界面中的标签列表没有通过高亮或渲染边框指示其已获得焦点</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265520" target="_blank" rel="noopener noreferrer">MC-265520</a> 切换连接协议有时会产生错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265749" target="_blank" rel="noopener noreferrer">MC-265749</a> 更改按钮或字段的值时，提示框闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266078" target="_blank" rel="noopener noreferrer">MC-266078</a> 合成和切石合成铜格栅的输出彼此不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267044" target="_blank" rel="noopener noreferrer">MC-267044</a> 滴答状态字符串包含不一致的用词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267045" target="_blank" rel="noopener noreferrer">MC-267045</a> 某些滴答字符串缺少冠词且含义不清</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267086" target="_blank" rel="noopener noreferrer">MC-267086</a> 当游戏通过 /tick 冻结时，指南针无法正确指示出生点</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267104" target="_blank" rel="noopener noreferrer">MC-267104</a> 旋风人棒的底面纹理不正确，与周围颜色不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267149" target="_blank" rel="noopener noreferrer">MC-267149</a> 合成器顶面具有反转的 UV 纹理映射</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267366" target="_blank" rel="noopener noreferrer">MC-267366</a> 无法使用蜘蛛眼喂食小犰狳来加速其成长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267367" target="_blank" rel="noopener noreferrer">MC-267367</a> 狼受到伤害时狼铠会闪烁红色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267371" target="_blank" rel="noopener noreferrer">MC-267371</a> 潜影贝的碰撞箱不随 generic.scale 缩放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267377" target="_blank" rel="noopener noreferrer">MC-267377</a> 对红树木使用骨粉不再产生任何粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267378" target="_blank" rel="noopener noreferrer">MC-267378</a> 盔甲架的交互点不随缩放变化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267379" target="_blank" rel="noopener noreferrer">MC-267379</a> 对缠根泥土使用骨粉不再产生任何粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267380" target="_blank" rel="noopener noreferrer">MC-267380</a> 无法打开超出默认方块触及范围的容器</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267383" target="_blank" rel="noopener noreferrer">MC-267383</a> 无法在扩展属性“block_interaction_range”的情况下放置水和熔岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267384" target="_blank" rel="noopener noreferrer">MC-267384</a> 未使用的重复狼铠音效事件</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267385" target="_blank" rel="noopener noreferrer">MC-267385</a> 属性 entity_interaction_range 受到 block_interaction_range 的限制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267388" target="_blank" rel="noopener noreferrer">MC-267388</a> 刷犰狳的字幕与其他物品使用字幕不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267389" target="_blank" rel="noopener noreferrer">MC-267389</a> 犰狳在繁殖时并不总是彼此紧邻站立</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267392" target="_blank" rel="noopener noreferrer">MC-267392</a> 犰狳会害怕旁观模式下的玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267395" target="_blank" rel="noopener noreferrer">MC-267395</a> 犰狳受到摔落伤害时会惊慌</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267397" target="_blank" rel="noopener noreferrer">MC-267397</a> 犰狳和小犰狳站在引诱它们的玩家面前时距离稍远</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267398" target="_blank" rel="noopener noreferrer">MC-267398</a> 犰狳在停止躲藏后不会播放展开音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267402" target="_blank" rel="noopener noreferrer">MC-267402</a> 船中的犰狳在转向时头部会抽动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267404" target="_blank" rel="noopener noreferrer">MC-267404</a> 受惊的犰狳被推入船后会对骑乘船的玩家感到害怕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267405" target="_blank" rel="noopener noreferrer">MC-267405</a> 受惊的犰狳在承载乘客时可以移动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267406" target="_blank" rel="noopener noreferrer">MC-267406</a> 将“Silent” NBT 标签设置为“1b”的犰狳仍会播放落地和蜷缩音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267413" target="_blank" rel="noopener noreferrer">MC-267413</a> 给犰狳喂食蜘蛛眼不会取消进食</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267416" target="_blank" rel="noopener noreferrer">MC-267416</a> 史莱姆产生的粒子没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267417" target="_blank" rel="noopener noreferrer">MC-267417</a> 在 scale 小于 .06 的固体近乎完整方块上会显示窒息覆盖层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267418" target="_blank" rel="noopener noreferrer">MC-267418</a> 循声守卫的音波攻击没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267420" target="_blank" rel="noopener noreferrer">MC-267420</a> 放置船时忽略自定义“block_interaction_range”属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267422" target="_blank" rel="noopener noreferrer">MC-267422</a> 属性 entity_interaction_range 被归类为“generic”，但对生物没有效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267427" target="_blank" rel="noopener noreferrer">MC-267427</a> 睡觉实体的渲染偏移没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267428" target="_blank" rel="noopener noreferrer">MC-267428</a> 幻翼翅膀粒子没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267434" target="_blank" rel="noopener noreferrer">MC-267434</a> 具有大 scale 属性的倒置生物显示在碰撞箱上方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267435" target="_blank" rel="noopener noreferrer">MC-267435</a> 小犰狳不会持续或紧密跟随成年犰狳</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267454" target="_blank" rel="noopener noreferrer">MC-267454</a> 小炽足兽在视觉上与普通炽足兽大小相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267456" target="_blank" rel="noopener noreferrer">MC-267456</a> 对 item_used_on_block 进度标准的更改破坏了之前的功能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267465" target="_blank" rel="noopener noreferrer">MC-267465</a> 1.20.3 上传错误：“Cannot invoke "ctt.c()" because "this.b" is null”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267470" target="_blank" rel="noopener noreferrer">MC-267470</a> 信标给予的再生效果不再应用于玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267479" target="_blank" rel="noopener noreferrer">MC-267479</a> 物品栏视图模型随 generic.scale 缩放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267497" target="_blank" rel="noopener noreferrer">MC-267497</a> 小犰狳蜷缩时没有发出高音调声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267538" target="_blank" rel="noopener noreferrer">MC-267538</a> 将可放置方块放入饰纹陶罐时也会将其放置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267565" target="_blank" rel="noopener noreferrer">MC-267565</a> 低 scale 属性可让你在水下呼吸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267588" target="_blank" rel="noopener noreferrer">MC-267588</a> 将物品放入饰纹陶罐时不再播放手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267706" target="_blank" rel="noopener noreferrer">MC-267706</a> 唤魔者和幻术师的召唤粒子没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267707" target="_blank" rel="noopener noreferrer">MC-267707</a> 凋灵粒子没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267708" target="_blank" rel="noopener noreferrer">MC-267708</a> 凋灵的骷髅头弹射物攻击没有考虑 scale 属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267725" target="_blank" rel="noopener noreferrer">MC-267725</a> 玩家的经验等级不再渲染在生命值和饥饿值条上方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267726" target="_blank" rel="noopener noreferrer">MC-267726</a> 对水下方块使用骨粉不再产生任何粒子</li>
+</ul>

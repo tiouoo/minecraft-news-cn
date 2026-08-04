@@ -1,0 +1,100 @@
+<p>In this snapshot, we're adding support for custom world settings and custom dimensions. This is an early release to hear your feedback about this feature - do note that this support is considered experimental and unsupported. Any custom world settings may change from one snapshot to the next, and worlds using custom settings will be clearly marked as experimental in your worlds list.
+​</p>
+<h1>New Features in 20w21a</h1>
+<p>​</p>
+<ul>
+<li>Added the ability to toggle redstone wire between a cross and a dot</li>
+<li>Added import/export world settings functionality</li>
+<li>Added a new disableMultiplayer command line option - when used, the Multiplayer button is disabled</li>
+<li>Added a new disableChat command line option - when used, receiving and sending online chat is disabled</li>
+</ul>
+<p>​</p>
+<h2>Redstone Toggle</h2>
+<p>​</p>
+<ul>
+<li>When right clicking a single piece of redstone, it toggles between a the cross and the dot</li>
+<li>A dot of redstone will not power its surrounding blocks</li>
+</ul>
+<p>​</p>
+<h1>Changes in 20w21a</h1>
+<p>​</p>
+<ul>
+<li>Piglins no longer walk around when admiring gold</li>
+<li>If you hurt a piglin while it is admiring an ingot, the ingot will now disappear</li>
+<li>Increased the chance of ores to generate in the Basalt Deltas to balance against the reduced amount of Netherrack in this biome</li>
+<li>Lily pads are now considered junk fishing loot rather than treasure</li>
+<li>Updated logos for Mojang Studios and Minecraft</li>
+<li>Temporarily removed structure settings from flat level preset strings (workaround: use import/export settings functionality)</li>
+</ul>
+<p>​</p>
+<h1>Technical Changes in 20w21a</h1>
+<p>​</p>
+<ul>
+<li>Added the ability to control the height of the <code>spreadplayers</code> command</li>
+<li>Added custom worlds and custom dimensions</li>
+</ul>
+<p>​</p>
+<h2>Commands</h2>
+<p>​</p>
+<h3><code>spreadplayers</code></h3>
+<p>​
+Added an optional argument to specify maximum height.
+New syntax: <code>spreadplayers &#x3C;center> &#x3C;spreadDistance> &#x3C;maxRange> [under &#x3C;maxHeight>] &#x3C;respectTeams> &#x3C;targets></code>
+​</p>
+<ul>
+<li><code>maxHeight</code> - Specifies the maximum height for resulting positions</li>
+</ul>
+<p>​</p>
+<h3><code>locate</code></h3>
+<p>​</p>
+<ul>
+<li>Structure names are now specified as lowercase</li>
+</ul>
+<p>​</p>
+<h2>Custom Worlds</h2>
+<p>​</p>
+<ul>
+<li>Added experimental support for new custom worlds</li>
+<li>Edit world screen now has an option to export world settings to a JSON file</li>
+<li>During world creation you can import previously exported world settings</li>
+<li>A bunch of new parameters are exposed, but marked as experimental, meaning you can play with them, but there is no guarantee that any of them will continue working (even in the next snapshot!)</li>
+<li>Flat level preset string lost structure settings (they are now stored in a common format for all worlds), we will restore some form of this functionality soon</li>
+<li>Buffet world can no longer be created from server.properties, flat level settings changed a bit; better support for custom world creation on the server is coming soon</li>
+</ul>
+<p>​</p>
+<h1>Fixed bugs in 20w21a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-97247" target="_blank" rel="noopener noreferrer">MC-97247</a> Map making sound uses equipment sound subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-97507" target="_blank" rel="noopener noreferrer">MC-97507</a> Using item which modifies the held item shows "Gear equips" subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-107103" target="_blank" rel="noopener noreferrer">MC-107103</a> Trying to interact with entity 3 or more blocks away without seeing its eyes only interacts client-side</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113068" target="_blank" rel="noopener noreferrer">MC-113068</a> Zombie banging on door subtitle is called "Block broken"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-123155" target="_blank" rel="noopener noreferrer">MC-123155</a> When any non-player entity enters an End portal the obsidian platform is not regenerated and the entity can fall into the void</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147516" target="_blank" rel="noopener noreferrer">MC-147516</a> Hostile mobs will sometimes stop attacking/following their target when directly next to it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166292" target="_blank" rel="noopener noreferrer">MC-166292</a> Subtitle from foxes eating chorus fruit: "Player teleports"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169764" target="_blank" rel="noopener noreferrer">MC-169764</a> Fish flopping sound shows 'Footsteps' subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170930" target="_blank" rel="noopener noreferrer">MC-170930</a> Nether Sprouts item not visible when held in the hand in first person</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172090" target="_blank" rel="noopener noreferrer">MC-172090</a> Piglins would rather hold a golden item instead of a crossbow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172207" target="_blank" rel="noopener noreferrer">MC-172207</a> Parrots don't imitate hoglins, zoglins and piglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172255" target="_blank" rel="noopener noreferrer">MC-172255</a> Piglins immediately dismount any entity that they are riding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177075" target="_blank" rel="noopener noreferrer">MC-177075</a> Taking product out of stonecutter produces no subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177088" target="_blank" rel="noopener noreferrer">MC-177088</a> Polar bear step sound does not have subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177438" target="_blank" rel="noopener noreferrer">MC-177438</a> Turtle egg's name inconsistently capitalized across different subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177830" target="_blank" rel="noopener noreferrer">MC-177830</a> Blackstone and basalt prevent Ancient Debris and other Nether ores from generating</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178130" target="_blank" rel="noopener noreferrer">MC-178130</a> Zombie Villagers are called "Zombie" in some subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178212" target="_blank" rel="noopener noreferrer">MC-178212</a> Nether planks, their variants, and hyphae are harder than stems</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178298" target="_blank" rel="noopener noreferrer">MC-178298</a> Ancient debris and nether gold ore can't generate in Basalt Deltas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180257" target="_blank" rel="noopener noreferrer">MC-180257</a> Crash when setting LodestonePos of compass to something other than NBT compound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180852" target="_blank" rel="noopener noreferrer">MC-180852</a> There is no space on the beacon's secondary power effects in the UI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181270" target="_blank" rel="noopener noreferrer">MC-181270</a> Trying to open old worlds (in Region format?) without version information in snapshots does not show warning screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181298" target="_blank" rel="noopener noreferrer">MC-181298</a> Game crashes when trying to generate a nether biome superflat world with ruined portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181463" target="_blank" rel="noopener noreferrer">MC-181463</a> The buttons are not selected in the right order using Tab in the new world creation menus</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181499" target="_blank" rel="noopener noreferrer">MC-181499</a> Buckets cannot be emptied into a source block, but still produce a sound when trying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181511" target="_blank" rel="noopener noreferrer">MC-181511</a> Chunks with redstone are removed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181522" target="_blank" rel="noopener noreferrer">MC-181522</a> Chunks that haven't been explored since 1.13 are resetting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181611" target="_blank" rel="noopener noreferrer">MC-181611</a> Vindicators stop attacking you when they are standing really close to you</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182514" target="_blank" rel="noopener noreferrer">MC-182514</a> 15 Block States per SubChunk Limit during World Upgrade</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182743" target="_blank" rel="noopener noreferrer">MC-182743</a> Wither skeletons don't spawn inside of wither roses</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182912" target="_blank" rel="noopener noreferrer">MC-182912</a> Piglins still do not change their current crossbow for a new enchanted one</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183249" target="_blank" rel="noopener noreferrer">MC-183249</a> Carving Mask BitSets created for lower chunk statuses</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183786" target="_blank" rel="noopener noreferrer">MC-183786</a> Named seeds that are not numbers are not being recognized</li>
+</ul>

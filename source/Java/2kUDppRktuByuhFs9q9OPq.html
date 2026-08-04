@@ -1,0 +1,131 @@
+<p>Ever since the <a href="https://www.minecraft.net/en-us/article/nether-update-java" target="_blank" rel="noopener noreferrer">Nether Update</a>, the Piglins have seen players sneaking in and having a peek in their chests - well no more! With 1.16.2, we’re introducing the Piglin Brute – a Piglin so focused on guarding the Bastion Remnants' chests that even gold can’t distract them.</p>
+<h1>Features in 1.16.2</h1>
+<h2>Accessibility</h2>
+<p>Two new accessibility settings have been added to help with visual comfort</p>
+<ul>
+<li>Distortion effects such as nausea and the Nether portal overlay can now be reduced</li>
+<li>At lower values, the nausea effect is replaced with a green overlay as an alternative visualization</li>
+<li>Field of view effects, shown after speed modifiers are applied, can now be reduced</li>
+</ul>
+<h3>Chat Delay</h3>
+<ul>
+<li>Chat delay has been added to the Chat Settings screen</li>
+<li>Pressing F3+D now clears the pending chat messages</li>
+</ul>
+<h2>Bastion Remnants</h2>
+<ul>
+<li>Tweaked the Bastion Remnant chest loot</li>
+<li>Chests in Bastion Remnants are now more likely to be positioned on top of gilded blackstone</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Brewing stands can now be crafted with blackstone</li>
+<li>Lanterns and Soul Lanterns can now be waterlogged</li>
+<li>Crimson and warped fungus can now be placed on mycelium</li>
+<li>Chains can now be placed in all orientations</li>
+</ul>
+<h2>Items</h2>
+<ul>
+<li>Tools are now sorted based on material in the creative inventory</li>
+<li>Totems of undying now give the fire resistance status affect for 40 seconds when activated</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Endermen will no longer place their held block onto bedrock blocks</li>
+<li>Zoglins can now be leashed</li>
+<li>When a Zombified Piglin is spawned riding a Strider, it will now be holding a Warped Fungi on a Stick</li>
+<li>Removed Herobrine</li>
+</ul>
+<h2>Piglins</h2>
+<ul>
+<li>Added Piglin Brutes!</li>
+<li>Piglins now become angry with players who open or destroy a Chest Minecart</li>
+<li>Tweaked bartering loot</li>
+</ul>
+<h3>Piglin Brute</h3>
+<ul>
+<li>Piglin Brutes are stronger versions of Piglins that live in bastions and protect the treasures there</li>
+<li>Unlike the their cowardly and greedy counterparts, the Piglin Brutes cannot be distracted by gold and aren't afraid of anything</li>
+<li>Piglin Brutes attack players on sight, no matter how the player is dressed</li>
+<li>Piglin Brutes wield axes and don't need any armor, because they're just that tough</li>
+</ul>
+<h2>Respawn Block Positions</h2>
+<ul>
+<li>Modified how respawn positions are chosen for beds and respawn anchors</li>
+<li>Respawn anchors will prioritize cardinal directions over corners</li>
+<li>Beds will prioritize the side of the bed the player entered from and then spaces circling around the foot of the bed up to the head of the bed</li>
+<li>Respawning players will now face the block that they respawned at</li>
+<li>Placing players onto dangerous blocks is now avoided when possible</li>
+</ul>
+<h2>Villagers</h2>
+<ul>
+<li>Villagers now emit green particles when joining a village, setting a home bed, or acquiring a job site / profession</li>
+<li>Villagers now lose their job sites when changing dimension</li>
+</ul>
+<h1>Technical Changes in 1.16.2</h1>
+<ul>
+<li>Custom worlds now support custom biomes</li>
+<li>Sign edit screen will now intialize from existing sign text (should have no noticeable impact on vanilla)</li>
+<li>Small improvements to data and resource pack selection screens</li>
+<li>Tags can now have optional entries</li>
+</ul>
+<h2>Commands</h2>
+<h3>Execute</h3>
+<ul>
+<li><code>execute in</code> now respects dimension scaling</li>
+</ul>
+<h3>spawnpoint &#x26; setworldspawn</h3>
+<p>Added an angle parameter for setting the default facing angle of a respawning player
+Syntax: <code>spawnpoint [&#x3C;targets>] [&#x3C;pos>] [&#x3C;angle>]</code><br>
+Syntax: <code>setworldspawn [&#x3C;pos>] [&#x3C;angle>]</code>
+New parameters:</p>
+<ul>
+<li><code>angle</code> - Floating point angle in degrees. Supports the relative <code>~</code> modifier</li>
+</ul>
+<h2>Customized world generation</h2>
+<ul>
+<li>Custom world generation and dimension settings now use the same folder pattern in data packs as other resources (<code>namespace/&#x3C;type>/resource.json</code>)</li>
+<li>There is now experimental support for a <code>worldgen</code> folder in data packs</li>
+<li><code>worldgen/biome</code> can contain biome definitions</li>
+<li><code>worldgen/configured_carver</code> can contain definitions for world carver settings</li>
+<li><code>worldgen/configured_feature</code> can contain definitions for feature placements</li>
+<li><code>worldgen/configured_structure_feature</code> can contain definitions for structure placements</li>
+<li><code>worldgen/configured_surface_builder</code> can contain definitions for surfaces</li>
+<li><code>worldgen/noise_settings</code> can now contain noise configurations</li>
+<li><code>worldgen/processor_list</code> can contain sets of block processors</li>
+<li><code>worldgen/template_pool</code> can contain pool definitions for jigsaw structures</li>
+<li>Custom biomes can now be used in the single biome/caves/floating islands world types (add the data pack containing the biome first)</li>
+<li>Custom biomes can now be used in custom dimension generators</li>
+</ul>
+<h2>Dedicated server packet limit</h2>
+<ul>
+<li>Dedicated servers can now kick clients that consistently send too many packets within a second</li>
+<li>Controlled with the <code>rate-limit</code> settings in <code>server.properties</code></li>
+<li>The default rate limit of 0 means "no limit"</li>
+</ul>
+<h2>Pack selection screens</h2>
+<ul>
+<li>While screen is open, it will automatically update when pack directory contents change</li>
+<li>Both pack selection screen will now display contents of <code>pack.png</code> as pack icon</li>
+</ul>
+<h2>Pack version</h2>
+<ul>
+<li>Resource pack version raised to 6</li>
+</ul>
+<h2>Tags</h2>
+<h3>Optional entries</h3>
+<p>Entries in tags can now be marked as optional. Failure to resolve optional entries does not prevent the whole tag from loading.
+Example:</p>
+<pre><code>{
+  "replace": false,
+  "values": [
+    "#minecraft:beds", // existing syntax
+    { "id":"#missing:tag", "required": false }, // optional sub-tag entry
+    "minecraft:anvil", // existing syntax
+    { "id":"minecraft:stone_button", "required": true }, // new syntax for required tags
+    { "id":"missing:block", "required": false } // optional single-element entry
+  ]
+}
+</code></pre>
+<h1>Bugs</h1>
+<p>A total of more than <a href="https://bugs.mojang.com/issues/?filter=25075" target="_blank" rel="noopener noreferrer">150 bugs</a> have also been fixed in this release!</p>

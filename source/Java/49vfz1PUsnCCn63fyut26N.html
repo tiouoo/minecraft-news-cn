@@ -1,0 +1,67 @@
+<p>Badabee badablurb.</p>
+<p><strong>We still highly recommend backing up your world before loading it in this snapshot.</strong></p>
+<h1>Changes in 21w40a</h1>
+<ul>
+<li>World generation tweaks</li>
+<li>Changes to mob spawning</li>
+<li>Copper Ore now drops 2-5 (from 2-3) Raw Copper items</li>
+<li>In the Stonecutter, a Block of Copper can be converted to four Cut Copper</li>
+<li>A bunch of biome variant with similar features but different shapes have been merged into one, since the shape is controlled independently now</li>
+<li>Renamed some biomes</li>
+</ul>
+<h2>World Generation</h2>
+<ul>
+<li>Updated ore distribution to make branch mining deep down more rewarding. <a href="TODO">Updated ore distribution chart</a><ul>
+<li>For example, added more unexposed diamonds</li>
+<li>Iron ore now generates above 80, with more iron ore as you go higher</li>
+<li>Extra gold generates below height -48</li>
+</ul></li>
+<li>Non-cave biomes no longer change with height - so no more savannas in the sky and things like that</li>
+<li>Tweaked the relative size of some biomes to match 1.17 a bit closer.</li>
+<li>Increased the average size of most biomes (this also means biomes aren't in the same places as before)</li>
+<li>Fixed some aquifer issues (a side effect of this is that aquifers are in different places now compared to last snapshot)</li>
+<li>Slightly increased the frequency of underwater magma</li>
+<li>Increased the amount of dungeons, especially below height 0</li>
+<li>Gravel now generates below height 0</li>
+<li>Villages are slightly more spread out</li>
+<li>Removed water lake features, Aquifers provide local water levels</li>
+</ul>
+<h2>Mob Spawns</h2>
+<ul>
+<li>Axolotls now only spawn in water, above clay blocks, in lush caves</li>
+<li>Glowsquids now only spawn in water blocks, under height 30</li>
+<li>Cod, Salmon, Pufferfish, Tropical Fish, Squid and Dolphins now only spawn in water from height 50 to height 64</li>
+<li>Tropical Fish now also spawn in lush caves at any height</li>
+<li>Zombies once again spawn in dripstone caves - drowned can also spawn there however</li>
+<li>Goats no longer spawn in stony peaks</li>
+</ul>
+<h1>Technical Changes in 21w40a</h1>
+<ul>
+<li>Optimized AI for Axolotls, Goats, Hoglins, Zoglins, Piglins, Piglin Brutes and Villagers</li>
+<li>Bedrock layers generate dependent on the world seed now</li>
+</ul>
+<h1>Fixed bugs in 21w40a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-132306" target="_blank" rel="noopener noreferrer">MC-132306</a> Snowy grass without snow near lakes in snowy biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169523" target="_blank" rel="noopener noreferrer">MC-169523</a> As of 18w06a, the sand, clay and gravel blocks no longer generate around small lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197688" target="_blank" rel="noopener noreferrer">MC-197688</a> Mountain Edge never generates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217906" target="_blank" rel="noopener noreferrer">MC-217906</a> Large amounts of axolotls cause performance issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225842" target="_blank" rel="noopener noreferrer">MC-225842</a> Flowers can generate on large plants near lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225858" target="_blank" rel="noopener noreferrer">MC-225858</a> Seeds and flowers appear in ponds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227064" target="_blank" rel="noopener noreferrer">MC-227064</a> Floating grass can still generate above water lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229365" target="_blank" rel="noopener noreferrer">MC-229365</a> Large amounts of goats causes performance issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236617" target="_blank" rel="noopener noreferrer">MC-236617</a> Mountains &#x26; Gravelly Mountains use their 1.17.1 biome ID name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236632" target="_blank" rel="noopener noreferrer">MC-236632</a> Banners without patterns do not render properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236663" target="_blank" rel="noopener noreferrer">MC-236663</a> Command blocks do not display command in their UI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236736" target="_blank" rel="noopener noreferrer">MC-236736</a> No relief on treasure map or explorer maps</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236896" target="_blank" rel="noopener noreferrer">MC-236896</a> Strange mini broken aquifer walls generating commonly on the surface</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237490" target="_blank" rel="noopener noreferrer">MC-237490</a> The bottom parts of aquifers aren't always surrounded by blocks which can occasionally cause them to spill into caves in ways that appear bizarre</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237666" target="_blank" rel="noopener noreferrer">MC-237666</a> Unused biomes still present in game files</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237925" target="_blank" rel="noopener noreferrer">MC-237925</a> Opening world from 1.12.2 (or older) in latest snapshot regenerates random chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237933" target="_blank" rel="noopener noreferrer">MC-237933</a> Sweet Berries generate much too often</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237950" target="_blank" rel="noopener noreferrer">MC-237950</a> Cave vines can generate without tip because prioritize_tip option is negated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237951" target="_blank" rel="noopener noreferrer">MC-237951</a> Cave vines can generate into water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237962" target="_blank" rel="noopener noreferrer">MC-237962</a> Entities bob their head up and down when targeting towards the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238104" target="_blank" rel="noopener noreferrer">MC-238104</a> Blue Orchid generation has decreased</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238265" target="_blank" rel="noopener noreferrer">MC-238265</a> version.json contains internal revision ID instead of game version ID</li>
+</ul>

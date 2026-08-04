@@ -1,0 +1,53 @@
+<p>大家好！又见面了！本次快照带来了一些犰狳更改、实验性特性更改，以及一系列技术性更改。我们还带来了一些服务器端性能改进、改进的调试工具，以及一条新的 <code>transfer</code> 命令。尽情享受吧！
+<h1>更改</h1>
+<ul><li>犰狳现在在检测到生物或最近攻击过它的玩家时，也会蜷缩起来
+<li>当犰狳处于蜷缩状态时，它的壳会保护它，并减少受到的伤害，甚至能完全抵挡弱攻击
+<li>将“允许作弊”重命名为“允许命令”</ul>
+<h1>技术性更改</h1>
+<ul><li>数据包版本现在是 29
+<li>添加了一个选项，可以在专用服务器上使用更快的区域文件压缩算法
+<li>引入了对世界优化的更改
+<li>改进了服务器 TPS 调试图表
+<li>缩短了生成藏宝图所需的时间</ul>
+<h2>区域文件压缩算法</h2>
+<ul><li>为专用服务器添加了配置属性 <code>region-file-compression</code>，有 2 个可选值：<ul><li><code>deflate</code>，默认选项。使用旧算法
+<li><code>lz4</code> 使用 LZ4 算法，压缩和解压所需的 CPU 时间更少，但会占用更多磁盘空间</ul>
+<li>更改压缩算法不会自动重新压缩世界<ul><li>新增或更新的区块将使用新配置的算法，但旧区块将继续保留原有格式</ul></ul>
+<h2>世界优化更改</h2>
+<ul><li>优化单人世界以及使用 <code>forceUpgrade</code> 运行专用服务器时，现在还会升级世界中 <code>entities</code> 和 <code>poi</code> 目录的内容
+<li>新的 <code>recreateRegionFiles</code> 专用服务器启动参数<ul><li>该参数会触发与 <code>forceUpgrade</code> 类似的世界优化，但还会重写所有区块，无论它们是否已被升级
+<li>这将创建全新且已整理碎片的区域文件
+<li>在更改 <code>region-file-compression</code> 服务器属性后使用此参数，将使用新格式重新压缩所有区域文件</ul></ul>
+<h2>改进的服务器 TPS 调试图表</h2>
+<ul><li>和之前一样，在单人世界中按 <code>F3 + 2</code> 即可访问
+<li>图表底部的深红色部分显示服务器刻主逻辑所花费的时间。它与旧图表中显示的值相当
+<li>浅棕色部分显示执行计划任务所花费的时间
+<li>紫色部分显示在该刻期间执行所有其他代码所花费的时间
+<li>顶部浅绿色（或黄色或红色，取决于卡顿情况）部分显示空闲并等待下一刻所花费的时间
+<li><code>min</code>、<code>avg</code>、<code>max</code> 聚合值基于前三部分之和</ul>
+<h1>数据包版本 29</h1>
+<ul><li>添加了 <code>transfer</code> 命令</ul>
+<h2><code>transfer</code> 命令</h2>
+<p>新命令，用于触发将玩家转移到另一台服务器。仅在专用服务器上可用。
+<p>语法：
+<p><code>transfer &#60hostname> [&#60port>] [&#60players>]</code>
+<p>参数：
+<ul><li><code>hostname</code>：字符串，描述要连接服务器的主机名
+<li><code>port</code>：整数，表示要连接服务器的端口号 - 如果省略，则使用 25565
+<li><code>players</code>：要转移的玩家 - 如果省略，则使用 <code>@s</code></ul>
+<h1>实验性特性</h1>
+<h2>旋风人</h2>
+<ul><li>旋风人现在除了玩家之外，还会主动攻击铁傀儡
+<li>旋风人不再反击来自以下生物的攻击：骷髅、流浪者、僵尸、尸壳、蜘蛛、洞穴蜘蛛、史莱姆
+<li>上述生物被旋风人的风弹投射物击中时，也不会反击</ul>
+<h2>铜格栅</h2>
+<ul><li>将铜块在切石机中加工成铜格栅会产出 4 个铜格栅</ul>
+<h1>修复快照 24w04a 中的漏洞</h1>
+<ul><li><a href=https://bugs.mojang.com/browse/MC-232489 rel="noopener noreferrer"target=_blank>MC-232489</a> 从花盆中取出植物时会忽略物品栏内容
+<li><a href=https://bugs.mojang.com/browse/MC-266449 rel="noopener noreferrer"target=_blank>MC-266449</a> 旋风人不会攻击或反击视线中的生物
+<li><a href=https://bugs.mojang.com/browse/MC-266707 rel="noopener noreferrer"target=_blank>MC-266707</a> 试炼刷怪笼忽略 custom_spawn_rules
+<li><a href=https://bugs.mojang.com/browse/MC-267925 rel="noopener noreferrer"target=_blank>MC-267925</a> 手持物品时从花盆中取出物品，会导致该物品进入副手
+<li><a href=https://bugs.mojang.com/browse/MC-267937 rel="noopener noreferrer"target=_blank>MC-267937</a> 用带有穿透附魔的弩射击旋风人会导致游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-267938 rel="noopener noreferrer"target=_blank>MC-267938</a> 当“spawnChunkRadius”游戏规则设置为较大值时，世界加载百分比数值可能被出生点区块加载动画覆盖
+<li><a href=https://bugs.mojang.com/browse/MC-267941 rel="noopener noreferrer"target=_blank>MC-267941</a> 当 spawnChunkRadius 为 0 时，末地传送门会杀死生物
+<li><a href=https://bugs.mojang.com/browse/MC-267953 rel="noopener noreferrer"target=_blank>MC-267953</a> 使用键盘导航打开 Realms 世界备份菜单时，没有元素获得焦点</ul>

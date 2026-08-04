@@ -1,0 +1,69 @@
+<p>Presenting the first pre-release of 1.19: The Wild Update!</p>
+<p>From now on, you should mostly see bugs being fixed. In addition to that, pre-releases don't follow the regular snapshot cadence of releasing on Wednesdays, so keep an eye out for the next pre-release ;)</p>
+<p>As always, a big thank you to the community for your feedback, bugs reported, and awesome ideas throughout the snapshot series. Let the pre-releases commence!</p>
+<h1>Changes in 1.19 Pre-release 1</h1>
+<ul>
+<li>Slightly reduced the number of Mangrove trees in Mangrove Swamps</li>
+<li>Endermen, Skeletons, Wither Skeletons and Piglins now spawn in a wider range of light levels in the Nether (from light level 0 to 11)</li>
+<li>Item interaction vibrations are now emitted when you start or finish "using" an item with a start and finish state (such as Bows, Crossbows, Goat Horns, Shields, Food)</li>
+<li>Item interaction vibrations are now ignored when sneaking</li>
+<li>Placing items that aren't armor (such as Pumpkins and Skulls) in your headwear slot now plays a generic equip sound</li>
+</ul>
+<h1>Technical Changes in 1.19 Pre-release 1</h1>
+<ul>
+<li>Auto-completion is now available for the template argument to <code>place template</code></li>
+<li>Custom servers can now enable or disable chat preview for certain clients by sending a new network packet</li>
+<li>Now, a chat preview is also shown for chat-related commands, such as <code>/say</code> and <code>/msg</code></li>
+<li><code>test-rainbow-chat</code> has been removed from <code>server.properties</code></li>
+</ul>
+<h2>Added Game Events</h2>
+<ul>
+<li><code>note_block_play</code> with a vibration frequency of 6</li>
+<li><code>instrument_play</code> with a vibration frequency of 15</li>
+</ul>
+<h1>Fixed bugs in 1.19 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-94060" target="_blank" rel="noopener noreferrer">MC-94060</a> Equipping armor/elytra through inventory or dispenser doesn't play sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134892" target="_blank" rel="noopener noreferrer">MC-134892</a> PacketBuffer.writeString's max length is in bytes, while readString is in characters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209222" target="_blank" rel="noopener noreferrer">MC-209222</a> Attempting to open the Minecraft Realms menu claims that the client is outdated, even if the snapshot may be newer than the release</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210279" target="_blank" rel="noopener noreferrer">MC-210279</a> Sculk sensors are not activated upon entities being summoned by a spawner</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213915" target="_blank" rel="noopener noreferrer">MC-213915</a> Equipping armor through the inventory does not count as a vibration</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218222" target="_blank" rel="noopener noreferrer">MC-218222</a> Distance value for Sculk Sensors is limited to integers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225195" target="_blank" rel="noopener noreferrer">MC-225195</a> Goats don't panic when tempted with their favorite food</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230735" target="_blank" rel="noopener noreferrer">MC-230735</a> "FOV Effects" setting description is innacurate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249141" target="_blank" rel="noopener noreferrer">MC-249141</a> No subtitles are produced upon frogs stepping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249164" target="_blank" rel="noopener noreferrer">MC-249164</a> The entity.frog.tounge sound is misspelled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249209" target="_blank" rel="noopener noreferrer">MC-249209</a> Frogs don't panic when tempted with their favorite food</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249260" target="_blank" rel="noopener noreferrer">MC-249260</a> Tadpoles are not tempted by slime balls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249328" target="_blank" rel="noopener noreferrer">MC-249328</a> Frogs can jump around while being tempted with slimeballs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249456" target="_blank" rel="noopener noreferrer">MC-249456</a> Tadpoles drop experience, unlike other baby mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249619" target="_blank" rel="noopener noreferrer">MC-249619</a> The comparator frequency of sculk sensors when you are stepping on it is the last frequency it heard</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249711" target="_blank" rel="noopener noreferrer">MC-249711</a> Items collected off the ground by allays travel too high above their hitboxes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249757" target="_blank" rel="noopener noreferrer">MC-249757</a> 'It Spreads' advancement is not a child of 'Monster Hunter'</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249834" target="_blank" rel="noopener noreferrer">MC-249834</a> Swapping items to the player's off-hand can generate vibrations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249980" target="_blank" rel="noopener noreferrer">MC-249980</a> The Birthday Song advancement description doesn't capitalise the word Cake</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250006" target="_blank" rel="noopener noreferrer">MC-250006</a> ID of the british cat doesn't match texture name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250019" target="_blank" rel="noopener noreferrer">MC-250019</a> Sculk catalyst triggers when a villager converts into zombie villager by a zombie</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250317" target="_blank" rel="noopener noreferrer">MC-250317</a> The subtitle for picking up a Tadpole with a bucket is the generic "Bucket fills" subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250351" target="_blank" rel="noopener noreferrer">MC-250351</a> /tp "argument" duplicated on the tab options</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250919" target="_blank" rel="noopener noreferrer">MC-250919</a> The server crashes when attempting to load chunks that contain command blocks that consist of large numbers of characters within the previous output field</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250932" target="_blank" rel="noopener noreferrer">MC-250932</a> Goat horn subtitles are improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250940" target="_blank" rel="noopener noreferrer">MC-250940</a> Goat horn playing isn't detected as a vibration</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251132" target="_blank" rel="noopener noreferrer">MC-251132</a> Server logs "Game test server" messages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251312" target="_blank" rel="noopener noreferrer">MC-251312</a> Entity selectors in /say commands are no longer evaluated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251355" target="_blank" rel="noopener noreferrer">MC-251355</a> Potted mangrove propagule model is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251405" target="_blank" rel="noopener noreferrer">MC-251405</a> Structure Block messages are formatted as chat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251479" target="_blank" rel="noopener noreferrer">MC-251479</a> Duplicate object key [lang file]</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251550" target="_blank" rel="noopener noreferrer">MC-251550</a> Failed to launch the game on 32-bit operating system</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251640" target="_blank" rel="noopener noreferrer">MC-251640</a> io.netty.handler.codec.EncoderException when using special characters in chat message</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251641" target="_blank" rel="noopener noreferrer">MC-251641</a> Game crash regarding warden anger</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251647" target="_blank" rel="noopener noreferrer">MC-251647</a> Chat closes itself if the control for Open Chat is set to Enter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251649" target="_blank" rel="noopener noreferrer">MC-251649</a> Clicking "incomplete command" message removes / in chat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251650" target="_blank" rel="noopener noreferrer">MC-251650</a> Iron golems can spawn on non spawnable blocks such as leaves, glass, sea lanterns, etc</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251652" target="_blank" rel="noopener noreferrer">MC-251652</a> Warden emerge/roar/sonic charge/dig animation (and possibly other similar animations) don't start unless the player looks at the Warden first</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251656" target="_blank" rel="noopener noreferrer">MC-251656</a> /say command fails to apply server message styling when sent from a command block, server console, or RCON, unlike /msg</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251690" target="_blank" rel="noopener noreferrer">MC-251690</a> Wardens can spawn on any non-full block, as long as it's solid</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251736" target="_blank" rel="noopener noreferrer">MC-251736</a> Reflected ghast fireball cannot hit the ghast</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251762" target="_blank" rel="noopener noreferrer">MC-251762</a> You can run commands with double slash prefix</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251773" target="_blank" rel="noopener noreferrer">MC-251773</a> The --dev argument for the data generators no longer converts NBT to SNBT properly</li>
+</ul>

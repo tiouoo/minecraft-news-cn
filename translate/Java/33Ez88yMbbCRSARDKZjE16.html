@@ -1,0 +1,135 @@
+<p>我们现在发布了快照 23w51a，这是 Minecraft 1.20.5 的首个快照。这个快照为你的宠物狼带来了一份节日礼物——还有犰狳。</p>
+<p>刷得开心！</p>
+<h1>新内容</h1>
+<ul>
+<li>添加了犰狳、犰狳鳞甲和狼铠</li>
+</ul>
+<h2>犰狳</h2>
+<ul>
+<li>犰狳是一种新的被动型生物，具有以下特性：<ul>
+<li>会周期性地掉落犰狳鳞甲</li>
+<li>被刷时会掉落犰狳鳞甲</li>
+<li>生成于热带草原</li>
+<li>最喜欢的食物是蜘蛛眼</li>
+</ul></li>
+</ul>
+<h3>犰狳的蜷缩行为</h3>
+<ul>
+<li>犰狳在察觉到威胁时会蜷缩起来，例如：<ul>
+<li>疾跑的玩家</li>
+<li>骑乘载具或生物的玩家</li>
+<li>亡灵生物</li>
+</ul></li>
+<li>在以下情况下不会蜷缩：<ul>
+<li>逃跑时</li>
+<li>在水中时</li>
+<li>在空中时</li>
+<li>被拴绳拴住时</li>
+</ul></li>
+<li>当犰狳蜷缩时，它无法行走、无法进食，也不会被食物吸引。<ul>
+<li>它会继续扫描威胁：如果在 3 秒内未检测到任何威胁，就会展开身体。</li>
+</ul></li>
+</ul>
+<h3>犰狳鳞甲</h3>
+<ul>
+<li>犰狳鳞甲可用于合成狼铠</li>
+<li>犰狳会掉落犰狳鳞甲</li>
+<li>可以使用发射器为犰狳刷下犰狳鳞甲</li>
+</ul>
+<h2>狼铠</h2>
+<ul>
+<li>对成年且已驯服的狼使用狼铠，即可为狼装备上狼铠。</li>
+<li>只有狼的主人才能为自己的驯服狼装备狼铠；因此，发射器无法为狼装备狼铠。</li>
+<li>狼铠提供的保护效果与钻石马铠相同。</li>
+<li>对穿着狼铠的狼使用剪刀，会使其掉落狼铠。</li>
+<li>只有狼的主人才可以从狼身上剪下狼铠；因此，发射器无法移除狼身上的狼铠。</li>
+<li>如果穿着狼铠的狼死亡，狼铠会掉落。</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>将海龟身上的鳞甲更名为海龟鳞甲</li>
+<li>羊驼和潜影贝不再能摧毁盔甲架</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 27</li>
+</ul>
+<h1>数据包 27</h1>
+<ul>
+<li>羊驼现在使用新的伤害类型 <code>spit</code>，而不是 <code>mob_projectile</code></li>
+<li><code>FactorCalculationData</code> 已从状态效果实例标签中移除</li>
+<li>添加了 <code>generic.scale</code> 属性，可用于重新缩放任何生物</li>
+<li>玩家触及距离现在可通过 <code>generic.block_interaction_range</code> 和 <code>generic.entity_interaction_range</code> 属性控制</li>
+<li>实体无需跳跃即可迈上的最大方块数量现在由 <code>generic.step_height</code> 属性控制</li>
+</ul>
+<h1>实验性内容</h1>
+<h2>旋风人</h2>
+<ul>
+<li>添加了新的“旋转”空闲音效</li>
+<li>添加了“蓄力攻击”音效</li>
+<li>添加了旋风人处于空中时播放的音效</li>
+<li>添加了弹射物弹开音效</li>
+<li>微调了现有音效</li>
+</ul>
+<h2>试炼刷怪笼</h2>
+<ul>
+<li>试炼刷怪笼现在拥有与试炼密室中相同的两个默认战利品表</li>
+</ul>
+<h1>修复 23w51a 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-130244" target="_blank" rel="noopener noreferrer">MC-130244</a> 在 F1 模式下打开聊天界面时，之前的消息不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153643" target="_blank" rel="noopener noreferrer">MC-153643</a> 调试叠加层渲染在快捷栏物品之后</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167375" target="_blank" rel="noopener noreferrer">MC-167375</a> 幼年海龟的字幕存在语法错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173672" target="_blank" rel="noopener noreferrer">MC-173672</a> 标题文字渲染在玩家列表中的玩家名称前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184066" target="_blank" rel="noopener noreferrer">MC-184066</a> 重生锚不会产生环境音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184622" target="_blank" rel="noopener noreferrer">MC-184622</a> 退出传送门/前往另一维度时的音效未使用其字幕字符串，尽管该字符串存在于 en_us.json 中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185379" target="_blank" rel="noopener noreferrer">MC-185379</a> 幼年北极熊的字幕没有明确说明其来自幼年北极熊</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187267" target="_blank" rel="noopener noreferrer">MC-187267</a> 标题文字渲染在侧边栏前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187372" target="_blank" rel="noopener noreferrer">MC-187372</a> 调试屏幕中帧率限制/垂直同步与画质等级之间没有空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193511" target="_blank" rel="noopener noreferrer">MC-193511</a> 标题文字渲染在朗读文本前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193515" target="_blank" rel="noopener noreferrer">MC-193515</a> Boss 栏文字渲染在朗读文本前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193517" target="_blank" rel="noopener noreferrer">MC-193517</a> Boss 栏文字渲染在侧边栏前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193521" target="_blank" rel="noopener noreferrer">MC-193521</a> Boss 栏文字渲染在 F3 调试界面前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193524" target="_blank" rel="noopener noreferrer">MC-193524</a> Boss 栏文字的删除线/下划线会渲染在玩家列表上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193753" target="_blank" rel="noopener noreferrer">MC-193753</a> 重生锚环境音效的字幕将其称为传送门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194948" target="_blank" rel="noopener noreferrer">MC-194948</a> 方块破坏字幕与画、物品展示框和拴绳的破坏字幕不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198787" target="_blank" rel="noopener noreferrer">MC-198787</a> GoalSelector 中存在低效的流</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198963" target="_blank" rel="noopener noreferrer">MC-198963</a> 聊天文字渲染在玩家列表中的玩家名称前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219899" target="_blank" rel="noopener noreferrer">MC-219899</a> 对缠根泥土使用骨粉时，粒子会出现在其上方，尽管生长发生在下方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238242" target="_blank" rel="noopener noreferrer">MC-238242</a> 物品栏中药水小图标的右上角有一个多余的黑色像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248961" target="_blank" rel="noopener noreferrer">MC-248961</a> 当玩家装备头盔时，进度条件中的 takenDamage 计算错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249335" target="_blank" rel="noopener noreferrer">MC-249335</a> 对红树树叶使用骨粉时，生长粒子生成在方块中心而不是下方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251027" target="_blank" rel="noopener noreferrer">MC-251027</a> 装备头盔不会将下落的铁砧或滴水石锥的伤害降低 1/4</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252409" target="_blank" rel="noopener noreferrer">MC-252409</a> 调试菜单中的内存统计信息包含一些不必要的空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259587" target="_blank" rel="noopener noreferrer">MC-259587</a> 物品的负耐久值会导致耐久条渲染错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261577" target="_blank" rel="noopener noreferrer">MC-261577</a> 站在下界传送门内使用望远镜时，下界传送门的覆盖层会渲染为完全不透明</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263256" target="_blank" rel="noopener noreferrer">MC-263256</a> 聊天信息渲染在 TAB 列表上方，遮挡了信息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265541" target="_blank" rel="noopener noreferrer">MC-265541</a> 即使 player.dat 不存在，也不会读取 player.dat_old</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265669" target="_blank" rel="noopener noreferrer">MC-265669</a> 快捷栏文字渲染在字幕背景上方，但位于字幕文字下方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265835" target="_blank" rel="noopener noreferrer">MC-265835</a> 使用望远镜时，冰冻效果会渲染为完全不透明</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266055" target="_blank" rel="noopener noreferrer">MC-266055</a> 手持斧头/蜜脾打开或关闭铜门或铜活板门会授予与上蜡相关的进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266135" target="_blank" rel="noopener noreferrer">MC-266135</a> 缓存的宏命令忽略权限级别，导致有限的权限提升</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266136" target="_blank" rel="noopener noreferrer">MC-266136</a> 宏命令忽略 function-permission-level 服务器设置，即使该设置低于默认值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266144" target="_blank" rel="noopener noreferrer">MC-266144</a> 铜门不属于 #doors 物品标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266145" target="_blank" rel="noopener noreferrer">MC-266145</a> 铜活板门不属于 #trapdoors 物品标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266308" target="_blank" rel="noopener noreferrer">MC-266308</a> 铜灯泡有一个未使用的“turn_off”音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266334" target="_blank" rel="noopener noreferrer">MC-266334</a> 潜影贝子弹会摧毁盔甲架</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266389" target="_blank" rel="noopener noreferrer">MC-266389</a> 对发光浆果使用骨粉时，粒子几乎不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266430" target="_blank" rel="noopener noreferrer">MC-266430</a> 站在非完整方块顶部的旋风人会产生其下方方块的粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266432" target="_blank" rel="noopener noreferrer">MC-266432</a> 试炼密室中的斑驳、风化和氧化铜灯泡未上蜡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266469" target="_blank" rel="noopener noreferrer">MC-266469</a> 旋风人受到攻击时，有时会停止寻路、跳跃或发射风弹</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266524" target="_blank" rel="noopener noreferrer">MC-266524</a> 旋风人有时会在跳跃后突然高速乱跑</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266533" target="_blank" rel="noopener noreferrer">MC-266533</a> 旋风人的 AI 在开阔地形中存在严重缺陷</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266589" target="_blank" rel="noopener noreferrer">MC-266589</a> 在创造模式中交换装备时，盔甲耐久度会改变</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266628" target="_blank" rel="noopener noreferrer">MC-266628</a> 高轮询率导致卡顿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266680" target="_blank" rel="noopener noreferrer">MC-266680</a> 发光轮廓没有应用到旋风人的眼睛或眉毛上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266685" target="_blank" rel="noopener noreferrer">MC-266685</a> 旋风人的实体阴影相对于其模型尺寸来说太大</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266688" target="_blank" rel="noopener noreferrer">MC-266688</a> 旋风人模型发光的眼睛对资源包不友好</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266738" target="_blank" rel="noopener noreferrer">MC-266738</a> 字幕字符串“subtitles.block.trial_spawner.spawn_mob”具有误导性且不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266879" target="_blank" rel="noopener noreferrer">MC-266879</a> 云、实体碰撞箱、方块轮廓、特殊渲染的方块和附魔闪光会透过旋风人眼睛和眉毛的内部渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266960" target="_blank" rel="noopener noreferrer">MC-266960</a> Boss 栏文字渲染在玩家列表背景和玩家图标前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266990" target="_blank" rel="noopener noreferrer">MC-266990</a> 具有相同“map”标签值但“display”标签数据不同的地图会导致标记消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266999" target="_blank" rel="noopener noreferrer">MC-266999</a> 合成器的提示框按钮在旁观者模式下对玩家仍然可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267193" target="_blank" rel="noopener noreferrer">MC-267193</a> 在聊天中运行带 /return fail 的函数不会指示失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267194" target="_blank" rel="noopener noreferrer">MC-267194</a> /return run function 与分支及不返回值的函数结合使用时，行为不一致</li>
+</ul>

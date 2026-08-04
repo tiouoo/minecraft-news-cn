@@ -1,0 +1,430 @@
+<p>I was personally quite convinced that the game was already perfect, but it seems that our developers disagree.
+We are now releasing the first snapshot for Minecraft 1.20.2!</p>
+<p>This snapshot brings changes to Diamond Ore generation, the ability to waterlog Barriers, and a change to Villager curing. It also brings a new Experimental Toggle that updates Villager trading, which we are eager to hear your feedback on.
+As well as a big batch of bug fixes, you will find a whole lot of technical features and changes in this snapshot, including new commands, function macros, persistent command history, network performance improvements, and much more.</p>
+<p>Happy mining!</p>
+<h1>New Experimental Features in 23w31a</h1>
+<h2>Villager Trade Rebalance</h2>
+<p>This snapshot introduces a new experimental Feature Toggle that updates the Wandering Trader and Librarian trades.
+You must turn on this Feature Toggle in the Experiments Menu when creating a new world if you want to test the new trades.  You can find more information about Feature Toggles <a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>As this is an experiment, we would really appreciate your feedback as work continues and to help us decide on the future direction for Villager trades. Visit <a href="https://aka.ms/VillagerTradingFeedback" target="_blank" rel="noopener noreferrer">this link</a> to share your thoughts!</p>
+<h3>Librarian Changes</h3>
+<p>Before these changes, players could get any village enchantment from any Librarian. A novice Librarian could sell the best enchantment in the game! For some players, this felt too random and made trading feel overpowered when compared to using the Enchanting Table or searching for Enchanted Books in structures.</p>
+<p>With the new rules, Librarians from different biomes sell different enchantments, and each village biome has one enchantment that is only sold by master Librarians.</p>
+<p>Players will have to work towards getting the best trades instead of relying on random chance. We hope this makes Librarian trading more interesting and skillful, while also revealing some clues about their history of each village type through the enchantments that are sold there.</p>
+<ul>
+<li>Librarians from different biomes now sell different Enchanted Books</li>
+<li>Each village biome has one special enchantment that is only available from Master Librarians with full XP</li>
+<li>This means that players must visit all seven village biomes to get the full set of villager enchantments</li>
+<li>There are two secret village biomes where villages do not generate<ul>
+<li>A player must build these villages to access their trades!</li>
+</ul></li>
+<li>Some enchantments have been removed from village trading and must be found in other ways</li>
+</ul>
+<h3>Wandering Trader Changes</h3>
+<p>Some players felt that the Wandering Trader had unfair prices and didn't sell many useful items. We have lowered their prices, added more trades and increased the amounts available. The Wandering Trader will also now buy useful items from players, so it's possible to help them on their journey by giving them supplies even if you don't feel like buying anything.</p>
+<ul>
+<li>Wandering Traders now have lower prices and have a higher amount of each item in stock</li>
+<li>Wandering Traders now sell Logs</li>
+<li>Wandering Traders can now buy many items, instead of only selling</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Diamond Ore is now generated more frequently in the Deepslate layers of the Overworld</li>
+<li>Curing a Zombie Villager now only gives a big discount the first time<ul>
+<li>There is no longer a bonus discount for reinfecting and curing the same Villager multiple times</li>
+</ul></li>
+<li>Barrier blocks can now be waterlogged by players in Creative mode<ul>
+<li>Water cannot be placed in them or taken out by non-direct interactions such as Dispensers</li>
+</ul></li>
+<li>Players will no longer be able to crouch while riding vehicles</li>
+<li>Chorus Flower no longer provides support for hanging or standing blocks</li>
+</ul>
+<h2>Diamond Ore Distribution</h2>
+<p>In this snapshot, we have increased the amount of Diamond Ore found in the deepest parts of the world. Our goal is to make it more rewarding to mine for Diamonds in the Deepslate layers.
+We want your feedback on this! Please try out your favorite mining technique and let us know how it feels on <a href="https://aka.ms/OreDistributionFeedback" target="_blank" rel="noopener noreferrer">this feedback site</a>.</p>
+<h1>Technical Changes</h1>
+<ul>
+<li>The resource pack version is now 16</li>
+<li>The data pack version is now 16</li>
+<li>History of used commands is now saved and accessible across worlds</li>
+<li>Optimized the way chunks are sent to clients to allow players with low-bandwidth internet connections to play on multiplayer servers</li>
+<li>Added support for multi-version packs</li>
+<li>Changed network protocol to allow for more data-driven content in the future</li>
+<li>Added new <code>log-ips</code> option to <code>server.properties</code></li>
+<li>Added validation for symbolic links in datapacks and resource packs</li>
+<li>When hitboxes are displayed through F3+B, entities that have a passenger will display the passenger's attachment point</li>
+</ul>
+<h2>Command History</h2>
+<ul>
+<li>The last 50 commands that you sent in chat will be remembered across game sessions</li>
+<li>You can access the command and chat history by pressing up or down arrows in the chat</li>
+<li>Regular chat is only persisted within the same game session (leaving a server or world clears them)</li>
+<li>Recent commands are stored in <code>command_history.txt</code> in the game folder</li>
+</ul>
+<h2>Chunk Sending Optimization</h2>
+<ul>
+<li>Chunks are no longer sent over the network to the client in one big continuous batch</li>
+<li>They are instead sent in smaller batches depending on the available bandwidth. This means that:<ul>
+<li>Clients with extremely low-bandwidth connections will not time out while loading the world</li>
+<li>Clients with low-bandwidth connections can interact with the world while some chunks are still loading</li>
+</ul></li>
+<li>Only chunks within the client's render distance are now sent</li>
+</ul>
+<h2>Multi-version Packs</h2>
+<p>New features have been added to datapacks and resource packs to allow creation of packs that are compatible with multiple versions of game.</p>
+<h3>Pack Metadata</h3>
+<ul>
+<li>Pack metadata now includes an optional field <code>supported_formats</code> which describes a range for pack formats that this pack supports<ul>
+<li>Examples: <code>16</code>, <code>[16,17]</code>, <code>{"min_inclusive": 16, "max_inclusive": 17}</code></li>
+</ul></li>
+<li><code>pack_format</code> field is still required and its format remains unchanged, to allow older game versions to read pack data<ul>
+<li>If <code>supported_formats</code> is present, it must contain the value declared in <code>pack_format</code></li>
+<li>Note: since this new information is ignored by older versions of the game, they will always see a "normal", single-version pack, without any extended compatibility</li>
+</ul></li>
+</ul>
+<h3>Overlays</h3>
+<ul>
+<li>Packs can now contain overlay directories ("overlays")</li>
+<li>Overlays are sub-packs applied over the "normal" contents of a pack<ul>
+<li>These directories have the same layout as the top-level pack, including the <code>assets</code> and <code>data</code> directories</li>
+<li>Overlays can be applied if they support the client's pack format</li>
+<li>Overlays can add and replace files, but not remove them<ul>
+<li>For example, if the overlay <code>foo</code> is applied, the file <code>foo/assets/minecraft/textures/bar.png</code> will replace contents of <code>assets/minecraft/textures/bar.png</code></li>
+</ul></li>
+<li><code>pack.mcmeta</code> and <code>pack.png</code> are ignored in overlay directories</li>
+</ul></li>
+<li>New section called <code>overlays</code> have been added to pack metadata<ul>
+<li>It contains an <code>entries</code> field, containing a list of overlays</li>
+<li>Every overlay entry has two fields:<ul>
+<li><code>formats</code> - range of supported formats</li>
+<li><code>directory</code> - overlay directory (allowed characters: <code>a-z</code>, <code>0-9</code>, <code>_</code> and <code>-</code>)</li>
+</ul></li>
+</ul></li>
+<li>Order of application: overlays are stacked from the bottom to top of the list<ul>
+<li>For example, if a pack has two overlays: <code>"entries": [{"directory":"A", ...}, {"directory":"B", ...}]</code>, the game will first look in <code>B</code>, then <code>A</code> and then in the top pack directory</li>
+</ul></li>
+</ul>
+<h2>Network Protocol</h2>
+<p>As part of ongoing work towards more data-driven features, the network protocol has been changed to include a new configuration phase.</p>
+<ul>
+<li>Configuration phase automatically starts after login phase (i.e. after client account has been verified) and lasts until the player joins the world (play phase)</li>
+<li>Clients can stay in configuration phase indefinitely - it's up to server to release it to the world</li>
+<li>Servers can also request clients to re-enter the configuration phase after it has entered the play phase<ul>
+<li>Other players will see such clients as disconnected</li>
+</ul></li>
+<li>Users in configuration phase will not be visible on the player list</li>
+<li>Actions allowed in configuration phase (moved from play phase)<ul>
+<li>Configuration of data-driven registries</li>
+<li>Configuration of enabled features</li>
+</ul></li>
+<li>Actions shared between configuration and play phases:<ul>
+<li>Application of server resource packs</li>
+<li>Update of tags</li>
+<li>Exchange of custom packets</li>
+<li>Ping and keep-alive packets</li>
+</ul></li>
+<li>The server will now negotiate resource pack in the configuration phase<ul>
+<li>This means that the player will no longer be in world when answering prompts and reloading resources</li>
+</ul></li>
+</ul>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>New option: <code>log-ips</code> (default true)<ul>
+<li>When set to <code>false</code>, will prevent player IPs from being included in the log when players join the game</li>
+</ul></li>
+</ul>
+<h2>Symbolic Link Validation</h2>
+<p>To improve safety, the game will now also detect symbolic links used inside data- and resource packs.</p>
+<ul>
+<li>This feature expands on symbolic link validation in worlds added in the previous release</li>
+<li>The game will now warn users if a pack added via drag and drop contains disallowed symbolic links</li>
+<li>Packs containing disallowed symbolic links will not be visible in UI and commands</li>
+<li>Additionally, directories and files that are not recognized as packs will no longer be copied via drag and drop</li>
+<li>For a detailed explanation, see this <a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">help article</a></li>
+</ul>
+<h2>Telemetry</h2>
+<ul>
+<li>Added a button to the Telemetry Data Collection Screen that links to the Microsoft Privacy Statement</li>
+</ul>
+<h2>Resource Pack Version 16</h2>
+<ul>
+<li>The process of upgrading your pack can be assisted by using this automated <a href="https://github.com/Mojang/slicer/releases/tag/v1.1" target="_blank" rel="noopener noreferrer">Slicer</a> tool</li>
+<li>All textures containing multiple sprites in a sheet for GUI have been split into individual sprites under <code>textures/gui/sprites</code> (automated by Slicer tool)</li>
+<li>All textures in the <code>realms</code> namespace have been moved into the <code>minecraft</code> namespace (automated by Slicer tool)</li>
+<li><code>villager2.png</code> has been renamed to <code>villager.png</code> (automated by Slicer tool)</li>
+<li><code>icon/trial_available</code> and <code>realm_status/expires_soon</code> GUI sprites are animated with <code>.mcmeta</code> declarations instead of individual sprites (automated by Slicer tool)</li>
+<li>The bundle tooltip background is now drawn as a nine-sliced sprite</li>
+<li>The icons for the Accessibility, Language, Realms News buttons have been split from their underlying button texture</li>
+<li>The Realms Invite button is now drawn as an overlay on the normal button texture<ul>
+<li>The highlighted texture state for this button has been removed</li>
+</ul></li>
+<li>The highlighted states for Realms invitation number icons have been removed</li>
+<li>The exclamation marks on the <code>notification\more.png</code> have been removed</li>
+</ul>
+<h3>GUI Sprite Sheet</h3>
+<ul>
+<li>Sprites used in GUI drawing have been split into individual sprite files instead of larger sprite sheets<ul>
+<li>For example, <code>widgets/button.png</code> and <code>widgets/button_highlighted.png</code> have been split from <code>widgets.png</code></li>
+</ul></li>
+<li>Each sprite can now be individually overriden by a resource pack instead of replacing the entire sheet</li>
+<li>Sprites are loaded into the <code>gui</code> atlas from the <code>textures/gui/sprites</code> directory</li>
+</ul>
+<h4>GUI Sprite .mcmeta</h4>
+<ul>
+<li>Any sprite can now be animated using <code>.mcmeta</code> files, similar to other atlases<ul>
+<li><code>icon/trial_available</code> and <code>realm_status/expires_soon</code> are now animated this way</li>
+</ul></li>
+<li>Sprites in the <code>gui</code> atlas can now configure scaling behavior through a new <code>gui</code> section in <code>.mcmeta</code> files<ul>
+<li>For example, button textures must be scaled based on how big the button should be</li>
+<li>The <code>gui</code> section in <code>.mcmeta</code> contains one <code>scaling</code> field:<ul>
+<li><code>type</code>: one of: <code>stretch</code> (default), <code>tile</code>, or <code>nine_slice</code></li>
+<li>When <code>stretch</code>, the sprite will be stretched across the desired space<ul>
+<li>No additional fields need to be defined</li>
+</ul></li>
+<li>When <code>tile</code>, the sprite will be repeated across the desired space, starting from the top-left<ul>
+<li><code>width</code>: number of pixels for this sprite to cover on-screen across its width</li>
+<li><code>height</code>: number of pixels for this sprite to cover on-screen across its height</li>
+</ul></li>
+<li>When <code>nine_slice</code>, the sprite will be sliced into 4 corners, 4 edges, and 1 center slice, which will be tiled across the desired space<ul>
+<li><code>width</code>: number of pixels for this sprite to cover on-screen across its width</li>
+<li><code>height</code>: number of pixels for this sprite to cover on-screen across its height</li>
+<li><code>border</code>: the size in pixels that the border slices should cover on-screen, one of:<ul>
+<li>Constant integer for uniform border size on all sides</li>
+<li>Object containing <code>left</code>, <code>top</code>, <code>right</code>, and <code>bottom</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>Data Pack Version 16</h2>
+<ul>
+<li>Gamerule <code>randomTickSpeed</code> now affects the rate of accumulation of snow and ice the same way it affects crops and other blocks affected by random ticking</li>
+<li>Added a <code>random</code> command</li>
+<li>New form of the <code>execute</code> command: <code>execute if function</code></li>
+<li>New form of the <code>return</code> command: <code>return run</code></li>
+<li>Added support for function macros</li>
+<li>Changed Display entities post-teleport interpolation</li>
+<li>Added new attribute <code>generic.max_absorption</code></li>
+<li>Renamed <code>belowName</code> value in display slot argument in <code>scoreboard</code> command to <code>below_name</code></li>
+<li>Game event changes</li>
+<li>New tags</li>
+</ul>
+<h3>Commands</h3>
+<h4><code>random</code></h4>
+<p>A new command for randomizing values and controlling random sequences. The <code>value</code> and <code>roll</code> forms can be used to draw a random value. In the case of <code>roll</code>, the resulting value is also shown in chat for all players.</p>
+<p>Syntax:</p>
+<pre><code>random value|roll &#x3C;range> [&#x3C;sequenceId>]
+random reset *|&#x3C;sequenceId> [&#x3C;seed>] [&#x3C;includeWorldSeed>] [&#x3C;includeSequenceId>]
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>range</code>: A range of values to randomize between, inclusively<ul>
+<li>For instance, 1..6 is a regular D6 roll</li>
+</ul></li>
+<li><code>sequenceId</code>: The name of a random sequence to sample or reset</li>
+<li><code>seed</code>: A seed to use for the random sequence after reset</li>
+<li><code>includeWorldSeed</code>: A boolean [default: <code>true</code>] specifying whether to include the world seed when seeding the sequence<ul>
+<li><code>false</code> means the sequence will evaluate to the same regardless of which world the command is run in</li>
+</ul></li>
+<li><code>includeSequenceId</code>: A boolean [default: <code>true</code>] specifying whether to include the sequence ID when seeding the sequence<ul>
+<li><code>false</code> means all sequences will evaluate to the same regardless of which name they have</li>
+</ul></li>
+</ul>
+<p>By default, all sequences are seeded as <code>0</code>, <code>true</code>, <code>true</code>. Using <code>*</code> instead of a sequence ID resets all sequences and sets the default parameters.</p>
+<p>If no seed is specified, the sequence resets to the default parameters.</p>
+<p>Note that <code>random value|roll &#x3C;range></code> used without a sequence id is available to non-operator players.</p>
+<h4><code>execute if function</code></h4>
+<p>A new execute sub-command that runs a function or function tag and matches the return value(s). If a tag is given, all functions run regardless of the results of prior functions. Syntax:</p>
+<p><code>execute if|unless function &#x3C;function> &#x3C;continuation></code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>function</code>: The function or tag to run</li>
+</ul>
+<h5>Matching</h5>
+<p>The matching of the result value of the function(s) that run:</p>
+<ul>
+<li>At least one of the functions must succeeed for the match to succeed</li>
+<li>A succeessful call is defined as a function that:<ul>
+<li>Uses the <code>return</code> command to return a value</li>
+<li>The return value is not 0</li>
+</ul></li>
+</ul>
+<h4><code>return run</code></h4>
+<p>A new form of the <code>return</code> command is now available, <code>return run</code>. Syntax:</p>
+<p><code>return run &#x3C;command></code></p>
+<p>This takes the <code>result</code> value from running the specified <code>command</code> and returns that as the return value of the function. In all other aspects, it works like <code>return</code> with a specified return value.
+If the given command fails, the return value is <code>0</code>.</p>
+<h3>Functions</h3>
+<ul>
+<li>A single backslash <code>\ </code> as the last non-whitespace character of a line now allows a command to be continued on the next line<ul>
+<li>Leading and trailing whitespace of the following line are stripped before appending</li>
+</ul></li>
+</ul>
+<h4>Macros</h4>
+<p>Functions can now contain macro lines, making them Function Macros.</p>
+<ul>
+<li>Any line beginning with <code>$</code> (as the first non-space character) marks a macro line</li>
+<li>A macro line also contains one or more substitutions in the form of <code>$(variable)</code></li>
+<li>When calling a function macro a compound with data for all argument variables must be provided</li>
+</ul>
+<h5>Calling Function Macros</h5>
+<p>The <code>function</code> command has new forms:</p>
+<p><code>function &#x3C;id> &#x3C;compound></code>
+<code>function &#x3C;id> with &#x3C;data source> [&#x3C;path>]</code></p>
+<p>New Arguments:</p>
+<ul>
+<li><code>compound</code>: A data compound, enclosed in <code>{}</code></li>
+<li><code>data source</code>: A data source specification, like what could already be used for <code>data get</code></li>
+<li><code>path</code>: An NBT path specification</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The data source and path must specify a compound data entry</li>
+<li>The compound must contain one entry for each variable used in the macro</li>
+<li>More data may be present in the compound and if so is ignored</li>
+<li>Calling a non-macro function with a data compound is silently ignored</li>
+<li>When a macro is called, the values provided are substituted in place of the variable specifications and the resulting commands are executed</li>
+<li>Any syntax errors in the lines resulting from variable substitution result in the entire function call being skipped</li>
+</ul>
+<h5>Performance Considerations</h5>
+<p>Using a macro means commands must be re-evaulated after variable substitution. This has an extra cost compared to running pre-parsed functions.</p>
+<p>Regular commands (non-macro lines) are still pre-parsed. Only commands with variable substitutions in them are parsed when a macro is called and the game will attempt to cache the result of a certain parameter set being used in a call.</p>
+<p>This makes repeated calls with the same parameter set cheaper than new calls with different parameters, but an overhead still remains compared to regular functions. Note that only the values references by macro as parameters are included in this cache, so any extra data in the provided compound is ignored.</p>
+<h3>Display Entity Interpolation</h3>
+<ul>
+<li>Display entities now start updating their client-side position and rotation on the first tick after an update<ul>
+<li>In previous versions, updates were applied in the same tick, causing uneven motion</li>
+<li>New behavior is now similar to armor stands, mobs and players</li>
+</ul></li>
+<li>On the server, position and rotation are still updated immediately</li>
+<li>Duration of this interpolation is controlled by the field <code>teleport_duration</code><ul>
+<li><code>0</code> means that updates are applied immediately</li>
+<li><code>1</code> means that the display entity will move from current position to the updated one over one tick</li>
+<li>Higher values spread the movement over multiple ticks</li>
+<li>Please note that this value is clamped to avoid glitches due to periodic position updates</li>
+<li>The new value will apply only to position and rotation changes made after it changed<ul>
+<li>That means any current movement will continue unchanged</li>
+</ul></li>
+</ul></li>
+<li>Note: behavior while riding remains unchanged from previous versions</li>
+</ul>
+<h3>Attributes</h3>
+<ul>
+<li>Added new attribute <code>generic.max_absorption</code><ul>
+<li><code>generic.max_absorption</code> acts similar to <code>generic.max_health</code>, but instead of being the upper bound for <code>Health</code>, it is the upper bound for <code>AbsorptionAmount</code></li>
+<li>The mob effect <code>absorption</code> increases <code>generic.max_absorption</code> as well as fills the <code>AbsorptionAmount</code> to the max when applied</li>
+</ul></li>
+</ul>
+<h3>Game Events</h3>
+<ul>
+<li><code>entity_roar</code> and <code>entity_shake</code> game events have been removed and replaced with <code>entity_action</code> game event</li>
+</ul>
+<h3>Tags</h3>
+<ul>
+<li>Added <code>no_knockback</code> damage type tag which causes knockback to not be caused by the damage itself<ul>
+<li>Used in Vanilla for damage that is caused by events, such as explosions, which apply knockback separately</li>
+</ul></li>
+<li>Added <code>non_controlling_rider</code> to represent entities that don't override their vehicles movement control</li>
+<li>Added <code>concrete_powder</code> block tag for Concrete Powder blocks</li>
+<li>Added <code>camel_sand_step_sound_blocks</code> block tag for blocks that produce <code>entity.camel.step_sand</code> sound</li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w31a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29371" target="_blank" rel="noopener noreferrer">MC-29371</a> Several buttons and icons use the old tooltip design upon being hovered over</li>
+<li><a href="https://bugs.mojang.com/browse/MC-67532" target="_blank" rel="noopener noreferrer">MC-67532</a> Bottom 2 rows of pixels in selected hotbar slot texture don't appear in game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-69387" target="_blank" rel="noopener noreferrer">MC-69387</a> The "/item" command cannot replace items within jukeboxes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-80876" target="_blank" rel="noopener noreferrer">MC-80876</a> Entity riding vehicle has always same offset</li>
+<li><a href="https://bugs.mojang.com/browse/MC-85582" target="_blank" rel="noopener noreferrer">MC-85582</a> Entity models in the inventory can render outside the boundaries of the black box</li>
+<li><a href="https://bugs.mojang.com/browse/MC-93320" target="_blank" rel="noopener noreferrer">MC-93320</a> Water freezes even if randomTickSpeed is 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121772" target="_blank" rel="noopener noreferrer">MC-121772</a> Can't scroll while holding SHIFT on macOS</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122296" target="_blank" rel="noopener noreferrer">MC-122296</a> Horizontal scrolling does not work on Mac [Magic Mouse]</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122547" target="_blank" rel="noopener noreferrer">MC-122547</a> Barriers can produce fall particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-140646" target="_blank" rel="noopener noreferrer">MC-140646</a> Text fields don't scroll while selecting text with Shift</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147766" target="_blank" rel="noopener noreferrer">MC-147766</a> Shift key stays pressed until press any other key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164080" target="_blank" rel="noopener noreferrer">MC-164080</a> Entities riding on Ghast are partially or fully inside it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181190" target="_blank" rel="noopener noreferrer">MC-181190</a> The discount for curing a villager is multiplied if the villager is reinfected and cured again</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190815" target="_blank" rel="noopener noreferrer">MC-190815</a> Shulker boxes don't conduct redstone when open, but don't trigger redstone updates when opened</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215768" target="_blank" rel="noopener noreferrer">MC-215768</a> Sculk sensors do not detect turtles clearing away sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228420" target="_blank" rel="noopener noreferrer">MC-228420</a> World not loading / falling through the world when joining a server / travelling between dimensions / respawning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230732" target="_blank" rel="noopener noreferrer">MC-230732</a> Minecraft local difficulty setting is calculated/displayed wrongly when running a world in a server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-232840" target="_blank" rel="noopener noreferrer">MC-232840</a> Baby zombie legs clip through heads of mobs they are riding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242076" target="_blank" rel="noopener noreferrer">MC-242076</a> The skeleton of a spider jockey sits "inside" of spider model rather than on top of the spider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242092" target="_blank" rel="noopener noreferrer">MC-242092</a> Texture map for magma cube (magmacube.png) has unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242395" target="_blank" rel="noopener noreferrer">MC-242395</a> Texture map for the blaze (blaze.png) contains unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242396" target="_blank" rel="noopener noreferrer">MC-242396</a> Texture map for armor stand (wood.png) contains unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242397" target="_blank" rel="noopener noreferrer">MC-242397</a> Texture maps for cow, red &#x26; brown mooshroom (red/brown_mooshroom.png &#x26; cow.png) contain unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242398" target="_blank" rel="noopener noreferrer">MC-242398</a> Texture maps for the sheep and sheep fur (sheep.png &#x26; sheep_fur.png) contain unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242591" target="_blank" rel="noopener noreferrer">MC-242591</a> Texture maps for the Llama and Trader Llama (white/gray/creamy/brown.png) contain unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242592" target="_blank" rel="noopener noreferrer">MC-242592</a> Texture map for the polar bear (polarbear.png) contain unused pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249109" target="_blank" rel="noopener noreferrer">MC-249109</a> Sniffers, frogs, goats, and camels don't panic when attached to leads</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252231" target="_blank" rel="noopener noreferrer">MC-252231</a> Warm Frog texture has inconsistent pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254100" target="_blank" rel="noopener noreferrer">MC-254100</a> Iron golem spawn rate decreased</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255967" target="_blank" rel="noopener noreferrer">MC-255967</a> Old chunks that would have Deep Dark biomes below Y=0 if generated newly doesn't completely generate; only Ancient Cities are spawned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256466" target="_blank" rel="noopener noreferrer">MC-256466</a> Raft entities are named boats</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256482" target="_blank" rel="noopener noreferrer">MC-256482</a> Sculk sensors are not activated upon camels standing up or sitting down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256485" target="_blank" rel="noopener noreferrer">MC-256485</a> Camels that spawn within villages can spawn inside blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256641" target="_blank" rel="noopener noreferrer">MC-256641</a> Bamboo fence and fence gate aren't grouped with the other fences and fence gates in the crafting table</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256675" target="_blank" rel="noopener noreferrer">MC-256675</a> Z-fighting occurs between the legs of the camel and the texture of the saddle when it is sitting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256690" target="_blank" rel="noopener noreferrer">MC-256690</a> Camels attempt to stand up when blocks are placed over them, causing them to take suffocation damage if blocks are at eye level</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257342" target="_blank" rel="noopener noreferrer">MC-257342</a> You get slowed down when riding a camel in a 3 block tall area</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257431" target="_blank" rel="noopener noreferrer">MC-257431</a> Bamboo fence gates utilize the wrong textures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257628" target="_blank" rel="noopener noreferrer">MC-257628</a> Sculk sensors are not activated upon camels dashing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258379" target="_blank" rel="noopener noreferrer">MC-258379</a> Parity issue: The locations of camels' ears differ across platforms</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258620" target="_blank" rel="noopener noreferrer">MC-258620</a> Piglins barter every 121 game ticks instead of every 120 game ticks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259152" target="_blank" rel="noopener noreferrer">MC-259152</a> Player's model displayed in inventory while sneaking differs between the versions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259382" target="_blank" rel="noopener noreferrer">MC-259382</a> Message "Failed to get element" is logged repeatedly when giving yourself armor with invalid trimming pattern or material</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259401" target="_blank" rel="noopener noreferrer">MC-259401</a> Lapis lazuli icons in enchanting table and smithing table are inconsistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259452" target="_blank" rel="noopener noreferrer">MC-259452</a> Baby Camel's laying down/getting up sounds are not sped up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259769" target="_blank" rel="noopener noreferrer">MC-259769</a> Firework explosions no longer deal knockback to entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259794" target="_blank" rel="noopener noreferrer">MC-259794</a> Armor enchanted with curse of binding cannot be swapped via right-clicking in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260054" target="_blank" rel="noopener noreferrer">MC-260054</a> Pink Petals hitbox does not adjust to contents</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260058" target="_blank" rel="noopener noreferrer">MC-260058</a> Pick Block does not work properly for blank decorated pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260085" target="_blank" rel="noopener noreferrer">MC-260085</a> Particles are created when using a brush on a barrier</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260096" target="_blank" rel="noopener noreferrer">MC-260096</a> Decorated pots don't have creative mode tooltips</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260485" target="_blank" rel="noopener noreferrer">MC-260485</a> The "/item" command cannot remove items within chiseled bookshelves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260490" target="_blank" rel="noopener noreferrer">MC-260490</a> Passenger's riding position is too low for non-default-sized mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260604" target="_blank" rel="noopener noreferrer">MC-260604</a> Terrible loudness following consecutive use of /fill</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260675" target="_blank" rel="noopener noreferrer">MC-260675</a> Decorated pots render blank on the first frame after being placed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260968" target="_blank" rel="noopener noreferrer">MC-260968</a> The narrator does not narrate the word "Experimental" in the world selection screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261123" target="_blank" rel="noopener noreferrer">MC-261123</a> item_display entity breaks certain mobs' AI when being used as a passenger</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261182" target="_blank" rel="noopener noreferrer">MC-261182</a> Sign color looks different in world and in editing screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261369" target="_blank" rel="noopener noreferrer">MC-261369</a> Washed banner does not stack with blank banner</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261411" target="_blank" rel="noopener noreferrer">MC-261411</a> All Smithing Templates share the same translation key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261420" target="_blank" rel="noopener noreferrer">MC-261420</a> Sculk sensor and calibrated sculk sensor don't detect a witch drinking a potion</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261427" target="_blank" rel="noopener noreferrer">MC-261427</a> Sculk sensors and calibrated sculk sensors don't detect totem of undying activating</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261440" target="_blank" rel="noopener noreferrer">MC-261440</a> Resizing the window makes it so you can't change names in anvils</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261611" target="_blank" rel="noopener noreferrer">MC-261611</a> Placing blocks against a waxed sign does not play the block's placement sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261657" target="_blank" rel="noopener noreferrer">MC-261657</a> Sculk sensor range is still spherical, creating different outputs from within a given block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261739" target="_blank" rel="noopener noreferrer">MC-261739</a> Bamboo raft next to visually half blocks z-fights</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261965" target="_blank" rel="noopener noreferrer">MC-261965</a> The "Glow and Behold!" advancement is granted when interacting with empty signs while holding glow ink sacs, despite no glow ink sacs being consumed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262108" target="_blank" rel="noopener noreferrer">MC-262108</a> Smithing table GUI issue with custom recipes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262132" target="_blank" rel="noopener noreferrer">MC-262132</a> Pigstep music disc is in wrong location in the creative menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262295" target="_blank" rel="noopener noreferrer">MC-262295</a> Warped and Crimson hanging signs uses their respective plank sounds, despite their stripped stems having unique sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262436" target="_blank" rel="noopener noreferrer">MC-262436</a> Copying a pot in creative does not save NBT data</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262442" target="_blank" rel="noopener noreferrer">MC-262442</a> Camels stand a bit too close to players that are tempting them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262613" target="_blank" rel="noopener noreferrer">MC-262613</a> Mobs can't control some rideable mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262615" target="_blank" rel="noopener noreferrer">MC-262615</a> Ridden camels need to be equipped with a saddle before they can be moved by mob control which is inconsistent with other rideable mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262620" target="_blank" rel="noopener noreferrer">MC-262620</a> Llamas and trader llamas need to be tamed in order to be ridden by the mob which is inconsistent with other rideable mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262636" target="_blank" rel="noopener noreferrer">MC-262636</a> Mobs with passengers that are slimes or magma cubes can't move and don't function correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262638" target="_blank" rel="noopener noreferrer">MC-262638</a> When a "Size:0" slime and magma cube rides on some mobs the rendering position is too low</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262720" target="_blank" rel="noopener noreferrer">MC-262720</a> One of the pink petals' stems has an incomplete model</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262751" target="_blank" rel="noopener noreferrer">MC-262751</a> Blank decorated pot's NBT depends on method used to obtain it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262766" target="_blank" rel="noopener noreferrer">MC-262766</a> NBSP is a valid invisible character that can be added into Book titles so that they have blank names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262804" target="_blank" rel="noopener noreferrer">MC-262804</a> Players' swimming animations are jittery for other players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262947" target="_blank" rel="noopener noreferrer">MC-262947</a> The "Smithing with Style" advancement doesn't grant experience upon completion</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263011" target="_blank" rel="noopener noreferrer">MC-263011</a> Sniffers can sniff out and follow players from incredibly large distances</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263049" target="_blank" rel="noopener noreferrer">MC-263049</a> Camels indefinitely dash while in lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263126" target="_blank" rel="noopener noreferrer">MC-263126</a> Sponges no longer make a sound when absorbing water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263200" target="_blank" rel="noopener noreferrer">MC-263200</a> Entities riding baby sniffers render too high</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263283" target="_blank" rel="noopener noreferrer">MC-263283</a> Loading a 1.12.2 structure block with signs on 1.20 removes the text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263313" target="_blank" rel="noopener noreferrer">MC-263313</a> You cannot use the TAB key to initially create a realm</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263322" target="_blank" rel="noopener noreferrer">MC-263322</a> When a camel walks on suspicious sand, the sound produced is "camel steps" instead of "camel sands"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263387" target="_blank" rel="noopener noreferrer">MC-263387</a> The chat scroll bar no longer renders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263430" target="_blank" rel="noopener noreferrer">MC-263430</a> Memory leak in TickingTracker</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263833" target="_blank" rel="noopener noreferrer">MC-263833</a> Minecraft is incorrectly assuming it is able to set the window icon on Wayland</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263879" target="_blank" rel="noopener noreferrer">MC-263879</a> Open shulker boxes transmit redstone power</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264356" target="_blank" rel="noopener noreferrer">MC-264356</a> Sniffers attached to a lead will dig in the same spot forever, ignoring "explored positions"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264467" target="_blank" rel="noopener noreferrer">MC-264467</a> GUI texture "villager2.png" contains unused sections</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264468" target="_blank" rel="noopener noreferrer">MC-264468</a> GUI texture "legacy_smithing.png" still present in game files despite not being used anymore</li>
+</ul>

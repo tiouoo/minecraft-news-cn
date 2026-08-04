@@ -1,0 +1,24 @@
+<p>Pre-release 7 for Minecraft 1.20 is now available in the Minecraft Launcher. This pre-release adds validation of symbolic links and fixes a bug.</p>
+<h2>Changes</h2>
+<p>To improve safety, the game will now detect symbolic links used inside world directory.
+For a detailed explanation, check our <a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">help article</a>.</p>
+<ul>
+<li>If the target of a symbolic link is not on the user-configured allow-list, the game will not proceed with loading the world<ul>
+<li>Note: world directory itself can still be linked</li>
+</ul></li>
+<li>The list of allowed symbolic link targets is stored in file <code>allowed_symlinks.txt</code> in client or server top directory</li>
+<li>The file consists of entries (one per line) with following formats allowed:<ul>
+<li>Lines starting with <code>#</code> are comments and are ignored</li>
+<li><code>[type]pattern</code>, where <code>type</code> can be <code>glob</code>, <code>regex</code> or <code>prefix</code><ul>
+<li><code>prefix</code> matches start of path with given pattern (so for <code>/test</code> paths <code>/test</code>, <code>/test/</code> and <code>/test/foo.txt</code> would match)</li>
+<li><code>regex</code> matches regular expression against whole path</li>
+<li><code>glob</code> uses OS-specific path matching mechanism (for example <code>*.txt</code> would usually match files with <code>txt</code> extension)</li>
+<li>Note: paths will use OS-specific separators</li>
+</ul></li>
+<li><code>pattern</code>, which uses default <code>prefix</code> type</li>
+</ul></li>
+</ul>
+<h1>Fixed bug in 1.20 Pre-release 7</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-257778" target="_blank" rel="noopener noreferrer">MC-257778</a> Bamboo Mosaic Slabs and Stairs are not in the #slabs and #stairs block and item tags</li>
+</ul>

@@ -1,0 +1,135 @@
+<p>It's time for 1.16 pre-releases!</p>
+<p>Going forward you should mostly see bugs being fixed. Additionally, pre-releases doesn't necessarily tend to our usual cadence of releasing on Wednesdays, so keep an eye out!</p>
+<h1>New Features in 1.16 Pre-release 1</h1>
+<ul>
+<li>Added new "Fabulous" graphics option - uses per-pixel blending layers for some transparent elements</li>
+</ul>
+<h1>Changes in 1.16 Pre-release 1</h1>
+<ul>
+<li>You can now milk Cows and Mooshrooms in creative mode</li>
+<li>You can now get stew from Mooshrooms in creative mode</li>
+<li>When you use an empty bucket on water in creative mode, you now get a bucket of water. If you have a bucket of water in your inventory already, no additional water buckets will be added when you use your empty bucket on water.</li>
+<li>When any villager is struck by lightning, the witch it is converted to will no longer despawn</li>
+<li>Added gamerule universalAnger (disabled by default), which makes angered neutral mobs attack any nearby player, not just the player that angered them. Works best if you disable forgiveDeadPlayers.</li>
+<li>Added gamerule forgiveDeadPlayers (enabled by default), which makes angered neutral mobs stop being angry when the targeted player dies nearby.</li>
+<li>Zombified piglins no longer attack innocent bystanders (unless you enable gamerule universalAnger)</li>
+<li>Zombified piglins stop being angry if the targeted player dies nearby (unless you disable gamerule forgiveDeadPlayers)</li>
+</ul>
+<h1>Technical Changes in 1.16 Pre-release 1</h1>
+<ul>
+<li>Smithing recipes can now be added or changed through data packs</li>
+<li>Game will now detect critical datapack issues, like missing required tags and prevent world from being loaded</li>
+</ul>
+<h2>Data Pack Selection</h2>
+<ul>
+<li>Data packs can now be selected before world is created</li>
+<li>"Copy world" option will also copy data packs present in source world</li>
+</ul>
+<h2>Pack Selection Screen</h2>
+<ul>
+<li>Packs can now be dropped directly on data and resource pack selection screens</li>
+<li>Dropped files and directories will be copied to appropriate places</li>
+</ul>
+<h2>Smithing Recipes</h2>
+<p>There's now a <code>smithing</code> recipe type. Recipes of this type are used in the smithing table to upgrade one item type into another type, maintaining tags.</p>
+<ul>
+<li><code>base</code> - Ingredient specifying an item to be upgraded.</li>
+<li><code>addition</code> - Ingredient specifying valid items to trigger the upgrade.</li>
+<li><code>result</code> - Item specifying the resulting type of the upgraded item.</li>
+</ul>
+<h1>Fixed Bugs in 1.16 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-4520" target="_blank" rel="noopener noreferrer">MC-4520</a> Aggressive neutral mobs become neutral when the world is reloaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-9856" target="_blank" rel="noopener noreferrer">MC-9856</a> you cannot pick up buckets of water/lava in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-36322" target="_blank" rel="noopener noreferrer">MC-36322</a> Unable to milk cows in creative</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64623" target="_blank" rel="noopener noreferrer">MC-64623</a> Lightning bolts cannot be targeted by selectors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-69032" target="_blank" rel="noopener noreferrer">MC-69032</a> When a mob hits a zombified piglin, and that mob dies, the zombified piglins attack you</li>
+<li><a href="https://bugs.mojang.com/browse/MC-90969" target="_blank" rel="noopener noreferrer">MC-90969</a> Cannot get mushroom stew from mooshrooms / milk from cows in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-106968" target="_blank" rel="noopener noreferrer">MC-106968</a> Snow golems aren't damaged by splash or lingering water bottles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127004" target="_blank" rel="noopener noreferrer">MC-127004</a> Waterlogged blocks cause z-fighting when looking at them from a distance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138675" target="_blank" rel="noopener noreferrer">MC-138675</a> Wither skulls inflict the Wither effect on players in Creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138713" target="_blank" rel="noopener noreferrer">MC-138713</a> "Two by Two" advancement does not require donkeys or mules</li>
+<li><a href="https://bugs.mojang.com/browse/MC-158906" target="_blank" rel="noopener noreferrer">MC-158906</a> After sleeping in a bed, players aren't positioned in the center of a block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159500" target="_blank" rel="noopener noreferrer">MC-159500</a> Hostile mobs attacking bees also cause the bees to attack players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-161969" target="_blank" rel="noopener noreferrer">MC-161969</a> Casting issue: Adding ender eyes to end portal frames at high distances causes particles to lose precision</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163950" target="_blank" rel="noopener noreferrer">MC-163950</a> Ice bordering water causes z-fighting issues from a distance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164692" target="_blank" rel="noopener noreferrer">MC-164692</a> Entering a boat does not play the hand animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165669" target="_blank" rel="noopener noreferrer">MC-165669</a> Hand animation is playing when you're aiming at a block through the mob and use the spawn egg</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165734" target="_blank" rel="noopener noreferrer">MC-165734</a> Minecarts with furnace still display a hand animation with incompatible items when not on a rail</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166188" target="_blank" rel="noopener noreferrer">MC-166188</a> Bees still hitting player after death</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166524" target="_blank" rel="noopener noreferrer">MC-166524</a> Trying to dye a sheep with the same color as sheep displays hand animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167042" target="_blank" rel="noopener noreferrer">MC-167042</a> Casting issue: Campfire embers are generated at a point that loses precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167044" target="_blank" rel="noopener noreferrer">MC-167044</a> Casting issue: Enchanting table book does not open for the player at high distances in some cases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167046" target="_blank" rel="noopener noreferrer">MC-167046</a> Casting issue: Lava ember particles and lava popping sounds lose precision on creation at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167047" target="_blank" rel="noopener noreferrer">MC-167047</a> Casting issue: TNT blocks ignited by other explosions lose precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167091" target="_blank" rel="noopener noreferrer">MC-167091</a> Casting issue: Water particles dripping from leaves lose precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167195" target="_blank" rel="noopener noreferrer">MC-167195</a> Bees anger towards players in survival when killed in one hit</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167971" target="_blank" rel="noopener noreferrer">MC-167971</a> Casting issue: Particles emitted by redstone repeaters lose precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168675" target="_blank" rel="noopener noreferrer">MC-168675</a> Settings that update after closing the video settings menu don't if you change the fullscreen setting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170872" target="_blank" rel="noopener noreferrer">MC-170872</a> Casting issue: Nether biome particles suffer from precision loss</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170944" target="_blank" rel="noopener noreferrer">MC-170944</a> /locatebiome messages do not fit for all biome names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171035" target="_blank" rel="noopener noreferrer">MC-171035</a> Casting issue: Particles from falling rain lose precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171037" target="_blank" rel="noopener noreferrer">MC-171037</a> Casting issue: smoke produced by lava during rain loses precision at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171663" target="_blank" rel="noopener noreferrer">MC-171663</a> Right-clicking on unemployed villagers sometimes cause hand animation to stop after a villager has a profession</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171683" target="_blank" rel="noopener noreferrer">MC-171683</a> Crimson and warped doors can't have transparent textures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172259" target="_blank" rel="noopener noreferrer">MC-172259</a> Baby Hoglin/Zoglin have their head slightly above their neck, it seems that their head is partly floating</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172531" target="_blank" rel="noopener noreferrer">MC-172531</a> Small mobs get stuck in fence corners</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172610" target="_blank" rel="noopener noreferrer">MC-172610</a> When not aiming at a block through a ridable mob while using a spawn egg on it, the player starts riding the mob and a baby mob is spawned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174815" target="_blank" rel="noopener noreferrer">MC-174815</a> Piglins don't automatically attack withers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175028" target="_blank" rel="noopener noreferrer">MC-175028</a> Sometimes hoglins don't avoid warped fungus</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175215" target="_blank" rel="noopener noreferrer">MC-175215</a> Respawn anchors destroy blocks when detonated underwater</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175409" target="_blank" rel="noopener noreferrer">MC-175409</a> Soul speed "effect" stays when you levitate/fly off of soul sand or soul soil</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175476" target="_blank" rel="noopener noreferrer">MC-175476</a> Respawn anchor doesn't cull block faces</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175911" target="_blank" rel="noopener noreferrer">MC-175911</a> Soul Speed lasts after leaving soul blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176041" target="_blank" rel="noopener noreferrer">MC-176041</a> Using a spawn egg on a strider while aiming at lava spawns both a baby and an adult strider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176188" target="_blank" rel="noopener noreferrer">MC-176188</a> Striders are not damaged by splash or lingering water bottles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176225" target="_blank" rel="noopener noreferrer">MC-176225</a> Accelerating a baby strider's growth does not display hand animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176470" target="_blank" rel="noopener noreferrer">MC-176470</a> Respawning in the nether does not de-aggro zombified piglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176637" target="_blank" rel="noopener noreferrer">MC-176637</a> Closing game during Mojang load screen causes NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176640" target="_blank" rel="noopener noreferrer">MC-176640</a> You can set your spawn point inside dangerous blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178567" target="_blank" rel="noopener noreferrer">MC-178567</a> Shearing sheep does not display hand animation again</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178618" target="_blank" rel="noopener noreferrer">MC-178618</a> Feeding a flower to a brown mooshroom does not perform hand animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178961" target="_blank" rel="noopener noreferrer">MC-178961</a> /loot ... fish ... command no longer has any functionality</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179561" target="_blank" rel="noopener noreferrer">MC-179561</a> Retreating baby hoglins sometimes won't pathfind to the opposite direction of the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180111" target="_blank" rel="noopener noreferrer">MC-180111</a> Hoglins angered for reasons other than being attacked by the player ignore placed repellents.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180922" target="_blank" rel="noopener noreferrer">MC-180922</a> Right clicking a mob with a spawn egg to spawn the baby variant doesn’t play the hand swing animation when not aiming at a block through the mob</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182308" target="_blank" rel="noopener noreferrer">MC-182308</a> Chicken jockeys cannot despawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182748" target="_blank" rel="noopener noreferrer">MC-182748</a> Casting issue: Redstone dust particles are generated at the wrong positions at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182883" target="_blank" rel="noopener noreferrer">MC-182883</a> Parity issue: Baby hoglins don't follow adult hoglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183766" target="_blank" rel="noopener noreferrer">MC-183766</a> Who Is Cutting Onions Improperly Capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183767" target="_blank" rel="noopener noreferrer">MC-183767</a> Incorrect filename for "Serious Dedication" advancement in vanilla data pack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183792" target="_blank" rel="noopener noreferrer">MC-183792</a> piglin_loved item tag has unnecessary items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183821" target="_blank" rel="noopener noreferrer">MC-183821</a> "Game Mode Switcher" bottom hint text isn't centered</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183825" target="_blank" rel="noopener noreferrer">MC-183825</a> New nether challenges don't grant experience points</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183893" target="_blank" rel="noopener noreferrer">MC-183893</a> Gold nugget isn't under #piglin_loved</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184679" target="_blank" rel="noopener noreferrer">MC-184679</a> Using custom world generation, temperature is written wrong</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184947" target="_blank" rel="noopener noreferrer">MC-184947</a> Carriage return symbol can be seen when importing or exporting world generation settings to or from certain worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185095" target="_blank" rel="noopener noreferrer">MC-185095</a> "thrown_item_picked_up_by_entity" advancement trigger does not work for players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185377" target="_blank" rel="noopener noreferrer">MC-185377</a> Bone mealing kelp creates a large field of particles, rather than only within the kelp's block space</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185480" target="_blank" rel="noopener noreferrer">MC-185480</a> Casting issue: Smoke particles emitted by campfires during rain form at the wrong positions at high coordinates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186062" target="_blank" rel="noopener noreferrer">MC-186062</a> Warning "Could not find uniform named InSize in the specified shader program." when loading resources</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186064" target="_blank" rel="noopener noreferrer">MC-186064</a> Clouds render in front of everything for some users</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186067" target="_blank" rel="noopener noreferrer">MC-186067</a> Some structures' loot chests do not contain any items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186071" target="_blank" rel="noopener noreferrer">MC-186071</a>  Clouds are visible and don't render correctly when they are turned off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186074" target="_blank" rel="noopener noreferrer">MC-186074</a> Particles render in the wrong order with transparent blocks when using certain graphics cards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186075" target="_blank" rel="noopener noreferrer">MC-186075</a> GPU usage in latest snapshot significantly higher than before, causing lag or crash for some users</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186080" target="_blank" rel="noopener noreferrer">MC-186080</a> Entities, block entities, and items are rendered black on some graphics cards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186088" target="_blank" rel="noopener noreferrer">MC-186088</a> Block hitboxes once again cause semi-transparent blocks not to render behind them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186089" target="_blank" rel="noopener noreferrer">MC-186089</a> Functions load before entity tags do, causing loading errors.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186101" target="_blank" rel="noopener noreferrer">MC-186101</a> Some commands in functions cause a NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186108" target="_blank" rel="noopener noreferrer">MC-186108</a> Enchantment glint does not render on dropped/thrown items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186109" target="_blank" rel="noopener noreferrer">MC-186109</a> You can use multiplayer commands on a singleplayer world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186124" target="_blank" rel="noopener noreferrer">MC-186124</a> Lightning bolt doesn't render</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186204" target="_blank" rel="noopener noreferrer">MC-186204</a> Items render in front of other entities, transparent blocks, and blocks with special renderers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186253" target="_blank" rel="noopener noreferrer">MC-186253</a> Held translucent blocks make the water, clouds, particles, and placed translucent blocks behind them invisible in third person mode.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186274" target="_blank" rel="noopener noreferrer">MC-186274</a> Purple light from Ender Dragon's Death doesn't appear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186284" target="_blank" rel="noopener noreferrer">MC-186284</a> Player's point of view is upside down in 20w22a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186314" target="_blank" rel="noopener noreferrer">MC-186314</a> Villagers become fixated on potential job site</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186335" target="_blank" rel="noopener noreferrer">MC-186335</a> Bees age calculation inside hive/nest is broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186455" target="_blank" rel="noopener noreferrer">MC-186455</a> Persistent villagers without experience can despawn after converting to a witch</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186464" target="_blank" rel="noopener noreferrer">MC-186464</a> Enabled data packs still show up in the "/datapack enable" list</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186478" target="_blank" rel="noopener noreferrer">MC-186478</a> Tag minecraft:tick doesn't work when joining a world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186480" target="_blank" rel="noopener noreferrer">MC-186480</a> Inner parts of slime blocks and honey blocks disappear again while the block is moved by a piston</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186600" target="_blank" rel="noopener noreferrer">MC-186600</a> Nether gold ore is gray on a map</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186696" target="_blank" rel="noopener noreferrer">MC-186696</a> Totem of Undying causes red or blue tint in the screen when in F5 mode</li>
+</ul>

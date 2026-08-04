@@ -1,0 +1,101 @@
+<p>在今天的快照中，我们进行了一些必要的更改，这些更改直接与我们<a href="https://www.minecraft.net/article/a-caves---cliffs-announcement" target="_blank" rel="noopener noreferrer">最近发布的公告</a>相关。如果你还没有阅读过，我们强烈建议你去阅读。你还可以查看来自 Agnes 和 Henrik 的<a href="https://youtu.be/6YgKUZnUyak" target="_blank" rel="noopener noreferrer">洞穴与山崖视频</a>，以了解更多关于本次更新的计划。</p>
+<p>尽管一些特性会比我们原先计划的发布时间更晚，你仍然可以通过单独的数据包来试用它们。更多信息以及我们最新的调整，请参见下文。</p>
+<h1>洞穴与山崖世界生成</h1>
+<ul>
+<li>世界高度已改回 1.16 的水平。</li>
+<li>噪声洞穴和含水层已关闭。</li>
+<li>洞穴和峡谷雕刻器已恢复为旧设置。</li>
+<li>裂隙雕刻器已关闭。</li>
+<li>矿石分布已恢复为 1.16 的设置。</li>
+<li>铜现在会生成在世界底部至高度 192 之间，在高度 96 附近最为常见。</li>
+<li>凝灰岩现在以团块形式生成在高度 0 至 16 之间。</li>
+<li>在快照 21w05b 或任何更早版本中创建的世界现在可以再次打开。</li>
+<li>在快照 21w06a 至 21w14a 之间的任何版本中创建的世界将无法再打开。</li>
+</ul>
+<h2>洞穴与山崖原型数据包</h2>
+<p>你仍然可以使用数据包来试用后续更新中的世界生成，该数据包会以实验性自定义世界的形式启用这些更改：</p>
+<ul>
+<li><a href="https://launcher.mojang.com/v1/objects/643b1f8f7f71c74ffc913e8572f52fd5bca88282/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">下载数据包</a></li>
+<li>启动游戏，进入“创建新世界”界面，然后点击“数据包”按钮。</li>
+<li>将下载的 zip 文件拖拽到 Minecraft 窗口上。</li>
+<li>游戏会询问你是否要添加该数据包——点击“是”。</li>
+<li>点击列表中刚刚出现的数据包上的播放箭头——这会将其移动到屏幕右侧的列表中。</li>
+<li>点击“完成”按钮，然后像平常一样继续创建你的世界。</li>
+</ul>
+<p>请记住，使用该数据包创建的世界会被游戏标记为实验性世界，并且此类世界不保证能在未来的版本中继续使用。另外，请注意，你不能将改变世界生成的数据包添加到已有的世界中，因此你必须创建一个新世界才能体验这些实验性特性。</p>
+<h1>21w15a 的新特性</h1>
+<ul>
+<li>山羊会冲撞任何移动的东西……也包括盔甲架。</li>
+</ul>
+<h1>21w15a 的更改</h1>
+<ul>
+<li>使用骨粉时，现在会播放一种窸窸窣窣、嘎吱作响的声音。</li>
+<li>重新调整了创造模式物品栏“建筑方块”标签页中部分方块的位置。</li>
+<li>山羊会避免在细雪上行走。</li>
+<li>苦力怕知道不要去招惹山羊。</li>
+<li>主菜单背景已更新。</li>
+<li>调整了粗矿物品的纹理。</li>
+<li>与其他矿石材料一样，你可以使用粗矿物品制作紧凑版本，以节省物品栏空间。</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w15a-ore-texture-comparison.png" alt="Minecraft 快照 21w15a 纹理对比">
+21w15a 中新的粗矿纹理。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w15aoretexturecomparisonfull.png" target="_blank" rel="noopener noreferrer">点击此处</a>查看全分辨率图像的链接。</p>
+<h2>建筑方块标签页</h2>
+<ul>
+<li>所有矿石都已被重新排序，在创造模式物品栏中位于同一位置。</li>
+<li>粗制与精炼的地下材料的紧凑形式已被重新排序。</li>
+</ul>
+<h1>21w15a 的技术性更改</h1>
+<ul>
+<li>添加了标记实体。</li>
+<li>添加了 <code>/debug function</code>。</li>
+<li><code>selector</code> 和 <code>nbt</code> 聊天组件现在可以配置元素之间的分隔符。</li>
+<li>服务器现在可以自定义一条消息，在提示玩家使用自定义资源包时显示。</li>
+</ul>
+<h2>标记</h2>
+<p>标记是一种新型实体，用于地图制作和数据包等自定义用例。</p>
+<ul>
+<li>仅存在于服务端，绝不会发送给客户端。</li>
+<li>不会自行进行任何更新。</li>
+<li>拥有一个可以包含任意数据的 <code>data</code> 复合字段。</li>
+</ul>
+<h2><code>/debug function</code></h2>
+<p>新的调试子命令会执行命令，其语法与函数相同。</p>
+<ul>
+<li>所有执行的命令、消息（即使是通常不可见的消息）、结果或错误都会存储到文件中。</li>
+<li>不能在函数内部运行。</li>
+</ul>
+<h2>聊天组件分隔符</h2>
+<ul>
+<li>打印名称列表的组件（如 <code>selector</code> 或 <code>nbt</code>）现在可以使用 <code>separator</code> 元素覆盖默认分隔符（默认为 <code>", "</code>）。</li>
+<li>示例：
+<ul>
+<li><code>{"selector": "@e[type=chicken]", "separator": "|"}</code></li>
+<li><code>{"nbt": "CustomName", "entity": "@e[type=chicken]", "interpret": true, "separator": {"text": "*", "color": "red"}}</code></li>
+</ul></li>
+</ul>
+<h2>自定义服务器资源包</h2>
+<p>当在 <code>server.properties</code> 中使用 <code>require-resource-pack</code> 时，服务器现在可以选择添加自定义消息。</p>
+<ul>
+<li>专用服务器可以配置在资源包提示中显示额外消息（<code>server.properties</code> 中的 <code>resource-pack-prompt</code>，期望使用聊天组件语法，可以包含多行）。</li>
+</ul>
+<h1>21w15a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-203855" target="_blank" rel="noopener noreferrer">MC-203855</a> 当 use_alternate_layer0_chance 被使用且 inner_placements 中没有条目时，晶洞 configured_feature 会导致崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212145" target="_blank" rel="noopener noreferrer">MC-212145</a> 使用 /setblock 召唤荧光地衣时，不会放置任何地衣，但会创造光照，直到方块被更新。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212273" target="_blank" rel="noopener noreferrer">MC-212273</a> 荧光地衣被末影人持有时不会渲染。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215836" target="_blank" rel="noopener noreferrer">MC-215836</a> 深板岩在地图上与石头使用相同的颜色。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215844" target="_blank" rel="noopener noreferrer">MC-215844</a> 在低层，石头仍会在熔岩池周围生成。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216588" target="_blank" rel="noopener noreferrer">MC-216588</a> 地物放置 - java.lang.IllegalArgumentException：bound must be positive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218588" target="_blank" rel="noopener noreferrer">MC-218588</a> 裂纹深板岩砖和裂纹深板岩瓦在创造模式物品栏中的位置不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218698" target="_blank" rel="noopener noreferrer">MC-218698</a> 蛀蚀的深板岩会发出旧的“石头”声音。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218705" target="_blank" rel="noopener noreferrer">MC-218705</a> 深板岩绿宝石矿石在创造模式物品栏中与其他深板岩矿石分开了。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218749" target="_blank" rel="noopener noreferrer">MC-218749</a> 深板岩煤矿石不会掉落经验。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218944" target="_blank" rel="noopener noreferrer">MC-218944</a> 铜矿石和深板岩铜矿石的纹理不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219972" target="_blank" rel="noopener noreferrer">MC-219972</a> 深板岩金矿石有一个像素不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221501" target="_blank" rel="noopener noreferrer">MC-221501</a> 喷溅型水瓶不会让美西螈获得 1.5 分钟的湿润状态。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221718" target="_blank" rel="noopener noreferrer">MC-221718</a> 在特定 y 高度，熔岩迷雾会反复出现逐个方块无法渲染的情况。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221798" target="_blank" rel="noopener noreferrer">MC-221798</a> 失明效果无法正确渲染。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222104" target="_blank" rel="noopener noreferrer">MC-222104</a> 信标光束的迷雾计算不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222266" target="_blank" rel="noopener noreferrer">MC-222266</a> 山羊不攻击。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222522" target="_blank" rel="noopener noreferrer">MC-222522</a> 下界金矿石不再可烧炼。</li>
+</ul>

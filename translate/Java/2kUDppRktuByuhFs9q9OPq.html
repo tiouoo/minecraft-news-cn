@@ -1,0 +1,131 @@
+<p>自从<a href="https://www.minecraft.net/en-us/article/nether-update-java" target="_blank" rel="noopener noreferrer">下界更新</a>以来，猪灵们一直看着玩家偷偷溜进来窥探它们的箱子——好了，再也不会有这种事发生了！在 1.16.2 中，我们引入了猪灵蛮兵——一种专注于守护堡垒遗迹箱子的猪灵，连黄金都无法分散它们的注意力。</p>
+<h1>1.16.2 中的新特性</h1>
+<h2>辅助功能</h2>
+<p>新增了两个辅助功能设置，以改善视觉舒适度：</p>
+<ul>
+<li>反胃和下界传送门覆盖等扭曲效果现在可以减弱</li>
+<li>数值较低时，反胃效果会替换为绿色覆盖层作为替代可视化效果</li>
+<li>在应用速度修改器后显示的视野效果现在可以减弱</li>
+</ul>
+<h3>聊天延迟</h3>
+<ul>
+<li>聊天设置界面中新增了聊天延迟选项</li>
+<li>按下 F3+D 现在会清除待发送的聊天消息</li>
+</ul>
+<h2>堡垒遗迹</h2>
+<ul>
+<li>调整了堡垒遗迹箱子的战利品</li>
+<li>堡垒遗迹中的箱子现在更可能位于镶金黑石上方</li>
+</ul>
+<h2>方块</h2>
+<ul>
+<li>酿造台现在可以用黑石合成</li>
+<li>灯笼和灵魂灯笼现在可以含水</li>
+<li>绯红菌和诡异菌现在可以放在菌丝上</li>
+<li>锁链现在可以以所有方向放置</li>
+</ul>
+<h2>物品</h2>
+<ul>
+<li>创造模式物品栏中的工具现在会按材料排序</li>
+<li>不死图腾在激活时现在会给予 40 秒的抗火状态效果</li>
+</ul>
+<h2>生物</h2>
+<ul>
+<li>末影人不再会将手中的方块放置在基岩上</li>
+<li>僵尸疣猪兽现在可以被拴绳拴住</li>
+<li>当僵尸猪灵骑着炽足兽生成时，现在会手持诡异菌钓竿</li>
+<li>移除了 Herobrine</li>
+</ul>
+<h2>猪灵</h2>
+<ul>
+<li>加入了猪灵蛮兵！</li>
+<li>猪灵现在会对打开或破坏箱子矿车的玩家发怒</li>
+<li>调整了以物易物的战利品</li>
+</ul>
+<h3>猪灵蛮兵</h3>
+<ul>
+<li>猪灵蛮兵是猪灵的更强变种，它们生活在堡垒中并守护那里的宝藏</li>
+<li>与那些胆小又贪婪的同类不同，猪灵蛮兵不会被黄金分散注意力，而且什么都不怕</li>
+<li>猪灵蛮兵一看到玩家就会攻击，无论玩家穿着什么</li>
+<li>猪灵蛮兵手持斧头，不需要任何盔甲，因为它们就是这么强悍</li>
+</ul>
+<h2>重生方块位置</h2>
+<ul>
+<li>修改了床和重生锚选择重生位置的方式</li>
+<li>重生锚会优先选择轴向方向而不是角落</li>
+<li>床会优先选择玩家进入床时所在的一侧，然后依次选取围绕床尾到床头的空间</li>
+<li>重生的玩家现在会面向其重生位置所在的方块</li>
+<li>现在会尽可能避免将玩家放置在危险方块上</li>
+</ul>
+<h2>村民</h2>
+<ul>
+<li>村民在加入村庄、设置床铺或获得工作站/职业时现在会发出绿色粒子</li>
+<li>村民在改变维度时现在会失去工作站</li>
+</ul>
+<h1>1.16.2 中的技术性更改</h1>
+<ul>
+<li>自定义世界现在支持自定义生物群系</li>
+<li>告示牌编辑界面现在会从已有文字初始化（对原版应该没有明显影响）</li>
+<li>对数据包和资源包选择界面进行了小幅改进</li>
+<li>标签现在可以有可选条目</li>
+</ul>
+<h2>命令</h2>
+<h3>Execute</h3>
+<ul>
+<li><code>execute in</code> 现在会遵循维度缩放</li>
+</ul>
+<h3>spawnpoint 和 setworldspawn</h3>
+<p>添加了一个角度参数，用于设置重生玩家的默认朝向角度。<br>
+语法：<code>spawnpoint [&#x3C;targets>] [&#x3C;pos>] [&#x3C;angle>]</code><br>
+语法：<code>setworldspawn [&#x3C;pos>] [&#x3C;angle>]</code><br>
+新参数：</p>
+<ul>
+<li><code>angle</code> - 以度为单位的浮点角度。支持相对 <code>~</code> 修饰符</li>
+</ul>
+<h2>自定义世界生成</h2>
+<ul>
+<li>自定义世界生成和维度设置现在与其他资源一样，在数据包中使用相同的文件夹模式（<code>namespace/&#x3C;type>/resource.json</code>）</li>
+<li>数据包中的 <code>worldgen</code> 文件夹现在提供实验性支持</li>
+<li><code>worldgen/biome</code> 可以包含生物群系定义</li>
+<li><code>worldgen/configured_carver</code> 可以包含世界雕刻器设置的定义</li>
+<li><code>worldgen/configured_feature</code> 可以包含地物放置的定义</li>
+<li><code>worldgen/configured_structure_feature</code> 可以包含结构放置的定义</li>
+<li><code>worldgen/configured_surface_builder</code> 可以包含表面的定义</li>
+<li><code>worldgen/noise_settings</code> 现在可以包含噪声配置</li>
+<li><code>worldgen/processor_list</code> 可以包含一组方块处理器</li>
+<li><code>worldgen/template_pool</code> 可以包含拼图结构的池定义</li>
+<li>自定义生物群系现在可以用于单一生物群系/洞穴/浮空岛世界类型（先添加包含该生物群系的数据包）</li>
+<li>自定义生物群系现在可以用于自定义维度生成器</li>
+</ul>
+<h2>专用服务器数据包限制</h2>
+<ul>
+<li>专用服务器现在可以踢出持续在一秒内发送过多数据包的客户端</li>
+<li>通过 <code>server.properties</code> 中的 <code>rate-limit</code> 设置进行控制</li>
+<li>默认速率限制为 0 表示“无限制”</li>
+</ul>
+<h2>包选择界面</h2>
+<ul>
+<li>当界面打开时，如果包目录内容发生变化，界面会自动更新</li>
+<li>两个包选择界面现在都会将 <code>pack.png</code> 的内容显示为包图标</li>
+</ul>
+<h2>包版本</h2>
+<ul>
+<li>资源包版本提升至 6</li>
+</ul>
+<h2>标签</h2>
+<h3>可选条目</h3>
+<p>标签中的条目现在可以标记为可选。无法解析可选条目不会阻止整个标签加载。<br>
+示例：</p>
+<pre><code>{
+  "replace": false,
+  "values": [
+    "#minecraft:beds", // existing syntax
+    { "id":"#missing:tag", "required": false }, // optional sub-tag entry
+    "minecraft:anvil", // existing syntax
+    { "id":"minecraft:stone_button", "required": true }, // new syntax for required tags
+    { "id":"missing:block", "required": false } // optional single-element entry
+  ]
+}
+</code></pre>
+<h1>漏洞</h1>
+<p>本次更新还修复了超过 <a href="https://bugs.mojang.com/issues/?filter=25075" target="_blank" rel="noopener noreferrer">150 个漏洞</a>！</p>

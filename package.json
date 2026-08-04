@@ -1,0 +1,17 @@
+{
+  "name": "minecraft-news-cn",
+  "version": "1.0.0",
+  "description": "Minecraft News Chinese Translation",
+  "main": "server.js",
+  "scripts": {
+    "fetch-news": "node scripts/fetch-news.js",
+    "translate": "node scripts/translate.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

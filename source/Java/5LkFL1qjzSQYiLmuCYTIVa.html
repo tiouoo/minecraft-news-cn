@@ -1,0 +1,90 @@
+<p>A truly fabulous snapshot enters the arena! This snapshot brings fundamental changes to our rendering pipeline with the introduction of the brand new tech that is OpenGL Core 3.2. On top of that, we're finally introducing the Lush Caves biome. However, as with the Dripstone Caves, this is only available through creating a custom world.</p>
+<p>There's an important note about this snapshot for those of you with older computers: With the introduction of OpenGL Core 3.2 there is a chance Minecraft Java will no longer run on computers that do not meet the <a href="https://help.minecraft.net/hc/en-us/articles/360035131371-Minecraft-Java-Edition-system-requirements-" target="_blank" rel="noopener noreferrer">minimum system requirements</a>. Computers that meet the <a href="https://help.minecraft.net/hc/en-us/articles/360035131371-Minecraft-Java-Edition-system-requirements-" target="_blank" rel="noopener noreferrer">minimum system requirements</a> should not be affected.</p>
+<h1>New Features in 21w10a</h1>
+<ul>
+<li>Added Lush Caves underground biome!</li>
+<li>Added Cracked Deepslate Bricks and Cracked Deepslate Tiles</li>
+<li>There is now an Infested variant of Deepslate found in the underground</li>
+<li>While they will not generate in the world by default, Deepslate versions of copper, emerald and coal ores have been added for use by creators of maps and data packs</li>
+</ul>
+<h2>Lush caves biome</h2>
+<p>The Lush Caves underground biome now exists for use in single-biome worlds. It does not yet generate in other world types.</p>
+<ul>
+<li>Moss covers the floors and ceilings</li>
+<li>Spore Blossoms grow from the ceiling and drip particles</li>
+<li>Contains clay pools with dripleaf plants grow out of them</li>
+<li>Contains azalea bushes and flowering azalea bushes</li>
+<li>The azalea tree loves to have its roots in lush caves, so if you find an azalea tree (either overground or in a cave) you know there is a lush cave beneath you</li>
+<li>Cave vines with glow berries grow from the ceiling and light up the caves</li>
+</ul>
+<h1>Changes in 21w10a</h1>
+<ul>
+<li>Cobbled Deepslate can now be smelted into Deepslate.</li>
+<li>Deepslate can now be placed along any axis</li>
+<li>Lightning rods can now be waterlogged</li>
+<li>Fossils in the deepest part of the underground generate with deepslate diamond ore instead of coal ore</li>
+<li>Some ore textures have been updated</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-texture-comparison.jpg" alt="Minecraft Snapshot 21w10a texture comparison (cropped)"></p>
+<p>Ore texture changes in snapshot 21w10a. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w10atexturecomparisonfullresolution.jpg" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-texture-comparison2.jpg" alt="Minecraft Snapshot 21w10a texture comparison 2 (cropped)"></p>
+<p>New textures for emerald, coal, and copper in Deepslate. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w10atexturecomparison2fullresolution.jpg" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<h2>Ore distribution</h2>
+<p>Overworld ore generation has been tweaked.</p>
+<ul>
+<li>More emeralds in mountains</li>
+<li>More lapis</li>
+<li>Less copper, gold, and redstone</li>
+<li>Smaller diamond blobs, but slightly more frequent. Less diamond ore overall though</li>
+<li>Less iron, and it generates lower down</li>
+<li>Reduced air exposure for coal</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-ores-distribution-cropped.jpg" alt="Minecraft Snapshot 21w10a ores distribution (cropped)"></p>
+<p>Ore distribution in snapshot 21w10a. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w10aoredistributionfull.jpg" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<h1>Technical Changes in 21w10a</h1>
+<ul>
+<li>The game now runs using OpenGL 3.2 core profile</li>
+<li>The maximum size that slimes can be summoned with is now 128</li>
+<li>The <code>give</code> command can only give up to 100 stacks of items at a time (e.g. 6400 stone or 100 iron swords)</li>
+</ul>
+<h2>OpenGL</h2>
+<p>Rendering is now using OpenGL 3.2 core profile. All fixed function rendering has been replaced with shader based rendering.</p>
+<h3>Shaders</h3>
+<p>Shaders are now included for all supported render states. Any shader except for the <code>blit</code> shader can also be replaced in resource packs. For now replacing these shaders is <strong>not officially supported</strong> and the way it works may change in the future.</p>
+<p>The current rendering engine uses a system similar to the post processing shader pipeline. There are some differences between both system that cater to the slightly different requirements.</p>
+<h1>Bugs fixed in 21w10a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29318" target="_blank" rel="noopener noreferrer">MC-29318</a> Client misses inventory updates while player is manipulating items causes invisible items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84121" target="_blank" rel="noopener noreferrer">MC-84121</a> Shape of glow effect is based on mob's base layer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-87019" target="_blank" rel="noopener noreferrer">MC-87019</a> Only visible slots are updated clientside when you are inside an inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154094" target="_blank" rel="noopener noreferrer">MC-154094</a> Lectern running /clear turns items into ghost items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175964" target="_blank" rel="noopener noreferrer">MC-175964</a> Setblock command run by book in lectern to clear inventory run in command block causes ghost items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-201316" target="_blank" rel="noopener noreferrer">MC-201316</a> The /give command can create so many items that the game will freeze</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207818" target="_blank" rel="noopener noreferrer">MC-207818</a> Placing a sign from the offhand closes the sign UI immediately</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208301" target="_blank" rel="noopener noreferrer">MC-208301</a> /clear does not properly affect the item on the mouse pointer after crafting it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210408" target="_blank" rel="noopener noreferrer">MC-210408</a> /spawnpoint allows players to set their spawnpoint to out-of-bounds coordinates, which crashes the game when trying to respawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211666" target="_blank" rel="noopener noreferrer">MC-211666</a> Guardians attack invisible axolotls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212127" target="_blank" rel="noopener noreferrer">MC-212127</a> Normal ink sac and glow ink sac are not grouped in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212144" target="_blank" rel="noopener noreferrer">MC-212144</a> Subtitles refer to Glow Item Frame as "Item Frame"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212168" target="_blank" rel="noopener noreferrer">MC-212168</a> Ctrl + Pick Block doesn't copy block state "lit"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212236" target="_blank" rel="noopener noreferrer">MC-212236</a> Cannot visually critical-hit a glow squid (No sound/particles)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212314" target="_blank" rel="noopener noreferrer">MC-212314</a> Glow squid remains dark even if there is a light source block next to it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212325" target="_blank" rel="noopener noreferrer">MC-212325</a> Glow Squid entity data (potion effects, custom name, ...) does not get saved</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214629" target="_blank" rel="noopener noreferrer">MC-214629</a> FOV decreases when underwater regardless of FOV Effects accessibility setting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214781" target="_blank" rel="noopener noreferrer">MC-214781</a> Lava does not generate at the very bottom of noise caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214784" target="_blank" rel="noopener noreferrer">MC-214784</a> Fossils can generate floating in caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214836" target="_blank" rel="noopener noreferrer">MC-214836</a> Water caves cause land to be excessively flooded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214844" target="_blank" rel="noopener noreferrer">MC-214844</a> Bedrock can be exposed to the air at the very bottom of the new caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214970" target="_blank" rel="noopener noreferrer">MC-214970</a> Phantoms continously make too much flapping sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215194" target="_blank" rel="noopener noreferrer">MC-215194</a> Structure blocks do not work below y=0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215838" target="_blank" rel="noopener noreferrer">MC-215838</a> There is currently no way to craft deepslate tiles and deepslate bricks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215850" target="_blank" rel="noopener noreferrer">MC-215850</a> Deepslate Tile Wall comes before Deepslate Brick Wall but Deepslate Bricks come before Deepslate Tiles in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215939" target="_blank" rel="noopener noreferrer">MC-215939</a> Emerald ore spawns in lower frequencies than it should above y=100</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216136" target="_blank" rel="noopener noreferrer">MC-216136</a> Polished deepslate slab isn't grouped with the other deepslate slabs in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216363" target="_blank" rel="noopener noreferrer">MC-216363</a> Crash upon replacing soul sand or magma with the other under a tall bubble column using /setblock</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216735" target="_blank" rel="noopener noreferrer">MC-216735</a> Stone Lapis Ore generating in Deepslate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216736" target="_blank" rel="noopener noreferrer">MC-216736</a> Lava lakes generate exposed in caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216765" target="_blank" rel="noopener noreferrer">MC-216765</a> Coal ore can generate below Y=0 when attached to a fossil</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216817" target="_blank" rel="noopener noreferrer">MC-216817</a> Inconsistency: Cobbled deepslate cannot be smelted back into deepslate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218139" target="_blank" rel="noopener noreferrer">MC-218139</a> Spectator vision bug</li>
+</ul>

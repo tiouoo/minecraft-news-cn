@@ -1,0 +1,86 @@
+<p>We’re now releasing the first pre-release for Minecraft 1.19.3. This pre-release fixes a few bugs, contains a few tweaks, and it has some technical changes.</p>
+<p>If everything goes as expected, we aim to release this version on December 6th.</p>
+<p>Happy mining!</p>
+<h1>Technical Changes in 1.19.3 Pre-release 1</h1>
+<ul>
+<li>Added new entity sub-predicate types: <code>axolotl</code>, <code>boat</code>, <code>fox</code>, <code>mushroom</code>, <code>painting</code>, <code>rabbit</code>, <code>horse</code>, <code>llama</code>, <code>villager</code>, <code>parrot</code>, <code>tropical_fish</code></li>
+<li><code>fillbiome</code> command now supports a filtered mode</li>
+<li>Player Heads can now contain a <code>note_block_sound</code> field<ul>
+<li>When present, this determines the sound a note block makes when the head is placed on top of it</li>
+</ul></li>
+</ul>
+<h2>Loot tables and Advancements</h2>
+<h3>New entity sub-predicate types</h3>
+<ul>
+<li>Added new entity sub-predicates for some entity types with variants:</li>
+<li><code>axolotl</code><ul>
+<li><code>variant</code> - values: <code>lucy</code>, <code>wild</code>, <code>gold</code>, <code>cyan</code>, <code>blue</code></li>
+</ul></li>
+<li><code>boat</code><ul>
+<li>Works for boats, chest boats and rafts</li>
+<li><code>variant</code> - values: <code>oak</code>, <code>spruce</code>, <code>birch</code>, <code>jungle</code>, <code>acacia</code>, <code>dark_oak</code>, <code>mangrove</code>, <code>bamboo</code></li>
+</ul></li>
+<li><code>fox</code><ul>
+<li><code>variant</code> - values: <code>red</code>, <code>snow</code></li>
+</ul></li>
+<li><code>mooshroom</code><ul>
+<li><code>variant</code> - values: <code>red</code>, <code>brown</code></li>
+</ul></li>
+<li><code>painting</code><ul>
+<li><code>variant</code> - values: see <code>painting_variant</code> registry</li>
+</ul></li>
+<li><code>rabbit</code><ul>
+<li><code>variant</code> - values: <code>brown</code>, <code>white</code>, <code>black</code>, <code>white_splotched</code>, <code>gold</code>, <code>salt</code>, <code>evil</code></li>
+</ul></li>
+<li><code>horse</code><ul>
+<li><code>variant</code> - values: <code>white</code>, <code>creamy</code>, <code>chestnut</code>, <code>brown</code>, <code>black</code>, <code>gray</code>, <code>dark_brown</code></li>
+<li>Markings are separate value and not matched</li>
+</ul></li>
+<li><code>llama</code><ul>
+<li><code>variant</code> - values: <code>creamy</code>, <code>white</code>, <code>brown</code>, <code>gray</code></li>
+</ul></li>
+<li><code>villager</code><ul>
+<li><code>variant</code> - values: see <code>villager_type</code> registry</li>
+<li>Also works for Zombie Villagers</li>
+<li>Profession and level are separate values and not matched</li>
+</ul></li>
+<li><code>parrot</code><ul>
+<li><code>variant</code> - values: <code>red_blue</code>, <code>blue</code>, <code>green</code>, <code>yellow_blue</code>, <code>gray</code></li>
+</ul></li>
+<li><code>tropical_fish</code><ul>
+<li><code>variant</code> - values: <code>kob</code>, <code>sunstreak</code>, <code>snooper</code>, <code>dasher</code>, <code>brinely</code>, <code>spotty</code>, <code>flopper</code>, <code>stripey</code>, <code>glitter</code>, <code>blockfish</code>, <code>betty</code>, <code>clayfish</code></li>
+</ul></li>
+</ul>
+<h2><code>fillbiome</code> command</h2>
+<p>Now supports a filtered form. New syntax:</p>
+<p><code>fillbiome &#x3C;from> &#x3C;to> &#x3C;biome> [replace &#x3C;filter>]</code></p>
+<p>New parameter:</p>
+<ul>
+<li><code>filter</code>: A biome or biome tag to replace</li>
+</ul>
+<h1>Fixed bugs in 1.19.3 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-156663" target="_blank" rel="noopener noreferrer">MC-156663</a>  Villager pathfinding broken in water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177596" target="_blank" rel="noopener noreferrer">MC-177596</a>  Weaponsmith working subtitle is "Grindstone used" instead of "Weaponsmith works"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177676" target="_blank" rel="noopener noreferrer">MC-177676</a>  Armorer working subtitle is "Blast Furnace crackles" instead of "Armorer works"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245697" target="_blank" rel="noopener noreferrer">MC-245697</a>  Certain mobs can't get out of water that is at least two blocks deep</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255133" target="_blank" rel="noopener noreferrer">MC-255133</a>  Extra copper ore generates in deep dark</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256481" target="_blank" rel="noopener noreferrer">MC-256481</a>  minecraft.used:minecraft.BOOK_TYPE doesn't increase when placing books onto chiseled bookshelves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256679" target="_blank" rel="noopener noreferrer">MC-256679</a>  Axolotls commonly hesitate when avoiding danger and occasionally start pathfinding in dangerous directions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256883" target="_blank" rel="noopener noreferrer">MC-256883</a>  Elements within the game menu are now positioned slightly lower than they were in previous versions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257341" target="_blank" rel="noopener noreferrer">MC-257341</a>  Vex texture does not utilize translucency</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257349" target="_blank" rel="noopener noreferrer">MC-257349</a>  Vex does not sit in boats and minecarts properly anymore</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257368" target="_blank" rel="noopener noreferrer">MC-257368</a>  Not a valid port error in Open to LAN doesn't show if port is &#x3C;1024</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257373" target="_blank" rel="noopener noreferrer">MC-257373</a>  The cursor in the port number text box doesn't blink</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257374" target="_blank" rel="noopener noreferrer">MC-257374</a>  The word "number" isn't capitalized in "Port number"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257386" target="_blank" rel="noopener noreferrer">MC-257386</a>  Inventory menu has broken textures with Programmer Art enabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257506" target="_blank" rel="noopener noreferrer">MC-257506</a>  Top and bottom texture of chiseled bookshelf rotates depending on placement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257525" target="_blank" rel="noopener noreferrer">MC-257525</a>  Allay movement AI is broken in 22w42a+ causing them to sometimes spin mid-air</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257617" target="_blank" rel="noopener noreferrer">MC-257617</a>  You cannot scroll with the mouse wheel on the telemetry screen after clicking the "Open my data" or "Data collection" button</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257618" target="_blank" rel="noopener noreferrer">MC-257618</a>  The word "pair" uses the incorrect verb form within the "telemetry.event.world_loaded.description" string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257619" target="_blank" rel="noopener noreferrer">MC-257619</a>  Baby piglins and zombified piglins take damage when they hit their head on a block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257625" target="_blank" rel="noopener noreferrer">MC-257625</a>  Piglin Head placed on noteblock play the piglin angry sound instead of the piglin ambient sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257648" target="_blank" rel="noopener noreferrer">MC-257648</a>  The fillbiome command can result in flickering biome colors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257658" target="_blank" rel="noopener noreferrer">MC-257658</a>  Sculk sensors are not activated upon taking books from chiseled bookshelves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257663" target="_blank" rel="noopener noreferrer">MC-257663</a>  The "Hide messages" button in the social interactions menu can now no longer be toggled due to it being executed twice upon being pressed</li>
+</ul>

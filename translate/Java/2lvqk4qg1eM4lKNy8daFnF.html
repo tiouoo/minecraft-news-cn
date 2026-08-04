@@ -1,0 +1,149 @@
+<p>Minecraft: Java Edition 现已推出又一个预发布版！此预发布版修复了大量漏洞，同时也进行了一些小幅调整。下界更新临近，我们计划在几周内发布该更新。</p>
+<h1>1.16 预发布版 3 中的更改</h1>
+<p>​</p>
+<ul>
+<li>食物现在可以放置在未点燃的营火上</li>
+<li>下界要塞现在略微更常见</li>
+<li>在抗火效果下，熔岩中的能见度现在略微提升</li>
+<li>猪灵现在即使看不到你，也能听到你破坏箱子、金块（或类似物品）的声音，并会认为你在偷窃</li>
+<li>游戏规则界面中的规则描述现在可以根据需要换行显示</li>
+<li>游戏在读取世界数据以加载、创建或重新创建世界时，现在会显示加载界面</li>
+<li>游戏现在将尝试恢复在 1.16 预发布版 1 中损坏的世界</li>
+</ul>
+<p>​</p>
+<h1>1.16 预发布版 3 中的技术性更改</h1>
+<p>​
+区域文件现在仅在 Windows 上以同步模式打开，其他操作系统上则不会。此功能的状态可通过以下选项手动控制：</p>
+<ul>
+<li>对于专用服务器：<code>server.properties</code> 中的 <code>sync-chunk-writes</code></li>
+<li>对于客户端：<code>options.txt</code> 中的 <code>syncChunkWrites</code></li>
+</ul>
+<h1>1.16 预发布版 3 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-13823" target="_blank" rel="noopener noreferrer">MC-13823</a> 拴绳在某些实体上的位置不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-14680" target="_blank" rel="noopener noreferrer">MC-14680</a> 拴绳会根据被拴住的实体高度向上或向下偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-27535" target="_blank" rel="noopener noreferrer">MC-27535</a> 生物即使被命名牌命名，有时仍会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84610" target="_blank" rel="noopener noreferrer">MC-84610</a> 副手快捷键在物品栏中无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131286" target="_blank" rel="noopener noreferrer">MC-131286</a> 游泳时攻击会使用右手而不是左手（主手：左手）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134608" target="_blank" rel="noopener noreferrer">MC-134608</a> 某些刷怪笼标签条件会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143473" target="_blank" rel="noopener noreferrer">MC-143473</a> 在生物寻路时将其传送，会导致它返回原目的地</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152157" target="_blank" rel="noopener noreferrer">MC-152157</a> 游戏鸣谢名单中的“Marie Stålkrantz”颜色不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159371" target="_blank" rel="noopener noreferrer">MC-159371</a> 拴绳在蜜蜂上的位置不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159502" target="_blank" rel="noopener noreferrer">MC-159502</a> 蜜蜂不会避开水面，导致自己淹死</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160520" target="_blank" rel="noopener noreferrer">MC-160520</a> 蜜蜂的漫无目的 AI 会尝试穿过三向角落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163921" target="_blank" rel="noopener noreferrer">MC-163921</a> 看着红石矿石放置方块时不播放声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166346" target="_blank" rel="noopener noreferrer">MC-166346</a> 上方有绊线时，透明方块无法正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166880" target="_blank" rel="noopener noreferrer">MC-166880</a> 河豚的刺模型似乎损坏了</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167043" target="_blank" rel="noopener noreferrer">MC-167043</a> 附魔闪光仅适用于带旗帜的盾牌的把手</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169008" target="_blank" rel="noopener noreferrer">MC-169008</a> 在下界使用末地传送门会将玩家传送到末地，但坐标仍为玩家在下界时的坐标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171618" target="_blank" rel="noopener noreferrer">MC-171618</a> 穿戴盔甲的玩家在特定条件下站在火中受到的燃烧伤害降低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171810" target="_blank" rel="noopener noreferrer">MC-171810</a> 部分 Mojang 员工未在鸣谢名单中被提及</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171969" target="_blank" rel="noopener noreferrer">MC-171969</a> 坠落时自动走上一个方块会导致坠落伤害失效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172053" target="_blank" rel="noopener noreferrer">MC-172053</a> 下界粒子会卡在方块底部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172105" target="_blank" rel="noopener noreferrer">MC-172105</a> 猪灵跳舞、瞄准或注视物品时，其身穿的胸甲不会随猪灵的姿势调整</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172110" target="_blank" rel="noopener noreferrer">MC-172110</a> 猪灵或僵尸猪灵佩戴海龟壳时，海龟壳纹理缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172871" target="_blank" rel="noopener noreferrer">MC-172871</a> 在 Y 坐标低于 2 处无法以水平排列生成凋灵</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173310" target="_blank" rel="noopener noreferrer">MC-173310</a> 侦测器激活状态的纹理与未激活状态不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173404" target="_blank" rel="noopener noreferrer">MC-173404</a> 潜行时骑乘实体会导致不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173825" target="_blank" rel="noopener noreferrer">MC-173825</a> 蝙蝠会破坏海龟蛋</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176094" target="_blank" rel="noopener noreferrer">MC-176094</a> 幼年僵尸猪灵鸡骑士可以生成并骑乘炽足兽</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177336" target="_blank" rel="noopener noreferrer">MC-177336</a> 在 Ubuntu 上从 CIFS 挂载点打开世界时出现“无法访问存档”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177530" target="_blank" rel="noopener noreferrer">MC-177530</a> 新的 minecraft:attributes 注册表是复数形式，而其他所有注册表均为单数形式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177542" target="_blank" rel="noopener noreferrer">MC-177542</a> 当 sync-chunk-writes=true 时，区块加载和保存极其缓慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177626" target="_blank" rel="noopener noreferrer">MC-177626</a> 云杉的生成已损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177694" target="_blank" rel="noopener noreferrer">MC-177694</a> 创造模式物品栏中僵尸猪灵刷怪蛋被放置在僵尸村民刷怪蛋之前</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177712" target="_blank" rel="noopener noreferrer">MC-177712</a> 下界传送门方块没有战利品表</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177795" target="_blank" rel="noopener noreferrer">MC-177795</a> 主世界音乐会在下界开始播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177863" target="_blank" rel="noopener noreferrer">MC-177863</a> 蘑菇灯不能用于堆肥</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177876" target="_blank" rel="noopener noreferrer">MC-177876</a> 炽足兽现在出现的频率低得多</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178010" target="_blank" rel="noopener noreferrer">MC-178010</a> Lena Raine 未出现在鸣谢名单中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178338" target="_blank" rel="noopener noreferrer">MC-178338</a> 炽足兽只有在熔岩触碰到腿部时才会感到温暖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179140" target="_blank" rel="noopener noreferrer">MC-179140</a> 守卫者有奇怪的游泳行为</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180603" target="_blank" rel="noopener noreferrer">MC-180603</a> 超平坦世界中会生成错误的结构</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181630" target="_blank" rel="noopener noreferrer">MC-181630</a> 进度触发器“minecraft:tick”不支持标准的“player”谓词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181813" target="_blank" rel="noopener noreferrer">MC-181813</a> 游戏规则菜单标题中的“Edit game rules”未大写“g”和“r”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181884" target="_blank" rel="noopener noreferrer">MC-181884</a> 快速下落/用鞘翅飞行/用激流三叉戟游泳时，投掷弹射物会使其击中玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182076" target="_blank" rel="noopener noreferrer">MC-182076</a> 马跳跃音效未被使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182249" target="_blank" rel="noopener noreferrer">MC-182249</a> 盆栽仙人掌 potted_cactus.json 方块模型文件存在问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182766" target="_blank" rel="noopener noreferrer">MC-182766</a> 如果之前未打开过配方书，配方书搜索功能将无法工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182909" target="_blank" rel="noopener noreferrer">MC-182909</a> 在自定义世界的生物群系选择界面按 Esc 会将我们踢回主菜单</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183018" target="_blank" rel="noopener noreferrer">MC-183018</a> 在创造模式下于水中飞行时潜行，几秒后玩家会退出飞行模式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183402" target="_blank" rel="noopener noreferrer">MC-183402</a> 破坏下界树木时教程不会推进</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183554" target="_blank" rel="noopener noreferrer">MC-183554</a> 在熔岩湖中生成的废弃传送门会非自然地排开熔岩，导致出现奇怪的边界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183588" target="_blank" rel="noopener noreferrer">MC-183588</a> 结构 bastion/treasure/big_air_full 中多出一个绿宝石块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183594" target="_blank" rel="noopener noreferrer">MC-183594</a> 第 5 个大型内部和外部疣猪兽棚不会在堡垒遗迹中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183599" target="_blank" rel="noopener noreferrer">MC-183599</a> 部分疣猪兽棚楼梯结构不会生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183762" target="_blank" rel="noopener noreferrer">MC-183762</a> 帮助菜单中 F3+N 的描述仍是旧功能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183809" target="_blank" rel="noopener noreferrer">MC-183809</a> 大型橡树会替换方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183880" target="_blank" rel="noopener noreferrer">MC-183880</a> 用黄金吸引幼年猪灵会获得“金光闪闪”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183915" target="_blank" rel="noopener noreferrer">MC-183915</a> 墙上的头颅和骷髅头与方块选择轮廓略有偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183931" target="_blank" rel="noopener noreferrer">MC-183931</a> 下界堡垒中的生物不再在扩展边界框内生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183933" target="_blank" rel="noopener noreferrer">MC-183933</a> tellraw 的 show_text 悬浮事件对于需要解析的组件（nbt、score、selector）无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184093" target="_blank" rel="noopener noreferrer">MC-184093</a> 使用末地折跃门会将玩家传送到偏高半个方块的位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184250" target="_blank" rel="noopener noreferrer">MC-184250</a> 附魔台上显示的附魔文字为斜体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184608" target="_blank" rel="noopener noreferrer">MC-184608</a> 启动游戏时出现“Unknown biome, defaulting to plains”错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184612" target="_blank" rel="noopener noreferrer">MC-184612</a> “Import Settings”中的“s”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184613" target="_blank" rel="noopener noreferrer">MC-184613</a> 浮岛设置中会生成末地石</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184644" target="_blank" rel="noopener noreferrer">MC-184644</a> 洞穴自助式世界生成器会生成下界岩，即使使用的是非下界生物群系</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184653" target="_blank" rel="noopener noreferrer">MC-184653</a> [崩溃] 当世界生成维度类型预设不唯一时，游戏崩溃并显示“java.lang.IllegalArgumentException: value already present:”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184675" target="_blank" rel="noopener noreferrer">MC-184675</a> 超平坦虚空预设再次没有起始平台</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184699" target="_blank" rel="noopener noreferrer">MC-184699</a> “/spreadplayers under”无法阻止无效值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184723" target="_blank" rel="noopener noreferrer">MC-184723</a> “World Type: Floating islands”中的“i”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184757" target="_blank" rel="noopener noreferrer">MC-184757</a> [崩溃] 加载使用调试型区块生成器的维度时出现“java.lang.NullPointerException: Ticking memory connection”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184887" target="_blank" rel="noopener noreferrer">MC-184887</a> 你会在洞穴世界的基岩天花板中出生</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184900" target="_blank" rel="noopener noreferrer">MC-184900</a> tellraw 中的换行符会在新行开头添加一个空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184984" target="_blank" rel="noopener noreferrer">MC-184984</a> 连续生成多个世界后游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185004" target="_blank" rel="noopener noreferrer">MC-185004</a> [崩溃] 当世界生成设置中移除维度后，进入末地/下界传送门时发生 java.lang.NullPointerException 崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185164" target="_blank" rel="noopener noreferrer">MC-185164</a> 冰山下半部分始终在 y=62 处生成，无论海平面如何</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185285" target="_blank" rel="noopener noreferrer">MC-185285</a> 创建并重新进入调试世界后，进入末地或下界会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185299" target="_blank" rel="noopener noreferrer">MC-185299</a> 除非同时指定职业，否则无法以特定类型召唤村民</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185363" target="_blank" rel="noopener noreferrer">MC-185363</a> sync-chunk-writes 通常需要一分多钟才能关闭世界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185417" target="_blank" rel="noopener noreferrer">MC-185417</a> 地图在升级后会重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185616" target="_blank" rel="noopener noreferrer">MC-185616</a> 海龟蛋无法在红沙上孵化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185949" target="_blank" rel="noopener noreferrer">MC-185949</a> “Click to Copy to Clipboard”中“Copy”的“C”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186078" target="_blank" rel="noopener noreferrer">MC-186078</a> 当图形设置为“极佳！”时，在某些显卡上透明物体会渲染在透明方块前面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186084" target="_blank" rel="noopener noreferrer">MC-186084</a> 猪灵庆祝舞蹈时，头部和躯干会漂浮并与身体分离</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186085" target="_blank" rel="noopener noreferrer">MC-186085</a> 在船移动时下船后，玩家无法与世界互动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186091" target="_blank" rel="noopener noreferrer">MC-186091</a> 停止游泳时，会播放“潜入水下”音效且视线闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186092" target="_blank" rel="noopener noreferrer">MC-186092</a> 猪灵进行庆祝舞蹈后，头部会发生偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186097" target="_blank" rel="noopener noreferrer">MC-186097</a> 猪移动得非常缓慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186248" target="_blank" rel="noopener noreferrer">MC-186248</a> “Safe Mode”按钮中的“m”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186263" target="_blank" rel="noopener noreferrer">MC-186263</a> “Create Backup &amp; Load”中的“b”和“l”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186337" target="_blank" rel="noopener noreferrer">MC-186337</a> “客户端”的光照与“服务端”不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186353" target="_blank" rel="noopener noreferrer">MC-186353</a> “Edit sign message”中的“s”和“m”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186403" target="_blank" rel="noopener noreferrer">MC-186403</a> 在流动水侧面向上游不再防止玩家溺水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186492" target="_blank" rel="noopener noreferrer">MC-186492</a> 在创造模式下放置睡莲会导致快捷栏中的物品闪烁/消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186905" target="_blank" rel="noopener noreferrer">MC-186905</a> “超平坦自定义”界面每次打开时都会重置，且不显示之前保存的设置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187363" target="_blank" rel="noopener noreferrer">MC-187363</a> 充能后的重生锚不再照亮周围的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187367" target="_blank" rel="noopener noreferrer">MC-187367</a> 下界合金配方会出现在合成台中，尽管它们需要锻造台才能使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187371" target="_blank" rel="noopener noreferrer">MC-187371</a> 在某些显卡上尝试更改云层设置时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187392" target="_blank" rel="noopener noreferrer">MC-187392</a> 含水楼梯中的物品不会漂浮到足够高，无法被楼梯上方的水流捕获</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187394" target="_blank" rel="noopener noreferrer">MC-187394</a> 使用“极佳！”图形时，垂死的末影龙会被渲染为全白色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187402" target="_blank" rel="noopener noreferrer">MC-187402</a> 在服务器上时，末地维度的光照会暗得多</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187405" target="_blank" rel="noopener noreferrer">MC-187405</a> 未启用作弊时，/seed 不再可用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187411" target="_blank" rel="noopener noreferrer">MC-187411</a> 粒子与云层在染色玻璃和固体方块后方无法正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187437" target="_blank" rel="noopener noreferrer">MC-187437</a> 物品栏界面中手持物品不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187449" target="_blank" rel="noopener noreferrer">MC-187449</a> 僵尸猪人/僵尸猪灵在被激怒状态下，如果被玩家以外的任何东西杀死，不再掉落经验和稀有掉落物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187466" target="_blank" rel="noopener noreferrer">MC-187466</a> 在创造模式中被杀死的生物不会掉落经验</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187468" target="_blank" rel="noopener noreferrer">MC-187468</a> 在“极佳！”设置下，某些物品的附魔闪光无法渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187483" target="_blank" rel="noopener noreferrer">MC-187483</a> 仅通过繁殖海龟即可完成“成双成对”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187504" target="_blank" rel="noopener noreferrer">MC-187504</a> 在创造模式下，生物被玩家杀死时不会掉落稀有掉落物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187552" target="_blank" rel="noopener noreferrer">MC-187552</a> 在服务器上，猪灵和疣猪兽会在下界中抖动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187585" target="_blank" rel="noopener noreferrer">MC-187585</a> 具有 NoAI:1b 的海豚会溺水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187592" target="_blank" rel="noopener noreferrer">MC-187592</a> 猪灵会不停地捡起金粒并掉落它们</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187611" target="_blank" rel="noopener noreferrer">MC-187611</a> 使用“极佳！”视频设置并在第一人称视角下按 F1 时出现白色方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187618" target="_blank" rel="noopener noreferrer">MC-187618</a> 保存并退出，然后退出 Minecraft 后，演示世界无法保存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187673" target="_blank" rel="noopener noreferrer">MC-187673</a> [崩溃] “java.lang.IllegalStateException: Unregistered dimension type”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187676" target="_blank" rel="noopener noreferrer">MC-187676</a> “Reset to default”中的“d”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187677" target="_blank" rel="noopener noreferrer">MC-187677</a> “Go back”中的“b”未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187679" target="_blank" rel="noopener noreferrer">MC-187679</a> 蜜蜂的愤怒持续时间长得多</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187730" target="_blank" rel="noopener noreferrer">MC-187730</a> 新生成的僵尸猪灵不会继承先前生成的被激怒僵尸猪灵的仇恨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187739" target="_blank" rel="noopener noreferrer">MC-187739</a> 当 forgiveDeadPlayers = false 时，NeutralMob.playerDied(Player) 不会返回</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187796" target="_blank" rel="noopener noreferrer">MC-187796</a> 狼只有在被攻击后才会表现出敌对外观</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187811" target="_blank" rel="noopener noreferrer">MC-187811</a> 末影龙死亡动画结束后会突然闪一下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187978" target="_blank" rel="noopener noreferrer">MC-187978</a> /seed 在多人服务器上对所有玩家可用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188070" target="_blank" rel="noopener noreferrer">MC-188070</a> 游泳时皮肤出现异常（左手）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188088" target="_blank" rel="noopener noreferrer">MC-188088</a> 主世界超平坦预设不再带有地形装饰生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188216" target="_blank" rel="noopener noreferrer">MC-188216</a> 在“创建新世界”界面中，超平坦生物群系选择会覆盖方块选择</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188393" target="_blank" rel="noopener noreferrer">MC-188393</a> “4k”中的“k”应大写</li>
+</ul>

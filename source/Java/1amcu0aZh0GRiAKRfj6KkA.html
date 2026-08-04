@@ -1,0 +1,60 @@
+<p>It is now time for the first Pre-release for Minecraft 1.20: The Trails and Tales update!</p>
+<p>From now on, you should mostly see bugs being fixed. In addition to that, pre-releases don't follow the regular snapshot cadence of releasing on Wednesdays, so keep an eye out for the next pre-release.</p>
+<p>As always, a big thank you to the community for your feedback, bugs reported, and awesome ideas throughout the snapshot series. Let the pre-releases commence!</p>
+<h1>Changes</h1>
+<ul>
+<li>Colored Wool, Carpets and Beds can now be dyed to any other color</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>Added new damage types: <code>outside_border</code> and <code>generic_kill</code></li>
+<li>Random sequences for loot tables are now deterministic</li>
+<li>Changes in <code>server.properties</code> encoding</li>
+<li><code>string</code> data sources for the <code>data</code> command now accept negative boundaries, which are interpreted as index counted from the end of the string</li>
+</ul>
+<h2>Damage Types</h2>
+<ul>
+<li>Players outside the world border are now hurt by the damage type <code>outside_border</code> instead of <code>in_wall</code></li>
+<li>Forcibly removing an entity using i.e. the <code>/kill</code> command now uses damage type <code>generic_kill</code> instead of <code>out_of_world</code></li>
+</ul>
+<h2>Loot Table Random Sequences</h2>
+<p>The game now uses named random sequences to deterministically produce loot for loot tables. Each random sequence produces a unique sequence based on the world seed and sequence ID, which means a loot table will produce the same results when ran with the same parameters in the same world.</p>
+<p>The ID of the random sequence to use for a loot table is specified in a new field called <code>random_sequence</code>.</p>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>File is now read in UTF-8 initially, with previous encoding (ISO 8859-1/Latin 1) as a fallback</li>
+<li>File is now written with UTF-8 encoding</li>
+</ul>
+<h1>Fixed bugs in 1.20 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-180" target="_blank" rel="noopener noreferrer">MC-180</a> When reaching the other side of a nether portal the animation plays forever until stepped out of</li>
+<li><a href="https://bugs.mojang.com/browse/MC-2215" target="_blank" rel="noopener noreferrer">MC-2215</a> Encoding errors in server.properties</li>
+<li><a href="https://bugs.mojang.com/browse/MC-18060" target="_blank" rel="noopener noreferrer">MC-18060</a> Several realms strings are untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-35078" target="_blank" rel="noopener noreferrer">MC-35078</a> Breaking animation is one frame off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-123081" target="_blank" rel="noopener noreferrer">MC-123081</a> Placing an end crystal when entering The End prevents Ender Dragon from spawning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-146582" target="_blank" rel="noopener noreferrer">MC-146582</a> When entering spectator mode while standing on the ground, the player moves down by 0.19051 blocks, which makes you fall down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195781" target="_blank" rel="noopener noreferrer">MC-195781</a> The "Include entities:" string displayed within the structure block GUI is improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195825" target="_blank" rel="noopener noreferrer">MC-195825</a> "datapacks" string is inconsistent with "data pack" string in "datapackFailure.title" text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198202" target="_blank" rel="noopener noreferrer">MC-198202</a> Options background texture does not match dirt texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203039" target="_blank" rel="noopener noreferrer">MC-203039</a> Incorrect use of colon in options.hideMatchedNames.tooltip</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206548" target="_blank" rel="noopener noreferrer">MC-206548</a> Leash knot subtitles are not properly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226454" target="_blank" rel="noopener noreferrer">MC-226454</a> The "Light as a Rabbit" advancement description has no space after the ellipsis</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236606" target="_blank" rel="noopener noreferrer">MC-236606</a> Lightning bolt related string lacks capitalization</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241736" target="_blank" rel="noopener noreferrer">MC-241736</a> Company names are still inconsistent and partly misspelled in the credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250571" target="_blank" rel="noopener noreferrer">MC-250571</a> Gamerule description strings within the world creation menu consist of inconsistent concluding punctuation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256424" target="_blank" rel="noopener noreferrer">MC-256424</a> Game mode is sometimes referred to as "gamemode"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257336" target="_blank" rel="noopener noreferrer">MC-257336</a> Some chiseled bookshelf interaction subtitles are improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262006" target="_blank" rel="noopener noreferrer">MC-262006</a> Melon and Pumpkin are in the default '#maintains_farmland' tag despite not maintain farmland</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262208" target="_blank" rel="noopener noreferrer">MC-262208</a> In the credits, "Lionbridge" is misspelt in one place (no "g")</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262253" target="_blank" rel="noopener noreferrer">MC-262253</a> Music composers not listed in credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262265" target="_blank" rel="noopener noreferrer">MC-262265</a> Changing resource pack that overrides a font crashes JVM</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262296" target="_blank" rel="noopener noreferrer">MC-262296</a> Rabbits are no longer affected by jump boost</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262300" target="_blank" rel="noopener noreferrer">MC-262300</a> Menu text is now rendered in front of the Mojang Studios loading screen fade animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262304" target="_blank" rel="noopener noreferrer">MC-262304</a> The stepping_on predicate condition does not correctly succeed on trapdoors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262308" target="_blank" rel="noopener noreferrer">MC-262308</a> Entities do not stick to honey blocks pushed by pistons if their center isn't over the honey block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262313" target="_blank" rel="noopener noreferrer">MC-262313</a> Nether won't load in upgraded worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262317" target="_blank" rel="noopener noreferrer">MC-262317</a> Items don't respect properties of the block they are supported on</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262351" target="_blank" rel="noopener noreferrer">MC-262351</a> Worldgen deadlock caused by supporting block checks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262363" target="_blank" rel="noopener noreferrer">MC-262363</a> Player can still gain a normal jump off of a honey block with precise timing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262424" target="_blank" rel="noopener noreferrer">MC-262424</a> Sprinting particles on the edges of blocks are still incorrect</li>
+</ul>

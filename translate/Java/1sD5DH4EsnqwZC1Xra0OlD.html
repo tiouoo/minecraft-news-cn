@@ -1,0 +1,47 @@
+<p>又一个快照现已发布。我们在现有区块下方添加了新的世界生成，方块和流体现在也属于模拟距离设置的一部分。我们还修复了一些漏洞。</p>
+<p>请记住，我们仍在进行世界升级的工作，因此在升级前进行备份仍然是个好主意。</p>
+<p>请尽情享受！</p>
+<h1>21w44a 新特性</h1>
+<ul>
+<li>将世界升级至新世界高度时，新的世界生成区域会插入到现有区块下方</li>
+<li>添加了“在线选项”屏幕，当您处于服务器中时，可在此找到 Realms 通知选项和难度选项</li>
+<li>添加了“允许服务器列表显示”选项，您可以选择不让自己的名字显示在服务器列表中</li>
+</ul>
+<h1>21w44a 更改</h1>
+<ul>
+<li>现在只有在降雨时睡觉才会重置天气循环</li>
+<li>方块和流体现在也会受到模拟距离的影响。测试您的红石装置行为是否保持不变可能是个好主意</li>
+<li>优化了实体碰撞</li>
+</ul>
+<h1>21w44a 技术性更改</h1>
+<ul>
+<li>服务器现在可以将属性 <code>hide-online-players</code> 设置为 <code>true</code>，以便在状态请求时不发送玩家列表</li>
+<li>当从外部源启动 JFR 性能分析时，网络数据包的 JFR 事件现在会被聚合，而不是每个数据包一个事件</li>
+</ul>
+<h1>21w44a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-63340" target="_blank" rel="noopener noreferrer">MC-63340</a> 睡觉总是会重置降雨倒计时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170551" target="_blank" rel="noopener noreferrer">MC-170551</a> 狐狸不能在灰化土或砂土上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200494" target="_blank" rel="noopener noreferrer">MC-200494</a> 在废弃矿井中，火把可能生成在木质支撑以外的方块上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216432" target="_blank" rel="noopener noreferrer">MC-216432</a> 废弃矿井可能在生成时出现有光但无火把的情况</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216561" target="_blank" rel="noopener noreferrer">MC-216561</a> 废弃矿井在 y=0 以下不会生成火把</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217038" target="_blank" rel="noopener noreferrer">MC-217038</a> 大型滴水石结构可能会在洞穴外生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236701" target="_blank" rel="noopener noreferrer">MC-236701</a> 新的山地生物群系不计入“探索的时光”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236938" target="_blank" rel="noopener noreferrer">MC-236938</a> /jfr stop 的输出没有链接</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237986" target="_blank" rel="noopener noreferrer">MC-237986</a> 结构专属生物不会在其结构中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238062" target="_blank" rel="noopener noreferrer">MC-238062</a> 狐狸和狼不会在雪坡生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238761" target="_blank" rel="noopener noreferrer">MC-238761</a> “探索的时光”进度未将新的洞穴生物群系计入</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238877" target="_blank" rel="noopener noreferrer">MC-238877</a> “探索的时光”进度不需要深海和海洋</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238900" target="_blank" rel="noopener noreferrer">MC-238900</a> 默认世界生成的噪声设置中包含‘Infinity’值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238912" target="_blank" rel="noopener noreferrer">MC-238912</a> 细雪条带无法在暴露于地表的区域生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238962" target="_blank" rel="noopener noreferrer">MC-238962</a> 冰山会一直延伸到海底</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238966" target="_blank" rel="noopener noreferrer">MC-238966</a> 原始云杉针叶林和原始桦木森林不计入“探索的时光”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238968" target="_blank" rel="noopener noreferrer">MC-238968</a> 风袭砾质丘陵和风袭热带草原不计入“探索的时光”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239280" target="_blank" rel="noopener noreferrer">MC-239280</a> 当凋灵的生命值降至一半或更低时，凋灵不会向下移动以追随玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239344" target="_blank" rel="noopener noreferrer">MC-239344</a> 废弃矿井中所有火把的朝向都错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239359" target="_blank" rel="noopener noreferrer">MC-239359</a> 凋灵骷髅只能在下界砖上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239689" target="_blank" rel="noopener noreferrer">MC-239689</a> 噪声设置中的‘amplified’布尔值没有作用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239854" target="_blank" rel="noopener noreferrer">MC-239854</a> 下界与洞穴世界缺少基岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239858" target="_blank" rel="noopener noreferrer">MC-239858</a> 下界装饰物会生成在原始基岩层上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239866" target="_blank" rel="noopener noreferrer">MC-239866</a> 噪声设置中的地形塑造器未被使用</li>
+</ul>

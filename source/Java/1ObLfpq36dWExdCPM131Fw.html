@@ -1,0 +1,105 @@
+<p>This week's snapshot brings you some tweaks, bugfixes, and technical changes!</p>
+<p>We also have a survey up so that you can tell us what you think about the Nether Update. You can find it by clicking <a href="https://www.surveymonkey.com/r/SF65G2F" target="_blank" rel="noopener noreferrer">here</a>. We would very much appreciate if you could take the time and fill it out.</p>
+<h1>New Features in 20w17a</h1>
+<ul>
+<li>Added an Entity Distance scale option ranging from 50% to 500%</li>
+<li>Difficulty and game rules can now be changed from "Create World" screen</li>
+</ul>
+<h1>Changes in 20w17a</h1>
+<ul>
+<li>Improved Smithing Table UI</li>
+<li>Ruined portals now spawn less frequently</li>
+<li>Renamed "Soul Fire Torch" and "Soul Fire Lantern" to "Soul Torch" and "Soul Lantern"</li>
+<li>Tweaked Bastion Remnant loot</li>
+<li>Walls now create posts under more things, like pressure plates and banners</li>
+<li>The "Singleplayer" button will jump directly to "Create World" screen if there are no worlds to select</li>
+</ul>
+<h1>Technical Changes in 20w17a</h1>
+<ul>
+<li>Block storage format in chunks slightly changed to speed up various tasks (rendering, pathfinding, world generation, etc).</li>
+<li>Chat component style can now select font.</li>
+<li>Full range of Unicode characters is supported (some may know what that means 😉)</li>
+<li>Added the <code>attribute</code> command</li>
+</ul>
+<h2>World save format</h2>
+<ul>
+<li>Saving <code>level.dat</code> now uses randomly-named temporary files (instead of using <code>level.dat_new</code> every time)</li>
+<li><code>player/*.dat</code> are now saved in a way similar to <code>level.dat</code> (including leaving <code>.dat_old</code> files)</li>
+</ul>
+<h2>Block storage</h2>
+<p><code>BlockStates</code> in <code>Sections</code> elements no longer contain values stretching over multiple 64-bit fields. If number of bits per block is not power of two (i.e. single 64-bit value can't fill whole number of blockstates) some bits will not be used.
+For example, if single block state takes 5 bits, highest 4 bits of every 64-bit field will be unused. That also means slight increase in storage size (in case of 5 bits, from 320 to 342 64-bit fields).</p>
+<h2>Commands</h2>
+<h3><code>attribute</code></h3>
+<p>Adds modifies attribute on single entity. Possible syntax:
+Parameters:</p>
+<ul>
+<li><code>attribute &#x3C;target> &#x3C;attribute> get [&#x3C;scale>]</code> - get total value of attribute</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> base set &#x3C;value></code> - sets base valye</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> base get [&#x3C;scale>]</code> - get base value</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier add &#x3C;uuid> &#x3C;name> &#x3C;value> add|multiply|multiply_base</code> - adds modifier (fails if modifier is already present)</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier remove &#x3C;uuid></code> - removes modifier</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier value get &#x3C;uuid> [&#x3C;scale>]</code> - get value of modifier</li>
+<li><code>target</code> - single entity (note: only players, armor stands and mobs have attributes)</li>
+<li><code>attribute</code> - name of attribute (like <code>minecraft:generic.max_health</code>)</li>
+<li><code>name</code> - string (in optional quotes) describing human-readable name of modifier</li>
+<li><code>value</code> - floating point value (note: certain attributes have limits on final value, so your change might not be noticeable)</li>
+</ul>
+<h2>Chat components</h2>
+<h3>Hover event argument</h3>
+<ul>
+<li><code>style.hoverEvent</code> parameter now has parameter <code>contents</code>, with contents depending on type:<ul>
+<li>For <code>show_text</code> - chat component</li>
+<li>For <code>show_item</code> - either item id or object with fields <code>id</code>, <code>count</code> and <code>tag</code> (with last one being serialized NBT)</li>
+<li>For <code>show_entity</code> - object with fields: <code>id</code> (UUID), <code>name</code> (chat component) and <code>type</code> (entity type resource location)</li>
+</ul></li>
+<li>Old style <code>value</code> argument is now deprecated (but still supported)</li>
+</ul>
+<h3>Colors</h3>
+<p><code>color</code> property can now contain RGB value prefixed by <code>#</code>. For example <code>#55ff55</code> will result in the same color as <code>green</code>.</p>
+<h3>Custom fonts</h3>
+<p>Chat component style now supports <code>font</code> property, which is resource location for font in resource pack. No entry is equivalent to <code>minecraft:default</code>.</p>
+<h2>Fonts</h2>
+<ul>
+<li><code>Force Unicode</code> option now switches between normal and alternative font (called <code>uniform.json</code>) - no reload needed</li>
+</ul>
+<h1>Fixed bugs in 20w17a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-5410" target="_blank" rel="noopener noreferrer">MC-5410</a> In creative mode, flying down is stopped when brushing up against ladders or vines.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-31032" target="_blank" rel="noopener noreferrer">MC-31032</a> Using only one empty map doesn't increase minecraft.used:minecraft.map</li>
+<li><a href="https://bugs.mojang.com/browse/MC-46417" target="_blank" rel="noopener noreferrer">MC-46417</a> Sprint particles are generated in spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-56373" target="_blank" rel="noopener noreferrer">MC-56373</a> Selector and score text components don't work on hoverEvents</li>
+<li><a href="https://bugs.mojang.com/browse/MC-94535" target="_blank" rel="noopener noreferrer">MC-94535</a> Flying and holding CTRL really close to the ground, emits walking particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-96319" target="_blank" rel="noopener noreferrer">MC-96319</a> Mob pathfinding AI does not regard some blocks as obstructions and is unable to pathfind on top of them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-100195" target="_blank" rel="noopener noreferrer">MC-100195</a> Player retains 1-block hitbox if entering a minecart/boat while swimming or when flying with elytra or a riptide trident</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114544" target="_blank" rel="noopener noreferrer">MC-114544</a> Kicked by "Flying is not enabled on this server" while sleeping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-120572" target="_blank" rel="noopener noreferrer">MC-120572</a> /recipe crashes the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-126244" target="_blank" rel="noopener noreferrer">MC-126244</a> '/locate', explorer maps, and treasure maps can cause extreme TPS lag, even leading to a complete server freeze if structure generation is turned off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149704" target="_blank" rel="noopener noreferrer">MC-149704</a> Sneaking / crouching twice makes player sprint</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169514" target="_blank" rel="noopener noreferrer">MC-169514</a> Tamed parrots cannot be renamed unless they are flying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171561" target="_blank" rel="noopener noreferrer">MC-171561</a> Only one player can access shulker box at a time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174359" target="_blank" rel="noopener noreferrer">MC-174359</a> Piglins prefer using an unenchanted gold item instead of an enchanted gold item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175113" target="_blank" rel="noopener noreferrer">MC-175113</a> Rain prevents entities from burning in fire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175186" target="_blank" rel="noopener noreferrer">MC-175186</a> Respawning doesn't check if the "respawn block" is the correct one for the dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175998" target="_blank" rel="noopener noreferrer">MC-175998</a> Striders are moving very fast between two blocks or when diagonally running into blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176029" target="_blank" rel="noopener noreferrer">MC-176029</a> Right clicking a lodestone with a stack of compasses converts the whole stack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176060" target="_blank" rel="noopener noreferrer">MC-176060</a> Recipe book doesn't load the entire empty map recipe anymore</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176104" target="_blank" rel="noopener noreferrer">MC-176104</a> Dropped compasses always point up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176116" target="_blank" rel="noopener noreferrer">MC-176116</a> Saddle texture on Strider is backwards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176521" target="_blank" rel="noopener noreferrer">MC-176521</a> Pressing space while the recipe book button is highlighted in crafting interfaces doesn't toggle the recipe book</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177346" target="_blank" rel="noopener noreferrer">MC-177346</a> Compass in a mob's hand does not point to correct location if mob turns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177776" target="_blank" rel="noopener noreferrer">MC-177776</a> Netherite ingots are not sorted properly with other ingots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177780" target="_blank" rel="noopener noreferrer">MC-177780</a> Shulkers cannot be opened while playing closing animation anymore</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177796" target="_blank" rel="noopener noreferrer">MC-177796</a> Blackstone walls are in the "Building Blocks" category instead of "decoration Blocks" category, unlike all other walls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177862" target="_blank" rel="noopener noreferrer">MC-177862</a> Polished blackstone button and pressure plate in incorrect area in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177885" target="_blank" rel="noopener noreferrer">MC-177885</a> Invisible Horses show patterns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177997" target="_blank" rel="noopener noreferrer">MC-177997</a> Baby zoglins still use the same attack damage as an adult</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178086" target="_blank" rel="noopener noreferrer">MC-178086</a> Flying close to the ground with soul speed over soul blocks speeds up player and generates soul particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178093" target="_blank" rel="noopener noreferrer">MC-178093</a> Piglins with full inventories won't pick up gold ingots to barter even though you can still right-click to barter with them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178259" target="_blank" rel="noopener noreferrer">MC-178259</a> Game crashes when an iron golem with the attack damage attribute set to 0.5d</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178316" target="_blank" rel="noopener noreferrer">MC-178316</a> Dispenser plays "dispensed item" sound when attempting to charge a full respawn anchor instead of "dispenser fails"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178630" target="_blank" rel="noopener noreferrer">MC-178630</a> TNT eyeheight changed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178797" target="_blank" rel="noopener noreferrer">MC-178797</a> Barrier blocks generate in bastion remnant</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178955" target="_blank" rel="noopener noreferrer">MC-178955</a> Badlands are viewed as a mountainous biome for Ruined Portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179542" target="_blank" rel="noopener noreferrer">MC-179542</a> Basalt Delta Blocks Override Nether Bricks in Fortresses</li>
+</ul>

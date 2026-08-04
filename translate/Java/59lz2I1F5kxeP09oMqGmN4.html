@@ -1,0 +1,78 @@
+<p>洞穴与山崖：第二部分的第二个快照来了！这个快照主要包含微调和漏洞修复，但也有一些新的技术性新增内容，例如一个独立的模拟距离滑块和增加的线程数量（不，我不是在说你想买的那种高级床单的线数）。</p>
+<p>哦，而且你们似乎也非常喜欢要塞，所以我们决定将它们重新加入游戏。尽情享受吧！</p>
+<h1>21w38a的已知问题</h1>
+<ul>
+<li>此快照仍与旧世界不兼容——要在此快照中游玩，你必须创建一个新世界</li>
+<li>世界保存有时可能需要非常长的时间——如果你看到世界有一段时间静止不动，原因就是这样</li>
+</ul>
+<h1>21w38a中的更改</h1>
+<ul>
+<li>当你只是轻轻将袖子蹭到墙壁时，疾跑不再变为行走</li>
+<li>修复了矿石的分布</li>
+</ul>
+<h2>矿石分布</h2>
+<ul>
+<li>铜矿石最高生成至y=95（如最初设计）</li>
+<li>增加了铜的生成数量</li>
+<li>青金石像其他矿石一样以团块形式生成（而不是分散分布）</li>
+</ul>
+<h2>疾跑</h2>
+<ul>
+<li>之前，与方块发生任何碰撞都会使疾跑变为行走。现在，当与方块碰撞的角度非常小时，玩家会保持疾跑。当碰撞角度较大时，将保留旧行为。</li>
+</ul>
+<h1>21w38a中的技术性更改</h1>
+<ul>
+<li>新增了一个设置：“模拟距离”</li>
+<li>增加了后台线程的最大数量</li>
+<li>加入了世界加载的遥测</li>
+</ul>
+<h2>模拟距离设置</h2>
+<ul>
+<li>模拟距离之外的实体不会被更新。</li>
+<li>允许以更低的CPU负载实现更高的渲染距离。</li>
+<li>在客户端的视频设置中新增了一个滑块。</li>
+<li>在专用服务器属性中新增了一个<code>simulation-distance</code>属性。</li>
+<li>我们将继续对此进行完善，目标是让模拟距离也影响方块和流体的刻更新。</li>
+</ul>
+<h2>后台线程最大数量增加</h2>
+<p>包括世界生成在内的各种后台任务在后台线程池中执行。线程池的大小等于可用CPU线程数减一，但之前上限是7。现在这个上限是255。这应该有助于高端机器提升世界生成的性能。</p>
+<p>这个上限可以通过<code>max.bg.threads</code>Java系统属性覆盖，例如在一台机器上运行多个服务器时。</p>
+<h2>遥测</h2>
+<p>在此版本中，我们重新引入了诊断跟踪，这项功能在2018年之前曾是Minecraft：Java版的一部分。我们将它带回来，是为了更好地了解玩家并改善他们的体验。具体来说，我们希望确保在今年晚些时候的洞穴与山崖更新第二部分中，极其繁重的世界生成能拥有更强劲的性能。</p>
+<p>在实际中，这意味着识别游戏中的技术痛点，例如较弱的硬件在高复杂度地形中的表现。这些信息还将帮助我们确定开发的优先方面，平衡游戏特性（例如，了解到山羊把每个玩家都从悬崖上撞下去），并在发现许多新玩家卡在相同地方之后向他们伸出援手。所有数据都按照GDPR和CCPA的最佳实践处理，用于打造性能更好、总体上更令人愉快的Minecraft：Java版。</p>
+<p>目前，唯一实现的事件是世界加载。</p>
+<h3>世界加载事件</h3>
+<ul>
+<li>在加载单人世界或连接多人服务器时发送</li>
+<li>包含以下信息：<ul>
+<li>启动器标识符</li>
+<li>用户标识符（XUID）</li>
+<li>客户端会话ID（重启时更改）</li>
+<li>世界会话ID（每次加载世界时更改，供后续事件复用）</li>
+<li>游戏版本</li>
+<li>操作系统名称和版本</li>
+<li>Java运行时版本</li>
+<li>客户端或服务器是否安装模组（与崩溃日志中的信息相同）</li>
+<li>服务器类型（单人、Realms或其他）</li>
+<li>游戏模式</li>
+</ul></li>
+</ul>
+<h1>21w38a中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-44055" target="_blank" rel="noopener noreferrer">MC-44055</a> 游戏开始后无法将音频输出从一个设备切换到另一个设备（在标题画面状态下）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236611" target="_blank" rel="noopener noreferrer">MC-236611</a> 对垂泪藤、缠怨藤、洞穴藤蔓或海带使用剪刀时没有声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236618" target="_blank" rel="noopener noreferrer">MC-236618</a> 要塞不会在21w37a中生成</li>
+<li><ul>
+<li><a href="https://bugs.mojang.com/browse/MC-236621" target="_blank" rel="noopener noreferrer">MC-236621</a> 液体有时不会扩散</li>
+</ul></li>
+<li><a href="https://bugs.mojang.com/browse/MC-236633" target="_blank" rel="noopener noreferrer">MC-236633</a> 天空中出现随机的光照等级0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236656" target="_blank" rel="noopener noreferrer">MC-236656</a> 更改渲染距离时崩溃 / java.lang.ArrayIndexOutOfBoundsException: Index 28084 out of bounds for length 26136</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236665" target="_blank" rel="noopener noreferrer">MC-236665</a> 21w37a中的内存泄漏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236698" target="_blank" rel="noopener noreferrer">MC-236698</a> 大型云杉树不会在雪林中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236711" target="_blank" rel="noopener noreferrer">MC-236711</a> 在同一分钟内多次启动和停止JFR分析会覆盖该分钟内先前保存的JFR结果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236718" target="_blank" rel="noopener noreferrer">MC-236718</a> 滴水石洞穴生成在地面以上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236795" target="_blank" rel="noopener noreferrer">MC-236795</a> 由于JFR要求，无法使用备用JVM启动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236873" target="_blank" rel="noopener noreferrer">MC-236873</a> JFR事件元数据存在问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236967" target="_blank" rel="noopener noreferrer">MC-236967</a> 在Y=63及以下的生物群系表面有太多含水层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237109" target="_blank" rel="noopener noreferrer">MC-237109</a> 含水层经常生成生硬的直线边界</li>
+</ul>

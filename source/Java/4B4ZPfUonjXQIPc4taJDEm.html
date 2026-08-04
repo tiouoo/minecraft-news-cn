@@ -1,0 +1,99 @@
+<p>Are you pre-pared for Pre-release 1 of 1.20.2? Moving into pre-releases means that, moving forward, you won't see any significant changes besides bug fixes and tweaks until the next snapshot cycle. It also means that we will be releasing more frequently than just Wednesdays, so keep your eyes peeled!
+However, Pre-release 1 brings new changes to the 'Villager Trade Rebalance' experiment, updates to Recipe Book search, command changes, and a new game rule!</p>
+<p>Happy crafting!</p>
+<h1>Changes</h1>
+<ul>
+<li>The Recipe Book search has been updated with the following changes:<ul>
+<li>The search will only match the beginning of any word in the item's name<ul>
+<li>For example, searching for "tor" will still show Torch and Redstone Torch but not Daylight Detector anymore</li>
+</ul></li>
+<li>All recipes, including those that have not been unlocked, will now show up in search results</li>
+<li>This will enable experienced players to find the recipes they are looking for (even if it hasn't been unlocked yet) without overwhelming new players</li>
+</ul></li>
+<li>Updated structure icons on explorer maps sold by Cartographers</li>
+<li>When villagers unlock new trades, the order of those trades in the UI is now always random instead of sometimes being deterministic</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The data pack version is now 18</li>
+<li>Client options are now sent during the configuration network phase when joining a server</li>
+</ul>
+<h2>Data Pack Version 18</h2>
+<p>This data pack version removes the recently introduced <code>execute if function</code> and <code>return run</code> functionality. Flaws with those commands (see bugs <a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a>, <a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> and <a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a>) require some substantial changes to fix, which we do not want to make close to a release.</p>
+<p>These commands will instead be reintroduced early in the next snapshot series when we can take the time to iterate on and test them together with pack makers.</p>
+<ul>
+<li>Removed <code>execute if|unless function</code> command form</li>
+<li>Removed <code>return run</code> command form</li>
+<li>Numbers used as macro arguments are now always inserted without suffixes, regardless of numeric type</li>
+<li>Added game rule <code>enderPearlsVanishOnDeath</code>, controlling whether thrown ender pearls vanish when the player that threw them dies (default <code>true</code>)</li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Villager Trade Rebalance Part 2</h2>
+<p>This pre-release updates the Villager Trade Rebalance experiment. This experiment has no effect on normal worlds. If you want to try these changes, you must turn on the Feature Toggle in the Experiments Menu when creating a new world. You can find more information about Feature Toggles <a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>Thank you to everyone that has sent in their suggestions and feedback regarding the experimental trade change! We are trying out these changes to rebalance the villager trade system and make it more fair and fun for everyone. However, these changes are not yet final, and they will stay as experimental features while we continue to work on them.
+We appreciate your feedback on these changes. Visit <a href="https://aka.ms/VillagerTradingFeedback" target="_blank" rel="noopener noreferrer">this link</a> to share your thoughts! We have been following the discussions about the previous Librarian and Wandering Trader updates and look forward to seeing the conversation continue.</p>
+<h3>Cartographer</h3>
+<p>Before now, Cartographers only sold maps to the Ocean Monument and Woodland Mansion. In this experiment Cartographers can sell seven new maps as well. These new maps each point to a different village or structure and can be used to find seven different biomes. This will help players who want to quickly find a specific location without waiting until they come across it by chance.</p>
+<p>Cartographers from different biomes will sell a different selection of maps. Starting from one village, it will be possible to find every other village type by following maps from village to village.</p>
+<p>Cartographers now sell 7 new maps: Desert Village Map, Jungle Explorer Map, Plains Village Map, Savanna Village Map, Snow Village Map, Swamp Explorer Map, and Taiga Village Map.</p>
+<h3>Armorer</h3>
+<p>The Armorer's trades have been updated with many changes.</p>
+<p>The biggest change is that buying diamond armor now requires paying a small amount of Diamonds as well as Emeralds. This is meant to make the Armorer's diamond armor trades less useful at the start of the game when players don't have any Diamonds, while still giving a powerful advantage to advanced players who have spent some time collecting Diamonds.</p>
+<p>Early-game players will find Armorers useful as a great source of iron armor, Shields and Emeralds.</p>
+<p>Other changes include:</p>
+<ul>
+<li>Most master-level Armorers buy Iron Blocks (and pay very well for them)</li>
+<li>Chainmail armor is exclusively sold by the secret Jungle and Swamp Armorers</li>
+<li>The Savanna Armorer sells cursed diamond armor at reduced prices</li>
+<li>The Taiga Armorer can swap one piece of diamond armor for another</li>
+</ul>
+<h3>Structure Loot</h3>
+<p>Certain Enchanted Books now have a high chance of generating in some structures:</p>
+<ul>
+<li>Ancient Cities: Mending</li>
+<li>Mineshafts: Efficiency (I to V)</li>
+<li>Pillager Outposts: Quick Charge (I to III)</li>
+<li>Desert Temples: Unbreaking (I to III)</li>
+<li>Jungle Temples: Unbreaking (I to III)</li>
+</ul>
+<h1>Fixed bugs in 1.20.2 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-70127" target="_blank" rel="noopener noreferrer">MC-70127</a> Some block state changes aren't communicated to clients</li>
+<li><a href="https://bugs.mojang.com/browse/MC-72721" target="_blank" rel="noopener noreferrer">MC-72721</a> Chat messages show after death independent of chat setting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-103800" target="_blank" rel="noopener noreferrer">MC-103800</a> Sometimes armor stands won't update their visual rotation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-119873" target="_blank" rel="noopener noreferrer">MC-119873</a> The text used for the credits button within the title screen is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154827" target="_blank" rel="noopener noreferrer">MC-154827</a> Typo in splash text "Verlet intregration!"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177172" target="_blank" rel="noopener noreferrer">MC-177172</a> Dash in villager/trader UI is hardcoded / untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248778" target="_blank" rel="noopener noreferrer">MC-248778</a> The item count symbol within shulker box tooltips is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248833" target="_blank" rel="noopener noreferrer">MC-248833</a> The parentheses used before and after the warning label within the language menu are untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248844" target="_blank" rel="noopener noreferrer">MC-248844</a> The page indicator symbol within the recipe book GUI is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248846" target="_blank" rel="noopener noreferrer">MC-248846</a> The colon used within the death screen to show the player's score is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249355" target="_blank" rel="noopener noreferrer">MC-249355</a> The hyphen used within the statistics menu to show a null value is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252295" target="_blank" rel="noopener noreferrer">MC-252295</a> The word "whilst" within several death messages isn't spelled in American English</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252298" target="_blank" rel="noopener noreferrer">MC-252298</a> Death messages relating to the Thorns enchantment don't contain conjunctions where appropriate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252316" target="_blank" rel="noopener noreferrer">MC-252316</a> The word "burnt" within some death messages isn't spelled in American English</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253241" target="_blank" rel="noopener noreferrer">MC-253241</a> The player count indicator symbol within the multiplayer menu is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253269" target="_blank" rel="noopener noreferrer">MC-253269</a> The advancement progress indicator symbol within the advancements menu is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253270" target="_blank" rel="noopener noreferrer">MC-253270</a> The hyphen used within boss bars for raids is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253278" target="_blank" rel="noopener noreferrer">MC-253278</a> The percentage symbol used within the level loading screen to show the loading progress of the world is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253281" target="_blank" rel="noopener noreferrer">MC-253281</a> Text within filled map tooltips when advanced tooltips are hidden is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253283" target="_blank" rel="noopener noreferrer">MC-253283</a> The percentage and chunk indicator symbols used within the optimize world menu are untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253638" target="_blank" rel="noopener noreferrer">MC-253638</a> The symbols used within shulker box tooltips to show random loot table contents are untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255418" target="_blank" rel="noopener noreferrer">MC-255418</a> Vertical redstone dust placed against dropper/dispenser/hopper doesn't visually disappear when the dust above is removed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256777" target="_blank" rel="noopener noreferrer">MC-256777</a> The two characters used within the tab list to show players' health are untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260819" target="_blank" rel="noopener noreferrer">MC-260819</a> The "death.attack.message_too_long" string is missing an article before the word "stripped"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263133" target="_blank" rel="noopener noreferrer">MC-263133</a> Inconsistent word usage in Out of Memory screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264233" target="_blank" rel="noopener noreferrer">MC-264233</a> Player is shown as Anonymous after dying and respawning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264574" target="_blank" rel="noopener noreferrer">MC-264574</a> symlink does not work for root world folder</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264615" target="_blank" rel="noopener noreferrer">MC-264615</a> It takes several seconds for the absorption effect icon to display after obtaining the effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264656" target="_blank" rel="noopener noreferrer">MC-264656</a> Regular golden apples don't increase the number of gold hearts if you previously ate an enchanted golden apple and then took damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264657" target="_blank" rel="noopener noreferrer">MC-264657</a> Absorption gold heart refilling is determined by whether the low level and the high level have the same hideParticles parameter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264658" target="_blank" rel="noopener noreferrer">MC-264658</a> Only integer numeric data type can be used in macro</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264809" target="_blank" rel="noopener noreferrer">MC-264809</a> Redstone comparators cause redstone dust connection issue</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265053" target="_blank" rel="noopener noreferrer">MC-265053</a> Programmer Art lapis lazuli outline texture in enchanting table UI incorrectly uses the old formatting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265060" target="_blank" rel="noopener noreferrer">MC-265060</a> Missing sprite for error in Loom GUI (loom.png)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265126" target="_blank" rel="noopener noreferrer">MC-265126</a> 'requirements' field can no longer be skipped in advancements</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265151" target="_blank" rel="noopener noreferrer">MC-265151</a> The "(Unknown)" string that's displayed when being banned from a server for an unknown reason is untranslatable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265209" target="_blank" rel="noopener noreferrer">MC-265209</a> Switching to protocol "CONFIGURATION" causes race condition</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265213" target="_blank" rel="noopener noreferrer">MC-265213</a> The chat message from the /random command says "between 1 and 6" instead of "1 to 6"</li>
+</ul>

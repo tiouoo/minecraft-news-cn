@@ -1,0 +1,76 @@
+<p>现在有了两倍的 Java 版本。</p>
+<p>从这个快照开始，蜡烛、收纳袋和幽匿传感器只能通过命令获取。我们认为它们尚未达到我们想要的洞穴与山崖第一部分发布品质。要在生存模式中继续尝试这些特性，请使用预览数据包！</p>
+<h1>21w19a 中的更改</h1>
+<ul>
+<li>铁砧界面中的物品名称最大长度已从 35 增至 50。</li>
+<li>紫晶洞的生成频率显著降低。</li>
+<li>未完成的物品（幽匿传感器、收纳袋和蜡烛）已从创造模式物品栏中移除。</li>
+<li>未完成物品（收纳袋、蜡烛）的配方已移除。</li>
+</ul>
+<h1>洞穴与山崖预览的更改</h1>
+<p>下载<a href="https://launcher.mojang.com/v1/objects/a6b56d6f14869646eb8d399e99a0149bdd954490/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">更新后的数据包</a>。</p>
+<ul>
+<li>该数据包现在包含与收纳袋和蜡烛相关的配方。</li>
+</ul>
+<h1>21w19a 中的技术性更改</h1>
+<ul>
+<li>升级至 Java 16。</li>
+<li>添加了 <code>mineable/axe</code>、<code>mineable/hoe</code>、<code>mineable/pickaxe</code> 和 <code>mineable/shovel</code> 方块标签。带有这些标签的方块可以被相应的工具更快地破坏。</li>
+<li>添加了 <code>needs_stone_tool</code>、<code>needs_iron_tool</code> 和 <code>needs_diamond_tool</code> 方块标签。如果方块需要正确的工具才会掉落，这些标签将决定需要该工具的哪个等级。</li>
+<li>更改了 <code>/item</code> 命令的语法。</li>
+</ul>
+<h2>Java 16</h2>
+<p>Minecraft 现在使用更新版本的 Java。如果你使用默认设置，启动器将下载并安装正确的版本。如果你使用自定义 Java 设置或第三方启动器，则需要确保你的 Java 安装版本为 16 或更高。</p>
+<h2>Item 命令</h2>
+<p>新语法：</p>
+<ul>
+<li><code>/item replace &#x3C;target> with &#x3C;item stack> [&#x3C;count>]</code> - 与旧的 <code>replaceitem</code> 相同</li>
+<li><code>/item replace &#x3C;target> from &#x3C;source> [&#x3C;modifier>]</code> - 将物品从来源复制到目标（们），可选应用修饰器</li>
+<li><code>/item modify &#x3C;target> &#x3C;modifier></code> - 修改物品（不复制）</li>
+</ul>
+<p>例如，<code>/item replace block ~ ~ ~ container.0 from entity @s enderchest.0</code> 会将玩家末影箱中的第一个物品复制到玩家当前所站容器的第一个槽位。</p>
+<h1>21w19a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-105080" target="_blank" rel="noopener noreferrer">MC-105080</a> 如果所有出口末地传送门方块被移除 / 对具有新末影龙战斗的世界进行旧版扫描，末影龙会重新生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136647" target="_blank" rel="noopener noreferrer">MC-136647</a> 拴绳对鱿鱼无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200009" target="_blank" rel="noopener noreferrer">MC-200009</a> 当在巨型蘑菇地物的菌盖中使用非蘑菇方块时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203606" target="_blank" rel="noopener noreferrer">MC-203606</a> “X 蜡烛蛋糕”应改为“带 X 蜡烛的蛋糕”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203718" target="_blank" rel="noopener noreferrer">MC-203718</a> 避雷针在被活塞移动的同时被闪电击中时，会保持激活状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203757" target="_blank" rel="noopener noreferrer">MC-203757</a> 铁砧的字符限制对于长名称物品来说太低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204244" target="_blank" rel="noopener noreferrer">MC-204244</a> 透过遮光玻璃方块观察时，羊的渲染会与白色剪毛羊相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205626" target="_blank" rel="noopener noreferrer">MC-205626</a> /item 的命令语法顺序不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208663" target="_blank" rel="noopener noreferrer">MC-208663</a> 河豚不会防御美西螈的攻击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208740" target="_blank" rel="noopener noreferrer">MC-208740</a> 凋灵会攻击装死的美西螈</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209533" target="_blank" rel="noopener noreferrer">MC-209533</a> 在创造模式物品栏中，紫水晶碎片没有与其他宝石类物品归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212206" target="_blank" rel="noopener noreferrer">MC-212206</a> 在世界边界外生成的潜影贝在尝试生成时会出现故障</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213774" target="_blank" rel="noopener noreferrer">MC-213774</a> 垂根在手中会悬浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213922" target="_blank" rel="noopener noreferrer">MC-213922</a> 潜影贝不会在正确的位置生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213943" target="_blank" rel="noopener noreferrer">MC-213943</a> 在大垂叶上方稍高处飞行会使其倾斜，即使没有接触它</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214127" target="_blank" rel="noopener noreferrer">MC-214127</a> 尽管洞穴藤蔓是一种浆果植物，蜜蜂不会为其授粉</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214220" target="_blank" rel="noopener noreferrer">MC-214220</a> 水流中的物品不会从大垂叶上掉落，但会不停尝试掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214283" target="_blank" rel="noopener noreferrer">MC-214283</a> 垂根的破坏声音事件两次使用 break3，遗漏了 break4</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217626" target="_blank" rel="noopener noreferrer">MC-217626</a> 在创造模式物品栏中，孢子花在花朵中的位置相当奇怪</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219445" target="_blank" rel="noopener noreferrer">MC-219445</a> 在流动的水中对大垂叶使用骨粉不会更新水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219873" target="_blank" rel="noopener noreferrer">MC-219873</a> 闪电对避雷针的检测不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220106" target="_blank" rel="noopener noreferrer">MC-220106</a> 闪电击中站在另一个铜块上方的铜台阶上的实体时，会先完全清除底部铜块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220215" target="_blank" rel="noopener noreferrer">MC-220215</a> 当实体站在潜影盒上时打开潜影盒，会使该实体短暂地被推得过高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221309" target="_blank" rel="noopener noreferrer">MC-221309</a> 经验球在细雪中移动时会产生粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221756" target="_blank" rel="noopener noreferrer">MC-221756</a> 当方块光照等级为 7 或更高时，雪粒子完全不会渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221844" target="_blank" rel="noopener noreferrer">MC-221844</a> 细雪被着火的生物破坏时不会产生粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221957" target="_blank" rel="noopener noreferrer">MC-221957</a> 对 15 级光源方块使用选取方块键会返回一个与默认光源方块不同的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222738" target="_blank" rel="noopener noreferrer">MC-222738</a> 拴绳对发光鱿鱼无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222882" target="_blank" rel="noopener noreferrer">MC-222882</a> 创造模式物品栏搜索标签中的望远镜与方块类型混在一起，而不是放在它所属的工具类中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223132" target="_blank" rel="noopener noreferrer">MC-223132</a> 当细雪因熄灭燃烧的玩家、生物或火焰箭而被破坏时，不会产生破坏声音或字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223171" target="_blank" rel="noopener noreferrer">MC-223171</a> 在创造模式物品栏中，紫水晶母岩和铜变体方块相距很远</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223227" target="_blank" rel="noopener noreferrer">MC-223227</a> 海洋下方的洞穴中出现悬浮的水洞</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223446" target="_blank" rel="noopener noreferrer">MC-223446</a> 潜影贝在骑乘实体时出现在错误的位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223820" target="_blank" rel="noopener noreferrer">MC-223820</a> 杜鹃花和盛开的杜鹃花不在 #saplings 的方块或物品标签中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223907" target="_blank" rel="noopener noreferrer">MC-223907</a> 苔藓块在 #lush_ground_replaceable.json 中出现两次</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224322" target="_blank" rel="noopener noreferrer">MC-224322</a> 细雪在创造模式中会产生幽灵方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224325" target="_blank" rel="noopener noreferrer">MC-224325</a> 将物品放入堆肥桶时，minecraft.used:minecraft.COMPOSTABLE_ITEM 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224388" target="_blank" rel="noopener noreferrer">MC-224388</a> 熔炼预览中的矿石和原材料偏离中心</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224389" target="_blank" rel="noopener noreferrer">MC-224389</a> 铜锭在合成表中不再被分组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224927" target="_blank" rel="noopener noreferrer">MC-224927</a> 被虫蚀的方块需要两倍的时间，而不是一半时间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224972" target="_blank" rel="noopener noreferrer">MC-224972</a> 被虫蚀的方块没有有效的工具</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225025" target="_blank" rel="noopener noreferrer">MC-225025</a> 龙息区域效果云导致服务器端性能下降</li>
+</ul>

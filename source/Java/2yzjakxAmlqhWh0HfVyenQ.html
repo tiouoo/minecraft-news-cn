@@ -1,0 +1,185 @@
+<p>We're now releasing the first snapshot for Minecraft 1.19.4. This release contains new accessibility functionality, new commands and plenty of bug fixes!</p>
+<p>Happy mining!</p>
+<h1>Changes</h1>
+<ul>
+<li>Vexes now use a separate charging animation when empty-handed</li>
+<li>Armor Stands now preserve custom names when placed and broken</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Added an accessibility onboarding screen for players launching the game for the first time</li>
+<li>Added arrow key navigation</li>
+<li>The Resource Pack screen is now keyboard-navigatable</li>
+<li>Auto-Jump is now off by default</li>
+<li>Added a new "Notification Display Time" accessibility option<ul>
+<li>Changes how long notifications such as unlocked recipes, advancements, subtitles and selected item names are visible for</li>
+</ul></li>
+</ul>
+<h3>Arrow key navigation</h3>
+<ul>
+<li>Menu screens can now be navigated by using the arrow keys</li>
+<li>When navigating with arrow keys, sliders need to be activated by pressing Enter or Space to start changing the value</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The data pack version is now 11</li>
+<li>Added a network protocol feature for forcing bundle of packets to be processed within same client tick</li>
+<li>Added <code>fallback</code> fields to <code>translate</code> chat components</li>
+<li>Out-of-bound arguments in <code>translate</code> formats are no longer silently ignored</li>
+<li>The <code>clone</code> command now supports cloning to and from different dimensions</li>
+<li>A new <code>string</code> source is now available for the <code>data modify</code> command</li>
+<li>New <code>execute</code> sub-commands</li>
+</ul>
+<h2>Network Protocol</h2>
+<ul>
+<li>Clients now reset their Secure Chat session state when receiving the login packet</li>
+</ul>
+<h3>Packet bundles</h3>
+<ul>
+<li>Added new delimiter packet to clientbound game protocol</li>
+<li>All packets between two delimiters are guaranteed to be processed within same tick</li>
+<li>For security reasons this feature is not supported in serverbound direction</li>
+</ul>
+<h2>Block Behavior</h2>
+<ul>
+<li>Fire burns out faster in certain biomes, and this is now controlled by the <code>increased_fire_burnout</code> biome tag</li>
+</ul>
+<h2>Mob Spawning</h2>
+<ul>
+<li>The <code>only_allows_snow_and_gold_rabbits</code> biome tag has been renamed to <code>spawns_gold_rabbits</code> to match its behavior</li>
+<li>White Rabbit variants are now controlled by the <code>spawns_white_rabbits</code> biome tag</li>
+<li>Fox variants are now controlled by the <code>spawns_snow_foxes</code> biome tag</li>
+</ul>
+<h2>Mob Behavior</h2>
+<ul>
+<li>Snow Golems melting in warm biomes is now controlled by the <code>snow_golem_melts</code> biome tag</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>clone</code></h3>
+<p>The clone command now supports specifying the source and target dimensions. New syntax:</p>
+<p><code>clone [from &#x3C;sourceDimension>] &#x3C;begin> &#x3C;end> [to &#x3C;targetDimension>] &#x3C;destination> ...</code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>sourceDimension</code>: id of dimension to clone from</li>
+<li><code>targetDimension</code>: id of dimension to clone to</li>
+</ul>
+<h3><code>data</code></h3>
+<p>New source available:</p>
+<ul>
+<li><code>string &#x3C;entity|block|storage> [path] [start] [end]</code> - reads a value as text, resulting in a string value</li>
+</ul>
+<p>New arguments:</p>
+<ul>
+<li><code>start</code>: Index of first character to include at the start of the string</li>
+<li><code>end</code>: Index of the first character to exclude at the end of the string</li>
+</ul>
+<h3><code>execute</code></h3>
+<h4><code>execute if|unless</code></h4>
+<p>New conditions available for the <code>execute if|unless</code> sub-command:</p>
+<ul>
+<li><code>execute if|unless loaded &#x3C;pos></code> - checks if the position given is fully loaded (in regard to both blocks and entities)</li>
+<li><code>execute if|unless dimension &#x3C;dimension></code> - checks if the execution is in a matching dimension</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li><code>pos</code>: Block position to check</li>
+<li><code>dimension</code>: A dimension id</li>
+</ul>
+<h4><code>execute on</code></h4>
+<p>New <code>execute</code> sub-command for selecting entities based on relation to the current executing entity:</p>
+<ul>
+<li><code>execute on &#x3C;relation></code></li>
+</ul>
+<p>Relations:</p>
+<ul>
+<li><code>vehicle</code> - entity that the executing entity is riding</li>
+<li><code>passengers</code> - all entities directly riding the executing entity (no sub-passengers)</li>
+<li><code>controller</code> - entity that is controlling the executing entity (for example: first passenger in a boat)</li>
+<li><code>owner</code> - owner of the executing entity, if it is a tameable animal (like cats, wolves or parrots)</li>
+<li><code>leasher</code> - entity leading the executing entity with a leash (might be a leash knot in case of being attached to a fence)</li>
+<li><code>target</code> - attack target for the executing entity</li>
+<li><code>attacker</code> - last entity that damaged the executing entity in the previous 5 seconds</li>
+</ul>
+<p>If the relation is not applicable to the executing entity or there are no entities matching it, selector returns zero elements.</p>
+<h3><code>title</code></h3>
+<ul>
+<li>All time arguments to <code>title times</code> are now time durations and work with <code>t</code>, <code>s</code> and <code>d</code> suffixes</li>
+</ul>
+<h3><code>weather</code></h3>
+<ul>
+<li>The duration of the weather change now matches the game's regular weather cycle if not specified</li>
+<li>The <code>duration</code> parameter is now a time duration in ticks and works with <code>t</code>, <code>s</code> and <code>d</code> suffixes<ul>
+<li>To retain existing functionality, you need to add an <code>s</code> suffix to pre-existing commands</li>
+</ul></li>
+</ul>
+<h3><code>ride</code></h3>
+<p>New command to allow entities to start or stop riding other entities</p>
+<p>Syntax:</p>
+<ul>
+<li><code>ride &#x3C;target> mount &#x3C;vehicle></code><ul>
+<li>Makes a single target mount a single vehicle</li>
+<li>The command will fail if:<ul>
+<li><code>vehicle</code> is a player</li>
+<li><code>target</code> is already riding a vehicle</li>
+<li><code>target</code> and <code>vehicle</code> are the same entity</li>
+<li><code>vehicle</code> is already a passenger (direct or indirect) of <code>target</code></li>
+</ul></li>
+</ul></li>
+<li><code>ride &#x3C;target> dismount</code><ul>
+<li>Dismounts <code>target</code> from any vehicle it is riding</li>
+<li>Fails if <code>target</code> is not riding anything</li>
+</ul></li>
+</ul>
+<h2>Game Rules</h2>
+<ul>
+<li>Added <code>commandModificationBlockLimit</code>, controlling the maximum number of blocks changed in one execution of <code>clone</code>, <code>fill</code> and <code>fillbiome</code></li>
+</ul>
+<h2>Chat components</h2>
+<h3>Translation fallback</h3>
+<p>Added an optional <code>fallback</code> field to <code>translate</code> text components.</p>
+<ul>
+<li>The new field is a string that will be used in place of translation if it is missing</li>
+<li>If <code>fallback</code> is missing, the old behavior (i.e. using the key itself as the translation) is preserved</li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Note block interaction</h2>
+<ul>
+<li>Mob heads can now be placed on top of note blocks without sneaking</li>
+</ul>
+<h1>Fixed bugs in 23w03a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-26678" target="_blank" rel="noopener noreferrer">MC-26678</a> Damage wobble no longer shows direction of incoming damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-30403" target="_blank" rel="noopener noreferrer">MC-30403</a> Sprinting isn't canceled when dismounting rideable entities while sprinting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121048" target="_blank" rel="noopener noreferrer">MC-121048</a> When an entity dies, the combat tracker only records the killing blow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122595" target="_blank" rel="noopener noreferrer">MC-122595</a> /weather command with duration 0 has the same weather for longer time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136534" target="_blank" rel="noopener noreferrer">MC-136534</a> All command blocks think they're facing south with caret notation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149144" target="_blank" rel="noopener noreferrer">MC-149144</a> Multiple buttons can be selected by pressing another button and Tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155433" target="_blank" rel="noopener noreferrer">MC-155433</a> Minecart with hopper not picking matching items from a mixed pile</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165595" target="_blank" rel="noopener noreferrer">MC-165595</a> Guardian beam does not render when over a certain "Time" in level.dat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181832" target="_blank" rel="noopener noreferrer">MC-181832</a> The "/spreadplayers" command doesn't spread entities in the specified dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191942" target="_blank" rel="noopener noreferrer">MC-191942</a> The buttons in the multiplayer menu are not evenly spaced</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222518" target="_blank" rel="noopener noreferrer">MC-222518</a> Skeleton/Zombie Horse's &#x26; Donkey/Mule's saddles and chests are outdated/have errors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224960" target="_blank" rel="noopener noreferrer">MC-224960</a> The spectate command does not work between dimensions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230678" target="_blank" rel="noopener noreferrer">MC-230678</a> Cauldron fills with powder snow in frozen ocean biome while it's visually raining</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233893" target="_blank" rel="noopener noreferrer">MC-233893</a> Burning mobs won't get extinguished by rain in warm patches of Frozen Ocean biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235260" target="_blank" rel="noopener noreferrer">MC-235260</a> Hopper minecart at (0, 0, 0) transfers items slower than normal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-247836" target="_blank" rel="noopener noreferrer">MC-247836</a> Riptide doesn't work in rain within a frozen ocean biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252773" target="_blank" rel="noopener noreferrer">MC-252773</a> Goat Horn without instrument NBT and with other NBT data (such as text) does not play</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255545" target="_blank" rel="noopener noreferrer">MC-255545</a> Magma Cube shadows do not change with size</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255811" target="_blank" rel="noopener noreferrer">MC-255811</a> Level#isRainingAt(BlockPos) always returns false for snowy and frozen biomes, even when it is raining</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256292" target="_blank" rel="noopener noreferrer">MC-256292</a> Goats don't spawn on grass after initial world generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256555" target="_blank" rel="noopener noreferrer">MC-256555</a> Camel sits down for a split second when spawned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256576" target="_blank" rel="noopener noreferrer">MC-256576</a> Players become the controlling passengers of unsaddled camels when mounting them while other players are already riding them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256838" target="_blank" rel="noopener noreferrer">MC-256838</a> The facing direction of the camel doesn't match</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257082" target="_blank" rel="noopener noreferrer">MC-257082</a> Sprinting whilst riding an entity or flying with elytra changes your field of view</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257346" target="_blank" rel="noopener noreferrer">MC-257346</a> Vexes with empty hand make obscene gesture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257418" target="_blank" rel="noopener noreferrer">MC-257418</a> Camels sometimes sit down for a split second when receiving damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257755" target="_blank" rel="noopener noreferrer">MC-257755</a> Elements within the realms menu are not selected in order when using the TAB key if you're not currently a member of any realm</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257875" target="_blank" rel="noopener noreferrer">MC-257875</a> Fire charges aren't consumed when igniting creepers using them in survival or adventure mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258163" target="_blank" rel="noopener noreferrer">MC-258163</a> ClientboundSectionBlocksUpdatePacket serialization breaks after 2^19 block states</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258173" target="_blank" rel="noopener noreferrer">MC-258173</a> Entering an End Portal whilst sleeping causes the bed to be occupied permanently</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258246" target="_blank" rel="noopener noreferrer">MC-258246</a> "Telemetry Data" button is missing an ellipsis</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258295" target="_blank" rel="noopener noreferrer">MC-258295</a> Villager AI broken when workstation is nearby</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258430" target="_blank" rel="noopener noreferrer">MC-258430</a> Camels with large LastPoseTime values offset the player view model strangely</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258953" target="_blank" rel="noopener noreferrer">MC-258953</a> Out of memory screen has raw message in the title</li>
+</ul>

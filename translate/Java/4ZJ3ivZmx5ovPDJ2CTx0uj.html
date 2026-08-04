@@ -1,0 +1,61 @@
+<p>我们为大家带来了 1.20.3 的首个预发布版，其中包含服务器资源包处理的更新和错误修复！</p>
+<h1>技术更改</h1>
+<ul>
+<li>数据包版本现在为 26</li>
+<li>资源包版本现在为 22</li>
+<li>对下载/世界资源包处理的更改</li>
+</ul>
+<h2>世界资源包</h2>
+<p>这些更改适用于世界资源包（<code>resources.zip</code>）、Realms 资源包以及由专用服务器控制的资源包。</p>
+<h3>界面</h3>
+<ul>
+<li>下载界面已被替换为 toast 通知</li>
+<li>世界资源包的应用将与区块加载同时开始</li>
+</ul>
+<h3>本地存储</h3>
+<p>下载的资源包现在存储在 <code>downloads</code> 目录中（文件组织方式与旧的 <code>server-resource-packs</code> 不同）</p>
+<ul>
+<li>此目录中的文件不再自动清理（之前仅保留最多 10 个资源包）</li>
+<li>此外，在此目录中还有一个日志文件 <code>log.json</code>，用于存储关于已下载文件的信息，以供调试之用</li>
+</ul>
+<h3>服务器配置</h3>
+<p>下载的资源包现在具有唯一 ID（GUID/UUID），可用于区分它们。</p>
+<ul>
+<li>专用服务器资源包的此值可以通过 <code>server.properties</code> 中的 <code>resource-pack-id</code> 选项进行配置</li>
+<li>如果缺少该值，将根据 URL 生成</li>
+<li>如果未设置资源包的哈希，则该资源包将在每次应用前重新下载<ul>
+<li>之前，如果缺少哈希，则会应用最新下载的资源包版本</li>
+</ul></li>
+</ul>
+<h3>网络数据包</h3>
+<ul>
+<li>客户端现在可以接受多个服务器资源包</li>
+<li>添加了新的数据包以取消应用服务器资源包</li>
+<li>进入配置阶段时不再清理资源包</li>
+</ul>
+<h1>数据包版本 26</h1>
+<ul>
+<li>将 <code>minecraft:grass</code> 方块和物品重命名为 <code>minecraft:short_grass</code></li>
+</ul>
+<h1>资源包版本 22</h1>
+<ul>
+<li>将 <code>minecraft:grass</code> 方块和物品重命名为 <code>minecraft:short_grass</code></li>
+</ul>
+<h1>1.20.3 预发布版 1 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-142160" target="_blank" rel="noopener noreferrer">MC-142160</a> pausedTickDelta 在游戏取消暂停时更新，而非暂停时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164316" target="_blank" rel="noopener noreferrer">MC-164316</a> 通过哈希进行的资源包更新无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251126" target="_blank" rel="noopener noreferrer">MC-251126</a> 当检测到与先前下载版本的哈希不匹配时，服务器资源包不会重新下载</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265927" target="_blank" rel="noopener noreferrer">MC-265927</a> 编辑框长度限制可能导致未配对的代理项字符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265929" target="_blank" rel="noopener noreferrer">MC-265929</a> 在编辑框中按 Ctrl+Backspace 删除包含非 BMP 字符的单词时，会额外删除字符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266456" target="_blank" rel="noopener noreferrer">MC-266456</a> 矿车或船中的旋风人处于被动状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266468" target="_blank" rel="noopener noreferrer">MC-266468</a> 旋风人在深水中无法攻击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266472" target="_blank" rel="noopener noreferrer">MC-266472</a> 闪电苦力怕/凋灵盔甲的渲染不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266507" target="_blank" rel="noopener noreferrer">MC-266507</a> TNT 爆炸产生的方块掉落物数量上限为 16</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266563" target="_blank" rel="noopener noreferrer">MC-266563</a> 末地水晶和 TNT 矿车在没有来源实体的情况下爆炸时完全不会造成伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266571" target="_blank" rel="noopener noreferrer">MC-266571</a> 旋风人在漂浮状态效果下不会攻击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266656" target="_blank" rel="noopener noreferrer">MC-266656</a> 在单人游戏中暂停游戏时，粒子、实体和方块实体变换的插值会被中断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266723" target="_blank" rel="noopener noreferrer">MC-266723</a> “怪物狩猎”进度要求击杀旋风人，即使它们已被禁用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266724" target="_blank" rel="noopener noreferrer">MC-266724</a> scoreboard players reset &lt;targets&gt; &lt;objective&gt; 不再有效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266729" target="_blank" rel="noopener noreferrer">MC-266729</a> 记分板错误消息中的未格式化对象</li>
+</ul>

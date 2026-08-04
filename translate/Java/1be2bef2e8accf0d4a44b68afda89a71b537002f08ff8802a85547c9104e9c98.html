@@ -1,0 +1,90 @@
+<p>周末马上就到了，还有什么比给你送上一份快照星期五更好的庆祝方式呢？本次快照为这一周画上句号，带来了区块加载性能的改进，以及常见的一系列技术性改进和漏洞修复。
+<p>另外，上周的快照对重锤进行了一些改动，但这些改动未记录在 24w18a 的更新日志中。这是我们这边的一个失误。为了消除困惑，我们决定在更新上一个日志的同时，也将这些改动加入本次日志。对此我们深表歉意！
+<p>挖矿愉快！
+<h1>24w18a 的重锤改动</h1>
+<ul><li>将重锤的耐久度从 250 提高至 500<li>将重锤的基础伤害降至 5<li>将重锤的攻击速度从 -2.4 降低至 -3.5<li>将致密每级每格方块造成的伤害降至 0.5<li>重锤猛击攻击的伤害现在会衰减：<ul><li>下落前 3 格，每格造成 4 点伤害<li>接下来下落 5 格，每格造成 2 点伤害<li>之后每下落 1 格造成 1 点伤害</ul><li>致密和破甲现在互相排斥，并与其他伤害附魔（亡灵杀手和节肢杀手）互斥</ul>
+<h1>更改</h1>
+<ul><li>被冰霜行者冻结的方块现在会发出“方块已放置”振动（频率 13）<li>声音改动<li>改进了区块加载性能</ul>
+<h2>声音</h2>
+<ul><li>新增 4 种洞穴环境音效<li>将铜灯的关闭和开启音效替换为一种切换音效</ul>
+<h2>区块加载改进</h2>
+<ul><li>从磁盘读取已生成的区块时，不再会不必要地加载周围区块<ul><li>这在单人游戏世界加载界面中也能看到</ul><li>新系统的内存和 CPU 开销更低</ul>
+<h1>技术性更改</h1>
+<ul><li>数据包版本现在是 43</ul>
+<h1>数据包版本 43</h1>
+<ul><li><code>custom_data</code> 组件现在可以指定为 SNBT 字符串，以在 JSON 中保留类型信息<ul><li>这与 <code>set_custom_data</code> 战利品函数和 <code>custom_data</code> 谓词中的用法相同</ul><li><code>food</code> 物品组件新增了以下字段：<ul><li><code>using_converts_to</code>：带有组件的物品（可选）<ul><li>食用后，该食物物品将被替换为指定的物品<li>例如：<code>food={nutrition:1,saturation:0,using_converts_to:{id:"poisonous_potato",components:{"minecraft:custom_name":'"Wait what?"'}}}</code></ul></ul><li>注册表 <code>decorated_pot_patterns</code> 已重命名为 <code>decorated_pot_pattern</code><li>移除了旧版标签目录名称<li>移除了 <code>power</code> NBT 标签，并替换为 <code>acceleration_power</code> 标签，该标签使用一个数值来控制弹射物的加速度（和最大速度）<ul><li>此更改影响以下弹射物：<code>dragon_fireball</code>、<code>large_fireball</code>、<code>small_fireball</code>、<code>fireball</code>、<code>breeze_wind_charge</code>、<code>wind_charge</code>、<code>wither_skull</code></ul><li>为结构新增了 <code>dimension_padding</code> NBT 标签<ul><li>通过向结构的边界框添加垂直填充，确保结构不会生成到维度边缘之外<li>默认值为 0<li>试炼密室生成在深层地下，有时会与基岩层相交，因此其填充值为 10</ul></ul>
+<h2>附魔</h2>
+<h3>实体效果类型</h3>
+<ul><li>为效果类型 <code>replace_block</code>、<code>replace_disc</code> 和 <code>set_block_properties</code> 新增了 <code>trigger_game_event</code> 字段<ul><li>格式：可选的游戏事件 ID，用于在方块被替换时触发游戏事件</ul></ul>
+<h2>标签</h2>
+<h3>目录重命名</h3>
+<ul><li>某些使用旧版目录名称（基于元素的复数名称）的类型已重命名，以匹配注册表名称<li>受影响的目录：<ul><li><code>tags/items</code> -> <code>tags/item</code><li><code>tags/blocks</code> -> <code>tags/block</code><li><code>tags/entity_types</code> -> <code>tags/entity_type</code><li><code>tags/fluids</code> -> <code>tags/fluid</code><li><code>tags/game_events</code> -> <code>tags/game_event</code></ul></ul>
+<h3>方块标签</h3>
+<ul><li><code>fire_aspect_lightable</code>：所有应可通过使用火焰附加附魔工具击打来点燃的方块</ul>
+<h3>伤害类型谓词</h3>
+<ul><li>新选项：<code>is_direct</code> - 可选布尔值<ul><li>当存在时，要求伤害为直接伤害（<code>true</code>）或间接伤害（<code>false</code>）<li>当直接实体与来源实体相同时，该伤害即为直接伤害</ul></ul>
+<h1>24w19a 修复的漏洞</h1>
+<ul><li><a href=https://bugs.mojang.com/browse/MC-9568 rel="noopener noreferrer"target=_blank>MC-9568</a> 生物在靠近实心方块长大时会窒息或穿过方块
+<li><a href=https://bugs.mojang.com/browse/MC-9644 rel="noopener noreferrer"target=_blank>MC-9644</a> 被发射的 falling_block 实体无法穿越传送门
+<li><a href=https://bugs.mojang.com/browse/MC-14923 rel="noopener noreferrer"target=_blank>MC-14923</a> 在禁用作弊的单人游戏世界中，玩家可能因刷屏而被踢出
+<li><a href=https://bugs.mojang.com/browse/MC-16345 rel="noopener noreferrer"target=_blank>MC-16345</a> 使用 /attribute 指令降低玩家的基础最大生命值时，并不总是会降低其当前生命值
+<li><a href=https://bugs.mojang.com/browse/MC-26304 rel="noopener noreferrer"target=_blank>MC-26304</a> 酿造台在卸载后会重置酿造周期
+<li><a href=https://bugs.mojang.com/browse/MC-96198 rel="noopener noreferrer"target=_blank>MC-96198</a> 船/筏在深度不足一格的水中着陆时会进入方块内部
+<li><a href=https://bugs.mojang.com/browse/MC-175619 rel="noopener noreferrer"target=_blank>MC-175619</a> 发射器在没有可用空槽位时会丢出蜂蜜瓶
+<li><a href=https://bugs.mojang.com/browse/MC-252846 rel="noopener noreferrer"target=_blank>MC-252846</a> 生物在顶部有地毯的栅栏旁长大时可以穿过栅栏
+<li><a href=https://bugs.mojang.com/browse/MC-253791 rel="noopener noreferrer"target=_blank>MC-253791</a> 青蛙在生长时会窒息
+<li><a href=https://bugs.mojang.com/browse/MC-267947 rel="noopener noreferrer"target=_blank>MC-267947</a> 末影珍珠可以传送旁观模式下的玩家
+<li><a href=https://bugs.mojang.com/browse/MC-267951 rel="noopener noreferrer"target=_blank>MC-267951</a> 将“spawnChunkRadius”游戏规则设置为较高值时，创建世界会导致游戏卡死并最终崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-267981 rel="noopener noreferrer"target=_blank>MC-267981</a> “试炼刷怪笼噼啪作响”字幕在播放“minecraft:block.trial_spawner.ambient”声音时只会显示一瞬间
+<li><a href=https://bugs.mojang.com/browse/MC-268772 rel="noopener noreferrer"target=_blank>MC-268772</a> 摔落伤害倍率属性的颜色标识不直观
+<li><a href=https://bugs.mojang.com/browse/MC-269318 rel="noopener noreferrer"target=_blank>MC-269318</a> 创造模式下，放在讲台上的书会被消耗
+<li><a href=https://bugs.mojang.com/browse/MC-269601 rel="noopener noreferrer"target=_blank>MC-269601</a> 重锤猛击攻击不会击退非受击目标的其他玩家
+<li><a href=https://bugs.mojang.com/browse/MC-269633 rel="noopener noreferrer"target=_blank>MC-269633</a> 放置超上限的填充桶会将堆叠数量重置为 1
+<li><a href=https://bugs.mojang.com/browse/MC-269642 rel="noopener noreferrer"target=_blank>MC-269642</a> 食用超上限的汤/炖菜会将堆叠数量重置为 1
+<li><a href=https://bugs.mojang.com/browse/MC-269674 rel="noopener noreferrer"target=_blank>MC-269674</a> 超上限的书与笔堆叠在署名后数量会被重置
+<li><a href=https://bugs.mojang.com/browse/MC-269685 rel="noopener noreferrer"target=_blank>MC-269685</a> 饮用超上限的奶桶时，桶会丢失
+<li><a href=https://bugs.mojang.com/browse/MC-269686 rel="noopener noreferrer"target=_blank>MC-269686</a> 超上限的音乐唱片堆叠可以通过唱片机复制
+<li><a href=https://bugs.mojang.com/browse/MC-269708 rel="noopener noreferrer"target=_blank>MC-269708</a> 发射器使用超上限的水瓶堆叠会将堆叠数量重置为 1
+<li><a href=https://bugs.mojang.com/browse/MC-269717 rel="noopener noreferrer"target=_blank>MC-269717</a> 炼药锅会删除超上限的染色潜影盒
+<li><a href=https://bugs.mojang.com/browse/MC-269809 rel="noopener noreferrer"target=_blank>MC-269809</a> 给美西螈喂食超上限的热带鱼桶会将堆叠数量重置为 1
+<li><a href=https://bugs.mojang.com/browse/MC-270296 rel="noopener noreferrer"target=_blank>MC-270296</a> 不祥物品生成器会生成带有药水效果的不可堆叠箭
+<li><a href=https://bugs.mojang.com/browse/MC-270635 rel="noopener noreferrer"target=_blank>MC-270635</a> 试炼刷怪笼的纹理不一致
+<li><a href=https://bugs.mojang.com/browse/MC-270684 rel="noopener noreferrer"target=_blank>MC-270684</a> set_attributes 战利品函数不接受空列表
+<li><a href=https://bugs.mojang.com/browse/MC-270687 rel="noopener noreferrer"target=_blank>MC-270687</a> 带有风爆附魔的重锤无法可靠地保护玩家免受摔落伤害
+<li><a href=https://bugs.mojang.com/browse/MC-270779 rel="noopener noreferrer"target=_blank>MC-270779</a> 使用 /data 指令从数据量大的方块/箱子获取数据会导致游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-270818 rel="noopener noreferrer"target=_blank>MC-270818</a> 数据生成器的物品报告不具备确定性
+<li><a href=https://bugs.mojang.com/browse/MC-270926 rel="noopener noreferrer"target=_blank>MC-270926</a> “foodSaturationLevel”可以为负值
+<li><a href=https://bugs.mojang.com/browse/MC-270965 rel="noopener noreferrer"target=_blank>MC-270965</a> 配方结果中“minecraft:custom_data”组件的数据类型会被强制修改
+<li><a href=https://bugs.mojang.com/browse/MC-271001 rel="noopener noreferrer"target=_blank>MC-271001</a> 容器中的物品数量可以被设置为超过 99（直至最大整数），并可能导致世界崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-271005 rel="noopener noreferrer"target=_blank>MC-271005</a> 最大堆叠数量超过 1 的知识之书在使用时会消耗整个堆叠中的所有物品
+<li><a href=https://bugs.mojang.com/browse/MC-271026 rel="noopener noreferrer"target=_blank>MC-271026</a> 设置状态效果的组件有时会丢失部分数据
+<li><a href=https://bugs.mojang.com/browse/MC-271094 rel="noopener noreferrer"target=_blank>MC-271094</a> 将世界更新到 1.20.5 时，EntityTag 内的实体 ID 会被忽略
+<li><a href=https://bugs.mojang.com/browse/MC-271159 rel="noopener noreferrer"target=_blank>MC-271159</a> 升级到 1.20.5 时，没有颜色的旗帜图案条目会失效
+<li><a href=https://bugs.mojang.com/browse/MC-271170 rel="noopener noreferrer"target=_blank>MC-271170</a> 将头颅的自定义名称修改为无效值时出现意外错误
+<li><a href=https://bugs.mojang.com/browse/MC-271398 rel="noopener noreferrer"target=_blank>MC-271398</a> 合成某些物品后，合成网格中的材料会保留，导致物品复制
+<li><a href=https://bugs.mojang.com/browse/MC-271400 rel="noopener noreferrer"target=_blank>MC-271400</a> 弩上的快速装填附魔不再提高弩的装填速度
+<li><a href=https://bugs.mojang.com/browse/MC-271402 rel="noopener noreferrer"target=_blank>MC-271402</a> 锋利和针对特定生物的伤害附魔会降低攻击伤害，而不是提高
+<li><a href=https://bugs.mojang.com/browse/MC-271404 rel="noopener noreferrer"target=_blank>MC-271404</a> 破甲和致密附魔并非互斥
+<li><a href=https://bugs.mojang.com/browse/MC-271406 rel="noopener noreferrer"target=_blank>MC-271406</a> 方块被瞬间挖掘时会重新出现
+<li><a href=https://bugs.mojang.com/browse/MC-271422 rel="noopener noreferrer"target=_blank>MC-271422</a> 灵魂疾行会导致你每次跳跃时 FOV 都会变化
+<li><a href=https://bugs.mojang.com/browse/MC-271423 rel="noopener noreferrer"target=_blank>MC-271423</a> 激流附魔无法正常工作
+<li><a href=https://bugs.mojang.com/browse/MC-271427 rel="noopener noreferrer"target=_blank>MC-271427</a> 横扫攻击不再稳定触发
+<li><a href=https://bugs.mojang.com/browse/MC-271434 rel="noopener noreferrer"target=_blank>MC-271434</a> 营火会对玩家造成击退
+<li><a href=https://bugs.mojang.com/browse/MC-271435 rel="noopener noreferrer"target=_blank>MC-271435</a> 受到攻击时移动不再能正确触发击退
+<li><a href=https://bugs.mojang.com/browse/MC-271436 rel="noopener noreferrer"target=_blank>MC-271436</a> 重锤不再能附魔火焰附加
+<li><a href=https://bugs.mojang.com/browse/MC-271441 rel="noopener noreferrer"target=_blank>MC-271441</a> 火焰保护的提示文本以红色显示，尽管这是一个正面效果
+<li><a href=https://bugs.mojang.com/browse/MC-271442 rel="noopener noreferrer"target=_blank>MC-271442</a> 火焰附加附魔可以改变红石灯、红石火把、铜灯、熔炉、烟熏炉和高炉的“点亮”状态
+<li><a href=https://bugs.mojang.com/browse/MC-271444 rel="noopener noreferrer"target=_blank>MC-271444</a> 火焰附加附魔可以在水下点燃营火和蜡烛
+<li><a href=https://bugs.mojang.com/browse/MC-271455 rel="noopener noreferrer"target=_blank>MC-271455</a> 当主手持火焰附加武器时，副手投掷的三叉戟会使生物着火
+<li><a href=https://bugs.mojang.com/browse/MC-271459 rel="noopener noreferrer"target=_blank>MC-271459</a> 冰霜行者会删除含水方块
+<li><a href=https://bugs.mojang.com/browse/MC-271461 rel="noopener noreferrer"target=_blank>MC-271461</a> 在启用村民交易再平衡的情况下与某些村民互动会导致客户端崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-271477 rel="noopener noreferrer"target=_blank>MC-271477</a> “projectile_spawned”附魔效果总是在 (0, 0, 0) 处触发
+<li><a href=https://bugs.mojang.com/browse/MC-271484 rel="noopener noreferrer"target=_blank>MC-271484</a> 使用火焰附加点燃蜡烛和营火不会向幽匿感测体发送振动
+<li><a href=https://bugs.mojang.com/browse/MC-271556 rel="noopener noreferrer"target=_blank>MC-271556</a> 凋灵骷髅头颅的掉落率降低了 0.01
+<li><a href=https://bugs.mojang.com/browse/MC-271565 rel="noopener noreferrer"target=_blank>MC-271565</a> 升级含有 1.9 之前生成的僵尸村民的世界时，游戏可能会崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-271632 rel="noopener noreferrer"target=_blank>MC-271632</a> 带有节肢杀手附魔的武器只能给目标施加缓慢 I，而不是缓慢 IV
+<li><a href=https://bugs.mojang.com/browse/MC-271637 rel="noopener noreferrer"target=_blank>MC-271637</a> “run_command”附魔实体效果类型总是在主世界执行命令
+<li><a href=https://bugs.mojang.com/browse/MC-271652 rel="noopener noreferrer"target=_blank>MC-271652</a> 手持带有荆棘附魔的物品不再像穿戴时那样生效
+<li><a href=https://bugs.mojang.com/browse/MC-271710 rel="noopener noreferrer"target=_blank>MC-271710</a> 按键绑定背景比其他 UI 更暗
+<li><a href=https://bugs.mojang.com/browse/MC-271725 rel="noopener noreferrer"target=_blank>MC-271725</a> “apply_mob_effect”附魔实体效果即使定义了倍率，也从不应用
+<li><a href=https://bugs.mojang.com/browse/MC-271726 rel="noopener noreferrer"target=_blank>MC-271726</a> 被闪电击中的玩家不再能听到 item.trident.thunder 音效</ul>

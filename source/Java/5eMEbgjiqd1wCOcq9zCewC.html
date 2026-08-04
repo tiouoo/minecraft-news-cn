@@ -1,0 +1,51 @@
+<p>Hello, new snapshot! Hello, new cave generation!</p>
+<p>Today's snapshot introduces a major change to how caves are generated within Minecraft. You could say that we're now introducing the cave part of Caves &#x26; Cliffs.</p>
+<p>This is only the first step in our underground adventure, so please note that snapshots show features in early development and that there are two notable caveats with this snapshot:</p>
+<ul>
+<li>You'll be unable to open old worlds in this snapshot as there is currently no upgrade path towards the new world height</li>
+<li>All caves of the new type between y31 and y63 will be flooded with water</li>
+</ul>
+<h1>New Features in 21w06a</h1>
+<ul>
+<li>Added noise caves and aquifers</li>
+</ul>
+<h2>Noise caves and Aquifers</h2>
+<ul>
+<li>Noise caves are a new way of generating caves, providing more natural variety. They can get really huge sometimes!
+Noise caves come in two flavors:<ul>
+<li>Cheese caves. Like the holes in swiss cheese. These often form caverns of various size.</li>
+<li>Spaghetti caves. Long squiggly tunnels, sometimes wide like tagliatelle.</li>
+</ul></li>
+<li>No, they aren't loud. The "noise" part of noise caves is a technical term and has nothing to do with sound.</li>
+<li>The old cave carvers and canyons still generate, combining with the noise caves to form interesting cave systems.</li>
+<li>As with carvers, when noise caves intersect the surface they form cave entrances.</li>
+<li>An aquifer is an area with local water level, independent of sea level. Aquifers are used during world generation to generate bodies of water inside noise caves. This sometimes results in large underground lakes!</li>
+<li>For now, aquifers are only used below y31. This means all noise caves between y31 and sea level (y63) will be flooded with water, and noise cave entrances will essentially be lakes. This will be fixed later.</li>
+<li>Magma sometimes generates at the bottom of underground bodies of water</li>
+<li>Underwater cave carvers and underwater canyons have been removed, since aquifers are used to generate water in caves instead.</li>
+</ul>
+<h1>Changes in 21w06a</h1>
+<ul>
+<li>Overworld build and generation limits have been expanded</li>
+<li>Mineshafts adapted to larger caves</li>
+<li>You can no longer crouch or jump to prevent a big dripleaf from tilting</li>
+<li>A big dripleaf will now tilt rather than break when hit by a projectile</li>
+<li>A redstone powered big dripleaf will not tilt (except when hit by a projectile)</li>
+<li>The textures for hanging roots and small dripleaves have been updated</li>
+</ul>
+<h2>World generation</h2>
+<ul>
+<li>Generation range and build limits have been expanded by 64 blocks up and 64 blocks down, to a total range of 384 blocks</li>
+<li>Underground features, structures, and caves generate all the way down to y -64.</li>
+</ul>
+<h2>Mineshaft changes</h2>
+<ul>
+<li>Mineshaft pieces don't generate if they would be fully floating in the air</li>
+<li>Mineshaft corridors are supported by log pillars when needed</li>
+<li>No floating cobwebs</li>
+</ul>
+<h1>Fixed bugs in 21w06a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-214346" target="_blank" rel="noopener noreferrer">MC-214346</a> Big dripleaf can be broken with arrows in spawn protection</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213813" target="_blank" rel="noopener noreferrer">MC-213813</a> Small dripleaf can destroy any block</li>
+</ul>

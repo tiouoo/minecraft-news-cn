@@ -1,0 +1,97 @@
+<p>Prepare to drop some sick bleats in the latest Minecraft: Java Edition snapshot! We're bringing in the sweet sounds of the goat horn. There are also some changes to the warden and the allay.</p>
+<p>If the technical aspects of chatting is where it's at for you, make sure to check out the changes to chat signing.</p>
+<p>Enjoy!</p>
+<h1>New Features in 22w17a</h1>
+<ul>
+<li>Added Goat Horn!</li>
+</ul>
+<h2>Goat Horn</h2>
+<ul>
+<li>A Goat Horn drops when a Goat rams a tree or any other hard block that occurs naturally where Goats spawn (Logs, Stone, Packed Ice, Iron Ore, copper Ore, or Emerald Ore)<ul>
+<li>Other solid blocks are unfamiliar to the Goat, so it won't ram them</li>
+</ul></li>
+<li>Use the horn to play a loud sound that can be heard from afar</li>
+<li>Each horn has its own sound based on the Goat it originated from</li>
+<li>There are 8 Goat Horn variants, 4 of them exclusive to screaming Goats</li>
+<li>Goat Horns can sometimes be found in Pillager Outposts</li>
+</ul>
+<h1>Changes in 22w17a</h1>
+<ul>
+<li>The Allay connecting with Note Blocks is now better visualized by the vibration particle</li>
+<li>The Allay connecting with Note Blocks can now be blocked by Wool Blocks again</li>
+<li>Replaced realms subtle selected world highlight with a clear green checkmark</li>
+<li>Updated the Brewing Stand's base UVs and texture to match a graphical fix in Bedrock Edition</li>
+<li>Explosions caused by player-ignited TNT now cause experience to drop from broken blocks (such as ore blocks and sculk)<ul>
+<li>We will be keeping an eye on feedback for this change, it might change in a future update</li>
+</ul></li>
+<li>Sculk blocks now have very low blast resistance</li>
+<li>Warden balancing</li>
+</ul>
+<h2>Warden</h2>
+<ul>
+<li>Their ranged attack will now:<ul>
+<li>Bypass shields and armor</li>
+<li>Deal 10 damage instead of 30 damage, and the cooldown has been reduced from 5 seconds to 2 seconds</li>
+<li>Display a custom death message</li>
+</ul></li>
+<li>Wardens now drop a single Sculk Catalyst upon death</li>
+</ul>
+<h1>Technical Changes in 22w17a</h1>
+<ul>
+<li>Signed Chat</li>
+<li>Removed <code>dampenable_vibrations</code> game event tag</li>
+</ul>
+<h2>Multiplayer Secure Chat Signing</h2>
+<p>This is the first step in a process to provide more security and player safety features for in-game chat. We'd love to hear your thoughts, but keep in mind that many features such as server-driven styling of chat messages are still missing.</p>
+<ul>
+<li>Chat messages between players are now cryptographically signed</li>
+<li>Players are given a Mojang provided key-pair on startup</li>
+<li>Servers can require players to have a Mojang-signed public key by setting <code>enforce-secure-profile=true</code> in <code>server.properties</code><ul>
+<li>Enforcing secure profiles will prevent players without a Mojang-signed public key from connecting</li>
+<li>By default this is set to <code>false</code>, allowing players to connect without a Mojang-signed public key</li>
+</ul></li>
+<li>Chat styling is now handled via server resource packs with the translation key <code>chat.type.text</code></li>
+</ul>
+<h1>Fixed bugs in 22w17a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-13103" target="_blank" rel="noopener noreferrer">MC-13103</a> Texture Z-Fighting at Wolf/Dog/Cat snout</li>
+<li><a href="https://bugs.mojang.com/browse/MC-53312" target="_blank" rel="noopener noreferrer">MC-53312</a> Illager/(zombie) villager/witch robes don't render the last two rows of pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-106627" target="_blank" rel="noopener noreferrer">MC-106627</a> Leather cap texture overlay doesn't align correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-141064" target="_blank" rel="noopener noreferrer">MC-141064</a> Cleric collar z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176840" target="_blank" rel="noopener noreferrer">MC-176840</a> Ores no longer drop experience when blown up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207309" target="_blank" rel="noopener noreferrer">MC-207309</a> Landing entities such as minecarts and armor stands trigger sculk sensors but boats do not</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208597" target="_blank" rel="noopener noreferrer">MC-208597</a> Boats ridden over wool are detected by sculk sensor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208771" target="_blank" rel="noopener noreferrer">MC-208771</a> Projectiles landing on wool trigger sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210712" target="_blank" rel="noopener noreferrer">MC-210712</a> Sculk sensors are not activated upon backwards movement in a boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210901" target="_blank" rel="noopener noreferrer">MC-210901</a> Sculk sensors are not activated upon entities sliding on ice</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248161" target="_blank" rel="noopener noreferrer">MC-248161</a> Weaponsmith zombie villager texture has leftover pixels from the regular weaponsmith texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248292" target="_blank" rel="noopener noreferrer">MC-248292</a> Llama uses pre-1.14 chest texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248555" target="_blank" rel="noopener noreferrer">MC-248555</a> Mismatches within (zombie) villager textures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248556" target="_blank" rel="noopener noreferrer">MC-248556</a> Savanna Zombie Villager missing a body texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248557" target="_blank" rel="noopener noreferrer">MC-248557</a> Savanna villager body defines pixels identical to base villager texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248561" target="_blank" rel="noopener noreferrer">MC-248561</a> Vindicator's crossed arms element has miscolored pixels on the faces touching the other arm elements</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248562" target="_blank" rel="noopener noreferrer">MC-248562</a> Iron golem has unused pixels in the texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249032" target="_blank" rel="noopener noreferrer">MC-249032</a> Fence item model's bars inconsistent with placed block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249039" target="_blank" rel="noopener noreferrer">MC-249039</a> "Half" armor bar icon texture is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249190" target="_blank" rel="noopener noreferrer">MC-249190</a> Sculk blocks don't drop experience orbs when blown up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249262" target="_blank" rel="noopener noreferrer">MC-249262</a> Sculk cannot replace soul sand or mud when mobs die on top of them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249669" target="_blank" rel="noopener noreferrer">MC-249669</a> tadpole.png has unused frog egg texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249745" target="_blank" rel="noopener noreferrer">MC-249745</a> If allay is holding an item, it can be equipped with armor using a dispenser</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249780" target="_blank" rel="noopener noreferrer">MC-249780</a> Blocks that require support can generate floating in ancient cities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249919" target="_blank" rel="noopener noreferrer">MC-249919</a> Pillar in Ancient City can generate with waterlogged stairs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250000" target="_blank" rel="noopener noreferrer">MC-250000</a> Allays and villagers create ghost items when they take items from a stack and cannot fit the whole stack in their inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250027" target="_blank" rel="noopener noreferrer">MC-250027</a> Allays ignore the dimension when checking for liked note blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250075" target="_blank" rel="noopener noreferrer">MC-250075</a> The inner two planes in mangrove roots are smaller than they should be</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250076" target="_blank" rel="noopener noreferrer">MC-250076</a> Shading is disabled for the two inner planes in mangrove roots, even though it isn't for all the other planes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250165" target="_blank" rel="noopener noreferrer">MC-250165</a> Doing /locate stronghold in some single biomes causes an unexpected error</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250240" target="_blank" rel="noopener noreferrer">MC-250240</a> Z-fighting can be seen around the backs of frogs when they open their mouths</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250288" target="_blank" rel="noopener noreferrer">MC-250288</a> Some blocks in Ancient City structures can only be covered by sculk veins and can't be converted into a sculk block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250321" target="_blank" rel="noopener noreferrer">MC-250321</a> Flying and aquatic mobs pathfinding in certain blocks cause crash || The game crashed whilst ticking entity Error: java.lang.NullPointerException: Cannot invoke "dnm.a()" because "$$1" is null</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250331" target="_blank" rel="noopener noreferrer">MC-250331</a> Chunk rendering is glitchy / incorrect when redrawing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250339" target="_blank" rel="noopener noreferrer">MC-250339</a> Paintings are off-centered in multiplayer servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250379" target="_blank" rel="noopener noreferrer">MC-250379</a> Teleporting armor stands results in visual desync and abnormal behavior</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250400" target="_blank" rel="noopener noreferrer">MC-250400</a> Blocks and items can cause the world to render invisibly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250411" target="_blank" rel="noopener noreferrer">MC-250411</a> Sculk can spread in ancient city structures and replace soul sand with fire on top, extinguishing fires</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250429" target="_blank" rel="noopener noreferrer">MC-250429</a> Narrator improperly narrates chat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250460" target="_blank" rel="noopener noreferrer">MC-250460</a> The rendering of players is delayed for others</li>
+</ul>

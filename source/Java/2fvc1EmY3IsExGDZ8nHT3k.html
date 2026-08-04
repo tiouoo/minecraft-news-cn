@@ -1,0 +1,26 @@
+<p>We are now releasing pre-release 6 for Minecraft 1.19.1 with some small tweaks to sculk sensors and catalysts as well as bug fixes and improvements to the chat signing system.</p>
+<h1>Changes in 1.19.1 Pre-release 6</h1>
+<ul>
+<li>Sculk Catalysts will now drop 5 XP instead of 20 XP</li>
+<li>Colors of the signing indicators for sending a message have been adjusted for improved accessiblity</li>
+</ul>
+<h1>Technical Changes in 1.19.1 Pre-release 6</h1>
+<ul>
+<li>The <code>run_command</code> click event for text components no longer supports any commands that send chat messages<ul>
+<li><code>/tellraw</code> should be used instead</li>
+</ul></li>
+</ul>
+<h1>Bugs fixed in 1.19.1 Pre-release 6</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-148149" target="_blank" rel="noopener noreferrer">MC-148149</a> Linux game crash when opening links</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207077" target="_blank" rel="noopener noreferrer">MC-207077</a> Crash on loading pre-1.13 world with noteblock + note NBT in inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235614" target="_blank" rel="noopener noreferrer">MC-235614</a> Reference to unexisting predicate in a datapack causes java.lang.NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252190" target="_blank" rel="noopener noreferrer">MC-252190</a> Player-dropped items creating vibrations depends on you sneaking at the moment the item hits the ground, instead of when you threw the item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252258" target="_blank" rel="noopener noreferrer">MC-252258</a> Wool block / carpet items generate vibrations, unless thrown by crouching players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252265" target="_blank" rel="noopener noreferrer">MC-252265</a> --server argument causes java.lang.NullPointerException crash on some servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253402" target="_blank" rel="noopener noreferrer">MC-253402</a> Game crash when you shift right click on item in your hotbar to the chest at the same time as you die</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254255" target="_blank" rel="noopener noreferrer">MC-254255</a> Unable to text in chat with Chat Preview On send while sleeping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254261" target="_blank" rel="noopener noreferrer">MC-254261</a> "The background opacity box of the chat preview field renders behind the ""Leave Bed"" button when sleeping in beds"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254284" target="_blank" rel="noopener noreferrer">MC-254284</a> Sending chat packets with invalid message type id crashes the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254349" target="_blank" rel="noopener noreferrer">MC-254349</a> Crash when putting dye into a loom on a modded server</li>
+</ul>

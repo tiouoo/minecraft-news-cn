@@ -1,0 +1,44 @@
+<p>是时候来一张音乐快照了！我们现在为洞穴与山崖：第二部分引入了新音乐。这一次，我们有一批由才华横溢的Lena Raine和Kumi Tanioka创作的新曲目。这些曲目也可以在<a href="https://open.spotify.com/album/7yQIrNTf3pBu0FdyAJqTqb?si=CC31NZyIQrOl-MNVCNYYkQ" target="_blank" rel="noopener noreferrer">Spotify</a>上收听，并且很快也会在其他服务（如Apple Music和YouTube）上提供。</p>
+<p>此快照还包含一些额外的调整、错误修复和性能改进。</p>
+<p><strong>我们仍强烈建议在加载此快照之前备份你的世界。</strong></p>
+<h1>21w42a的新特性</h1>
+<ul>
+<li>游戏新增了音乐</li>
+<li>为单人世界添加了世界自动保存指示器</li>
+</ul>
+<h2>音乐</h2>
+<ul>
+<li>在主世界（生存模式游玩时）和主菜单中添加了Lena Raine和Kumi Tanioka的新音乐</li>
+<li>添加了Lena Raine的新音乐唱片《otherside》。该唱片可在要塞走廊的箱子中罕见地找到，或在地牢箱子中极罕见地找到。</li>
+</ul>
+<h1>21w42a中的更改</h1>
+<ul>
+<li>世界出生点选择算法已重新设计，现在会根据气候参数生成玩家</li>
+<li>世界生成调整</li>
+</ul>
+<h2>世界生成</h2>
+<ul>
+<li>熔岩泉现在可以在山地和积雪地形中生成</li>
+<li>水泉不会在y=192以上生成，且略微少见</li>
+<li>恶地金矿现在生成得更高</li>
+</ul>
+<h1>21w42a中的技术性更改</h1>
+<ul>
+<li>用<code>block_marker</code>替换了<code>light</code>和<code>barrier</code>粒子</li>
+</ul>
+<h2>粒子</h2>
+<h3><code>block_marker</code></h3>
+<ul>
+<li>使用为配置的方块状态所分配模型的<code>particle</code>槽中声明的纹理进行渲染</li>
+<li>召唤语法与<code>block</code>粒子相同（例如<code>block_marker wheat[age=2]</code>）</li>
+</ul>
+<h1>21w42a中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-129912" target="_blank" rel="noopener noreferrer">MC-129912</a> 玩家不再于世界出生点生成在最高高度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132347" target="_blank" rel="noopener noreferrer">MC-132347</a> 在冰山中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214288" target="_blank" rel="noopener noreferrer">MC-214288</a> 当min_y大于0时，玩家不会生成在世界表面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233771" target="_blank" rel="noopener noreferrer">MC-233771</a> 一致性问题：当手持光源方块物品时，光源方块不显示其亮度等级</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236837" target="_blank" rel="noopener noreferrer">MC-236837</a> 玩家加载新世界时偶尔会生成在地下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238582" target="_blank" rel="noopener noreferrer">MC-238582</a> 沙漠和海洋之间会生成沙滩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238900" target="_blank" rel="noopener noreferrer">MC-238900</a> 默认世界生成中噪声设置里出现'Infinity'值</li>
+</ul>

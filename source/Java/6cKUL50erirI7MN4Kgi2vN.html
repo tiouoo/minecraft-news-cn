@@ -1,0 +1,164 @@
+<p>In this snapshot we made some changes to Redstone wire and we fixed a bunch of bugs.</p>
+<h1>Changes in 20w18a</h1>
+<ul>
+<li>Redstone wire changes</li>
+<li>The target block now conducts redstone signals</li>
+</ul>
+<p>​</p>
+<h2>Redstone wire</h2>
+<p>The blockstate, rendering and behavior of redstonewire are more in line with each other. Redstone will provide power to blocks on all sides it shows a visual connection to, and not do so on those sides without a visual connection.
+​</p>
+<ul>
+<li>A single redstone wire is now represented as a cross.</li>
+<li>A wire on top of a block, which is redirected from below, will power the sides it is redirected to now. E.g. a fence gate above the redirecting wire will be powered.</li>
+<li>Wires that redirect upwards to wires on non-conductive blocks used to only be redirected visually. Now this redirection applies to their behavior as well.</li>
+<li>A wire that is redirected to go over a block will now always provide power to the block. This is most noticeable when the wire has signal strength 1.</li>
+</ul>
+<p>​<img src="https://launchercontent.mojang.com/images/RedstoneChanges3_741x421.png" alt="Comparison between 1.15.2 and snapshot 20w18a"></p>
+<h1>Technical Changes in 20w18a</h1>
+<ul>
+<li>Added a <code>enable-status</code> option to the server.properties file which if set to <code>false</code> will suppress replies to status requests from clients. This makes the server appear offline in the multiplayer screen.</li>
+<li>Added control over how much entity data a server sends to clients</li>
+<li>Advancement system changes</li>
+</ul>
+<p>​</p>
+<h2>Entity Broadcasting</h2>
+<p>It is now possible to control at what range the server sends data about entities to clients.
+​</p>
+<ul>
+<li>Added an <code>entity-broadcast-range-percentage</code> server property controlling how close entities need to be before being sent to clients. Higher values means entities are visible further away from players but cause more network traffic. Specifies percentage of default value, so for example <code>50</code> specifies half of the default range.</li>
+</ul>
+<p>​</p>
+<h2>Advancements</h2>
+<ul>
+<li>Added <code>player</code> check to every trigger (except <code>impossible</code>)</li>
+<li>Entity checks in triggers can now use loot table condition syntax</li>
+</ul>
+<p>​</p>
+<h3>Extended entity checks</h3>
+<p>Entity checks in triggers can now use loot table condition syntax.
+Old notation:</p>
+<pre><code class="language-json">{
+  "trigger": "minecraft:player_killed_entity",
+  "conditions": {
+    "entity": {
+      "type": "minecraft:blaze"
+    }
+  }
+}
+</code></pre>
+<p>is now equivalent to:</p>
+<pre><code class="language-json">{
+  "trigger": "minecraft:player_killed_entity",
+  "conditions": {
+    "entity": [
+      {
+        "condition": "minecraft:entity_properties",
+        "predicate": {
+          "type": "minecraft:blaze"
+        },
+        "entity": "this"
+      }
+    ]
+  }
+}
+</code></pre>
+<p><strong>Note 1</strong>: Like in loot tables, all conditions in top level array must be met for whole condition to trigger.
+​
+<strong>Note 2</strong>: To access new functionality, top level element must be JSON array. JSON object are interpreted as old notation.<br>
+​
+Full list of extended triggers:</p>
+<ul>
+<li>New field <code>player</code> in every trigger</li>
+<li><code>bred_animals</code> - <code>parent</code>, <code>partner</code>, <code>child</code></li>
+<li><code>channeled_lightning</code> - <code>victims</code></li>
+<li><code>cured_zombie_villager</code> - <code>zombie</code>, <code>villager</code></li>
+<li><code>fishing_rod_hooked</code> - <code>entity</code></li>
+<li><code>killed_by_crossbow</code> - <code>victims</code></li>
+<li><code>player_killed_entity</code> - <code>entity</code></li>
+<li><code>entity_killed_player</code> - <code>entity</code></li>
+<li><code>player_hurt_entity</code> - <code>entity</code></li>
+<li><code>summoned_entity</code> - <code>entity</code></li>
+<li><code>tame_animal</code> - <code>entity</code></li>
+<li><code>target_hit</code> - <code>projectile</code></li>
+<li><code>villager_trade</code> - <code>villager</code></li>
+</ul>
+<p>​</p>
+<h3>Miscellaneous trigger changes</h3>
+<ul>
+<li>Due to addition of <code>player</code>, existing contents of <code>location</code>, <code>slept_in_bed</code>, <code>hero_of_the_village</code>, <code>voluntary_exile</code> can now be placed in <code>location</code> field instead of top-level object. Old syntax is still supported, but depreciated.</li>
+</ul>
+<p>​</p>
+<h1>Fixed bugs in 20w18a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-11211" target="_blank" rel="noopener noreferrer">MC-11211</a> Unable to perform many right click actions when targeting the top face of blocks placed at y=255</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111381" target="_blank" rel="noopener noreferrer">MC-111381</a> Rendering rotations for shulkers are set in onInitialSpawn method</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143904" target="_blank" rel="noopener noreferrer">MC-143904</a> Adding a non-rail block to the "rails" block tag will crash the game when placing a minecart on it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147255" target="_blank" rel="noopener noreferrer">MC-147255</a> Beds in the overworld will explode if in a nether wastes biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162385" target="_blank" rel="noopener noreferrer">MC-162385</a> The background of the title text does not fade with the text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166269" target="_blank" rel="noopener noreferrer">MC-166269</a> Wet wolves become black for an instant after shaking off water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166296" target="_blank" rel="noopener noreferrer">MC-166296</a> Mobs picking up and equipping items does not play the equipping sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170840" target="_blank" rel="noopener noreferrer">MC-170840</a> Broken spawn rates in soul sand valleys and warped forests</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170944" target="_blank" rel="noopener noreferrer">MC-170944</a> /locatebiome messages do not fit for all biome names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171523" target="_blank" rel="noopener noreferrer">MC-171523</a> Inconsistent strings for warped and crimson wall signs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172172" target="_blank" rel="noopener noreferrer">MC-172172</a> Adult piglins spin around while following the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172253" target="_blank" rel="noopener noreferrer">MC-172253</a> Equip sound doesn't play when Piglins equip items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173067" target="_blank" rel="noopener noreferrer">MC-173067</a> NullPointerException when a structure containing a campfire is placed during world generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173198" target="_blank" rel="noopener noreferrer">MC-173198</a> Target blocks are transparent and do not transfer redstone signals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173385" target="_blank" rel="noopener noreferrer">MC-173385</a> New Nether lighting system doesn't affect fluids, entity-like blocks (chests, etc.) and entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173747" target="_blank" rel="noopener noreferrer">MC-173747</a> Armor enchantment glint doesn't render</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174573" target="_blank" rel="noopener noreferrer">MC-174573</a> Nether vines can drop multiple copies with fortune (free duplication)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174593" target="_blank" rel="noopener noreferrer">MC-174593</a> Inconsistent pluralisation in "fell off a scaffolding"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174811" target="_blank" rel="noopener noreferrer">MC-174811</a> Zombified piglins are able to spawn on top of nether wart blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175107" target="_blank" rel="noopener noreferrer">MC-175107</a> It's possible to get Bad Omen VI in Survival mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175740" target="_blank" rel="noopener noreferrer">MC-175740</a> Game crashes when dispenser is used on non-beehive block in #beehives tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175741" target="_blank" rel="noopener noreferrer">MC-175741</a> Game crashes when a cat attempts to sleep in a non-bed in the #beds tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176028" target="_blank" rel="noopener noreferrer">MC-176028</a> Striders can spawn in stacks of three or more</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176032" target="_blank" rel="noopener noreferrer">MC-176032</a> Striders can float</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176135" target="_blank" rel="noopener noreferrer">MC-176135</a> Striders riding other entities are not cold</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176203" target="_blank" rel="noopener noreferrer">MC-176203</a> Striders with Levitation walking on Lava don't levitate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176459" target="_blank" rel="noopener noreferrer">MC-176459</a> Baby striders can spawn with saddles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176468" target="_blank" rel="noopener noreferrer">MC-176468</a> Adult striders can spawn with saddles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177105" target="_blank" rel="noopener noreferrer">MC-177105</a> Piglins, hoglins, zoglins and villagers look at their target's feet instead of its head</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177127" target="_blank" rel="noopener noreferrer">MC-177127</a> Unnecessary exclamation point in subtitle "End Portal opens!"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177173" target="_blank" rel="noopener noreferrer">MC-177173</a> Baby Zoglin age status value is not stored in the NBT tag.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177561" target="_blank" rel="noopener noreferrer">MC-177561</a> Compasses used on the top of lodestone at y=255 do not break when the lodestone is destroyed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177771" target="_blank" rel="noopener noreferrer">MC-177771</a> "death.attack.fireworks.item" displays raw translation string (is untranslated)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177790" target="_blank" rel="noopener noreferrer">MC-177790</a> Piglin Banners are named block.minecraft.banner.piglin.[<colour>]</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177794" target="_blank" rel="noopener noreferrer">MC-177794</a> Globe Banner Pattern is not required to add the globe to a banner</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177816" target="_blank" rel="noopener noreferrer">MC-177816</a> Failed to access/delete level should be "world"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177911" target="_blank" rel="noopener noreferrer">MC-177911</a> Cave generator doesn't cut through blackstone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177951" target="_blank" rel="noopener noreferrer">MC-177951</a> Game crashes when fire starters are used on a non-campfire in the #campfires tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177976" target="_blank" rel="noopener noreferrer">MC-177976</a> Baby piglins can pick up soul campfires</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178013" target="_blank" rel="noopener noreferrer">MC-178013</a> Zombified Piglins riding striders can despawn, leaving saddled striders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178129" target="_blank" rel="noopener noreferrer">MC-178129</a> Entity conversion subtitles use inconsistent tenses</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178336" target="_blank" rel="noopener noreferrer">MC-178336</a> The message "You have no home bed or respawn anchor, or it was obstructed" doesn't make it clear that your respawn anchor might have been depleted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178817" target="_blank" rel="noopener noreferrer">MC-178817</a> "Chain Blocks" don't have a "waterlogged" state</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178943" target="_blank" rel="noopener noreferrer">MC-178943</a> Piglins/hoglins spawned in bastion remnants can outrun players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178949" target="_blank" rel="noopener noreferrer">MC-178949</a> Bastion Remnants cannot be generated in in superflat worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179839" target="_blank" rel="noopener noreferrer">MC-179839</a> Chat text renders behind the armor bar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179841" target="_blank" rel="noopener noreferrer">MC-179841</a> Game crashes when you optimize your world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179845" target="_blank" rel="noopener noreferrer">MC-179845</a> Rain falls through any blocks in some spots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179847" target="_blank" rel="noopener noreferrer">MC-179847</a> Hoglins and Piglins spin around</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179850" target="_blank" rel="noopener noreferrer">MC-179850</a> There is no difference between Entity Distance 100% and 500%</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179858" target="_blank" rel="noopener noreferrer">MC-179858</a> Maps show stone-like pattern despite it not being there</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179863" target="_blank" rel="noopener noreferrer">MC-179863</a> Setting attribute minecraft:generic.max_health value to 0 or lower causes an infinite death loop after dying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179866" target="_blank" rel="noopener noreferrer">MC-179866</a> In some spots, it is raining even if it should be snowing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179868" target="_blank" rel="noopener noreferrer">MC-179868</a> Crash when going to a previous page of writable books</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179883" target="_blank" rel="noopener noreferrer">MC-179883</a> Raw JSON text duplicates components in "extra" in entity names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179886" target="_blank" rel="noopener noreferrer">MC-179886</a> Play button overlay doesn't appear in worldsave selection GUI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179905" target="_blank" rel="noopener noreferrer">MC-179905</a> Caption of game rule screen is missing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179952" target="_blank" rel="noopener noreferrer">MC-179952</a> Height map data doesn't get converted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179954" target="_blank" rel="noopener noreferrer">MC-179954</a> Keybindings are not correctly inserted into the demo info box text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180030" target="_blank" rel="noopener noreferrer">MC-180030</a> Adult hoglins zombified into an adult zoglin deals the same damage as a baby</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180100" target="_blank" rel="noopener noreferrer">MC-180100</a> Rain particles appear black under certain conditions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180110" target="_blank" rel="noopener noreferrer">MC-180110</a> Underline and strikethrough in JSON text don't always render correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180125" target="_blank" rel="noopener noreferrer">MC-180125</a> Incorrect font spacing on non-BMP characters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180135" target="_blank" rel="noopener noreferrer">MC-180135</a> Empty chat messages are not displayed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180138" target="_blank" rel="noopener noreferrer">MC-180138</a> Long messages in chat no longer have hanging indention</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180246" target="_blank" rel="noopener noreferrer">MC-180246</a> The "r" in "Game rules" is not capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180248" target="_blank" rel="noopener noreferrer">MC-180248</a> The "g" in "Upgrade gear" is not capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180299" target="_blank" rel="noopener noreferrer">MC-180299</a> "Elytra" in "Disable Elytra movement check" is inconsistently capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180353" target="_blank" rel="noopener noreferrer">MC-180353</a> Chat background renders in front of the Debug Menu but chat text renders behind it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181296" target="_blank" rel="noopener noreferrer">MC-181296</a> Panorama has wrong overlay when using Programmer Art</li>
+</ul>

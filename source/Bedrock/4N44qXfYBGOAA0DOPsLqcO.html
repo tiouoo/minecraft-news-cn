@@ -1,0 +1,135 @@
+<h1>Vanilla Parity:</h1>
+<h2>Gameplay</h2>
+<ul>
+<li>Modified the Fireball entity's collision box to match Java Edition</li>
+<li>The Enchanting Table now produces a sound when enchanting an item</li>
+<li>Amethyst blocks no longer produce sound when jumping off them</li>
+<li>Fixed the bottom texture of the Melon block to match the top texture (<a href="https://bugs.mojang.com/browse/MCPE-31035" target="_blank" rel="noopener noreferrer">MCPE-31035</a>)</li>
+<li>The item stack popup animation will now only play when a new item is added to the stack (<a href="https://bugs.mojang.com/browse/MCPE-23995" target="_blank" rel="noopener noreferrer">MCPE-23995</a>)</li>
+<li>Fixed an issue where Light Blocks would be removed when placing an Armor stand over them (<a href="https://bugs.mojang.com/browse/MCPE-151856" target="_blank" rel="noopener noreferrer">MCPE-151856</a>)</li>
+<li>Changed some structures names in the /locate command to have underscores, like in Java Edition (e.g. ancientcity -> ancient_city); the old names will still work but will not show up in the autocomplete</li>
+<li>Fixed an issue where Boats with Chests would not drop the Chest's contents when destroyed by the /kill command (<a href="https://bugs.mojang.com/browse/MCPE-160186" target="_blank" rel="noopener noreferrer">MCPE-160186</a>)</li>
+<li>Eating a Stew will now leave the empty Bowl in the slot it was eaten from (<a href="https://bugs.mojang.com/browse/MCPE-56367" target="_blank" rel="noopener noreferrer">MCPE-56367</a>)</li>
+<li>Drinking a Potion will now leave the empty Glass Bottle in the slot you drank it from rather than the first empty inventory slot (<a href="https://bugs.mojang.com/browse/MCPE-26436" target="_blank" rel="noopener noreferrer">MCPE-26436</a>)</li>
+<li>Oak and Mangrove Fence Gates are now flammable (<a href="https://bugs.mojang.com/browse/MCPE-160098" target="_blank" rel="noopener noreferrer">MCPE-160098</a>)</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Fixed Hoglin and Zoglin hitbox size and hit range to match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-65424" target="_blank" rel="noopener noreferrer">MCPE-65424</a>)</li>
+<li>Increased Sculk Shrieker and Sculk Sensor generation rates in Deep Dark and Ancient Cities to better match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-153525" target="_blank" rel="noopener noreferrer">MCPE-153525</a>)</li>
+<li>Modified the Cat's head position while sitting to match Java Edition (<a href="https://bugs.mojang.com/browse/MCPE-46668" target="_blank" rel="noopener noreferrer">MCPE-46668</a>)</li>
+<li>If a Villager has a Nametag, it is now displayed along with their trade tier (<a href="https://bugs.mojang.com/browse/MCPE-152644" target="_blank" rel="noopener noreferrer">MCPE-152644</a>)</li>
+</ul>
+<h2>Spectator Mode (Experimental)</h2>
+<ul>
+<li>Capes are no longer rendered while in Spectator Mode (<a href="https://bugs.mojang.com/browse/MCPE-156929" target="_blank" rel="noopener noreferrer">MCPE-156929</a>)</li>
+<li>Spectator players in Lava Cauldrons no longer display the burning animation (<a href="https://bugs.mojang.com/browse/MCPE-160331" target="_blank" rel="noopener noreferrer">MCPE-160331</a>)</li>
+<li>Players in Spectator Mode are no longer affected by the Powder Snow fog effect (<a href="https://bugs.mojang.com/browse/MCPE-156683" target="_blank" rel="noopener noreferrer">MCPE-156683</a>)</li>
+<li>Sadly, any leashed animals will not follow spectators anymore (<a href="https://bugs.mojang.com/browse/MCPE-157065" target="_blank" rel="noopener noreferrer">MCPE-157065</a>)</li>
+<li>Players in Spectator Mode no longer emit particles while sprinting (<a href="https://bugs.mojang.com/browse/MCPE-160397" target="_blank" rel="noopener noreferrer">MCPE-160397</a>)</li>
+<li>Spectator players with status effects applied no longer emit particles (<a href="https://bugs.mojang.com/browse/MCPE-160398" target="_blank" rel="noopener noreferrer">MCPE-160398</a>)</li>
+<li>Endermen no longer become angry at players in Spectator Mode (<a href="https://bugs.mojang.com/browse/MCPE-156742" target="_blank" rel="noopener noreferrer">MCPE-156742</a>)</li>
+<li>Players in Spectator Mode can no longer interact with Sculk Sensors by swimming in water or lava (<a href="https://bugs.mojang.com/browse/MCPE-153879" target="_blank" rel="noopener noreferrer">MCPE-153879</a>)</li>
+<li>Players switching into Spectator Mode will unhook any fishhooks attached to them</li>
+<li>Players in Spectator mode can no longer be pushed by explosions (<a href="https://bugs.mojang.com/browse/MCPE-156687" target="_blank" rel="noopener noreferrer">MCPE-156687</a>)</li>
+<li>Powder Snow no longer emits particles when spectators move through it (<a href="https://bugs.mojang.com/browse/MCPE-153876" target="_blank" rel="noopener noreferrer">MCPE-153876</a>)</li>
+<li>Big Dripleaf no longer tilts when touched by players in Spectator Mode (<a href="https://bugs.mojang.com/browse/MCPE-156686" target="_blank" rel="noopener noreferrer">MCPE-156686</a>)</li>
+<li>Players in Spectator Mode now keep their inventories and equipped items on death (<a href="https://bugs.mojang.com/browse/MCPE-156681" target="_blank" rel="noopener noreferrer">MCPE-156681</a>)</li>
+<li>Spectators can no longer attract mob's attention when holding their favorite food (<a href="https://bugs.mojang.com/browse/MCPE-153882" target="_blank" rel="noopener noreferrer">MCPE-153882</a>)</li>
+<li>The /testfor command can now target spectators (<a href="https://bugs.mojang.com/browse/MCPE-158042" target="_blank" rel="noopener noreferrer">MCPE-158042</a>)</li>
+<li>The Spectator game mode can no longer be entered via the /gamemode 6 command, only via /gamemode spectator</li>
+<li>Spectators using touch controls can no longer break Boats and Minecarts (<a href="https://bugs.mojang.com/browse/MCPE-158307" target="_blank" rel="noopener noreferrer">MCPE-158307</a>)</li>
+<li>Parrots sitting on a player's shoulder now hop off when entering Spectator Mode</li>
+<li>Animals and mobs with follow_owner behaviour no longer follow Spectators</li>
+<li>Animals and mobs with find_mount behaviour no longer try to mount Spectators</li>
+<li>Spectator Mode players won't have cold feet and now the Frost Walker enchant does not affect water</li>
+<li>Pufferfish no longer react to nearby spectators</li>
+</ul>
+<h1>Fixes:</h1>
+<h2>Performance / Stability</h2>
+<ul>
+<li>Fixed a bug that rarely caused the Villager's bounding box to become desynced with the server when sleeping</li>
+<li>Fixed a bug causing an occasional crash when loading players in beds</li>
+<li>The game no longer crashes when browsing Marketplace</li>
+<li>Fixed a crash that could occur when resuming the game on Xbox</li>
+<li>Fixed a bug where deleting cloud synced worlds would not delete the cloud version of the world when the player deletes the world locally</li>
+<li>Fixed PlayStation 4 audio stuttering issues while framerate is low (<a href="https://bugs.mojang.com/browse/MCPE-158902" target="_blank" rel="noopener noreferrer">MCPE-158902</a>)</li>
+<li>Fixed a crashing issue related to undyed Shulkers</li>
+<li>Most common Marketplace connection issues will now automatically resolve themselves when conditions improve without needing to restart Minecraft (<a href="https://bugs.mojang.com/browse/MCPE-155025" target="_blank" rel="noopener noreferrer">MCPE-155025</a>)</li>
+<li>Fixed performance issues when Striders are being ridden by baby Striders (<a href="https://bugs.mojang.com/browse/MCPE-146478" target="_blank" rel="noopener noreferrer">MCPE-146478</a>)</li>
+<li>Fixed a crash that would occur on some devices when loading in worlds with texture packs applied (<a href="https://bugs.mojang.com/browse/MCPE-160800" target="_blank" rel="noopener noreferrer">MCPE-160800</a>)</li>
+<li>Fixed a crash when uploading a world with no name using "Play on Realm" button</li>
+</ul>
+<h2>Gameplay</h2>
+<ul>
+<li>Music is now included in the mobile app and no longer has to be downloaded from Marketplace</li>
+<li>Fixed issue where player would see inside of Top Snow when diving into it while wearing Elytra</li>
+<li>Fireballs can no longer travel through portals to prevent an issue where they could become permanently stuck (<a href="https://bugs.mojang.com/browse/MCPE-160938" target="_blank" rel="noopener noreferrer">MCPE-160938</a>)</li>
+<li>Pressing the Ctrl and Alt keys together will no longer make the Alt key get stuck down</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Endermen no longer get angry at Creative players (<a href="https://bugs.mojang.com/browse/MCPE-42977" target="_blank" rel="noopener noreferrer">MCPE-42977</a>)</li>
+<li>Fixed a bug causing Leads to break with Allays after the owner player changes dimensions (<a href="https://bugs.mojang.com/browse/MCPE-158955" target="_blank" rel="noopener noreferrer">MCPE-158955</a>)</li>
+<li>The Goat's ram animation was modified to slowly lower their head when preparing to ram (<a href="https://bugs.mojang.com/browse/MCPE-129477" target="_blank" rel="noopener noreferrer">MCPE-129477</a>)</li>
+<li>Reduced the Enderman's teleport range to 32x32x32 to ensure that it cannot despawn itself by teleporting (<a href="https://bugs.mojang.com/browse/MCPE-152268" target="_blank" rel="noopener noreferrer">MCPE-152268</a>)</li>
+<li>Allays and Bees should no longer get stuck on Lanterns or other low hanging objects (<a href="https://bugs.mojang.com/browse/MCPE-155777" target="_blank" rel="noopener noreferrer">MCPE-155777</a>)</li>
+<li>EDU Toggle: NPC names default to only being displayed while looking at them</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Mud Brick Slab can now be placed as a top slab via commands (<a href="https://bugs.mojang.com/browse/MCPE-157852" target="_blank" rel="noopener noreferrer">MCPE-157852</a>)</li>
+<li>Banners now spawn correctly in newly generated structures (<a href="https://bugs.mojang.com/browse/MCPE-160696" target="_blank" rel="noopener noreferrer">MCPE-160696</a>)</li>
+<li>Coral Fans now look identical when placed facing North, West, East, and South (<a href="https://bugs.mojang.com/browse/MCPE-125311" target="_blank" rel="noopener noreferrer">MCPE-125311</a>)</li>
+<li>White Glazed Terracotta is no longer missing from the Creative Mode inventory and is once again accessible through commands</li>
+<li>Seagrass and Kelp are no longer classified as Coral Decorations in the Creative Mode inventory (<a href="https://bugs.mojang.com/browse/MCPE-44034" target="_blank" rel="noopener noreferrer">MCPE-44034</a>)</li>
+<li>Fixed a bug where some blocks that require a supporting block (for example Carpet or crops) did not appear on Maps when placed on a non-full block or above an air block (<a href="https://bugs.mojang.com/browse/MCPE-159713" target="_blank" rel="noopener noreferrer">MCPE-159713</a>)</li>
+<li>Iron Bars are no longer missing from the Creative Mode inventory and are once again accessible through commands (<a href="https://bugs.mojang.com/browse/MCPE-160253" target="_blank" rel="noopener noreferrer">MCPE-160253</a>)</li>
+<li>Piston's animation when extending and retracting is now smooth (<a href="https://bugs.mojang.com/browse/MCPE-155987" target="_blank" rel="noopener noreferrer">MCPE-155987</a>)</li>
+<li>It is no longer possible to get an aged Sapling in the inventory by block-picking</li>
+</ul>
+<h2>Items</h2>
+<ul>
+<li>Fixed dropped items getting stuck at the edge of flowing water (<a href="https://bugs.mojang.com/browse/MCPE-157167" target="_blank" rel="noopener noreferrer">MCPE-157167</a>)</li>
+<li>When on fire, the fire overlay no longer clips through held items (<a href="https://bugs.mojang.com/browse/MCPE-147776" target="_blank" rel="noopener noreferrer">MCPE-147776</a>)</li>
+<li>Mangrove, Crimson, and Warped Planks can now be used to repair Shields (<a href="https://bugs.mojang.com/browse/MCPE-158940" target="_blank" rel="noopener noreferrer">MCPE-158940</a>)</li>
+<li>Fixed a regression where an undamaged tool, such as Pickaxe, when name changed on an Anvil, would fail to work correctly when used for the first time (<a href="https://bugs.mojang.com/browse/MCPE-152637" target="_blank" rel="noopener noreferrer">MCPE-152637</a>)</li>
+</ul>
+<h2>User Interface</h2>
+<ul>
+<li>Fixed a bug where the name tag background was slightly offset (<a href="https://bugs.mojang.com/browse/MCPE-160254" target="_blank" rel="noopener noreferrer">MCPE-160254</a>)</li>
+<li>Fixed a bug where enchanted leather items would have parts of the texture not displaying the glint animation (<a href="https://bugs.mojang.com/browse/MCPE-98929" target="_blank" rel="noopener noreferrer">MCPE-98929</a>)</li>
+<li>Added new disconnection error messages to better highlight the area in which the disconnection occurred</li>
+<li>Character Creator offers in Marketplace will no longer lose their thumbnail images upon exiting the Dressing Room</li>
+<li>Added a Retry button to the Xbox cloud sync prompt</li>
+<li>Item stacks now are merged together after assigned tick threshold</li>
+<li>Added a missing settings button on packs in the updated Create New World screen</li>
+<li>Added a new disconnection error message - "Unable to connect, please restart your client"</li>
+<li>Added a paste button to the Command Block screen</li>
+<li>Fixed an issue causing messages with non-unicode characters to have incorrect spacing</li>
+<li>NPC names now default to only being displayed while looking at them</li>
+<li>The arrow within the crafting Pocket UI now fits appropriately without any clipping issues</li>
+<li>The "Cannot connect to Marketplace" error will no longer be erroneously read by the Text to Speech reader</li>
+<li>Raid bar no longer becomes stuck after breaking Beds to cancel a raid (<a href="https://bugs.mojang.com/browse/MCPE-152851" target="_blank" rel="noopener noreferrer">MCPE-152851</a>)</li>
+</ul>
+<h2>Graphical</h2>
+<ul>
+<li>Player textures and UI elements should no longer turn pink after playing for an extended period time on highly populated servers (<a href="https://bugs.mojang.com/browse/MCPE-105487" target="_blank" rel="noopener noreferrer">MCPE-105487</a>)</li>
+<li>Fixed an issue where certain water textures with waterlogged blocks displayed the wrong texture (<a href="https://bugs.mojang.com/browse/MCPE-156281" target="_blank" rel="noopener noreferrer">MCPE-156281</a>)</li>
+<li>Fixed an issue with flowing Lava and Water textures not animating on some iOS devices</li>
+<li>Sky in The End dimension will no longer look like static upon entry while it is raining in the Overworld (<a href="https://bugs.mojang.com/browse/MCPE-148843" target="_blank" rel="noopener noreferrer">MCPE-148843</a>)</li>
+</ul>
+<h1>Technical Updates:</h1>
+<h2>Updated Add-On Template Packs</h2>
+<ul>
+<li>Updated Add-On templates for 1.19.30 with new resources, behaviors, and documentation, are available to download at <a href="https://aka.ms/MCAddonPacks" target="_blank" rel="noopener noreferrer">aka.ms/MCAddonPacks</a></li>
+</ul>
+<h2>Copy Coordinates</h2>
+<ul>
+<li>Added keyboard shortcuts that allow players to copy either their current coordinates or the coordinates of a block<ul>
+<li>Control + Alt + C is the default for copying current coordinates</li>
+<li>Control + Alt + X is the default for copying coordinates of selected block</li>
+<li>Needs the "Enable Copy Coordinate UI" enabled in Creator settings</li>
+</ul></li>
+</ul>
+<p>See the full list of technical changes in the <a href="https://feedback.minecraft.net/hc/en-us/articles/9272494067469" target="_blank" rel="noopener noreferrer">full changelog</a>.</p>

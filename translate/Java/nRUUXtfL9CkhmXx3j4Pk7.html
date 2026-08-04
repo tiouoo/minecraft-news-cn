@@ -1,0 +1,121 @@
+<p>Minecraft快照22w45a现已发布。本快照为离线玩家引入了<a href="https://www.minecraft.net/article/introducing-new-default-skins" target="_blank" rel="noopener noreferrer">新的默认皮肤</a>、竹方块，并对恼鬼进行了视觉更新。此外，还包含一些创造模式物品栏的调整。</p>
+<p>祝挖矿愉快！</p>
+<h1>22w45a新特性</h1>
+<ul>
+<li>为离线玩家添加了新的默认皮肤</li>
+<li>添加了竹方块和去皮竹方块<ul>
+<li>竹方块可由9个竹子合成，并且可以像其他原木一样去皮</li>
+<li>由竹方块合成的竹板只能得到2个木板，而原木能得到4个</li>
+</ul></li>
+</ul>
+<h1>22w45a中的更改</h1>
+<ul>
+<li>恼鬼现在有了新外观</li>
+<li>荒野更新音乐的音量已略微调低</li>
+<li>开启时，潜影盒会将其开启面上附着的方块（如火把）弹开<ul>
+<li>当潜影盒打开时，无法在其开启面上放置需要支撑的方块</li>
+</ul></li>
+<li>旁观模式菜单中的“传送到队伍成员”选项现在仅对存在合适目标玩家的队伍显示</li>
+<li>在控制菜单中添加了“管理员物品标签页”选项，默认关闭</li>
+<li>创造模式物品栏更改</li>
+</ul>
+<h2>恼鬼</h2>
+<ul>
+<li>恼鬼模型和纹理的更改<ul>
+<li>恼鬼仍保留略微过大的碰撞箱，以便更容易攻击</li>
+</ul></li>
+</ul>
+<h2>创造模式物品栏更改</h2>
+<ul>
+<li>仅管理员可用的物品现在会在新“管理员工具”标签页中显示，前提是你满足以下两个条件：<ul>
+<li>控制菜单中的“管理员物品标签页”选项已设为<code>开启</code></li>
+<li>拥有所需的管理员权限</li>
+<li>如果在打开物品栏时失去管理员权限，该标签页会隐藏</li>
+<li>现在也包含结构方块和所有光照等级的光源方块</li>
+</ul></li>
+<li>添加了“彩色方块”标签页<ul>
+<li>包含所有具有16种颜色变体的方块</li>
+<li>所有彩色方块都已从“建筑方块”标签页移至此处，以减少该标签页的体积</li>
+</ul></li>
+<li>“消耗品”标签页已更名为“食物与饮品”标签页，名称更直观</li>
+<li>“合成”标签页已更名为“材料”标签页，因为并非所有物品都用于合成</li>
+<li>重新排序<ul>
+<li>自然方块<ul>
+<li>顶部区域各类型之间更具一致性</li>
+<li>将蛋移到种子和单格植物之间</li>
+<li>将可攀爬植物放在双格植物上方</li>
+</ul></li>
+<li>食物与饮品<ul>
+<li>生食的熟制版本现在紧挨在一起</li>
+</ul></li>
+<li>红石方块<ul>
+<li>减少杂乱</li>
+<li>更重要的物品置顶</li>
+<li>移除了门、活板门、按钮和船中功能无差异的变体</li>
+</ul></li>
+<li>材料<ul>
+<li>将青金石按照与矿石方块相同的顺序排列</li>
+</ul></li>
+</ul></li>
+<li>移动<ul>
+<li>附魔之瓶已从“工具与实用物品”标签页移至“材料”标签页，位于附魔书旁边</li>
+</ul></li>
+<li>添加<ul>
+<li>所有斧头到“战斗”标签页（它们仍保留在“工具与实用物品”标签页中）</li>
+<li>所有可能的谜之炖菜到“消耗品”标签页<ul>
+<li>在从创造模式物品栏中拾取之前，工具提示会显示炖菜的效果</li>
+<li>仅列出可通过合成或哞菇获得效果的炖菜</li>
+</ul></li>
+<li>每种类型的压力板和按钮到“建筑方块”标签页</li>
+<li>几乎所有照明方块到“功能方块”标签页顶部</li>
+<li>所有3种飞行时长的烟花到“工具与实用物品”标签页，以及“战斗”标签页中弩的旁边</li>
+<li>末影之眼到“功能方块”标签页中的末地传送门框架方块旁边，方便使用</li>
+</ul></li>
+<li>创造模式菜单中所有物品的工具提示现在都会显示该物品所在的分类（如果不在单一分类标签页中）<ul>
+<li>此前仅在搜索标签页中显示</li>
+</ul></li>
+</ul>
+<h1>22w45a中的技术更改</h1>
+<ul>
+<li><code>/publish</code>命令添加了新参数，用于启用命令和设置默认游戏模式<ul>
+<li>新语法：<code>/publish [allowCommands] [gamemode] [port]</code></li>
+</ul></li>
+<li>对局域网开放屏幕的更改<ul>
+<li>现在可以选择在哪个端口上托管局域网世界</li>
+<li>游戏模式和允许作弊按钮现在会初始化为世界的默认值</li>
+</ul></li>
+<li>资源包版本现在为12</li>
+</ul>
+<h1>22w45a中修复的Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-80032" target="_blank" rel="noopener noreferrer">MC-80032</a> 马通过下界传送门时可能会窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118140" target="_blank" rel="noopener noreferrer">MC-118140</a> 缩放地图时，结果地图的工具提示显示的是之前的缩放值，而不是新值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127110" target="_blank" rel="noopener noreferrer">MC-127110</a> 无法将水桶中的水倒入含水方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177523" target="_blank" rel="noopener noreferrer">MC-177523</a> 末影人生气/尖叫声音事件的字幕与空闲声音相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193360" target="_blank" rel="noopener noreferrer">MC-193360</a> 猪灵、僵尸猪灵和猪灵蛮兵之间的眼睛高度不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200000" target="_blank" rel="noopener noreferrer">MC-200000</a> 商人交易选择数据包（C2S）未检查负索引</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235414" target="_blank" rel="noopener noreferrer">MC-235414</a> 玩家与下界传送门的同步问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244550" target="_blank" rel="noopener noreferrer">MC-244550</a> 空标签会匹配有形状配方中的空槽位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255370" target="_blank" rel="noopener noreferrer">MC-255370</a> 聊天悬停和点击事件在聊天设置中使用“行间距”时会出现偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255743" target="_blank" rel="noopener noreferrer">MC-255743</a> 蜜蜂的寻路系统可能导致性能问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256461" target="_blank" rel="noopener noreferrer">MC-256461</a> 骆驼坐下动画期间脖子背面可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256511" target="_blank" rel="noopener noreferrer">MC-256511</a> 非控制乘客也能让骆驼冲刺</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256516" target="_blank" rel="noopener noreferrer">MC-256516</a> 丛林悬挂告示牌纹理不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256532" target="_blank" rel="noopener noreferrer">MC-256532</a> 竹子、绯红和诡异悬挂告示牌的声音使用了通用木头声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256616" target="_blank" rel="noopener noreferrer">MC-256616</a> 测重压力板产生的声音不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256674" target="_blank" rel="noopener noreferrer">MC-256674</a> 如果resourcepacks目录是符号链接，则出现FileAlreadyExistsException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256765" target="_blank" rel="noopener noreferrer">MC-256765</a> 单人游戏中引用聊天举报功能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256854" target="_blank" rel="noopener noreferrer">MC-256854</a> 现在任何模型文件中的错误都会导致资源重新加载失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256884" target="_blank" rel="noopener noreferrer">MC-256884</a> 生物无法用弩正确射击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256885" target="_blank" rel="noopener noreferrer">MC-256885</a> “gui.chatSelection.fold”字符串中的“messages”一词总是使用复数形式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256888" target="_blank" rel="noopener noreferrer">MC-256888</a> 新的网络协议阻止登录离线服务器</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256903" target="_blank" rel="noopener noreferrer">MC-256903</a> 磁石指南针的附魔光效缩放不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256917" target="_blank" rel="noopener noreferrer">MC-256917</a> 由TNT和TNT矿车（非玩家或其他生物造成）引发的爆炸的死亡消息已更改</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256951" target="_blank" rel="noopener noreferrer">MC-256951</a> TNT矿车不记录其爆炸原因</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256961" target="_blank" rel="noopener noreferrer">MC-256961</a> 多重射击会向后发射弹射物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256990" target="_blank" rel="noopener noreferrer">MC-256990</a> 超平坦世界可以将已禁用的方块作为其地层的一部分</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257102" target="_blank" rel="noopener noreferrer">MC-257102</a> 创造模式物品栏中缺少结构方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257104" target="_blank" rel="noopener noreferrer">MC-257104</a> gamerule.lavaSourceConversion中的“Lava”被拼错为“Lave”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257118" target="_blank" rel="noopener noreferrer">MC-257118</a> 创造模式物品栏中按钮的放置位置与压力板不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257234" target="_blank" rel="noopener noreferrer">MC-257234</a> 在多人游戏中对诡异或绯红菌使用骨粉会导致客户端崩溃</li>
+</ul>

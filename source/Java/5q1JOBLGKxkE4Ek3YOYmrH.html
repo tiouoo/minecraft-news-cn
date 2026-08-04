@@ -1,0 +1,138 @@
+<p>It has been a busy week for us but we still wanted to squeeze out a snapshot as we've been busy squashing a bunch of bugs.</p>
+<h1>Experimental Rendering Changes</h1>
+<p>We've included some experimental changes to graphics rendering in this snapshot, which might reveal some issues on a small number of older graphics cards.</p>
+<p>If do you find any new graphical bugs then please report them to the bug tracker with the make and model of your graphics card as well as which operating system you are using
+​</p>
+<h1>New Features in 20w22a</h1>
+<p>​</p>
+<ul>
+<li>Piglins now sometimes dance in celebration of a completed hunt</li>
+</ul>
+<p>​</p>
+<h1>Changes in 20w22a</h1>
+<p>​</p>
+<ul>
+<li>Villager workstation logic changes</li>
+<li>Bells can be hung from the underside of more blocks</li>
+<li>When a villager that was traded with is struck by lightning, the witch it is converted to will no longer despawn</li>
+<li>Players can no longer mount another entity when the crouch key is held down</li>
+</ul>
+<p>​</p>
+<h2>Villager Workstation Logic</h2>
+<p>​</p>
+<ul>
+<li>Villagers no longer try to work at the same workstation</li>
+<li>The most experienced nearby villager for the profession corresponding to the workstation you add will get the workstation</li>
+<li>Villagers now have to walk to and reach the workstation before they can acquire the profession / work there</li>
+<li>Villagers can no longer claim workstations / professions during raids or night time.</li>
+<li>Villagers will check and make sure their workstation is valid at all times of day as long as they are within 16 blocks of their workstation.</li>
+</ul>
+<p>​</p>
+<h1>Technical Changes in 20w22a</h1>
+<p>​</p>
+<ul>
+<li>Slightly changed datapack loading to prevent custom datapacks from crashing</li>
+<li>Cached repeated block type lookups and collisions during pathfinding for increased performance</li>
+<li>Minor optimizations in collision detection</li>
+<li>Top level element in predicate file can now be array (all contents will be ANDed)</li>
+<li>Added shader support for accessing depth buffer.</li>
+<li>Renderer now uses per-pixel blending layers for some transparent elements.</li>
+</ul>
+<p>​</p>
+<h2>Datapack loading</h2>
+<p>​</p>
+<ul>
+<li>If datapack reload fails, changes will not be applied and game will continue using previous data</li>
+<li>If existing datapacks prevent world from loading, game will give option to load world in safe mode, which loads only vanilla datapack</li>
+<li>Changes to datapack list are stored only after successful reload</li>
+<li>Added <code>--safeMode</code> option to server to load only with vanilla datapack</li>
+<li>Game will now detect critical datapack issues, like missing required tags and prevent world from being loaded</li>
+</ul>
+<p>​</p>
+<h1>Fixed bugs in 20w22a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-667" target="_blank" rel="noopener noreferrer">MC-667</a> Lily pads can be placed intersecting entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-4065" target="_blank" rel="noopener noreferrer">MC-4065</a> Messages/commands sent while in a bed won't be remembered in sent history</li>
+<li><a href="https://bugs.mojang.com/browse/MC-112131" target="_blank" rel="noopener noreferrer">MC-112131</a> Intersecting dungeons: spawner replaced by cobblestone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118594" target="_blank" rel="noopener noreferrer">MC-118594</a> Removal of Log4J2Plugins.dat causing a slowdown of 3 secs on startup while it has to rescan all classes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-120805" target="_blank" rel="noopener noreferrer">MC-120805</a> Pig rotation is wrong when you see a player riding them with carrot on a stick</li>
+<li><a href="https://bugs.mojang.com/browse/MC-124812" target="_blank" rel="noopener noreferrer">MC-124812</a> Endermen holding a block can despawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-125006" target="_blank" rel="noopener noreferrer">MC-125006</a> Stronghold and dungeon generate over each other</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134755" target="_blank" rel="noopener noreferrer">MC-134755</a> All short mobs drown just below the surface of water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143443" target="_blank" rel="noopener noreferrer">MC-143443</a> Redstone dust block states don't update properly if the wire is broken by a piston</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148893" target="_blank" rel="noopener noreferrer">MC-148893</a> Fox spawners do not render the fox inside of the block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150806" target="_blank" rel="noopener noreferrer">MC-150806</a> Multiple villagers are attached to the same profession block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153787" target="_blank" rel="noopener noreferrer">MC-153787</a> Zombie Reinforcements can spawn on glass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156161" target="_blank" rel="noopener noreferrer">MC-156161</a> Some chest loot is randomized across the same seed, unlike before 1.14</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156866" target="_blank" rel="noopener noreferrer">MC-156866</a> Villagers level from Apprentice to Journeyman with less experience than shown by XP bar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157303" target="_blank" rel="noopener noreferrer">MC-157303</a> Villagers wake up and seek a new "home" (bed) while living in a 2 high house</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157436" target="_blank" rel="noopener noreferrer">MC-157436</a> Player position is constantly reset when clicking with a sword or a trident onto the ground in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162340" target="_blank" rel="noopener noreferrer">MC-162340</a> World border is rendered behind transparent blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162665" target="_blank" rel="noopener noreferrer">MC-162665</a> Food does not drop from a campfire when it is put out with a shovel/water bottle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163910" target="_blank" rel="noopener noreferrer">MC-163910</a> Hand animation sometimes plays for a second time with high ping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164233" target="_blank" rel="noopener noreferrer">MC-164233</a> "Skilled" villagers without job site do not get precedence over unemployed villagers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165549" target="_blank" rel="noopener noreferrer">MC-165549</a> Arm swing animation is still played when drinking an item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166135" target="_blank" rel="noopener noreferrer">MC-166135</a> Bees inside a nest/hive don't grow up or get their breeding timer reset</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167039" target="_blank" rel="noopener noreferrer">MC-167039</a> Right-clicking on a spawner with the same mob spawn egg as in spawner plays hand animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169891" target="_blank" rel="noopener noreferrer">MC-169891</a> Zombie Reinforcements can spawn in regardless if light level is higher than 9 in nether (hard difficulty)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171515" target="_blank" rel="noopener noreferrer">MC-171515</a> Semi-transparent items don't render properly in front of semi-transparent blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171553" target="_blank" rel="noopener noreferrer">MC-171553</a> Basalt can generate inside Nether fortresses</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172079" target="_blank" rel="noopener noreferrer">MC-172079</a> The /clear command output doesn't count items in the inventory crafting grid</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172142" target="_blank" rel="noopener noreferrer">MC-172142</a> Items are invisible while being picked up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172197" target="_blank" rel="noopener noreferrer">MC-172197</a> Nylium is not dropping netherrack when it is broken by pickaxe</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172272" target="_blank" rel="noopener noreferrer">MC-172272</a> /clear removes all items from crafting grid regardless of item type</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172479" target="_blank" rel="noopener noreferrer">MC-172479</a> Hoglins immediately attack invisible players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172980" target="_blank" rel="noopener noreferrer">MC-172980</a> Light does not propagate across chunk borders properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173032" target="_blank" rel="noopener noreferrer">MC-173032</a> Fossils can overwrite the stronghold end portal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173063" target="_blank" rel="noopener noreferrer">MC-173063</a> Redstone wire doesn't update connections going up or down when being placed by commands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173197" target="_blank" rel="noopener noreferrer">MC-173197</a> Zombified Piglin does not hold its arms upwards like a zombie</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173404" target="_blank" rel="noopener noreferrer">MC-173404</a> Desync when mounting an entity while sneaking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173552" target="_blank" rel="noopener noreferrer">MC-173552</a> Nether Fossil support islands are sometimes cut off at chunk borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174307" target="_blank" rel="noopener noreferrer">MC-174307</a> Nether fossil stops basalt pillar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174325" target="_blank" rel="noopener noreferrer">MC-174325</a> Mushrooms or Nether fungi can replace the stem of large nether fungi (trees)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174692" target="_blank" rel="noopener noreferrer">MC-174692</a> Shroomlights, wart blocks and vines can overwrite the stem of large Nether fungi</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174932" target="_blank" rel="noopener noreferrer">MC-174932</a> Right-to-left text appears left-to-right after game start until language is changed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175553" target="_blank" rel="noopener noreferrer">MC-175553</a> Piglins don't drop their inventories when converted to zombified piglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176020" target="_blank" rel="noopener noreferrer">MC-176020</a> If a player is riding a strider, other players can not see the animation of the strider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176051" target="_blank" rel="noopener noreferrer">MC-176051</a> Glowstone in the offhand sets spawn point and charges respawn anchor at the same time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176147" target="_blank" rel="noopener noreferrer">MC-176147</a> Basalt randomly gets cut off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176628" target="_blank" rel="noopener noreferrer">MC-176628</a> Frost Walker protects player from fire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177150" target="_blank" rel="noopener noreferrer">MC-177150</a> Ticking entity  java.lang.IllegalStateException: Tag minecraft:fire used before it was bound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177265" target="_blank" rel="noopener noreferrer">MC-177265</a> Piglin and Zombified Piglin right arm/leg/loincloth textures are identical to the left ones</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177626" target="_blank" rel="noopener noreferrer">MC-177626</a> Spruce generation is broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177870" target="_blank" rel="noopener noreferrer">MC-177870</a> Soul campfire doesn’t deal twice the amount of damage as normal campfire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177888" target="_blank" rel="noopener noreferrer">MC-177888</a> Blackstone can’t be used to repair stone tools and weapons using an anvil</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177962" target="_blank" rel="noopener noreferrer">MC-177962</a> Giant fungi can replace waterlogged blocks when growing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177970" target="_blank" rel="noopener noreferrer">MC-177970</a> Player can occasionally be forced into crawling in one block tall spaces</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178003" target="_blank" rel="noopener noreferrer">MC-178003</a> Fossils can generate inside of desert temples</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178441" target="_blank" rel="noopener noreferrer">MC-178441</a> Endermen don't avoid the wither's skull projectiles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179020" target="_blank" rel="noopener noreferrer">MC-179020</a> Jigsaw blocks do not disappear post-gen when structure is spawned using the 'Generate' action from an initial jigsaw</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179890" target="_blank" rel="noopener noreferrer">MC-179890</a> Fire stops ticking forever if gamerule doFireTick is set to false once</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179909" target="_blank" rel="noopener noreferrer">MC-179909</a> 2x2 trees sometimes fail to grow, but if they grow, they always grow on the surface</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180098" target="_blank" rel="noopener noreferrer">MC-180098</a> Farmer villagers' farming behavior is broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180771" target="_blank" rel="noopener noreferrer">MC-180771</a> Observer not updating when tree grows leaves in front of it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180877" target="_blank" rel="noopener noreferrer">MC-180877</a> Fire does not spread from netherack to other blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181108" target="_blank" rel="noopener noreferrer">MC-181108</a> Right-to-left text is displayed left-to-right at all times</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181464" target="_blank" rel="noopener noreferrer">MC-181464</a> When a piglin picks up a shield the gear equip sound is infinitely spammed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181529" target="_blank" rel="noopener noreferrer">MC-181529</a> Ctrl + Pick Block no longer copies skull / head NBT data properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181555" target="_blank" rel="noopener noreferrer">MC-181555</a> When replacing a snow layer with a grass block, podzol or mycelium, the block has the "snowy=true" blockstate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182666" target="_blank" rel="noopener noreferrer">MC-182666</a> Parity issue: Piglins do not have a dancing animation when celebrating their victory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182888" target="_blank" rel="noopener noreferrer">MC-182888</a> Compasses and clocks work like normal in villager trading GUI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182919" target="_blank" rel="noopener noreferrer">MC-182919</a> Horse armour stops rendering if you equip the horse with a saddle by right-clicking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182967" target="_blank" rel="noopener noreferrer">MC-182967</a> Throwing ender pearl whilst mounted doesn't teleport you</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183275" target="_blank" rel="noopener noreferrer">MC-183275</a> Basalt pillars end above the lava in Java Edition but inside of the lava in Bedrock Edition</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183374" target="_blank" rel="noopener noreferrer">MC-183374</a> Text on signs stops rendering while still in view</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183496" target="_blank" rel="noopener noreferrer">MC-183496</a> Enchantment glint doesn't render in boat interior</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183718" target="_blank" rel="noopener noreferrer">MC-183718</a> Stronghold end portal can be overwritten by ocean ruins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183808" target="_blank" rel="noopener noreferrer">MC-183808</a> "Bee Our Guest" advancement does not trigger when harvesting honey from bee nests</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183860" target="_blank" rel="noopener noreferrer">MC-183860</a> Zombie villager converted from villager gets PersistenceRequired depending on whether attacking zombie had it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184482" target="_blank" rel="noopener noreferrer">MC-184482</a> End Gateways don't generate after defeating the ender dragon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184609" target="_blank" rel="noopener noreferrer">MC-184609</a> Text renders in the wrong order</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184619" target="_blank" rel="noopener noreferrer">MC-184619</a> Piglins riding on other entities float</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184629" target="_blank" rel="noopener noreferrer">MC-184629</a> Piglins riding on hoglins or other piglins automatically dismount them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184730" target="_blank" rel="noopener noreferrer">MC-184730</a> [Crash] "java.lang.NullPointerException: mouseClicked event handler" Some Superflat presets crash immediately when trying to generate them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184740" target="_blank" rel="noopener noreferrer">MC-184740</a> Structures generated in previous versions are not recognised as valid structures, causing mobs not to spawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184778" target="_blank" rel="noopener noreferrer">MC-184778</a> Redstone dust can be toggled between cross and dot in adventure mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184936" target="_blank" rel="noopener noreferrer">MC-184936</a> Old Minecraft logo in the end poem/credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185156" target="_blank" rel="noopener noreferrer">MC-185156</a> Worldgen settings are not validated and can cause crashes</li>
+</ul>

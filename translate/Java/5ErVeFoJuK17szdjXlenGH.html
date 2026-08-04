@@ -1,0 +1,41 @@
+<p>今天，我们很高兴与大家分享快照 22w06a。它包含针对韩国玩家的合规性更新，并且充满了技术性标签的美味内容。</p>
+<p>祝您挖矿愉快（适度游戏）！</p>
+<h1>22w06a 中的更改</h1>
+<p>如果您在韩国进行游戏，我们依据游戏法律添加了游戏计时器和提示，以帮助提醒玩家适时休息。更多信息请参见<a href="https://help.minecraft.net/hc/articles/360052763631" target="_blank" rel="noopener noreferrer">常见问题解答</a>。</p>
+<h1>22w06a 中的技术性更改</h1>
+<ul>
+<li>注册表中存在的任何类型（方块、物品、生物群系等）现在都可以拥有标签</li>
+</ul>
+<h2>通用标签</h2>
+<ul>
+<li>现在可以为任何注册表（方块、物品、生物群系等）定义标签 - 请参阅报告中的 <code>registries.json</code></li>
+<li>新标签存储在数据包的 <code>tags</code> 目录下（与旧标签相同）<ul>
+<li>新标签目录的名称与注册表名称相同（因此为 <code>/data/[namespace]/tags/potion</code> 和 <code>/data/[namespace]/tags/worldgen/biome</code>）</li>
+<li>现有标签（<code>blocks</code>、<code>items</code>、<code>fluids</code>、<code>entity_types</code>、<code>game_events</code> 和 <code>functions</code>）暂时保留其名称</li>
+</ul></li>
+<li>世界生成结构中的某些字段以前只能接受元素 ID 列表，现在可以接受标签</li>
+<li>这些条目现在接受 <code>[id, ...]</code>、<code>id</code>（<code>[id]</code> 的简写）和 <code>#tag</code></li>
+<li>更改的字段如下：<ul>
+<li><code>feature.glow_lichen</code> 配置：<code>can_be_placed_on</code></li>
+<li><code>feature.spring_feature</code> 配置：<code>valid_blocks</code></li>
+<li><code>feature.simple_random_selector</code> 配置：<code>features</code></li>
+<li><code>block_predicate_type.matching_blocks</code>：<code>blocks</code></li>
+<li><code>block_predicate_type.matching_fluids</code>：<code>fluids</code></li>
+<li><code>biome</code>：<code>features</code> 中的内部列表，<code>carvers</code> 中的映射值</li>
+<li><code>biome_source.checkerboard</code>：<code>biomes</code></li>
+</ul></li>
+<li>某些标签字段现在要求 ID 前加上 <code>#</code>（但它们尚不接受元素列表）<ul>
+<li><code>dimension_type</code>：<code>infiniburn</code></li>
+<li><code>feature.geode</code> 配置：<code>blocks.cannot_replace</code>、<code>blocks.invalid_blocks</code></li>
+<li><code>feature.vegetation_patch</code>、<code>feature.waterlogged_vegetation_patch</code> 配置：<code>replaceable</code></li>
+<li><code>feature.root_system</code> 配置：<code>root_replaceable</code></li>
+<li><code>structure_processor.protected_blocks</code>：<code>value</code></li>
+</ul></li>
+</ul>
+<h1>22w06a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-105317" target="_blank" rel="noopener noreferrer">MC-105317</a> 结构方块在加载时无法正确旋转实体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239708" target="_blank" rel="noopener noreferrer">MC-239708</a> 超平坦世界的“水世界”预设设置已不适用于 1.18 更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245937" target="_blank" rel="noopener noreferrer">MC-245937</a> 使用烟花火箭向上推进时，粒子会闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248106" target="_blank" rel="noopener noreferrer">MC-248106</a> 鹦鹉在使用激流附魔时死亡</li>
+</ul>

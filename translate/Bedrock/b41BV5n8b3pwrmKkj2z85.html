@@ -1,0 +1,324 @@
+<p>《我的世界》现已推出新版本，旁观模式正式实装！触屏玩家将获得全新操控方案，游玩体验大幅优化。游戏新增多款默认角色皮肤，恼鬼也迎来模型与贴图翻新。下面是完整更新日志，一起来看看吧。</p>
+<h1>全新功能</h1>
+<h2>旁观模式</h2>
+<p>基岩版正式上线旁观模式！该功能此前为实验特性，现已移除实验开关，可直接使用。下面是该模式使用说明：</p>
+<ul>
+<li>开启作弊后，玩家可在世界设置的个人游戏模式选项，或使用指令 <code>/gamemode spectator</code> 自由切换进出旁观模式</li>
+<li>旁观玩家的界面简化，不再显示准星、快捷栏、经验条、生命值、饥饿值与盔甲栏</li>
+<li>切换旁观模式时，玩家的物品栏、生命值、手持道具等数据不会发生变动</li>
+<li>旁观玩家永久处于飞行状态，无法落地行走</li>
+<li>旁观玩家可穿透所有实体与实心方块，不存在碰撞判定</li>
+<li>身处方块内部时，旁观玩家能够透过方块看清外部环境</li>
+<li>旁观玩家不会受到任何伤害，方块、生物、道具、传送门、状态效果均无法对其产生影响</li>
+<li>旁观玩家无法使用道具，也不能与方块、生物产生交互</li>
+<li>无法打开物品栏、箱子、熔炉等各类方块界面</li>
+<li>除其他旁观玩家外，所有生物与普通玩家都看不见旁观玩家
+<ul>
+<li>其他旁观玩家视角下，你会显示为半透明的漂浮头部</li>
+</ul>
+</li>
+<li>跳过夜晚不需要旁观玩家上床睡觉</li>
+<li>第一人称视角下，旁观玩家不会看到自身手臂与手持物品</li>
+<li>旁观玩家飞行至未加载区块时，会正常生成区块</li>
+<li>旁观玩家不会触发生物生成</li>
+<li>非永久生物是否清除，会计算其与所有非旁观玩家的距离</li>
+<li>指令可选中并作用于旁观玩家</li>
+</ul>
+<p>原版同步相关修复详见下方「原版特性同步」板块。</p>
+<h2>全新触屏操控</h2>
+<ul>
+<li>触屏设备现已默认启用全新操控方案</li>
+<li>玩家可三种模式任选：「摇杆+点击交互」「摇杆+准星瞄准」「十字键+点击交互」</li>
+</ul>
+<p>相关修复内容详见下方「漏洞修复」板块。</p>
+<h2>全新默认皮肤</h2>
+<ul>
+<li>史蒂夫、亚历克斯之外新增多款默认角色，可在更衣室界面更换皮肤</li>
+</ul>
+<h2>恼鬼</h2>
+<ul>
+<li>翻新恼鬼模型与贴图</li>
+<li>略微扩大恼鬼碰撞箱，方便玩家进行战斗</li>
+</ul>
+<h1>原版特性同步</h1>
+<h2>生物</h2>
+<ul>
+<li>捉迷藏玩法中，幼年村民奔跑速度现已与Java版保持一致</li>
+</ul>
+<h2>方块</h2>
+<ul>
+<li>木门、铁门、木质活板门、铁质活板门、栅栏门的开关音效统一对齐Java版</li>
+<li>压力板根据触发方式播放不同音调，与Java版同步</li>
+<li>木质按钮新增专属点击音效，匹配Java版</li>
+<li>绯红、扭曲全套方块拥有专属音效</li>
+<li>凿制红砂岩、切割红砂岩底面改为平滑材质（<a href="https://bugs.mojang.com/browse/MCPE-20006" target="_blank" rel="noopener noreferrer">MCPE-20006</a>）</li>
+<li>弹射物落在泥土方块上时，不会持续反复震动（<a href="https://bugs.mojang.com/browse/MCPE-153744" target="_blank" rel="noopener noreferrer">MCPE-153744</a>）</li>
+<li>两栖生物在泥土方块周边寻路不再卡顿（<a href="https://bugs.mojang.com/browse/MCPE-153961" target="_blank" rel="noopener noreferrer">MCPE-153961</a>）</li>
+<li>泥土、灵魂沙放置时的碰撞箱与视觉外观完全匹配（<a href="https://bugs.mojang.com/browse/MCPE-162252" target="_blank" rel="noopener noreferrer">MCPE-162252</a>）</li>
+<li>船只撞上睡莲时，睡莲会正常破碎并播放音效、生成粒子（<a href="https://bugs.mojang.com/browse/MCPE-65138" target="_blank" rel="noopener noreferrer">MCPE-65138</a>）</li>
+<li>绝大多数无支撑会脱落的方块，破坏时会生成粒子、播放音效并触发振动信号</li>
+<li>珊瑚扇无法放置在台阶侧面（<a href="https://bugs.mojang.com/browse/MCPE-116986" target="_blank" rel="noopener noreferrer">MCPE-116986</a>）</li>
+<li>珊瑚扇可放置在玻璃等实心透明方块顶部（<a href="https://bugs.mojang.com/browse/MCPE-112407" target="_blank" rel="noopener noreferrer">MCPE-112407</a>）</li>
+<li>修复选中光源方块时，光源方块完全隐形的漏洞</li>
+</ul>
+<h2>旁观模式同步调整</h2>
+<ul>
+<li>玩家切换至旁观模式时，箱子、指令方块、结构方块界面会自动关闭</li>
+<li>个人游戏模式列表中新增旁观模式选项（<a href="https://bugs.mojang.com/browse/MCPE-156688" target="_blank" rel="noopener noreferrer">MCPE-156688</a>）</li>
+<li>悦灵不会向旁观玩家投掷道具（<a href="https://bugs.mojang.com/browse/MCPE-162873" target="_blank" rel="noopener noreferrer">MCPE-162873</a>）</li>
+</ul>
+<h1>实验性功能</h1>
+<ul>
+<li>新增「下一主要版本」实验开关，在世界设置开启即可体验相关内容</li>
+<li>该系列内容仍在持续开发，正式上线前外观、机制大概率大幅改动</li>
+<li>提醒：开启实验开关的世界会永久标记为实验存档。建议与主存档分开备份，详情查看此文：<a href="https://feedback.minecraft.net/hc/en-us/articles/4403610710797" target="_blank" rel="noopener noreferrer">相关说明文章</a></li>
+</ul>
+<h2>竹制方块</h2>
+<ul>
+<li>新增全套竹系方块，作为全新木材种类，拓展竹子用途</li>
+<li>新增竹筏</li>
+</ul>
+<h2>骆驼</h2>
+<ul>
+<li>新增骆驼，会在沙漠村庄自然生成</li>
+<li>可双人同骑</li>
+<li>骆驼体型高大，骑手距离地面较远，普通近战生物无法攻击到玩家</li>
+<li>可正常行走、疾跑，也能短距离冲刺加速</li>
+<li>会随机坐下休息，并晃动耳朵</li>
+</ul>
+<h2>凿制书架</h2>
+<ul>
+<li>书架全新变种方块</li>
+<li>可存放书本、书与笔、附魔书</li>
+<li>最多收纳6本书，妥善保管你的世界故事与剧情道具</li>
+<li>比较器可检测书架最后放入/取出书籍的动作，适合在神秘图书馆制作隐藏机关</li>
+</ul>
+<h2>悬挂告示</h2>
+<ul>
+<li>全新告示类型，可放置在方块底部与侧面</li>
+<li>全木材种类均对应专属悬挂告示</li>
+<li>也能放置在栅栏这类中心支撑窄方块下方</li>
+</ul>
+<h1>漏洞修复</h1>
+<h2>稳定性/性能</h2>
+<ul>
+<li>修复多款游戏进程内触发崩溃的问题</li>
+<li>修复使用键盘浏览村民交易界面时向下翻页导致崩溃的漏洞</li>
+<li>修复末影龙吐息未命中方块、坠入虚空时游戏崩溃的问题（<a href="https://bugs.mojang.com/browse/MCPE-161204" target="_blank" rel="noopener noreferrer">MCPE-161204</a>）</li>
+<li>玩家物品栏存在蜂箱（内含蜜蜂）时翻阅合成书不再大幅掉帧（<a href="https://bugs.mojang.com/browse/MCPE-146462" target="_blank" rel="noopener noreferrer">MCPE-146462</a>）</li>
+<li>漏斗存取物品造成的服务器卡顿降低</li>
+<li>创造模式物品栏悬浮光标时帧率下降问题修复（<a href="https://bugs.mojang.com/browse/MCPE-162277" target="_blank" rel="noopener noreferrer">MCPE-162277</a>）</li>
+<li>未开启教育版开关时渲染教育版道具会崩溃的漏洞修复（<a href="https://bugs.mojang.com/browse/MCPE-161587" target="_blank" rel="noopener noreferrer">MCPE-161587</a>）</li>
+<li>无玩家归属实体穿过末地传送门时崩溃问题修复</li>
+<li>低内存设备加载部分市场世界时崩溃修复（<a href="https://bugs.mojang.com/browse/MCPE-161866" target="_blank" rel="noopener noreferrer">MCPE-161866</a>）</li>
+</ul>
+<h2>游戏玩法</h2>
+<ul>
+<li>玩家卡在方块内部时，会被推向最近的空旷区域</li>
+<li>出现黑色像素破损的地图，重新前往破损区域即可修复；此前损坏的地图手持主手、副手均可修复（<a href="https://bugs.mojang.com/browse/MCPE-162421" target="_blank" rel="noopener noreferrer">MCPE-162421</a>）</li>
+<li>修复离开传送门后被强制传送回传送门的漏洞（<a href="https://bugs.mojang.com/browse/MCPE-157494" target="_blank" rel="noopener noreferrer">MCPE-157494</a>）</li>
+<li>切换维度时卡在「生成地形」加载界面的问题修复（<a href="https://bugs.mojang.com/browse/MCPE-158215" target="_blank" rel="noopener noreferrer">MCPE-158215</a>）</li>
+<li>1.18版本前旧世界升级时区块融合异常修复（<a href="https://bugs.mojang.com/browse/MCPE-162480" target="_blank" rel="noopener noreferrer">MCPE-162480</a>）</li>
+<li>修复Xbox手柄摇杆死区、灵敏度异常问题（<a href="https://bugs.mojang.com/browse/MCPE-162847" target="_blank" rel="noopener noreferrer">MCPE-162847</a>）</li>
+</ul>
+<h2>生物</h2>
+<ul>
+<li>末影人追踪距离由32格提升至64格（<a href="https://bugs.mojang.com/browse/MCPE-35306" target="_blank" rel="noopener noreferrer">MCPE-35306</a>）</li>
+<li>跳跃提升效果可稳定作用于玩家骑乘的生物（<a href="https://bugs.mojang.com/browse/MCPE-45823" target="_blank" rel="noopener noreferrer">MCPE-45823</a>）</li>
+<li>缓降效果可稳定作用于玩家骑乘的生物（<a href="https://bugs.mojang.com/browse/MCPE-126604" target="_blank" rel="noopener noreferrer">MCPE-126604</a>）</li>
+<li>修复带有状态效果的生物繁殖后，幼体永久继承增益效果的漏洞（<a href="https://bugs.mojang.com/browse/MCPE-81890" target="_blank" rel="noopener noreferrer">MCPE-81890</a>）</li>
+<li>负高度区域蝙蝠停留位置坐标偏移修复</li>
+<li>盔甲架被摧毁时会掉落副手道具（<a href="https://bugs.mojang.com/browse/MCPE-158228" target="_blank" rel="noopener noreferrer">MCPE-158228</a>）</li>
+<li>修复末影龙存活时存档重载，龙无法正常加载的漏洞（<a href="https://bugs.mojang.com/browse/MCPE-156528" target="_blank" rel="noopener noreferrer">MCPE-156528</a>）</li>
+</ul>
+<h2>方块</h2>
+<ul>
+<li>泥土路径、耕地碰撞箱整体下移1像素（<a href="https://bugs.mojang.com/browse/MCPE-12109" target="_blank" rel="noopener noreferrer">MCPE-12109</a>）</li>
+<li>玩家行走时会陷入灵魂沙、泥土方块（<a href="https://bugs.mojang.com/browse/MCPE-154973" target="_blank" rel="noopener noreferrer">MCPE-154973</a>）</li>
+<li>甘蔗水源移除后，下一次随机刻会自动断裂（<a href="https://bugs.mojang.com/browse/MCPE-162351" target="_blank" rel="noopener noreferrer">MCPE-162351</a>）</li>
+<li>活塞臂伸出动画更顺滑（<a href="https://bugs.mojang.com/browse/MCPE-155987" target="_blank" rel="noopener noreferrer">MCPE-155987</a>）</li>
+<li>活塞推送方块时移动更流畅（<a href="https://bugs.mojang.com/browse/MCPE-146597" target="_blank" rel="noopener noreferrer">MCPE-146597</a>）</li>
+<li>巨型菌类从菌岩生长时，不会替换半格方块（<a href="https://bugs.mojang.com/browse/MCPE-65661" target="_blank" rel="noopener noreferrer">MCPE-65661</a>）</li>
+<li>坐标(0,0,0)存在实体时无法放置压力板的漏洞修复（<a href="https://bugs.mojang.com/browse/MCPE-161377" target="_blank" rel="noopener noreferrer">MCPE-161377</a>）</li>
+<li>活塞移动方块时方块闪烁问题修复（<a href="https://bugs.mojang.com/browse/MCPE-15268" target="_blank" rel="noopener noreferrer">MCPE-15268</a>）</li>
+<li>放置告示时不播放放置音效修复（<a href="https://bugs.mojang.com/browse/MCPE-65423" target="_blank" rel="noopener noreferrer">MCPE-65423</a>）</li>
+<li>水下岩浆块上方正常生成气泡柱</li>
+<li>在泥土上方游泳时画面遮挡问题修复（<a href="https://bugs.mojang.com/browse/MCPE-153737" target="_blank" rel="noopener noreferrer">MCPE-153737</a>）</li>
+</ul>
+<h2>物品</h2>
+<ul>
+<li>新制作的工具、盔甲首次使用即可正常生效（<a href="https://bugs.mojang.com/browse/MCPE-161151" target="_blank" rel="noopener noreferrer">MCPE-161151</a>）</li>
+<li>重命名后的武器、工具、盔甲可正常从物品栏丢弃（<a href="https://bugs.mojang.com/browse/MCPE-162132" target="_blank" rel="noopener noreferrer">MCPE-162132</a>）</li>
+<li>修复书与笔无法签名、关闭的漏洞（<a href="https://bugs.mojang.com/browse/MCPE-163325" target="_blank" rel="noopener noreferrer">MCPE-163325</a>）</li>
+<li>满蓄力道具穿过传送门后丢失修复（<a href="https://bugs.mojang.com/browse/MCPE-55279" target="_blank" rel="noopener noreferrer">MCPE-55279</a>）</li>
+<li>铁砧附魔、修复道具时不会自动重命名（<a href="https://bugs.mojang.com/browse/MCPE-154453" target="_blank" rel="noopener noreferrer">MCPE-154453</a>）</li>
+<li>史莱姆、岩浆史莱姆每帧都会消耗盾牌耐久的漏洞修复（<a href="https://bugs.mojang.com/browse/MCPE-119451" target="_blank" rel="noopener noreferrer">MCPE-119451</a>）</li>
+<li>河豚持续损耗盾牌耐久问题修复（<a href="https://bugs.mojang.com/browse/MCPE-143689" target="_blank" rel="noopener noreferrer">MCPE-143689</a>）</li>
+</ul>
+<h2>触屏操控</h2>
+<ul>
+<li>触屏设备重新启用堆叠拆分功能</li>
+<li>「拆分操控」选项仅在经典操控模式显示，仅作用于经典方案</li>
+<li>修复准星、触屏模式下部分快捷栏格子无法点击的问题</li>
+<li>物品栏滚动长按延迟上调至180毫秒（原120毫秒），拖拽触发更宽松</li>
+<li>「锁定摇杆」「摇杆永久显示」「闲置时显示摇杆」三个选项逻辑解耦</li>
+<li>触屏设置新增「创造模式延迟破坏」开关</li>
+<li>高刷新率屏幕下双击触屏按钮难以触发的问题修复（<a href="https://bugs.mojang.com/browse/MCPE-156351" target="_blank" rel="noopener noreferrer">MCPE-156351</a>）</li>
+<li>新版触屏按键与镜头同步操作逻辑优化</li>
+<li>准星模式下乘船时动作按钮正常显示（<a href="https://bugs.mojang.com/browse/MCPE-159376" target="_blank" rel="noopener noreferrer">MCPE-159376</a>）</li>
+<li>新版操控下下船按钮贴图模糊修复（<a href="https://bugs.mojang.com/browse/MCPE-156722" target="_blank" rel="noopener noreferrer">MCPE-156722</a>）</li>
+<li>创造拓展物品栏将道具拖至其他格子无法丢弃修复（<a href="https://bugs.mojang.com/browse/MCPE-162124" target="_blank" rel="noopener noreferrer">MCPE-162124</a>）</li>
+<li>游泳蓄力弓/弩/三叉戟时松手立即发射的漏洞修复（<a href="https://bugs.mojang.com/browse/MCPE-136625" target="_blank" rel="noopener noreferrer">MCPE-136625</a>）</li>
+<li>手指覆盖快捷栏时摇杆手势中断修复（<a href="https://bugs.mojang.com/browse/MCPE-159870" target="_blank" rel="noopener noreferrer">MCPE-159870</a>）</li>
+<li>部分资源包下触屏无法交互快捷栏修复（<a href="https://bugs.mojang.com/browse/MCPE-157748" target="_blank" rel="noopener noreferrer">MCPE-157748</a>）</li>
+<li>准星模式冲刺、下降按钮配色与其他按键统一（<a href="https://bugs.mojang.com/browse/MCPE-156740" target="_blank" rel="noopener noreferrer">MCPE-156740</a>）</li>
+<li>快速点击上升/下降键直接取消飞行问题修复；现需双击下降键关闭飞行（<a href="https://bugs.mojang.com/browse/MCPE-162240" target="_blank" rel="noopener noreferrer">MCPE-162240</a>）</li>
+<li>触屏模式下状态图标贴合屏幕安全区</li>
+<li>触屏布局状态图标横向单行排布</li>
+<li>移除攻击、交互按键的操作延迟（<a href="https://bugs.mojang.com/browse/MCPE-158143" target="_blank" rel="noopener noreferrer">MCPE-158143</a>）</li>
+<li>摇杆解锁后拖拽范围与锁定状态一致；开启自动冲刺时小幅拖拽即可触发，拖回摇杆区域则停止冲刺</li>
+<li>轻点即可发射蓄力弩，无需长按400毫秒</li>
+<li>铁砧界面无法拖拽物品修复</li>
+</ul>
+<h2>图像渲染</h2>
+<ul>
+<li>活塞移动方块时正常渲染环境光（<a href="https://bugs.mojang.com/browse/MCPE-136928" target="_blank" rel="noopener noreferrer">MCPE-136928</a>）</li>
+<li>部分GPU安卓设备生物阴影渲染正常（<a href="https://bugs.mojang.com/browse/MCPE-155354" target="_blank" rel="noopener noreferrer">MCPE-155354</a>）</li>
+<li>兼容驱动的英特尔核显/独显设备新增D3D12支持</li>
+</ul>
+<h2>领域服</h2>
+<ul>
+<li>上传世界与附加包弹窗文字缩短，完整适配弹窗宽度</li>
+<li>空白领域停留数分钟后加入不再弹出报错</li>
+</ul>
+<h2>用户界面</h2>
+<ul>
+<li>安卓/iOS在无Wi-Fi、仅移动网络可用时弹出移动网络限制界面</li>
+<li>开启全键盘、复制坐标UI后可重新绑定复制按键（<a href="https://bugs.mojang.com/browse/MCPE-163082" target="_blank" rel="noopener noreferrer">MCPE-163082</a>）</li>
+<li>Boss血条名称变更后不会实时刷新，重载后才更新的漏洞修复</li>
+<li>便携UI创造模式无法将物品拖回物品栏修复</li>
+<li>便携UI「可合成/全部」切换仅搜索页生效修复</li>
+<li>Xbox打开物品栏时鼠标镜头不会偏移光标（<a href="https://bugs.mojang.com/browse/MCPE-162890" target="_blank" rel="noopener noreferrer">MCPE-162890</a>）</li>
+<li>选中物品数量文字改为白色（原黄色）</li>
+<li>离开创建世界界面会弹出未保存修改提示</li>
+<li>复制世界报错改为弹窗提示，不再弹出轻量通知</li>
+<li>VR乘船时HUD不会随玩家旋转错位修复</li>
+<li>「允许移动网络联机」描述文字对比度提升（<a href="https://bugs.mojang.com/browse/MCPE-162459" target="_blank" rel="noopener noreferrer">MCPE-162459</a>）</li>
+<li>下拉悬停箭头、未选中开关、聊天滑块对比度异常修复</li>
+</ul>
+<h1>技术性更新</h1>
+<h2>更新附加包模板</h2>
+<ul>
+<li>适配1.9.50版本的附加包模板已开放下载，包含全新资源包、行为包与配套文档，地址：<a href="https://aka.ms/MCAddonPacks" target="_blank" rel="noopener noreferrer">aka.ms/MCAddonPacks</a></li>
+</ul>
+<h2>结构方块导入</h2>
+<ul>
+<li>Windows平台结构方块可读取本地.mcstructure文件导入结构</li>
+</ul>
+<h2>通用技术改动</h2>
+<ul>
+<li>实体属性不再属于实验功能（包含Molang查询、属性筛选，变体组件除外）</li>
+<li>刷怪蛋texture_index越界不再崩溃，改为输出内容日志报错</li>
+<li>音效最小/最大距离仅作用自身音效文件，不影响同音效全部事件（<a href="https://bugs.mojang.com/browse/MCPE-154376" target="_blank" rel="noopener noreferrer">MCPE-154376</a>）</li>
+<li>server.properties新增客户端区块生成开关</li>
+<li>资源包子包切换后需重启才生效的漏洞修复（<a href="https://bugs.mojang.com/browse/MCPE-162002" target="_blank" rel="noopener noreferrer">MCPE-162002</a>）</li>
+<li>输入相同配方、产出不同物品时会输出内容报错（工作台、切石机除外）</li>
+</ul>
+<h2>全新 /execute 指令语法</h2>
+<ul>
+<li>新版语法移除「创作者前瞻」实验开关限制</li>
+<li>最低引擎版本要求1.19.50</li>
+<li>当前在指令方块使用新版语法的创作者，需手动修改方块指令</li>
+<li>行为包使用新版语法需将最低引擎版本设为1.19.50</li>
+<li>引擎版本1.19.40及以下仍可使用旧版execute语法</li>
+</ul>
+<h2>指令相关</h2>
+<ul>
+<li>创作者前瞻实验新增指令执行时序测试功能：除行为包动画控制器外，所有指令统一在当前游戏刻末尾运行</li>
+<li>/enchant 附魔相同等级不会强制提升等级（<a href="https://bugs.mojang.com/browse/MCPE-153204" target="_blank" rel="noopener noreferrer">MCPE-153204</a>）</li>
+<li>hasItem筛选器不填数据值时无法匹配带副值道具修复（<a href="https://bugs.mojang.com/browse/MCPE-162460" target="_blank" rel="noopener noreferrer">MCPE-162460</a>）</li>
+<li>指令方块执行 /execute as 时不会继承实体朝向（<a href="https://bugs.mojang.com/browse/MCPE-162680" target="_blank" rel="noopener noreferrer">MCPE-162680</a>）</li>
+<li>连锁指令方块延迟大于0时无法激活修复</li>
+<li>/execute align xyz entity 不再导致崩溃，改为输出指令错误（<a href="https://bugs.mojang.com/browse/MCPE-162733" target="_blank" rel="noopener noreferrer">MCPE-162733</a>）</li>
+</ul>
+<h2>数据驱动方块</h2>
+<ul>
+<li>JSON格式1.19.50及以上，BlockCollisionBoxComponent、BlockCraftingTableComponent移出实验开关</li>
+<li>方块切换变体时，工作台界面同步刷新</li>
+<li>移除 minecraft:breathability 方块组件，自定义方块不再生效</li>
+</ul>
+<h2>数据驱动物品</h2>
+<ul>
+<li>带有放置判定组件的方块因放置条件失效移除时，正常生成粒子、音效、振动信号</li>
+</ul>
+<h2>实体AI</h2>
+<ul>
+<li>input_ground_controlled 不再自动提升自动步高；如需旧效果，配置 base_value: 1.0625、jump_prevented_value: 0.5625</li>
+</ul>
+<h2>网络相关</h2>
+<ul>
+<li>server.properties 新增 enable-lan-visibility 参数，可关闭局域网广播，多开服务器避免端口冲突；服务器日志优化端口提示、报错更清晰（<a href="https://bugs.mojang.com/browse/BDS-1094" target="_blank" rel="noopener noreferrer">BDS-1094</a>）</li>
+</ul>
+<h2>AI行为目标</h2>
+<ul>
+<li>minecraft:offer_flower 新增可配置参数：递花时长、触发概率、搜索实体碰撞盒范围</li>
+<li>minecraft:offer_flower 不再仅限铁傀儡，全实体可用</li>
+<li>该行为会遍历范围内所有实体，而非仅最近目标，触发更稳定</li>
+<li>minecraft:take_flower 新增配置参数：触发条件、最小/最大等待、搜索实体碰撞盒范围</li>
+<li>minecraft:take_flower 不再仅限幼年村民，全实体可用</li>
+</ul>
+<h2>Molang脚本</h2>
+<ul>
+<li>query.has_property 判定逻辑修复，属性存在返回1、不存在返回0（原逻辑相反）</li>
+</ul>
+<h2>脚本与游戏测试框架（实验）</h2>
+<ul>
+<li>修复player.velocity读取数值错误（<a href="https://bugs.mojang.com/browse/MCPE-152715" target="_blank" rel="noopener noreferrer">MCPE-152715</a>）</li>
+<li>新增 canPlace 函数：判断指定坐标（可选方块面）能否放置目标方块/方块变体</li>
+<li>新增 trySetPermutation 函数：先执行canPlace校验，再尝试放置方块变体</li>
+<li>实体类移除 runCommand，推荐使用 runCommandAsync</li>
+<li>维度类移除 runCommand，推荐使用 runCommandAsync</li>
+<li>BlockRaycastOptions、EntityEventOptions、ScoreboardObjectiveDisplayOptions 改为接口；Location 类型更新为 IVec3</li>
+<li>Vector向量类add/cross/distance/divide/lerp/max/min/multiply/slerp/subtract全部支持IVec3入参</li>
+</ul>
+<h2>API更新</h2>
+<ul>
+<li>首批稳定API脱离Beta实验开关，可直接使用</li>
+<li>@minecraft/server 1.0.0正式版上线，包含以下接口：
+<ul>
+<li>System（全局system实例调用）
+<ul>
+<li>run() - 下一游戏刻执行函数，用于循环游戏逻辑</li>
+</ul>
+<li>World（全局world实例调用）
+<ul>
+<li>getDimension()</li>
+<li>getAllPlayers()</li>
+</ul>
+<li>MinecraftDimensionTypes
+<ul>
+<li>nether（下界）</li>
+<li>overworld（主世界）</li>
+<li>theEnd（末地）</li>
+</ul>
+<li>Dimension
+<ul>
+<li>id</li>
+<li>runCommandAsync()</li>
+</ul>
+<li>CommandResult（指令返回对象）</li>
+<li>Entity
+<ul>
+<li>id</li>
+<li>typeId</li>
+<li>dimension</li>
+<li>runCommandAsync()</li>
+</ul>
+<li>Player
+<ul>
+<li>name</li>
+</ul>
+</li>
+<li>@minecraft/server Beta测试版升级至1.1.0-beta；如需使用测试API，清单版本需修改为1.1.0-beta</li>
+</ul>
+</ul>

@@ -1,0 +1,96 @@
+<p>Snapshot 21w16a introduces some changes to azaleas and dripstone. On top of that, we've tweaked the textures of raw ores. There are also a few additions to the Caves &#x26; Cliffs preview datapack.</p>
+<h1>New Features in 21w16a</h1>
+<ul>
+<li>Azalea and Flowering Azalea can now be bonemealed to get an Azalea Trees</li>
+<li>Added dripstone growth</li>
+</ul>
+<h2>Dripstone growth</h2>
+<ul>
+<li>If a stalactite is hanging from a dripstone block with a water source above, it will slowly grow both the stalactite from above and a stalagmite from below</li>
+<li>Growth speed is random but very slow, a single growth step can take several minecraft days</li>
+<li>A stalactite will only grow up to 7 blocks long</li>
+<li>A stalactite will only cause stalagmite growth if the floor or stalagmite below is within 10 blocks</li>
+<li>If the stalactite tip is inside water it won't drip, and therefore won't trigger any growth</li>
+<li>If the stalagmite tip is inside water it won't receive drops, and therefore won't be grown by a dripping stalactite. Same thing if there is any fluid between the two tips</li>
+<li>A stalagmite or stalactite will never grow into a fluid</li>
+</ul>
+<h1>Changes in 21w16a</h1>
+<ul>
+<li>Tweaked the texture of raw ores and raw ore blocks</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w16a-ore-texture-comparison.png" alt="Snapshot 21w16a Texture Comparison">
+New raw ore textures in snapshot 21w16a. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w16aoretexturecomparisonfull.png" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<h1>Changes to the Caves &#x26; Cliffs Preview</h1>
+<p>Download the updated <a href="https://launcher.mojang.com/v1/objects/ebe5698b1f6787e30662691f57511a08587db502/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">datapack here</a>
+<img src="https://launchercontent.mojang.com/images/snapshot-21w16a-carousel.jpg" alt="Minecraft Snapshot 21w16a Lava Aquifer">
+A lava aquifer in snapshot 21w16a. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w16acarouselfull.png" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<ul>
+<li>Aquifers below height 0 will sometimes be lava aquifers instead of water aquifers</li>
+<li>Ore veins can now spawn underground</li>
+</ul>
+<h2>Ore veins</h2>
+<ul>
+<li>Ore veins are large, rare, snake-like underground ore formations</li>
+<li>Copper veins form above height 0 and are mixed with granite</li>
+<li>Iron veins form below height 0 and are mixed with tuff</li>
+</ul>
+<h1>Technical Changes in 21w16a</h1>
+<ul>
+<li>Users who previously permanently declined server resource packs will now still be shown the pack prompt if the pack is mandatory (instead of being immediately disconnected)</li>
+<li>The statistic for play time has been renamed to <code>play_time</code></li>
+<li>There is now a statistic for "Time with World Open" (<code>total_world_time</code>) that also includes time when the game was paused</li>
+</ul>
+<h1>Bugs fixed in 21w16a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29522" target="_blank" rel="noopener noreferrer">MC-29522</a> stat.playOneMinute adds a value of 1 every tick</li>
+<li><a href="https://bugs.mojang.com/browse/MC-55775" target="_blank" rel="noopener noreferrer">MC-55775</a> Statistics screen sometimes doesn't show up to date information</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111534" target="_blank" rel="noopener noreferrer">MC-111534</a> The firework rocket use statistic doesn't count rockets used for elytra boosting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117653" target="_blank" rel="noopener noreferrer">MC-117653</a> Recipes and advancements are not granted while most GUIs are open</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136560" target="_blank" rel="noopener noreferrer">MC-136560</a> minecraft.used:minecraft.elytra not functioning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136681" target="_blank" rel="noopener noreferrer">MC-136681</a> Debug Stick use statistic increases when not allowed to use it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157116" target="_blank" rel="noopener noreferrer">MC-157116</a> Food that is plantable counts towards using when right clicked on the ground</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190128" target="_blank" rel="noopener noreferrer">MC-190128</a> Using a flint and steel to ingite TNT is not tracked by the in-game stats</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203637" target="_blank" rel="noopener noreferrer">MC-203637</a> Mobs don't avoid lava cauldrons when pathfinding despite of setting themselves on fire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205236" target="_blank" rel="noopener noreferrer">MC-205236</a> Frozen State doesn't go away after respawn when on a server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208598" target="_blank" rel="noopener noreferrer">MC-208598</a> Baby axolotls take damage when touching a solid block from below / eye height is outside of their hitbox</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212113" target="_blank" rel="noopener noreferrer">MC-212113</a> Glow Lichen can spawn underwater whilst not in a cave.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212863" target="_blank" rel="noopener noreferrer">MC-212863</a> Glow lichen use the same color as vines on maps</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213927" target="_blank" rel="noopener noreferrer">MC-213927</a> Using bone meal on a sapling that is on a moss block consumes bone meal, but doesn't grow into a tree</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213998" target="_blank" rel="noopener noreferrer">MC-213998</a> root_vines_head is unused in-game files</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214129" target="_blank" rel="noopener noreferrer">MC-214129</a> Several dirt blocks are not part of the #minecraft:lush_plants_replaceable tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214293" target="_blank" rel="noopener noreferrer">MC-214293</a> Mobs can spawn on top of azaleas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215270" target="_blank" rel="noopener noreferrer">MC-215270</a> Moss requires air above a replaceable block to spread</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216787" target="_blank" rel="noopener noreferrer">MC-216787</a> Cobwebs in mineshafts can generate as if supported by chains</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217411" target="_blank" rel="noopener noreferrer">MC-217411</a> Anvils can become damaged when only falling one block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218590" target="_blank" rel="noopener noreferrer">MC-218590</a> Error message for commands.give.failed.toomanyitems doesn't translate item name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218592" target="_blank" rel="noopener noreferrer">MC-218592</a> Azalea trees can generate inside of lakes (even completely submerged in water)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218614" target="_blank" rel="noopener noreferrer">MC-218614</a> Inconsistency: Infested Deepslate can't be placed along axis</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218637" target="_blank" rel="noopener noreferrer">MC-218637</a> Inconsistency: Infested deepslate is not rotated randomly like normal deepslate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219155" target="_blank" rel="noopener noreferrer">MC-219155</a> Cast fishing line is disconnected from the rod</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219211" target="_blank" rel="noopener noreferrer">MC-219211</a> Two mysterious white pixels can be seen in the upper left corner of the recipe book icon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219851" target="_blank" rel="noopener noreferrer">MC-219851</a> Applying bone meal to a waterlogged big dripleaf stem creates more waterlogged big dripleaf stems</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219903" target="_blank" rel="noopener noreferrer">MC-219903</a> Silverfish infesting deepslate cause it to rotate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220024" target="_blank" rel="noopener noreferrer">MC-220024</a> Shader compilation slows or fails the more asterisks are in a multiline comment</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220307" target="_blank" rel="noopener noreferrer">MC-220307</a> TrueType Font glyphs render incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220641" target="_blank" rel="noopener noreferrer">MC-220641</a> Loyalty tridents disappear when your inventory is full</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220887" target="_blank" rel="noopener noreferrer">MC-220887</a> Shader includes fail to compile correctly when missing newline at end of file</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221560" target="_blank" rel="noopener noreferrer">MC-221560</a> Copper/Coal Ore in Deepslate Patches aren't Deepslate Ores</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221628" target="_blank" rel="noopener noreferrer">MC-221628</a> Entities don’t stop glowing after losing the glowing effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221652" target="_blank" rel="noopener noreferrer">MC-221652</a> Teleport command to player does not work as in previous versions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221655" target="_blank" rel="noopener noreferrer">MC-221655</a> Glow Squids and Axolotls Spawn in Monuments</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222004" target="_blank" rel="noopener noreferrer">MC-222004</a> Grass block isn't apart of the #dirt block tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222517" target="_blank" rel="noopener noreferrer">MC-222517</a> A large amount of slime or honey blocks will crash the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222684" target="_blank" rel="noopener noreferrer">MC-222684</a> You cannot grow azalea trees by bonemealing Azalea plants</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222778" target="_blank" rel="noopener noreferrer">MC-222778</a> minecraft.used:minecraft.candle doesn't increase when placing a candle on a cake</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223260" target="_blank" rel="noopener noreferrer">MC-223260</a> Emerald ore does not generate as intended</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223553" target="_blank" rel="noopener noreferrer">MC-223553</a> minecraft.used:minecraft.glow_ink_sac doesn't increase when applying a glow ink sac to a sign</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223554" target="_blank" rel="noopener noreferrer">MC-223554</a> minecraft.used:minecraft.ink_sac doesn't increase when applying an ink sac to a sign</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223555" target="_blank" rel="noopener noreferrer">MC-223555</a> minecraft.used:minecraft.COLOR_dye doesn't increase when applying a dye to a sign</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223557" target="_blank" rel="noopener noreferrer">MC-223557</a> minecraft.used:minecraft.bucket doesn't increase when taking powder snow, lava, or water from a cauldron using a bucket</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223558" target="_blank" rel="noopener noreferrer">MC-223558</a> minecraft.used:minecraft.glass_bottle doesn't increase when taking water from a cauldron using a glass bottle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223563" target="_blank" rel="noopener noreferrer">MC-223563</a> minecraft.used:minecraft.glass_bottle doesn't increase when collecting honey from a beehive or bee nest</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223638" target="_blank" rel="noopener noreferrer">MC-223638</a> minecraft.used:minecraft.shears doesn't increase when carving a pumpkin</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223639" target="_blank" rel="noopener noreferrer">MC-223639</a> minecraft.used:minecraft.shears doesn't increase when collecting honeycombs from a beehive or bee nest</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223756" target="_blank" rel="noopener noreferrer">MC-223756</a> minecraft.used:minecraft.powder_snow_bucket doesn't increase when filling a cauldron with a powder snow bucket</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223757" target="_blank" rel="noopener noreferrer">MC-223757</a> minecraft.used:minecraft.lava_bucket doesn't increase when filling a cauldron with a lava bucket</li>
+</ul>

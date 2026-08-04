@@ -1,0 +1,45 @@
+<p>We're now releasing the first pre-release for Minecraft 1.18.2. This pre-release introduces the possibility for data packs to customize cave generation and to add new custom structures to worlds.</p>
+<p>If everything goes as expected, we aim to release this version on February 28th.</p>
+<p>Happy mining!</p>
+<h1>Changes in 1.18.2 Pre-release 1</h1>
+<ul>
+<li>Users running Minecraft in a 32-bit environment will receive a warning in the main menu about the upcoming end of 32-bit environment support</li>
+</ul>
+<h1>Technical Changes in 1.18.2 Pre-release 1</h1>
+<ul>
+<li>The data pack version is now 9</li>
+<li>It is now possible to add custom structures in experimental datapacks</li>
+<li><code>locate</code> and <code>locatebiome</code> commands now support tags (prefix with <code>#</code> to distinguish from normal ids)</li>
+<li>The <code>locate</code> command parameter is now a configured structure rather than a structure type. For instance, you can now use <code>/locate village_desert</code> or <code>/locate shipwreck_beached</code></li>
+<li>A lot of the cave generation is now configurable through data packs</li>
+</ul>
+<h2>Configurable caves</h2>
+<ul>
+<li>A new registry was added for Density functions (caves are created by combining those together)</li>
+<li>Noise settings got a new field <code>noise_router</code> (and lost a couple of flags), see <code>worldgen/noise_settings</code> folder in the worldgen report</li>
+<li>Noise router wires data-driven parts of the cave generation with the rest of the code</li>
+</ul>
+<h2>Configured Structures and Structure Sets</h2>
+<p>The game now generates and stores data-driven configured structures.</p>
+<ul>
+<li>Experimental datapacks can add new structure sets</li>
+<li>The <code>feature</code> field in location predicates now references a configured feature</li>
+<li>The <code>exploration_map</code> loot table function <code>destination</code> field is now a configured feature tag id</li>
+<li>The <code>exploration_map</code> loot table function no longer automatically sets the display name of the map</li>
+</ul>
+<h3>Side effects</h3>
+<p>Some gameplay oddities have been affected by this change.</p>
+<ul>
+<li>Dolphins will now more accurately pick the closest structure regardless of type</li>
+<li>Bastion Remnant bounding boxes are now slightly more accurate to the shape of the structure</li>
+</ul>
+<h1>Fixed bugs in 1.18.2 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-3524" target="_blank" rel="noopener noreferrer">MC-3524</a> Structure related mobs do not spawn in flat type world generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-146854" target="_blank" rel="noopener noreferrer">MC-146854</a> Player movement favors x axis when in a corner</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179315" target="_blank" rel="noopener noreferrer">MC-179315</a> Ruined portals never generate in superflat worlds by default</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210612" target="_blank" rel="noopener noreferrer">MC-210612</a> Strongholds do not generate in certain customized worlds despite /locate saying otherwise</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241288" target="_blank" rel="noopener noreferrer">MC-241288</a> Support for custom structures has been removed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244137" target="_blank" rel="noopener noreferrer">MC-244137</a> The option "level-seed" is not present in server.properties by default</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248532" target="_blank" rel="noopener noreferrer">MC-248532</a> Elytra firework particle spawns on the wrong hand when dual wielding fireworks</li>
+</ul>

@@ -1,0 +1,67 @@
+<p>今天我们为 Minecraft Java 版发布了 20w30a 快照，其中我们调整了堡垒遗迹，并允许你将灯笼放置在水下。</p>
+<h1>20w30a 中的更改</h1>
+<ul>
+<li>修改了床和重生锚的重生位置选择方式</li>
+<li>灯笼现在可以含水</li>
+<li>灵魂灯笼现在可以含水</li>
+<li>调整了堡垒遗迹的箱子战利品</li>
+<li>堡垒遗迹中的箱子现在更有可能位于镶金黑石上方</li>
+</ul>
+<h2>重生方块位置</h2>
+<ul>
+<li>重生锚会优先选择基本方向而非角落</li>
+<li>床会优先选择玩家上床时所在的一侧，然后选择围绕床尾至床头的空间</li>
+<li>重生的玩家现在会面向他们重生的那个方块</li>
+<li>现在会尽可能避免将玩家放置在危险方块上</li>
+</ul>
+<h1>20w30a 中的技术性更改</h1>
+<ul>
+<li>告示牌编辑界面现在会从已有的告示牌文本进行初始化（对原版应该没有明显影响）</li>
+<li>标签现在可以包含可选条目</li>
+</ul>
+<h2>可选标签条目</h2>
+<p>标签中的条目现在可以标记为可选。解析可选条目失败不会阻止整个标签加载。</p>
+<p>示例：</p>
+<pre><code>{
+  "replace": false,
+  "values": [
+    "#minecraft:beds", // existing syntax
+    { "id":"#missing:tag", "required": false }, // optional sub-tag entry
+<pre><code>"minecraft:anvil", // existing syntax
+{ "id":"minecraft:stone_button", "required": true }, // new syntax for required tags
+{ "id":"missing:block", "required": false } // optional single-element entry
+</code></pre>
+<p>]
+}
+</code></pre></p>
+<h1>20w30a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-35765" target="_blank" rel="noopener noreferrer">MC-35765</a> 在另一种语言下查看从右向左语言的文本时，会反向且不连续地渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-57869" target="_blank" rel="noopener noreferrer">MC-57869</a> 一些物品的提示文本使用 § 符号进行着色，导致其在从右向左语言中渲染错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-116857" target="_blank" rel="noopener noreferrer">MC-116857</a> 进度描述在通用资源名称上使用了不必要的大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148447" target="_blank" rel="noopener noreferrer">MC-148447</a> 村民在同一时间试图通过门时经常会卡住</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149060" target="_blank" rel="noopener noreferrer">MC-149060</a> 村民会快速开关门，以此“刷”门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153195" target="_blank" rel="noopener noreferrer">MC-153195</a> 生物会掉落带有重复附魔的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181925" target="_blank" rel="noopener noreferrer">MC-181925</a> 空手的恼鬼在攻击时会以攻击姿态举起手臂</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187344" target="_blank" rel="noopener noreferrer">MC-187344</a> 流畅图形的提示文本中‘tree-leaves’拼写错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187379" target="_blank" rel="noopener noreferrer">MC-187379</a> pack.incompatible.confirm.new 的文本毫无意义</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187380" target="_blank" rel="noopener noreferrer">MC-187380</a> pack.dropConfirm 的 en_us 翻译中存在语法错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188389" target="_blank" rel="noopener noreferrer">MC-188389</a> datapackFailure.title 中有几个小错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188390" target="_blank" rel="noopener noreferrer">MC-188390</a> 四个字符串中存在逗号拼接问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188392" target="_blank" rel="noopener noreferrer">MC-188392</a> 被头颅射杀的死亡消息并非在所有情况下都语法正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188621" target="_blank" rel="noopener noreferrer">MC-188621</a> Mojang“制作经理”名单比其他名单缩进更多</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188880" target="_blank" rel="noopener noreferrer">MC-188880</a> 坐在鸡上的小僵尸猪灵位置不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189918" target="_blank" rel="noopener noreferrer">MC-189918</a> 多人游戏警告中使用了“Mojang”而不是“Mojang Studios”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190102" target="_blank" rel="noopener noreferrer">MC-190102</a> 一些 UI 字符串的大小写不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190288" target="_blank" rel="noopener noreferrer">MC-190288</a> “极佳！”和“高品质”图形提示文本缺少逗号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191441" target="_blank" rel="noopener noreferrer">MC-191441</a> 某些情况下从右向左的文本会自下而上渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191562" target="_blank" rel="noopener noreferrer">MC-191562</a> 将世界上传到 Realms 时，“取消”按钮会与“完成”按钮重叠，导致用户无法上传世界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192296" target="_blank" rel="noopener noreferrer">MC-192296</a> 来自刷怪笼矿车的蜘蛛骑士会导致崩溃，错误为“java.lang.IllegalStateException: Entity is already tracked”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193276" target="_blank" rel="noopener noreferrer">MC-193276</a> 玩家骑乘炽足兽时会略微浮在其上方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193339" target="_blank" rel="noopener noreferrer">MC-193339</a> 当启用 rcon 但未设置密码时，关闭过程中会出现 NullPointerException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194263" target="_blank" rel="noopener noreferrer">MC-194263</a> 大型末地城无法正确生成/或被截断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194273" target="_blank" rel="noopener noreferrer">MC-194273</a> 将世界升级到 20w28a 或更高版本时，新下界生物群系的存档数据会丢失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194350" target="_blank" rel="noopener noreferrer">MC-194350</a> 某些地物配置无法在数据包中加载（java.lang.IllegalArgumentException: value already present: clh@77f95e19）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195052" target="_blank" rel="noopener noreferrer">MC-195052</a> spawnpoint 命令中的“angle”参数未使用“minecraft:rotation”解析器</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195582" target="_blank" rel="noopener noreferrer">MC-195582</a> 在聊天栏中指定命令中的函数/物品/方块等内容时，输入两个冒号或在斜杠后输入冒号会导致游戏崩溃</li>
+</ul>

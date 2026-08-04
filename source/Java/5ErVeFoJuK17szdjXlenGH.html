@@ -1,0 +1,42 @@
+<p>Today we're happy to share snapshot 22w06a with you. It contains compliance updates for South Korean players and is Totally Teeming with Technical Tag Tastiness.</p>
+<p>Happy Mining (in moderation)!</p>
+<h1>Changes in 22w06a</h1>
+<p>If you’re playing in South Korea, we added gameplay timers and notices in compliance with gaming laws to help remind players to take occasional breaks from gameplay. For more information, please see <a href="https://help.minecraft.net/hc/articles/360052763631" target="_blank" rel="noopener noreferrer">the FAQ</a>.</p>
+<h1>Technical Changes in 22w06a</h1>
+<ul>
+<li>Any type present in registries (blocks, items, biomes, etc.) can now have tags</li>
+</ul>
+<h2>Universal tags</h2>
+<ul>
+<li>Tags can now be defined for any registry (blocks, items, biomes, etc. - see <code>registries.json</code> in report)</li>
+<li>New tags are stored in datapacks under <code>tags</code> directory (same as old ones)<ul>
+<li>Names of new tag directories are the same as registry names (so <code>/data/[namespace]/tags/potion</code> and <code>/data/[namespace]/tags/worldgen/biome</code>)</li>
+<li>Existing tags (<code>blocks</code>, <code>items</code>, <code>fluids</code>, <code>entity_types</code>, <code>game_events</code> and <code>functions</code>) keep their name (for now)</li>
+</ul></li>
+<li>Some fields in worldgen structures that previously only lists of element ids now accept tags<ul>
+<li>Those entries now accept <code>[id, ...]</code>, <code>id</code> (shortcut for <code>[id]</code>) and <code>#tag</code></li>
+<li>Changed fields are:<ul>
+<li><code>feature.glow_lichen</code> configuration: <code>can_be_placed_on</code></li>
+<li><code>feature.spring_feature</code> configuration: <code>valid_blocks</code></li>
+<li><code>feature.simple_random_selector</code> configuration: <code>features</code></li>
+<li><code>block_predicate_type.matching_blocks</code>: <code>blocks</code></li>
+<li><code>block_predicate_type.matching_fluids</code>: <code>fluids</code></li>
+<li><code>biome</code>: inner list in <code>features</code>, map value in <code>carvers</code></li>
+<li><code>biome_source.checkerboard</code>: <code>biomes</code></li>
+</ul></li>
+</ul></li>
+<li>Some tag fields now require id to be prepended with <code>#</code> (however they are not yet accepting element list)<ul>
+<li><code>dimension_type</code>: <code>infiniburn</code></li>
+<li><code>feature.geode</code> configration: <code>blocks.cannot_replace</code>, <code>blocks.invalid_blocks</code></li>
+<li><code>feature.vegetation_patch</code>, <code>feature.waterlogged_vegetation_patch</code> configuration: <code>replaceable</code></li>
+<li><code>feature.root_system</code> configuration: <code>root_replaceable</code></li>
+<li><code>structure_processor.protected_blocks</code>: <code>value</code></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 22w06a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-105317" target="_blank" rel="noopener noreferrer">MC-105317</a> Structure blocks do not rotate entities correctly when loading</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239708" target="_blank" rel="noopener noreferrer">MC-239708</a> Superflat world "Water World" preset settings are obsolete for the 1.18 update</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245937" target="_blank" rel="noopener noreferrer">MC-245937</a> Flashing particles when boosting upwards with firework rockets</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248106" target="_blank" rel="noopener noreferrer">MC-248106</a> Parrot dying while using Riptide enchantment</li>
+</ul>

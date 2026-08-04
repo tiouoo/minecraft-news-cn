@@ -1,0 +1,199 @@
+<p>We are now releasing snapshot 22w46a for Minecraft 1.19.3 with <a href="https://www.minecraft.net/article/playable-mob-sounds-coming-minecraft-1-20" target="_blank" rel="noopener noreferrer">playable mob sounds</a> added as an experimental feature, improvements for telemetry data and several technical improvements.</p>
+<p>Happy mining!</p>
+<h1>New Experimental Features in 22w46a</h1>
+<ul>
+<li>Books in Chiseled Bookshelf can be added or removed from any slot by targeting the specific slot</li>
+</ul>
+<h2>Mob Heads on Note Blocks interaction</h2>
+<ul>
+<li>When placing a Mob Head on a Note Block, that Note Block will now play one of the ambient sounds of that mob when played by a player or powered by Redstone</li>
+</ul>
+<h2>Piglin Mob Head</h2>
+<ul>
+<li>Piglins will now drop their heads when killed by a charged Creeper</li>
+<li>Placing the Piglin head on a Note Block will play one of the Piglin's ambient sounds</li>
+<li>The Piglin head will flap its ears when powered by Redstone, or when worn by a player while walking</li>
+</ul>
+<h1>Changes in 22w46a</h1>
+<ul>
+<li>In the Nether dimension Endermen, Skeletons and Wither Skeletons now only spawn at light level 7 and below (instead of 11 and below)<ul>
+<li>This is intended to nerf certain portal-based mob farms</li>
+<li>We welcome feedback on this</li>
+</ul></li>
+<li>Added new top textures for Block of Bamboo and Block of Stripped Bamboo</li>
+<li>Bamboo Plank texture has been tweaked to match the same tiling pattern as other plank variants</li>
+</ul>
+<h2>Creative Inventory changes</h2>
+<ul>
+<li>Reordered Redstone tab based on feedback</li>
+<li>Added Rails to the Tools &#x26; Utilities tab next to Minecarts</li>
+</ul>
+<h1>Technical Changes in 22w46a</h1>
+<ul>
+<li>Blocks carried by Endermen now use loot tables to generate drops when killed</li>
+<li>Changes to texture loading and stitching</li>
+<li>Translation files and <code>pack.mcmeta</code> are now including non-ASCII characters (encoded as UTF-8) directly instead of using escape sequences</li>
+<li>Added new Telemetry Events</li>
+</ul>
+<h2>Telemetry</h2>
+<p>This release includes the WorldUnloaded event, a required event, as well as several opt-in events. Diagnostic tracking is a tool that helps us understand what you like about Minecraft, which allows us to make those things better.</p>
+<p>The reason that WorldUnloaded, along with <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-21w38a" target="_blank" rel="noopener noreferrer">WorldLoaded</a>, is a required event is that the information we’re looking at is, well, required. As a part of Xbox, we all need to follow a standard of practice, you can find a detailed description of it <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer">here</a>. The parameters for what data we consider to be critical to our work are set by our team at Mojang Studios in alignment with Xbox.</p>
+<p>What we want to find out is how fun you think Minecraft is. There are lots of ways to figure that out, like feedback, playtests, experience, and magic. We want to add data to that mix, which is where WorldLoaded and WorldUnloaded come in. WorldLoaded measures when you boot a session up, and WorldUnloaded measures when you shut it down. Together, they will measure how fun Minecraft is, using metrics such as playtime and the game modes that players choose to play. That’s it. All the data we collect, whether it’s required or opt-in, follows GDPR and CCPA best practices to keep your information safe.</p>
+<p>The rest of the current telemetry events are opt-in, which means that you can choose whether or not you want to send us additional data. The only players that can’t opt-in are Microsoft child accounts, but everyone can still send in all of their feedback to <a href="http://feedback.minecraft.net/" target="_blank" rel="noopener noreferrer">feedback.minecraft.net</a>.</p>
+<p>Just like all the thoughts and comments we get from you on our feedback site, this is something that greatly helps us improve Minecraft. We want to make a game that you want to play, so we want to know what that game needs. Even if it’s more lava.</p>
+<h3>Telemetry transparency</h3>
+<ul>
+<li>Added Telemetry Data Collection Screen<ul>
+<li>This screen displays information about the type of data that is sent</li>
+<li>The level of data sent can be controlled between "Minimal" and "All"<ul>
+<li>"Minimal" sends only the required data</li>
+<li>"All" sends the required data, as well as optional data</li>
+</ul></li>
+<li>The default data level is "Minimal" (only the required data)</li>
+</ul></li>
+<li>Every telemetry event sent from the client is now logged to disk<ul>
+<li>Old log files are removed after 7 days</li>
+<li>These can be found under the <code>logs/telemetry</code> directory<ul>
+<li>A shortcut to this directory is available via the "Open My Data" button on the Telemetry Data Collection screen</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>Required telemetry events</h3>
+<ul>
+<li>Added WorldUnloaded event</li>
+<li>Removed client Java version from the WorldLoaded event</li>
+</ul>
+<h4>WorldLoaded &#x26; WorldUnloaded</h4>
+<p>Understanding how Minecraft is played allows us to focus game updates and improvements on the areas that are most relevant to players.
+The data that tells us this includes game mode, client or server modded status, and game version.</p>
+<p>WorldLoaded &#x26; WorldUnloaded are two paired events that calculate how long the world session has lasted (in seconds and ticks).
+Data from WorldLoaded is sent when a world is launched, and data from WorldUnloaded is sent when a world is shut down (quitting to title, disconnecting from a server).</p>
+<h3>Optional telemetry events</h3>
+<ul>
+<li>Added PerformanceMetrics and WorldLoadTimes events</li>
+</ul>
+<h4>PerformanceMetrics</h4>
+<p>Knowing the overall performance profile of Minecraft helps us tune and optimize the game for a wide range of machine specifications and operating systems.</p>
+<p>The periodic performance metrics includes data such as frame-rates, rendering performance, memory usage, operating system, and the modded status of the client and server.</p>
+<p>Game version is included to help us compare the performance profile for new versions of Minecraft.</p>
+<h4>WorldLoadTimes</h4>
+<p>It’s important for us to understand how long it takes to join a world, and how that changes over time. For example, when we add new features or do larger technical changes, we need to see what impact that had on load times.</p>
+<p>This event includes the total time in milliseconds for the world to load, whether this was a new world, as well as game version and platform details.</p>
+<h2>Texture loading changes</h2>
+<ul>
+<li>Context: When the game loads all textures used by block and item models need to be stitched (merged) into a single image, called the "atlas"<ul>
+<li>Individual textures that are stitched onto the atlas are called "sprites"</li>
+</ul></li>
+<li>To improve loading performance, block and item textures are now loaded before they are processed by block and item models<ul>
+<li>By default, textures not in the <code>textures/item</code> and <code>textures/block</code> directories will no longer be automatically recognized and will fail to load</li>
+</ul></li>
+<li>Resource packs can now have configuration files, located in <code>atlases</code> directory, that control which images are included in the atlases</li>
+</ul>
+<h3>Atlas configuration files</h3>
+<ul>
+<li>New directory <code>atlases</code> is now present for resource packs</li>
+<li>This directory contains JSON entries for configuring atlases:<ul>
+<li><code>blocks</code> - textures used by block and item models</li>
+<li><code>banner_patterns</code>, <code>beds</code>, <code>chests</code>, <code>shield_patterns</code>, <code>shulker_boxes</code>, <code>signs</code> - used to render some special-case models</li>
+<li><code>mob_effects</code> - textures used for effect icons in the UI</li>
+<li><code>paintings</code> - textures used for paintings</li>
+<li><code>particles</code> - textures used for particles (referenced by the <code>textures</code> field in files within the <code>particles</code> directory)</li>
+</ul></li>
+<li>If multiple packs include those files, they are merged by their order within the pack (same as tags in data packs)</li>
+<li>Inside these files is a JSON object with a single list called <code>sources</code><ul>
+<li>Every entry in <code>sources</code> runs in during load, in order of definition, adding or removing new files to the texture list; to be later referenced by block models, particles, etc</li>
+</ul></li>
+<li>Types of sources:<ul>
+<li><code>directory</code> - lists all files in a directory and its subdirectories, across all namespaces<ul>
+<li><code>source</code> - directory in pack to be listed (relative to <code>textures</code> directory)</li>
+<li><code>prefix</code> - string to be appended to the sprite name when loaded</li>
+</ul></li>
+<li><code>single</code> - adds a single file<ul>
+<li><code>resource</code> - location of a resource within the pack (relative to <code>textures</code> directory, implied <code>.png</code> extension)</li>
+<li><code>sprite</code> - sprite name (optional, defaults to <code>resource</code>)</li>
+</ul></li>
+<li><code>filter</code> - removes sprites matching the given pattern<ul>
+<li><code>namespace</code>, <code>path</code> - patterns (regular expressions, regex) of ids to be removed (only works for entries already in the list)<ul>
+<li>If omitted, any value will be matched</li>
+</ul></li>
+</ul></li>
+<li><code>unstitch</code> - copies rectangular regions from other images<ul>
+<li><code>resource</code> - location of a resource within the pack (relative to <code>textures</code> directory, implied <code>.png</code> extension)</li>
+<li><code>divisor_x</code>, <code>divisor_y</code> - used for determining the units used by regions</li>
+<li><code>regions</code> - list of regions to copy from the source image<ul>
+<li><code>sprite</code> - sprite name</li>
+<li><code>x</code>, <code>y</code> - coordinates of the top-left corner of the region</li>
+<li><code>width</code>, <code>height</code> - size of the region</li>
+</ul></li>
+<li>Values such as <code>x</code> are transformed to real image coordinates via dividing by their divisor, and then multiplying by the real image size</li>
+</ul></li>
+</ul></li>
+<li>Example: if a pack has a file named <code>assets/test/textures/fancy/iridium.png</code> and source is <code>{"type": "directory", "source": "fancy", "prefix": "custom/"}</code>, the texture will be available in models as <code>test:custom/iridium</code></li>
+</ul>
+<h2>Commands</h2>
+<ul>
+<li>New command: <code>fillbiome</code></li>
+<li>New execute sub-command: <code>execute if|unless biome</code></li>
+</ul>
+<h3><code>fillbiome</code></h3>
+<p>Changes biome entries for an area. Note that biomes are not stored per-block, so affected positions may not match input precisely.</p>
+<p>Syntax:</p>
+<p><code>fillbiome &#x3C;from> &#x3C;to> &#x3C;biome></code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>from</code>: One corner of the area to fill</li>
+<li><code>to</code>: The other corner of the area to fill</li>
+<li><code>biome</code>: The biome to set</li>
+</ul>
+<h3><code>execute</code></h3>
+<p>Execute commands can now be conditional on biomes.</p>
+<p>Syntax:</p>
+<p><code>execute if|unless biome &#x3C;pos> &#x3C;biome></code></p>
+<h1>Fixed bugs in 22w46a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-121865" target="_blank" rel="noopener noreferrer">MC-121865</a> High potion effect durations being displayed as <strong>:</strong> is misleading</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147605" target="_blank" rel="noopener noreferrer">MC-147605</a> Text cursors can exist in multiple fields</li>
+<li><a href="https://bugs.mojang.com/browse/MC-151412" target="_blank" rel="noopener noreferrer">MC-151412</a> "Edit Server Info" window does not focus "Server Name" text field automatically</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187539" target="_blank" rel="noopener noreferrer">MC-187539</a> "tick" function tag runs before "load" instead of the other way around</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205563" target="_blank" rel="noopener noreferrer">MC-205563</a> Endermen holding powder snow drop a powder snow bucket when killed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209621" target="_blank" rel="noopener noreferrer">MC-209621</a> Endermen holding potted plants do not drop the pot nor the plant</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221722" target="_blank" rel="noopener noreferrer">MC-221722</a> Squids use the new texture when using Programmer Art</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222099" target="_blank" rel="noopener noreferrer">MC-222099</a> Endermen holding candle cakes do not drop the candle or the cake upon being killed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233042" target="_blank" rel="noopener noreferrer">MC-233042</a> Server Address field isn't focused when Direct Connection menu is opened</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234029" target="_blank" rel="noopener noreferrer">MC-234029</a> You cannot hold any key to rapidly navigate between elements quickly after opening the inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234161" target="_blank" rel="noopener noreferrer">MC-234161</a> You cannot hold the TAB key to navigate between buttons quickly in the "Optimize World" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234240" target="_blank" rel="noopener noreferrer">MC-234240</a> You cannot hold the TAB key to navigate between buttons quickly in the "Superflat Customization" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234408" target="_blank" rel="noopener noreferrer">MC-234408</a> You cannot hold the TAB key to navigate between buttons quickly in the "Reset world" realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234409" target="_blank" rel="noopener noreferrer">MC-234409</a> You cannot hold any key to rapidly execute the same function in the "World options" realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234572" target="_blank" rel="noopener noreferrer">MC-234572</a> You cannot hold the TAB key to navigate between buttons quickly in the "Delete Server" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234621" target="_blank" rel="noopener noreferrer">MC-234621</a> You cannot hold the TAB key to navigate between buttons quickly in the "remove player" realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234782" target="_blank" rel="noopener noreferrer">MC-234782</a> You cannot hold the TAB key to navigate between buttons quickly in the "Close realm" realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234846" target="_blank" rel="noopener noreferrer">MC-234846</a> You cannot hold the TAB key to navigate between buttons quickly in the "switch world" realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234904" target="_blank" rel="noopener noreferrer">MC-234904</a> You cannot hold the TAB key to navigate between buttons quickly in the "Data Packs" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248926" target="_blank" rel="noopener noreferrer">MC-248926</a> Setting "spectatorsGenerateChunks" to false and relogging freezes the game on the Loading Terrain screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249059" target="_blank" rel="noopener noreferrer">MC-249059</a> Loading terrain screen cannot close before 2 seconds have passed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250262" target="_blank" rel="noopener noreferrer">MC-250262</a> Players sometimes get stuck on the "Loading terrain..." screen after switching dimensions whilst dead</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256308" target="_blank" rel="noopener noreferrer">MC-256308</a> "limit" selector parameter with "arbitrary" sorting does not stop searching early</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256472" target="_blank" rel="noopener noreferrer">MC-256472</a> Camels aren't required for the "Two by Two" advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256509" target="_blank" rel="noopener noreferrer">MC-256509</a> Heads and Skulls are placed backwards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256510" target="_blank" rel="noopener noreferrer">MC-256510</a> Using a glow ink sac on a hanging sign does not grant the advancement "Glow and Behold!"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256669" target="_blank" rel="noopener noreferrer">MC-256669</a> Crafting recipe for bamboo hanging signs is unlocked by having any stripped log</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256878" target="_blank" rel="noopener noreferrer">MC-256878</a> You cannot hold the TAB key to navigate between buttons quickly in the "Edit draft chat report" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256882" target="_blank" rel="noopener noreferrer">MC-256882</a> Bats fly in the perched position and vertical movement is not smooth</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256935" target="_blank" rel="noopener noreferrer">MC-256935</a> Long player names within the "Select Chat Messages to Report" menu can extend past the scroll bar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256993" target="_blank" rel="noopener noreferrer">MC-256993</a> End crystal knockback bug</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257073" target="_blank" rel="noopener noreferrer">MC-257073</a> You cannot hold the TAB key to navigate between buttons quickly in the "Experimental Features Warning" menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257105" target="_blank" rel="noopener noreferrer">MC-257105</a> The walking animation of frogs and camels doesn't play when they are moving slowly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257113" target="_blank" rel="noopener noreferrer">MC-257113</a> Ender dragon, wither, snow golem and iron golem spawn eggs from before 1.13 do not convert properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257114" target="_blank" rel="noopener noreferrer">MC-257114</a> Incoherency: A random seed is already generated on the "Create New World" seed text field screen despite the "Leave blank for a random seed" label</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257188" target="_blank" rel="noopener noreferrer">MC-257188</a> You aren't prompted that your draft reports will be discarded upon disconnecting from worlds by using the "Title Screen" button within the death screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257266" target="_blank" rel="noopener noreferrer">MC-257266</a> Entities sink or fall through snow when it accumulates while the "snowAccumulationHeight" gamerule is set to any value greater than 1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257329" target="_blank" rel="noopener noreferrer">MC-257329</a> Right-hand side tabs in the creative inventory are misaligned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257334" target="_blank" rel="noopener noreferrer">MC-257334</a> Stacked items do not show creative inventory tab label</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257354" target="_blank" rel="noopener noreferrer">MC-257354</a> Messages sent by the hosts of LAN worlds are now considered unverified and cannot be reported</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257355" target="_blank" rel="noopener noreferrer">MC-257355</a> The "Social Interactions" menu now falsely claims that there are no reportable messages for given players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257378" target="_blank" rel="noopener noreferrer">MC-257378</a> Villagers and piglins can't open or close doors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257386" target="_blank" rel="noopener noreferrer">MC-257386</a> Inventory menu has broken textures with Programmer Art enabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257401" target="_blank" rel="noopener noreferrer">MC-257401</a> Frog walk animation speeds up greatly when tempted by food or chasing slimes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257410" target="_blank" rel="noopener noreferrer">MC-257410</a> "Game Menu" on the pause menu is clickable</li>
+</ul>

@@ -1,0 +1,41 @@
+<p>来个随机快照！在这个快照中，我们替换了用于世界生成的随机数生成器，这会让更多种子生成出不同的世界……但这也让世界中的一切位置发生了变化，所以这个快照中的所有世界看起来都会不一样。</p>
+<p>我们还替换了立方体贴图——就是主菜单背景中旋转的那张图片。相当不错！</p>
+<p>另外，如果你错过了，我们的<a href="https://www.minecraft.net/live" target="_blank" rel="noopener noreferrer">年度 Minecraft Live 活动</a>就在本周六。记得去看看！</p>
+<p><strong>我们仍然强烈建议在加载此快照之前备份你的世界。</strong></p>
+<h1>21w41a 的更改</h1>
+<ul>
+<li>主菜单背景现在展示洞穴与山崖：第二部分的场景</li>
+<li>恶地矿井会在更高处生成</li>
+<li>紫晶洞现在只在高度 30 以下生成，且其稀有度已调整至与 1.17 的水平一致</li>
+<li>撞击方块时不会打断疾跑的角度略有增加</li>
+</ul>
+<h1>21w41a 的技术性更改</h1>
+<ul>
+<li>更改了区块渲染管线的优先级顺序<ul>
+<li>在高速飞行且渲染距离较高时，世界中未渲染的区块空洞不再会出现</li>
+</ul></li>
+<li>服务器类现在已签名</li>
+<li>主世界生成使用新的随机数生成器</li>
+</ul>
+<h1>21w41a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-118134" target="_blank" rel="noopener noreferrer">MC-118134</a> 物品展示框作为物品时的纹理使用了橡木木板的纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137950" target="_blank" rel="noopener noreferrer">MC-137950</a> 告示牌的纹理与其把手的实际纹理不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-142385" target="_blank" rel="noopener noreferrer">MC-142385</a> 营火纹理有一个像素延伸到了快捷栏轮廓中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148182" target="_blank" rel="noopener noreferrer">MC-148182</a> 僵尸村民的“职业”纹理使用了村民皮肤颜色的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152506" target="_blank" rel="noopener noreferrer">MC-152506</a> 凋灵之首弹射物的面使用了旧纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160256" target="_blank" rel="noopener noreferrer">MC-160256</a> 门物品的纹理与对应方块不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166508" target="_blank" rel="noopener noreferrer">MC-166508</a> 自 1.15 预发布版 2 以来区块渲染一直异常</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173339" target="_blank" rel="noopener noreferrer">MC-173339</a> 比较器点亮状态的底座纹理不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203155" target="_blank" rel="noopener noreferrer">MC-203155</a> 附魔台界面使用了旧的青金石纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225949" target="_blank" rel="noopener noreferrer">MC-225949</a> 差异问题：基岩版与 Java 版的告示牌物品纹理不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227398" target="_blank" rel="noopener noreferrer">MC-227398</a> 洞穴藤蔓纹理上有一个错位的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230302" target="_blank" rel="noopener noreferrer">MC-230302</a> 荧光物品展示框的物品纹理缺少两个像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236620" target="_blank" rel="noopener noreferrer">MC-236620</a> 下界生物群系无法正确生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236650" target="_blank" rel="noopener noreferrer">MC-236650</a> 1.18 中 Minecraft 有 2^48 个种子，而不是 2^64 个种子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237330" target="_blank" rel="noopener noreferrer">MC-237330</a> 使用种子“REDApRES”(0) 创建的世界在尝试加载新的 1.18 山地生物群系时崩溃 / java.lang.NullPointerException: Cannot invoke "dfw.a(double, double, double)" because "this.a" is null</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237457" target="_blank" rel="noopener noreferrer">MC-237457</a> 雪坡生物群系不再生成实验性快照中的石崖特征</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238003" target="_blank" rel="noopener noreferrer">MC-238003</a> 尖峭山峰中的石头总是被雪块覆盖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238561" target="_blank" rel="noopener noreferrer">MC-238561</a> 美西螈完全无法在繁茂洞穴中生成（MC-218701 的复发）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238661" target="_blank" rel="noopener noreferrer">MC-238661</a> InhabitedTime 值/局部难度不会增加</li>
+</ul>

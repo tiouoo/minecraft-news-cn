@@ -1,0 +1,113 @@
+<p>Hello! This very technical snapshot contains vibration changes, data pack and resource pack changes, some network optimizations, new debug tools, and a some bug fixes. Enjoy!</p>
+<h1>Changes</h1>
+<ul>
+<li>Changes to vibration mechanic</li>
+</ul>
+<h2>Vibrations</h2>
+<ul>
+<li>Vibrations no longer risk being lost on simulation distance limit</li>
+<li>Unequipping items emits a new <code>unequip</code> vibration of frequency 4</li>
+<li>Chiseled Bookshelves emit a <code>block_change</code> vibration of frequency 11 when receiving books from Hoppers</li>
+<li>Turtle Eggs cracking emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Turtle Eggs hatching emit a <code>block_destroy</code> vibration of frequency 12</li>
+<li>Using Bone Meal emits an <code>item_interact_finish</code> vibration of frequency 3</li>
+<li>Fire being doused by Water Potion emits a <code>block_destroy</code> vibration of frequency 12</li>
+<li>Evokers evoking Vexes or Fangs emit an <code>entity_place</code> vibration of frequency 14</li>
+<li>Carrots being eaten by Rabbits emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Sweet Berries being eaten by Foxes emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Camels eating Cactus emit an <code>eat</code> vibration of frequency 8</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The resource pack version is now 17</li>
+<li>A bug involving hunger icons was fixed in the slicer tool released with last snapshot. Here is <a href="https://github.com/Mojang/slicer/releases/tag/v1.1.1" target="_blank" rel="noopener noreferrer">the new version</a></li>
+<li>The data pack version is now 17</li>
+<li>Optimized networking to improve the experience on low bandwidth connections</li>
+</ul>
+<h2>Resource Pack Version 17</h2>
+<ul>
+<li>The text field background is now a nine-sliced sprite at <code>widget/text_field</code> and <code>widget/text_field_highlighted</code></li>
+<li>The scroll bar in lists and text fields is now a nine-sliced sprite at <code>widget/scroller</code></li>
+</ul>
+<h2>Data Pack Version 17</h2>
+<ul>
+<li>Changed mob effect storage on items, entities and block entities</li>
+</ul>
+<h3>Mob effect storage changes</h3>
+<ul>
+<li>Game no longer uses numeric values when storing mob effects to world (so, for example, <code>4</code> becomes <code>minecraft:mining_fatigue</code>)</li>
+<li>Various mob effect fields have been renamed for consistency with new structures</li>
+</ul>
+<h4>Mob Effect Instance</h4>
+<p>This structure is used in many places, so changes are described separately.</p>
+<ul>
+<li><code>Id</code> -> <code>id</code>, also changed from number to string id</li>
+<li><code>Ambient</code> -> <code>ambient</code></li>
+<li><code>Amplifier</code> -> <code>amplifier</code></li>
+<li><code>Duration</code> -> <code>duration</code></li>
+<li><code>ShowParticles</code> -> <code>show_particles</code></li>
+<li><code>ShowIcon</code> -> <code>show_icon</code></li>
+<li><code>HiddenEffect</code> -> <code>hidden_effect</code>, also since it's mob effect instance, changes apply recursively</li>
+<li><code>FactorCalculationData</code> -> <code>factor_calculation_data</code></li>
+</ul>
+<h4>Items</h4>
+<h5><code>potion</code>, <code>lingering_potion</code>, <code>splash_potion</code>, <code>tipped_arrow</code></h5>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h5><code>suspicous_stew</code></h5>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>, for each entry:<ul>
+<li><code>EffectId</code> -> <code>id</code>, also changed from number to string id</li>
+<li><code>EffectDuration</code> -> <code>duration</code></li>
+</ul></li>
+</ul>
+<h4>Entities</h4>
+<h5><code>mooshroom</code></h5>
+<ul>
+<li>Removed <code>EffectId</code> and <code>EffectDuration</code></li>
+<li>Added <code>stew_effects</code> with the same format as <code>suspicious_stew.effects</code> tag (i.e. list of effect id and duration)</li>
+</ul>
+<h5><code>area_effect_cloud</code></h5>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h5><code>arrow</code></h5>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h5>Players, Armor Stands and mobs</h5>
+<ul>
+<li><code>ActiveEffects</code> -> <code>active_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h4>Block Entities</h4>
+<h5><code>beacon</code></h5>
+<ul>
+<li><code>Primary</code> -> <code>primary_effect</code>, also changed from number to string id</li>
+<li><code>Secondary</code> -> <code>secondary_effect</code>, also changed from number to string id</li>
+</ul>
+<h3>Loot Tables</h3>
+<ul>
+<li>Added <code>sequence</code> loot function<ul>
+<li>Contains 1 field:<ul>
+<li><code>functions</code>: an array of sub-functions to run in sequence</li>
+</ul></li>
+<li>Can also be declared as an inline array with out a type<ul>
+<li>This matches the existing behavior where loot function JSON files can be declared as an array of composite functions</li>
+</ul></li>
+</ul></li>
+<li><code>all_of</code> predicates in loot tables can now be declared implicitly as an inline array without a type<ul>
+<li>This similarly matches the existing behavior where loot predicate JSON files can be declared as an array of sub-predicates</li>
+</ul></li>
+</ul>
+<h2>Network optimizations</h2>
+<ul>
+<li>Gameplay packets are now packed into bigger TCP-packets to reduce overhead from TCP-headers, significantly reducing network usage</li>
+<li>Opening the debug screen with CTRL + F3 will now show charts for ping and received network traffic</li>
+</ul>
+<h2>Secure Chat</h2>
+<ul>
+<li>Clients will no longer disconnect themselves when receiving an invalid chat message<ul>
+<li>A placeholder message will instead be shown in chat</li>
+</ul></li>
+</ul>

@@ -1,0 +1,152 @@
+<p>本周我们一直在思考一些终极问题，比如“先有冷鸡，还是先有蓝蛋？”。冷鸡与暖鸡现已加入快照 25w06a，同时带来各自色彩独特的鸡蛋。除此之外，粉色仙人掌花与干草将为沙漠与恶地增添景致。</p>
+<h1>新特性</h1>
+<ul>
+<li>新增暖鸡与冷鸡变种</li>
+<li>新增矮干草与高干草</li>
+<li>新增仙人掌花方块，可生成在仙人掌上</li>
+</ul>
+<h2>农场动物变种</h2>
+<ul>
+<li>鸡新增暖变种与冷变种</li>
+<li>原有鸡变种重命名为温带鸡</li>
+<li>变种由其生成所在生物群系决定</li>
+<li>所有拥有变种的动物（鸡、猪、牛）所对应的温暖、寒冷生物群系划分标准一致</li>
+<li>为暖鸡与冷鸡新增两种鸡蛋物品
+<ul>
+<li>蓝蛋 — 冷鸡产下，可孵化出冷鸡变种</li>
+<li>棕蛋 — 暖鸡产下，可孵化出暖鸡变种</li>
+</ul>
+</li>
+<li>原本的鸡蛋由温带鸡产下，可孵化温带鸡变种</li>
+</ul>
+<h2>矮干草与高干草</h2>
+<ul>
+<li>新增两种草方块：矮干草与高干草</li>
+<li>二者均为1格高度，因此高干草与2格高的高草有所区分</li>
+<li>在沙漠与恶地生物群系自然生成</li>
+<li>和枯萎灌木一样，可以放置在各类沙子、陶瓦与泥土方块上</li>
+<li>均可使用骨粉催生
+<ul>
+<li>对矮干草使用骨粉，会使其生长为高干草</li>
+<li>对高干草使用骨粉，会尽可能在相邻位置生成矮干草</li>
+</ul>
+</li>
+<li>均可放入堆肥桶</li>
+<li>绵羊食用后能够重新长出羊毛</li>
+<li>均可作为燃料用于熔炼</li>
+</ul>
+<h2>仙人掌花</h2>
+<ul>
+<li>仙人掌花是全新花卉方块，有概率自然生成在沙漠、恶地的仙人掌上</li>
+<li>仙人掌花可以放置在仙人掌方块，或是顶部中心具备支撑的任意方块上方</li>
+<li>仙人掌有概率长出仙人掌花
+<ul>
+<li>若仙人掌高度为1格或2格，有10%概率长出仙人掌花，而非向上生长</li>
+<li>若仙人掌高度达到3格及以上，有25%概率长出仙人掌花</li>
+<li>只有四周全部留有空位时，仙人掌才会长出仙人掌花</li>
+</ul>
+</li>
+<li>仙人掌花可放入堆肥桶</li>
+<li>1朵仙人掌花可合成1个粉色染料</li>
+</ul>
+<h1>改动内容</h1>
+<ul>
+<li>玩家模拟距离内的方块、或是通过其他区块加载方式（如末影珍珠）加载的方块，现在都能够接收随机刻，不再局限于玩家周围8个区块范围
+<ul>
+<li>举例：如果区块被末影珍珠加载，或是属于出生区块，作物可以生长、冰能够融化、降雪正常发生、炼药锅可以被雨水灌满</li>
+<li>生物生成、火焰蔓延、闪电生成仍维持原有范围：玩家周边8区块以内</li>
+</ul>
+</li>
+<li>若8区块范围内没有玩家，火焰将不再燃烧与蔓延</li>
+<li>烟花与弩的物品提示框现在会以精简形式展示多个完全相同的重复烟火之星或投射物</li>
+</ul>
+<h2>萤火虫灌木</h2>
+<p>萤火虫灌木播放环境音效的触发条件已调整，需要同时满足以下两点：</p>
+<ul>
+<li>当前处于夜晚</li>
+<li>萤火虫灌木上方没有可碰撞方块遮挡（树叶除外）</li>
+</ul>
+<h1>技术性改动</h1>
+<ul>
+<li>数据包版本更新至 66</li>
+<li>资源包版本更新至 51</li>
+</ul>
+<h1>数据包版本 66</h1>
+<ul>
+<li>新增游戏规则 <code>allowFireTicksAwayFromPlayer</code></li>
+</ul>
+<h2>游戏规则</h2>
+<h3><code>allowFireTicksAwayFromPlayer</code></h3>
+<ul>
+<li>设为 true 时，火焰与岩浆刻可以在玩家8区块范围外正常触发</li>
+<li>默认值：<code>false</code></li>
+</ul>
+<h2>方块标签</h2>
+<ul>
+<li><code>#dead_bush_may_place_on</code> 重命名为 <code>#dry_vegetation_may_place_on</code></li>
+<li>新增 <code>#edible_for_sheep</code> — 绵羊可以食用、用以恢复羊毛的方块</li>
+</ul>
+<h2>物品标签</h2>
+<ul>
+<li>新增 <code>#eggs</code> — 全部种类的鸡蛋物品</li>
+</ul>
+<h2>实体数据</h2>
+<ul>
+<li>玩家的盔甲与副手装备现在同样存储在 <code>equipment</code> 字段中（通过盔甲、副手槽位编号写入物品到物品栏的旧写法依旧兼容）</li>
+</ul>
+<h2>鸡变种</h2>
+<ul>
+<li>鸡变种支持数据驱动，在 <code>data/命名空间/chicken_variant/标识.json</code> 添加配置文件即可自定义</li>
+<li>该功能属于实验性功能</li>
+<li>配置文件字段：
+<ul>
+<li><code>model</code> — 可选值：<code>normal</code>、<code>cold</code></li>
+<li><code>asset_id</code> — 变种资源带命名空间ID，对应路径 <code>assets/命名空间/textures/路径.png</code></li>
+<li><code>spawn_conditions</code> — 上述统一变种选择机制对应的生成条件</li>
+</ul>
+</li>
+</ul>
+<h1>资源包版本 51</h1>
+<ul>
+<li>新增并更新鸡的纹理</li>
+<li>新增蓝蛋、棕蛋物品纹理</li>
+<li>新增仙人掌花方块纹理</li>
+<li>新增矮干草、高干草方块纹理</li>
+</ul>
+<h2>鸡纹理新增与调整</h2>
+<ul>
+<li>新增鸡变种纹理：
+<ul>
+<li><code>cold_chicken</code></li>
+<li><code>warm_chicken</code></li>
+</ul>
+</li>
+<li>原有 <code>chicken</code> 纹理重命名为 <code>temperate_chicken</code></li>
+<li><code>temperate_chicken</code> 纹理迁移至新文件夹：
+<ul>
+<li><code>entity/chicken.png</code> → <code>entity/chicken/temperate_chicken.png</code></li>
+</ul>
+</li>
+</ul>
+<h1>25w06a 修复漏洞列表</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-157196 rel="noopener noreferrer"target=_blank>MC-157196</a> 已驯服动物无法加入队伍</li>
+<li><a href=https://bugs.mojang.com/browse/MC-186241 rel="noopener noreferrer"target=_blank>MC-186241</a> 图形设置为“极致！”时世界边界面渲染异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279205 rel="noopener noreferrer"target=_blank>MC-279205</a> 落叶的地图颜色不正确</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279207 rel="noopener noreferrer"target=_blank>MC-279207</a> 落叶仅能放置在泥土类方块上</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279223 rel="noopener noreferrer"target=_blank>MC-279223</a> 成就《带我回家》可在主世界完成，但仍归类为下界成就</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279235 rel="noopener noreferrer"target=_blank>MC-279235</a> 因标签不完善，部分寒冷生物群系内农场动物无法生成冷变种</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279242 rel="noopener noreferrer"target=_blank>MC-279242</a> 海带、缠怨藤、垂泪藤、洞穴藤蔓无法上下堆叠放置</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279261 rel="noopener noreferrer"target=_blank>MC-279261</a> 将生物自身设为拥有者会造成持续性崩溃</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279279 rel="noopener noreferrer"target=_blank>MC-279279</a> 下坐骑时玩家会和坐骑处于同一坐标位置</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279292 rel="noopener noreferrer"target=_blank>MC-279292</a> 沙漠村庄生成的猪为温带变种</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279309 rel="noopener noreferrer"target=_blank>MC-279309</a> 野花物品存在错位透明像素</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279464 rel="noopener noreferrer"target=_blank>MC-279464</a> 使用 /setblock 放置的火焰不会触发刻、不会熄灭</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279719 rel="noopener noreferrer"target=_blank>MC-279719</a> 鞍属性修饰符槽位的提示文本未本地化翻译</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279912 rel="noopener noreferrer"target=_blank>MC-279912</a> 在无法催生任何植物的情况下，依旧可以对灌木使用骨粉</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279914 rel="noopener noreferrer"target=_blank>MC-279914</a> 灌木碰撞箱没有接触地面，且相比同类方块宽度过大</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279924 rel="noopener noreferrer"target=_blank>MC-279924</a> 灌木无法被树木或蘑菇替换</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279933 rel="noopener noreferrer"target=_blank>MC-279933</a> 萤火虫灌木无法被树木或蘑菇替换</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279950 rel="noopener noreferrer"target=_blank>MC-279950</a> 修改命令数据存储时报错</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279972 rel="noopener noreferrer"target=_blank>MC-279972</a> 使用 /setblock 和 /fill 放置非满格液位流体时，流体状态不再正常更新</li>
+</ul>

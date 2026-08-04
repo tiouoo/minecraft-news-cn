@@ -1,0 +1,153 @@
+<p>Hello! Here is a new snapshot with tweaks to the new features, new advancements, new music and some long-awaited technical changes.
+For some time we've been working on a new faster light engine, and we are finally ready to share the result.
+Special thank you to the community for not only pointing out the issues with the game's light engine,
+but also to community members that have developed mods and plugins which have highlighted these performance challenges
+and served as an inspiration for our new implementation.</p>
+<p>Please break it in all possible ways and report bugs!</p>
+<h1>New Features</h1>
+<ul>
+<li>Added new advancements for Trails &#x26; Tales</li>
+<li>Added new Trails &#x26; Tales ambient music</li>
+<li>Added a new music disc obtainable through archaeology</li>
+</ul>
+<h2>New advancements</h2>
+<h3>Husbandry advancements</h3>
+<ul>
+<li><code>Smells interesting</code> : Obtain a Sniffer Egg</li>
+<li><code>Little sniffs</code> : Feed a Snifflet (requires <code>Smells interesting</code>)</li>
+<li><code>Planting the past</code> : Plant any Sniffer seed (requires <code>Little sniffs</code>)</li>
+</ul>
+<h3>Adventure advancements</h3>
+<ul>
+<li><code>Respecting the remnants</code> : Brush a Suspicious block to obtain a Pottery Sherd</li>
+<li><code>Careful restoration</code> : Make a Decorated Pot out of 4 Pottery Sherds (requires <code>Respecting the remnants</code>)</li>
+<li><code>Crafting a new look</code> : Craft a trimmed armor at a Smithing Table</li>
+<li><code>Smithing with style</code> : Apply these smithing templates at least once: Spire, Snout, Rib, Ward, Silence, Vex, Tide, Wayfinder (requires <code>Crafting a new look</code>)</li>
+</ul>
+<h2>New ambient music</h2>
+<ul>
+<li>Added the following new music tracks by Aaron Cherof to Cherry Groves, Desert, Jungle, Badlands, and Flower Forest biomes<ul>
+<li>A Familiar Room</li>
+<li>Bromeliad</li>
+<li>Crescent Dunes</li>
+<li>Echo in the Wind</li>
+</ul></li>
+</ul>
+<h2>New music disc</h2>
+<ul>
+<li>Added a new music disc which can be found by brushing suspicious blocks in Trail Ruins<ul>
+<li>When put in a Jukebox, Relic by Aaron Cherof is played</li>
+</ul></li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Both types of Sculk Sensors now stay in their Cooldown phase for 10 ticks, with other phase timings being adjusted to compensate</li>
+<li>Crafted Decorated Pots with at least one pattern now have a hover tooltip displaying the Sherd &#x26; Brick ingredients</li>
+<li>Updated the credits<ul>
+<li>Added the ability to scroll upwards by pressing the <code>up arrow</code> key</li>
+</ul></li>
+</ul>
+<h2>Sculk Sensor Phases</h2>
+<ul>
+<li>Sculk Sensors and Calibrated Sculk Sensors have three phases: Inactive, Active and Cooldown</li>
+<li>The default phase is Inactive<ul>
+<li>This phase lasts indefinitely until the block receives a vibration</li>
+<li>During this phase, the block is able to listen to nearby vibrations until one has been scheduled</li>
+</ul></li>
+<li>When a scheduled vibration is received, the block switches to the Active phase<ul>
+<li>This phase lasts 30 game ticks for Sculk Sensors, and 10 game ticks for Calibrated Sculk Sensors</li>
+<li>During this phase, the block stops listening to nearby vibrations, wiggles its tendrils and emits a redstone signal and light</li>
+</ul></li>
+<li>After the Active phase has finished, the block switches to a Cooldown phase<ul>
+<li>This phase lasts for 10 game ticks</li>
+<li>During this phase, the block keeps wiggling its tendrils, but no longer emits a redstone signal nor light</li>
+<li>Finally, once this phase is finished, the block will switch back to the Inactive phase</li>
+</ul></li>
+<li>Previously, some of these phases had different timing values:<ul>
+<li>Active: 40 game ticks for Sculk Sensors and 20 game ticks for Calibrated Sculk Sensors</li>
+<li>Cooldown: 1 game tick for both types of Sculk Sensors</li>
+</ul></li>
+<li>These phase timings were tweaked so that it is less common for activated contraptions to recursively activate the Sculk Sensor that powered them</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The resource pack version is now 15, accounting for the font and credits update<ul>
+<li><code>legacy_unicode</code> glyph provider has been removed</li>
+<li>Bitmaps used by <code>uniform</code> font have been removed</li>
+<li><code>uniform</code> font has been updated to use Unifont 15.0.01<ul>
+<li>That changes shape of multiple characters, while also adding support for new ones</li>
+<li>Combining characters no longer include circle overlayed over them (so M◌̆ now renders as M ̆)</li>
+</ul></li>
+<li>Added second level of organization of entries in credits.json on top of <code>titles</code>, called <code>disciplines</code></li>
+</ul></li>
+<li>Font textures are included in debug texture dump (F3 + S)</li>
+<li>Added new font glyph providers: <code>unihex</code> and <code>reference</code>, removed <code>legacy_unicode</code></li>
+<li>Improved performance of the light engine</li>
+</ul>
+<h2>Fonts</h2>
+<h3>New <code>unihex</code> glyph provider</h3>
+<ul>
+<li>New glyph provider for reading Unifont HEX files<ul>
+<li>HEX format describes bitmap font glyphs<ul>
+<li>height of every glyph is 16 pixels</li>
+<li>width of glyph can be 8, 16, 24 or 32 pixels</li>
+</ul></li>
+<li>every line is made of two hexadecimal numbers separated by <code>:</code></li>
+<li>first value describes codepoint - it must have 4, 5 or 6 hex digits</li>
+<li>second value describes glyph as a stream of bits, line by line</li>
+</ul></li>
+<li>When rendering, empty columns on left and right side of glyph are removed<ul>
+<li>Custom glyph widths can be set with <code>size_overrides</code></li>
+</ul></li>
+<li>Provider requires two fields:<ul>
+<li><code>hex_file</code> - path to ZIP archive containing one or more <code>*.hex</code> files (files in archive with different extensions are ignored)</li>
+<li><code>size_overrides</code> - list of codepoint ranges that should have width different that auto-detected (based on empty space in glyph). Fields:<ul>
+<li><code>from</code>, <code>to</code> - start and end of codepoint range (inclusive)</li>
+<li><code>left</code>, <code>right</code> - integers describing position of left-most and right-most columns of glyph in range<ul>
+<li>any bits in columns outside this range will be discarded</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>New <code>reference</code> glyph provider</h3>
+<ul>
+<li>New glyph provider can be used to include providers from other fonts<ul>
+<li>Providers are guaranteed to be loaded only once, no matter how many times they are included</li>
+</ul></li>
+<li>Provider has one field <code>id</code>, that describes other font to be included in currently loaded one<ul>
+<li>Inclusion is performed after all fonts are loaded, so it will include all providers for a given font defined in all datapacks</li>
+</ul></li>
+</ul>
+<h3>Removed <code>legacy_unicode</code> glyph provider</h3>
+<ul>
+<li><code>legacy_unicode</code> glyph provider has been removed</li>
+<li>This functionality has been replaced by <code>unihex</code> provider</li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w17a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-108045" target="_blank" rel="noopener noreferrer">MC-108045</a> Minecraft not using latest unifont unicode chart; characters are missing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127394" target="_blank" rel="noopener noreferrer">MC-127394</a> Minecraft does not render characters in Unicode mb4 range</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172980" target="_blank" rel="noopener noreferrer">MC-172980</a> Block light updates don't cross chunk borders properly when updated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197772" target="_blank" rel="noopener noreferrer">MC-197772</a> Missing textures in minecraft:uniform font</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225742" target="_blank" rel="noopener noreferrer">MC-225742</a> When light emitting blocks generate as ores, they do not emit light</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241725" target="_blank" rel="noopener noreferrer">MC-241725</a> In the credits, an opening parenthesis is missing for Riley Manns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241730" target="_blank" rel="noopener noreferrer">MC-241730</a> In the credits, a closing parenthesis is missing for Konrad Jówko</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241732" target="_blank" rel="noopener noreferrer">MC-241732</a> In the credits, "Lionbridge" is misspelt in one place</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241733" target="_blank" rel="noopener noreferrer">MC-241733</a> In the credits, "Insight" is misspelt in one place</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241741" target="_blank" rel="noopener noreferrer">MC-241741</a> Certain names are listed twice in the credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241803" target="_blank" rel="noopener noreferrer">MC-241803</a> credits.json: Line 2632 has typo in (C instead of O)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245819" target="_blank" rel="noopener noreferrer">MC-245819</a> Lighting can still occasionally lag behind world generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249341" target="_blank" rel="noopener noreferrer">MC-249341</a> Some Mojang employees are not mentioned in the credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249508" target="_blank" rel="noopener noreferrer">MC-249508</a> Light emitted from cave vines and glow lichens upon world generation still sometimes doesn't propagate across chunk borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254506" target="_blank" rel="noopener noreferrer">MC-254506</a> Font file of some Korean completed font area is wrong</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258926" target="_blank" rel="noopener noreferrer">MC-258926</a> Space is no longer treated as padding in fonts</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261413" target="_blank" rel="noopener noreferrer">MC-261413</a> Particles spawned by brushes held by left-handed players move in the wrong direction</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261626" target="_blank" rel="noopener noreferrer">MC-261626</a> Reversed Comma doesn't render properly when using the Unicode font</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261900" target="_blank" rel="noopener noreferrer">MC-261900</a> Sniffers cannot properly pathfind into water while burning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261938" target="_blank" rel="noopener noreferrer">MC-261938</a> Sniffer animation is not smooth on slime blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261997" target="_blank" rel="noopener noreferrer">MC-261997</a> Game crashes when generating new chunk / java.lang.IllegalStateException: Asking for biomes before we have biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262012" target="_blank" rel="noopener noreferrer">MC-262012</a> Telemetry Tooltip out of screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262022" target="_blank" rel="noopener noreferrer">MC-262022</a> Tooltips get cut off at the bottom of the screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262024" target="_blank" rel="noopener noreferrer">MC-262024</a> Sniffer eggs are sometimes spawned in the ground when sniffers breed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262030" target="_blank" rel="noopener noreferrer">MC-262030</a> Sniffers stand a bit too close to players that are tempting them</li>
+</ul>

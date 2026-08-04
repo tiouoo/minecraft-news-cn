@@ -1,0 +1,297 @@
+<p>另一个快照发布了，本次加入了幽匿。它们有点恐怖，但别因此退缩。来感受一些良好的振动吧！</p>
+<h1>20w49a 新增特性</h1>
+<ul>
+<li>加入了溶洞生物群系</li>
+<li>加入了幽匿感测体</li>
+</ul>
+<h2>溶洞生物群系</h2>
+<p>该生物群系目前不会自然生成，因为它是为即将到来的更大洞穴设计的。不过，如果你想在目前的洞穴中看到这个生物群系，你可以创建一个溶洞单一生物群系世界。</p>
+<ul>
+<li>地面和天花板上有大量滴水石锥，还有小水池</li>
+<li>在某些地方，你会发现由滴水石块构成的较大石笋、钟乳石和石柱。</li>
+</ul>
+<h2>幽匿感测体</h2>
+<ul>
+<li>介绍诡异且充满卷须的幽匿世界——准备好让幽匿感测体以它们独特的能力探测附近的振动，令你不寒而栗。</li>
+<li>振动是任何引起物理运动的东西；如果你小心行事，有些运动可以通过潜行不被感测体探测到。<ul>
+<li>目前可通过潜行避免探测的振动包括行走、落在地面或投掷/发射弹射物。</li>
+</ul></li>
+<li>幽匿感测体不会侦听从其他幽匿来源直接产生的振动。</li>
+<li>当探测到振动时，信号会从振动源以每方块1游戏刻的速度发送到感测体。<ul>
+<li>当信号已在传送途中时，感测体无法探测到其他振动。</li>
+<li>当信号到达时，感测体将被激活40游戏刻（约2秒）。</li>
+<li>激活期间，感测体无法探测其他振动。</li>
+</ul></li>
+<li>幽匿感测体可以探测其周围8格半径内的振动。</li>
+<li>挖掘幽匿感测体的合适工具是锄。</li>
+<li>它们可以被水淹没（含水）。</li>
+</ul>
+<h3>红石信号</h3>
+<ul>
+<li>幽匿感测体激活时会发出红石信号。</li>
+<li>红石信号的强度与振动信号传播的距离成反比。<ul>
+<li>这意味着振动越近，红石信号越强。</li>
+<li>输出也会根据幽匿感测体的半径进行缩放，因此当振动距离为0（正好在感测体上方）时，可以达到最大红石信号强度。</li>
+</ul></li>
+</ul>
+<h3>振动频率</h3>
+<ul>
+<li>幽匿感测体与比较器有独特的互动。</li>
+<li>游戏中的每种振动都属于一个特定的频率值，该值可以用比较器测量。</li>
+<li>有了合适的装置，你可以借此检测附近是否发生了特定动作。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>振动类型</th>
+<th>频率值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>脚步</td>
+<td>1</td>
+</tr>
+<tr>
+<td>振翅</td>
+<td>2</td>
+</tr>
+<tr>
+<td>游泳</td>
+<td>3</td>
+</tr>
+<tr>
+<td>鞘翅自由落体</td>
+<td>4</td>
+</tr>
+<tr>
+<td>落地</td>
+<td>5</td>
+</tr>
+<tr>
+<td>溅起水花</td>
+<td>6</td>
+</tr>
+<tr>
+<td>狼甩水</td>
+<td>6</td>
+</tr>
+<tr>
+<td>发射弹射物</td>
+<td>7</td>
+</tr>
+<tr>
+<td>弹射物落地</td>
+<td>8</td>
+</tr>
+<tr>
+<td>开始进食</td>
+<td>7</td>
+</tr>
+<tr>
+<td>进食完成</td>
+<td>8</td>
+</tr>
+<tr>
+<td>击中实体</td>
+<td>9</td>
+</tr>
+<tr>
+<td>向盔甲架添加物品</td>
+<td>9</td>
+</tr>
+<tr>
+<td>打开方块</td>
+<td>11</td>
+</tr>
+<tr>
+<td>关闭方块</td>
+<td>10</td>
+</tr>
+<tr>
+<td>切换方块</td>
+<td>11</td>
+</tr>
+<tr>
+<td>取消切换方块</td>
+<td>10</td>
+</tr>
+<tr>
+<td>按下方块</td>
+<td>11</td>
+</tr>
+<tr>
+<td>松开方块</td>
+<td>10</td>
+</tr>
+<tr>
+<td>附着方块</td>
+<td>11</td>
+</tr>
+<tr>
+<td>移除方块附着</td>
+<td>10</td>
+</tr>
+<tr>
+<td>打开容器</td>
+<td>11</td>
+</tr>
+<tr>
+<td>关闭容器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>发射失败</td>
+<td>10</td>
+</tr>
+<tr>
+<td>使用打火石</td>
+<td>12</td>
+</tr>
+<tr>
+<td>放置方块</td>
+<td>12</td>
+</tr>
+<tr>
+<td>破坏方块</td>
+<td>13</td>
+</tr>
+<tr>
+<td>放置流体</td>
+<td>12</td>
+</tr>
+<tr>
+<td>拾取流体</td>
+<td>13</td>
+</tr>
+<tr>
+<td>抛出钓鱼竿</td>
+<td>15</td>
+</tr>
+<tr>
+<td>收回钓鱼竿</td>
+<td>14</td>
+</tr>
+<tr>
+<td>活塞伸出</td>
+<td>15</td>
+</tr>
+<tr>
+<td>活塞收回</td>
+<td>14</td>
+</tr>
+<tr>
+<td>爆炸</td>
+<td>15</td>
+</tr>
+<tr>
+<td>雷击</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h3>羊毛遮挡</h3>
+<ul>
+<li>羊毛与幽匿感测体有特殊的互动。</li>
+<li>如果羊毛方块挡在振动源的路径上，感测体将无法探测到振动。</li>
+</ul>
+<h3>技术细节</h3>
+<ul>
+<li>幽匿感测体在放置后或关闭后有1游戏刻的冷却时间。</li>
+<li>在这个短暂的冷却时间内，它无法探测振动。这是为了防止它在其供电的装置断电时激活自身。欢迎对此点提供反馈！</li>
+</ul>
+<h1>20w49a 更改</h1>
+<ul>
+<li>收纳袋的装填度现在无论高级提示框是否开启都会显示</li>
+<li>钟乳石和石笋的尖端彼此相邻时会合并，除非您在放置时按住Shift</li>
+</ul>
+<h1>20w49a 技术性更改</h1>
+<ul>
+<li>已经实现了一个新的游戏事件系统，以支持幽匿感测体探测振动。</li>
+<li>与自定义世界相关的高度值现在已开放</li>
+<li>移除了<code>max-build-height</code>服务器设置</li>
+<li>添加了<code>occludes_vibration_signals</code>方块标签。此标签中的任何东西都会遮挡振动，并默认继承<code>wool</code>标签条目</li>
+<li>新的粒子类型：<code>vibration</code>和<code>dust_color_transition</code></li>
+<li>已经实现了一个新的游戏事件系统，以支持幽匿感测体探测振动。</li>
+</ul>
+<h2>游戏事件</h2>
+<p>此系统用于识别附近区块中正在发生的某些世界内动作，特别是让新的幽匿感测体能够将这些事件作为振动来探测。</p>
+<p>以下是初始游戏事件列表：</p>
+<ul>
+<li><code>minecraft:step</code></li>
+<li><code>minecraft:swim</code></li>
+<li><code>minecraft:flap</code></li>
+<li><code>minecraft:elytra_free_fall</code></li>
+<li><code>minecraft:hit_ground</code></li>
+<li><code>minecraft:splash</code></li>
+<li><code>minecraft:projectile_shoot</code></li>
+<li><code>minecraft:projectile_land</code></li>
+<li><code>minecraft:entity_hit</code></li>
+<li><code>minecraft:block_place</code></li>
+<li><code>minecraft:block_destroy</code></li>
+<li><code>minecraft:fluid_place</code></li>
+<li><code>minecraft:fluid_pickup</code></li>
+<li><code>minecraft:block_open</code></li>
+<li><code>minecraft:block_close</code></li>
+<li><code>minecraft:block_switch</code></li>
+<li><code>minecraft:block_unswitch</code></li>
+<li><code>minecraft:block_attach</code></li>
+<li><code>minecraft:block_detach</code></li>
+<li><code>minecraft:block_press</code></li>
+<li><code>minecraft:block_unpress</code></li>
+<li><code>minecraft:container_open</code></li>
+<li><code>minecraft:container_close</code></li>
+<li><code>minecraft:explode</code></li>
+<li><code>minecraft:armor_stand_add_item</code></li>
+<li><code>minecraft:wolf_shaking</code></li>
+<li><code>minecraft:dispense_fail</code></li>
+<li><code>minecraft:fishing_rod_cast</code></li>
+<li><code>minecraft:fishing_rod_reel_in</code></li>
+<li><code>minecraft:piston_extend</code></li>
+<li><code>minecraft:piston_contract</code></li>
+<li><code>minecraft:flint_and_steel_use</code></li>
+<li><code>minecraft:eating_start</code></li>
+<li><code>minecraft:eating_finish</code></li>
+<li><code>minecraft:lightning_strike</code></li>
+</ul>
+<h3>标签</h3>
+<p>还有其他游戏事件标签，可通过数据包修改。它们位于<code>data/minecraft/tags/game_events</code>下。</p>
+<ul>
+<li><code>vibrations</code> 决定哪些游戏事件被幽匿感测体视为振动。目前，所有添加的游戏事件默认都在此标签中。</li>
+<li><code>ignore_vibrations_stepping_carefully</code> 当事件的来源在潜行时，幽匿感测体应忽略哪些游戏事件。</li>
+</ul>
+<p>以下游戏事件默认在<code>ignore_vibrations_stepping_carefully</code>中：</p>
+<ul>
+<li><code>minecraft:step</code></li>
+<li><code>minecraft:hit_ground</code></li>
+<li><code>minecraft:projectile_shoot</code></li>
+</ul>
+<h1>20w49a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-18880" target="_blank" rel="noopener noreferrer">MC-18880</a> 伤害吸收效果的中毒/凋零爱心没有纹理（反而显示为空）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-201840" target="_blank" rel="noopener noreferrer">MC-201840</a> 可选函数标签有时即使存在也不会运行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203797" target="_blank" rel="noopener noreferrer">MC-203797</a> 在虚空中放置或移除方块会导致服务器上出现DecoderException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204314" target="_blank" rel="noopener noreferrer">MC-204314</a> 双层铜台阶在挖掘时只掉落一个台阶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205043" target="_blank" rel="noopener noreferrer">MC-205043</a> 受到冰冻伤害时，伤害吸收心显示破损</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205096" target="_blank" rel="noopener noreferrer">MC-205096</a> 玩家受到冰冻伤害时，极限模式爱心失去所有颜色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205391" target="_blank" rel="noopener noreferrer">MC-205391</a> 给切制铜打蜡不能防止其氧化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205629" target="_blank" rel="noopener noreferrer">MC-205629</a> 渲染告示牌时存在未使用的告示牌缓存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206553" target="_blank" rel="noopener noreferrer">MC-206553</a> 滴水石锥在下界产生水粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206563" target="_blank" rel="noopener noreferrer">MC-206563</a> 滴水石锥未连接到玩家手上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206578" target="_blank" rel="noopener noreferrer">MC-206578</a> 大型钟乳石柱在移除上方方块后不会掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206583" target="_blank" rel="noopener noreferrer">MC-206583</a> 位于至少2格高钟乳石下方的炼药锅无法填满</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206591" target="_blank" rel="noopener noreferrer">MC-206591</a> 将任何浮空方块设置为滴水石锥会导致被替换的方块以物品形式掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206594" target="_blank" rel="noopener noreferrer">MC-206594</a> 大型钟乳石掉落时有时不会掉落所有滴水石锥物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206599" target="_blank" rel="noopener noreferrer">MC-206599</a> 滴水石锥可以相互堆叠放置，即便玩家会处于下方滴水石锥的碰撞箱内</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206606" target="_blank" rel="noopener noreferrer">MC-206606</a> 钟乳石的截锥阶段抵消了掉落伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206613" target="_blank" rel="noopener noreferrer">MC-206613</a> 当附着方块被移除时，滴水石锥会复制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206615" target="_blank" rel="noopener noreferrer">MC-206615</a> 滴水石锥的碰撞箱可以延伸超过一个方块，导致附近的钟乳石无法掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206642" target="_blank" rel="noopener noreferrer">MC-206642</a> 钟乳石会摧毁它们掉落的物品，但石笋不会</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206643" target="_blank" rel="noopener noreferrer">MC-206643</a> 当滴水石锥的碰撞箱延伸到另一个方块的区域时，延伸到该方块的区域无法被选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206669" target="_blank" rel="noopener noreferrer">MC-206669</a> 滴水石与非生物实体之间的不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206682" target="_blank" rel="noopener noreferrer">MC-206682</a> 大型滴水石柱有时会留下浮空的滴水石锥尖端</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206691" target="_blank" rel="noopener noreferrer">MC-206691</a> 滴水石锥将物品替换为滴水石锥物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206711" target="_blank" rel="noopener noreferrer">MC-206711</a> net.minecraft.world.entity.Entity.resetPos() 处的编码错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206790" target="_blank" rel="noopener noreferrer">MC-206790</a> 含水的滴水石不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206878" target="_blank" rel="noopener noreferrer">MC-206878</a> 附着在活塞上的滴水石锥在活塞伸出时不会被移除</li>
+</ul>

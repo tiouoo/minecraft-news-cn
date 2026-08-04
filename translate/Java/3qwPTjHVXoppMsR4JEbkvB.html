@@ -1,0 +1,35 @@
+<p>我们现在正在发布 Minecraft 1.19.1 的第一个（希望也是唯一一个）发布候选版本。我们还创建了一篇关于聊天举报的帮助文章，可在此处查看：<a href="https://help.minecraft.net/hc/articles/7149823936781" target="_blank" rel="noopener noreferrer">这里</a>。</p>
+<p>如果此版本发布后没有出现重大问题，那么在周二正式发布之前将不再进行任何更改。</p>
+<p>挖矿愉快！</p>
+<h1>1.19.1 发布候选版本 1 的改动</h1>
+<ul>
+<li>更新了聊天举报的类别
+<ul>
+<li>删除“脏话”、“裸体或色情内容”和“极端暴力或血腥内容”类别</li>
+<li>“毒品和酒精”类别的描述已更新为：“有人鼓励他人参与非法毒品相关活动，或鼓励未成年人饮酒”</li>
+<li>“骚扰和欺凌”类别的描述已补充为：或在未经同意的情况下发布关于你或他人的私人个人信息（“人肉搜索”）。</li>
+</ul>
+</li>
+</ul>
+<h1>1.19.1 发布候选版本 1 的技术性改动</h1>
+<ul>
+<li>文本组件的 <code>run_command</code> 单击事件不再支持直接发送聊天消息
+<ul>
+<li>仅支持命令，因此应改用诸如 <code>/say</code> 之类的命令</li>
+<li>这意味着值现在必须始终以“/”开头</li>
+</ul>
+</li>
+<li>增加了每次聊天举报所发送的聊天上下文的量</li>
+</ul>
+<h1>1.19 发布候选版本 1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-250020" target="_blank" rel="noopener noreferrer">MC-250020</a> 当 mobGriefing 设置为 false 时，悦灵不会忽略物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252511" target="_blank" rel="noopener noreferrer">MC-252511</a> 基岩不会在旧版与新版混合边界处生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252987" target="_blank" rel="noopener noreferrer">MC-252987</a> 文本组件 clickEvent 中出现非法字符 '\n'</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253114" target="_blank" rel="noopener noreferrer">MC-253114</a> 在“选择要举报的聊天消息”菜单中，重新进入菜单后取消选择字段时，选框不会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253188" target="_blank" rel="noopener noreferrer">MC-253188</a> 在“选择要举报的聊天消息”菜单中，选框的大小会因选择方式的不同而有细微差别</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253225" target="_blank" rel="noopener noreferrer">MC-253225</a> 使用 TAB 键选择时，玩家举报菜单列表中的字段选框不包含白色轮廓</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253227" target="_blank" rel="noopener noreferrer">MC-253227</a> 玩家只有在世界内时，才能使用举报系统对其进行举报</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253336" target="_blank" rel="noopener noreferrer">MC-253336</a> 在种子 -3721742095548798177 中使用末影之眼会导致游戏“崩溃”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253422" target="_blank" rel="noopener noreferrer">MC-253422</a> 在“选择举报类别”菜单中，“请举报违反我们社区标准的行为”文本的选择效果有些令人困惑，因为“社区标准”一词默认带有下划线</li>
+</ul>

@@ -1,0 +1,267 @@
+<p>我们休假回来了，发货室的灯又亮了！在今年的第一个快照中，我们带来了迄今为止最可爱的游戏更新中的首批特性！与更毛茸茸的狼崽、小猫、小猪、小牛、小羊、小鸡、小豹猫和小兔子交朋友；合成命名牌，聆听令人心动的生物音效！<p>采矿愉快！
+
+<h1>更改</h1>
+<ul>
+<li>命名牌现在可以合成了，可用1张纸和任意1个金属粒合成。
+<li>僵尸马受伤时不再恐慌。
+<li>调整了默认JVM选项。
+<li>为狼、猫和猪添加了新的幼年音效。
+<li>重新设计了多种幼年生物的视觉效果。
+<li>在兔子重新建模后，移除了程序员美术风格的兔子纹理。
+</ul>
+
+<h2>幼年生物</h2>
+<ul>
+<li>更新了以下幼年生物的模型和纹理：
+  <ul>
+  <li>牛
+  <li>羊
+  <li>猪
+  <li>猫
+  <li>豹猫
+  <li>哞菇
+  <li>狼
+  <li>鸡
+    <ul>
+    <li>调整了碰撞箱以适配新模型。
+    </ul>
+  <li>兔子
+    <ul>
+    <li>成年和幼年兔子也都获得了新动画。
+    <li>调整了碰撞箱以适配新模型。
+    </ul>
+  </ul>
+<li>幼年狼身上的盔甲和幼年猪身上的鞍将不再渲染。
+</ul>
+
+<h2>默认JVM选项</h2>
+<ul>
+<li>游戏现在默认分配4 GB内存（原为2 GB）。
+<li>兼容设备上的垃圾回收已从G1GC改为ZGC。
+</ul>
+
+<blockquote><p><strong>开发者注记</strong>：<em>默认内存分配已从2GB提升到4GB，以使游戏运行更流畅并减少卡顿。此外，借助分代ZGC，你应该会看到更稳定的帧率，尤其是在执行高内存占用任务时。如果你在内存小于4GB的机器上运行Minecraft，请参阅<a href=https://help.minecraft.net/hc/en-us/articles/39083573916941-Fix-Minecraft-Java-Edition-Game-Crashes-by-Checking-Memory-Allocation rel="noopener noreferrer"target=_blank>这篇帮助文章</a>。如果你想更改垃圾回收器，请参阅<a href=https://help.minecraft.net/hc/en-us/articles/41950300066573-Change-the-Garbage-Collector-for-Minecraft-Java-Edition rel="noopener noreferrer"target=_blank>这篇帮助文章</a>。第三方启动器可能不支持这些更改。</em></p></blockquote>
+
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为96。
+<li>资源包版本现在为77。
+</ul>
+
+<h1>数据包版本 96</h1>
+<ul>
+<li><code>wolf_sound_variant</code>中的狼声音变体音效事件已移至新字段<code>adult_sounds</code>，并新增了<code>baby_sounds</code>字段。
+</ul>
+
+<h2>实体数据</h2>
+<ul>
+<li>玩家身上的<code>current_explosion_impact_pos</code>和<code>current_impulse_context_reset_grace_time</code>字段已添加到所有生物和盔甲架。
+<li>玩家身上的<code>ignore_fall_damage_from_current_explosion</code>字段已被移除。
+</ul>
+
+<h3>物品标签</h3>
+<ul>
+<li>添加了<code>#metal_nuggets</code> - 铜粒、铁粒和金粒。
+</ul>
+
+<h1>资源包版本 77</h1>
+<h2>实体纹理</h2>
+<ul>
+<li><p>新增了以下实体纹理：
+  <ul>
+  <li><code>entity/cat/cat_all_black_baby.png</code>
+  <li><code>entity/cat/cat_black_baby.png</code>
+  <li><code>entity/cat/cat_british_shorthair_baby.png</code>
+  <li><code>entity/cat/cat_calico_baby.png</code>
+  <li><code>entity/cat/cat_collar_baby.png</code>
+  <li><code>entity/cat/cat_jellie_baby.png</code>
+  <li><code>entity/cat/ocelot_baby.png</code>
+  <li><code>entity/cat/cat_persian_baby.png</code>
+  <li><code>entity/cat/cat_ragdoll_baby.png</code>
+  <li><code>entity/cat/cat_red_baby.png</code>
+  <li><code>entity/cat/cat_siamese_baby.png</code>
+  <li><code>entity/cat/cat_tabby_baby.png</code>
+  <li><code>entity/cat/cat_white_baby.png</code>
+  <li><code>entity/chicken/chicken_cold_baby.png</code>
+  <li><code>entity/chicken/chicken_temperate_baby.png</code>
+  <li><code>entity/chicken/chicken_warm_baby.png</code>
+  <li><code>entity/cow/cow_cold_baby.png</code>
+  <li><code>entity/cow/cow_temperate_baby.png</code>
+  <li><code>entity/cow/cow_warm_baby.png</code>
+  <li><code>entity/cow/mooshroom_brown_baby.png</code>
+  <li><code>entity/cow/mooshroom_red_baby.png</code>
+  <li><code>entity/pig/pig_cold_baby.png</code>
+  <li><code>entity/pig/pig_temperate_baby.png</code>
+  <li><code>entity/pig/pig_warm_baby.png</code>
+  <li><code>entity/rabbit/rabbit_black.png</code>
+  <li><code>entity/rabbit/rabbit_brown.png</code>
+  <li><code>entity/rabbit/rabbit_caerbannog.png</code>
+  <li><code>entity/rabbit/rabbit_gold.png</code>
+  <li><code>entity/rabbit/rabbit_salt.png</code>
+  <li><code>entity/rabbit/rabbit_toast.png</code>
+  <li><code>entity/rabbit/rabbit_white.png</code>
+  <li><code>entity/rabbit/rabbit_white_splotched.png</code>
+  <li><code>entity/sheep/sheep_baby.png</code>
+  <li><code>entity/sheep/sheep_wool_baby.png</code>
+  <li><code>entity/wolf/wolf_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_ashen_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_ashen_baby.png</code>
+  <li><code>entity/wolf/wolf_ashen_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_baby.png</code>
+  <li><code>entity/wolf/wolf_black_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_black_baby.png</code>
+  <li><code>entity/wolf/wolf_black_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_chestnut_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_chestnut_baby.png</code>
+  <li><code>entity/wolf/wolf_chestnut_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_collar_baby.png</code>
+  <li><code>entity/wolf/wolf_rusty_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_rusty_baby.png</code>
+  <li><code>entity/wolf/wolf_rusty_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_snowy_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_snowy_baby.png</code>
+  <li><code>entity/wolf/wolf_snowy_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_spotted_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_spotted_baby.png</code>
+  <li><code>entity/wolf/wolf_spotted_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_striped_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_striped_baby.png</code>
+  <li><code>entity/wolf/wolf_striped_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_tame_baby.png</code>
+  <li><code>entity/wolf/wolf_woods_angry_baby.png</code>
+  <li><code>entity/wolf/wolf_woods_baby.png</code>
+  <li><code>entity/wolf/wolf_woods_tame_baby.png</code>
+  </ul>
+<li><p>重命名了以下实体纹理：
+  <ul>
+  <li><code>entity/armorstand/wood.png</code> -> <code>entity/armorstand/armorstand.png</code>
+  <li><code>entity/cat/all_black.png</code> -> <code>entity/cat/cat_all_black.png</code>
+  <li><code>entity/cat/black.png</code> -> <code>entity/cat/cat_black.png</code>
+  <li><code>entity/cat/british_shorthair.png</code> -> <code>entity/cat/cat_british_shorthair.png</code>
+  <li><code>entity/cat/calico.png</code> -> <code>entity/cat/cat_calico.png</code>
+  <li><code>entity/cat/jellie.png</code> -> <code>entity/cat/cat_jellie.png</code>
+  <li><code>entity/cat/persian.png</code> -> <code>entity/cat/cat_persian.png</code>
+  <li><code>entity/cat/ragdoll.png</code> -> <code>entity/cat/cat_ragdoll.png</code>
+  <li><code>entity/cat/red.png</code> -> <code>entity/cat/cat_red.png</code>
+  <li><code>entity/cat/siamese.png</code> -> <code>entity/cat/cat_siamese.png</code>
+  <li><code>entity/cat/tabby.png</code> -> <code>entity/cat/cat_tabby.png</code>
+  <li><code>entity/cat/white.png</code> -> <code>entity/cat/cat_white.png</code>
+  <li><code>entity/chicken/cold_chicken.png</code> -> <code>entity/chicken/chicken_cold.png</code>
+  <li><code>entity/chicken/temperate_chicken.png</code> -> <code>entity/chicken/chicken_temperate.png</code>
+  <li><code>entity/chicken/warm_chicken.png</code> -> <code>entity/chicken/chicken_warm.png</code>
+  <li><code>entity/copper_golem/exposed_copper_golem.png</code> -> <code>entity/copper_golem/copper_golem_exposed.png</code>
+  <li><code>entity/copper_golem/exposed_copper_golem_eyes.png</code> -> <code>entity/copper_golem/copper_golem_eyes_exposed.png</code>
+  <li><code>entity/copper_golem/oxidized_copper_golem_eyes.png</code> -> <code>entity/copper_golem/copper_golem_eyes_oxidized.png</code>
+  <li><code>entity/copper_golem/weathered_copper_golem_eyes.png</code> -> <code>entity/copper_golem/copper_golem_eyes_weathered.png</code>
+  <li><code>entity/copper_golem/oxidized_copper_golem.png</code> -> <code>entity/copper_golem/copper_golem_oxidized.png</code>
+  <li><code>entity/copper_golem/weathered_copper_golem.png</code> -> <code>entity/copper_golem/copper_golem_weathered.png</code>
+  <li><code>entity/cow/cold_cow.png</code> -> <code>entity/cow/cow_cold.png</code>
+  <li><code>entity/cow/temperate_cow.png</code> -> <code>entity/cow/cow_temperate.png</code>
+  <li><code>entity/cow/warm_cow.png</code> -> <code>entity/cow/cow_warm.png</code>
+  <li><code>entity/cow/brown_mooshroom.png</code> -> <code>entity/cow/mooshroom_brown.png</code>
+  <li><code>entity/cow/red_mooshroom.png</code> -> <code>entity/cow/mooshroom_red.png</code>
+  <li><code>entity/fox/snow_fox.png</code> -> <code>entity/fox/fox_snow.png</code>
+  <li><code>entity/fox/snow_fox_sleep.png</code> -> <code>entity/fox/fox_snow_sleep.png</code>
+  <li><code>entity/frog/cold_frog.png</code> -> <code>entity/frog/frog_cold.png</code>
+  <li><code>entity/frog/temperate_frog.png</code> -> <code>entity/frog/frog_temperate.png</code>
+  <li><code>entity/frog/warm_frog.png</code> -> <code>entity/frog/frog_warm.png</code>
+  <li><code>entity/llama/brown.png</code> -> <code>entity/llama/llama_brown.png</code>
+  <li><code>entity/llama/creamy.png</code> -> <code>entity/llama/llama_creamy.png</code>
+  <li><code>entity/llama/gray.png</code> -> <code>entity/llama/llama_gray.png</code>
+  <li><code>entity/llama/spit.png</code> -> <code>entity/llama/llama_spit.png</code>
+  <li><code>entity/llama/white.png</code> -> <code>entity/llama/llama_white.png</code>
+  <li><code>entity/panda/aggressive_panda.png</code> -> <code>entity/panda/panda_aggressive.png</code>
+  <li><code>entity/panda/brown_panda.png</code> -> <code>entity/panda/panda_brown.png</code>
+  <li><code>entity/panda/lazy_panda.png</code> -> <code>entity/panda/panda_lazy.png</code>
+  <li><code>entity/panda/playful_panda.png</code> -> <code>entity/panda/panda_playful.png</code>
+  <li><code>entity/panda/weak_panda.png</code> -> <code>entity/panda/panda_weak.png</code>
+  <li><code>entity/panda/worried_panda.png</code> -> <code>entity/panda/panda_worried.png</code>
+  <li><code>entity/pig/cold_pig.png</code> -> <code>entity/pig/pig_cold.png</code>
+  <li><code>entity/pig/temperate_pig.png</code> -> <code>entity/pig/pig_temperate.png</code>
+  <li><code>entity/pig/warm_pig.png</code> -> <code>entity/pig/pig_warm.png</code>
+  <li><code>entity/projectiles/spectral.png</code> -> <code>entity/projectiles/arrow_spectral.png</code>
+  <li><code>entity/projectiles/tipped.png</code> -> <code>entity/projectiles/arrow_tipped.png</code>
+  <li><code>entity/turtle/big_sea_turtle.png</code> -> <code>entity/turtle/turtle.png</code>
+  </ul>
+<li><p>移动了以下实体纹理：
+  <ul>
+  <li><code>entity/armadillo.png</code> -> <code>entity/armadillo/armadillo.png</code>
+  <li><code>entity/banner_base.png</code> -> <code>entity/banner/banner_base.png</code>
+  <li><code>entity/bat.png</code> -> <code>entity/bat/bat.png</code>
+  <li><code>entity/beacon_beam.png</code> -> <code>entity/beacon/beacon_beam.png</code>
+  <li><code>entity/blaze.png</code> -> <code>entity/blaze/blaze.png</code>
+  <li><code>entity/dolphin.png</code> -> <code>entity/dolphin/dolphin.png</code>
+  <li><code>entity/enchanting_table_book.png</code> -> <code>entity/enchantment/enchanting_table_book.png</code>
+  <li><code>entity/end_gateway_beam.png</code> -> <code>entity/end_portal/end_gateway_beam.png</code>
+  <li><code>entity/end_portal.png</code> -> <code>entity/end_portal/end_portal.png</code>
+  <li><code>entity/endermite.png</code> -> <code>entity/endermite/endermite.png</code>
+  <li><code>entity/experience_orb.png</code> -> <code>entity/experience/experience_orb.png</code>
+  <li><code>entity/fishing_hook.png</code> -> <code>entity/fishing/fishing_hook.png</code>
+  <li><code>entity/guardian.png</code> -> <code>entity/guardian/guardian.png</code>
+  <li><code>entity/guardian_beam.png</code> -> <code>entity/guardian/guardian_beam.png</code>
+  <li><code>entity/guardian_elder.png</code> -> <code>entity/guardian/guardian_elder.png</code>
+  <li><code>entity/lead_knot.png</code> -> <code>entity/lead_knot/lead_knot.png</code>
+  <li><code>entity/minecart.png</code> -> <code>entity/minecart/minecart.png</code>
+  <li><code>entity/phantom.png</code> -> <code>entity/phantom/phantom.png</code>
+  <li><code>entity/phantom_eyes.png</code> -> <code>entity/phantom/phantom_eyes.png</code>
+  <li><code>entity/shield_base.png</code> -> <code>entity/shield/shield_base.png</code>
+  <li><code>entity/shield_base_nopattern.png</code> -> <code>entity/shield/shield_base_nopattern.png</code>
+  <li><code>entity/silverfish.png</code> -> <code>entity/silverfish/silverfish.png</code>
+  <li><code>entity/snow_golem.png</code> -> <code>entity/snow_golem/snow_golem.png</code>
+  <li><code>entity/spider_eyes.png</code> -> <code>entity/spider/spider_eyes.png</code>
+  <li><code>entity/trident.png</code> -> <code>entity/trident/trident.png</code>
+  <li><code>entity/trident_riptide.png</code> -> <code>entity/trident/trident_riptide.png</code>
+  <li><code>entity/wandering_trader.png</code> -> <code>entity/wandering_trader/wandering_trader.png</code>
+  <li><code>entity/witch.png</code> -> <code>entity/witch/witch.png</code>
+  </ul>
+</ul>
+
+<h2>音效</h2>
+<ul>
+<li>为猫添加了新的音效事件：
+  <ul>
+  <li><code>entity.baby_cat.ambient</code>
+  <li><code>entity.baby_cat.hiss</code>
+  <li><code>entity.baby_cat.hurt</code>
+  <li><code>entity.baby_cat.death</code>
+  <li><code>entity.baby_cat.eat</code>
+  <li><code>entity.baby_cat.beg_for_food</code>
+  <li><code>entity.baby_cat.purr</code>
+  <li><code>entity.baby_cat.purreow</code>
+  <li><code>entity.baby_cat.stray_ambient</code>
+  </ul>
+<li>为猪添加了新的音效事件：
+  <ul>
+  <li><code>entity.baby_pig.ambient</code>
+  <li><code>entity.baby_pig.hurt</code>
+  <li><code>entity.baby_pig.death</code>
+  <li><code>entity.baby_pig.step</code>
+  </ul>
+<li>为狼添加了新的音效事件：
+  <ul>
+  <li><code>entity.baby_wolf.ambient</code>
+  <li><code>entity.baby_wolf.growl</code>
+  <li><code>entity.baby_wolf.death</code>
+  <li><code>entity.baby_wolf.hurt</code>
+  <li><code>entity.baby_wolf.pant</code>
+  <li><code>entity.baby_wolf.whine</code>
+  <li><code>entity.baby_wolf.step</code>
+  </ul>
+</ul>
+
+<h1>修复了26.1快照2中的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-302734 rel="noopener noreferrer"target=_blank>MC-302734</a> 僵尸马不断地进出水面并被烧死。
+<li><a href=https://bugs.mojang.com/browse/MC-304361 rel="noopener noreferrer"target=_blank>MC-304361</a> 僵尸鹦鹉螺的头部背面有一个巨大的缺口。
+<li><a href=https://bugs.mojang.com/browse/MC-304705 rel="noopener noreferrer"target=_blank>MC-304705</a> 调试叠加层中entity_render_stats的E值不起作用。
+<li><a href=https://bugs.mojang.com/browse/MC-304761 rel="noopener noreferrer"target=_blank>MC-304761</a> 长矛的蓄力动画在速度较慢的长矛上需要过长时间才会侧向旋转。
+<li><a href=https://bugs.mojang.com/browse/MC-305040 rel="noopener noreferrer"target=_blank>MC-305040</a> 由玩家繁殖两只鹦鹉螺而产生的鹦鹉螺可能会消失。
+<li><a href=https://bugs.mojang.com/browse/MC-305104 rel="noopener noreferrer"target=_blank>MC-305104</a> “程序员美术”和“高对比度”资源包被列为不兼容。
+<li><a href=https://bugs.mojang.com/browse/MC-305121 rel="noopener noreferrer"target=_blank>MC-305121</a> 某些专家级石匠交易不再生成。
+<li><a href=https://bugs.mojang.com/browse/MC-305130 rel="noopener noreferrer"target=_blank>MC-305130</a> 农民出售的迷之炖菜持续时间是预期的20倍。
+<li><a href=https://bugs.mojang.com/browse/MC-305131 rel="noopener noreferrer"target=_blank>MC-305131</a> 工匠级牧羊人交易中出现了重复的交易条目。
+<li><a href=https://bugs.mojang.com/browse/MC-305132 rel="noopener noreferrer"target=_blank>MC-305132</a> 大师级制箭师现在可以出售浓稠、平凡和笨拙药水的药箭。
+<li><a href=https://bugs.mojang.com/browse/MC-305164 rel="noopener noreferrer"target=_blank>MC-305164</a> 盔甲匠现在在专家级收购钻石，而不再是工匠级。
+<li><a href=https://bugs.mojang.com/browse/MC-305175 rel="noopener noreferrer"target=_blank>MC-305175</a> 突刺附魔现在在饥饿值大于等于6时生效，而不是7。
+<li><a href=https://bugs.mojang.com/browse/MC-305279 rel="noopener noreferrer"target=_blank>MC-305279</a> 专家级牧师出售萤石，而不是末影珍珠。
+</ul>

@@ -1,0 +1,146 @@
+<p>一个令人震惊的快照到来了！这个快照为铜添加了一些新功能，进行了一些常规调整，引入了一种获取性能指标的新奇方式，并修复了大量错误。</p>
+<p>祝您挖矿愉快！</p>
+<h1>21w11a 中的新特性</h1>
+<ul>
+<li>避雷针现在，有史以来第一次，可以被水浸</li>
+<li>为铜添加了涂抹和去除蜡的新功能</li>
+<li>对缠根泥土使用骨粉现在会在其下方生成垂根</li>
+</ul>
+<h2>给铜打蜡与氧化</h2>
+<ul>
+<li>手持蜜脾右击铜块可以给它们打蜡</li>
+<li>在发射器中使用蜜脾可以给铜块打蜡</li>
+<li>斧头可以刮掉铜块上的蜡和氧化层</li>
+<li>闪电击中铜会清除其氧化层</li>
+</ul>
+<h1>21w11a 中的更改</h1>
+<ul>
+<li>涂蜡铜块现在可以合成 4 个铜锭</li>
+<li>调整了洞穴的大小</li>
+<li>略微增加了钻石矿石团簇的生成频率</li>
+<li>垂根方块现在渲染时会随机偏移</li>
+<li>破坏大型垂滴叶的茎现在会掉落一个大型垂滴叶方块</li>
+<li>苔藓块现在可以与圆石或石砖合成，以制作它们的苔藓变种</li>
+<li>小型垂滴叶方块的朝向现在由玩家放置时的面向方向决定</li>
+<li>完全生长的紫水晶簇现在用镐挖掘时会掉落 4 个紫水晶碎片（使用时运附魔会更多），而用手、活塞或其他方式破坏时掉落 2 个紫水晶碎片</li>
+</ul>
+<h1>21w11a 中的技术性更改</h1>
+<ul>
+<li>添加了 F3+L 快捷键，可在游戏内生成并持久化性能指标</li>
+</ul>
+<h2>游戏内客户端指标报告</h2>
+<p>在游戏中按下 F3+L 将开始记录 10 秒，捕获诸如 tick 持续时间、已用堆大小以及其他更详细的统计数据等指标。这些数据将保存到 <code>debug/profiling/&#x3C;yyyy-MM-dd_HH.mm.ss>.zip</code> 的 zip 文件中，如果包含在错误报告中，可用于性能回归分析。</p>
+<p>具体的指标、输出格式和名称在不同版本之间可能会有所变化，我们的计划是继续迭代确定要捕获哪些指标。</p>
+<h1>21w11a 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1483" target="_blank" rel="noopener noreferrer">MC-1483</a> 被雪覆盖的草/灰化土/菌丝体方块侧面纹理与原方块不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-12363" target="_blank" rel="noopener noreferrer">MC-12363</a> 快速转身时使用熔岩/水/细雪桶会导致不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-70850" target="_blank" rel="noopener noreferrer">MC-70850</a> 遮挡剔除时出现假阴性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-71530" target="_blank" rel="noopener noreferrer">MC-71530</a> 旁观者无法透过熔岩观察</li>
+<li><a href="https://bugs.mojang.com/browse/MC-145501" target="_blank" rel="noopener noreferrer">MC-145501</a> 图书管理员和僵尸图书管理员躯干顶部纹理不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150054" target="_blank" rel="noopener noreferrer">MC-150054</a> 物品和实体上的光谱箭纹理不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150784" target="_blank" rel="noopener noreferrer">MC-150784</a> 酿造台药水瓶轮廓不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154006" target="_blank" rel="noopener noreferrer">MC-154006</a> 主世界木制告示牌在所有面上使用过时的木头纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160195" target="_blank" rel="noopener noreferrer">MC-160195</a> 丛林木门物品栏纹理已过时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160388" target="_blank" rel="noopener noreferrer">MC-160388</a> 画背面的纹理未随纹理更新而更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195806" target="_blank" rel="noopener noreferrer">MC-195806</a> 烟熏炉的顶部和底部纹理存在颜色不一致的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197561" target="_blank" rel="noopener noreferrer">MC-197561</a> 雕刻过的南瓜和南瓜灯会形成卐字图案</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197883" target="_blank" rel="noopener noreferrer">MC-197883</a> 拼图结构导致 DataFixer 刷屏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198805" target="_blank" rel="noopener noreferrer">MC-198805</a> 守卫者/远古守卫者尾鳍上有一个浮动像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202760" target="_blank" rel="noopener noreferrer">MC-202760</a> 区域效果云未强制执行最大半径</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203554" target="_blank" rel="noopener noreferrer">MC-203554</a> block.amethyst_block.chime 没有字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203561" target="_blank" rel="noopener noreferrer">MC-203561</a> 紫水晶晶簇在被活塞直接移动时掉落物品，但实际上并未破坏方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203623" target="_blank" rel="noopener noreferrer">MC-203623</a> 不一致：用手破坏紫水晶晶体不会掉落物品，但破坏它们所在的方块会掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203676" target="_blank" rel="noopener noreferrer">MC-203676</a> 遮光玻璃会使其内部的实体窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203753" target="_blank" rel="noopener noreferrer">MC-203753</a> 使用望远镜的统计永远不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203918" target="_blank" rel="noopener noreferrer">MC-203918</a> 生物可以在遮光玻璃上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204016" target="_blank" rel="noopener noreferrer">MC-204016</a> 向装有熔岩的炼药锅中填充熔岩时，熔岩被放置在地上，而不是锅中。这也影响细雪。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204862" target="_blank" rel="noopener noreferrer">MC-204862</a> 遮光玻璃未包含在不可渗透标签中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205913" target="_blank" rel="noopener noreferrer">MC-205913</a> 避雷针可以生成骷髅马和骷髅</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206787" target="_blank" rel="noopener noreferrer">MC-206787</a> 世界边界渲染颠倒</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207557" target="_blank" rel="noopener noreferrer">MC-207557</a> 极限模式下的冰冻爱心看起来与生存模式下的冰冻爱心相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211513" target="_blank" rel="noopener noreferrer">MC-211513</a> 三叉戟返回给不在同一世界的所有者可能导致玩家被永久踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212123" target="_blank" rel="noopener noreferrer">MC-212123</a> 玩家在物品栏中的光照不一致，正面看起来更暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212226" target="_blank" rel="noopener noreferrer">MC-212226</a> 当发光地衣无法生长时，骨粉仍可对其使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212410" target="_blank" rel="noopener noreferrer">MC-212410</a> 无法堆肥发光地衣</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213743" target="_blank" rel="noopener noreferrer">MC-213743</a> 旁观者无法透过细雪观察</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213764" target="_blank" rel="noopener noreferrer">MC-213764</a> 移除支撑孢子花的方块会导致孢子花漂浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213765" target="_blank" rel="noopener noreferrer">MC-213765</a> 洞穴藤蔓方块的 ID 与其他类似方块不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213768" target="_blank" rel="noopener noreferrer">MC-213768</a> 移除垂根的支撑方块会导致其漂浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213778" target="_blank" rel="noopener noreferrer">MC-213778</a> 洞穴藤蔓无法攀爬</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213782" target="_blank" rel="noopener noreferrer">MC-213782</a> 洞穴藤蔓不像其他藤蔓那样减慢你的速度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213798" target="_blank" rel="noopener noreferrer">MC-213798</a> 洞穴藤蔓的头部和身体发出不同的光照等级</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213886" target="_blank" rel="noopener noreferrer">MC-213886</a> 骨粉不能用于垂滴叶茎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213911" target="_blank" rel="noopener noreferrer">MC-213911</a> 洞穴藤蔓的身体和头部共享相同的名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213980" target="_blank" rel="noopener noreferrer">MC-213980</a> 苔藓的合适工具是斧头而不是锄头</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214568" target="_blank" rel="noopener noreferrer">MC-214568</a> 点燃讲台会导致 Z 冲突</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215036" target="_blank" rel="noopener noreferrer">MC-215036</a> “雪之王国”超平坦预设中的雪层生成在方块上方 64 格处</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215384" target="_blank" rel="noopener noreferrer">MC-215384</a> 杜鹃花丛不能用作燃料</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216134" target="_blank" rel="noopener noreferrer">MC-216134</a> 镶金黑石纹理与新黑石侧面纹理不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216184" target="_blank" rel="noopener noreferrer">MC-216184</a> 玩家在 y=316 以上的方块上不会受到摔落伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216227" target="_blank" rel="noopener noreferrer">MC-216227</a> 甘蔗物品纹理自 13w36a 起不再准确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216737" target="_blank" rel="noopener noreferrer">MC-216737</a> 替换凝灰岩时，矿石在 y=0 以下仍以“石头”背景生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216945" target="_blank" rel="noopener noreferrer">MC-216945</a> 当任何实体离开队伍时，队伍功能失效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216965" target="_blank" rel="noopener noreferrer">MC-216965</a> 地形裂缝中生成平坦的“薄片”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217303" target="_blank" rel="noopener noreferrer">MC-217303</a> DepthBasedReplacingBaseStoneSource 中潜在的优化目标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217546" target="_blank" rel="noopener noreferrer">MC-217546</a> 当落在 y=316 以上的方块上时，stat.fallOneCm 未更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217802" target="_blank" rel="noopener noreferrer">MC-217802</a> 某些方块在超平坦世界中生成在错误的 Y 高度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218587" target="_blank" rel="noopener noreferrer">MC-218587</a> 避雷针仍然无法被水浸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218594" target="_blank" rel="noopener noreferrer">MC-218594</a> 调试区块边界无法正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218596" target="_blank" rel="noopener noreferrer">MC-218596</a> 调试饼图被黑屏遮挡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218597" target="_blank" rel="noopener noreferrer">MC-218597</a> 水不再有雾</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218603" target="_blank" rel="noopener noreferrer">MC-218603</a> 切换维度时屏幕变暗灰色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218604" target="_blank" rel="noopener noreferrer">MC-218604</a> 垂根可以生成在其他垂根上，导致它们漂浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218609" target="_blank" rel="noopener noreferrer">MC-218609</a> 多级纹理映射导致某些方块面变得过暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218610" target="_blank" rel="noopener noreferrer">MC-218610</a> 旗帜不受光照等级影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218626" target="_blank" rel="noopener noreferrer">MC-218626</a> 无法附魔物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218635" target="_blank" rel="noopener noreferrer">MC-218635</a> 使用流畅画质时，冰冻覆盖层渲染为黑色，并在第一人称视角下覆盖整个屏幕为黑色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218640" target="_blank" rel="noopener noreferrer">MC-218640</a> 流畅画质下望远镜覆盖层损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218641" target="_blank" rel="noopener noreferrer">MC-218641</a> 在世界边界外显示的红色晕影过于强烈</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218645" target="_blank" rel="noopener noreferrer">MC-218645</a> 使用流畅画质时，雕刻过的南瓜覆盖层将屏幕完全变黑</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218652" target="_blank" rel="noopener noreferrer">MC-218652</a> 绿色反胃覆盖层不再渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218653" target="_blank" rel="noopener noreferrer">MC-218653</a> 发光效果不再改变为队伍颜色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218655" target="_blank" rel="noopener noreferrer">MC-218655</a> 繁茂洞穴中过度生成漂浮的水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218660" target="_blank" rel="noopener noreferrer">MC-218660</a> 使用流畅画质时，下界传送门覆盖层不再渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218695" target="_blank" rel="noopener noreferrer">MC-218695</a> 潜影贝受伤或死亡时不闪红</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218712" target="_blank" rel="noopener noreferrer">MC-218712</a> 移动附魔物品时，调试饼图出现紫色框</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218713" target="_blank" rel="noopener noreferrer">MC-218713</a> 右键点击打开替代配方不显示配方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218729" target="_blank" rel="noopener noreferrer">MC-218729</a> 噪声洞穴入口导致地形中出现不自然的平滑边缘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218734" target="_blank" rel="noopener noreferrer">MC-218734</a> 洞穴生成时带有非常块状的区域</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218748" target="_blank" rel="noopener noreferrer">MC-218748</a> 日落时，北方和南方天空出现一条蓝线</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218753" target="_blank" rel="noopener noreferrer">MC-218753</a> 生存模式物品栏中玩家的环境光遮蔽已更改</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218765" target="_blank" rel="noopener noreferrer">MC-218765</a> 发光效果不再围绕半透明像素渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218793" target="_blank" rel="noopener noreferrer">MC-218793</a> Mojang 加载屏幕上出现两条白线</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218817" target="_blank" rel="noopener noreferrer">MC-218817</a> 洞穴藤蔓可以在没有支撑方块的情况下生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218825" target="_blank" rel="noopener noreferrer">MC-218825</a> M1 ARM Mac 在使用“极佳！”画质时崩溃，与旧版本相同，但没有显示不支持警告</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218830" target="_blank" rel="noopener noreferrer">MC-218830</a> 世界边界是白色的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218834" target="_blank" rel="noopener noreferrer">MC-218834</a> 在细雪/熔岩中时可以非常清晰地看到方块碰撞箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218845" target="_blank" rel="noopener noreferrer">MC-218845</a> Mojang 标志屏幕在变红之前闪烁蓝色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218852" target="_blank" rel="noopener noreferrer">MC-218852</a> 世界边界在加载时偶尔显示为纯色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218877" target="_blank" rel="noopener noreferrer">MC-218877</a> 生物受伤/死亡时的红色闪烁看起来略微变暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218881" target="_blank" rel="noopener noreferrer">MC-218881</a> 在末地中选择文本时，天空会被高亮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218911" target="_blank" rel="noopener noreferrer">MC-218911</a> 在铁砧或聊天中选择文本时，悬停事件文本的背景变为蓝色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218945" target="_blank" rel="noopener noreferrer">MC-218945</a> 望远镜在冰冻时具有渐变效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218979" target="_blank" rel="noopener noreferrer">MC-218979</a> 洞穴天花板和地板有时过于平坦或块状</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218988" target="_blank" rel="noopener noreferrer">MC-218988</a> 火在玩家/马/羊驼界面中渲染为暗色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218990" target="_blank" rel="noopener noreferrer">MC-218990</a> 透明度缓冲区以蓝色背景而不是空背景开始</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219002" target="_blank" rel="noopener noreferrer">MC-219002</a> 凋灵的凋灵护甲周围有蓝色光环</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219006" target="_blank" rel="noopener noreferrer">MC-219006</a> 字幕和聊天的背景不透明度受到药水效果界面淡出的影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219014" target="_blank" rel="noopener noreferrer">MC-219014</a> 闪电苦力怕层使云和实体隐形</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219036" target="_blank" rel="noopener noreferrer">MC-219036</a> 拾取物品或经验球时，世界边界显示为纯色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219039" target="_blank" rel="noopener noreferrer">MC-219039</a> 世界边界在世界下方时不渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219049" target="_blank" rel="noopener noreferrer">MC-219049</a> 重新加载资源包时，在显示透明背景的同时不再显示进度条</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219105" target="_blank" rel="noopener noreferrer">MC-219105</a> 在细雪/熔岩中可以看到实体碰撞箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219108" target="_blank" rel="noopener noreferrer">MC-219108</a> 聊天滚动条偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219111" target="_blank" rel="noopener noreferrer">MC-219111</a> 社交互动滚动条看起来损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219126" target="_blank" rel="noopener noreferrer">MC-219126</a> 使用望远镜进行 X 光透视</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219155" target="_blank" rel="noopener noreferrer">MC-219155</a> 抛出的钓鱼线未连接到鱼竿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219180" target="_blank" rel="noopener noreferrer">MC-219180</a> 粘液块、蜂蜜块、染色玻璃和冰在被活塞移动时完全照亮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219208" target="_blank" rel="noopener noreferrer">MC-219208</a> 使用附魔物品进行 X 光透视</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219212" target="_blank" rel="noopener noreferrer">MC-219212</a> 在细雪/熔岩中可以看到实体阴影</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219224" target="_blank" rel="noopener noreferrer">MC-219224</a> 高亮文本时，命令语法帮助的背景不透明度受到影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219278" target="_blank" rel="noopener noreferrer">MC-219278</a> 在方块内部时不再显示方块纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219281" target="_blank" rel="noopener noreferrer">MC-219281</a> 濒死的末影龙渲染过亮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219392" target="_blank" rel="noopener noreferrer">MC-219392</a> 拴绳/钓鱼线不再受细雪/熔岩的雾影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219597" target="_blank" rel="noopener noreferrer">MC-219597</a> 末地传送门和末地折跃门纹理随着玩家远离方块而扩展</li>
+</ul>

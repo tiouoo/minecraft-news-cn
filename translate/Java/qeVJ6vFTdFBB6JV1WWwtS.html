@@ -1,0 +1,86 @@
+<p>我们现在发布 Minecraft 1.19.3 的首个预发布版。此预发布版修复了一些漏洞，包含一些调整，并有一些技术性更改。</p>
+<p>如果一切顺利，我们预计于 12 月 6 日发布此版本。</p>
+<p>祝您挖矿愉快！</p>
+<h1>1.19.3 预发布版 1 中的技术性更改</h1>
+<ul>
+<li>新增实体子谓词类型：<code>axolotl</code>、<code>boat</code>、<code>fox</code>、<code>mushroom</code>、<code>painting</code>、<code>rabbit</code>、<code>horse</code>、<code>llama</code>、<code>villager</code>、<code>parrot</code>、<code>tropical_fish</code></li>
+<li><code>fillbiome</code> 命令现在支持过滤模式</li>
+<li>玩家头颅现在可以包含 <code>note_block_sound</code> 字段<ul>
+<li>当存在此字段时，它将决定头颅放置在音符盒上方时音符盒发出的声音</li>
+</ul></li>
+</ul>
+<h2>战利品表与进度</h2>
+<h3>新增实体子谓词类型</h3>
+<ul>
+<li>为一些具有变体的实体类型新增了实体子谓词：</li>
+<li><code>axolotl</code><ul>
+<li><code>variant</code> - 值：<code>lucy</code>、<code>wild</code>、<code>gold</code>、<code>cyan</code>、<code>blue</code></li>
+</ul></li>
+<li><code>boat</code><ul>
+<li>适用于船、运输船和竹筏</li>
+<li><code>variant</code> - 值：<code>oak</code>、<code>spruce</code>、<code>birch</code>、<code>jungle</code>、<code>acacia</code>、<code>dark_oak</code>、<code>mangrove</code>、<code>bamboo</code></li>
+</ul></li>
+<li><code>fox</code><ul>
+<li><code>variant</code> - 值：<code>red</code>、<code>snow</code></li>
+</ul></li>
+<li><code>mooshroom</code><ul>
+<li><code>variant</code> - 值：<code>red</code>、<code>brown</code></li>
+</ul></li>
+<li><code>painting</code><ul>
+<li><code>variant</code> - 值：见 <code>painting_variant</code> 注册表</li>
+</ul></li>
+<li><code>rabbit</code><ul>
+<li><code>variant</code> - 值：<code>brown</code>、<code>white</code>、<code>black</code>、<code>white_splotched</code>、<code>gold</code>、<code>salt</code>、<code>evil</code></li>
+</ul></li>
+<li><code>horse</code><ul>
+<li><code>variant</code> - 值：<code>white</code>、<code>creamy</code>、<code>chestnut</code>、<code>brown</code>、<code>black</code>、<code>gray</code>、<code>dark_brown</code></li>
+<li>斑点花纹是独立的值，不会进行匹配</li>
+</ul></li>
+<li><code>llama</code><ul>
+<li><code>variant</code> - 值：<code>creamy</code>、<code>white</code>、<code>brown</code>、<code>gray</code></li>
+</ul></li>
+<li><code>villager</code><ul>
+<li><code>variant</code> - 值：见 <code>villager_type</code> 注册表</li>
+<li>也适用于僵尸村民</li>
+<li>职业和等级是独立的值，不会进行匹配</li>
+</ul></li>
+<li><code>parrot</code><ul>
+<li><code>variant</code> - 值：<code>red_blue</code>、<code>blue</code>、<code>green</code>、<code>yellow_blue</code>、<code>gray</code></li>
+</ul></li>
+<li><code>tropical_fish</code><ul>
+<li><code>variant</code> - 值：<code>kob</code>、<code>sunstreak</code>、<code>snooper</code>、<code>dasher</code>、<code>brinely</code>、<code>spotty</code>、<code>flopper</code>、<code>stripey</code>、<code>glitter</code>、<code>blockfish</code>、<code>betty</code>、<code>clayfish</code></li>
+</ul></li>
+</ul>
+<h2><code>fillbiome</code> 命令</h2>
+<p>现在支持过滤形式。新语法：</p>
+<p><code>fillbiome &#x3C;from> &#x3C;to> &#x3C;biome> [replace &#x3C;filter>]</code></p>
+<p>新参数：</p>
+<ul>
+<li><code>filter</code>：要替换的生物群系或生物群系标签</li>
+</ul>
+<h1>1.19.3 预发布版 1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-156663" target="_blank" rel="noopener noreferrer">MC-156663</a> 村民在水中寻路时出现问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177596" target="_blank" rel="noopener noreferrer">MC-177596</a> 武器匠工作的字幕显示为“磨石使用中”而非“武器匠工作”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177676" target="_blank" rel="noopener noreferrer">MC-177676</a> 盔甲匠工作的字幕显示为“高炉噼啪作响”而非“盔甲匠工作”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245697" target="_blank" rel="noopener noreferrer">MC-245697</a> 某些生物无法离开至少两格深的水域</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255133" target="_blank" rel="noopener noreferrer">MC-255133</a> 深暗之域中会生成额外的铜矿石</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256481" target="_blank" rel="noopener noreferrer">MC-256481</a> 将书放入雕纹书架时，minecraft.used:minecraft.BOOK_TYPE 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256679" target="_blank" rel="noopener noreferrer">MC-256679</a> 美西螈在躲避危险时常常犹豫不决，有时还会朝着危险的方向寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256883" target="_blank" rel="noopener noreferrer">MC-256883</a> 游戏菜单中的元素现在比之前版本的位置略低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257341" target="_blank" rel="noopener noreferrer">MC-257341</a> 恼鬼的纹理未使用半透明效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257349" target="_blank" rel="noopener noreferrer">MC-257349</a> 恼鬼不再正常坐在船和矿车中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257368" target="_blank" rel="noopener noreferrer">MC-257368</a> 对局域网开放时，端口号小于 1024 不会显示“无效端口”错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257373" target="_blank" rel="noopener noreferrer">MC-257373</a> 端口号文本框中的光标不闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257374" target="_blank" rel="noopener noreferrer">MC-257374</a> “Port number”中的“number”一词未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257386" target="_blank" rel="noopener noreferrer">MC-257386</a> 启用“程序员美术”后，物品栏菜单纹理损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257506" target="_blank" rel="noopener noreferrer">MC-257506</a> 雕纹书架的顶部和底部纹理随放置方式旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257525" target="_blank" rel="noopener noreferrer">MC-257525</a> 悦灵移动 AI 在 22w42a+ 中损坏，导致它们有时在半空中旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257617" target="_blank" rel="noopener noreferrer">MC-257617</a> 在点击“打开我的数据”或“数据收集”按钮后，无法在遥测屏幕上使用鼠标滚轮滚动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257618" target="_blank" rel="noopener noreferrer">MC-257618</a> 在“telemetry.event.world_loaded.description”字符串中，“pair”一词使用了错误的动词形式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257619" target="_blank" rel="noopener noreferrer">MC-257619</a> 幼年猪灵和幼年僵尸猪灵在撞到方块时会受到伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257625" target="_blank" rel="noopener noreferrer">MC-257625</a> 将猪灵头颅放在音符盒上时，会播放猪灵的愤怒声音而非环境声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257648" target="_blank" rel="noopener noreferrer">MC-257648</a> fillbiome 命令可能导致生物群系颜色闪烁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257658" target="_blank" rel="noopener noreferrer">MC-257658</a> 从雕纹书架中取出书时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257663" target="_blank" rel="noopener noreferrer">MC-257663</a> 社交互动菜单中的“隐藏消息”按钮现在无法再切换，因为按下时会被执行两次</li>
+</ul>

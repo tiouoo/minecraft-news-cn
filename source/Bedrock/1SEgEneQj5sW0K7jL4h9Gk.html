@@ -1,0 +1,190 @@
+<p>The 1.17.40 update has arrived! This release brings new bug fixes to the game, as well as some new experimental features.</p>
+<h1>Experimental Features:</h1>
+<p><strong>Reminder:</strong> We are still tweaking world generation and features may change. Please remember to <strong>make regular backup copies</strong> of your favourite worlds!</p>
+<p>Please keep in mind that these features are work in progress, still under in development, and subject to change. If you activate them, your world might crash, break, or not work with future updates. Experimental features cannot be turned off after world creation.</p>
+<p>For more information, please see the article about enabling experimental features at <a href="https://aka.ms/MCExperimentalFeatures" target="_blank" rel="noopener noreferrer">aka.ms/MCExperimentalFeatures</a>.</p>
+<ul>
+<li>Added new world/cave generation when upgrading saved chunks below "Y=0" using the Caves &#x26; Cliffs experimental toggle<ul>
+<li>Chunks previously upgraded with Bedrock underneath will not see this change</li>
+<li>For more information, please see our FAQ! We'd love to hear your feedback about it at <a href="https://aka.ms/CavesCliffsFeedback" target="_blank" rel="noopener noreferrer">aka.ms/CavesCliffsFeedback</a></li>
+</ul></li>
+<li>Added a new mountain biome: Stony Peaks!<ul>
+<li>This is a variant of lofty/snow-capped peaks that uses stone and gravel instead of snow and ice, and is used to avoid temperature clashes such as a snow-capped peak sticking up from a jungle</li>
+</ul></li>
+<li>Corrected vegetation in Mountain Meadows</li>
+<li>Dripstone Clusters can now only be found in the Dripstone biome</li>
+<li>Dripstone features now only generate in Dripstone biome</li>
+<li>Mountain biomes now have correct feature places to match the Java Edition side-snapshot</li>
+<li>Infested Stone can be found under new mountains</li>
+<li>Tweaked ore distribution to match the Java Edition side-snapshot</li>
+<li>Clouds are now at Y level 192</li>
+<li>Tweaked biome placement, river size, and terrain shapes for a better overworld experience</li>
+<li>Tweaked mob spawning in mountain and cave biomes to match the Java Edition side-snapshot</li>
+<li>Trees in swamps can now generate slightly deeper when in water</li>
+<li>Deepslate now generates at lower depths (<a href="https://bugs.mojang.com/browse/MCPE-125117" target="_blank" rel="noopener noreferrer">MCPE-125117</a>)</li>
+<li>Dripstone features now generate at Deepslate depths</li>
+<li>The placement logic of Small Dripstone feature has been refactored so frequency is similar but exact positions will differ</li>
+<li>Copper Ore now generates up to y=96 instead of y=64 (<a href="https://bugs.mojang.com/browse/MCPE-125233" target="_blank" rel="noopener noreferrer">MCPE-125233</a>)</li>
+<li>Flat worlds with the Caves &#x26; Cliffs experimental toggle enabled will properly upgrade to use the new dimension heights</li>
+<li>Upgrades older flat worlds to the new extended heights available with the Caves &#x26; Cliffs experimental toggle</li>
+<li>New flat worlds using the Caves &#x26; Cliffs experimental toggle will generate starting at "y=-64"</li>
+<li>Maps now correctly show the colors of blocks below a Y level of zero (<a href="https://bugs.mojang.com/browse/MCPE-136638" target="_blank" rel="noopener noreferrer">MCPE-136638</a>)</li>
+<li>Vines now generate in Lush Caves instead of generating above the surface (<a href="https://bugs.mojang.com/browse/MCPE-125800" target="_blank" rel="noopener noreferrer">MCPE-125800</a>)</li>
+<li>Vines can now grow down below zero height</li>
+<li>Villages now generate in the style of the biome they are located in (<a href="https://bugs.mojang.com/browse/MCPE-136939" target="_blank" rel="noopener noreferrer">MCPE-136939</a>)</li>
+</ul>
+<h1>Changes:</h1>
+<ul>
+<li>New achievements screens are now available on Windows 10 ARM-based PCs</li>
+</ul>
+<h1>Fixes:</h1>
+<h2>Performance / Stability</h2>
+<ul>
+<li>Fixed a crash that could occur when using Character Creator</li>
+<li>Fixed a softlock that could occur when on the Realms world slots screen and the internet connection was lost</li>
+</ul>
+<h2>General</h2>
+<ul>
+<li>Fixed an issue causing Marketplace downloads on Nintendo Switch to fail after entering and leaving a world</li>
+<li>World settings are now carried over on to Realms when replacing worlds</li>
+</ul>
+<h2>Gameplay</h2>
+<ul>
+<li>Fixed a most unfortunate issue that caused players to be set on fire upon changing dimensions if there was Lava underneath the Nether Portal (<a href="https://bugs.mojang.com/browse/MCPE-28765" target="_blank" rel="noopener noreferrer">MCPE-28765</a>)</li>
+<li>Improved world visibility culling for underground situations to eliminate seeing sky at the end of tunnels/stairs (<a href="https://bugs.mojang.com/browse/MCPE-128372" target="_blank" rel="noopener noreferrer">MCPE-128372</a>)</li>
+<li>Players can no longer eat food at full hunger in Survival mode (<a href="https://bugs.mojang.com/browse/MCPE-60807" target="_blank" rel="noopener noreferrer">MCPE-60807</a>)</li>
+<li>Amethyst geodes are now much less likely to generate in Strongholds, and if they do they will not destroy End Portals (<a href="https://bugs.mojang.com/browse/MCPE-129861" target="_blank" rel="noopener noreferrer">MCPE-129861</a>, <a href="https://bugs.mojang.com/browse/MCPE-128799" target="_blank" rel="noopener noreferrer">MCPE-128799</a>)</li>
+<li>Dungeons are no longer misplaced or missing outside of the Caves &#x26; Cliffs experimental toggle (<a href="https://bugs.mojang.com/browse/MCPE-121708" target="_blank" rel="noopener noreferrer">MCPE-121708</a>)</li>
+<li>Vanilla Parity: Players are now able to activate Elytra gliding while moving upward (<a href="https://bugs.mojang.com/browse/MCPE-59580" target="_blank" rel="noopener noreferrer">MCPE-59580</a>)</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Tropical Fish no longer lose their colors upon grabbing them with a Water Bucket and then releasing them (<a href="https://bugs.mojang.com/browse/MCPE-137158" target="_blank" rel="noopener noreferrer">MCPE-137158</a>)</li>
+<li>Bees now spawn properly in the world (<a href="https://bugs.mojang.com/browse/MCPE-132195" target="_blank" rel="noopener noreferrer">MCPE-132195</a>)</li>
+<li>Mobs no longer casually stroll into open flames (<a href="https://bugs.mojang.com/browse/MCPE-23835" target="_blank" rel="noopener noreferrer">MCPE-23835</a>)</li>
+<li>Villagers can no longer spam doors open and closed (<a href="https://bugs.mojang.com/browse/MCPE-28055" target="_blank" rel="noopener noreferrer">MCPE-28055</a>)</li>
+<li>Cartographers now more consistently give new maps on all platforms</li>
+<li>Improved mob pathing around partial blocks (<a href="https://bugs.mojang.com/browse/MCPE-127381" target="_blank" rel="noopener noreferrer">MCPE-127381</a>)</li>
+<li>Armor no longer renders on Pillagers and Vindicators, but the mobs are still granted armor effects (<a href="https://bugs.mojang.com/browse/MCPE-74242" target="_blank" rel="noopener noreferrer">MCPE-74242</a>)</li>
+<li>Fixed an issue with mob rendering that caused Vindicator Axes to be visible even when they're not attacking on older Resource Packs (<a href="https://bugs.mojang.com/browse/MCPE-123229" target="_blank" rel="noopener noreferrer">MCPE-123229</a>)</li>
+<li>More mobs will now spawn underground in the Overworld</li>
+<li>Fixed failure to render Leads when attached to mobs out of view (<a href="https://bugs.mojang.com/browse/MCPE-63931" target="_blank" rel="noopener noreferrer">MCPE-63931</a>)</li>
+<li>Iron Golems now spawn only on solid blocks (<a href="https://bugs.mojang.com/browse/MCPE-140145" target="_blank" rel="noopener noreferrer">MCPE-140145</a>)</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Falling Stalactites are now offset properly to avoid interacting with entities outside their intended hitbox (<a href="https://bugs.mojang.com/browse/MCPE-132772" target="_blank" rel="noopener noreferrer">MCPE-132772</a>)</li>
+<li>Beehives now generate in the world facing South</li>
+<li>Trapdoors now rotate correctly when loaded from a Structure Block (<a href="https://bugs.mojang.com/browse/MCPE-66933" target="_blank" rel="noopener noreferrer">MCPE-66933</a>)</li>
+<li>Powder Snow no longer disappears when looking at it from a distance (<a href="https://bugs.mojang.com/browse/MCPE-127565" target="_blank" rel="noopener noreferrer">MCPE-127565</a>)</li>
+<li>Sea Grass no longer spawns under Lily Pads during world generation to avoid breaking them</li>
+<li>Holding Top Snow in hand while hovering over Grass Blocks no longer causes incorrect behavior (<a href="https://bugs.mojang.com/browse/MCPE-140659" target="_blank" rel="noopener noreferrer">MCPE-140659</a>, <a href="https://bugs.mojang.com/browse/MCPE-140660" target="_blank" rel="noopener noreferrer">MCPE-140660</a>)</li>
+</ul>
+<h2>User Interface</h2>
+<ul>
+<li>Riding an animal now displays the correct button prompt when playing with non-touch controls</li>
+<li>Using Dye on Signs that contain formatted color text will now overwrite the formatted color text</li>
+<li>Fixed text on Signs losing their formatting when new lines or word-wrapping are encountered. Formatting will now persist until the reset code or an overriding code is found. This is not retroactive and previously created Signs will not be changed</li>
+<li>Altered the message that is displayed when players change skins in-game (<a href="https://bugs.mojang.com/browse/MCPE-92772" target="_blank" rel="noopener noreferrer">MCPE-92772</a>)</li>
+<li>Fixed an issue where the D-pad and directional keys could not be used to navigate in certain parts of the user interface (<a href="https://bugs.mojang.com/browse/MCPE-132826" target="_blank" rel="noopener noreferrer">MCPE-132826</a>)</li>
+<li>Fixed an issue where an error message could be shown after suspending the game on the Achievements screens with Screen Animations disabled (<a href="https://bugs.mojang.com/browse/MCPE-132269" target="_blank" rel="noopener noreferrer">MCPE-132269</a>)</li>
+<li>Fixed an issue where an obscure game rule was added to Settings (<a href="https://bugs.mojang.com/browse/MCPE-139025" target="_blank" rel="noopener noreferrer">MCPE-139025</a>)</li>
+<li>The sign in text on the main menu no longer overlaps the Marketplace button</li>
+<li>Added space between tab title and the word 'Tab' for text-to-speech on Settings screen</li>
+<li>Added a "More Info" button to the sign in error screen</li>
+</ul>
+<h2>Realms</h2>
+<ul>
+<li>All changes to settings made on new worlds before creation are now transferred to the world after creation</li>
+</ul>
+<h2>Character Creator</h2>
+<ul>
+<li>In Character Creator, tweaked color tint for the default Steve skin to match default Steve (<a href="https://bugs.mojang.com/browse/MCPE-120818" target="_blank" rel="noopener noreferrer">MCPE-120818</a>)</li>
+<li>Back appearance pieces will no longer cover the left and right arrows in the profile screen</li>
+<li>Sidebar no longer opens upon expanding any of the classic skin packs in the Dressing Room</li>
+<li>Improved the navigation flow for Character Creator so that it always switches to the selected Character Creator profile (<a href="https://bugs.mojang.com/browse/MCPE-139022" target="_blank" rel="noopener noreferrer">MCPE-139022</a>)</li>
+<li>Skins that are equipped from Marketplace while in-game now apply to the player’s character</li>
+</ul>
+<h2>Commands</h2>
+<ul>
+<li>Education Edition items are no longer shown as an option when using @e[type=] (<a href="https://bugs.mojang.com/browse/MCPE-78363" target="_blank" rel="noopener noreferrer">MCPE-78363</a>)</li>
+<li>Command Blocks with 'Needs Redstone' and a non-zero 'Delay in Ticks' will now execute only if they remain powered for the delay duration (<a href="https://bugs.mojang.com/browse/MCPE-74281" target="_blank" rel="noopener noreferrer">MCPE-74281</a>)</li>
+<li>Fixed alignment of the sidebar display from the '/scoreboard' command when text length changes</li>
+<li>Fixed the ability to summon experience orbs via the '/summon' command (<a href="https://bugs.mojang.com/browse/MCPE-130835" target="_blank" rel="noopener noreferrer">MCPE-130835</a>)</li>
+</ul>
+<h1>Technical Updates:</h1>
+<h2>Updated Add-On Template Packs</h2>
+<ul>
+<li>Updated Add-On templates for 1.17.40 are available for download with new resources, behaviors, and documentation<ul>
+<li>Resource Pack Template: <a href="https://aka.ms/ResourcePackTemplate" target="_blank" rel="noopener noreferrer">aka.ms/ResourcePackTemplate</a></li>
+<li>Behavior Pack Template (Includes documentation): <a href="https://aka.ms/BehaviorPackTemplate" target="_blank" rel="noopener noreferrer">aka.ms/BehaviorPackTemplate</a></li>
+</ul></li>
+</ul>
+<h2>Fixes</h2>
+<ul>
+<li>Fixed display only entity destruction in chunk discard scenarioso be restarted when changing render controllers</li>
+</ul>
+<h2>Data-Driven Blocks</h2>
+<ul>
+<li>Updated documentation for the Block Rotation component</li>
+<li>Updated documentation for 'BlockExplosionResistance'</li>
+<li>Added required toggles to documentation and to content error for block components</li>
+</ul>
+<h2>Graphical</h2>
+<ul>
+<li>Added a content error for using a material but not providing the required number of textures to the render controller</li>
+</ul>
+<h2>Molang</h2>
+<ul>
+<li>Fixed 'query.item_remaining_use_duration' having improperly scaled or inverted results (This fix is a Versioned Change as of engine version 1.17.30)</li>
+<li>Add new compile errors for expressions like 'text' + 3, which were previously ignored (This is a Versioned Change as of engine version 1.17.40)</li>
+<li>Molang expressions that contain capital letters are properly evaluated now</li>
+<li>'query.get_equipped_item_name' will now recognize Sea Lanterns (<a href="https://bugs.mojang.com/browse/MCPE-67893" target="_blank" rel="noopener noreferrer">MCPE-67893</a>)</li>
+<li>Added new compile errors for expressions like 1 + (9 10), which were previously ignored (This is a Versioned Change as of engine version 1.17.40)</li>
+</ul>
+<h2>GameTest Framework (Experimental)</h2>
+<ul>
+<li>Renamed method 'succeedWhenBlockTypePresent' to 'succeedWhenBlockPresent'</li>
+<li>Fixed a bug where property Entity.id would return "Unknown" for custom entities (<a href="https://bugs.mojang.com/browse/MCPE-137786" target="_blank" rel="noopener noreferrer">MCPE-137786</a>)</li>
+<li>Identifier strings returned from property Item.id now include the item's namespace</li>
+<li>Updated the GameTest Framework interface and added a new SimulatedPlayer capability:<ul>
+<li>Added 'SimulatedPlayer' class to GameTest. This class enables GameTest to simulate a variety of player behaviors such as movement, using items, and interacting with blocks and entities. See the <a href="https://docs.microsoft.com/en-us/minecraft/creator/scriptapi/mojang-gametest/mojang-gametest" target="_blank" rel="noopener noreferrer">GameTest API</a> reference documentation for more details</li>
+<li>Added function Test.spawnSimulatedPlayer(blockLocation: BlockLocation, name: string): SimulatedPlayer</li>
+<li>Added function Test.removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void</li>
+</ul></li>
+<li>mojang-gametest.Test type<ul>
+<li>Changed signature of function assertEntityInstancePresent(entity: Entity, blockLocation: BlockLocation, isPresent: boolean = true)</li>
+</ul></li>
+<li>mojang-minecraft components<ul>
+<li>Component 'inventory' now works with Player inventories</li>
+</ul></li>
+</ul>
+<h2>GameTestSequence</h2>
+<ul>
+<li>Removed method 'thenWaitWithDelay'</li>
+<li>Added method 'thenWaitAfter(delayTicks: number, callback: () => undefined)' - After a delay, executes the given callback every tick until it succeeds. Exceptions thrown within the callback will end sequence execution</li>
+</ul>
+<h2>Player</h2>
+<ul>
+<li>Fixed a bug where the location property would return an incorrect height for players</li>
+<li>Added property 'id'</li>
+</ul>
+<h2>Block</h2>
+<ul>
+<li>Replaced method 'getLocation' with property 'location'</li>
+<li>Replaced method getPermutation with property 'permutation'</li>
+<li>Replaced method 'getType' with property 'type'</li>
+<li>Replaced methods 'isWaterlogged' and 'setWaterlogged' with property 'isWaterlogged'</li>
+<li>Replaced method 'getBlockData' with property 'permutation'</li>
+<li>Replaced method 'isEmpty' with property 'isEmpty'</li>
+<li>Removed property 'canBeWaterlogged'</li>
+</ul>
+<h2>BlockType</h2>
+<ul>
+<li>Replaced method 'getName' with property 'id'</li>
+<li>Replaced method 'canBeWaterlogged' with property 'canBeWaterlogged'</li>
+</ul>
+<h2>BlockPermutation</h2>
+<ul>
+<li>Replaced method 'getType' with property 'type'</li>
+</ul>

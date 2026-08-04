@@ -1,0 +1,156 @@
+<p>本周我们为您带来了嗅探兽、考古学和樱花树林生物群系，作为 1.20 更新的实验性特性。</p>
+<p>1.19.4 版本的改动包括交互实体，以及对唱片机和马匹繁殖的更新。</p>
+<p>祝你刷扫愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>唱片机已更新至与基岩版一致</li>
+<li>马匹繁殖已更新</li>
+<li>更新了 Realms 界面，使其与单人游戏和多人游戏界面更加一致</li>
+</ul>
+<h2>配方解锁</h2>
+<ul>
+<li>创建新世界时立即解锁工作台配方</li>
+<li>弩的配方不再通过木棍解锁</li>
+<li>灵魂营火的配方不再通过木棍解锁</li>
+</ul>
+<h2>唱片机</h2>
+<ul>
+<li>播放音乐唱片时，唱片机会发出强度为 15 的红石信号</li>
+<li>投掷器和漏斗现在可以与其交互</li>
+</ul>
+<h2>马</h2>
+<ul>
+<li>繁殖马及类似生物时，后代的移动速度、跳跃高度和生命值不再偏向平均值</li>
+<li>这一改动的目的是使马匹繁殖成为一种获得优质马匹的可行方式，前提是玩家从优秀的亲本开始，并投入足够的时间和金胡萝卜</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>原版资源包的 en_us 语言文件现在按键的字母数字顺序排序</li>
+<li>为新的饰纹陶罐配方添加了新的配方序列化器 <code>crafting_decorated_pot</code></li>
+<li>为配方添加了 <code>show_notification</code> 字段<ul>
+<li>接受一个布尔值，决定解锁此配方时是否显示通知</li>
+<li>未指定时默认为 <code>true</code></li>
+</ul></li>
+</ul>
+<h2>交互实体</h2>
+<p>一种新实体类型，可记录攻击（“左键点击”）和交互（“右键点击”）。交互实体不可见，并具有自定义大小。</p>
+<p>字段：</p>
+<ul>
+<li><code>width</code>：实体边界框的宽度（默认为 <code>1</code>）</li>
+<li><code>height</code>：实体边界框的高度（默认为 <code>1</code>）</li>
+<li><code>attack</code>：记录对该实体的最后一次攻击动作</li>
+<li><code>interaction</code>：记录对该实体的最后一次交互动作</li>
+<li><code>response</code>：布尔值，指定交互是否应触发响应（摆动手臂、播放音效等 - 默认为 <code>false</code>）</li>
+</ul>
+<h3>操作格式</h3>
+<p>存储操作时，始终包含两个字段：</p>
+<ul>
+<li><code>player</code>：执行操作的玩家的 UUID（采用标准整数数组格式）</li>
+<li><code>timestamp</code>：事件发生时游戏刻的时间戳（以 long 类型存储）</li>
+</ul>
+<h3>进度触发器</h3>
+<ul>
+<li>与交互实体交互会触发 <code>player_interacted_with_entity</code></li>
+<li>攻击交互实体会触发 <code>player_hurt_entity</code></li>
+</ul>
+<h3><code>execute on</code> 与交互实体</h3>
+<p>交互实体会将最后与其交互的玩家作为目标。这使得以下操作成为可能：</p>
+<ul>
+<li><code>execute on attacker</code>：以最后攻击该实体的玩家身份执行</li>
+<li><code>execute on target</code>：以最后与该实体交互的玩家身份执行</li>
+</ul>
+<h1>实验性特性</h1>
+<ul>
+<li>添加了嗅探兽生物</li>
+<li>添加了樱花树林生物群系</li>
+<li>添加了考古学</li>
+</ul>
+<h2>嗅探兽</h2>
+<ul>
+<li>嗅探兽现在作为实验性特性提供<ul>
+<li>嗅探兽是 Minecraft Live 2022 的生物投票获胜者，也是游戏中添加的第一个“远古”生物</li>
+<li>嗅探兽无法被引诱或驯服</li>
+<li>嗅探兽是被动的友好生物</li>
+<li>嗅探兽会在空中嗅探，偶尔挖掘种子</li>
+</ul></li>
+<li>火把花现在作为实验性特性提供<ul>
+<li>火把花种子可以种在耕地上，长成一朵花</li>
+<li>该种子可用于繁殖两只嗅探兽</li>
+<li>完全长成的花可以收获并重新种植，也可以合成染料</li>
+</ul></li>
+</ul>
+<h2>樱花树林生物群系</h2>
+<ul>
+<li>添加了新的樱花树林生物群系，其中长有美丽的樱花树</li>
+<li>你可以在山地中找到它，就像草甸一样</li>
+</ul>
+<h3>粉红色花簇方块</h3>
+<ul>
+<li>添加了新的粉红色花簇方块，地面上会分布大量粉红色花朵</li>
+</ul>
+<h3>樱花木系列</h3>
+<ul>
+<li>添加了新的樱花木系列，包含所有可以由其制作的对应木质物品。你需要启用 1.20 更新的实验性特性才能在游戏中看到它。</li>
+</ul>
+<h2>考古学</h2>
+<h3>刷子</h3>
+<ul>
+<li>刷子是一种可合成物品，你可以用它来刷扫东西</li>
+</ul>
+<h3>可疑的沙子</h3>
+<ul>
+<li>沙漠神殿和沙漠水井现在会生成可疑的沙子。这个脆弱的方块很难被发现，也很容易被破坏，所以请小心！</li>
+<li>用刷子刷扫可疑的沙子，可以取出许久以前埋藏的物品</li>
+</ul>
+<h3>陶器碎片</h3>
+<ul>
+<li>陶器碎片上带有图案</li>
+<li>它们无法合成，只能通过刷扫可疑的沙子获得</li>
+</ul>
+<h3>饰纹陶罐</h3>
+<ul>
+<li>将四个陶器碎片合成在一起，会得到一个每面都有图案的饰纹陶罐</li>
+<li>你也可以在饰纹陶罐配方中使用红砖代替陶器碎片<ul>
+<li>由红砖制成的侧面不会有图案</li>
+</ul></li>
+<li>使用任何破坏方块的工具击碎饰纹陶罐，使其碎裂并取回陶器碎片<ul>
+<li>或者用拳头击打它，在不破坏的情况下捡起陶罐</li>
+</ul></li>
+</ul>
+<h1>快照 23w07a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-16533" target="_blank" rel="noopener noreferrer">MC-16533</a> 马匹繁殖的后代属性永远不会超过蛋/自然生成马匹的属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64522" target="_blank" rel="noopener noreferrer">MC-64522</a> 服务器启动时在服务器列表中显示为“旧版本”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84633" target="_blank" rel="noopener noreferrer">MC-84633</a> 资源包：环境光遮蔽标志只遵循最顶层的父级</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134448" target="_blank" rel="noopener noreferrer">MC-134448</a> 溺尸动画故障</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181412" target="_blank" rel="noopener noreferrer">MC-181412</a> 在唱片机播放音乐唱片时使用命令将其移除，不会停止播放该音乐唱片</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194080" target="_blank" rel="noopener noreferrer">MC-194080</a> 鞘翅模型在飞行和转向时出现卡顿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209409" target="_blank" rel="noopener noreferrer">MC-209409</a> 坐着的猫会在水中下沉</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226729" target="_blank" rel="noopener noreferrer">MC-226729</a> 原生操作中的内存泄漏问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248249" target="_blank" rel="noopener noreferrer">MC-248249</a> minecraft:forest_rock 地物在使用 /place 时无法正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256465" target="_blank" rel="noopener noreferrer">MC-256465</a> 幼年骆驼可以进入船，尽管成年骆驼不能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257282" target="_blank" rel="noopener noreferrer">MC-257282</a> 悦灵有时会延迟几秒才决定跟随玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258457" target="_blank" rel="noopener noreferrer">MC-258457</a> 如果资源包包含对不存在粒子的引用，则资源包不会加载</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258459" target="_blank" rel="noopener noreferrer">MC-258459</a> 无效的强制资源包可能导致客户端无限重载循环</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258580" target="_blank" rel="noopener noreferrer">MC-258580</a> 玩家在马或骆驼上死亡时，会在死亡界面因飞行而被服务器踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258624" target="_blank" rel="noopener noreferrer">MC-258624</a> 玩家重生后，标题屏幕警告菜单不会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258697" target="_blank" rel="noopener noreferrer">MC-258697</a> 命令方块 GUI 中“translationKey=narration.suggestion”的无效翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258902" target="_blank" rel="noopener noreferrer">MC-258902</a> 在冒险模式下打开讲台并关闭会导致物品栏不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258907" target="_blank" rel="noopener noreferrer">MC-258907</a> 进度触发器“player_interacted_with_entity”在对“area_effect_cloud”实体使用“glass_bottle”物品时无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259107" target="_blank" rel="noopener noreferrer">MC-259107</a> 打开合成配方书会选中鼠标光标下方的配方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259218" target="_blank" rel="noopener noreferrer">MC-259218</a> 重启 Minecraft 后不会恢复新手引导</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259240" target="_blank" rel="noopener noreferrer">MC-259240</a> 更改按键绑定后，使用方向键导航时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259241" target="_blank" rel="noopener noreferrer">MC-259241</a> 海龟可以在彼此内部生成，导致它们被困住并不断发出声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259489" target="_blank" rel="noopener noreferrer">MC-259489</a> 实验性“禁用物品”仍可被配方书作为燃料提示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259573" target="_blank" rel="noopener noreferrer">MC-259573</a> 爆炸保护不会在创造模式中减少爆炸击退</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259675" target="_blank" rel="noopener noreferrer">MC-259675</a> 披风在移动和调整视角时偶尔会抖动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259691" target="_blank" rel="noopener noreferrer">MC-259691</a> 正在游泳的溺尸在向上或向下看时会渲染在碰撞箱之外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259729" target="_blank" rel="noopener noreferrer">MC-259729</a> “下落方块”会出现在死亡消息中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259796" target="_blank" rel="noopener noreferrer">MC-259796</a> 苦力怕在爆炸前不会闪白并膨胀</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259797" target="_blank" rel="noopener noreferrer">MC-259797</a> 靴子底部会出现 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259805" target="_blank" rel="noopener noreferrer">MC-259805</a> 玩家使用 ride 命令骑乘 item_display、block_display 和 text_display 时无法下马</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259808" target="_blank" rel="noopener noreferrer">MC-259808</a> 自 23w06a 起，悦灵的翅膀动画会跳帧/错误循环</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259816" target="_blank" rel="noopener noreferrer">MC-259816</a> 当 item_display、block_display 或 text_display 实体骑乘另一个实体时出现怪异行为</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259819" target="_blank" rel="noopener noreferrer">MC-259819</a> 文本显示实体的文字上出现 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259999" target="_blank" rel="noopener noreferrer">MC-259999</a> 骑乘在显示实体上的实体在重新同步之前不会视觉更新</li>
+</ul>

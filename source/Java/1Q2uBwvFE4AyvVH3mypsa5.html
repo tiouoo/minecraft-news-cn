@@ -1,0 +1,57 @@
+<p>Here's a snapshot from the blender! In this snapshot, world generation around the edges of an old world will now be adjusted for a smoother transition! This is the first iteration of this system which we expect to keep improving. Keep in mind that if you try it out now, the result will be saved to your world forever - which, as we know, is quite a long time. Better be safe than sorry. Make a backup before you try it!</p>
+<p>Also - the space underneath existing chunks is now filled in, but only with deepslate. We will later be adding full cave generation in this place, so if you want that in your world, make a backup before you try it!</p>
+<p>Due to some updates to terrain generation in this snapshot, seeds have shuffled once again so worlds will not look like they did in the previous snapshot. We expect world seeds to be stable after this snapshot.</p>
+<p>Oh yeah, did we mention that it's a good idea to make a backup?</p>
+<h1>New Features in 21w43a</h1>
+<ul>
+<li>The edge between old and new world generation is now adjusted when you upgrade a world</li>
+</ul>
+<h2>Upgrading of old worlds</h2>
+<ul>
+<li>When generating close to old chunks hew terrain is adjusted to better match the existing terrain at the borders</li>
+<li>In old chunks, if there is Bedrock at y=0, the column below will be filled with Deepslate<ul>
+<li>Worlds upgraded in this snapshot will permanently have this deepslate, so if you want new caves under height 0 later, make sure to keep a backup before upgrading</li>
+</ul></li>
+<li>The old Bedrock between y=0 and y=4 in old chunks gets replaced with Deepslate</li>
+<li>A new Bedrock layer is placed at y=-64</li>
+</ul>
+<h1>Changes in 21w43a</h1>
+<ul>
+<li>The Priority Updates video setting has been renamed to Chunk Builder</li>
+<li>Reduced the amount of flooded caves near river and ocean coastlines</li>
+<li>Aquifer water levels change less often, so you'll more often have larger areas with the same water level. This means slightly fewer underground waterfalls and slightly easier underground boat travel</li>
+<li>Lava aquifers are slightly less common</li>
+<li>Restricted Big Dripleaf placement to Clay, Grass, Dirt, Farmland, Moss, Rooted Dirt, Podzol and Mycelium</li>
+</ul>
+<h1>Technical Changes in 21w43a</h1>
+<ul>
+<li>Some internal details of block and fluid ticking have been changed to improve save times. While it should behave exactly as it was, it might be a good time to test your redstone contraptions (on a copy of a world or with a backup, of course)</li>
+<li>The Chunk format has been updated</li>
+</ul>
+<h2>World Data: Chunk Format</h2>
+<ul>
+<li>Removed chunk's <code>Level</code> and moved everything it contained up</li>
+<li>Chunk's <code>Level.Entities</code> has moved to <code>entities</code></li>
+<li>Chunk's <code>Level.TileEntities</code> has moved to <code>block_entities</code></li>
+<li>Chunk's <code>Level.TileTicks</code> and <code>Level.ToBeTicked</code> have moved to <code>block_ticks</code></li>
+<li>Chunk's <code>Level.LiquidTicks</code> and <code>Level.LiquidsToBeTicked</code> have moved to <code>fluid_ticks</code></li>
+<li>Chunk's <code>Level.Sections</code> has moved to <code>sections</code></li>
+<li>Chunk's <code>Level.Structures</code> has moved to <code>structures</code></li>
+<li>Chunk's <code>Level.Structures.Starts</code> has moved to <code>structures.starts</code></li>
+<li>Chunk's <code>Level.Sections[].BlockStates</code> and <code>Level.Sections[].Palette</code> have moved to a container structure in <code>sections[].block_states</code></li>
+<li>Chunk's <code>Level.Biomes</code> are now paletted and live in a similar container structure in <code>sections[].biomes</code></li>
+<li>Added <code>yPos</code> the minimum section y position in the chunk</li>
+<li>Added <code>below_zero_retrogen</code> containing data to support below zero generation</li>
+<li>Added <code>blending_data</code> containing data to support blending new world generation with existing chunks</li>
+</ul>
+<h1>Fixed bugs in 21w43a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-131930" target="_blank" rel="noopener noreferrer">MC-131930</a> Deep warm ocean generates without coral and sea pickles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156616" target="_blank" rel="noopener noreferrer">MC-156616</a> Badlands layers not generating properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217379" target="_blank" rel="noopener noreferrer">MC-217379</a> Pufferfish don't spawn in deep warm ocean</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236624" target="_blank" rel="noopener noreferrer">MC-236624</a> Deep Warm Oceans don't count towards the "Adventuring Time" advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236970" target="_blank" rel="noopener noreferrer">MC-236970</a> Badlands strata is covered by orange terracotta at Y=160 and above</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238073" target="_blank" rel="noopener noreferrer">MC-238073</a> Decorators are independent of world seed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238939" target="_blank" rel="noopener noreferrer">MC-238939</a> Stone can generate in the Nether</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239397" target="_blank" rel="noopener noreferrer">MC-239397</a> Lava pockets generate in icebergs</li>
+</ul>

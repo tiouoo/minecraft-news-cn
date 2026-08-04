@@ -1,0 +1,297 @@
+<p>Another snapshot is going out, and this one introduces the Sculk. They're a bit creepy, but don't let that put you off. Pick up some good vibrations!</p>
+<h1>New Features in 20w49a</h1>
+<ul>
+<li>Added Dripstone Caves biome</li>
+<li>Added Sculk Sensors</li>
+</ul>
+<h2>Dripstone Caves biome</h2>
+<p>This biome doesn't generate naturally yet, since it is designed for the upcoming larger caves. However, if you want to see the biome in the current caves you can create a single-biome world with dripstone caves.</p>
+<ul>
+<li>Contains plenty of Pointed Dripstone on the floors and ceilings, and small pools of water</li>
+<li>In some places you'll find larger stalagmites, stalactites, and columns built from Dripstone Blocks.</li>
+</ul>
+<h2>Sculk Sensors</h2>
+<ul>
+<li>Introducing the bizarre, tendril-filled world of Sculk - prepare for Sculk Sensors to creep you out with their unique ability to detect vibrations nearby.</li>
+<li>A vibration is anything that causes physical motion; if you are careful, there are some motions that are undetectable to sensors by sneaking.<ul>
+<li>These sneak-friendly vibrations currently include walking, falling to the ground or throwing/shooting projectiles.</li>
+</ul></li>
+<li>Sculk Sensors will not listen to vibrations that are directly created by other Sculk sources.</li>
+<li>When a vibration is detected, a signal is sent from the source location to the sensor at a speed of 1 game tick per block.<ul>
+<li>Other vibrations cannot be detected by a sensor when a signal is already travelling to it.</li>
+<li>When the signal has arrived, the sensor will be activated for 40 game ticks (approximately 2 seconds).</li>
+<li>While activated, the sensor cannot detect other vibrations.</li>
+</ul></li>
+<li>Sculk Sensors can detect vibrations in an 8 block radius around it.</li>
+<li>The efficient tool to mine Sculk Sensors is the Hoe.</li>
+<li>They can be waterlogged.</li>
+</ul>
+<h3>Redstone Emission</h3>
+<ul>
+<li>Sculk Sensors emit a redstone signal when they are activated.</li>
+<li>The strength of the redstone signal is inversely proportional to the distance the vibration signal travelled.<ul>
+<li>This means that the closer the vibration is, the stronger the redstone signal is.</li>
+<li>The output is also scaled based on the Sculk Sensor's radius, so it can reach the max redstone signal strength when the vibration is 0 distance away (directly on top of the sensor).</li>
+</ul></li>
+</ul>
+<h3>Vibration Frequencies</h3>
+<ul>
+<li>Sculk Sensors have a unique interaction with comparators.</li>
+<li>Each vibration in the game falls under a certain frequency value, and this value can be measured with a comparator.</li>
+<li>With the right contraption, this allows you to detect when a certain action has occured nearby.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Vibration Type</th>
+<th>Frequency Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Flap</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Swim</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Elytra Free Fall</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Hit Ground</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Splash</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Wolf Shaking</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Projectile Shoot</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Projectile Land</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Start Eating</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Finish Eating</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Hit Entity</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Add Item To Armor Stand</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Open Block</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Close Block</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Switch Block</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Unswitch Block</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Press Block</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Unpress Block</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Attach Block</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Detach Block</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Open Container</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Close Container</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Dispense Failed</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Use Flint And Steel</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Place Block</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Destroy Block</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Place Fluid</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Pickup Fluid</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Cast Fishing Rod</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Reel-In Fishing Rod</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Extend Piston</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Contract Piston</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Explosion</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Lightning Strike</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h3>Wool Occlusion</h3>
+<ul>
+<li>Wool has a special interaction with Sculk Sensors.</li>
+<li>If a wool block is in the way of a vibration source, the sensor will not be able to detect it.</li>
+</ul>
+<h3>Technical Tidbits</h3>
+<ul>
+<li>Sculk Sensors have a cooldown period of 1 tick after being placed or after deactivating.</li>
+<li>During this short cooldown period, it cannot detect vibrations. This is to prevent it from activating itself when a contraption it is powering is being unpowered. Feedback is welcome on this point!</li>
+</ul>
+<h1>Changes in 20w49a</h1>
+<ul>
+<li>The Fullness of a bundle now shows up regardless of whether Advanced Tooltips are on or off</li>
+<li>Stalactites and stalagmites merge if the tips are next to each other, unless you press shift while placing</li>
+</ul>
+<h1>Technical Changes in 20w49a</h1>
+<ul>
+<li>A new game event system has been implemented to support Sculk Sensors detecting vibrations.</li>
+<li>World height related values are now exposed for customized worlds</li>
+<li>Removed the <code>max-build-height</code> server setting</li>
+<li>Added <code>occludes_vibration_signals</code> block tag. Anything in this tag will occlude vibrations, and inherits <code>wool</code> tag entries by default</li>
+<li>New particle types: <code>vibration</code> and <code>dust_color_transition</code></li>
+<li>A new game event system has been implemented to support Sculk Sensors detecting vibrations.</li>
+</ul>
+<h2>Game Events</h2>
+<p>This system has been developed to identify when certain in-world actions are happening in nearby chunks, particularly so the new Sculk Sensor can detect these events as vibrations.</p>
+<p>The following is a list of the initial game events:</p>
+<ul>
+<li><code>minecraft:step</code></li>
+<li><code>minecraft:swim</code></li>
+<li><code>minecraft:flap</code></li>
+<li><code>minecraft:elytra_free_fall</code></li>
+<li><code>minecraft:hit_ground</code></li>
+<li><code>minecraft:splash</code></li>
+<li><code>minecraft:projectile_shoot</code></li>
+<li><code>minecraft:projectile_land</code></li>
+<li><code>minecraft:entity_hit</code></li>
+<li><code>minecraft:block_place</code></li>
+<li><code>minecraft:block_destroy</code></li>
+<li><code>minecraft:fluid_place</code></li>
+<li><code>minecraft:fluid_pickup</code></li>
+<li><code>minecraft:block_open</code></li>
+<li><code>minecraft:block_close</code></li>
+<li><code>minecraft:block_switch</code></li>
+<li><code>minecraft:block_unswitch</code></li>
+<li><code>minecraft:block_attach</code></li>
+<li><code>minecraft:block_detach</code></li>
+<li><code>minecraft:block_press</code></li>
+<li><code>minecraft:block_unpress</code></li>
+<li><code>minecraft:container_open</code></li>
+<li><code>minecraft:container_close</code></li>
+<li><code>minecraft:explode</code></li>
+<li><code>minecraft:armor_stand_add_item</code></li>
+<li><code>minecraft:wolf_shaking</code></li>
+<li><code>minecraft:dispense_fail</code></li>
+<li><code>minecraft:fishing_rod_cast</code></li>
+<li><code>minecraft:fishing_rod_reel_in</code></li>
+<li><code>minecraft:piston_extend</code></li>
+<li><code>minecraft:piston_contract</code></li>
+<li><code>minecraft:flint_and_steel_use</code></li>
+<li><code>minecraft:eating_start</code></li>
+<li><code>minecraft:eating_finish</code></li>
+<li><code>minecraft:lightning_strike</code></li>
+</ul>
+<h3>Tags</h3>
+<p>There are also game event tags that come with this, and can be modified by data packs. They can be found under <code>data/minecraft/tags/game_events</code>.</p>
+<ul>
+<li><code>vibrations</code> Determines which game events are considered vibrations by the Sculk Sensor. Currently, all added game events are in this tag by default.</li>
+<li><code>ignore_vibrations_stepping_carefully</code> Which game events should be ignored by the Sculk Sensor when the source of the event is sneaking.</li>
+</ul>
+<p>The following game events are in <code>ignore_vibrations_stepping_carefully</code> by default:</p>
+<ul>
+<li><code>minecraft:step</code></li>
+<li><code>minecraft:hit_ground</code></li>
+<li><code>minecraft:projectile_shoot</code></li>
+</ul>
+<h1>Fixed bugs in 20w49a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-18880" target="_blank" rel="noopener noreferrer">MC-18880</a> The Absorption effect has no texture for poison/wither hearts (appears empty instead)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-201840" target="_blank" rel="noopener noreferrer">MC-201840</a> Optional function tags sometimes don't run even when the tag exists</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203797" target="_blank" rel="noopener noreferrer">MC-203797</a> Placing or removing a block over the void causes a DecoderException on servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204314" target="_blank" rel="noopener noreferrer">MC-204314</a> Double copper slabs only drop a single slab when mined</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205043" target="_blank" rel="noopener noreferrer">MC-205043</a> Absorption hearts appear broken when taking freezing damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205096" target="_blank" rel="noopener noreferrer">MC-205096</a> Hardcore hearts lose all color when player is taking freeze damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205391" target="_blank" rel="noopener noreferrer">MC-205391</a> Waxing cut copper doesn’t prevent it from oxidising</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205629" target="_blank" rel="noopener noreferrer">MC-205629</a> Unused sign cache when rendering signs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206553" target="_blank" rel="noopener noreferrer">MC-206553</a> Pointed Dripstone creates water particles in the Nether</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206563" target="_blank" rel="noopener noreferrer">MC-206563</a> Pointed dripstone is not connected to the player's hand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206578" target="_blank" rel="noopener noreferrer">MC-206578</a> Large pillars of stalactites don't fall when the block above is removed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206583" target="_blank" rel="noopener noreferrer">MC-206583</a> Cauldrons below stalactites at least 2 blocks tall won't fill up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206591" target="_blank" rel="noopener noreferrer">MC-206591</a> Setting any floating block to a pointed dripstone, causes the replaced block to drop as an item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206594" target="_blank" rel="noopener noreferrer">MC-206594</a> Large stalactites falling occasionally don't drop all of their pointed dripstone items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206599" target="_blank" rel="noopener noreferrer">MC-206599</a> Pointed dripstone can be placed atop each other, even if a player would be inside the hitbox of the lower dripstone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206606" target="_blank" rel="noopener noreferrer">MC-206606</a> Frustum stage of stalactites negates fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206613" target="_blank" rel="noopener noreferrer">MC-206613</a> Pointed Dripstone duplicates when the block it was attached to is removed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206615" target="_blank" rel="noopener noreferrer">MC-206615</a> Pointed dripstone's hitbox can extend further than a block, causing nearby stalactites to not be able to fall</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206642" target="_blank" rel="noopener noreferrer">MC-206642</a> Stalactites destroy items they fall on, however stalagmites don't</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206643" target="_blank" rel="noopener noreferrer">MC-206643</a> When a dripstone's hitbox extends into the space of another block, the area that extends into said block cannot be targeted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206669" target="_blank" rel="noopener noreferrer">MC-206669</a> Inconsistency between dripstone and non-mob entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206682" target="_blank" rel="noopener noreferrer">MC-206682</a> Floating dripstone tips are sometimes left behind from large dripstone pillars</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206691" target="_blank" rel="noopener noreferrer">MC-206691</a> Pointed dripstone replaces items with pointed dripstone items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206711" target="_blank" rel="noopener noreferrer">MC-206711</a> Coding error at net.minecraft.world.entity.Entity.resetPos()</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206790" target="_blank" rel="noopener noreferrer">MC-206790</a> Waterlogged dripstone does not update</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206878" target="_blank" rel="noopener noreferrer">MC-206878</a> Pointed dripstone attached to a piston is not removed as the piston extends</li>
+</ul>

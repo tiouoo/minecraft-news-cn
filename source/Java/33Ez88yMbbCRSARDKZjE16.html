@@ -1,0 +1,135 @@
+<p>We're now releasing Snapshot 23w51a, the first snapshot for Minecraft 1.20.5. This one comes with a present for your pet Wolf in time for the holidays - and the Armadillo.</p>
+<p>Happy brushing!</p>
+<h1>New Features</h1>
+<ul>
+<li>Added Armadillo, Armadillo Scutes and Wolf Armor</li>
+</ul>
+<h2>Armadillo</h2>
+<ul>
+<li>The Armadillo is a new passive mob that:<ul>
+<li>drops Armadillo Scutes periodically</li>
+<li>drops Armadillo Scutes when brushed</li>
+<li>spawns in Savannas</li>
+<li>its favorite food is Spider Eye</li>
+</ul></li>
+</ul>
+<h3>Armadillo Rolling Up Behavior</h3>
+<ul>
+<li>Armadillo rolls up when it detects a threat such as:<ul>
+<li>a sprinting player</li>
+<li>a player in a vehicle or mounted</li>
+<li>undead mobs</li>
+</ul></li>
+<li>It does not roll up when:<ul>
+<li>it is fleeing</li>
+<li>in water</li>
+<li>in the air or</li>
+<li>on a leash</li>
+</ul></li>
+<li>When an Armadillo is rolled up it does not walk, cannot eat, and will not be tempted by food<ul>
+<li>It will continue to scan for threats: if none are detected for 3 seconds, it will unroll</li>
+</ul></li>
+</ul>
+<h3>Armadillo Scutes</h3>
+<ul>
+<li>Armadillo Scutes can be used to craft Wolf Armor</li>
+<li>They are dropped by Armadillos</li>
+<li>Dispensers can be used to brush Armadillo Scutes off Armadillos</li>
+</ul>
+<h2>Wolf Armor</h2>
+<ul>
+<li>Using Wolf Armor on an adult tamed Wolf will equip the armor on the wolf.</li>
+<li>Only a Wolf's owner can put a Wolf Armor on their tamed Wolf, and with this in mind; Dispensers cannot put Wolf Armor on wolves.</li>
+<li>Wolf Armor gives the same protection as Diamond Horse Armor.</li>
+<li>Using Shears on a Wolf that is wearing armor will make it drop the armor</li>
+<li>Only a Wolf's owner can shear a Wolf Armor from it, and with this in mind; Dispensers cannot remove Wolf Armor from wolves.</li>
+<li>If a Wolf dies while wearing armor, it will drop the armor.</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Renamed scutes that come from Turtles to Turtle Scutes</li>
+<li>Llamas and Shulkers are no longer able to destroy armor stands</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 27</li>
+</ul>
+<h1>Data Pack 27</h1>
+<ul>
+<li>Llamas now use a new damage type <code>spit</code> instead of <code>mob_projectile</code></li>
+<li><code>FactorCalculationData</code> has been removed from mob effect instance tags</li>
+<li>Added <code>generic.scale</code> attribute that can be used to rescale any living entity</li>
+<li>Player reach distance can now be controlled with the <code>generic.block_interaction_range</code> and <code>generic.entity_interaction_range</code> attributes</li>
+<li>The maximum number of blocks that an entity can step up without jumping is now controlled by the <code>generic.step_height</code> attribute</li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Breeze</h2>
+<ul>
+<li>Added a new 'whirl' idle sound</li>
+<li>Added a 'charging up attack' sound</li>
+<li>Added a sound that plays while the Breeze is in the air</li>
+<li>Added a projectile deflection sound</li>
+<li>Tweaked existing sounds</li>
+</ul>
+<h2>Trial Spawner</h2>
+<ul>
+<li>The Trial Spawner now has the same two default loot tables as they have in the Trial Chamber</li>
+</ul>
+<h1>Fixed bugs in 23w51a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-130244" target="_blank" rel="noopener noreferrer">MC-130244</a> When opening chat in F1 mode, previous messages aren't visible</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153643" target="_blank" rel="noopener noreferrer">MC-153643</a> Debug overlay is rendered behind hotbar items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167375" target="_blank" rel="noopener noreferrer">MC-167375</a> Baby turtle subtitles are grammatically incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173672" target="_blank" rel="noopener noreferrer">MC-173672</a> Title text renders in front of player names in player list</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184066" target="_blank" rel="noopener noreferrer">MC-184066</a> Respawn anchors don't produce an ambient sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184622" target="_blank" rel="noopener noreferrer">MC-184622</a> Sound for exiting a portal/travelling to another dimension does not use its subtitle string despite it existing in en_us.json</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185379" target="_blank" rel="noopener noreferrer">MC-185379</a> Baby polar bear subtitle does not explicitly mention it comes from a baby polar bear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187267" target="_blank" rel="noopener noreferrer">MC-187267</a> Title text renders in front of sidebar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187372" target="_blank" rel="noopener noreferrer">MC-187372</a> There is no space between fps limit/vsync and graphics level in the debug screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193511" target="_blank" rel="noopener noreferrer">MC-193511</a> Title text renders in front of narrator text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193515" target="_blank" rel="noopener noreferrer">MC-193515</a> Boss bar text renders in front of narrator text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193517" target="_blank" rel="noopener noreferrer">MC-193517</a> Boss bar text renders in front of sidebar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193521" target="_blank" rel="noopener noreferrer">MC-193521</a> Boss bar text renders in front of F3</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193524" target="_blank" rel="noopener noreferrer">MC-193524</a> Boss bar text strikethough/underline renders on tab list</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193753" target="_blank" rel="noopener noreferrer">MC-193753</a> Respawn anchor ambient sound subtitle refers to it as a portal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194948" target="_blank" rel="noopener noreferrer">MC-194948</a> Block breaking subtitle inconsistent with painting, item frame and lead breaking subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198787" target="_blank" rel="noopener noreferrer">MC-198787</a> Inefficient streams in GoalSelector</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198963" target="_blank" rel="noopener noreferrer">MC-198963</a> Chat text renders in front of player names in player list</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219899" target="_blank" rel="noopener noreferrer">MC-219899</a> Bone meal used on rooted dirt causes the particles to appear above it, despite the growth being below it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238242" target="_blank" rel="noopener noreferrer">MC-238242</a> There is an unnecessary black pixel in the upper right corner of small potion UI icons in the inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248961" target="_blank" rel="noopener noreferrer">MC-248961</a> takenDamage for achievement criteria is calculated wrongly when the player has equipped a helmet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249335" target="_blank" rel="noopener noreferrer">MC-249335</a> Using bone meal on mangrove leaves spawns growth particles at the center of the block instead of below it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251027" target="_blank" rel="noopener noreferrer">MC-251027</a> Wearing a helmet doesn't reduce the damage of falling anvils or stalactites by 1⁄4</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252409" target="_blank" rel="noopener noreferrer">MC-252409</a> Memory statistics within the debug menu contain some unnecessary spaces</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259587" target="_blank" rel="noopener noreferrer">MC-259587</a> Negative item durability causes the durability bar to render incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261577" target="_blank" rel="noopener noreferrer">MC-261577</a> The nether portal overlay is rendered completely opaque when using spyglasses while standing inside of nether portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263256" target="_blank" rel="noopener noreferrer">MC-263256</a> Chat renders on top of TAB, blocking information</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265541" target="_blank" rel="noopener noreferrer">MC-265541</a> player.dat_old won't be read even if player.dat doesn't exist</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265669" target="_blank" rel="noopener noreferrer">MC-265669</a> Hotbar text renders above subtitle background but under subtitle text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265835" target="_blank" rel="noopener noreferrer">MC-265835</a> The freezing effect is rendered totally opaque when using a spyglass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266055" target="_blank" rel="noopener noreferrer">MC-266055</a> Opening or closing a copper door or trapdoor while holding an axe / honeycomb grants wax-related advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266135" target="_blank" rel="noopener noreferrer">MC-266135</a> Cached macro commands ignore permission level, allowing limited permission escalation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266136" target="_blank" rel="noopener noreferrer">MC-266136</a> Macro commands ignore function-permisson-level server setting, including when lower than default</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266144" target="_blank" rel="noopener noreferrer">MC-266144</a> Copper Doors are not part of the #doors item tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266145" target="_blank" rel="noopener noreferrer">MC-266145</a> Copper Trapdoors are not part of the #trapdoors item tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266308" target="_blank" rel="noopener noreferrer">MC-266308</a> Copper Bulbs have unused "turn_off" sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266334" target="_blank" rel="noopener noreferrer">MC-266334</a> Shulker bullets destroy armor stands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266389" target="_blank" rel="noopener noreferrer">MC-266389</a> Glow berry particles are barely visible when bonemealed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266430" target="_blank" rel="noopener noreferrer">MC-266430</a> Breeze on top of a non-full block produces particles of the block below it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266432" target="_blank" rel="noopener noreferrer">MC-266432</a> Exposed, weathered and oxidised copper bulbs are unwaxed in trial chambers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266469" target="_blank" rel="noopener noreferrer">MC-266469</a> When attacked, breezes sometimes stop pathfinding, jumping, or firing wind charges</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266524" target="_blank" rel="noopener noreferrer">MC-266524</a> Breezes sometimes get the zoomies after jumping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266533" target="_blank" rel="noopener noreferrer">MC-266533</a> Breeze's AI has serious flaws in open terrain</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266589" target="_blank" rel="noopener noreferrer">MC-266589</a> Armor durability is changed when swapping on creative</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266628" target="_blank" rel="noopener noreferrer">MC-266628</a> High polling rate causing stuttering</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266680" target="_blank" rel="noopener noreferrer">MC-266680</a> The glowing outline isn't applied to the eyes or eyebrows of breezes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266685" target="_blank" rel="noopener noreferrer">MC-266685</a> The entity shadows of breezes are too large in relation to the size of their models</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266688" target="_blank" rel="noopener noreferrer">MC-266688</a> Breeze model's glowing eyes are not resource pack-friendly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266738" target="_blank" rel="noopener noreferrer">MC-266738</a> Subtitles string "subtitles.block.trial_spawner.spawn_mob" is misleading and inconsistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266879" target="_blank" rel="noopener noreferrer">MC-266879</a> Clouds, entity hitboxes, block outlines, specially rendered blocks, and enchantment glints, render through the insides of breezes' eyes and eyebrows</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266960" target="_blank" rel="noopener noreferrer">MC-266960</a> Bossbar text renders in front of player list background and player icons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266990" target="_blank" rel="noopener noreferrer">MC-266990</a> Maps with the same 'map' tag value, but different 'display' tag data can cause markers to disappear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266999" target="_blank" rel="noopener noreferrer">MC-266999</a> Crafter's tooltip buttons can still be visible to players on spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267193" target="_blank" rel="noopener noreferrer">MC-267193</a> A function with /return fail run in chat doesn't indicate failure</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267194" target="_blank" rel="noopener noreferrer">MC-267194</a> /return run function in combination with a fork and a function that doesn't return has inconsistent behavior</li>
+</ul>

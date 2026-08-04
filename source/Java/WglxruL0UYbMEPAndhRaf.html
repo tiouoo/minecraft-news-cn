@@ -1,0 +1,88 @@
+<p>Another snapshot is now available for Minecraft: Java Edition. This snapshot brings a few gameplay changes and some technical tidbits, such as the place command and cryptographically signed chat commands.</p>
+<p>Enjoy!</p>
+<h1>Changes in 22w18a</h1>
+<ul>
+<li>Allays now follow their liked player even if they can't see them</li>
+<li>Allays will only lose track of a player if they are more than 64 blocks away</li>
+<li>The texture of the sonic boom particle has been updated</li>
+<li>Vibration listeners such as Sculk Sensors, Sculk Shriekers and Wardens now listen to the closest vibration instead of the first vibration in the tick</li>
+</ul>
+<h1>Technical Changes in 22w18a</h1>
+<ul>
+<li>Banner patterns available in the Loom can now be controlled with tags (<code>banner_pattern/no_item_required</code> for no pattern item and <code>banner_pattern/pattern_item/*</code> for specific banner pattern items)</li>
+<li>Servers can now define different chat style formats for clients</li>
+<li>Removed the <code>placefeature</code> command</li>
+<li>Added the <code>place</code> command</li>
+<li>The bundled Java runtime has been upgraded to 17.0.3</li>
+<li>Removed loot table function <code>set_goat_horn_sound</code></li>
+<li>Added loot table function <code>set_instrument</code></li>
+<li>Chat from the <code>/say</code>, <code>/msg</code>, <code>/teammsg</code>, and <code>/me</code> commands are now all also cryptographically signed</li>
+</ul>
+<h2>Chat Types</h2>
+<ul>
+<li>Different chat style formats can now be controlled by the server through the <code>chat_type</code> registry<ul>
+<li>These are synchronized to clients when they join the server</li>
+<li>The translation key or translation format can be defined, like <code>chat.type.text</code> or <code>%s says: "%s"</code><ul>
+<li>Chat can be similarly optionally narrated with a custom translation key or format</li>
+</ul></li>
+<li>The entire message can have formatting applied, such as italics or a specific color (but currently not click or hover events)</li>
+</ul></li>
+</ul>
+<h2>Place Command</h2>
+<p>New command that replaces <code>placefeature</code> and can place features, jigsaws and structures at a given location. Syntax:</p>
+<pre><code>place feature &#x3C;feature> [pos]
+place jigsaw &#x3C;pool> &#x3C;start> &#x3C;depth> [pos]
+place structure &#x3C;structure> [pos]
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>feature</code>: The namespaced id of a feature to try to place</li>
+<li><code>structure</code>: The namespaced id of a structure to try to generate</li>
+<li><code>pool</code>: The namespaced id of a template pool to start generating</li>
+<li><code>start</code>: The namespaced id name of a jigsaw to use as the starting anchor</li>
+<li><code>depth</code>: The maximum number of jigsaw connections to traverse during placement</li>
+<li><code>pos</code>: The position to use as the origin for the generation (if omitted, <code>~ ~ ~</code> is used)</li>
+</ul>
+<h2>Loot Tables</h2>
+<h3>New functions</h3>
+<h4><code>set_instrument</code></h4>
+<p>Sets item tags needed for instrument items to a random value selected from a tag.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>options</code> - a tag reference specifying the instrument options to randomly pick from</li>
+</ul>
+<h1>Fixed bugs in 22w18a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-207935" target="_blank" rel="noopener noreferrer">MC-207935</a> - Simultaneous vibrations don't trigger as expected</li>
+<li><a href="https://bugs.mojang.com/browse/MC-232009" target="_blank" rel="noopener noreferrer">MC-232009</a> - Minecraft does not resolve SRV records correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249021" target="_blank" rel="noopener noreferrer">MC-249021</a> - The invitation and news buttons aren't consistently displayed within the realms menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249129" target="_blank" rel="noopener noreferrer">MC-249129</a> - The walking animation of frogs doesn't change in relation to their movement speed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249175" target="_blank" rel="noopener noreferrer">MC-249175</a> - Only one sculk vein drops when using a Silk Touch hoe on multiple in a single block space</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249454" target="_blank" rel="noopener noreferrer">MC-249454</a> - Sculk Catalysts will spread sculk if a baby mob that does not drop experience dies around it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249732" target="_blank" rel="noopener noreferrer">MC-249732</a> - Allays lose picked up items on world restart</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249740" target="_blank" rel="noopener noreferrer">MC-249740</a> - Allays leashed to a fence do not move and refuse to pick up items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249784" target="_blank" rel="noopener noreferrer">MC-249784</a> - Ancient Cities can be submerged in aquifers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249857" target="_blank" rel="noopener noreferrer">MC-249857</a> - Parity Issue: Allays don't follow the player / note blocks as closely on Java</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250139" target="_blank" rel="noopener noreferrer">MC-250139</a> - Snow layers cannot be placed on top of mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250143" target="_blank" rel="noopener noreferrer">MC-250143</a> - Improper advancement description for "Sneak 100"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250144" target="_blank" rel="noopener noreferrer">MC-250144</a> - "Sneak 100" advancement includes sculk shriekers as a block that can "hear" the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250145" target="_blank" rel="noopener noreferrer">MC-250145</a> - Warden/frogs continue animations when the game is paused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250163" target="_blank" rel="noopener noreferrer">MC-250163</a> - Warden can still detect things after it dies</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250183" target="_blank" rel="noopener noreferrer">MC-250183</a> - Warden continues to roar when angered by an ignited creeper</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250198" target="_blank" rel="noopener noreferrer">MC-250198</a> - Warden continues to roar when the target of the enraged warden suffers an unnatural death</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250207" target="_blank" rel="noopener noreferrer">MC-250207</a> - Warden continues to roar at disconnected players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250216" target="_blank" rel="noopener noreferrer">MC-250216</a> - Warden continues to roar at targets in unloaded chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250218" target="_blank" rel="noopener noreferrer">MC-250218</a> - Warden continues to roar at despawned target</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250244" target="_blank" rel="noopener noreferrer">MC-250244</a> - Warden continues to roar  when the target enters the nether portal, end portal or end gateway</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250245" target="_blank" rel="noopener noreferrer">MC-250245</a> - Warden sonic boom attacks can hit player even if the player has entered another dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250292" target="_blank" rel="noopener noreferrer">MC-250292</a> - Wardens can sometimes freeze when overwhelmed with enemies/attacks/sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250506" target="_blank" rel="noopener noreferrer">MC-250506</a> - Mangrove leaves can appear at a higher altitude when grown below y = 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250557" target="_blank" rel="noopener noreferrer">MC-250557</a> - Allay permanently stuck trying to pick up item stack if its slots contain stack of the same type with differing NBT (and vice versa)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250864" target="_blank" rel="noopener noreferrer">MC-250864</a> - Game fails to load worldgen settings when .DS_Store files are present in datapack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250926" target="_blank" rel="noopener noreferrer">MC-250926</a> - There is a goat horn in the creative Destroy Item slot / all tabs within the creative inventory contain goat horns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250937" target="_blank" rel="noopener noreferrer">MC-250937</a> - User skins don't load in singleplayer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250939" target="_blank" rel="noopener noreferrer">MC-250939</a> - Game crashes when a goat horn with an invalid sound variant is used / java.lang.ArrayIndexOutOfBoundsException: Index <index> out of bounds for length 8<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-250954" target="_blank" rel="noopener noreferrer">MC-250954</a> - Player is assigned a new UUID in singleplayer</li>
+</ul></li>
+<li><a href="https://bugs.mojang.com/browse/MC-250974" target="_blank" rel="noopener noreferrer">MC-250974</a> - MinecraftClientHttpException when opening/creating a world</li>
+</ul>

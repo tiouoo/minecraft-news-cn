@@ -1,0 +1,147 @@
+<p>你知道吗，骆驼行走时会同时抬起同一侧的两条腿？是的，在快照 22w43a 中，Minecraft 也知道了！本快照还包含对创造模式物品栏的又一轮调整。</p>
+<p>挖矿愉快！</p>
+<h1>22w43a 中的更改</h1>
+<ul>
+<li>更改了骆驼刷怪蛋的颜色</li>
+<li>调整了骆驼行走循环动画</li>
+<li>栅栏门不再为其下方提供中心支撑</li>
+<li>聊天举报界面现在会显示被举报的玩家何时重新加入聊天</li>
+<li>创造模式物品栏的更多更改</li>
+<li>新增玩家举报草稿</li>
+</ul>
+<h2>创造模式物品栏的更多更改</h2>
+<p>由于创造模式物品栏排序的更改，大量反馈纷至沓来。</p>
+<h3>更改</h3>
+<ul>
+<li>更改了创造模式标签页的图标，以更好地进行颜色编码，并展示最具标志性的视觉效果</li>
+<li>“自然方块（Nature Blocks）”标签页已更名为“自然方块（Natural Blocks）”</li>
+<li>将泥土和石头移至自然方块标签页顶部，这是许多人的强烈要求（他们表示这些方块的使用频率远高于花朵等）</li>
+<li>修复了水瓶未显示在消耗品标签页中的问题</li>
+<li>重新排序了石英，使平滑石英成为独立的分区</li>
+<li>可攀爬的植物方块现在在自然方块标签页中放在一起</li>
+<li>修复了涂蜡铜方块的排序</li>
+<li>修复了珊瑚方块的排序，使其保持一致</li>
+<li>确保自然方块标签页中下界岩与菌岩相邻</li>
+<li>重新排序了装备，使金制工具和武器处于合理的顺序</li>
+<li>将普通铁轨移动到特殊铁轨之前</li>
+<li>按颜色渐变对彩色方块排序（羊毛、陶瓦、蜡烛、旗帜、染色玻璃等）</li>
+<li>将告示牌在功能方块标签页中上移，因为玩家经常使用</li>
+<li>建筑方块标签页中，玄武岩方块现在位于下界砖块之后，紧邻黑石</li>
+<li>大致重新排序了自然方块标签页中的植物</li>
+</ul>
+<h3>新增</h3>
+<ul>
+<li>添加到红石方块标签页
+<ul>
+<li>箱子船</li>
+<li>钟</li>
+<li>大型垂滴叶</li>
+<li>白色羊毛（紧邻幽匿感测体）</li>
+<li>线（紧邻绊线钩）</li>
+<li>红石矿石</li>
+<li>雕纹书架</li>
+</ul>
+</li>
+<li>添加到消耗品标签页
+<ul>
+<li>奶桶</li>
+</ul>
+</li>
+<li>添加到功能方块标签页
+<ul>
+<li>不祥之旗</li>
+<li>龙蛋</li>
+<li>讲台</li>
+<li>避雷针</li>
+<li>音符盒</li>
+</ul>
+</li>
+<li>添加到合成标签页
+<ul>
+<li>雪球</li>
+</ul>
+</li>
+<li>添加到刷怪蛋标签页
+<ul>
+<li>刷怪笼</li>
+</ul>
+</li>
+<li>添加到战斗标签页
+<ul>
+<li>TNT</li>
+<li>末地水晶</li>
+</ul>
+</li>
+<li>添加到工具与实用物品标签页
+<ul>
+<li>骨粉</li>
+</ul>
+</li>
+</ul>
+<h2>新增玩家举报草稿</h2>
+<p>现在，玩家举报可以在连接到服务器时临时保存为草稿。</p>
+<ul>
+<li>退出玩家举报界面时，举报可被丢弃或保留为草稿
+<ul>
+<li>如果界面被强制关闭（例如玩家死亡），草稿将始终保留</li>
+</ul>
+</li>
+<li>草稿举报会一直保留到玩家离开当前服务器或世界为止
+<ul>
+<li>离开时，玩家将收到提示，可以选择丢弃或完成并发送举报</li>
+</ul>
+</li>
+</ul>
+<h1>22w43a 的技术性更改</h1>
+<ul>
+<li>将线性代数类型迁移至 Java OpenGL 数学库（JOML）</li>
+</ul>
+<h2>网络协议</h2>
+<ul>
+<li>服务器现在可以随玩家的首个聊天数据包一并惰性分发其个人资料公钥</li>
+<li>个人资料公钥现在无需重新连接即可刷新</li>
+<li>客户端现在在收到登录数据包时会重置其聊天会话</li>
+</ul>
+<h1>22w43a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-84873" target="_blank" rel="noopener noreferrer">MC-84873</a> DeathTime 值 20+ 会导致生物损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-92017" target="_blank" rel="noopener noreferrer">MC-92017</a> 盾牌伤害方向不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-128003" target="_blank" rel="noopener noreferrer">MC-128003</a> 破坏高海草的一个方块时，另一个方块被破坏后变成空气，而不是水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188247" target="_blank" rel="noopener noreferrer">MC-188247</a> 末地水晶的爆炸无法被盾牌格挡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188506" target="_blank" rel="noopener noreferrer">MC-188506</a> 无法手动将 AngryAt 应用于末影人</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189911" target="_blank" rel="noopener noreferrer">MC-189911</a> 喷溅水瓶无法扑灭生物和玩家身上的火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191948" target="_blank" rel="noopener noreferrer">MC-191948</a> 恶魂火球的爆炸在盾牌格挡后仍会造成伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198493" target="_blank" rel="noopener noreferrer">MC-198493</a> 村民在作为僵尸村民时重新登录会失去折扣</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200006" target="_blank" rel="noopener noreferrer">MC-200006</a> 床和重生锚的爆炸无法被盾牌格挡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202513" target="_blank" rel="noopener noreferrer">MC-202513</a> 垂泪藤和缠怨藤未与普通藤蔓在创造模式物品栏中归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222407" target="_blank" rel="noopener noreferrer">MC-222407</a> 持有大型垂滴叶茎的末影人被杀死时不会掉落大型垂滴叶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244694" target="_blank" rel="noopener noreferrer">MC-244694</a> 山羊跺脚和撞击的声音不受“友好生物”音量滑块控制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249691" target="_blank" rel="noopener noreferrer">MC-249691</a> 菌岩未与下界岩在创造模式物品栏中归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252214" target="_blank" rel="noopener noreferrer">MC-252214</a> 坐在船上时进入水中不会扑灭身上的火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253542" target="_blank" rel="noopener noreferrer">MC-253542</a> 具有 SpawnPotential 且没有 SpawnData 的刷怪笼方块会在世界生成时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254597" target="_blank" rel="noopener noreferrer">MC-254597</a> 受到水伤害的生物在船上时不会受到水伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254634" target="_blank" rel="noopener noreferrer">MC-254634</a> 升级世界时，POI（兴趣点）无法正确创建</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256462" target="_blank" rel="noopener noreferrer">MC-256462</a> 如果骆驼在退出并重新加载世界时处于坐姿，它会再次播放坐下动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256476" target="_blank" rel="noopener noreferrer">MC-256476</a> 全景滚动速度未被保存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256483" target="_blank" rel="noopener noreferrer">MC-256483</a> 金合欢木悬挂告示牌无法合成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256494" target="_blank" rel="noopener noreferrer">MC-256494</a> 白桦木悬挂告示牌无法合成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256495" target="_blank" rel="noopener noreferrer">MC-256495</a> 当骆驼的双腿相互交叉时会出现 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256502" target="_blank" rel="noopener noreferrer">MC-256502</a> 在旁观者模式下按下某些按钮时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256515" target="_blank" rel="noopener noreferrer">MC-256515</a> 悬挂告示牌在栅栏门下部的连接表现异常</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256522" target="_blank" rel="noopener noreferrer">MC-256522</a> 珊瑚方块的排序与珊瑚和珊瑚扇不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256534" target="_blank" rel="noopener noreferrer">MC-256534</a> 已保存的快捷栏可以导入已禁用的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256573" target="_blank" rel="noopener noreferrer">MC-256573</a> 水瓶、粗制药水/平凡药水/粘稠药水和药箭不会出现在创造模式物品栏中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256575" target="_blank" rel="noopener noreferrer">MC-256575</a> 部分翻译键被合并，导致一些语言出现翻译错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256581" target="_blank" rel="noopener noreferrer">MC-256581</a> 避雷针未出现在创造模式物品栏的功能方块标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256582" target="_blank" rel="noopener noreferrer">MC-256582</a> 讲台未出现在创造模式物品栏的功能方块标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256612" target="_blank" rel="noopener noreferrer">MC-256612</a> 涂蜡的斑驳铜方块在创造模式建筑方块标签页中的排序错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256639" target="_blank" rel="noopener noreferrer">MC-256639</a> 悦灵、猪灵和村民在卸载并重新加载后会丢失物品栏物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256661" target="_blank" rel="noopener noreferrer">MC-256661</a> 悬挂告示牌上的行距过小，导致某些字符重叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256705" target="_blank" rel="noopener noreferrer">MC-256705</a> 标识符允许的字符与路径段允许的字符之间存在差异</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256734" target="_blank" rel="noopener noreferrer">MC-256734</a> 实体在墙上的悬挂告示牌顶部寻路时经常会旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256843" target="_blank" rel="noopener noreferrer">MC-256843</a> 奶桶未出现在创造模式物品栏的消耗品标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256845" target="_blank" rel="noopener noreferrer">MC-256845</a> 下界疣未出现在创造模式物品栏的自然方块标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256846" target="_blank" rel="noopener noreferrer">MC-256846</a> 雕纹书架未出现在创造模式物品栏的红石方块标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256847" target="_blank" rel="noopener noreferrer">MC-256847</a> 骨粉未出现在创造模式物品栏的工具与实用物品标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256848" target="_blank" rel="noopener noreferrer">MC-256848</a> 线未出现在创造模式物品栏的红石方块标签页中</li>
+</ul>

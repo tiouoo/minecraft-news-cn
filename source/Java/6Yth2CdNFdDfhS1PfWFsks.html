@@ -1,0 +1,186 @@
+<p>In this week's snapshot we're extending the Update 1.21 experiment with ALL the new blocks! And how about a bat makeover just in time for spooky fall? Happy crafting!</p>
+<h1>Experimental Features</h1>
+<h2>Copper Family</h2>
+<ul>
+<li>The Copper family of blocks has been expanded, including:<ul>
+<li>Chiseled Copper</li>
+<li>Copper Grate</li>
+<li>Copper Bulb</li>
+<li>Copper Door</li>
+<li>Copper Trapdoor</li>
+<li>Oxidized and waxed variants of all of the above</li>
+</ul></li>
+</ul>
+<h3>Chiseled Copper</h3>
+<ul>
+<li>Crafted with 2 Cut Copper Slabs of a shared oxidation level</li>
+<li>Can be crafted in the Stonecutter</li>
+</ul>
+<h3>Copper Grate</h3>
+<ul>
+<li>A new type of decorative block unique to the Copper family</li>
+<li>Crafted with 4 Copper Blocks of a shared oxidation level<ul>
+<li>Can be crafted in the Stonecutter</li>
+</ul></li>
+<li>Properties:<ul>
+<li>Transparent and allows light to pass through</li>
+<li>Mobs cannot suffocate inside them</li>
+<li>Cannot conduct redstone</li>
+<li>Hostile mobs cannot naturally spawn on them</li>
+</ul></li>
+</ul>
+<h3>Copper Bulb</h3>
+<ul>
+<li>A light-emitting block that can toggle its light emission through redstone pulses</li>
+<li>Oxidizes like other Copper blocks, and emits less light the more oxidized they are<ul>
+<li>Copper Bulb: Light level 15</li>
+<li>Exposed Copper Bulb: Light level 12</li>
+<li>Weathered Copper Bulb: Light level 8</li>
+<li>Oxidized Copper Bulb: Light level 4</li>
+</ul></li>
+<li>When placed, its light is off by default<ul>
+<li>While the Copper Bulb is unpowered, it will toggle its light on or off when it receives a redstone pulse</li>
+<li>Copper Bulb light will stay on even when the redstone source is removed until it receives another redstone pulse to toggle it off</li>
+</ul></li>
+<li>A redstone crystal will glow in the center of Copper Bulbs while it is powered by a redstone signal</li>
+<li>Comparators will read a signal strength of 15 if the Copper Bulb's light is on</li>
+<li>Does not conduct redstone power</li>
+<li>Can craft 4 Copper Bulbs with:<ul>
+<li>3 Copper Blocks of a shared oxidation level</li>
+<li>1 Blaze Rod</li>
+<li>1 Redstone Dust</li>
+</ul></li>
+</ul>
+<h3>Copper Doors and Trapdoors</h3>
+<ul>
+<li>Copper variants of Doors and Trapdoors that can oxidize over time and be waxed</li>
+<li>Works like wooden doors in that they can be opened and closed with interaction as well as redstone</li>
+<li>Crafted with Copper Blocks of a shared oxidation level</li>
+</ul>
+<h2>Tuff Family</h2>
+<ul>
+<li>Tuff has been expanded to have its own family of blocks, including:<ul>
+<li>Stair, Slab, Wall and Chiseled variants</li>
+<li>Tuff Bricks with Stair, Slab, Wall and Chiseled variants</li>
+<li>Polished Tuff with Stair, Slab and Wall variants</li>
+</ul></li>
+<li>All Tuff variants can be crafted in the Stonecutter</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>The Bat now has a new look</li>
+<li>Thrown Ender Pearls produce a teleportation sound on impact</li>
+<li>Small tweaks to the Telemetry Data Collection screen</li>
+</ul>
+<h2>Bat</h2>
+<ul>
+<li>The Bat has an updated model, animations and texture</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 22</li>
+<li>The Resource Pack version is now 20</li>
+</ul>
+<h1>Data Pack Version 22</h1>
+<ul>
+<li>Added <code>tick</code> command</li>
+<li>Added two new input fields for Selection Priority and Placement Priority in the Jigsaw block edit screen</li>
+<li>Added <code>item</code> to <code>minecraft:arrow</code> and <code>minecraft:spectral_arrow</code>, this is the item that will be picked up</li>
+<li>Renamed <code>Trident</code> to <code>item</code> in <code>minecraft:trident</code></li>
+</ul>
+<h2><code>tick</code> command</h2>
+<p>Added a new <code>tick</code> command. This is an adminstative and debugging command that allows
+to control the ticking flow and measure the performance of the game.
+The command requires elevated permissions (admins and above) and so it is not by default available in command blocks and datapacks.</p>
+<p>Syntax:</p>
+<p><code>tick query</code> - outputs the current target ticking rate, with information about the tick times performance.</p>
+<p><code>tick rate &#x3C;rate></code> - sets a custom target ticking rate to the specified value. The value must be greater than 1.0
+and lower than 10000.0. Setting a very low tick rate can cause the game to feel unresponsive and
+setting too high tick rate for your system can cause
+the game to crash as the game now assumes, it is constantly falling behind the ticking target. Please use <code>tick query</code>
+or <code>&#x3C;F3> + 2</code> (Integrated server only) debug screen to measure the performance of the game and adjust the tick rate accordingly.
+Setting a tick target lower than the default <code>20.0</code> will also cause the players to be simulated
+at a lower rate (including player movement and input controls), while
+setting a higher tick rate will cause the players to be simulated at the default rate of <code>20</code> ticks per second to maintain
+the expected responsiveness of the game, but can cause artifacts in entities interpolation.</p>
+<p><code>tick freeze</code> - freezes all gameplay elements, except for players and any entity a player is riding.
+This is useful for debugging and isolating issues with the game allowing the player to move around freely and inspect the world.</p>
+<p><code>tick step &#x3C;time></code> - Only works when the game is frozen. It runs the game for the specified number of ticks and then freezes the game again.
+This allows to step through the game a set amount of ticks at a time.</p>
+<p><code>tick step stop</code> - stops the current stepping process, and re-freezes the game.</p>
+<p><code>tick unfreeze</code> - unfreezes the game and resumes all gameplay elements.</p>
+<p><code>tick sprint &#x3C;time></code> - runs the game while ignoring the set ticking target rate (meaning that the game will run
+as fast as possible) for the specified number of ticks. At the end of the sprint, the game will resume
+the previous ticking target and display performance information about the tick times while sprinting. This
+is especially useful for testing gameplay elements that are time dependent, such as redstone contraptions,
+or mob behaviour in isolated environments that allow for much faster simulation.</p>
+<p><code>tick sprint stop</code> - stops the current tick sprint, and resumes the previous ticking target.</p>
+<h2>Jigsaw Selection &#x26; Placement Priority</h2>
+<ul>
+<li>Selection Priority<ul>
+<li>When the parent piece is being processed for connections, this controls the order in which this Jigsaw block attempts to connect to its target piece</li>
+<li>Jigsaws will be processed in descending priority order and randomly within the same priority</li>
+</ul></li>
+<li>Placement Priority<ul>
+<li>When this Jigsaw block connects to a piece, this is the order in which that piece is processed for connections in the wider structure</li>
+<li>Pieces will be processed in descending priority order with the default insertion order breaking ties within the same priority</li>
+</ul></li>
+<li>This functionality has been added to support the ability for Jigsaw structures to generate branches in a depth-first order, as well as give finer control over ordering of connections</li>
+<li>All existing Jigsaw blocks will default their Selection and Placement Priority to 0, resulting in the same behaviour as before these two configurable values were introduced</li>
+</ul>
+<h1>Resource Pack Version 20</h1>
+<ul>
+<li><code>bat.png</code> has been updated for the new Bat model</li>
+<li>Added block models, items models and block state definitions for the following blocks:<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>tuff_stairs</code></li>
+<li><code>tuff_slab</code></li>
+<li><code>tuff_wall</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>polished_tuff_stairs</code></li>
+<li><code>polished_tuff_slab</code></li>
+<li><code>polished_tuff_wall</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>tuff_brick_stairs</code></li>
+<li><code>tuff_brick_slab</code></li>
+<li><code>tuff_brick_wall</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+<li>Added unique sprites for the following blocks:<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w43a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1981" target="_blank" rel="noopener noreferrer">MC-1981</a> All arrow types lose their name/NBT data when shot and picked up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257786" target="_blank" rel="noopener noreferrer">MC-257786</a> The game takes a long time to process players leaving realms groups or accepting or declining realms invitations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263263" target="_blank" rel="noopener noreferrer">MC-263263</a> The operator buttons intersect the scroll bar within the realms player menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263272" target="_blank" rel="noopener noreferrer">MC-263272</a> You cannot click on an area to set a value within the spawn protection slider in the realms world options menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263309" target="_blank" rel="noopener noreferrer">MC-263309</a> You can configure your realm before it has been created by using the TAB key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265872" target="_blank" rel="noopener noreferrer">MC-265872</a> The word "available" is misspelled as "availible" within the "recover_world.no_fallback" string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265874" target="_blank" rel="noopener noreferrer">MC-265874</a> Right-clicking and keyboard input can disable or enable slots in the crafter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265880" target="_blank" rel="noopener noreferrer">MC-265880</a> The subtitle for Crafters crafting something uses inconsistent tense</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265884" target="_blank" rel="noopener noreferrer">MC-265884</a> The word "occurred" is misspelled as "occured" within the "recover_world.message" string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265885" target="_blank" rel="noopener noreferrer">MC-265885</a> Extra space in the word "cannot" in selectWorld.incompatible.description</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265886" target="_blank" rel="noopener noreferrer">MC-265886</a> The built-in update_1_21 pack contains duplicate files from the vanilla pack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265891" target="_blank" rel="noopener noreferrer">MC-265891</a> Placing items into the crafter output slot deletes them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265896" target="_blank" rel="noopener noreferrer">MC-265896</a> Additional lines appear on the crafter's face when it crafts</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265899" target="_blank" rel="noopener noreferrer">MC-265899</a> The translation for "gamerule.commandModificationBlockLimit" is in title case instead of sentence case</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265901" target="_blank" rel="noopener noreferrer">MC-265901</a> Comparator sometimes doesn't update when crafting with the Crafter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265938" target="_blank" rel="noopener noreferrer">MC-265938</a> Elements within the list in the "Changes From Last Backup" realms menu cannot be selected via the mouse cursor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265939" target="_blank" rel="noopener noreferrer">MC-265939</a> The "No pending invites!" text within the realms invitation menu cannot be narrated or selected</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265961" target="_blank" rel="noopener noreferrer">MC-265961</a> Inconsistent pixels near light on the crafter's side</li>
+</ul>

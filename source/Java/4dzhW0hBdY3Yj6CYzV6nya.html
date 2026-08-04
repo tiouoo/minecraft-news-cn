@@ -1,0 +1,181 @@
+<h1>New Features in 21w05a</h1>
+<ul>
+<li>Azalea bushes as well as flowering azaela bushes!</li>
+<li>Added cave vines and glow berries!</li>
+<li>Added drip leaves!</li>
+<li>Added decorative blocks for the upcoming lush caves: hanging roots and rooted dirt!</li>
+<li>Added moss!</li>
+<li>Added spore blossom!</li>
+</ul>
+<h2>Cave vines and glow berries</h2>
+<ul>
+<li>Cave vines grow down from the ceiling, like weeping vines</li>
+<li>When they grow they have a chance of producing glow berries</li>
+<li>Glow berries are a natural light source as well as a food source</li>
+<li>Foxes eat glow berries</li>
+<li>Use glow berries to plant new cave vines</li>
+<li>Bonemealing a cave vine will create glow berries</li>
+</ul>
+<h2>Dripleaf</h2>
+<ul>
+<li>Small dripleaf needs moisture, so it grows on clay or underwater</li>
+<li>Small dripleaf grow into big dripleaf when bonemealed.</li>
+<li>Big dripleaf grows taller when bonemealed</li>
+<li>If you stand on a big dripleaf it will tilt after a while and you will fall off</li>
+<li>You can crouch or jump to prevent a big dripleaf from tilting</li>
+<li>A tilted big drip leaf will tilt up again after a while</li>
+<li>The big dripleaf will break when hit by a projectile</li>
+<li>The wandering trader will sometimes sell small dripleaf plants</li>
+</ul>
+<h2>Moss</h2>
+<ul>
+<li>Two new decorative blocks: Moss block and moss carpet</li>
+<li>Moss carpet can be crafted from moss blocks</li>
+</ul>
+<h2>Spore blossom</h2>
+<ul>
+<li>A beautiful large flower placed on ceilings</li>
+<li>Particles drip from it</li>
+</ul>
+<h1>Changes in 21w05a</h1>
+<ul>
+<li>The stonecutter can be used to craft the different copper block variants</li>
+<li>The stages of copper oxidization are now called "Copper Block", "Exposed Copper Block", "Weathered Copper Block" and "Oxidized Copper Block" in sequence of least to most oxidized</li>
+<li>Drowned now have a chance of dropping a copper ingot, they no longer drop gold ingots</li>
+<li>Added new sculk sensor events</li>
+<li>Changes to powder snow</li>
+</ul>
+<h2>Sculk Sensor Changes</h2>
+<p>Added the following game events that the Sculk Sensor reacts to, along with corresponding frequency value:</p>
+<table>
+<thead>
+<tr>
+<th>Vibration Types</th>
+<th>Frequency Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minecart Moving, Ring Bell, Block Change</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Drinking Finish, Prime Fuse</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Mob Interact</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Equip, Shear, Ravager Roar</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Entity Place</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Entity Killed</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Shulker Close</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Shulker Open</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>Block Change</code> is for when player or dispenser action has changed a block. Example: cake slice being eaten.</li>
+<li><code>Mob Interact</code> is for specific mob interaction events that cause vibrations.</li>
+<li><code>Prime Fuse</code> is for both TNT and Creepers.</li>
+</ul>
+<h2>Powder Snow changes</h2>
+<ul>
+<li>Flaming arrows now get extinguished when they collide with Powder Snow</li>
+<li>Skeletons now convert to Strays when frozen</li>
+<li>Powder snow is now pushable by pistons and sticky pistons</li>
+<li>Foxes can now walk on top of powder snow without falling in</li>
+</ul>
+<h1>Technical Changes in 21w05a</h1>
+<ul>
+<li>Improved performance when using many overrides on an item model</li>
+<li>Copper oxidization is now a random tick effect and thus affected by the randomTickSpeed game rule</li>
+</ul>
+<h1>Fixed Bugs in 21w05a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-9568" target="_blank" rel="noopener noreferrer">MC-9568</a> Mobs suffocate / go through blocks when growing up near a solid block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-130098" target="_blank" rel="noopener noreferrer">MC-130098</a> Debug world spawns player at y=2 instead at y=70 where all the blocks are</li>
+<li><a href="https://bugs.mojang.com/browse/MC-142711" target="_blank" rel="noopener noreferrer">MC-142711</a> Baby turtles take damage when pushed against ceiling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148432" target="_blank" rel="noopener noreferrer">MC-148432</a> Sound spam while in water and lava at the same time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149495" target="_blank" rel="noopener noreferrer">MC-149495</a> Pufferfish triggers tripwire without colliding with it upon reloading the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152265" target="_blank" rel="noopener noreferrer">MC-152265</a> Starting server outputs "unable to resolve BlockEntity for ItemStack" errors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153254" target="_blank" rel="noopener noreferrer">MC-153254</a> Baby zombies/piglins take damage when pushed against ceiling by bubble columns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163673" target="_blank" rel="noopener noreferrer">MC-163673</a> Baby husks, piglins, zombies, zombie villagers, and zombified piglins take damage when jumping into a space with a solid block above it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186879" target="_blank" rel="noopener noreferrer">MC-186879</a> Standing in fire and water spams the extinguish sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191714" target="_blank" rel="noopener noreferrer">MC-191714</a> Player is dismounted when standing on farmland while riding a horse/boat while the farmland turns to dirt, causing a desync</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198432" target="_blank" rel="noopener noreferrer">MC-198432</a> Pufferfish phases through blocks after reloading world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-199356" target="_blank" rel="noopener noreferrer">MC-199356</a> chatDelay in options.txt has a space between the colon and the value</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200906" target="_blank" rel="noopener noreferrer">MC-200906</a> Pufferfish hitbox incorrect when reloading world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204801" target="_blank" rel="noopener noreferrer">MC-204801</a> Large amounts of copper blocks lag the server and causes the worldsave to take forever</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205079" target="_blank" rel="noopener noreferrer">MC-205079</a> Cauldrons don't fill with powder snow in some biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205401" target="_blank" rel="noopener noreferrer">MC-205401</a> "Fire extinguishes" Sound repeatedly plays when a mob that burns in daylight is in powder snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205477" target="_blank" rel="noopener noreferrer">MC-205477</a> Occasional desync when trying to enter/exit a boat while the server is lagging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205735" target="_blank" rel="noopener noreferrer">MC-205735</a> Baby cows can suffocate on stairs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206113" target="_blank" rel="noopener noreferrer">MC-206113</a> Powder Snow causes Z-Fighting with Falling Blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207258" target="_blank" rel="noopener noreferrer">MC-207258</a> Sculk sensors do not react to minecarts being driven</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207261" target="_blank" rel="noopener noreferrer">MC-207261</a> Bell ringing event is not considered a vibration</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207262" target="_blank" rel="noopener noreferrer">MC-207262</a> Drinking potions or milk doesn’t cause vibrations even though eating does</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207263" target="_blank" rel="noopener noreferrer">MC-207263</a> Inconsistency: Filling cauldrons with liquids or powder snow is not detected by sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207277" target="_blank" rel="noopener noreferrer">MC-207277</a> Sculk sensor can't detect setting a fire with fire charge</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207283" target="_blank" rel="noopener noreferrer">MC-207283</a> Extinguishing a campfire is not detected by sculk sensor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207300" target="_blank" rel="noopener noreferrer">MC-207300</a> Blocks being placed or picked up by an enderman are not detected by sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207329" target="_blank" rel="noopener noreferrer">MC-207329</a> Sculk sensors don't properly detect eating from other mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207340" target="_blank" rel="noopener noreferrer">MC-207340</a> Sculk sensors do not detect buckets of fish being emptied</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207358" target="_blank" rel="noopener noreferrer">MC-207358</a> Sculk sensors don't detect shulkers opening and closing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207384" target="_blank" rel="noopener noreferrer">MC-207384</a> Flame arrows repeatedly trigger sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207387" target="_blank" rel="noopener noreferrer">MC-207387</a> Sculk sensors can sense players sneaking in water when they move, even when they're not swimming</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207391" target="_blank" rel="noopener noreferrer">MC-207391</a> Sculk sensors don't detect certain flying mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207397" target="_blank" rel="noopener noreferrer">MC-207397</a> The fire extinguish sound plays every tick when the player is on fire and freezing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207407" target="_blank" rel="noopener noreferrer">MC-207407</a> Villages will always generate at least on y=0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207417" target="_blank" rel="noopener noreferrer">MC-207417</a> Directly breaking fire does not alert sculk sensors, but removing its supporting block correctly does</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207418" target="_blank" rel="noopener noreferrer">MC-207418</a> Breaking paintings/item frames/glow item frames does not alert sculk sensors, even though placing them does</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207445" target="_blank" rel="noopener noreferrer">MC-207445</a> Sculk sensor doesn't detect squids swimming</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207473" target="_blank" rel="noopener noreferrer">MC-207473</a> Sculk sensors do not detect when ghasts shoot</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207520" target="_blank" rel="noopener noreferrer">MC-207520</a> Sculk sensors don't react to ravager roars</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207521" target="_blank" rel="noopener noreferrer">MC-207521</a> Ocelots and cats can still emit vibrations while sneaking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207592" target="_blank" rel="noopener noreferrer">MC-207592</a> Shooting bow with flame enchantment while sneaking triggers sculk sensor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207600" target="_blank" rel="noopener noreferrer">MC-207600</a> Sculk sensor detects wrong sound for fishing rod</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207670" target="_blank" rel="noopener noreferrer">MC-207670</a> Sculk sensors do not detect the placement of boats and minecarts</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207671" target="_blank" rel="noopener noreferrer">MC-207671</a> Sculk sensors do not detect candles being placed into cakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207672" target="_blank" rel="noopener noreferrer">MC-207672</a> Sculk sensors do not detect when creepers are set off with flint and steel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207673" target="_blank" rel="noopener noreferrer">MC-207673</a> Sculk sensors do not detect lighting TNT with flint and steel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207674" target="_blank" rel="noopener noreferrer">MC-207674</a> Sculk sensors do not detect placing things in flower pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207675" target="_blank" rel="noopener noreferrer">MC-207675</a> Sculk sensors do not detect books being placed onto lecterns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207677" target="_blank" rel="noopener noreferrer">MC-207677</a> Sculk sensors do not detect collecting water with bottles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207678" target="_blank" rel="noopener noreferrer">MC-207678</a> Sculk sensors do not detect collecting honey bottles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207679" target="_blank" rel="noopener noreferrer">MC-207679</a> Sculk sensors do not detect the breaking of bee nests and beehives in Creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207745" target="_blank" rel="noopener noreferrer">MC-207745</a> Sculk sensors do not detect when ender dragons shoot fireballs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208193" target="_blank" rel="noopener noreferrer">MC-208193</a> Sculk sensors do not detect removing things from flower pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208194" target="_blank" rel="noopener noreferrer">MC-208194</a> Sculk sensors do not detect when candle cakes are eaten</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208477" target="_blank" rel="noopener noreferrer">MC-208477</a> Going into a dimension that has height higher than the maximum height crashes the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209361" target="_blank" rel="noopener noreferrer">MC-209361</a> Game crashes upon instantly click-replacing the block underneath a bamboo sapling with another bamboo</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209625" target="_blank" rel="noopener noreferrer">MC-209625</a> Baby llamas suffocate when below a solid block while standing on top of a carpet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212117" target="_blank" rel="noopener noreferrer">MC-212117</a> Placing glow lichen in lava creates waterlogged glow lichen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212141" target="_blank" rel="noopener noreferrer">MC-212141</a> Shulkers get rotated when upgrading to 21w03a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212149" target="_blank" rel="noopener noreferrer">MC-212149</a> Shulker is sometimes mis-rotated when player teleports through a nether portal and reloading an active chunk with Shulker</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212284" target="_blank" rel="noopener noreferrer">MC-212284</a> Crammed enitities pushed through blocks when growing to adults</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212290" target="_blank" rel="noopener noreferrer">MC-212290</a> Commands "setblock" and "fill" don't work at or above height 1024 in some cases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212291" target="_blank" rel="noopener noreferrer">MC-212291</a> Client can dismount vehicles independently from the server, causing a de-sync</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212331" target="_blank" rel="noopener noreferrer">MC-212331</a> Boats dismount you in the direction the boat is facing instead of the direction of the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212347" target="_blank" rel="noopener noreferrer">MC-212347</a> Importing custom world file height is limited to 2047 instead of 2048</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212422" target="_blank" rel="noopener noreferrer">MC-212422</a> Game crashes when generating a world with increased height limit</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212532" target="_blank" rel="noopener noreferrer">MC-212532</a> Shulkers are spawned slightly mis-rotated after a shulker was hit by another shulker's shulker bullet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212537" target="_blank" rel="noopener noreferrer">MC-212537</a> Standing near a shulker slightly lifts you when they open</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212541" target="_blank" rel="noopener noreferrer">MC-212541</a> Shulkers are often incorrectly rotated upon generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213512" target="_blank" rel="noopener noreferrer">MC-213512</a> Copper blocks are named differently from bedrock edition</li>
+</ul>

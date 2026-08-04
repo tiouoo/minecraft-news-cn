@@ -1,0 +1,118 @@
+<p>让我给你们讲一个关于傲慢的小故事。其实，这与其说是故事，不如说是悲叹。因为你们有些人一直觉得循声守卫太容易对付了。我就不点名了，但我知道你们就在那里。不然我们为什么要给这个已经够吓人的生物添加远程攻击呢？难道嗅探还不够吗？这一切何时才是个头？显然不是今天。
+尽情享受全新的恐怖循声守卫，以及更多进度和技术性更改吧。</p>
+<h1>22w15a 的新特性</h1>
+<ul>
+<li>添加了进度“当小队跳进城镇”：用拴绳拴住每种青蛙变种</li>
+<li>添加了进度“潜行 100”：在幽匿感测体或循声守卫附近潜行，以防止它听到你</li>
+<li>为循声守卫添加了一种新的远程攻击。</li>
+</ul>
+<h2>循声守卫的远程攻击</h2>
+<ul>
+<li>搭建到高处、躲在墙后或处于其强力近战攻击范围之外，会导致循声守卫改用远程攻击<ul>
+<li>它们的胸腔会张开，发出能够穿透墙壁的音波充能远程攻击</li>
+</ul></li>
+</ul>
+<h1>22w15a 的更改</h1>
+<ul>
+<li>为“我们从哪儿来？”进度添加了黑暗效果</li>
+<li>悦灵现在每秒自然恢复 2 点生命值</li>
+<li>主菜单背景现在显示荒野更新全景图</li>
+<li>泥巴现在会在红树林沼泽中从地表一直生成到石头层</li>
+<li>在红树林沼泽中，高红树比矮红树常见得多</li>
+<li>红树根顶部会生成苔藓地毯</li>
+<li>流浪商人现在有时会出售红树胎生苗</li>
+<li>之前对音符盒的更改（只有羊毛和羊毛地毯会阻挡声音）已被还原</li>
+<li>循声守卫现在可以从更远的地方嗅探到你</li>
+<li>循声守卫在嗅探时对目标生气的垂直范围现在为 20 格，而不是 6 格</li>
+</ul>
+<h2>振动相关的更改</h2>
+<ul>
+<li>地毯现在会像羊毛块一样，削弱因放置、破坏或作为物品掉落所产生的振动</li>
+<li>地毯现在也会削弱在其上跑动和跳跃所产生的振动</li>
+</ul>
+<h1>22w15a 的技术性更改</h1>
+<ul>
+<li>移除了 <code>item_delivered_to_player</code> 进度触发器</li>
+<li>添加了 <code>thrown_item_picked_up_by_player</code> 进度触发器</li>
+</ul>
+<p>- 添加了 <code>avoid_vibration</code> 进度触发器</p>
+<ul>
+<li>添加了 <code>sonic_explosion</code> 粒子</li>
+</ul>
+<h2>进度</h2>
+<h3>新触发器</h3>
+<h4><code>thrown_item_picked_up_by_player</code></h4>
+<ul>
+<li>当玩家拾起由实体抛出的物品时触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 拾起物品的玩家的谓词</li>
+<li><code>entity</code> - 抛出物品的实体的谓词</li>
+<li><code>item</code> - 该物品的谓词</li>
+</ul></li>
+</ul>
+<h4><code>avoid_vibration</code></h4>
+<ul>
+<li>当振动事件因源玩家按住潜行键而被忽略时触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 运行此触发器的玩家</li>
+</ul></li>
+</ul>
+<h2>游戏事件</h2>
+<ul>
+<li>将游戏事件标签 <code>ignore_vibrations_on_occluding_block</code> 重命名为 <code>dampenable_vibrations</code></li>
+<li>添加了方块标签 <code>dampens_vibrations</code>，用于表示放置、破坏或踩踏时不会触发振动的方块</li>
+<li>也将物品标签 <code>occludes_vibration_signals</code> 重命名为 <code>dampens_vibrations</code> 物品标签</li>
+</ul>
+<h1>22w15a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-36783" target="_blank" rel="noopener noreferrer">MC-36783</a>  物品展示框/荧光物品展示框在包含地图时不会改变其碰撞箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147686" target="_blank" rel="noopener noreferrer">MC-147686</a>  加入使用自定义资源的世界时，在完全加载前会显示默认资源</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183520" target="_blank" rel="noopener noreferrer">MC-183520</a>  带有 NoAI 的幻翼可以穿过方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212610" target="_blank" rel="noopener noreferrer">MC-212610</a>  荧光地衣不能放在灵魂沙上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212629" target="_blank" rel="noopener noreferrer">MC-212629</a>  两个或多个隐形实体的拴绳会相互连接</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216567" target="_blank" rel="noopener noreferrer">MC-216567</a>  藤蔓不能放在 8 层雪的侧面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216569" target="_blank" rel="noopener noreferrer">MC-216569</a>  荧光地衣不能放在 8 层雪的侧面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219642" target="_blank" rel="noopener noreferrer">MC-219642</a>  藤蔓不能放在灵魂沙的侧面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231458" target="_blank" rel="noopener noreferrer">MC-231458</a>  “Serious Dedication”进度描述中的“ingot”一词大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235035" target="_blank" rel="noopener noreferrer">MC-235035</a>  在“natural”设为 false 的自定义维度中睡觉会导致崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237924" target="_blank" rel="noopener noreferrer">MC-237924</a>  “Star Trader”进度描述中的“villager”一词大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249072" target="_blank" rel="noopener noreferrer">MC-249072</a>  幽匿尖啸体会替换水方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249087" target="_blank" rel="noopener noreferrer">MC-249087</a>  当实心方块放置在红树根旁边时，红树根的内部纹理变暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249094" target="_blank" rel="noopener noreferrer">MC-249094</a>  幽匿尖啸体内部面意外被剔除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249111" target="_blank" rel="noopener noreferrer">MC-249111</a>  sculk_charge 无法在 /particle 命令中使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249208" target="_blank" rel="noopener noreferrer">MC-249208</a>  藤蔓、荧光地衣和幽匿脉络不能放在泥巴的侧面或顶面上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249315" target="_blank" rel="noopener noreferrer">MC-249315</a>  红树根不能堆肥</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249347" target="_blank" rel="noopener noreferrer">MC-249347</a>  红树告示牌和红树墙挂告示牌的地图颜色不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249423" target="_blank" rel="noopener noreferrer">MC-249423</a>  即使无法进入船中，不按 Shift 也无法打开箱子船</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249445" target="_blank" rel="noopener noreferrer">MC-249445</a>  激活的幽匿尖啸体被破坏时无法召唤循声守卫</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249488" target="_blank" rel="noopener noreferrer">MC-249488</a>  “黑暗脉冲”选项不会被保存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249495" target="_blank" rel="noopener noreferrer">MC-249495</a>  船物品贴图中的阴影不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a>  循声守卫在远处时会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249688" target="_blank" rel="noopener noreferrer">MC-249688</a>  在“建筑方块”选项卡中，红树楼梯排在下界木楼梯后面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249737" target="_blank" rel="noopener noreferrer">MC-249737</a>  悦灵可以被 {NoAI:1b} 推动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249741" target="_blank" rel="noopener noreferrer">MC-249741</a>  新进度的名称大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249785" target="_blank" rel="noopener noreferrer">MC-249785</a>  循声守卫在钻出和钻入时可以被推动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249917" target="_blank" rel="noopener noreferrer">MC-249917</a>  红树不会用根替换某些方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249923" target="_blank" rel="noopener noreferrer">MC-249923</a>  恢复指南针在创造模式物品栏中不会与普通指南针排在一起</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249927" target="_blank" rel="noopener noreferrer">MC-249927</a>  可以对磁石使用恢复指南针</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249931" target="_blank" rel="noopener noreferrer">MC-249931</a>  使用骨粉催熟红树会产生幽灵方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249933" target="_blank" rel="noopener noreferrer">MC-249933</a>  发生了与青蛙相关的游戏崩溃（从多个线程访问 LegacyRandomSource）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249934" target="_blank" rel="noopener noreferrer">MC-249934</a>  红树根在水中生成时，有时不会生成含水状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249936" target="_blank" rel="noopener noreferrer">MC-249936</a>  洞穴雕刻器不会切穿泥巴</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249938" target="_blank" rel="noopener noreferrer">MC-249938</a>  使用精准采集工具开采红树树叶不会掉落红树树叶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249942" target="_blank" rel="noopener noreferrer">MC-249942</a>  含水的红树胎生苗生长后水被移除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249947" target="_blank" rel="noopener noreferrer">MC-249947</a>  幽匿尖啸体模型的顶部在垂直方向被压扁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249966" target="_blank" rel="noopener noreferrer">MC-249966</a>  循声守卫会忘记刚刚对它吼叫的目标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249968" target="_blank" rel="noopener noreferrer">MC-249968</a>  给信标供电会使玩家与服务器断开连接</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249977" target="_blank" rel="noopener noreferrer">MC-249977</a>  升级 1.18.2 世界时会出现生硬的区块边界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249979" target="_blank" rel="noopener noreferrer">MC-249979</a>  红树树苗在水下生长时，红树根有可能不处于含水状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249980" target="_blank" rel="noopener noreferrer">MC-249980</a>  “Birthday Song”进度描述的大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249984" target="_blank" rel="noopener noreferrer">MC-249984</a>  在 allay_deliver_cake_to_noteblock 进度中，note_block 的拼写不一致，写成了 noteblock</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250017" target="_blank" rel="noopener noreferrer">MC-250017</a>  需要 UUID 启动参数</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250025" target="_blank" rel="noopener noreferrer">MC-250025</a>  “You Got a Friend in Me”进度错误地使用了过去时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250099" target="_blank" rel="noopener noreferrer">MC-250099</a>  红树原木和红树木板不会在奖励箱中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250101" target="_blank" rel="noopener noreferrer">MC-250101</a>  不能将甘蔗种在泥巴上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250103" target="_blank" rel="noopener noreferrer">MC-250103</a>  不能将竹子种在泥巴上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250104" target="_blank" rel="noopener noreferrer">MC-250104</a>  不能将大型垂滴叶种在泥巴上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250106" target="_blank" rel="noopener noreferrer">MC-250106</a>  主世界植被不能放在沾泥的红树根上</li>
+</ul>

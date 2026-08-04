@@ -1,0 +1,44 @@
+<p>It's time for a musical snapshot! We're now introducing new music for Caves &#x26; Cliffs: Part II. This time around we have a bunch of new tracks composed by the talented Lena Raine and Kumi Tanioka. These tracks are also available on <a href="https://open.spotify.com/album/7yQIrNTf3pBu0FdyAJqTqb?si=CC31NZyIQrOl-MNVCNYYkQ" target="_blank" rel="noopener noreferrer">Spotify</a> for you to listen to, and they will soon be available on other services such as Apple Music and YouTube as well.</p>
+<p>This snapshot also includes a few additional tweaks, bug fixes, and performance improvements.</p>
+<p><strong>We still highly recommend backing up your world before loading it in this snapshot.</strong></p>
+<h1>New Features in 21w42a</h1>
+<ul>
+<li>New music has been added to the game</li>
+<li>Added world autosave indicator for single-player worlds</li>
+</ul>
+<h2>Music</h2>
+<ul>
+<li>Added new music by Lena Raine and Kumi Tanioka to the Overworld (when playing in survival mode) and the main menu</li>
+<li>Added a new music disc from Lena Raine titled 'otherside'. This can be found rarely in Stronghold corridor chests or much more rarely in Dungeon chests.</li>
+</ul>
+<h1>Changes in 21w42a</h1>
+<ul>
+<li>World spawn selection algorithm has been reworked, now spawns player according to climate parameters</li>
+<li>World generation tweaks</li>
+</ul>
+<h2>World Generation</h2>
+<ul>
+<li>Lava springs can generate in mountains and snowy terrain</li>
+<li>Water springs don't generate higher than y 192, and are slightly less common</li>
+<li>Badlands gold generates higher up</li>
+</ul>
+<h1>Technical Changes in 21w42a</h1>
+<ul>
+<li>Replaced <code>light</code> and <code>barrier</code> particles with <code>block_marker</code></li>
+</ul>
+<h2>Particles</h2>
+<h3><code>block_marker</code></h3>
+<ul>
+<li>Renders with texture declared in <code>particle</code> slot for model assigned to configured block state</li>
+<li>Summoned with same syntax as <code>block</code> particle (i.e. <code>block_marker wheat[age=2]</code>)</li>
+</ul>
+<h1>Bugs fixed in 21w42a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-129912" target="_blank" rel="noopener noreferrer">MC-129912</a> Player no longer spawned at highest level at world spawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132347" target="_blank" rel="noopener noreferrer">MC-132347</a> Spawning inside icebergs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214288" target="_blank" rel="noopener noreferrer">MC-214288</a> Player does not spawn on the surface of the world when min_y is greater than 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233771" target="_blank" rel="noopener noreferrer">MC-233771</a> Parity issue: Light blocks do not display their light level when shown via a held light block item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236837" target="_blank" rel="noopener noreferrer">MC-236837</a> The player can occasionally spawn underground when loading into a new world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238582" target="_blank" rel="noopener noreferrer">MC-238582</a> Beaches generate between desert and ocean</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238900" target="_blank" rel="noopener noreferrer">MC-238900</a> Values of 'Infinity' in noise settings in default worldgen</li>
+</ul>

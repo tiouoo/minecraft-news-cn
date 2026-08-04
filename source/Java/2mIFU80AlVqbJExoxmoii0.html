@@ -1,0 +1,41 @@
+<p>Today we're releasing Snapshot 20w29a for Minecraft Java Edition. We found some bugs to squash, but also snuck in a technical change or two!</p>
+<h1>Changes in 20w29a</h1>
+<ul>
+<li>Tools are now sorted based on material in the creative inventory</li>
+</ul>
+<h1>Technical Changes in 20w29a</h1>
+<h2>Commands</h2>
+<h3>spawnpoint &#x26; setworldspawn</h3>
+<p>Added angle parameter for setting the default facing angle of a respawning player.<br>
+Syntax: <code>spawnpoint [targets] [pos] [angle]</code><br>
+Syntax: <code>setworldspawn [pos] [angle]</code>
+New parameters:</p>
+<ul>
+<li><code>angle</code>: Floating point angle in degrees. Supports the relative <code>~</code> modifier</li>
+</ul>
+<h2>Customized world generation</h2>
+<ul>
+<li><code>worldgen/noise_settings</code> can now contain noise configurations</li>
+</ul>
+<h1>Fixed bugs in 20w29a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-194464" target="_blank" rel="noopener noreferrer">MC-194464</a> "large_oak_foliage_placer" incorrectly serializes to "blob_foliage_placer"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194298" target="_blank" rel="noopener noreferrer">MC-194298</a> Bone meal can't create flowers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194257" target="_blank" rel="noopener noreferrer">MC-194257</a> Several instances of "snowy" being spelled as "snovy" in the vanilla_worldgen configuration</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194220" target="_blank" rel="noopener noreferrer">MC-194220</a> Totems of Undying give you Fire Resistance II instead of the maximum Fire Resistance I</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194200" target="_blank" rel="noopener noreferrer">MC-194200</a> Birch trees are not generated correctly in the Birch Forest and Birch Forest Hills biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194173" target="_blank" rel="noopener noreferrer">MC-194173</a> Hitboxes are rendered offset while picking up items or experience on graphics settings Fast and Fancy</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193662" target="_blank" rel="noopener noreferrer">MC-193662</a> Player flying in creative slightly above blocks while sneaking and jumping are restrained to that block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193560" target="_blank" rel="noopener noreferrer">MC-193560</a> Enchantment glint doesn't render on elytra in specific circumstances</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192021" target="_blank" rel="noopener noreferrer">MC-192021</a> Enchantment Glint effect on transparent blocks not properly rendered on Fabulous graphic</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191623" target="_blank" rel="noopener noreferrer">MC-191623</a> Ender dragon battle music does not stop after ender dragon has been defeated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191031" target="_blank" rel="noopener noreferrer">MC-191031</a> Players in spectator mode can interact with boats</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190559" target="_blank" rel="noopener noreferrer">MC-190559</a> Baby striders don't die when it's raining and they are in lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189788" target="_blank" rel="noopener noreferrer">MC-189788</a> Certain mobs in boats sometimes take drowning damage while the boat is moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185019" target="_blank" rel="noopener noreferrer">MC-185019</a> Worldgen settings with empty structures parameter generates all structures extremely frequent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176836" target="_blank" rel="noopener noreferrer">MC-176836</a> Unarmed vindicators raise their arm in offensive way when attacking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176778" target="_blank" rel="noopener noreferrer">MC-176778</a> Camera is reset when a block reappears due to high server latency</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166718" target="_blank" rel="noopener noreferrer">MC-166718</a> Mobs no longer suffocate inside of soul sand, farmland or grass paths</li>
+<li><a href="https://bugs.mojang.com/browse/MC-158735" target="_blank" rel="noopener noreferrer">MC-158735</a> Pillagers without crossbows hold their arm up, in a way that may be offensive to some people</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153230" target="_blank" rel="noopener noreferrer">MC-153230</a> Players in spectator mode can stop minecarts</li>
+</ul>

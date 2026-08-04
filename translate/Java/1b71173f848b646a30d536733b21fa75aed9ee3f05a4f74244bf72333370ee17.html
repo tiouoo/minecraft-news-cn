@@ -1,0 +1,632 @@
+<p>本来是快照周二——好吧，是周四啦各位！今天我们开启全新一轮快照系列，同时带来即将上线的版本更新《混乱坐骑》的首批新内容。持长矛奔赴战场，这是拥有专属附魔的全新武器。骑鹦鹉螺遨游海洋，或是收服亡灵坐骑——僵尸马与僵尸鹦鹉螺，成为你的代步伙伴。伴随着这些新特性一同到来的还有改版视频设置界面，内置实用的全新图像预设；新增秒表指令用于记录真实时间。惯例依旧，本次更新同时包含漏洞修复与技术性改动。</p>
+<p>挖矿愉快！</p>
+<h1>新特性</h1>
+<ul>
+<li>新增生物：鹦鹉螺、僵尸鹦鹉螺</li>
+<li>新增装备：鹦鹉螺盔甲</li>
+<li>新增武器：长矛</li>
+<li>更新进度系统，加入鹦鹉螺、僵尸鹦鹉螺与僵尸马相关进度</li>
+</ul>
+<h2>鹦鹉螺</h2>
+<ul>
+<li>鹦鹉螺是全新中立水生生物</li>
+<li>生成于所有海洋生物群系</li>
+<li>受到挑衅时会使用冲刺攻击</li>
+<li>会主动对范围内的河豚发动冲刺攻击</li>
+<li>拥有类似骆驼的冲刺技能，按下跳跃键释放</li>
+<li>在陆地上会受到窒息伤害</li>
+<li>骑乘鹦鹉螺的玩家会获得「鹦鹉螺之息」效果</li>
+<li>可以使用河豚或河豚桶驯服、繁殖鹦鹉螺</li>
+<li>驯服后的鹦鹉螺：
+<ul>
+<li>装上鞍之后可以骑乘</li>
+<li>装备鞍：游荡范围限制16格</li>
+<li>未装备鞍：游荡范围限制32格</li>
+</ul>
+</li>
+</ul>
+<h3>僵尸鹦鹉螺</h3>
+<ul>
+<li>僵尸鹦鹉螺是全新水下生物，生成时通常搭载手持三叉戟的溺尸骑手</li>
+<li>仅当搭载敌对生物骑手时，僵尸鹦鹉螺才具备攻击性</li>
+<li>行为模式与普通鹦鹉螺相近，但无法繁殖</li>
+</ul>
+<h2>鹦鹉螺盔甲</h2>
+<ul>
+<li>可穿戴在鹦鹉螺与僵尸鹦鹉螺身上</li>
+<li>共有铜制、金制、铁制、钻石制、下界合金制五种版本</li>
+</ul>
+<h2>长矛武器</h2>
+<ul>
+<li>全新武器，拥有木质、石质、铜制、铁制、金制、钻石制、下界合金制版本</li>
+<li>不同材质拥有不同攻击节奏，影响使用速度</li>
+<li>存在最低攻击距离，距离目标过近无法造成伤害</li>
+<li>最大攻击距离长于其他工具与武器</li>
+<li>拥有两种攻击方式：突刺与蓄力冲锋</li>
+<li>僵尸、尸壳、僵尸猪灵、猪灵生成时有可能手持长矛</li>
+</ul>
+<h3>突刺攻击</h3>
+<ul>
+<li>快速按下左键触发</li>
+<li>伤害较低，附带击退效果</li>
+<li>攻击存在冷却时间</li>
+<li>木质长矛冷却最短，下界合金长矛冷却最长</li>
+<li>可以同时击中多个目标</li>
+<li>无法破坏方块</li>
+</ul>
+<h3>蓄力冲锋攻击</h3>
+<ul>
+<li>长按右键蓄力释放</li>
+<li>伤害取决于长矛材质、玩家视角角度、玩家与目标双方移动速度</li>
+<li>长按期间攻击分为三个阶段，结束后恢复待机状态：
+<ul>
+<li>就绪阶段：满足速度阈值时，可以造成伤害、击退，并且击落目标坐骑</li>
+<li>乏力阶段：长矛竖直并抖动。满足速度阈值可造成伤害与击退，但无法击落坐骑</li>
+<li>脱力阶段：长矛向下低垂。满足速度阈值仅造成伤害，无击退、无法击落坐骑</li>
+</ul>
+</li>
+<li>生物使用长矛时攻击距离为玩家的一半，但达成伤害、击退、击落坐骑所需的速度阈值更低</li>
+<li>僵尸、尸壳、僵尸猪灵掌握长矛蓄力冲锋的攻击方式</li>
+</ul>
+<h3>突进附魔</h3>
+<ul>
+<li>长矛专属附魔</li>
+<li>仅对突刺攻击生效</li>
+<li>使用带有突进附魔的长矛突刺时，会将玩家朝视线方向水平推送</li>
+<li>视线保持完全水平时，可以达到最远突进距离</li>
+<li>该附魔会大幅消耗长矛耐久</li>
+</ul>
+<h2>进度</h2>
+<ul>
+<li>更新进度「此地何来？」，纳入「鹦鹉螺之息」效果</li>
+<li>更新进度「永远的好朋友」，加入鹦鹉螺、僵尸鹦鹉螺、僵尸马</li>
+<li>更新进度「鹦鹉与蝙蝠」，加入鹦鹉螺</li>
+<li>更新进度「成双成对」，加入鹦鹉螺</li>
+<li>更新进度「怪物猎人」，加入僵尸鹦鹉螺</li>
+<li>更新进度「不值一提的玩笑」「瞄准目标」「四处传播」，加入鹦鹉螺与僵尸鹦鹉螺</li>
+</ul>
+<h1>改动内容</h1>
+<ul>
+<li>僵尸、尸壳、猪灵、僵尸猪灵现在可以手持长矛</li>
+<li>猪灵将黄金长矛视作喜爱的物品</li>
+<li>物品耐久变化时（攻击损耗、经验修补修复）不再上下浮动摆动</li>
+<li>调试渲染器多项调整</li>
+<li>原「快速」「精美」「极致！」图像模式替换为同名图像预设方案</li>
+<li>服务器内所有玩家看到的云朵移动速度保持一致</li>
+<li>下界合金胸甲护甲值由11提升至19</li>
+<li>视频设置开启各向异性过滤后，世界内所有方块启用mipmap
+<ul>
+<li>藤蔓、铁轨、各类植被（树叶除外）等原先不支持mipmap的方块，远距离观感提升</li>
+<li>大部分玩家客户端帧率预计有所上涨</li>
+</ul>
+</li>
+</ul>
+<h2>僵尸马</h2>
+<ul>
+<li>僵尸马现在可以自然生成</li>
+<li>僵尸马生成于暗处，和其他亡灵生物一样在阳光下燃烧</li>
+<li>计入敌对生物上限，与其他怪物一同生成</li>
+<li>僵尸马本身不会主动攻击玩家，攻击性仅来源于骑手</li>
+<li>未驯服的僵尸马会像其他敌对生物一样自然消失</li>
+<li>驯服后的僵尸马永久存在，不会消失</li>
+<li>驯服方式与普通马匹一致，驯服后可供玩家骑乘操控</li>
+<li>可以使用红蘑菇喂食、引诱僵尸马</li>
+<li>驯服僵尸马可装备鞍与马铠</li>
+<li>马铠能够保护僵尸马免受日光灼烧伤害</li>
+<li>僵尸马拥有25点生命值（12.5颗心）</li>
+<li>移动速度与跳跃高度在生成时随机确定</li>
+<li>击杀掉落2–3腐肉，掠夺每提升一级额外掉落0–1个</li>
+<li>骑着僵尸马的僵尸死亡时有概率掉落红蘑菇</li>
+</ul>
+<h2>生物生成</h2>
+<ul>
+<li>平原、稀树草原生物群系有概率生成搭载骑手、手持铁长矛的僵尸马</li>
+</ul>
+<h2>世界生成</h2>
+<ul>
+<li>各类战利品宝箱新增长矛生成：
+<ul>
+<li>埋藏的宝藏宝箱：铁长矛</li>
+<li>村庄武器匠宝箱：铜长矛、铁长矛</li>
+<li>海洋废墟宝箱：石长矛</li>
+<li>堡垒遗迹、末地城宝箱：钻石长矛</li>
+</ul>
+</li>
+<li>铜、铁、金、钻石鹦鹉螺盔甲可在以下结构宝箱中生成：
+<ul>
+<li>埋藏的宝藏</li>
+<li>海洋废墟</li>
+<li>沉船</li>
+</ul>
+</li>
+</ul>
+<h2>状态效果</h2>
+<ul>
+<li>新增效果 <code>鹦鹉螺之息</code>
+<ul>
+<li>作用于骑乘鹦鹉螺的玩家</li>
+<li>暂停氧气消耗（不会恢复氧气）</li>
+</ul>
+</li>
+</ul>
+<h2>音效</h2>
+<ul>
+<li>铁砧放置、落地、破坏、使用音效音量略微降低</li>
+</ul>
+<h2>无障碍功能</h2>
+<ul>
+<li>调试功能快捷键现在支持自定义按键
+<ul>
+<li>按键设置界面新增独立「调试」分类</li>
+</ul>
+<li>调试修饰键可以与调试界面切换键分开绑定</li>
+<li>GUI开关按键支持重新绑定</li>
+<li>旁观模式着色器切换按键（例如旁观末影人时）支持重新绑定</li>
+</ul>
+<h2>输入设置</h2>
+<p>Mac系统部分原本使用 <code>cmd</code> 的快捷键调整为 <code>ctrl</code>：</p>
+<ul>
+<li>一次性丢弃全部物品的修饰键</li>
+<li>拾取方块时复制全部NBT数据的修饰键</li>
+<li>视频设置界面调整GUI缩放的修饰键</li>
+<li>阻止配方书循环切换同类物品变体</li>
+</ul>
+<h2>调试渲染器改动</h2>
+<ul>
+<li>提示：调试渲染器不属于正式支持功能，仅用于开发调试</li>
+<li>调试设置界面开放更多调试渲染器选项</li>
+<li>优化现有渲染器效果</li>
+<li>大幅提升调试渲染器运行性能</li>
+</ul>
+<h2>图像预设</h2>
+<ul>
+<li>视频设置界面重新整理布局，分为「显示」「画质与性能」「界面」三大板块</li>
+<li>移除视频设置中和无障碍设置重复的选项：
+<ul>
+<li>视角晃动</li>
+<li>附魔光泽速度</li>
+<li>附魔光泽强度</li>
+<li>视野缩放效果</li>
+<li>扭曲效果</li>
+</ul>
+</li>
+<li>原先被图像模式隐藏的选项独立开放配置：
+<ul>
+<li>透视树叶</li>
+<li>显示暗角</li>
+<li>天气效果范围：控制雨雪可视距离（单位：格）</li>
+<li>增强透明渲染：解决部分透明几何体渲染问题，GPU开销较高，原先仅在「极致！」模式可用</li>
+</ul>
+</li>
+<li>「画质与性能」板块顶部新增「预设」滑动条
+<ul>
+<li>遵循行业标准，一键批量调整大部分画质选项，不止局限于旧图像模式控制项</li>
+<li>可选预设：快速、精美、极致！、自定义</li>
+<li>新玩家默认预设为「精美」</li>
+<li>旧版本存档升级至该快照时自动设为「自定义」，保留原有设置</li>
+</ul>
+</li>
+</ul>
+<h2>界面UI</h2>
+<ul>
+<li>鼠标拖动滑块松开时，自动吸附至最近有效档位</li>
+<li>键盘方向键调整滑块时，直接跳转至下一可用档位，不再逐像素移动</li>
+<li>调试选项界面 <code>inF3</code> 按钮重命名为 <code>inOverlay</code></li>
+</ul>
+<h1>技术性改动</h1>
+<ul>
+<li>数据包版本：89.0</li>
+<li>资源包版本：70.0</li>
+<li>服务器管理协议版本：1.1.0</li>
+<li>新增 ClientFps JFR性能事件</li>
+<li>不再向客户端发送不会改变玩家等级与经验进度的经验数据包</li>
+</ul>
+<h2>服务器管理协议 1.1.0</h2>
+<ul>
+<li>新增通知类型 <code>server/activity</code>
+<ul>
+<li>代表一条新的服务器网络连接建立</li>
+<li>限流：每30秒最多推送1条通知</li>
+</ul>
+</li>
+</ul>
+<h1>数据包版本 89.0</h1>
+<ul>
+<li>新增 <code>stopwatch</code> 指令，用于记录真实世界时间</li>
+</ul>
+<h2>指令</h2>
+<h3>新增指令 <code>stopwatch</code></h3>
+<ul>
+<li>可创建秒表，追踪现实流逝时间</li>
+<li>秒表计时不依赖游戏刻</li>
+<li>仅在服务器/世界运行时计时（世界暂停时依旧计时）</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li><code>stopwatch &lt;命名空间ID> create</code> — 创建指定ID的秒表</li>
+<li><code>stopwatch &lt;命名空间ID> query</code> — 在聊天栏输出该秒表累计秒数</li>
+<li><code>stopwatch &lt;命名空间ID> restart</code> — 重置秒表计时</li>
+<li><code>stopwatch &lt;命名空间ID> remove</code> — 删除秒表</li>
+</ul>
+<blockquote>
+<p><strong>开发注释</strong>：新增此指令是为了替代利用世界边界计时的方案。未来快照中世界边界逻辑将改为基于游戏刻运行。如果你此前依靠世界边界测算真实时间，请迁移至本指令，遇到问题欢迎反馈。感谢大家！</p>
+</blockquote>
+<h3><code>execute</code> 指令</h3>
+<ul>
+<li>新增语法 <code>/execute if|unless stopwatch &lt;id> &lt;区间></code></li>
+<li>支持对比指定秒表耗时与浮点区间
+<ul>
+<li>计时单位为秒，精度最高1毫秒</li>
+<li>示例：<code>/execute if stopwatch foo:bar ..10 run say 秒表foo:bar尚未达到10秒</code></li>
+</ul>
+</li>
+</ul>
+<h2>物品组件</h2>
+<h3>新增 <code>minecraft:use_effects</code></h3>
+<ul>
+<li>控制玩家手持物品右键使用时的移动行为</li>
+<li>格式为对象，字段：
+<ul>
+<li><code>can_sprint</code>：布尔值，使用物品时能否奔跑。默认 <code>false</code></li>
+<li><code>speed_multiplier</code>：浮点数(0~1)，使用物品时移速倍率。默认 <code>0.2</code></li>
+<li>示例：<code>use_effects={can_sprint:true,speed_multiplier:1.0}</code></li>
+</ul>
+</li>
+</ul>
+<h3>新增 <code>minecraft:minimum_attack_charge</code></h3>
+<ul>
+<li>设置发动攻击所需最低蓄力进度（攻击指示器）</li>
+<li>浮点 0.0~1.0
+<ul>
+<li>0.0：无需蓄力</li>
+<li>1.0：必须蓄满</li>
+</ul>
+</li>
+</ul>
+<h3>新增 <code>minecraft:damage_type</code></h3>
+<ul>
+<li>指定该物品造成伤害的类型</li>
+<li>字符串，伤害类型标识符
+<ul>
+<li>示例：<code>damage_type='minecraft:spear'</code></li>
+</ul>
+</li>
+</ul>
+<h3>新增 <code>minecraft:kinetic_weapon</code></h3>
+<ul>
+<li>启用蓄力型攻击（主要供长矛使用），持续使用时每刻沿射线判定伤害，伤害基于双方相对速度</li>
+<li>对象字段：
+<ul>
+<li><code>min_reach</code>：最小攻击距离（格），默认0.0</li>
+<li><code>max_reach</code>：最大攻击距离（格），默认3.0</li>
+<li><code>hitbox_margin</code>：碰撞盒判定余量，默认0.3</li>
+<li><code>delay_ticks</code>：生效前等待刻数，默认0</li>
+<li><code>dismount_conditions</code>、<code>knockback_conditions</code>、<code>damage_conditions</code>：分别控制触发击落坐骑、击退、伤害的条件，内含：
+<ul>
+<li><code>max_duration_ticks</code>：延迟结束后条件持续有效最大刻数</li>
+<li><code>min_speed</code>：攻击者沿视线方向最低速度（格/秒），可选，默认0.0</li>
+<li><code>min_relative_speed</code>：攻击者与目标沿视线方向最低相对速度（格/秒），可选，默认0.0</li>
+</ul>
+</li>
+<li><code>forward_movement</code>：动画中武器向前伸出距离，默认0.0</li>
+<li><code>damage_multiplier</code>：相对速度伤害倍率，默认1.0</li>
+<li><code>sound</code>：武器就绪时可选音效</li>
+<li><code>hit_sound</code>：命中实体可选音效</li>
+<li>示例：<code>kinetic_weapon={max_reach:5.0,forward_movement:1.0,delay_ticks:20,damage_conditions:{max_duration:60},knockback_conditions:{max_duration:40},dismount_conditions:{max_duration:20}}</code></li>
+</ul>
+<li>伤害计算公式：<code>floor(相对速度 × 速度倍率)</code>，相对速度为双方速度向量在玩家视线轴上投影差值；附魔与属性加成在该计算之后叠加</li>
+</ul>
+<h3>新增 <code>minecraft:piercing_weapon</code></h3>
+<ul>
+<li>启用快速穿刺攻击，射线击中多个实体（长矛突刺专用）</li>
+<li>对象字段：
+<ul>
+<li><code>min_reach</code>、<code>max_reach</code>、<code>hitbox_margin</code> 同 kinetic_weapon</li>
+<li><code>deals_knockback</code>：是否造成击退，默认true</li>
+<li><code>dismounts</code>：是否击落目标坐骑，默认false</li>
+<li><code>sound</code>：玩家攻击音效（可选）</li>
+<li><code>hit_sound</code>：命中实体音效（可选）</li>
+<li>示例：<code>piercing_weapon={min_reach:0,max_reach:4,dismounts:true}</code></li>
+</ul>
+</li>
+</ul>
+<h3>新增 <code>minecraft:swing_animation</code></h3>
+<ul>
+<li>指定攻击/交互时播放的挥动动画</li>
+<li>对象字段：
+<ul>
+<li><code>type</code>：动画ID，可选 <code>none</code>、<code>whack</code>、<code>stab</code>，默认 <code>whack</code></li>
+<li><code>duration</code>：动画持续刻数，默认6</li>
+<li>示例：<code>swing_animation={type:'stab',duration:20}</code></li>
+</ul>
+</li>
+</ul>
+<h3><code>minecraft:consumable</code> 改动</h3>
+<ul>
+<li><code>animation</code> 字段更新：
+<ul>
+<li>原 <code>spear</code> 重命名为 <code>trident</code></li>
+<li>新增 <code>spear</code> 动画类型</li>
+</ul>
+</li>
+</ul>
+<h3><code>minecraft:intangible_projectile</code> 改动</h3>
+<ul>
+<li>拥有该组件的物品，提示栏会显示相关信息</li>
+</ul>
+<h2>实体数据</h2>
+<ul>
+<li><code>AngryAt</code> 字段重命名为 <code>angry_at</code></li>
+<li>移除 <code>AngerTime</code> 字段</li>
+<li>新增长整型字段 <code>anger_end_time</code>，存储愤怒状态结束的游戏刻</li>
+</ul>
+<h2>伤害类型</h2>
+<ul>
+<li>新增伤害类型 <code>minecraft:spear</code></li>
+</ul>
+<h2>条件判定器</h2>
+<h3>组件判定器</h3>
+<ul>
+<li>方块、物品、实体判定器内的 <code>predicates</code> 支持检测任意组件是否存在</li>
+<li>格式写作 <code>{&lt;组件类型>: {}}</code>，只要组件存在即判定成功，不校验内部数值</li>
+<li>原有指定组件内容匹配语法保持不变</li>
+<li>示例：
+<ul>
+<li><code>{predicates:{written_book_content:{author:"foo"}}}</code> — 原有匹配成书作者写法</li>
+<li><code>{predicates:{written_book_content:{}}}</code> — 仅检测成书组件是否存在</li>
+<li><code>{predicates:{instrument:{}}}</code> — 检测乐器组件是否存在（旧版本不支持）</li>
+</ul>
+</li>
+</ul>
+<h3>实体判定器</h3>
+<p><code>flags</code> 判定新增选项：</p>
+<ul>
+<li><code>is_in_water</code>：实体接触水或气泡柱时成立</li>
+<li><code>is_fall_flying</code>：使用鞘翅滑翔时成立</li>
+</ul>
+<h3>物品判定器</h3>
+<ul>
+<li>指令物品筛选语法 <code>&lt;物品>[predicate~{...},component={...}]</code> 扩展支持任意组件空判定</li>
+<li>与数据包组件判定规则一致，空对象仅检测组件是否存在</li>
+<li>原有简写语法保留：<code>*[instrument]</code> 等价于 <code>*[instrument~{}]</code></li>
+</ul>
+<h2>附魔</h2>
+<h3>附魔效果组件</h3>
+<ul>
+<li><code>minecraft:post_piercing_attack</code>：穿刺攻击命中后触发的效果</li>
+</ul>
+<h3>附魔实体效果</h3>
+<ul>
+<li><code>minecraft:apply_impulse</code>：对目标施加推力
+<ul>
+<li><code>direction</code>：局部坐标向量（同 <code>tp ^ ^ ^</code>）叠加实体朝向</li>
+<li><code>coordinate_scale</code>：世界坐标三轴缩放系数</li>
+<li><code>magnitude</code>：推力倍率（等级函数）</li>
+</ul>
+</li>
+<li><code>minecraft:play_sound</code>：支持音效列表，按附魔等级依次选用；等级超过列表长度则使用最后一条音效</li>
+<li>新增 <code>exponent</code>：幂运算
+<ul>
+<li><code>base</code>：底数（等级函数）</li>
+<li><code>power</code>：指数（等级函数）</li>
+</ul>
+</li>
+</ul>
+<h2>标签</h2>
+<h3>方块标签</h3>
+<ul>
+<li>新增 <code>#can_glide_through</code>：可攀爬、鞘翅滑翔穿过不会终止飞行的方块</li>
+</ul>
+<h3>物品标签</h3>
+<ul>
+<li>新增 <code>#nautilus_taming_items</code>：驯服鹦鹉螺、僵尸鹦鹉螺可用物品</li>
+<li>新增 <code>#nautilus_bucket_food</code>：桶装鱼类，喂食驯服鹦鹉螺使用</li>
+<li>新增 <code>#nautilus_food</code>：所有可喂食驯服鹦鹉螺的物品</li>
+<li>新增 <code>#spears</code>：全部长矛武器</li>
+<li>新增 <code>#enchantable/lunge</code>：可附上突进附魔的物品</li>
+<li>新增 <code>#enchantable/melee_weapon</code>：全部近战武器，包含剑与长矛</li>
+<li><code>#enchantable/sword</code> 重命名为 <code>#enchantable/sweeping</code></li>
+</ul>
+<h3>实体标签</h3>
+<ul>
+<li>新增 <code>#can_wear_nautilus_armor</code>：能够穿戴鹦鹉螺盔甲的实体</li>
+<li>新增 <code>#nautilus_hostiles</code>：未驯服鹦鹉螺会主动攻击的实体</li>
+<li><code>#not_scary_for_pufferfish</code> 新增鹦鹉螺、僵尸鹦鹉螺</li>
+<li>新增 <code>#burn_in_daylight</code>：日光下自燃的实体</li>
+</ul>
+<h3>附魔标签</h3>
+<ul>
+<li>新增 <code>#lunge_exclusive</code>：与突进附魔互斥的附魔列表</li>
+</ul>
+<h1>资源包版本 70.0</h1>
+<ul>
+<li>Unifont 更新至 17.0.01</li>
+</ul>
+<h1>纹理相关</h1>
+<ul>
+<li><code>*.mcmeta</code> 的 texture 段新增布尔字段 <code>darkened_cutout_mipmap</code>，默认false
+<ul>
+<li>旧版本自带mipmap的方块（各类树叶、红树根）该字段设为true</li>
+<li>true时镂空纹理mipmap会自动压暗，还原旧版镂空方块效果；花朵、草、藤蔓、铁轨等不需要深色内部的镂空方块建议关闭</li>
+</ul>
+</li>
+<li>方块动画纹理仅0、1级mipmap参与动画</li>
+<li>玻璃与玻璃板支持半透明纹理</li>
+</ul>
+<h2>物品贴图</h2>
+<ul>
+<li>新增物品贴图：
+<ul>
+<li><code>item/nautilus_spawn_egg</code></li>
+<li><code>item/zombie_nautilus_spawn_egg</code></li>
+<li><code>item/copper_nautilus_armor</code></li>
+<li><code>item/iron_nautilus_armor</code></li>
+<li><code>item/golden_nautilus_armor</code></li>
+<li><code>item/diamond_nautilus_armor</code></li>
+<li><code>item/netherite_nautilus_armor</code></li>
+</ul>
+</li>
+<li>长矛贴图新增：
+<ul>
+<li>背包内贴图：<code>item/wooden_spear</code>、<code>item/stone_spear</code>、<code>item/copper_spear</code>、<code>item/iron_spear</code>、<code>item/golden_spear</code>、<code>item/diamond_spear</code>、<code>item/netherite_spear</code></li>
+<li>手持贴图：<code>item/wooden_spear_in_hand</code>、<code>item/stone_spear_in_hand</code>、<code>item/copper_spear_in_hand</code>、<code>item/iron_spear_in_hand</code>、<code>item/golden_spear_in_hand</code>、<code>item/diamond_spear_in_hand</code>、<code>item/netherite_spear_in_hand</code></li>
+</ul>
+</li>
+</ul>
+<h2>界面贴图</h2>
+<ul>
+<li>新增UI贴图：
+<ul>
+<li><code>container/slot/nautilus_armor</code></li>
+<li><code>container/slot/spear</code> — 锻造台长矛图标</li>
+</ul>
+</li>
+<li>新增九切片贴图：
+<ul>
+<li><code>container/inventory/effect_background</code></li>
+<li><code>container/inventory/effect_background_ambient</code></li>
+</ul>
+</li>
+<li>移除贴图：
+<ul>
+<li><code>container/inventory/effect_background_large</code></li>
+<li><code>container/inventory/effect_background_small</code></li>
+</ul>
+</li>
+</ul>
+<h2>天体图集</h2>
+<ul>
+<li>新增天体图集，统一存放天空渲染贴图（太阳、月亮等）</li>
+<li>加载路径：<code>&lt;命名空间>:textures/environment/celestial/&lt;路径>.png</code></li>
+<li>原有纹理迁移拆分：
+<ul>
+<li><code>textures/environment/sun.png</code> → <code>sun</code></li>
+<li><code>textures/environment/end_flash.png</code> → <code>end_flash</code></li>
+<li><code>textures/environment/moon_phases</code> → <code>moon/full_moon</code>、<code>moon/waning_gibbous</code>、<code>moon/third_quarter</code>、<code>moon/waning_crescent</code>、<code>moon/new_moon</code>、<code>moon/waxing_crescent</code>、<code>moon/first_quarter</code>、<code>moon/waxing_gibbous</code></li>
+</ul>
+</li>
+</ul>
+<h2>状态效果贴图</h2>
+<ul>
+<li>新增贴图：<code>breath_of_the_nautilus</code></li>
+</ul>
+<h2>实体纹理</h2>
+<ul>
+<li>新增实体纹理：
+<ul>
+<li><code>entity/nautilus/nautilus.png</code></li>
+<li><code>entity/nautilus/nautilus_baby.png</code></li>
+<li><code>entity/nautilus/zombie_nautilus.png</code></li>
+<li><code>entity/equipment/nautilus_body/copper.png</code></li>
+<li><code>entity/equipment/nautilus_body/iron.png</code></li>
+<li><code>entity/equipment/nautilus_body/gold.png</code></li>
+<li><code>entity/equipment/nautilus_body/diamond.png</code></li>
+<li><code>entity/equipment/nautilus_body/netherite.png</code></li>
+<li><code>entity/equipment/nautilus_saddle/saddle.png</code></li>
+</ul>
+</li>
+</ul>
+<h2>音效</h2>
+<ul>
+<li>长矛通用音效：
+<ul>
+<li><code>item.spear.hit</code></li>
+<li><code>item.spear.use</code></li>
+<li><code>item.spear.attack</code></li>
+</ul>
+</li>
+<li>木质长矛专属音效：
+<ul>
+<li><code>item.spear_wood.hit</code></li>
+<li><code>item.spear_wood.use</code></li>
+<li><code>item.spear_wood.attack</code></li>
+</ul>
+</li>
+<li>突进附魔音效：
+<ul>
+<li><code>item.spear.lunge_1</code></li>
+<li><code>item.spear.lunge_2</code></li>
+<li><code>item.spear.lunge_3</code></li>
+</ul>
+</li>
+<li>鹦鹉螺音效：
+<ul>
+<li><code>entity.baby_nautilus.ambient</code></li>
+<li><code>entity.baby_nautilus.death</code></li>
+<li><code>entity.baby_nautilus.eat</code></li>
+<li><code>entity.baby_nautilus.hurt</code></li>
+<li><code>entity.baby_nautilus.swim</code></li>
+<li><code>entity.nautilus.ambient</code></li>
+<li><code>entity.nautilus.death</code></li>
+<li><code>entity.nautilus.dash</code></li>
+<li><code>entity.nautilus.dash_ready</code></li>
+<li><code>entity.nautilus.eat</code></li>
+<li><code>entity.nautilus.hurt</code></li>
+<li><code>entity.nautilus.swim</code></li>
+<li><code>entity.zombie_nautilus.ambient</code></li>
+<li><code>entity.zombie_nautilus.death</code></li>
+<li><code>entity.zombie_nautilus.dash</code></li>
+<li><code>entity.zombie_nautilus.dash_ready</code></li>
+<li><code>entity.zombie_nautilus.eat</code></li>
+<li><code>entity.zombie_nautilus.hurt</code></li>
+<li><code>entity.zombie_nautilus.swim</code></li>
+<li><code>item.nautilus_armor.equip</code></li>
+<li><code>item.nautilus_armor.unequip</code></li>
+</ul>
+</li>
+<li>僵尸马新增音效：
+<ul>
+<li><code>entity.zombie_horse.angry</code></li>
+</ul>
+</li>
+</ul>
+<h2>物品模型</h2>
+<ul>
+<li>所有物品模型新增参数 <code>swap_animation_scale</code>
+<ul>
+<li>默认1.0</li>
+<li>控制快捷栏切换物品时上下浮动动画速度；较高数值可让大尺寸物品完整收起再切换</li>
+</ul>
+</li>
+<li>新增手持模型：<code>spear_in_hand</code></li>
+</ul>
+<h1>25w41a 修复漏洞列表</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-22882 rel="noopener noreferrer"target=_blank>MC-22882</a> Mac系统 Ctrl+Q 丢弃物品快捷键失效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-54989 rel="noopener noreferrer"target=_blank>MC-54989</a> 滑块可以拖动到非标准档位</li>
+<li><a href=https://bugs.mojang.com/browse/MC-80476 rel="noopener noreferrer"target=_blank>MC-80476</a> macOS「丢弃整组物品」快捷键与退出游戏冲突</li>
+<li><a href=https://bugs.mojang.com/browse/MC-114265 rel="noopener noreferrer"target=_blank>MC-114265</a> 透明纹理边缘mipmap过暗（例如草侧面）</li>
+<li><a href=https://bugs.mojang.com/browse/MC-146862 rel="noopener noreferrer"target=_blank>MC-146862</a> 过长状态效果名称文字超出效果框</li>
+<li><a href=https://bugs.mojang.com/browse/MC-147718 rel="noopener noreferrer"target=_blank>MC-147718</a> F1、F3及F3组合键无法重新绑定</li>
+<li><a href=https://bugs.mojang.com/browse/MC-159275 rel="noopener noreferrer"target=_blank>MC-159275</a> 下界地图玩家标记在关闭昼夜循环时不会旋转</li>
+<li><a href=https://bugs.mojang.com/browse/MC-162573 rel="noopener noreferrer"target=_blank>MC-162573</a> 远距离观察堆肥桶边缘出现白色轮廓</li>
+<li><a href=https://bugs.mojang.com/browse/MC-171688 rel="noopener noreferrer"target=_blank>MC-171688</a> 直接修改实体效果列表时，隐身状态不会同步更新</li>
+<li><a href=https://bugs.mojang.com/browse/MC-195505 rel="noopener noreferrer"target=_blank>MC-195505</a> 短草不受mipmap等级影响</li>
+<li><a href=https://bugs.mojang.com/browse/MC-234358 rel="noopener noreferrer"target=_blank>MC-234358</a> 远距离观察部分物体出现摩尔纹/锯齿失真</li>
+<li><a href=https://bugs.mojang.com/browse/MC-241862 rel="noopener noreferrer"target=_blank>MC-241862</a> 键盘调整滑块有时需要多次按键才能生效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-248499 rel="noopener noreferrer"target=_blank>MC-248499</a> 信标、潮涌核心提供的效果在背包界面没有青色边框</li>
+<li><a href=https://bugs.mojang.com/browse/MC-264151 rel="noopener noreferrer"target=_blank>MC-264151</a> 玻璃方块未启用mipmap，玻璃板却启用</li>
+<li><a href=https://bugs.mojang.com/browse/MC-267364 rel="noopener noreferrer"target=_blank>MC-267364</a> 空中传送会被服务器判定为飞行状态</li>
+<li><a href=https://bugs.mojang.com/browse/MC-271941 rel="noopener noreferrer"target=_blank>MC-271941</a> 音乐唱片弹出唱片机时偶尔直接生成在唱片内部</li>
+<li><a href=https://bugs.mojang.com/browse/MC-276445 rel="noopener noreferrer"target=_blank>MC-276445</a> 铁砧、创造物品栏选中文字高亮为蓝色，可读性差</li>
+<li><a href=https://bugs.mojang.com/browse/MC-278742 rel="noopener noreferrer"target=_blank>MC-278742</a> 无法使用指令让鸣啸生物作为坐骑</li>
+<li><a href=https://bugs.mojang.com/browse/MC-279076 rel="noopener noreferrer"target=_blank>MC-279076</point> 区块重载后部分怪物无视距离、游戏模式重新锁定玩家为目标</li>
+<li><a href=https://bugs.mojang.com/browse/MC-295949 rel="noopener noreferrer"target=_blank>MC-295949</a> 鞘翅穿过藤蔓会中断滑翔</li>
+<li><a href=https://bugs.mojang.com/browse/MC-296952 rel="noopener noreferrer"target=_blank>MC-296952</a> F4旁观着色器切换按键无法重绑定</li>
+<li><a href=https://bugs.mojang.com/browse/MC-297328 rel="noopener noreferrer"target=_blank>MC-297328</a> 卸载并重载区域后，隐形实体可见，直至玩家靠近</li>
+<li><a href=https://bugs.mojang.com/browse/MC-297367 rel="noopener noreferrer"target=_blank>MC-297367</a> 屏幕阅读器无法播报复选框勾选状态</li>
+<li><a href=https://bugs.mojang.com/browse/MC-298767 rel="noopener noreferrer"target=_blank>MC-298767</a> 穿刺箭会穿过同一方块内的实体</li>
+<li><a href=https://bugs.mojang.com/browse/MC-298915 rel="noopener noreferrer"target=_blank>MC-298915</a> 生存/冒险模式装填多重射击弩，提示栏次要弹药分行显示</li>
+<li><a href=https://bugs.mojang.com/browse/MC-299196 rel="noopener noreferrer"target=_blank>MC-299196</a> 弹出成就时路径点标记淡出</li>
+<li><a href=https://bugs.mojang.com/browse/MC-300979 rel="noopener noreferrer"target=_blank>MC-300979</a> 演示模式介绍界面移动与时长文字增加文字阴影</li>
+<li><a href=https://bugs.mojang.com/browse/MC-301595 rel="noopener noreferrer"target=_blank>MC-301595</a> 歌曲播放完毕后，音乐通知短暂出现在暂停界面</li>
+<li><a href=https://bugs.mojang.com/browse/MC-301632 rel="noopener noreferrer"target=_blank>MC-301632</a> 唱片播放结束后取出唱片，比较器不会更新信号</li>
+<li><a href=https://bugs.mojang.com/browse/MC-301754 rel="noopener noreferrer"target=_blank>MC-301754</a> 空手右键书架会播放手持动画</li>
+<li><a href=https://bugs.mojang.com/browse/MC-301763 rel="noopener noreferrer"target=_blank>MC-301763</a> 领域玩家标签「已邀请」选中边框覆盖其他标签（存在滚动条时）</li>
+<li><a href=https://bugs.mojang.com/browse/MC-301805 rel="noopener noreferrer"target=_blank>MC-301805</a> 统计界面选中物品边框超出裁剪区域</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302030 rel="noopener noreferrer"target=_blank>MC-302030</a> 关闭命令方块启用权限后无法编辑命令方块</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302254 rel="noopener noreferrer"target=_blank>MC-302254</a> 指令候选提示不会更新鼠标光标样式</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302288 rel="noopener noreferrer"target=_blank>MC-302288</a> 所有书架地图颜色统一为橡木棕黄色</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302549 rel="noopener noreferrer"target=_blank>MC-302549</a> 世界出生半径完全被流体填满时，重生位置判定造成主线程死锁</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302601 rel="noopener noreferrer"target=_blank>MC-302601</a> 远距离观察铁砧顶部纹理出现白色轮廓</li>
+</ul>

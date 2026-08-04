@@ -1,0 +1,134 @@
+<p>We're now releasing 1.19.1 for Minecraft: Java Edition. This release adds Allay duplication and new Player Safety functionality.</p>
+<h1>Features</h1>
+<ul>
+<li>Added Allay Duplication</li>
+<li>Tweaked Sculk Catalysts</li>
+<li>Added Chat Trust status</li>
+<li>New Options for Chat Preview</li>
+<li>Added Player Reporting</li>
+</ul>
+<h2>Allay</h2>
+<ul>
+<li>Allays will dance to a Record playing in a Jukebox</li>
+<li>If the Allay is handed an Amethyst Shard while dancing it will duplicate<ul>
+<li>Duplication has a 5-minute cooldown</li>
+</ul></li>
+</ul>
+<h2>Sculk Catalyst</h2>
+<ul>
+<li>Sculk Catalysts will now drop 5 XP instead of 20 XP</li>
+</ul>
+<h2>Chat</h2>
+<ul>
+<li>Moved the chat scrollbar to the right</li>
+<li>When typing a message, the signing status of the displayed chat message is shown with a colored indicator<ul>
+<li>The indicator will either appear to the left of the chat input field, or to the left of the chat preview if chat preview is being used</li>
+<li>The indicator will be blue when the displayed message is signed</li>
+<li>The indicator will be orange when Chat Preview is enabled and a preview is waiting to be signed</li>
+</ul></li>
+<li>The background of the chat preview will also display slightly faded when a preview is waiting to be signed</li>
+<li>Added a warning toast when connecting to a server that doesn't enforce secure chat</li>
+<li>The list of players on the Social Interactions screen now places entries for players with recently seen messages at the top of the list</li>
+</ul>
+<h3>Chat Trust Status</h3>
+<ul>
+<li>Messages that are not signed with the Secure Chat system, or have been tampered with by the server will now be marked<ul>
+<li>Messages with missing or invalid signatures are marked as "Not Secure"</li>
+<li>Messages that are detected as modified are marked as "Modified"</li>
+</ul></li>
+<li>The trust status of messages are displayed with both a colored indicator and an icon<ul>
+<li>The colored indicator is always visible</li>
+<li>The icon is only visible when the chat screen is open</li>
+</ul></li>
+<li>Hovering over the icon will provide more information about the trust status<ul>
+<li>For modified messages, the original secure text will also be displayed in the tooltip</li>
+</ul></li>
+<li>System messages (non-player chat, such as command output) are displayed with a gray color indicator</li>
+</ul>
+<h3>Chat Preview</h3>
+<ul>
+<li>Added "When Sending" Chat Preview option for updating chat previews only when attempting to send a message<ul>
+<li>To confirm sending a message, a second hit of the Enter/Return key is required</li>
+<li>The previous "ON" setting has been renamed to "While Typing"</li>
+</ul></li>
+<li>In "While Typing" mode, the chat preview will no longer display previews if the message has not been modified by the server</li>
+<li>Chat Preview is now enabled in singleplayer, and will display when using commands that have selector substitution such as <code>/say</code></li>
+<li>Previewed hover events and click events are highlighted with a solid background</li>
+</ul>
+<h2>Player Reporting</h2>
+<p>It is now possible to report a player for sending abusive messages in the game chat. A reporter is required to select the individual chat messages that contain the objectionable content, as well as the category of the report, this is to provide the best context for our moderation team to take action. This is accessed via the social interactions screen.</p>
+<ul>
+<li>Multiple chat messages can be selected for reporting<ul>
+<li>Additional chat messages around this selection will also be used to provide our moderation team with further context</li>
+</ul></li>
+<li>The category of the report can be selected from a list of Report Categories<ul>
+<li>The Report Categories screen has a "Learn About Reporting" button that links to a help article</li>
+</ul></li>
+<li>Additional comments can be entered to provide more details and information regarding the report</li>
+</ul>
+<p>For more information, see this <a href="https://www.minecraft.net/en-us/article/addressing-player-chat-reporting-tool" target="_blank" rel="noopener noreferrer">article about Player Reporting</a> and our <a href="https://help.minecraft.net/hc/en-us/articles/7317376541197" target="_blank" rel="noopener noreferrer">Reporting FAQ</a>.</p>
+<h2>Suspensions &#x26; Bans</h2>
+<ul>
+<li>The game will now show a notice screen on startup if you have been suspended from online play<ul>
+<li>The reason for the suspension is shown as well as how long it is effective for</li>
+</ul></li>
+</ul>
+<h2>Realms</h2>
+<ul>
+<li>A message that has been filtered by the Java Realms Profanity Filter will now be marked with a yellow marker</li>
+<li>Players will be notified if a chat message they have sent has been fully filtered for one or more receiving players on the Realm</li>
+</ul>
+<h1>Technical</h1>
+<ul>
+<li>The chat input box will no longer apply to custom font glyphs with negative advances, or glyphs with advances greater than 32</li>
+</ul>
+<h2>Chat Types</h2>
+<ul>
+<li>Chat types added to the <code>chat_types</code> registry are now only used for player chat, and not system messages<ul>
+<li>The <code>system</code> and <code>game_info</code> chat types have been removed</li>
+</ul></li>
+<li>Chat types have been simplified and are now only required to define <code>chat</code> and <code>narration</code> decorations<ul>
+<li>Chat types no longer support overlays</li>
+<li>A system message should instead be used to display overlays</li>
+</ul></li>
+<li>The <code>msg_command</code> chat type has been split apart into <code>msg_command_incoming</code> and <code>msg_command_outgoing</code></li>
+<li>The <code>team_msg_command</code> chat type has been split apart into <code>team_msg_command_incoming</code> and <code>team_msg_command_outgoing</code></li>
+<li>The <code>team_name</code> chat type parameter has been renamed to <code>target</code><ul>
+<li>This chat type parameter is now used by <code>msg_command_outgoing</code></li>
+</ul></li>
+</ul>
+<h2>Components</h2>
+<ul>
+<li>The <code>run_command</code> click event for text components no longer supports sending chat messages directly<ul>
+<li>Only commands are supported</li>
+<li>This means values now always need to be <code>/</code>-prefixed</li>
+<li>Commands such as <code>/say</code> that produce a signed player chat message are not allowed<ul>
+<li><code>/tellraw</code> should be used instead</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>Game Events</h2>
+<h3>Added Game Events</h3>
+<ul>
+<li><code>jukebox_play</code></li>
+<li><code>jukebox_stop_play</code></li>
+</ul>
+<h2>Multiplayer Secure Chat Signing</h2>
+<ul>
+<li>The order of chat messages are now cryptographically verified<ul>
+<li>This is used for validating the context of chat messages for Player Reports</li>
+</ul></li>
+</ul>
+<h2>Server</h2>
+<ul>
+<li><code>enforce-secure-profile</code> is now defaulted to <code>true</code> for dedicated servers</li>
+<li>Insecure chat messages logged in the server are prefixed with a <code>[Not Secure]</code> tag</li>
+<li>Custom servers can set their own auto-completion options for regular chat via a new network packet</li>
+<li>Custom servers can hide player chat messages from display via a new network packet<ul>
+<li>This does not delete player chat messages from chat logs</li>
+</ul></li>
+</ul>
+<h1>Fixed Bugs in 1.19.1</h1>
+<ul>
+<li>More than 50 bugs were fixed in this release. View the <a href="https://bugs.mojang.com/issues/?filter=27220" target="_blank" rel="noopener noreferrer">list on the issue tracker</a>.</li>
+</ul>

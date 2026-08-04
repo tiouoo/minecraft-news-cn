@@ -1,0 +1,67 @@
+<p>Today we're releasing Snapshot 20w30a for Minecraft Java Edition in which we've tweaked Bastion Remnants, and given you the ability to have lanterns under water.</p>
+<h1>Changes in 20w30a</h1>
+<ul>
+<li>Modified how respawn positions are chosen for beds and respawn anchors</li>
+<li>Lanterns can now be waterlogged</li>
+<li>Soul Lanterns can now be waterlogged</li>
+<li>Tweaked the Bastion Remnant chest loot</li>
+<li>Chests in Bastion Remnants are now more likely to be located on top of gilded blackstone</li>
+</ul>
+<h2>Respawn Block Positions</h2>
+<ul>
+<li>Respawn anchors will prioritize cardinal directions over corners</li>
+<li>Beds will prioritize the side of the bed the player entered from and then spaces circling around the foot of the bed up to the head of the bed</li>
+<li>Respawning players will now face the block that they respawned at</li>
+<li>Placing players onto dangerous blocks is now avoided when possible</li>
+</ul>
+<h1>Technical Changes in 20w30a</h1>
+<ul>
+<li>The sign edit screen will now intialize from existing sign text (should have no noticeable impact on vanilla)</li>
+<li>Tags can now have optional entries</li>
+</ul>
+<h2>Optional Tag Entries</h2>
+<p>Entries in tags can now be marked as optional. Failure to resolve optional entries does not prevent the whole tag from loading.</p>
+<p>Example:</p>
+<pre><code>{
+  "replace": false,
+  "values": [
+    "#minecraft:beds", // existing syntax
+    { "id":"#missing:tag", "required": false }, // optional sub-tag entry
+<pre><code>"minecraft:anvil", // existing syntax
+{ "id":"minecraft:stone_button", "required": true }, // new syntax for required tags
+{ "id":"missing:block", "required": false } // optional single-element entry
+</code></pre>
+<p>]
+}
+</code></pre></p>
+<h1>Fixed bugs in 20w30a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-35765" target="_blank" rel="noopener noreferrer">MC-35765</a> Viewing text in Right-to-Left language while in another language renders backwards and non-connected</li>
+<li><a href="https://bugs.mojang.com/browse/MC-57869" target="_blank" rel="noopener noreferrer">MC-57869</a> Some item tooltips use § for coloring, rendering them incorrect in right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-116857" target="_blank" rel="noopener noreferrer">MC-116857</a> Advancement descriptions use unnecessary capitalization on generic resource names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148447" target="_blank" rel="noopener noreferrer">MC-148447</a> Villagers often get stuck while trying to go through a door at the same time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149060" target="_blank" rel="noopener noreferrer">MC-149060</a> Villagers "spam" doors by opening and closing them really fast</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153195" target="_blank" rel="noopener noreferrer">MC-153195</a> Mobs can drop items with duplicate enchantments</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181925" target="_blank" rel="noopener noreferrer">MC-181925</a> Unarmed vexes raise their arms in an offensive way when attacking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187344" target="_blank" rel="noopener noreferrer">MC-187344</a> Fast graphics tooltip has incorrect 'tree-leaves' spelling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187379" target="_blank" rel="noopener noreferrer">MC-187379</a> Text for pack.incompatible.confirm.new makes no sense</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187380" target="_blank" rel="noopener noreferrer">MC-187380</a> Incorrect grammar in en_us translation of pack.dropConfirm</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188389" target="_blank" rel="noopener noreferrer">MC-188389</a> Several minor errors in datapackFailure.title</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188390" target="_blank" rel="noopener noreferrer">MC-188390</a> Comma splices in four strings</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188392" target="_blank" rel="noopener noreferrer">MC-188392</a> Death message for getting shot by a skull is not grammatically correct in all situations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188621" target="_blank" rel="noopener noreferrer">MC-188621</a> Mojang "Production Manager" credit is indented further than other credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188880" target="_blank" rel="noopener noreferrer">MC-188880</a> Baby zombified piglins riding on chickens aren't positioned properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189918" target="_blank" rel="noopener noreferrer">MC-189918</a> Multiplayer warning uses "Mojang" instead of "Mojang Studios"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190102" target="_blank" rel="noopener noreferrer">MC-190102</a> Some UI strings are not consistently capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190288" target="_blank" rel="noopener noreferrer">MC-190288</a> Fabulous and Fancy graphics tooltips have missing commas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191441" target="_blank" rel="noopener noreferrer">MC-191441</a> Right-to-left text is rendered bottom-up in some cases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191562" target="_blank" rel="noopener noreferrer">MC-191562</a> "Cancel" button overlaps "Done" button when uploading a world to Realms, making users unable to upload world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192296" target="_blank" rel="noopener noreferrer">MC-192296</a> Spider Jockey from a spawner minecart crashes with"java.lang.IllegalStateException: Entity is already tracked"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193276" target="_blank" rel="noopener noreferrer">MC-193276</a> Player floats slightly above strider while riding it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193339" target="_blank" rel="noopener noreferrer">MC-193339</a> NullPointerException during shutdown when rcon enabled with no password</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194263" target="_blank" rel="noopener noreferrer">MC-194263</a> Large End Cities do not generate correctly / get cut off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194273" target="_blank" rel="noopener noreferrer">MC-194273</a> Save data of new Nether biomes is lost when upgrading a world to 20w28a or above</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194350" target="_blank" rel="noopener noreferrer">MC-194350</a> Some feature configurations don't load in a datapack (java.lang.IllegalArgumentException: value already present: clh@77f95e19)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195052" target="_blank" rel="noopener noreferrer">MC-195052</a> "angle" argument in spawnpoint command doesn't use "minecraft:rotation" parser</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195582" target="_blank" rel="noopener noreferrer">MC-195582</a> Typing a colon twice or after a slash in chat when specifying a function/item/block/etc. in a command crashes the game</li>
+</ul>

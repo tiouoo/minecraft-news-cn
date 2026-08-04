@@ -1,0 +1,146 @@
+<p>An absolutely shocking snapshot arrives! This snapshot adds some new functionality to Copper, some general tweaks, a fancy new way of getting performance metrics, and a bunch of bugfixes.</p>
+<p>Happy mining!</p>
+<h1>New Features in 21w11a</h1>
+<ul>
+<li>Lightning rods can now, for the very first time ever, be waterlogged</li>
+<li>New functionality for applying and removing wax from copper</li>
+<li>Bonemealing rooted dirt now grows hanging roots underneath</li>
+</ul>
+<h2>Waxing Copper and Oxidization</h2>
+<ul>
+<li>Right click with honeycomb on copper blocks to wax them</li>
+<li>Use honeycomb in a dispenser to wax copper blocks</li>
+<li>Axes can scrape off wax and oxidation of copper blocks</li>
+<li>Lightning strike hitting copper will clean its oxidation</li>
+</ul>
+<h1>Changes in 21w11a</h1>
+<ul>
+<li>Waxed copper blocks can be crafted into 4 copper ingots</li>
+<li>Tweaked the cave sizes</li>
+<li>Slightly increased the frequency of diamond ore blobs</li>
+<li>Hanging roots block now renders randomly offset</li>
+<li>Breaking a Big Dripleaf stem now drops a Big Dripleaf block</li>
+<li>Moss blocks can be crafted with cobblestone or stone bricks to make the mossy versions of those blocks</li>
+<li>The facing direction of Small Dripleaf blocks is now determined by which direction the player is facing when placing it</li>
+<li>Fully-grown Amethyst Clusters now drop 4 Amethyst Shards (or more with Fortune) when mined with a pickaxe, and drop 2 Amethyst Shards when broken by hand, piston, or other means</li>
+</ul>
+<h1>Technical Changes in 21w11a</h1>
+<ul>
+<li>Added F3+L shortcut to generate and persist performance metrics from in-game</li>
+</ul>
+<h2>In-game client metrics reporting</h2>
+<p>Pressing F3+L while in the game will start a recording for 10 seconds capturing metrics such as tick durations, used heap sizes and other more detailed stats. These will be saved to a zip file in <code>debug/profiling/&#x3C;yyyy-MM-dd_HH.mm.ss>.zip</code> and could be used for performance regression analysis if included in bug reports.</p>
+<p>The exact metrics, output format and names are susceptible to change between versions, and our plan is to continue iterating on which metrics to capture.</p>
+<h1>Fixed Bugs in 21w11a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1483" target="_blank" rel="noopener noreferrer">MC-1483</a> Snow covered grass/podzol/mycelium block side texture does not match original block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-12363" target="_blank" rel="noopener noreferrer">MC-12363</a> Lava / water / powder snow bucket desync when using it while rapidly turning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-70850" target="_blank" rel="noopener noreferrer">MC-70850</a> False negatives during occlusion culling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-71530" target="_blank" rel="noopener noreferrer">MC-71530</a> Spectators can't see through lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-145501" target="_blank" rel="noopener noreferrer">MC-145501</a> Librarian and zombie librarian torso top texture is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150054" target="_blank" rel="noopener noreferrer">MC-150054</a> Spectral arrow texture on item and entity aren't consistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150784" target="_blank" rel="noopener noreferrer">MC-150784</a> Brewing Stand bottle outline incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154006" target="_blank" rel="noopener noreferrer">MC-154006</a> Overworld wood signs use the outdated wood texture on all sides</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160195" target="_blank" rel="noopener noreferrer">MC-160195</a> Jungle door inventory texture is outdated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160388" target="_blank" rel="noopener noreferrer">MC-160388</a> Painting back texture has not been updated with the texture update</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195806" target="_blank" rel="noopener noreferrer">MC-195806</a> Smoker's top and bottom textures have inconsistently colored pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197561" target="_blank" rel="noopener noreferrer">MC-197561</a> Carved pumpkins and jack o'lanterns create swastikas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197883" target="_blank" rel="noopener noreferrer">MC-197883</a> Jigsaw Structures causing DataFixer spam</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198805" target="_blank" rel="noopener noreferrer">MC-198805</a> Floating pixel in the tailfin of a guardian/elder guardian</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202760" target="_blank" rel="noopener noreferrer">MC-202760</a> Area effect cloud does not enforce a maximum radius</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203554" target="_blank" rel="noopener noreferrer">MC-203554</a> block.amethyst_block.chime has no subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203561" target="_blank" rel="noopener noreferrer">MC-203561</a> Amethyst crystal cluster drops items when block is moved directly by a piston without actually breaking the block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203623" target="_blank" rel="noopener noreferrer">MC-203623</a> Inconsistency: Breaking amethyst crystals with hands doesn't drop the item, but breaking the block they are placed on drops them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203676" target="_blank" rel="noopener noreferrer">MC-203676</a> Tinted Glass suffocates entities inside of it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203753" target="_blank" rel="noopener noreferrer">MC-203753</a> Spyglass use statistic never increases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203918" target="_blank" rel="noopener noreferrer">MC-203918</a> Mobs can spawn on tinted glass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204016" target="_blank" rel="noopener noreferrer">MC-204016</a> When filling a lava cauldron with lava, the lava is placed on the ground, not in the cauldron. This also affects powder snow.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204862" target="_blank" rel="noopener noreferrer">MC-204862</a> Tinted glass is not included in the impermeable tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205913" target="_blank" rel="noopener noreferrer">MC-205913</a> Lightning rod can spawn skeleton horses with skeletons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206787" target="_blank" rel="noopener noreferrer">MC-206787</a> World Border is rendered upside down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207557" target="_blank" rel="noopener noreferrer">MC-207557</a> Frozen hearts in hardcore mode look identical to frozen hearts in survival mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211513" target="_blank" rel="noopener noreferrer">MC-211513</a> Trident returning to owner not in the same world can cause permanent player kick</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212123" target="_blank" rel="noopener noreferrer">MC-212123</a> Player lighting is inconsistent in the inventory and appears darker on the front</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212226" target="_blank" rel="noopener noreferrer">MC-212226</a> Bone Meal can still be used on a Glow Lichen when it is unable to grow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212410" target="_blank" rel="noopener noreferrer">MC-212410</a> Cannot compost glow lichen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213743" target="_blank" rel="noopener noreferrer">MC-213743</a> Spectators can't see through powder snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213764" target="_blank" rel="noopener noreferrer">MC-213764</a> Removing the block supporting a spore blossom allows the spore blossom to float</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213765" target="_blank" rel="noopener noreferrer">MC-213765</a> Cave vine blocks are inconsistent in ID from other similar blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213768" target="_blank" rel="noopener noreferrer">MC-213768</a> Removing the support block for hanging roots allows it to float</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213778" target="_blank" rel="noopener noreferrer">MC-213778</a> Cave vines cannot be climbed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213782" target="_blank" rel="noopener noreferrer">MC-213782</a> Cave vines do not slow you down like other vines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213798" target="_blank" rel="noopener noreferrer">MC-213798</a> Cave vines head and body emit different light levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213886" target="_blank" rel="noopener noreferrer">MC-213886</a> Bone meal cannot be used on dripleaf stems</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213911" target="_blank" rel="noopener noreferrer">MC-213911</a> Cave vines body and cave vines head share the same name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213980" target="_blank" rel="noopener noreferrer">MC-213980</a> Moss appropriate tool is axe rather than hoe</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214568" target="_blank" rel="noopener noreferrer">MC-214568</a> Setting a lectern on fire causes z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215036" target="_blank" rel="noopener noreferrer">MC-215036</a> Snow layers in "Snowy Kingdom" superflat preset generate 64 blocks above the ground</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215384" target="_blank" rel="noopener noreferrer">MC-215384</a> Azaleas cannot be used as a fuel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216134" target="_blank" rel="noopener noreferrer">MC-216134</a> Gilded blackstone texture does not match the new side texture of blackstone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216184" target="_blank" rel="noopener noreferrer">MC-216184</a> Player takes no fall damage on blocks above y=316</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216227" target="_blank" rel="noopener noreferrer">MC-216227</a> Sugar cane item texture is no longer accurate from 13w36a forward</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216737" target="_blank" rel="noopener noreferrer">MC-216737</a> When replacing tuff, ores still generate with a "stone" background below y=0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216945" target="_blank" rel="noopener noreferrer">MC-216945</a> Teams become dysfunctional when any entity leaves the team</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216965" target="_blank" rel="noopener noreferrer">MC-216965</a> Flat "slices" of terrain generating in cracks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217303" target="_blank" rel="noopener noreferrer">MC-217303</a> Potential optimization target in DepthBasedReplacingBaseStoneSource</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217546" target="_blank" rel="noopener noreferrer">MC-217546</a> stat.fallOneCm is not updated when falling onto a block above y=316</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217802" target="_blank" rel="noopener noreferrer">MC-217802</a> Some blocks generate at wrong Y height in a superflat world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218587" target="_blank" rel="noopener noreferrer">MC-218587</a> Lightning rod still can't be waterlogged</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218594" target="_blank" rel="noopener noreferrer">MC-218594</a> Debug chunk borders don't render properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218596" target="_blank" rel="noopener noreferrer">MC-218596</a> Debug pie is blacked out</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218597" target="_blank" rel="noopener noreferrer">MC-218597</a> Water has no fog anymore</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218603" target="_blank" rel="noopener noreferrer">MC-218603</a> Screen turns dark grey when switching dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218604" target="_blank" rel="noopener noreferrer">MC-218604</a> Hanging roots can generate hanging on other hanging roots, making them float</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218609" target="_blank" rel="noopener noreferrer">MC-218609</a> Mipmapping causes some block faces to become too dark</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218610" target="_blank" rel="noopener noreferrer">MC-218610</a> Banners are unimpacted by light levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218626" target="_blank" rel="noopener noreferrer">MC-218626</a> Cannot enchant items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218635" target="_blank" rel="noopener noreferrer">MC-218635</a> With fast graphics, the freezing overlay renders black, and covers the whole screen black in first person</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218640" target="_blank" rel="noopener noreferrer">MC-218640</a> Broken spyglass overlay on fast graphics</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218641" target="_blank" rel="noopener noreferrer">MC-218641</a> Red vignette shown when outside the world border is too intense</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218645" target="_blank" rel="noopener noreferrer">MC-218645</a> The carved pumpkin overlay turns the screen completely black when using fast graphics</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218652" target="_blank" rel="noopener noreferrer">MC-218652</a> The green nausea overlay no longer renders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218653" target="_blank" rel="noopener noreferrer">MC-218653</a> Glowing effect no longer changes to team color</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218655" target="_blank" rel="noopener noreferrer">MC-218655</a> Floating water generates excessively in lush caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218660" target="_blank" rel="noopener noreferrer">MC-218660</a> The nether portal overlay no longer renders, whilst using fast graphics</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218695" target="_blank" rel="noopener noreferrer">MC-218695</a> Shulkers do not flash red when hurt or killed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218712" target="_blank" rel="noopener noreferrer">MC-218712</a> Debug pie has purple box when moving an enchanted item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218713" target="_blank" rel="noopener noreferrer">MC-218713</a> Right clicking to open alternate recipes does not show the recipes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218729" target="_blank" rel="noopener noreferrer">MC-218729</a> Noise cave entrances cause unnatural, smooth edges in terrain</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218734" target="_blank" rel="noopener noreferrer">MC-218734</a> Caves generate with very blocky areas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218748" target="_blank" rel="noopener noreferrer">MC-218748</a> At sunset, a blue line appears in the northern and southern skies</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218753" target="_blank" rel="noopener noreferrer">MC-218753</a> Ambient occlusion of the player seen in the survival inventory has changed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218765" target="_blank" rel="noopener noreferrer">MC-218765</a> Glowing effect no longer renders around translucent pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218793" target="_blank" rel="noopener noreferrer">MC-218793</a> Two white lines appear on the Mojang loading screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218817" target="_blank" rel="noopener noreferrer">MC-218817</a> Cave Vines can generate without supporting blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218825" target="_blank" rel="noopener noreferrer">MC-218825</a> M1 ARM Macs crash when using Fabulous Graphics mode as was the case in older versions, but no lack of support warning is shown</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218830" target="_blank" rel="noopener noreferrer">MC-218830</a> World border is white</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218834" target="_blank" rel="noopener noreferrer">MC-218834</a> You can see block hitboxes very clearly whilst in powder snow/lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218845" target="_blank" rel="noopener noreferrer">MC-218845</a> Mojang logo screen flashes blue before changing to red</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218852" target="_blank" rel="noopener noreferrer">MC-218852</a> World border is occasionally shown as a solid color upon being loaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218877" target="_blank" rel="noopener noreferrer">MC-218877</a> The red flash when a mob is hurt/killed appears to be slightly dimmed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218881" target="_blank" rel="noopener noreferrer">MC-218881</a> When selecting text in the end, the sky gets highlighted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218911" target="_blank" rel="noopener noreferrer">MC-218911</a> The background of hover-event text becomes blue when text is selected in an anvil or chat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218945" target="_blank" rel="noopener noreferrer">MC-218945</a> Spyglass has a gradient effect while freezing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218979" target="_blank" rel="noopener noreferrer">MC-218979</a> Cave ceilings and floors sometimes too flat or blocky</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218988" target="_blank" rel="noopener noreferrer">MC-218988</a> Fire is rendered dark in the player/horse/llama UI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218990" target="_blank" rel="noopener noreferrer">MC-218990</a> Transparency buffers start with blue background instead of empty background</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219002" target="_blank" rel="noopener noreferrer">MC-219002</a> The wither's wither armor has a blue aura around it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219006" target="_blank" rel="noopener noreferrer">MC-219006</a> The background opacity of subtitles and chat, are affected by a potion effect UI fading out</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219014" target="_blank" rel="noopener noreferrer">MC-219014</a> Charged creeper layer makes clouds and entities invisible</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219036" target="_blank" rel="noopener noreferrer">MC-219036</a> World border is shown as a solid color when picking up items or experience orbs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219039" target="_blank" rel="noopener noreferrer">MC-219039</a> World border does not render when below the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219049" target="_blank" rel="noopener noreferrer">MC-219049</a> Reloading resource packs no longer shows the progress bar while the transparent background is shown</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219105" target="_blank" rel="noopener noreferrer">MC-219105</a> Entity hitboxes can be seen whilst inside of powder snow/lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219108" target="_blank" rel="noopener noreferrer">MC-219108</a> Chat scroll bar is offset</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219111" target="_blank" rel="noopener noreferrer">MC-219111</a> Social interactions scroll bar appears broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219126" target="_blank" rel="noopener noreferrer">MC-219126</a> Xray with spyglass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219155" target="_blank" rel="noopener noreferrer">MC-219155</a> Cast fishing line is disconnected from the rod</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219180" target="_blank" rel="noopener noreferrer">MC-219180</a> Slime blocks, honey blocks, stained glass, and ice are fully lit when moved by pistons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219208" target="_blank" rel="noopener noreferrer">MC-219208</a> Xray using enchanted items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219212" target="_blank" rel="noopener noreferrer">MC-219212</a> Entity shadows can be seen whilst inside of powder snow/lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219224" target="_blank" rel="noopener noreferrer">MC-219224</a> The background opacity of command syntax help is affected when highlighting text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219278" target="_blank" rel="noopener noreferrer">MC-219278</a> Being inside of a block no longer shows the block texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219281" target="_blank" rel="noopener noreferrer">MC-219281</a> Dying ender dragon is rendered too bright</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219392" target="_blank" rel="noopener noreferrer">MC-219392</a> Lead/fishing line is no longer affected by the fog from powder snow/lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219597" target="_blank" rel="noopener noreferrer">MC-219597</a> End portal and end gateway textures expand as the player travels further from the block</li>
+</ul>

@@ -1,0 +1,84 @@
+<p>Thursday snapshot! Apart from some bugfixes and some changes to fancy tags and commands, we're introducing "chat preview" as a way to cryptographically sign chat messages that have been dynamically styled by servers. And for this snapshot only, we've left in our testing option <code>test-rainbow-chat</code> in <code>server.properties</code>, which can be set to true together with the new <code>previews-chat</code> option for testing. If this is something that interests you, and especially if you run a server, we would love your feedback on it.</p>
+<p>Enjoy!</p>
+<h1>Changes in 22w19a</h1>
+<ul>
+<li>Warden and Iron Golems now make sure to spawn above something solid</li>
+</ul>
+<h1>Technical Changes in 22w19a</h1>
+<ul>
+<li>Servers can now enable Chat Preview, which displays a server-controlled preview above the chat edit box</li>
+<li>Changes to the locate and place commands</li>
+<li>Point of Interest tags</li>
+</ul>
+<h2>Chat Preview</h2>
+<ul>
+<li>Servers can enable Chat Preview by setting <code>previews-chat=true</code> in <code>server.properties</code></li>
+<li>When enabled, a server-controlled preview appears above the chat edit box, showing how the message will look when sent</li>
+<li>This can be used by servers to preview messages with styling applied, such as emojis or chat coloring</li>
+<li>Chat Preview sends chat messages to the server as they are typed, even before they're sent<ul>
+<li>The server then sends back the styled preview in real time</li>
+<li>This allows servers to apply dynamic message stylings while still allowing chat to be securely signed</li>
+</ul></li>
+<li>A warning screen is shown on the client when joining a server with Chat Preview, and it can be globally disabled in Chat Settings</li>
+<li>Dynamic chat styling can also be controlled by the server, although this is only signed when Chat Preview is enabled<ul>
+<li>Clients can prefer to always show the original, signed message by enabling "Only Show Signed Chat" in Chat Settings</li>
+</ul></li>
+</ul>
+<h2>Commands</h2>
+<ul>
+<li>Added template sub-command to <code>place</code>-command</li>
+<li><code>locate</code> command moved to <code>locate structure</code>, <code>locatebiome</code> moved to <code>locate biome</code></li>
+<li>Added <code>locate poi &#x3C;type: point_of_interest_type></code></li>
+<li>Servers will now also send an additional icon and MOTD packet after a player has connected<ul>
+<li>This allows servers with <code>enable-status=false</code> to set an icon and MOTD for players that successfully connect</li>
+</ul></li>
+</ul>
+<h3>Place template</h3>
+<p>The <code>place</code>-command can now also place templates at a given location. Syntax:
+<code>place template &#x3C;template> [pos] [rotation] [mirror] [integrity] [seed]</code></p>
+<ul>
+<li><code>place template</code> works like using the load button in the UI for a structure block</li>
+</ul>
+<p>Parameters:</p>
+<ul>
+<li><code>template</code>: The namespaced id of a template ("structure block file") to load and place</li>
+<li><code>rotation</code>: The rotation to apply (if omitted, <code>none</code> is used)</li>
+<li><code>mirror</code>: The mirroring to apply (if omitted, <code>none</code> is used)</li>
+<li><code>integrity</code>: The structure integrity value between 0 and 1</li>
+<li><code>seed</code>: The seed to use for the randomized degradation when integrity is less than 1</li>
+</ul>
+<h2>Point of Interest types</h2>
+<ul>
+<li>Removed <code>unemployed</code> and <code>nitwit</code> <code>point_of_interest_type</code>s</li>
+<li>Added tag <code>point_of_interest_type/acquirable_job_site</code> for all job sites seeked by Villagers with <code>none</code> profession</li>
+<li>Added tag <code>point_of_interest_type/village</code> for PoI that are part of Village</li>
+<li>Added tag <code>point_of_interest_type/bee_home</code> for all PoI targeted by Bees</li>
+</ul>
+<h1>Fixed bugs in 22w19a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-197647" target="_blank" rel="noopener noreferrer">MC-197647</a>  Players cannot jump off the edge of blocks when sneaking if they have a block above</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231600" target="_blank" rel="noopener noreferrer">MC-231600</a>  Sculk sensor continuously receives vibrations when next to a powered big dripleaf</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249130" target="_blank" rel="noopener noreferrer">MC-249130</a>  Tadpoles hatch inside of adjacent blocks, causing them to suffocate and die</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249161" target="_blank" rel="noopener noreferrer">MC-249161</a>  Frogs frequently get stuck below lily pads</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249634" target="_blank" rel="noopener noreferrer">MC-249634</a>  Warden's sniffing behavior continues after being distracted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a>  Warden despawns when far away</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249801" target="_blank" rel="noopener noreferrer">MC-249801</a>  Mineshafts can intersect ancient cities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249888" target="_blank" rel="noopener noreferrer">MC-249888</a>  Warden is not angered when hit by a blaze fireball</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249910" target="_blank" rel="noopener noreferrer">MC-249910</a>  Warden "Nearby Closest" sound is unused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249966" target="_blank" rel="noopener noreferrer">MC-249966</a>  Warden can stop chasing a target it just roared at</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250172" target="_blank" rel="noopener noreferrer">MC-250172</a>  Warden doesn't turn towards the direction it is firing the Sonic Boom attack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250233" target="_blank" rel="noopener noreferrer">MC-250233</a>  A warden summoned from a spawn egg suddenly losing its AI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250255" target="_blank" rel="noopener noreferrer">MC-250255</a>  Warden's Sonic Boom cannot hurt Ender Dragon, it only pushes it back</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250272" target="_blank" rel="noopener noreferrer">MC-250272</a>  Warden spawns in blocks that have no collision</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250353" target="_blank" rel="noopener noreferrer">MC-250353</a>  Warden cannot spawn on a single snow layer like other mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250357" target="_blank" rel="noopener noreferrer">MC-250357</a>  Sculk sensors and Wardens detect when a player holds up a shield</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250948" target="_blank" rel="noopener noreferrer">MC-250948</a>  Warden's ranged attack is no longer affected by the game's difficulty</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250966" target="_blank" rel="noopener noreferrer">MC-250966</a>  Dying to the warden's sonic boom doesn't count as the warden's kill</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251029" target="_blank" rel="noopener noreferrer">MC-251029</a>  Warden froze and stopped being hostile towards the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251263" target="_blank" rel="noopener noreferrer">MC-251263</a>  "Invalid signature for profile public key" when trying to open a singleplayer world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251316" target="_blank" rel="noopener noreferrer">MC-251316</a>  The game crashes when loading chunks that consist of jigsaw blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251321" target="_blank" rel="noopener noreferrer">MC-251321</a>  Warden can be pushed by explosions while emerging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251350" target="_blank" rel="noopener noreferrer">MC-251350</a>  /give @s goat_horn gives an unregistered goat horn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251396" target="_blank" rel="noopener noreferrer">MC-251396</a> java.lang.IllegalArgumentException: Name and ID cannot both be blank</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251464" target="_blank" rel="noopener noreferrer">MC-251464</a>  When passive mobs take damage from warden's sonic boom, they won't flee in panic</li>
+</ul>

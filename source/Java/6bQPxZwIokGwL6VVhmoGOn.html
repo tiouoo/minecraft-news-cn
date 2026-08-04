@@ -1,0 +1,37 @@
+<p>We are now releasing pre-release 5 for Minecraft 1.19.1. This pre-release includes the remaining fixes for a known exploit regarding player report context. It also fixes some other crashes and bugs.</p>
+<h1>Changes in 1.19.1 Pre-release 5</h1>
+<h2>Chat</h2>
+<ul>
+<li>When writing chat messages, the signing status of the displayed chat messages is shown with a colored indicator<ul>
+<li>The indicator will either appear to the left of the chat input field, or to the left of the chat preview if chat preview is being used</li>
+<li>The indicator will be green when the displayed message is signed</li>
+<li>The indicator will be orange when Chat Preview is enabled and a preview is waiting to be signed</li>
+</ul></li>
+<li>The background of the chat preview will also display slightly faded when a preview is waiting to be signed</li>
+</ul>
+<h2>Chat Preview</h2>
+<ul>
+<li>Added "On Send" Chat Preview option for updating chat previews only when attempting to send a message<ul>
+<li>To confirm sending a message, a second hit of the Enter/Return key is required</li>
+<li>The previous "ON" setting has been renamed to "On Modified"</li>
+</ul></li>
+<li>The "On Modified" mode no longer displays previews if the message has not been modified by the server</li>
+<li>Chat Preview is now enabled in singleplayer, and will display when using commands that have selector substitution such as <code>/say</code></li>
+<li>Previewed hover events and click events are now highlighted with a solid background</li>
+</ul>
+<h1>Technical Changes in 1.19.1 Pre-release 5</h1>
+<ul>
+<li>The <code>team_msg_command</code> chat type has been split apart into <code>team_msg_command_incoming</code> and <code>team_msg_command_outgoing</code></li>
+</ul>
+<h1>Bugs fixed in 1.19.1 Pre-release 5</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-130243" target="_blank" rel="noopener noreferrer">MC-130243</a> /debug stop message uses OS locale specific number formatting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149047" target="_blank" rel="noopener noreferrer">MC-149047</a> Scroll Sensitivity slider label uses OS locale for number formatting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252546" target="_blank" rel="noopener noreferrer">MC-252546</a> Poor audio quality compared to 1.18.2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252702" target="_blank" rel="noopener noreferrer">MC-252702</a> Game crashes when trying to launch 1.19 when system is in Arabic, Persian, or adjacent formats</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253223" target="_blank" rel="noopener noreferrer">MC-253223</a> "A preposition is incorrectly used within the ""gui.abuseReport.reason.terrorism_or_violent_extremism.description"" string"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253888" target="_blank" rel="noopener noreferrer">MC-253888</a> Messages that servers have tampered with through chat reporting are signed and reportable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253950" target="_blank" rel="noopener noreferrer">MC-253950</a> Sending a chat message too fast after typing it fails to sign the eventual proper chat preview</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253997" target="_blank" rel="noopener noreferrer">MC-253997</a> "The current description of ""Imminent harm - Threat to harm others"" report category seems not matching its title"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254089" target="_blank" rel="noopener noreferrer">MC-254089</a> "Chat Preview components allow server to ""hide"" content"</li>
+</ul>

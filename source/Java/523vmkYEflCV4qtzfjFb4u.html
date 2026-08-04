@@ -1,0 +1,41 @@
+<p>Have a random snapshot! In this snapshot, we've replaced the random number generator used for world generation, which makes more seeds come out as different... but it also moves everything around in the world, so expect all worlds to look different in this snapshot.</p>
+<p>Another thing that we've replaced is the cubemap - the spinning image that you see behind the main menu. It's pretty sweet!</p>
+<p>Also, in case you missed it, we're having our <a href="https://www.minecraft.net/live" target="_blank" rel="noopener noreferrer">annual Minecraft Live event</a> this Saturday. Make sure to check that out!</p>
+<p><strong>We still highly recommend backing up your world before loading it in this snapshot.</strong></p>
+<h1>Changes in 21w41a</h1>
+<ul>
+<li>The main menu backdrop now shows a Caves &#x26; Cliffs: Part II scene</li>
+<li>Badlands mineshafts generate higher up</li>
+<li>Geodes now only generate up to height 30 and their rarity has been adjusted to match 1.17 levels</li>
+<li>The angle at which sprinting against a block does not break your sprint has been increased a bit</li>
+</ul>
+<h1>Technical Changes in 21w41a</h1>
+<ul>
+<li>Changed the prioritization order of the chunk rendering pipeline<ul>
+<li>Unrendered chunk holes in the world should not appear anymore while flying fast with high render distance</li>
+</ul></li>
+<li>Server classes are now signed</li>
+<li>New random number generator for Overworld generation</li>
+</ul>
+<h1>Fixed bugs in 21w41a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-118134" target="_blank" rel="noopener noreferrer">MC-118134</a> Item frame texture as an item uses texture of oak planks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137950" target="_blank" rel="noopener noreferrer">MC-137950</a> Signs textures does not correspond to the actual texture of their handle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-142385" target="_blank" rel="noopener noreferrer">MC-142385</a> Campfire texture has one pixel extending into hotbar outline</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148182" target="_blank" rel="noopener noreferrer">MC-148182</a> The zombie villager "profession" texture uses villager-skin-colored pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152506" target="_blank" rel="noopener noreferrer">MC-152506</a> Wither skull projectile has faces with old texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160256" target="_blank" rel="noopener noreferrer">MC-160256</a> Texture of door items does not match the blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166508" target="_blank" rel="noopener noreferrer">MC-166508</a> Glitchy chunk rendering since 1.15 pre-release 2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173339" target="_blank" rel="noopener noreferrer">MC-173339</a> Comparators lit base texture is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203155" target="_blank" rel="noopener noreferrer">MC-203155</a> Enchanting table GUI uses old lapis texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225949" target="_blank" rel="noopener noreferrer">MC-225949</a> Parity Issue: different Bedrock and Java sign items textures.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227398" target="_blank" rel="noopener noreferrer">MC-227398</a> Misplaced pixel on cave vines texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230302" target="_blank" rel="noopener noreferrer">MC-230302</a> Glow Item Frame item texture is missing two pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236620" target="_blank" rel="noopener noreferrer">MC-236620</a> Nether biomes don't generate correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236650" target="_blank" rel="noopener noreferrer">MC-236650</a> Minecraft in 1.18 has 2^48 seeds instead of 2^64 seeds.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237330" target="_blank" rel="noopener noreferrer">MC-237330</a> Worlds created with seed "REDApRES" (0) crash when trying to load new 1.18 mountain biomes / java.lang.NullPointerException: Cannot invoke "dfw.a(double, double, double)" because "this.a" is null</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237457" target="_blank" rel="noopener noreferrer">MC-237457</a> Snowy Slopes biome no longer generates stone cliff feature from experimental snapshots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238003" target="_blank" rel="noopener noreferrer">MC-238003</a> Stone in jagged peaks is always covered by snow blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238561" target="_blank" rel="noopener noreferrer">MC-238561</a> Axolotls aren't able to spawn at all in lush caves (recurrence of MC-218701)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238661" target="_blank" rel="noopener noreferrer">MC-238661</a> InhabitedTime value/Local Difficulty doesn't increase</li>
+</ul>

@@ -1,0 +1,156 @@
+<p>This week we're bringing you the Sniffer, Archaeology, and the Cherry Blossom biome as experimental features for the 1.20 update.</p>
+<p>Changes for the 1.19.4 release include Interaction Entities, and updates to jukeboxes and horse breeding.</p>
+<p>Happy brushing!</p>
+<h1>Changes</h1>
+<ul>
+<li>Jukeboxes have changed to be at parity with Bedrock</li>
+<li>Horse breeding has been updated</li>
+<li>Updated the Realms screen to be more in line with the Singleplayer and Multiplayer screens</li>
+</ul>
+<h2>Recipe unlocking</h2>
+<ul>
+<li>The Crafting Table recipe is unlocked immediately on creating a new world</li>
+<li>The Crossbow recipe is no longer unlocked by sticks</li>
+<li>The Soul Campfire recipe is no longer unlocked by sticks</li>
+</ul>
+<h2>Jukebox</h2>
+<ul>
+<li>While playing a music disc, it will emit a redstone signal of 15</li>
+<li>Droppers and hoppers can now interact with it</li>
+</ul>
+<h2>Horses</h2>
+<ul>
+<li>When breeding horses and the like, the babies' speed, jump height and health are no longer biased toward the average</li>
+<li>This change is intended to make horse breeding a viable way of getting great horses, if a player starts with good parents and puts in enough time and Golden Carrots</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The vanilla resource pack en_us language file is now sorted alphanumerically by key</li>
+<li>A new recipe serializer <code>crafting_decorated_pot</code> has been added for the new Decorated Pot recipe</li>
+<li>Added <code>show_notification</code> field to recipes<ul>
+<li>Accepts a boolean which determines if a notification is shown when unlocking this recipe</li>
+<li>defaults to <code>true</code> if isn't specified</li>
+</ul></li>
+</ul>
+<h2>Interaction Entities</h2>
+<p>A new type of entity that records attacks ("left clicks") and interactions ("right clicks"). Interactions are invisible and of a custom size.</p>
+<p>Fields:</p>
+<ul>
+<li><code>width</code>: Width of the entity's bounding box (default <code>1</code>)</li>
+<li><code>height</code>: Height of the entity's bounding box (default <code>1</code>)</li>
+<li><code>attack</code>: Records the last attack action on the entity</li>
+<li><code>interaction</code>: Records the last interaction action on the entity</li>
+<li><code>response</code>: Boolean specifying if interacting should trigger a response (arm swing, sound effects, etc - default <code>false</code>)</li>
+</ul>
+<h3>Action Format</h3>
+<p>When an action is stored, it always has two fields:</p>
+<ul>
+<li><code>player</code>: The UUID (in standard integer array format) of the player performing the action</li>
+<li><code>timestamp</code>: The timestamp of the game tick when the event happened (stored as a long)</li>
+</ul>
+<h3>Advancement Triggers</h3>
+<ul>
+<li>Interacting with an Interaction entity triggers <code>player_interacted_with_entity</code></li>
+<li>Attacking an Interaction entity triggers <code>player_hurt_entity</code></li>
+</ul>
+<h3><code>execute on</code> with Interactions</h3>
+<p>The Interaction entity targets the player who last interacted with it. That makes the following possible:</p>
+<ul>
+<li><code>execute on attacker</code>: execute as the last player who attacked the entity</li>
+<li><code>execute on target</code>: execute as the last player who interacted with the entity</li>
+</ul>
+<h1>Experimental Features</h1>
+<ul>
+<li>Added Sniffer mob</li>
+<li>Added a Cherry Grove biome</li>
+<li>Added Archaeology</li>
+</ul>
+<h2>Sniffer</h2>
+<ul>
+<li>Sniffer Mob now available as an experimental feature<ul>
+<li>The Sniffer is the mob vote winner of Minecraft Live 2022 and the first "ancient" mob added to the game</li>
+<li>Sniffers cannot be tempted or tamed</li>
+<li>Sniffers are passive friendly mobs</li>
+<li>Sniffers sniff in the air and occasionally dig for seeds</li>
+</ul></li>
+<li>Torchflower now available as an experimental feature<ul>
+<li>The Torchflower seed can be planted on farmland and grows into a flower</li>
+<li>The seed can be used to breed two Sniffers</li>
+<li>The full-grown flower can be harvested and replanted but can also be crafted into a dye</li>
+</ul></li>
+</ul>
+<h2>Cherry Grove biome</h2>
+<ul>
+<li>Added a new Cherry Grove biome, with pretty cherry blossom trees</li>
+<li>You can find it in the mountains, like Meadows</li>
+</ul>
+<h3>Pink Petals block</h3>
+<ul>
+<li>Added a new Pink Petals block with lots of pink flowers on the ground</li>
+</ul>
+<h3>Cherry Wood Set</h3>
+<ul>
+<li>Added a new Cherry wood set, with all the corresponding wooden things you can make from it. You need to have the Update 1.20 experimental features enabled to see it in game.</li>
+</ul>
+<h2>Archaeology</h2>
+<h3>The brush</h3>
+<ul>
+<li>The brush is a craftable item you can use to brush things</li>
+</ul>
+<h3>Suspicious Sand</h3>
+<ul>
+<li>Desert Temples and Desert Wells now contain Suspicious Sand. This fragile block is hard to spot and easy to destroy, so be careful!</li>
+<li>Brushing the Suspicious Sand with a Brush will extract objects that were buried long ago</li>
+</ul>
+<h3>Pottery Shards</h3>
+<ul>
+<li>Pottery Shards have pictures on them</li>
+<li>They cannot be crafted and are only found by brushing Suspicious Sand</li>
+</ul>
+<h3>Decorated Pots</h3>
+<ul>
+<li>Crafting four Pottery Shards together will create a Decorated Pot with a picture on each side</li>
+<li>You can also use Brick items instead of Pottery Shards in the Decorated Pot recipe<ul>
+<li>The sides that were made from Brick items will not have pictures</li>
+</ul></li>
+<li>Smash a Decorated Pot with any block-breaking tool to break it apart and get the Pottery Shards back<ul>
+<li>Or hit it with your fist to pick up the pot without breaking it</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w07a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-16533" target="_blank" rel="noopener noreferrer">MC-16533</a> Horse Breeding never exceeds egg/spawn horse attributes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64522" target="_blank" rel="noopener noreferrer">MC-64522</a> Server shows as "Old" in server list while starting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84633" target="_blank" rel="noopener noreferrer">MC-84633</a> Resource packs: ambientocclusion flag only respects topmost parent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134448" target="_blank" rel="noopener noreferrer">MC-134448</a> Drowned animation glitch</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181412" target="_blank" rel="noopener noreferrer">MC-181412</a> Removing a jukebox with a command while it's playing a music disc won't stop playing the music disc</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194080" target="_blank" rel="noopener noreferrer">MC-194080</a> Elytra model stutters by flying and turning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209409" target="_blank" rel="noopener noreferrer">MC-209409</a> Sitting cats sink in water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226729" target="_blank" rel="noopener noreferrer">MC-226729</a> Memory leakage problem in native operations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248249" target="_blank" rel="noopener noreferrer">MC-248249</a> minecraft:forest_rock feature does not work correctly when used with /place</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256465" target="_blank" rel="noopener noreferrer">MC-256465</a> Baby camels can enter boats despite adult camels not being able to</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257282" target="_blank" rel="noopener noreferrer">MC-257282</a> Allays sometimes have a several-second delay before deciding to follow the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258457" target="_blank" rel="noopener noreferrer">MC-258457</a> Resource Pack won't load if it contains reference to non-existing particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258459" target="_blank" rel="noopener noreferrer">MC-258459</a> Invalid forced resource pack can cause infinite reload loop on client</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258580" target="_blank" rel="noopener noreferrer">MC-258580</a> Player is kicked from a server for flying in death screen when dying on a Horse or Camel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258624" target="_blank" rel="noopener noreferrer">MC-258624</a> The Title Screen Warning menu doesn't disappear after the player respawns</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258697" target="_blank" rel="noopener noreferrer">MC-258697</a> Invalid translation of "translationKey=narration.suggestion" in command block GUI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258902" target="_blank" rel="noopener noreferrer">MC-258902</a> Opening a lectern on Adventure mode and closing it causes inventory desyncs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258907" target="_blank" rel="noopener noreferrer">MC-258907</a> Advancement trigger "player_interacted_with_entity" doesn't work with "area_effect_cloud" entity when used "glass_bottle" item on it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259107" target="_blank" rel="noopener noreferrer">MC-259107</a> Opening the crafting recipe book selects the recipe that appears under the mouse cursor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259218" target="_blank" rel="noopener noreferrer">MC-259218</a> Onboarding isn't resumed after restarting Minecraft</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259240" target="_blank" rel="noopener noreferrer">MC-259240</a> The game crashes when navigating with arrow keys after changing key binds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259241" target="_blank" rel="noopener noreferrer">MC-259241</a> Turtles can spawn inside each other causing them to get stuck and play constant sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259489" target="_blank" rel="noopener noreferrer">MC-259489</a> Experimental "disabled items" can still be suggested as fuel by the recipe book</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259573" target="_blank" rel="noopener noreferrer">MC-259573</a> Blast Protection does not reduce explosion knockback in creative game mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259675" target="_blank" rel="noopener noreferrer">MC-259675</a> Capes occasionally jitter when moving and adjusting your rotation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259691" target="_blank" rel="noopener noreferrer">MC-259691</a> Drowned that are swimming render outside of their hitboxes when looking up or down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259729" target="_blank" rel="noopener noreferrer">MC-259729</a> "Falling Block" can appear in death messages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259796" target="_blank" rel="noopener noreferrer">MC-259796</a> Creeper does not flash white and expand before exploding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259797" target="_blank" rel="noopener noreferrer">MC-259797</a> Z-fighting occurs on the bottom of boots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259805" target="_blank" rel="noopener noreferrer">MC-259805</a> Players cannot dismount when riding item_display, block_display and text_display using the ride command</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259808" target="_blank" rel="noopener noreferrer">MC-259808</a> Allay wing animation skips frames/loops incorrectly as of 23w06a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259816" target="_blank" rel="noopener noreferrer">MC-259816</a> Odd behavior when an item_display, block_display, or text_display entity mounts another entity</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259819" target="_blank" rel="noopener noreferrer">MC-259819</a> Z-fighting on the text of text displays</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259999" target="_blank" rel="noopener noreferrer">MC-259999</a> Entities mounted on display entities do not visually update until after resync</li>
+</ul>

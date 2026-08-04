@@ -1,0 +1,11 @@
+<p>A new update has been released to address some issues that were introduced with the 1.19.80 update.</p>
+<ul>
+<li>Fixed several crashes that could occur during gameplay</li>
+<li>The inventory cursor no longer snaps to a random spot when flicking the left thumbstick (<a href="https://bugs.mojang.com/MCPE-169176" target="_blank" rel="noopener noreferrer">MCPE-169176</a>)</li>
+<li>Fixed custom textures that override 'minecraft' blocks with aux metadata as a list of textures</li>
+<li>Several fixes to custom spawn eggs (<a href="https://bugs.mojang.com/MCPE-170184" target="_blank" rel="noopener noreferrer">MCPE-170184</a>)<ul>
+<li>Re-enabled use of aux value to refer to custom eggs in commands for game versions 1.19.80 and beyond, eg. "/give @s spawn_egg 1 654"</li>
+<li>Re-enabled use of Molang queries for the item's data field in recipes for game versions 1.19.80 and beyond, eg. { "item": "spawn_egg", "data": "query.get_actor_info_id('namespace:actor')" }</li>
+<li>Re-enabled use of "set_actor_id" in loot tables when refering to custom spawn eggs for game versions 1.19.80 and beyond</li>
+</ul></li>
+</ul>

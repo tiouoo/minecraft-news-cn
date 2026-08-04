@@ -1,0 +1,67 @@
+<p>Happy New Year! It's time for the first snapshot of 2022 to hit the shelves. This snapshot series will be leading up to the release of 1.18.2. With this release we aim to address a few issues before moving on and starting with the Wild Update snapshots.</p>
+<p>This snapshot contains tweaks to the world seed input and adds a new <code>placefeature</code> command. On top of that, it also fixes a bunch of bugs.</p>
+<p>Happy mining!</p>
+<h1>Changes in 22w03a</h1>
+<ul>
+<li>A seed of the number zero is no longer handled as a special case</li>
+<li>Any spaces before/after an inputted seed will now be trimmed</li>
+<li>Ender chests are no longer gift wrapped around Christmas</li>
+</ul>
+<h1>Technical Changes in 22w03a</h1>
+<ul>
+<li>The <code>locate</code> command now uses a namespaced id parameter</li>
+<li>Added command: <code>placefeature</code></li>
+</ul>
+<h2><code>placefeature</code></h2>
+<p>New command that places a configured feature at a given location. Syntax: <code>placefeature &#x3C;id> [pos]</code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>id</code>: The namespaced id of a configured feature to place</li>
+<li><code>pos</code>: The position to use as the origin for the feature placement (if omitted, <code>~ ~ ~</code> is used)</li>
+</ul>
+<h1>Fixed bugs in 22w03a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-83938" target="_blank" rel="noopener noreferrer">MC-83938</a> Standing on entities with solid collision boxes (shulkers, boats) kicks you for flying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-98727" target="_blank" rel="noopener noreferrer">MC-98727</a> Server: Entering a boat/minecart/horse while going upwards from jumping causes a kick for flying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111082" target="_blank" rel="noopener noreferrer">MC-111082</a> Riding a boat with NoGravity on a server without flight enabled causes kick for flying</li>
+<li><a href="https://bugs.mojang.com/browse/MC-126772" target="_blank" rel="noopener noreferrer">MC-126772</a> Underwater fog doesn't hide edge of chunks correctly at low render distances</li>
+<li><a href="https://bugs.mojang.com/browse/MC-135989" target="_blank" rel="noopener noreferrer">MC-135989</a> Kicked for flying using trident with Riptide enchantment</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167763" target="_blank" rel="noopener noreferrer">MC-167763</a> Blindness does not work underwater for certain graphics cards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185545" target="_blank" rel="noopener noreferrer">MC-185545</a> Knockback Resistance on players is still affected by chance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185695" target="_blank" rel="noopener noreferrer">MC-185695</a> Twisting vines don't reliably protect the player from fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205232" target="_blank" rel="noopener noreferrer">MC-205232</a> Player can see farther in powder snow with blindness effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223834" target="_blank" rel="noopener noreferrer">MC-223834</a> Pointed dripstone can form below some non-full (non-solid) blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226359" target="_blank" rel="noopener noreferrer">MC-226359</a> The Zero-Width Non-Joiner shows as a "ZWNJ" box</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229313" target="_blank" rel="noopener noreferrer">MC-229313</a> Some blocks that negate fall damage don't reliably protect mobs at certain heights</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230905" target="_blank" rel="noopener noreferrer">MC-230905</a> Sky background is visible on certain reduced fog situations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233599" target="_blank" rel="noopener noreferrer">MC-233599</a> /spreadplayers command does not allow for negative "under" values</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235574" target="_blank" rel="noopener noreferrer">MC-235574</a> Game crashes when replacing a block with a wall with blockstate up:false</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236693" target="_blank" rel="noopener noreferrer">MC-236693</a> "Done" button in controls submenu is very low</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237262" target="_blank" rel="noopener noreferrer">MC-237262</a> Crash report and tick profiling causes "Failed to find module info for _" spam to log</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238114" target="_blank" rel="noopener noreferrer">MC-238114</a> Meadow trees can spawn without bee nests</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238866" target="_blank" rel="noopener noreferrer">MC-238866</a> Snow / powder snow can generate underwater</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239031" target="_blank" rel="noopener noreferrer">MC-239031</a> Glitchy chunk rendering persists since 21w41a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239436" target="_blank" rel="noopener noreferrer">MC-239436</a> Broken culling in very long caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240559" target="_blank" rel="noopener noreferrer">MC-240559</a> JFR JSON report's bytesPerSecond is incorrectly calculated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241152" target="_blank" rel="noopener noreferrer">MC-241152</a> Powder snow is part of #goat_spawnable_on block tag / Goats can spawn on powder snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241205" target="_blank" rel="noopener noreferrer">MC-241205</a> Sandstone generates 2-5 layers instead of 3-8 layers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242010" target="_blank" rel="noopener noreferrer">MC-242010</a> Snow Blocks, Powder Snow aren't a part of #azalea_root_replaceable / Rooted dirt can't replace Snow Blocks &#x26; Powder Snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242331" target="_blank" rel="noopener noreferrer">MC-242331</a> Entities are displayed faster than chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242543" target="_blank" rel="noopener noreferrer">MC-242543</a> Suffocation always uses the entity head center position for predicate and collision box</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242709" target="_blank" rel="noopener noreferrer">MC-242709</a> Pointed dripstone clusters create holes in the ground when generating in aquifers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243015" target="_blank" rel="noopener noreferrer">MC-243015</a> Falling blocks at chunk generation cause tons of entities and (client-side) lag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243196" target="_blank" rel="noopener noreferrer">MC-243196</a> Driver view angle resets when another player enters or exits boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243245" target="_blank" rel="noopener noreferrer">MC-243245</a> Unable to select "What is Realms?" button using Tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243489" target="_blank" rel="noopener noreferrer">MC-243489</a> Console spam: Skipping update for removed player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243619" target="_blank" rel="noopener noreferrer">MC-243619</a> Raid waves can spawn outside of simulation distance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244164" target="_blank" rel="noopener noreferrer">MC-244164</a> Upgrade to 1.18 makes chests invisible and empty</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244174" target="_blank" rel="noopener noreferrer">MC-244174</a> Fog effect for void, blindness, water, lava &#x26; powder snow is cylindrical</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245345" target="_blank" rel="noopener noreferrer">MC-245345</a> Crash when reloading chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245347" target="_blank" rel="noopener noreferrer">MC-245347</a> Flying with an elytra and colliding with floating flowing water sometimes doesn't reset fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245406" target="_blank" rel="noopener noreferrer">MC-245406</a> Memory leak leading to crashes when loading pre-1.18 chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245416" target="_blank" rel="noopener noreferrer">MC-245416</a> Baby turtles suffocate on soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246445" target="_blank" rel="noopener noreferrer">MC-246445</a> Game crashes when dispenser with shears is used on non-beehive block in #beehives tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246449" target="_blank" rel="noopener noreferrer">MC-246449</a> Game crashes when villager tries to open non-door in #wooden_doors tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246464" target="_blank" rel="noopener noreferrer">MC-246464</a> Game crashes when dispensing a bone meal in a warm ocean and there is a block with no facing block state in #wall_corals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-247415" target="_blank" rel="noopener noreferrer">MC-247415</a> Game crashes if coral related block tags are empty during coral reef generation</li>
+</ul>

@@ -1,0 +1,187 @@
+<p>你好！这是一个新的快照，包含了对新特性的调整、新的进度、新音乐，以及一些期待已久的技术更改。
+一段时间以来，我们一直在开发一个新的更快的光照引擎，现在我们终于准备好分享成果了。
+特别感谢社区不仅指出了游戏光照引擎的问题，
+还要感谢开发了模组和插件的社区成员，他们突显了这些性能挑战，
+并为我们新的实现提供了灵感。</p>
+<p>请以各种可能的方式破坏它，并报告漏洞！</p>
+<h1>新特性</h1>
+<ul>
+<li>为“足迹与故事”添加了新进度</li>
+<li>为“足迹与故事”添加了新的环境音乐</li>
+<li>添加了一张可通过考古获得的新音乐唱片</li>
+</ul>
+<h2>新进度</h2>
+<h3>农牧业进度</h3>
+<ul>
+<li><code>气味有趣</code>：获得一个嗅探兽蛋</li>
+<li><code>小小嗅探</code>：喂食一只嗅探幼兽（需要<code>气味有趣</code>）</li>
+<li><code>种植过去</code>：种植任意嗅探兽种子（需要<code>小小嗅探</code>）</li>
+</ul>
+<h3>冒险进度</h3>
+<ul>
+<li><code>尊重遗迹</code>：刷扫一个可疑的方块以获得一个陶器碎片</li>
+<li><code>精心修复</code>：用4个陶器碎片制作一个饰纹陶罐（需要<code>尊重遗迹</code>）</li>
+<li><code>打造新造型</code>：在锻造台上制作一件纹饰盔甲</li>
+<li><code>风格化锻造</code>：至少使用一次以下锻造模板：尖塔、猪鼻、肋骨、守卫、沉默、恼鬼、潮汐、寻路者（需要<code>打造新造型</code>）</li>
+</ul>
+<h2>新环境音乐</h2>
+<ul>
+<li>为樱花树林、沙漠、丛林、恶地和繁花森林群系添加了以下由 Aaron Cherof 创作的新音乐曲目
+<ul>
+<li>熟悉的房间</li>
+<li>凤梨</li>
+<li>新月沙丘</li>
+<li>风中的回声</li>
+</ul>
+</li>
+</ul>
+<h2>新音乐唱片</h2>
+<ul>
+<li>添加了一张新的音乐唱片，可以通过刷扫古迹废墟中的可疑方块找到
+<ul>
+<li>将其放入唱片机时，会播放 Aaron Cherof 的《遗迹》</li>
+</ul>
+</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>两种幽匿感测体现在都会在冷却阶段持续10个游戏刻，同时调整了其他阶段的时间以作补偿</li>
+<li>制作出的带至少一个纹样的饰纹陶罐现在会有一个悬停提示，显示陶器碎片和红砖成分</li>
+<li>更新了制作人员名单
+<ul>
+<li>添加了按<code>上箭头</code>键向上滚动的功能</li>
+</ul>
+</li>
+</ul>
+<h2>幽匿感测体阶段</h2>
+<ul>
+<li>幽匿感测体和校频幽匿感测体有三种阶段：未激活、激活和冷却</li>
+<li>默认阶段是未激活
+<ul>
+<li>这一阶段会无限持续，直到方块接收到一次振动</li>
+<li>在此阶段，方块能够聆听附近的振动，直到一个振动被计划</li>
+</ul>
+</li>
+<li>当接收到一个已计划的振动时，方块切换到激活阶段
+<ul>
+<li>此阶段对于幽匿感测体持续30游戏刻，对于校频幽匿感测体持续10游戏刻</li>
+<li>在此阶段，方块停止聆听附近的振动，摆动其触须，并发出红石信号和光</li>
+</ul>
+</li>
+<li>激活阶段结束后，方块切换到冷却阶段
+<ul>
+<li>此阶段持续10游戏刻</li>
+<li>在此阶段，方块继续摆动其触须，但不再发出红石信号或光</li>
+<li>最后，此阶段结束后，方块将切换回未激活阶段</li>
+</ul>
+</li>
+<li>此前，其中一些阶段有不同的时间值：
+<ul>
+<li>激活：幽匿感测体40游戏刻，校频幽匿感测体20游戏刻</li>
+<li>冷却：两种幽匿感测体均为1游戏刻</li>
+</ul>
+</li>
+<li>这些阶段时间被调整，以降低被激活的装置递归激活为其供能的幽匿感测体的可能性</li>
+</ul>
+<h1>技术更改</h1>
+<ul>
+<li>资源包版本现在是15，以适配字体和制作人员名单的更新
+<ul>
+<li><code>legacy_unicode</code> 字形提供器已被移除</li>
+<li><code>uniform</code> 字体使用的位图已被移除</li>
+<li><code>uniform</code> 字体已更新为使用 Unifont 15.0.01
+<ul>
+<li>这改变了许多字符的形状，同时也增加了对新字符的支持</li>
+<li>组合字符不再包含叠加在它们上面的圆圈（所以 M◌̆ 现在渲染为 M ̆）</li>
+</ul>
+</li>
+<li>在 credits.json 中，于 <code>titles</code> 之上添加了第二级条目组织，称为 <code>disciplines</code></li>
+</ul>
+</li>
+<li>字体纹理已包含在调试纹理转储（F3 + S）中</li>
+<li>添加了新的字体字形提供器：<code>unihex</code> 和 <code>reference</code>，移除了 <code>legacy_unicode</code></li>
+<li>改进了光照引擎的性能</li>
+</ul>
+<h2>字体</h2>
+<h3>新的 <code>unihex</code> 字形提供器</h3>
+<ul>
+<li>用于读取 Unifont HEX 文件的新字形提供器
+<ul>
+<li>HEX 格式描述了位图字体字形
+<ul>
+<li>每个字形的高度为16像素</li>
+<li>字形宽度可以是8、16、24或32像素</li>
+</ul>
+</li>
+<li>每一行由两个十六进制数字组成，以<code>:</code>分隔</li>
+<li>第一个值描述码点 - 必须有4、5或6个十六进制位</li>
+<li>第二个值以比特流的形式逐行描述字形</li>
+</ul>
+</li>
+<li>渲染时，字形左右两侧的空列会被移除
+<ul>
+<li>可以使用<code>size_overrides</code>设置自定义字形宽度</li>
+</ul>
+</li>
+<li>提供器需要两个字段：
+<ul>
+<li><code>hex_file</code> - 包含一个或多个<code>*.hex</code>文件的ZIP压缩包路径（包中扩展名不同的文件将被忽略）</li>
+<li><code>size_overrides</code> - 一个码点范围列表，这些范围的字形宽度应与自动检测到的宽度不同（根据字形中的空白确定）。字段：
+<ul>
+<li><code>from</code>、<code>to</code> - 码点范围的起点和终点（包含）</li>
+<li><code>left</code>、<code>right</code> - 描述该范围内字形最左列和最右列位置的整数
+<ul>
+<li>此范围之外的任何列中的位都将被丢弃</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>新的 <code>reference</code> 字形提供器</h3>
+<ul>
+<li>新的字形提供器可用于包含来自其他字体的提供器
+<ul>
+<li>无论被包含多少次，提供器都保证只加载一次</li>
+</ul>
+</li>
+<li>提供器有一个字段<code>id</code>，用于描述要包含在当前已加载字体中的其他字体
+<ul>
+<li>包含操作在所有字体加载完成后执行，因此它将包含所有数据包中为给定字体定义的所有提供器</li>
+</ul>
+</li>
+</ul>
+<h3>已移除 <code>legacy_unicode</code> 字形提供器</h3>
+<ul>
+<li><code>legacy_unicode</code> 字形提供器已被移除</li>
+<li>此功能已被 <code>unihex</code> 提供器取代</li>
+</ul>
+<h1>修复了快照 23w17a 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-108045" target="_blank" rel="noopener noreferrer">MC-108045</a> Minecraft 未使用最新的 Unifont Unicode 表；字符缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-127394" target="_blank" rel="noopener noreferrer">MC-127394</a> Minecraft 无法渲染 Unicode mb4 范围的字符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172980" target="_blank" rel="noopener noreferrer">MC-172980</a> 方块光照更新时无法正确跨越区块边界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197772" target="_blank" rel="noopener noreferrer">MC-197772</a> minecraft:uniform 字体中缺少纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225742" target="_blank" rel="noopener noreferrer">MC-225742</a> 当发光方块作为矿石生成时，它们不会发光</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241725" target="_blank" rel="noopener noreferrer">MC-241725</a> 在制作人员名单中，Riley Manns 缺少一个左括号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241730" target="_blank" rel="noopener noreferrer">MC-241730</a> 在制作人员名单中，Konrad Jówko 缺少一个右括号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241732" target="_blank" rel="noopener noreferrer">MC-241732</a> 在制作人员名单中，有一处“Lionbridge”拼写错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241733" target="_blank" rel="noopener noreferrer">MC-241733</a> 在制作人员名单中，有一处“Insight”拼写错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241741" target="_blank" rel="noopener noreferrer">MC-241741</a> 制作人员名单中某些名字被列出了两次</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241803" target="_blank" rel="noopener noreferrer">MC-241803</a> credits.json：第2632行存在拼写错误（C 应为 O）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245819" target="_blank" rel="noopener noreferrer">MC-245819</a> 光照偶尔仍会落后于世界生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249341" target="_blank" rel="noopener noreferrer">MC-249341</a> 制作人员名单中未提及一些 Mojang 员工</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249508" target="_blank" rel="noopener noreferrer">MC-249508</a> 世界生成时，洞穴藤蔓和发光地衣发出的光有时仍无法跨区块边界传播</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254506" target="_blank" rel="noopener noreferrer">MC-254506</a> 某些韩文完整字体区域的字体文件是错误的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258926" target="_blank" rel="noopener noreferrer">MC-258926</a> 空格在字体中不再被视为填充</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261413" target="_blank" rel="noopener noreferrer">MC-261413</a> 左手玩家手持的刷子生成的粒子会朝错误方向移动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261626" target="_blank" rel="noopener noreferrer">MC-261626</a> 使用 Unicode 字体时，反向逗号无法正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261900" target="_blank" rel="noopener noreferrer">MC-261900</a> 嗅探兽在燃烧时无法正确寻路进入水中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261938" target="_blank" rel="noopener noreferrer">MC-261938</a> 嗅探兽在黏液块上的动画不够流畅</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261997" target="_blank" rel="noopener noreferrer">MC-261997</a> 生成新区块时游戏崩溃 / java.lang.IllegalStateException: Asking for biomes before we have biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262012" target="_blank" rel="noopener noreferrer">MC-262012</a> 遥测提示框超出屏幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262022" target="_blank" rel="noopener noreferrer">MC-262022</a> 提示框在屏幕底部被截断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262024" target="_blank" rel="noopener noreferrer">MC-262024</a> 嗅探兽繁殖时，嗅探兽蛋有时会生成在地面中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262030" target="_blank" rel="noopener noreferrer">MC-262030</a> 嗅探兽站得离引诱它们的玩家有点太近</li>
+</ul>

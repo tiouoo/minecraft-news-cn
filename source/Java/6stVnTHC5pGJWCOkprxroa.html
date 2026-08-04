@@ -1,0 +1,97 @@
+<p>This week we are releasing a bit of a smaller snapshot. However, if you're into switching game modes and completing advancements, this is right up your alley!</p>
+<p><strong>Edit:</strong> We've now released 20w20b to fix a bug</p>
+<h1>Fixed Bug in 20w20b</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-183769" target="_blank" rel="noopener noreferrer">MC-183769</a> NPE in server initialization</li>
+</ul>
+<h1>New Features in 20w20a</h1>
+<ul>
+<li>Added new Game Mode Switcher debug menu</li>
+<li>Added new Nether Advancements</li>
+</ul>
+<p>​</p>
+<h2>Game Mode Switcher</h2>
+<p>New F3 debug feature which allows you to switch game modes with traditional "tabbing" functionality.
+​</p>
+<ul>
+<li>Hold F3 and tap F4 to open the menu</li>
+<li>Tapping F4 will cycle the game mode, or you can use the mouse</li>
+<li>Release F3 to apply</li>
+<li>Your last game mode is remembered and will be the first selected option, so you can quickly toggle between two game modes with a single press of F3 + F4!</li>
+</ul>
+<p>​</p>
+<h3>F3 + N (Toggle Spectator)</h3>
+<p>A small change has been made to this debug combination.
+​</p>
+<ul>
+<li>By default, using this key would return to Creative after toggling from Spectator. It now will toggle back to the previous game mode you had.</li>
+<li>As an example, if you were in Survival, then toggled to Spectator and back, you would be set back to Survival.</li>
+</ul>
+<p>​</p>
+<h2>New Advancements</h2>
+<ul>
+<li><code>Hidden in the Depths</code> unlocks when obtaining Ancient Debris</li>
+<li><code>Cover Me in Debris</code> unlocks when obtaining full Netherite armor</li>
+<li><code>Country Lode, Take Me Home</code> unlocks when using a Compass on a Lodestone</li>
+<li><code>Who Is Cutting Onions?</code> unlocks when obtaining Crying Obsidian</li>
+<li><code>Not Quite "Nine" Lives</code> unlocks when setting a Respawn Anchor to the maximum</li>
+<li><code>This Boat Has Legs</code> unlocks when riding a Strider with a Fungus on a Stick</li>
+<li><code>Hot Tourist Destinations</code> unlocks when visiting all Biomes in the Nether</li>
+<li><code>Those Were the Days</code> unlocks when entering a Bastion</li>
+<li><code>War Pigs</code> unlocks when looting a chest in a Bastion</li>
+<li><code>Oh Shiny</code> unlocks when distracting an angry Piglin with gold</li>
+</ul>
+<p>​</p>
+<h1>Changes in 20w20a</h1>
+<ul>
+<li>The <code>Bullseye</code> advancement now unlocks when hitting the bullseye of a target block from at least 30 meters away</li>
+<li>The <code>Serious Dedication</code> advancement is now awarded for obtaining a Netherite Hoe</li>
+<li>Obtaining Blackstone now also counts for the <code>Stone Age</code> advancement</li>
+<li>Breeding Striders now counts for <code>The Parrots and the Bats</code> and is now required for <code>Two by Two</code></li>
+</ul>
+<p>​</p>
+<h1>Technical Changes in 20w20a</h1>
+<ul>
+<li>Shulkers with "NoAI" can now be summoned with rotation.</li>
+<li>Added <code>thrown_item_picked_up_by_entity</code> advancement trigger</li>
+<li>Added <code>player_generates_container_loot</code> advancement trigger</li>
+<li>Added <code>item_used_on_block</code> advancement trigger</li>
+<li>Removed <code>safely_harvest_honey</code> advancement trigger</li>
+</ul>
+<p>​</p>
+<h2>Advancements</h2>
+<h3><code>item_used_on_block</code> trigger type</h3>
+<p>Properties:</p>
+<ul>
+<li><code>item</code> matches the thrown item which was picked up</li>
+<li><code>entity</code> matches the entity which picked up the item</li>
+</ul>
+<p>​</p>
+<h3><code>player_generates_container_loot</code> trigger type</h3>
+<p>Properties:</p>
+<ul>
+<li><code>loot_table</code> matches the resource location of the generated loot table</li>
+</ul>
+<p>​</p>
+<h3><code>item_used_on_block</code> trigger type</h3>
+<p>Properties:</p>
+<ul>
+<li><code>location</code> matches the location at the center of the block the item was used on</li>
+<li><code>item</code> matches the item used on the block</li>
+</ul>
+<p>​</p>
+<h2>Miscellaneous trigger changes</h2>
+<ul>
+<li><code>location</code> got a new property <code>smokey</code> which checks if the location is closely above a campfire</li>
+<li><code>entity_properties</code> got new properties <code>vehicle</code> and <code>targetedEntity</code> which match the vehicle or the entity targeted by a mob</li>
+</ul>
+<p>​</p>
+<h1>Fixed bugs in 20w20a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-182967" target="_blank" rel="noopener noreferrer">MC-182967</a> Throwing ender pearl whilst mounted doesn't teleport you</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179481" target="_blank" rel="noopener noreferrer">MC-179481</a> Structure block offset can't be bigger than 32</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175992" target="_blank" rel="noopener noreferrer">MC-175992</a> Striders are not part of the "Two by Two" advancement challenge</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173756" target="_blank" rel="noopener noreferrer">MC-173756</a> Ice Bucket Challenge advancement can be obtained by collecting obsidian from bartering</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173207" target="_blank" rel="noopener noreferrer">MC-173207</a> Bullseye advancement can be made when using a non-arrow projectile, even though the description explicitly mentions arrows</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118234" target="_blank" rel="noopener noreferrer">MC-118234</a> Advancement 'Not Today, Thank You' can be triggered by non-arrow projectiles</li>
+</ul>

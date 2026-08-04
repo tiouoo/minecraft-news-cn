@@ -1,0 +1,150 @@
+name: Fetch Minecraft Patch Notes
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest patch notes
+        run: node scripts/fetch-news.js
+
+      - name: Check for changes
+        id: git-diff
+        run: |
+          set +e
+          git diff --exit-code -- source/ > /dev/null
+          STATUS=$?
+          set -e
+          if [ $STATUS -ne 0 ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.git-diff.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add source/ translate/
+          git diff --cached --quiet || git commit -m "chore: update Minecraft patch notes (auto)"
+          git push
+
+      - name: Create translation issues
+        if: steps.git-diff.outputs.changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const LABEL = '待翻译';
+
+            // 读取 new-items.json，如果不存在则直接退出
+            const itemsPath = path.join(process.cwd(), 'new-items.json');
+            if (!fs.existsSync(itemsPath)) {
+              console.log('new-items.json not found, nothing to do.');
+              return;
+            }
+            const items = JSON.parse(fs.readFileSync(itemsPath, 'utf-8'));
+            if (!items || items.length === 0) {
+              console.log('No new items.');
+              return;
+            }
+
+            // 确保 "待翻译" 标签存在
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: LABEL,
+              });
+            } catch (e) {
+              if (e.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: LABEL,
+                  color: 'f29513',
+                  description: '需要翻译的内容',
+                });
+              } else {
+                throw e;
+              }
+            }
+
+            // 拉取当前 open 的带该标签的 issue 用于去重
+            const existingIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: LABEL,
+              state: 'open',
+              per_page: 100,
+            });
+            const existingTitles = new Set(existingIssues.map(i => i.title));
+
+            // 为每条新新闻创建 Issue
+            for (const item of items) {
+              const issueTitle = `[待翻译][${item.edition}] ${item.title}`;
+              if (existingTitles.has(issueTitle)) {
+                console.log(`Skip existing issue: ${issueTitle}`);
+                continue;
+              }
+
+              const dateStr = item.date
+                ? new Date(item.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })
+                : '未知';
+
+              const shortText = (item.shortText || '无').replace(/\n/g, ' ');
+              const filename = path.basename(item.file);
+              const targetFile = `translate/${item.edition}/${filename}`;
+
+              const body = [
+                '## 基本信息',
+                '',
+                `- **版本**: ${item.version || 'N/A'}`,
+                `- **日期**: ${dateStr}`,
+                `- **类型**: ${item.type || 'N/A'}`,
+                `- **版本分支**: ${item.edition}`,
+                `- **文件名**: \`${filename}\``,
+                `- **源文件**: \`${item.file}\``,
+                `- **翻译目标**: \`${targetFile}\``,
+                '',
+                '## 简介',
+                '',
+                `> ${shortText}`,
+                '',
+                '## 待办',
+                '',
+                `- [ ] 将 \`${item.file}\` 翻译为中文`,
+                `- [ ] 将翻译后的文件保存为 \`${targetFile}\``,
+                '',
+                '---',
+                '_此 Issue 由 GitHub Actions 自动创建_',
+              ].join('\n');
+
+              const resp = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: body,
+                labels: [LABEL],
+              });
+              console.log(`Created issue #${resp.data.number}: ${issueTitle}`);
+            }

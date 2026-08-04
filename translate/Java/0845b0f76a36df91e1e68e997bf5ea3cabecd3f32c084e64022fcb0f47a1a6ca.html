@@ -1,0 +1,261 @@
+<p>又是一个周二，在下一轮更新到来之前，我们已经没有俏皮的快照开场白可以使用了。闲话少说，本次为大家带来快照 6，本次更新对废弃营地进行了多项微调与优化，推出全新的世界选项界面，同时改动了地形的渲染方式。<p>祝大家露营愉快！
+<h1>改动内容</h1>
+<ul>
+<li>为每个生物群系新增一种废弃营地布局变体
+<li>对废弃营地建筑结构进行小幅调整
+</ul>
+<h2>界面（UI）</h2>
+<ul>
+<li>修复领域服所有者无法将自动区域偏好选为领域服务器区域的问题
+<li>在控制设置中新增「退出快捷键」选项，用于控制快捷键是否能够关闭游戏（Windows/Linux 为 Alt + F4，macOS 为 Cmd + Q、Cmd + W）
+<ul>
+<li>默认关闭
+</ul>
+</ul>
+<h3>世界选项</h3>
+<ul>
+<li>世界选项按钮移动至原先「对局域网开放」按钮的位置，可在暂停菜单打开
+<ul>
+<li>世界选项界面分为「通用」和「多人游戏」两个板块
+<ul>
+<li>「通用」板块保留原先世界选项界面的全部设置项
+<li>「多人游戏」板块包含三项设置：
+<ul>
+<li>局域网：更改世界的多人游戏开放范围
+<li>指令权限：控制加入世界的玩家是否可以使用指令
+<li>端口：世界对局域网开放时使用的端口号
+</ul>
+</ul>
+</ul>
+<li>用于打开联机选项界面的联机按钮，现在将始终显示在设置菜单内
+</ul>
+<h1>技术性改动</h1>
+<ul>
+<li>数据包版本提升至 113.0
+<li>资源包版本提升至 94.0
+<li>受支持设备上将通过间接多绘制（MultiDrawIndirect）渲染地形方块
+</ul>
+<h1>数据包版本 113.0</h1>
+<h2>指令</h2>
+<h3><code>publish</code> 指令改动</h3>
+<ul>
+<li>移除 <code>gamemode</code> 参数
+<ul>
+<li>取而代之：使用 <code>defaultgamemode</code> 指令或世界选项内的游戏模式按钮设置世界默认游戏模式；针对单个玩家的游戏模式依旧使用 <code>gamemode</code> 指令修改
+</ul>
+</ul>
+<h2>数据组件</h2>
+<h3><code>minecraft:cooking_fuel</code> 改动</h3>
+<ul>
+<li><code>burn_time</code> 与 <code>speed_multiplier</code> 现在支持直接填写数字进行定义
+</ul>
+<h3><code>minecraft:brewing_fuel</code> 改动</h3>
+<ul>
+<li><code>uses</code> 与 <code>speed_multiplier</code> 现在支持直接填写数字进行定义
+</ul>
+<h3><code>minecraft:compostable</code> 改动</h3>
+<ul>
+<li><code>layers</code> 现在支持直接填写数字进行定义
+</ul>
+<h2>实体数据</h2>
+<ul>
+<li>新增标签 <code>invulnerable_time</code>，使生物在指定刻数内暂时处于无敌状态
+</ul>
+<h2>战利品表类型</h2>
+<h3><code>minecraft:block_interact</code> 改动</h3>
+<ul>
+<li>上下文现在提供 <code>origin</code>，代表被交互方块的中心点
+</ul>
+<h2>世界生成</h2>
+<h3>噪声（Noises）</h3>
+<p>噪声格式（定义于 <code>worldgen/noise</code> 注册表，或是内联在基于噪声的方块状态提供器中）已更新。
+<p>噪声用于定义分形布朗运动（fBm）配置，具备以下特性：
+<ul>
+<li><p>输出数值（近似）服从正态分布
+<li><p>若无额外指定，输出振幅范围适配 <code>[-1; 1]</code>
+<ul>
+<li>受正态分布影响，实际 99.7% 的采样结果会落在该区间内，但依旧有可能出现区间外的值
+</ul>
+<li><p>默认参数：持续性 persistence=0.5，空隙度 lacunarity=2.0
+<ul>
+<li>含义：每经过一个八度，振幅减半、频率翻倍
+</ul>
+<li><p>拥有稳定种子机制；对单个八度进行增强、衰减或叠加修改，不会影响其余八度
+<li><p><code>firstOctave</code> 重命名为 <code>base_octave</code>
+<li><p>新增 <code>base_amplitude</code> — 非负浮点数，噪声输出的缩放系数
+<ul>
+<li>如不填写，默认值为 <code>1.0</code>
+</ul>
+<li><p>新增 <code>octave_count</code> — 1~32 之间的整数，代表采样使用的八度数量
+<li><p>新增 <code>normalize</code> — 布尔值或字符串 <code>"legacy"</code>，控制输出振幅归一化方式
+<ul>
+<li>设为 <code>true</code>：<code>base_amplitude</code> 为输出预期振幅（即 99.7% 的采样值落在 <code>[-base_amplitude; base_amplitude]</code>）
+<li>设为 <code>false</code>：<code>base_amplitude</code> 仅代表第一个八度的振幅
+<li>设为 <code>"legacy"</code>：沿用旧版格式的归一化逻辑
+<ul>
+<li>该模式下最终值域通常会小于预期范围
+</ul>
+<li>不指定时默认 <code>true</code>
+<li>注意：归一化不受 <code>amplitude_modifiers</code> 字段影响；因此单独修改某个八度振幅不会改变其他八度振幅
+</ul>
+<li><p><code>amplitudes</code> 重命名为 <code>amplitude_modifiers</code> — 浮点数组，对应每个八度的缩放系数
+<ul>
+<li>数组元素数量必须和 <code>octave_count</code> 保持一致
+<li>如上所述，该缩放系数不受归一化限制，会直接改变最终输出振幅
+<li>此字段不再为必填项；省略时全部默认为 <code>1.0</code>
+</ul>
+</ul>
+<h3>密度函数（Density Functions）</h3>
+<h4>新增 <code>pow</code></h4>
+<p>对底数进行指定次幂运算。
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>base</code> — 密度函数，底数
+<li><code>exponent</code> — 密度函数，指数
+</ul>
+<h4>新增 <code>sqrt</code></h4>
+<p>计算输入值的平方根。
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>input</code> — 密度函数，待求平方根的数值
+</ul>
+<h4>新增 <code>log</code></h4>
+<p>计算输入值的自然对数。
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>input</code> — 密度函数，待求自然对数的数值
+</ul>
+<h4>新增 <code>sign</code></h4>
+<p>求取输入值的符号：
+<ul>
+<li>输入为正数，返回 <code>1</code>
+<li>输入为 <code>0</code>，返回 <code>0</code>
+<li>输入为负数，返回 <code>-1</code>
+</ul>
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>input</code> — 密度函数，待求取符号的数值
+</ul>
+<h4>新增 <code>distance_to_point</code></h4>
+<p>使用指定距离公式计算到固定坐标点的距离。
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>point</code> — 由 3 个整数组成的数组 <code>[x, y, z]</code>，目标坐标点
+<li><code>metric</code>，可选值：
+<ul>
+<li><code>euclidean</code> — 欧氏距离：<code>sqrt(dx^2 + dy^2 + dz^2)</code>
+<li><code>euclidean_squared</code> — 欧氏距离平方：<code>dx^2 + dy^2 + dz^2</code>
+<li><code>manhattan</code> — 曼哈顿距离：<code>abs(dx) + abs(dy) + abs(dz)</code>
+<li><code>chebyshev</code> — 切比雪夫距离：<code>max(abs(dx), abs(dy), abs(dz))</code>
+</ul>
+</ul>
+<h4><code>gradient</code> 更新（由 <code>y_clamped_gradient</code> 重命名）</h4>
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>axis</code> — <code>x</code>、<code>y</code> 或 <code>z</code>，梯度生效坐标轴
+<li><code>tiling</code>，可选值：
+<ul>
+<li><code>clamp_to_edge</code> — 超出梯度范围时，使用边界最近处的数值
+<li><code>repeat</code> — 在范围外循环重复梯度
+<li><code>mirrored_repeat</code> — 镜像循环，奇数次重复进行翻转，保证衔接处连续
+</ul>
+<li><code>from_coordinate</code> — 整数，梯度起始坐标
+<li><code>to_coordinate</code> — 整数，梯度终止坐标
+<ul>
+<li>不可与 <code>from_coordinate</code> 相同
+</ul>
+<li><code>from_value</code> — 浮点数，梯度起点数值
+<li><code>to_value</code> — 浮点数，梯度终点数值
+</ul>
+<h4>新增 <code>slice</code></h4>
+<p>沿着指定坐标轴固定坐标进行切片，移除输入定义域中的一个维度。举例：当 <code>axis=y</code>、<code>coordinate=0</code> 时，将沿着 XZ 平面切片，所有采样均取 y=0 处的值。
+<p>格式：包含如下字段的对象：
+<ul>
+<li><code>axis</code> — <code>x</code>、<code>y</code> 或 <code>z</code>，将要移除的坐标轴
+<li><code>coordinate</code> — 整数，固定采样坐标
+<li><code>input</code> — 密度函数，原始输入函数
+</ul>
+<h4><code>end_outer_islands</code> 改动</h4>
+<p>由 <code>end_islands</code> 重命名。不再计算主岛屿的密度。
+</ul>
+<h3>结构池元素</h3>
+<h4><code>minecraft:feature_pool_element</code> 改动</h4>
+<ul>
+<li>现在可以和拥有任意目标名称的拼图方块衔接，不再局限于 <code>minecraft:bottom</code>
+</ul>
+<h1>资源包版本 94.0</h1>
+<h2>着色器与后期特效</h2>
+<ul>
+<li>重构 <code>terrain.vsh</code> 和 <code>terrain.fsh</code> 着色器，以支持多绘制指令
+<li>调整 <code>Globals</code> 与 <code>DynamicTransforms</code> 内部分成员排布，减少对应统一变量块占用内存
+<li>新增宏定义：<code>RENDERPEARL_EXPLICIT_DEPTH_INVARIANCE</code> — 若定义该宏，表示顺序透明渲染（OIT）着色器需要手动输出深度值；部分设备自动生成的隐式深度值会出现微小偏差
+</ul>
+<h2>装备资源</h2>
+<p><code>trim_palette_replacements</code> 字段被替换为 <code>trim_overrides</code>。该字段可针对指定纹饰材料或纹饰样式，替换装备使用的纹理或调色板，不再局限于单纯替换调色板。
+<ul>
+<li>格式：一组覆盖规则条目，每条包含：
+<ul>
+<li><code>when</code> — 匹配条件对象，用于指定要匹配的材料与/或样式
+<ul>
+<li><code>material</code> — 可选，纹饰材料ID，待匹配材料（填写时生效）
+<li><code>pattern</code> — 可选，纹饰样式ID，待匹配样式（填写时生效）
+<ul>
+<li>注意：该参数不是旧版的调色板 ID，与 <code>trim_palette_replacements</code> 不同！
+</ul>
+<li><code>material</code>、<code>pattern</code> 至少填写一项
+<li>两项同时填写时，需要全部匹配才会启用本条规则
+</ul>
+<li><code>texture</code> — 可选，纹饰样式资源ID；匹配成功后替换使用的纹理
+<ul>
+<li>资源标识符格式与常规资源ID保持一致
+<li>不填写时，使用该纹饰样式默认纹理
+</ul>
+<li><code>palette</code> — 可选，调色板ID；匹配成功后替换使用的调色板
+<ul>
+<li>不填写时，不对纹理进行调色板映射
+</ul>
+<li>始终选取第一条满足匹配条件的条目
+<li><code>texture</code> 和 <code>palette</code> 至少定义一项
+</ul>
+</ul>
+<h1>26.3 快照 6 修复漏洞列表</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-299582 rel="noopener noreferrer"target=_blank>MC-299582</a> — 在使用 <code>/recipe</code> 指令与 <code>limited_crafting</code> 游戏规则时，特殊合成配方行为与其他配方类型不一致
+<li><a href=https://bugs.mojang.com/browse/MC-304195 rel="noopener noreferrer"target=_blank>MC-304195</a> — 干枯护甲臂部叠加纹理包含模型未使用的冗余像素
+<li><a href=https://bugs.mojang.com/browse/MC-307206 rel="noopener noreferrer"target=_blank>MC-307206</a> — <code>Std140Builder</code> 对 <code>vec3</code>、<code>ivec3</code> 填充对齐计算错误
+<li><a href=https://bugs.mojang.com/browse/MC-307996 rel="noopener noreferrer"target=_blank>MC-307996</a> — 设备缺少 Vulkan <code>fillModeNonSolid</code> 特性时游戏无法启用硬件加速
+<li><a href=https://bugs.mojang.com/browse/MC-308694 rel="noopener noreferrer"target=_blank>MC-308694</a> — 在局域网世界使用 <code>/defaultgamemode</code> 指令时，会将所有人游戏模式强制修改为「其他玩家设置」中的模式
+<li><a href=https://bugs.mojang.com/browse/MC-308699 rel="noopener noreferrer"target=_blank>MC-308699</a> — 房主切换自身游戏模式后，新加入局域网的玩家会忽略强制游戏模式设定
+<li><a href=https://bugs.mojang.com/browse/MC-308749 rel="noopener noreferrer"target=_blank>MC-308749</a> — 退出并重新加入同一个局域网会话会重置自身游戏模式
+<li><a href=https://bugs.mojang.com/browse/MC-309720 rel="noopener noreferrer"target=_blank>MC-309720</a> — 草垛床纹理存在缺失像素与多余像素
+<li><a href=https://bugs.mojang.com/browse/MC-309958 rel="noopener noreferrer"target=_blank>MC-309958</a> — <code>SynchedEntityData.Builder#define</code> 存在差一错误
+<li><a href=https://bugs.mojang.com/browse/MC-310088 rel="noopener noreferrer"target=_blank>MC-310088</a> — 任务栏图标显示 Java 图标而非游戏图标
+<li><a href=https://bugs.mojang.com/browse/MC-310099 rel="noopener noreferrer"target=_blank>MC-310099</a> — 草垛床床头与床尾朝向不一致时游戏卡死
+<li><a href=https://bugs.mojang.com/browse/MC-310101 rel="noopener noreferrer"target=_blank>MC-310101</a> — macOS 平台 Cmd+W 现在可以关闭游戏
+<li><a href=https://bugs.mojang.com/browse/MC-310122 rel="noopener noreferrer"target=_blank>MC-310122</a> — 使用方向键切换饼状菜单选项无法正常工作
+<li><a href=https://bugs.mojang.com/browse/MC-310132 rel="noopener noreferrer"target=_blank>MC-310132</a> — 护甲纹饰纹理无法被自定义覆盖
+<li><a href=https://bugs.mojang.com/browse/MC-310134 rel="noopener noreferrer"target=_blank>MC-310134</a> — macOS 平台仍然显示并启用「独占全屏」按钮与滑块
+<li><a href=https://bugs.mojang.com/browse/MC-310136 rel="noopener noreferrer"target=_blank>MC-310136</a> — 开启「改进透明度」选项后玩家皮肤渲染错乱
+<li><a href=https://bugs.mojang.com/browse/MC-310143 rel="noopener noreferrer"target=_blank>MC-310143</a> — 关闭独占全屏后，全屏模式下输入法候选词条不可见
+<li><a href=https://bugs.mojang.com/browse/MC-310155 rel="noopener noreferrer"target=_blank>MC-310155</a> — 在视频设置点击全屏按钮进入 macOS 全屏模式后，移动光标至屏幕边缘无法调出菜单栏与程序坞
+<li><a href=https://bugs.mojang.com/browse/MC-310168 rel="noopener noreferrer"target=_blank>MC-310168</a> — 编辑发光告示牌时，已放置告示牌的发光效果会暂时消失
+<li><a href=https://bugs.mojang.com/browse/MC-310195 rel="noopener noreferrer"target=_blank>MC-310195</a> — macOS 平台 Ctrl+左键点击不再等效右键点击
+<li><a href=https://bugs.mojang.com/browse/MC-310213 rel="noopener noreferrer"target=_blank>MC-310213</a> — 屏幕虚拟键盘交互逻辑不一致
+<li><a href=https://bugs.mojang.com/browse/MC-310228 rel="noopener noreferrer"target=_blank>MC-310228</a> — 玩家摧毁床的瞬间村民正好躺上床，游戏卡死
+<li><a href=https://bugs.mojang.com/browse/MC-310235 rel="noopener noreferrer"target=_blank>MC-310235</a> — 开启「改进透明度」选项，活塞推动装有水的炼药锅时游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310241 rel="noopener noreferrer"target=_blank>MC-310241</a> — 酿造配方会出现在 <code>/recipe</code> 指令提示，但无法授予或撤销
+<li><a href=https://bugs.mojang.com/browse/MC-310281 rel="noopener noreferrer"target=_blank>MC-310281</a> — 使用快捷键在界面标签页之间切换功能异常
+<li><a href=https://bugs.mojang.com/browse/MC-310311 rel="noopener noreferrer"target=_blank>MC-310311</a> — 引用自身的物品修饰器执行时造成游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310313 rel="noopener noreferrer"target=_blank>MC-310313</a> — 引用自身的断言条件执行时造成游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310314 rel="noopener noreferrer"target=_blank>MC-310314</a> — 引用自身的数值生成器执行时造成游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310315 rel="noopener noreferrer"target=_blank>MC-310315</a> — 引用自身的槽位源执行时造成游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310319 rel="noopener noreferrer"target=_blank>MC-310319</a> — 应用蜘蛛后期特效时游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310321 rel="noopener noreferrer"target=_blank>MC-310321</a> — 苦力怕后期特效无法生效
+<li><a href=https://bugs.mojang.com/browse/MC-310357 rel="noopener noreferrer"target=_blank>MC-310357</a> — OpenGL 渲染后端向 <code>GL_UNPACK_ALIGNMENT</code> 传入非法数值 3
+<li><a href=https://bugs.mojang.com/browse/MC-310359 rel="noopener noreferrer"target=_blank>MC-310359</a> — 使用 <code>copyTextureToTexture</code> 时，多级纹理（mipLevel）参数未生效
+<li><a href=https://bugs.mojang.com/browse/MC-310360 rel="noopener noreferrer"target=_blank>MC-310360</a> — Vulkan 渲染后端调用 <code>clearColorTexture</code>、<code>clearDepthTexture</code> 会清空全部多级纹理，行为与 OpenGL 后端不一致
+<li><a href=https://bugs.mojang.com/browse/MC-310382 rel="noopener noreferrer"target=_blank>MC-310382</a> — 加载包含路径大写字符 <code>#include</code> 的着色器资源包时游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-310383 rel="noopener noreferrer"target=_blank>MC-310383</a> — OpenGL 和 Vulkan 渲染后端的分目标混合状态行为不一致
+<li><a href=https://bugs.mojang.com/browse/MC-310388 rel="noopener noreferrer"target=_blank>MC-310388</a> — <code>caves</code> 与 <code>floating_islands</code> 噪声参数生成效果不符合预期
+<li><a href=https://bugs.mojang.com/browse/MC-310455 rel="noopener noreferrer"target=_blank>MC-310455</a> — <code>copyTextureToBuffer</code> 在 OpenGL 后端输出带填充行，Vulkan 后端输出紧密排布行，两者行为不一致
+</ul>

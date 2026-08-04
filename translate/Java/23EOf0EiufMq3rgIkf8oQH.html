@@ -1,0 +1,134 @@
+<p>我们现在为 Minecraft: Java Edition 发布 1.19.1。此版本新增了悦灵复制和新的玩家安全功能。</p>
+<h1>功能</h1>
+<ul>
+<li>新增悦灵复制</li>
+<li>调整了幽匿催化体</li>
+<li>新增聊天信任状态</li>
+<li>新增聊天预览选项</li>
+<li>新增玩家举报</li>
+</ul>
+<h2>悦灵</h2>
+<ul>
+<li>悦灵会随着唱片机中播放的唱片起舞</li>
+<li>如果悦灵在跳舞时被给予紫水晶碎片，它会进行复制<ul>
+<li>复制有 5 分钟的冷却时间</li>
+</ul></li>
+</ul>
+<h2>幽匿催化体</h2>
+<ul>
+<li>幽匿催化体现在会掉落 5 点经验值而非 20 点</li>
+</ul>
+<h2>聊天</h2>
+<ul>
+<li>将聊天滚动条移至右侧</li>
+<li>输入消息时，所显示聊天消息的签名状态会以彩色指示器显示<ul>
+<li>指示器会出现在聊天输入框左侧，或在使用聊天预览时出现在聊天预览左侧</li>
+<li>当显示的消息已签名时，指示器为蓝色</li>
+<li>当聊天预览已启用且预览等待签名时，指示器为橙色</li>
+</ul></li>
+<li>当预览等待签名时，聊天预览的背景也会略微变淡</li>
+<li>当连接到未强制安全聊天的服务器时，新增警告弹窗</li>
+<li>社交互动屏幕上的玩家列表现在会将最近有消息的玩家条目置于列表顶部</li>
+</ul>
+<h3>聊天信任状态</h3>
+<ul>
+<li>未使用安全聊天系统签名或被服务器篡改的消息现在会被标记<ul>
+<li>缺少签名或签名无效的消息标记为“不安全”</li>
+<li>检测到被修改的消息标记为“已修改”</li>
+</ul></li>
+<li>消息的信任状态通过彩色指示器和图标显示<ul>
+<li>彩色指示器始终可见</li>
+<li>图标仅在聊天屏幕打开时可见</li>
+</ul></li>
+<li>悬停在图标上会提供有关信任状态的更多信息<ul>
+<li>对于被修改的消息，工具提示中还会显示原始安全文本</li>
+</ul></li>
+<li>系统消息（非玩家聊天，例如命令输出）会以灰色指示器显示</li>
+</ul>
+<h3>聊天预览</h3>
+<ul>
+<li>新增“发送时”聊天预览选项，仅在尝试发送消息时更新聊天预览<ul>
+<li>要确认发送消息，需要再次按回车键</li>
+<li>之前的“开”设置已重命名为“输入时”</li>
+</ul></li>
+<li>在“输入时”模式下，如果消息未被服务器修改，聊天预览将不再显示预览</li>
+<li>聊天预览现在在单人游戏中启用，并且会在使用具有选择器替换的命令（例如 <code>/say</code>）时显示</li>
+<li>预览的悬停事件和点击事件会以实心背景突出显示</li>
+</ul>
+<h2>玩家举报</h2>
+<p>现在可以举报在游戏聊天中发送辱骂性消息的玩家。举报人需要选择包含不当内容的具体聊天消息以及举报类别，以便我们的审核团队能够根据最佳上下文采取行动。这可以通过社交互动屏幕访问。</p>
+<ul>
+<li>可以选择多条聊天消息进行举报<ul>
+<li>所选消息附近的额外聊天消息也会被用于为我们的审核团队提供更多上下文</li>
+</ul></li>
+<li>可以从举报类别列表中选择举报类别<ul>
+<li>举报类别屏幕有一个“了解举报”按钮，链接到帮助文章</li>
+</ul></li>
+<li>可以输入额外评论，以提供有关举报的更多细节和信息</li>
+</ul>
+<p>有关更多信息，请参阅这篇<a href="https://www.minecraft.net/en-us/article/addressing-player-chat-reporting-tool" target="_blank" rel="noopener noreferrer">关于玩家举报的文章</a>和我们的<a href="https://help.minecraft.net/hc/en-us/articles/7317376541197" target="_blank" rel="noopener noreferrer">举报常见问题解答</a>。</p>
+<h2>停权与封禁</h2>
+<ul>
+<li>如果你被暂停在线游戏，游戏现在会在启动时显示通知屏幕<ul>
+<li>会显示停权原因以及生效时长</li>
+</ul></li>
+</ul>
+<h2>Realms</h2>
+<ul>
+<li>被 Java Realms 不当内容过滤器过滤的消息现在会以黄色标记显示</li>
+<li>如果玩家发送的聊天消息被 Realm 上一个或多个接收玩家完全过滤，玩家将收到通知</li>
+</ul>
+<h1>技术性</h1>
+<ul>
+<li>聊天输入框不再适用于具有负前进量的自定义字体字形，或前进量大于 32 的字形</li>
+</ul>
+<h2>聊天类型</h2>
+<ul>
+<li>添加到 <code>chat_types</code> 注册表中的聊天类型现在仅用于玩家聊天，而不用于系统消息<ul>
+<li><code>system</code> 和 <code>game_info</code> 聊天类型已被移除</li>
+</ul></li>
+<li>聊天类型已简化，现在仅需定义 <code>chat</code> 和 <code>narration</code> 装饰<ul>
+<li>聊天类型不再支持叠加层</li>
+<li>应改用系统消息来显示叠加层</li>
+</ul></li>
+<li><code>msg_command</code> 聊天类型已拆分为 <code>msg_command_incoming</code> 和 <code>msg_command_outgoing</code></li>
+<li><code>team_msg_command</code> 聊天类型已拆分为 <code>team_msg_command_incoming</code> 和 <code>team_msg_command_outgoing</code></li>
+<li><code>team_name</code> 聊天类型参数已重命名为 <code>target</code><ul>
+<li>此聊天类型参数现在由 <code>msg_command_outgoing</code> 使用</li>
+</ul></li>
+</ul>
+<h2>组件</h2>
+<ul>
+<li>文本组件的 <code>run_command</code> 点击事件不再支持直接发送聊天消息<ul>
+<li>仅支持命令</li>
+<li>这意味着值现在总是需要以 <code>/</code> 为前缀</li>
+<li>不允许使用会生成已签名玩家聊天消息的命令（例如 <code>/say</code>）<ul>
+<li>应改用 <code>/tellraw</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>游戏事件</h2>
+<h3>新增游戏事件</h3>
+<ul>
+<li><code>jukebox_play</code></li>
+<li><code>jukebox_stop_play</code></li>
+</ul>
+<h2>多人游戏安全聊天签名</h2>
+<ul>
+<li>聊天消息的顺序现在会经过加密验证<ul>
+<li>这用于验证玩家举报的聊天消息上下文</li>
+</ul></li>
+</ul>
+<h2>服务器</h2>
+<ul>
+<li>专用服务器的 <code>enforce-secure-profile</code> 现在默认为 <code>true</code></li>
+<li>服务器日志中的不安全聊天消息现在带有 <code>[Not Secure]</code> 标签前缀</li>
+<li>自定义服务器可以通过新的网络数据包设置常规聊天的自动补全选项</li>
+<li>自定义服务器可以通过新的网络数据包隐藏玩家聊天消息的显示<ul>
+<li>这不会从聊天日志中删除玩家聊天消息</li>
+</ul></li>
+</ul>
+<h1>1.19.1 中修复的漏洞</h1>
+<ul>
+<li>此版本修复了 50 多个漏洞。请查看<a href="https://bugs.mojang.com/issues/?filter=27220" target="_blank" rel="noopener noreferrer">问题跟踪器上的列表</a>。</li>
+</ul>

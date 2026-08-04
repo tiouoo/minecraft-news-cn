@@ -1,0 +1,509 @@
+<p>We're now releasing 1.20.2 for Minecraft: Java Edition. This release comes with more diamond ore in the deep regions of the world and changes to mob attack reach as well as optimizations to the game's networking performance enabling smoother online play even on low-bandwidth connections.</p>
+<p>This release also includes new features for map makers and pack creators like macro functions, a random command and pack overlays.</p>
+<p>With 1.20.2, we are making some important updates to our Player Reporting Tool to better protect the online safety of our players. You will now be able to report player skins and usernames that violate our Community Standards.</p>
+<p>The optional Villager Trade Rebalance Experiment also makes its debut in this version with changes to trades in the making that you can try out.</p>
+<h1>New Features</h1>
+<h2>Player Skin &#x26; Name Reporting</h2>
+<p>We are making some important updates to our Player Reporting Tool to better protect the online safety of our players.</p>
+<p>Playing Minecraft should be an inclusive and safe experience for everyone, which is why alongside in-game chat messages, you will now be able to report player skins and usernames that violate our Community Standards in Java Edition.</p>
+<p>Just like with chat reports, nothing is automated. Any reported skin or username will be reviewed manually by a team of trained Minecraft moderators, who will use the submitted evidence to decide whether the skin and/or username is in breach of our Community Standards. Skins that are in violation of these standards will be removed from Minecraft and will no longer be accessible for use by any player. Usernames that are in violation of these standards will need to be changed before that player can play online via a shared server or Realm; though single player mode will still be accessible. To find out more about this and other safety policies, including more detail on the suspension procedure, appeals process, and how we handle malicious or repeat reporting, please visit our dedicated <a href="https://help.minecraft.net/hc/en-us/articles/7317376541197" target="_blank" rel="noopener noreferrer">FAQ page</a>.</p>
+<ul>
+<li>Player Skins and Names can now be reported in the Social Interactions Screen</li>
+<li>If a skin or name is reported, and found to be violating the <a href="https://www.minecraft.net/community-standards" target="_blank" rel="noopener noreferrer">Community Standards</a>, our team of human moderators can action in a few ways:<ul>
+<li>Ban the skin from being used by any player</li>
+<li>Ban the name from being used by any player</li>
+<li>Suspend the player from online play in the case of repeated offences</li>
+</ul></li>
+<li>When a skin is banned, players with that skin:<ul>
+<li>Will have their skin removed</li>
+<li>Will be notified when they launch the game</li>
+<li>Will be automatically assigned one of the default skins</li>
+<li>Can still play multiplayer and singleplayer</li>
+<li>Can select a new custom skin at any time</li>
+</ul></li>
+<li>When a player's name is banned, that player:<ul>
+<li>Will need to choose a new name</li>
+<li>Will be notified when they launch the game</li>
+<li>Will not be able to play online until they change their name</li>
+<li>Can still play singleplayer</li>
+</ul></li>
+<li>A skin or name that has been banned cannot be used by any player in the future</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>The calculations to determine whether a mob can attack a player or other mobs have been changed</li>
+<li>Diamond Ore is now generated more frequently in the Deepslate layers of the Overworld</li>
+<li>Optimizations to networked play</li>
+<li>Curing a Zombie Villager now only gives a big discount the first time<ul>
+<li>There is no longer a bonus discount for reinfecting and curing the same Villager multiple times</li>
+</ul></li>
+<li>Sponges and Wet Sponges now have their own custom sounds</li>
+<li>Barrier blocks can now be waterlogged by players in Creative mode<ul>
+<li>Water cannot be placed in them or taken out by non-direct interactions such as Dispensers</li>
+</ul></li>
+<li>The positions that all entities ride on other entities have been adjusted to make more sense</li>
+<li>Added the "Narrator Hotkey" accessibility option (default on)<ul>
+<li>The narrator can be toggled on and off with <code>Ctrl+B</code> when this is on</li>
+</ul></li>
+<li>Added "I want to report them" Player Reporting category</li>
+<li>Removed Herobrine</li>
+</ul>
+<h2>Mob attack reach changes</h2>
+<p>The calculations to determine whether a mob can attack a player or other mobs have been changed. Previously a mob's horizontal width was used to determine their attack reach and their height had no effect. The area where a mob can attack is now their bounding box extended in horizontal directions.</p>
+<p>Here are some situations where the new rules will affect the reach of mobs:</p>
+<ul>
+<li>If a mob is entirely below you, or entirely above you, it will not be able to reach you</li>
+<li>While riding on a medium-sized mob, like a Horse, you will be protected from small mobs, like Baby Zombies</li>
+<li>While riding on a tall mob, like a Camel, you will be protected from standard-size mobs, like Zombies</li>
+<li>Also, Ravagers won't be able to attack you through a few block thick walls anymore</li>
+<li>However, to escape from an Enderman, you need to be at least 3 blocks above the ground, not 1.5 as before</li>
+<li>Mobs will be able to attack you with the bottom of their hitbox, assuming your head is in range</li>
+<li>Builds that trap hostile mobs might need to be adjusted to be safe</li>
+</ul>
+<p>This change does not affect the reach of players, and mobs still need to see their target to attack it.</p>
+<h2>Networked Play</h2>
+<p>The Multiplayer mode of the game has been optimized to enable more fluid online play. If you have previously experienced disconnections or slow loading into online servers, this version may significantly improve that experience.</p>
+<ul>
+<li>The game world will now show earlier instead of the loading screen while loading into a world on a server</li>
+<li>Clients with extremely low-bandwidth connections will not time out while loading the world</li>
+<li>Clients with low-bandwidth connections can interact with the world while some chunks are still loading</li>
+</ul>
+<h2>Vibrations</h2>
+<ul>
+<li>Vibrations no longer risk being lost on simulation distance limit</li>
+<li>Using Bone Meal emits an <code>item_interact_finish</code> vibration of frequency 3</li>
+<li>Unequipping items emits a new <code>unequip</code> vibration of frequency 4</li>
+<li>Camels eating Cactus emit an <code>eat</code> vibration of frequency 8</li>
+<li>Carrots being eaten by Rabbits emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Sweet Berries being eaten by Foxes emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Chiseled Bookshelves emit a <code>block_change</code> vibration of frequency 11 when receiving books from Hoppers</li>
+<li>Turtle Eggs cracking emit a <code>block_change</code> vibration of frequency 11</li>
+<li>Turtle Eggs hatching emit a <code>block_destroy</code> vibration of frequency 12</li>
+<li>Fire being doused by Water Potion emits a <code>block_destroy</code> vibration of frequency 12</li>
+<li>Evokers evoking Vexes or Fangs emit an <code>entity_place</code> vibration of frequency 14</li>
+</ul>
+<h2>Miscellaneous Minor Tweaks</h2>
+<ul>
+<li>Chorus Flower no longer provides support for hanging or standing blocks</li>
+<li>Updated structure icons on Explorer Maps sold by Cartographers</li>
+<li>When Villagers unlock new trades, the order of those trades in the UI is now always random instead of sometimes being deterministic</li>
+<li>The sizes of text fields in the user interface are now consisent with the size of buttons</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1_20_2_release_4.jpg" alt="1.20.2 Release Image 4"></p>
+<h1>Technical Changes</h1>
+<ul>
+<li>The resource pack version is now 18</li>
+<li>The data pack version is now 18</li>
+<li>History of used commands is now saved and accessible across worlds</li>
+<li>Optimized networking to improve the experience on low bandwidth connections</li>
+<li>Added support for multi-version packs</li>
+<li>Changed network protocol to allow for more data-driven content in the future</li>
+<li>Added new <code>log-ips</code> option to <code>server.properties</code></li>
+<li>Added validation for symbolic links in datapacks and resource packs</li>
+<li>When hitboxes are displayed through F3+B, entities that have a passenger will display the passenger's attachment point</li>
+<li>The charts on the debug screen can now be toggled with F3+1 (pie chart) and F3+2 (FPS and TPS) instead of holding Shift or Alt while opening the screen</li>
+<li>Pressing F3+3 will now show charts for ping and received network traffic on the debug screen</li>
+<li>The <code>LWJGL</code> library has been upgraded to version 3.3.2</li>
+<li>The default Java version shipped with the game has been upgraded to Microsoft OpenJDK 17.0.8</li>
+</ul>
+<h2>Command History</h2>
+<ul>
+<li>The last 50 commands that you sent in chat will be remembered across game sessions</li>
+<li>You can access the command and chat history by pressing up or down arrows in the chat</li>
+<li>Regular chat is only persisted within the same game session (leaving a server or world clears them)</li>
+<li>Recent commands are stored in <code>command_history.txt</code> in the game folder</li>
+</ul>
+<h2>Network optimizations</h2>
+<ul>
+<li>Gameplay packets are now packed into bigger TCP packets to reduce overhead from TCP headers, significantly reducing network usage</li>
+<li>Chunks are not sent over the network to the client in one big continuous batch anymore</li>
+<li>Chunks are instead sent in smaller batches depending on the available bandwidth, meaning that:<ul>
+<li>Clients with extremely low-bandwidth connections will not time out while loading the world</li>
+<li>Clients with low-bandwidth connections can interact with the world while some chunks are still loading</li>
+</ul></li>
+<li>Only chunks within the client's render distance are now sent</li>
+</ul>
+<h2>Multi-version Packs</h2>
+<p>New features have been added to datapacks and resource packs to allow creation of packs that are compatible with multiple versions of game.</p>
+<h3>Pack Metadata</h3>
+<ul>
+<li>Pack metadata now includes an optional field <code>supported_formats</code> which describes a range for pack formats that this pack supports<ul>
+<li>Examples: <code>16</code>, <code>[16,17]</code>, <code>{"min_inclusive": 16, "max_inclusive": 17}</code></li>
+</ul></li>
+<li><code>pack_format</code> field is still required and its format remains unchanged, to allow older game versions to read pack data<ul>
+<li>If <code>supported_formats</code> is present, it must contain the value declared in <code>pack_format</code></li>
+<li>Note: since this new information is ignored by older versions of the game, they will always see a "normal", single-version pack, without any extended compatibility</li>
+</ul></li>
+</ul>
+<h3>Overlays</h3>
+<ul>
+<li>Packs can now contain overlay directories ("overlays")</li>
+<li>Overlays are sub-packs applied over the "normal" contents of a pack<ul>
+<li>These directories have the same layout as the top-level pack, including the <code>assets</code> and <code>data</code> directories</li>
+<li>Overlays can be applied if they support the client's pack format</li>
+<li>Overlays can add and replace files, but not remove them<ul>
+<li>For example, if the overlay <code>foo</code> is applied, the file <code>foo/assets/minecraft/textures/bar.png</code> will replace the contents of <code>assets/minecraft/textures/bar.png</code></li>
+</ul></li>
+<li><code>pack.mcmeta</code> and <code>pack.png</code> are ignored in overlay directories</li>
+</ul></li>
+<li>New section called <code>overlays</code> have been added to pack metadata<ul>
+<li>It contains an <code>entries</code> field, containing a list of overlays</li>
+<li>Every overlay entry has two fields:<ul>
+<li><code>formats</code> - range of supported formats</li>
+<li><code>directory</code> - overlay directory (allowed characters: <code>a-z</code>, <code>0-9</code>, <code>_</code> and <code>-</code>)</li>
+</ul></li>
+</ul></li>
+<li>Order of application: overlays are stacked from the bottom to top of the list<ul>
+<li>For example, if a pack has two overlays: <code>"entries": [{"directory":"A", ...}, {"directory":"B", ...}]</code>, the game will first look in <code>B</code>, then <code>A</code> and then in the top pack directory</li>
+</ul></li>
+</ul>
+<h2>Symbolic Link Validation</h2>
+<p>To improve safety, the game will now also detect symbolic links used inside data- and resource packs.</p>
+<ul>
+<li>This feature expands on symbolic link validation in worlds added in the previous release</li>
+<li>The game will now warn users if a pack added via drag and drop contains disallowed symbolic links</li>
+<li>Packs containing disallowed symbolic links will not be visible in UI and commands</li>
+<li>Additionally, directories and files that are not recognized as packs will no longer be copied via drag and drop</li>
+<li>For a detailed explanation, see this <a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">help article</a></li>
+</ul>
+<h2>Network Protocol</h2>
+<p>As part of ongoing work towards more data-driven features, the network protocol has been changed to include a new configuration phase.</p>
+<ul>
+<li>Configuration phase automatically starts after login phase (i.e. after client account has been verified) and lasts until the player joins the world (play phase)</li>
+<li>Clients can stay in configuration phase indefinitely - it's up to the server to release it to the world</li>
+<li>Servers can also request clients to re-enter the configuration phase after it has entered the play phase<ul>
+<li>Other players will see such clients as disconnected</li>
+</ul></li>
+<li>Users in configuration phase will not be visible on the player list</li>
+<li>Actions allowed in configuration phase (moved from play phase):<ul>
+<li>Configuration of data-driven registries</li>
+<li>Configuration of enabled features</li>
+</ul></li>
+<li>Actions shared between configuration and play phases:<ul>
+<li>Application of server resource packs</li>
+<li>Update of tags</li>
+<li>Exchange of custom packets</li>
+<li>Ping and keep-alive packets</li>
+<li>Sending of client options</li>
+</ul></li>
+<li>The server will now negotiate resource packs in the configuration phase<ul>
+<li>This means that the player will no longer be in the world when answering prompts and reloading resources</li>
+</ul></li>
+</ul>
+<h3>Secure Chat</h3>
+<ul>
+<li>Clients will no longer disconnect themselves when receiving an invalid chat message<ul>
+<li>A placeholder message will instead be shown in chat</li>
+</ul></li>
+</ul>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>New option: <code>log-ips</code> (default <code>true</code>)<ul>
+<li>When set to <code>false</code>, will prevent player IPs from being included in the log when players join the game</li>
+</ul></li>
+</ul>
+<h2>Telemetry</h2>
+<ul>
+<li>Added a button to the Telemetry Data Collection Screen that links to the Microsoft Privacy Statement</li>
+</ul>
+<h1>Resource Pack Version 16</h1>
+<ul>
+<li>The process of upgrading your pack can be assisted by using this automated <a href="https://github.com/Mojang/slicer/releases/tag/v1.1.2" target="_blank" rel="noopener noreferrer">Slicer</a> tool</li>
+<li>All textures containing multiple sprites in a sheet for GUI have been split into individual sprites under <code>textures/gui/sprites</code> (automated by the Slicer tool)</li>
+<li>All textures in the <code>realms</code> namespace have been moved into the <code>minecraft</code> namespace (automated by the Slicer tool)</li>
+<li><code>villager2.png</code> has been renamed to <code>villager.png</code> (automated by the Slicer tool)</li>
+<li><code>icon/trial_available</code> and <code>realm_status/expires_soon</code> GUI sprites are animated with <code>.mcmeta</code> declarations instead of individual sprites (automated by the Slicer tool)</li>
+<li>The Bundle tooltip background is now drawn as a nine-sliced sprite</li>
+<li>The icons for the Accessibility, Language, Realms News buttons have been split from their underlying button texture</li>
+<li>The Realms Invite button is now drawn as an overlay on the normal button texture<ul>
+<li>The highlighted texture state for this button has been removed</li>
+</ul></li>
+<li>The highlighted states for Realms invitation number icons have been removed</li>
+<li>The exclamation marks on the <code>notification\more.png</code> have been removed</li>
+</ul>
+<h2>GUI Sprite Sheet</h2>
+<ul>
+<li>Sprites used in GUI drawing have been split into individual sprite files instead of larger sprite sheets<ul>
+<li>For example, <code>widgets/button.png</code> and <code>widgets/button_highlighted.png</code> have been split from <code>widgets.png</code></li>
+</ul></li>
+<li>Each sprite can now be individually overriden by a resource pack instead of replacing the entire sheet</li>
+<li>Sprites are loaded into the <code>gui</code> atlas from the <code>textures/gui/sprites</code> directory</li>
+</ul>
+<h3>GUI Sprite .mcmeta</h3>
+<ul>
+<li>Any sprite used in the GUI can now be animated using <code>.mcmeta</code> files, similar to other atlases<ul>
+<li><code>icon/trial_available</code> and <code>realm_status/expires_soon</code> are now animated this way</li>
+</ul></li>
+<li>Sprites in the <code>gui</code> atlas can now configure scaling behavior through a new <code>gui</code> section in <code>.mcmeta</code> files<ul>
+<li>For example, button textures must be scaled based on how big the button should be</li>
+<li>The <code>gui</code> section in <code>.mcmeta</code> contains one <code>scaling</code> field:<ul>
+<li><code>type</code>: one of: <code>stretch</code> (default), <code>tile</code>, or <code>nine_slice</code></li>
+<li>When <code>stretch</code>, the sprite will be stretched across the desired space<ul>
+<li>No additional fields need to be defined</li>
+</ul></li>
+<li>When <code>tile</code>, the sprite will be repeated across the desired space, starting from the top-left<ul>
+<li><code>width</code>: number of pixels for this sprite to cover on-screen across its width</li>
+<li><code>height</code>: number of pixels for this sprite to cover on-screen across its height</li>
+</ul></li>
+<li>When <code>nine_slice</code>, the sprite will be sliced into 4 corners, 4 edges, and 1 center slice, which will be tiled across the desired space<ul>
+<li><code>width</code>: number of pixels for this sprite to cover on-screen across its width</li>
+<li><code>height</code>: number of pixels for this sprite to cover on-screen across its height</li>
+<li><code>border</code>: the size in pixels that the border slices should cover on-screen, one of:<ul>
+<li>Constant integer for uniform border size on all sides</li>
+<li>Object containing <code>left</code>, <code>top</code>, <code>right</code>, and <code>bottom</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>Resource Pack Version 17</h1>
+<ul>
+<li>The text field background is now a nine-sliced sprite at <code>widget/text_field</code> and <code>widget/text_field_highlighted</code></li>
+<li>The scroll bar in lists and text fields is now a nine-sliced sprite at <code>widget/scroller</code></li>
+</ul>
+<h1>Resource Pack Version 18</h1>
+<ul>
+<li>The <code>map_icons.png</code> texture now contains new icons</li>
+</ul>
+<h1>Data Pack Version 16</h1>
+<ul>
+<li>Gamerule <code>randomTickSpeed</code> now affects the rate of accumulation of Snow and Ice the same way it affects crops and other blocks affected by random ticking</li>
+<li>Added a <code>random</code> command</li>
+<li>Added support for function macros</li>
+<li>Changed Display entities' post-teleport interpolation</li>
+<li>Added new attribute <code>generic.max_absorption</code></li>
+<li>Renamed <code>belowName</code> value in display slot argument in <code>scoreboard</code> command to <code>below_name</code></li>
+<li>Game event changes</li>
+<li>New tags</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>random</code></h3>
+<p>A new command for randomizing values and controlling random sequences. The <code>value</code> and <code>roll</code> forms can be used to draw a random value. In the case of <code>roll</code>, the resulting value is also shown in chat for all players.</p>
+<p>Syntax:</p>
+<pre><code>random value|roll &#x3C;range> [&#x3C;sequenceId>]
+random reset *|&#x3C;sequenceId> [&#x3C;seed>] [&#x3C;includeWorldSeed>] [&#x3C;includeSequenceId>]
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>range</code>: A range of values to randomize between, inclusively<ul>
+<li>For instance, 1..6 is a regular D6 roll</li>
+</ul></li>
+<li><code>sequenceId</code>: The name of a random sequence to sample or reset</li>
+<li><code>seed</code>: A seed to use for the random sequence after reset</li>
+<li><code>includeWorldSeed</code>: A boolean [default: <code>true</code>] specifying whether to include the world seed when seeding the sequence<ul>
+<li><code>false</code> means the sequence will evaluate to the same regardless of which world the command is run in</li>
+</ul></li>
+<li><code>includeSequenceId</code>: A boolean [default: <code>true</code>] specifying whether to include the sequence ID when seeding the sequence<ul>
+<li><code>false</code> means all sequences will evaluate to the same regardless of which name they have</li>
+</ul></li>
+</ul>
+<p>By default, all sequences are seeded as <code>0</code>, <code>true</code>, <code>true</code>. Using <code>*</code> instead of a sequence ID resets all sequences and sets the default parameters.</p>
+<p>If no seed is specified, the sequence resets to the default parameters.</p>
+<p>Note that <code>random value|roll &#x3C;range></code> used without a sequence id is available to non-operator players.</p>
+<h2>Functions</h2>
+<ul>
+<li>A single backslash <code>\ </code> as the last non-whitespace character of a line now allows a command to be continued on the next line<ul>
+<li>Leading and trailing whitespace of the following line are stripped before appending</li>
+</ul></li>
+</ul>
+<h3>Macros</h3>
+<p>Functions can now contain macro lines, making them Function Macros.</p>
+<ul>
+<li>Any line beginning with <code>$</code> (as the first non-space character) marks a macro line</li>
+<li>A macro line also contains one or more substitutions in the form of <code>$(variable)</code></li>
+<li>When calling a function macro a compound with data for all argument variables must be provided</li>
+</ul>
+<h4>Calling Function Macros</h4>
+<p>The <code>function</code> command has new forms:</p>
+<p><code>function &#x3C;id> &#x3C;compound></code>
+<code>function &#x3C;id> with &#x3C;data source> [&#x3C;path>]</code></p>
+<p>New Arguments:</p>
+<ul>
+<li><code>compound</code>: A data compound, enclosed in <code>{}</code></li>
+<li><code>data source</code>: A data source specification, like what could already be used for <code>data get</code></li>
+<li><code>path</code>: An NBT path specification</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The data source and path must specify a compound data entry</li>
+<li>The compound must contain one entry for each variable used in the macro</li>
+<li>More data may be present in the compound and if so is ignored</li>
+<li>Calling a non-macro function with a data compound is silently ignored</li>
+<li>When a macro is called, the values provided are substituted in place of the variable specifications and the resulting commands are executed</li>
+<li>Any syntax errors in the lines resulting from variable substitution result in the entire function call being skipped</li>
+</ul>
+<h4>Performance Considerations</h4>
+<p>Using a macro means commands must be re-evaulated after variable substitution. This has an extra cost compared to running pre-parsed functions.</p>
+<p>Regular commands (non-macro lines) are still pre-parsed. Only commands with variable substitutions in them are parsed when a macro is called and the game will attempt to cache the result of a certain parameter set being used in a call.</p>
+<p>This makes repeated calls with the same parameter set cheaper than new calls with different parameters, but an overhead still remains compared to regular functions. Note that only the values references by macro as parameters are included in this cache, so any extra data in the provided compound is ignored.</p>
+<h2>Display Entity Interpolation</h2>
+<ul>
+<li>Display entities now start updating their client-side position and rotation on the first tick after an update<ul>
+<li>In previous versions, updates were applied in the same tick, causing uneven motion</li>
+<li>The new behavior is similar to Armor Stands, mobs and players</li>
+</ul></li>
+<li>On the server, position and rotation are still updated immediately</li>
+<li>The duration of this interpolation is controlled by the field <code>teleport_duration</code><ul>
+<li><code>0</code> means that updates are applied immediately</li>
+<li><code>1</code> means that the Display Entity will move from current position to the updated one over one tick</li>
+<li>Higher values spread the movement over multiple ticks</li>
+<li>Please note that this value is clamped to avoid glitches due to periodic position updates</li>
+<li>The new value will apply only to position and rotation changes made after it changed<ul>
+<li>That means any current movement will continue unchanged</li>
+</ul></li>
+</ul></li>
+<li>Note: behavior while riding remains unchanged from previous versions</li>
+</ul>
+<h2>Attributes</h2>
+<ul>
+<li>Added new attribute <code>generic.max_absorption</code><ul>
+<li><code>generic.max_absorption</code> acts similar to <code>generic.max_health</code>, but instead of being the upper bound for <code>Health</code>, it is the upper bound for <code>AbsorptionAmount</code></li>
+<li>The mob effect <code>absorption</code> increases <code>generic.max_absorption</code> as well as fills the <code>AbsorptionAmount</code> to the max when applied</li>
+</ul></li>
+</ul>
+<h2>Game Events</h2>
+<ul>
+<li><code>entity_roar</code> and <code>entity_shake</code> game events have been removed and replaced with <code>entity_action</code> game event</li>
+</ul>
+<h2>Tags</h2>
+<ul>
+<li>Added <code>no_knockback</code> damage type tag which causes knockback to not be caused by the damage itself<ul>
+<li>Used in Vanilla for damage that is caused by events, such as explosions, which apply knockback separately</li>
+</ul></li>
+<li>Added <code>non_controlling_rider</code> to represent entities that don't override their vehicles movement control</li>
+<li>Added <code>concrete_powder</code> block tag for Concrete Powder blocks</li>
+<li>Added <code>camel_sand_step_sound_blocks</code> block tag for blocks that produce <code>entity.camel.step_sand</code> sound</li>
+</ul>
+<h1>Data Pack Version 17</h1>
+<ul>
+<li>Changed mob effect storage on items, entities and block entities</li>
+<li>Added <code>decal</code> field to armor trim patterns (default: <code>false</code>)<ul>
+<li>If <code>true</code>, the pattern texture will be masked based on the underlying armor</li>
+</ul></li>
+</ul>
+<h2>Mob effect storage changes</h2>
+<ul>
+<li>The game no longer uses numeric values when storing mob effects to a world (so, for example, <code>4</code> becomes <code>minecraft:mining_fatigue</code>)</li>
+<li>Various mob effect fields have been renamed for consistency with new structures</li>
+</ul>
+<h3>Mob Effect Instance</h3>
+<p>This structure is used in many places, so its changes are described separately.</p>
+<ul>
+<li><code>Id</code> -> <code>id</code>, also changed from number to string id</li>
+<li><code>Ambient</code> -> <code>ambient</code></li>
+<li><code>Amplifier</code> -> <code>amplifier</code></li>
+<li><code>Duration</code> -> <code>duration</code></li>
+<li><code>ShowParticles</code> -> <code>show_particles</code></li>
+<li><code>ShowIcon</code> -> <code>show_icon</code></li>
+<li><code>HiddenEffect</code> -> <code>hidden_effect</code>, also since it's mob effect instance, changes apply recursively</li>
+<li><code>FactorCalculationData</code> -> <code>factor_calculation_data</code></li>
+</ul>
+<h3>Items</h3>
+<h4><code>potion</code>, <code>lingering_potion</code>, <code>splash_potion</code>, <code>tipped_arrow</code></h4>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h4><code>suspicous_stew</code></h4>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>, for each entry:<ul>
+<li><code>EffectId</code> -> <code>id</code>, also changed from number to string id</li>
+<li><code>EffectDuration</code> -> <code>duration</code></li>
+</ul></li>
+</ul>
+<h3>Entities</h3>
+<h4><code>mooshroom</code></h4>
+<ul>
+<li>Removed <code>EffectId</code> and <code>EffectDuration</code></li>
+<li>Added <code>stew_effects</code> with the same format as <code>suspicious_stew.effects</code> tag (i.e. list of effect id and duration)</li>
+</ul>
+<h4><code>area_effect_cloud</code></h4>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h4><code>arrow</code></h4>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h4>Players, Armor Stands and mobs</h4>
+<ul>
+<li><code>ActiveEffects</code> -> <code>active_effects</code>, contents tranformed as a list of mob effect instances</li>
+</ul>
+<h3>Block Entities</h3>
+<p><code>beacon</code></p>
+<ul>
+<li><code>Primary</code> -> <code>primary_effect</code>, also changed from number to string id</li>
+<li><code>Secondary</code> -> <code>secondary_effect</code>, also changed from number to string id</li>
+</ul>
+<h2>Loot Tables</h2>
+<ul>
+<li>Added <code>sequence</code> loot function<ul>
+<li>Contains 1 field:<ul>
+<li><code>functions</code>: an array of sub-functions to run in sequence</li>
+</ul></li>
+<li>Can also be declared as an inline array without a type<ul>
+<li>This matches the existing behavior where loot function JSON files can be declared as an array of composite functions</li>
+</ul></li>
+</ul></li>
+<li><code>all_of</code> predicates in loot tables can now be declared implicitly as an inline array without a type<ul>
+<li>This similarly matches the existing behavior where loot predicate JSON files can be declared as an array of sub-predicates</li>
+</ul></li>
+<li>Block or fluid state property matchers in loot conditions no longer accept non-string values<ul>
+<li>Any number or boolean value in a property matcher must be quoted</li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 18</h1>
+<p>This data pack version removes the <code>execute if function</code> and <code>return run</code> functionality that existed for a time during the development of this version. Flaws with those commands (see bugs <a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a>, <a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> and <a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a>) require some substantial changes to fix, which we do not want to make close to a release.</p>
+<p>These commands will instead be reintroduced early in the next snapshot series when we can take the time to iterate on and test them together with pack makers.</p>
+<ul>
+<li>Removed <code>execute if|unless function</code> command form</li>
+<li>Removed <code>return run</code> command form</li>
+<li>Numbers used as macro arguments are now always inserted without suffixes, regardless of numeric type</li>
+<li>Added game rule <code>enderPearlsVanishOnDeath</code>, controlling whether thrown Ender Pearls vanish when the player that threw them dies (default <code>true</code>, which matches the existing behavior in previous versions)</li>
+<li>Added damage type tag <code>always_kills_armor_stands</code> for damage types that should always fully kill an Armor Stand</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1_20_2_experimental_4.jpg" alt="1.20.2 Experimental Image 4"></p>
+<h1>Experimental Features</h1>
+<h2>Villager Trade Rebalance</h2>
+<p>The Experiments screen when creating a world now has an option to enable the Villager Trade Rebalance. When this option is selected, some Villager trades will change.</p>
+<p>This experiment has no effect on normal worlds. You can find more information about Feature Toggles <a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<h3>Librarian Changes</h3>
+<ul>
+<li>Librarians from different biomes now sell different Enchanted Books</li>
+<li>Each village biome has one special enchantment that is only available from Master Librarians with full XP</li>
+<li>This means that players must visit all seven village biomes to get the full set of villager enchantments</li>
+<li>There are two secret village biomes where villages do not generate<ul>
+<li>A player must build these villages to access their trades!</li>
+</ul></li>
+<li>Some enchantments have been removed from village trading and must be found in other ways</li>
+</ul>
+<h3>Cartographer Changes</h3>
+<ul>
+<li>Cartographers can now sell seven new Explorer Maps<ul>
+<li>Five new maps show the way to five different types of village</li>
+<li>The other two new maps show the way to a Swamp Hut and a Jungle Temple</li>
+</ul></li>
+<li>Cartographers from different biomes now sell a different range of maps</li>
+</ul>
+<h3>Wandering Trader Changes</h3>
+<ul>
+<li>Wandering Traders now have lower prices and have a higher amount of each item in stock</li>
+<li>Wandering Traders now sell Logs</li>
+<li>Wandering Traders can now buy many items, instead of only selling</li>
+</ul>
+<h3>Armorer Changes</h3>
+<ul>
+<li>Armorer from different biomes now sell different Armor with different enchantments</li>
+<li>Buying Diamond Armor now requires a small amount of Diamonds as well as Emeralds</li>
+<li>Many other Armorer trades have been updated</li>
+</ul>
+<h3>Structure Loot</h3>
+<p>Certain Enchanted Books now have a high chance of generating in some structures:</p>
+<ul>
+<li>Ancient Cities: Mending</li>
+<li>Mineshafts: Efficiency (I to V)</li>
+<li>Pillager Outposts: Quick Charge (I to III)</li>
+<li>Desert Temples: Unbreaking (I to III)</li>
+<li>Jungle Temples: Unbreaking (I to III)</li>
+</ul>
+<h1>Fixed bugs in 1.20.2</h1>
+<p>Around 200 bugs were fixed in this release. View the <a href="https://bugs.mojang.com/issues/?filter=27828" target="_blank" rel="noopener noreferrer">list on the issue tracker</a>.</p>

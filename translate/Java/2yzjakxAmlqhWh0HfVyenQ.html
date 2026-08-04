@@ -1,0 +1,185 @@
+<p>我们现在发布了 Minecraft 1.19.4 的第一个快照。此版本包含了新的无障碍功能、新命令以及大量错误修复！</p>
+<p>祝您挖矿愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>恼鬼在空手时现在会使用单独的冲锋动画</li>
+<li>盔甲架在放置和破坏时现在会保留自定义名称</li>
+</ul>
+<h2>无障碍</h2>
+<ul>
+<li>为首次启动游戏的玩家新增了无障碍引导界面</li>
+<li>新增了方向键导航</li>
+<li>资源包界面现在可以使用键盘导航</li>
+<li>自动跳跃现在默认关闭</li>
+<li>新增了一个“通知显示时间”无障碍选项<ul>
+<li>更改解锁配方、进度、字幕以及选中物品名称等通知的可见时间</li>
+</ul></li>
+</ul>
+<h3>方向键导航</h3>
+<ul>
+<li>现在可以使用方向键浏览菜单界面</li>
+<li>使用方向键导航时，需要按 Enter 或 Space 来激活滑块以开始更改数值</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 11</li>
+<li>新增了一个网络协议特性，用于强制在同一客户端刻内处理数据包组</li>
+<li>为 <code>translate</code> 聊天组件新增了 <code>fallback</code> 字段</li>
+<li><code>translate</code> 格式中超出范围的参数不再被静默忽略</li>
+<li><code>clone</code> 命令现在支持在不同维度之间克隆</li>
+<li><code>data modify</code> 命令现在可用的新的 <code>string</code> 来源</li>
+<li>新的 <code>execute</code> 子命令</li>
+</ul>
+<h2>网络协议</h2>
+<ul>
+<li>客户端在收到登录数据包时现在会重置其安全聊天会话状态</li>
+</ul>
+<h3>数据包组</h3>
+<ul>
+<li>在客户端绑定游戏协议中新增了分隔数据包</li>
+<li>两个分隔符之间的所有数据包保证在同一刻内处理</li>
+<li>出于安全原因，此特性在服务器绑定方向不支持</li>
+</ul>
+<h2>方块行为</h2>
+<ul>
+<li>火焰在某些生物群系中烧得更快，这现在由 <code>increased_fire_burnout</code> 生物群系标签控制</li>
+</ul>
+<h2>生物生成</h2>
+<ul>
+<li><code>only_allows_snow_and_gold_rabbits</code> 生物群系标签已重命名为 <code>spawns_gold_rabbits</code> 以匹配其行为</li>
+<li>白色兔子变体现在由 <code>spawns_white_rabbits</code> 生物群系标签控制</li>
+<li>狐狸变体现在由 <code>spawns_snow_foxes</code> 生物群系标签控制</li>
+</ul>
+<h2>生物行为</h2>
+<ul>
+<li>雪傀儡在温暖生物群系中融化现在由 <code>snow_golem_melts</code> 生物群系标签控制</li>
+</ul>
+<h2>命令</h2>
+<h3><code>clone</code></h3>
+<p>克隆命令现在支持指定源维度和目标维度。新语法：</p>
+<p><code>clone [from &#x3C;sourceDimension>] &#x3C;begin> &#x3C;end> [to &#x3C;targetDimension>] &#x3C;destination> ...</code></p>
+<p>参数：</p>
+<ul>
+<li><code>sourceDimension</code>：要从中克隆的维度 ID</li>
+<li><code>targetDimension</code>：要克隆到的维度 ID</li>
+</ul>
+<h3><code>data</code></h3>
+<p>可用的新来源：</p>
+<ul>
+<li><code>string &#x3C;entity|block|storage> [path] [start] [end]</code> - 将值作为文本读取，生成字符串值</li>
+</ul>
+<p>新参数：</p>
+<ul>
+<li><code>start</code>：字符串开头要包含的第一个字符的索引</li>
+<li><code>end</code>：字符串结尾要排除的第一个字符的索引</li>
+</ul>
+<h3><code>execute</code></h3>
+<h4><code>execute if|unless</code></h4>
+<p><code>execute if|unless</code> 子命令可用的新条件：</p>
+<ul>
+<li><code>execute if|unless loaded &#x3C;pos></code> - 检查给定位置是否完全加载（同时考虑方块和实体）</li>
+<li><code>execute if|unless dimension &#x3C;dimension></code> - 检查执行是否在匹配的维度中</li>
+</ul>
+<p>参数：</p>
+<ul>
+<li><code>pos</code>：要检查的方块位置</li>
+<li><code>dimension</code>：维度 ID</li>
+</ul>
+<h4><code>execute on</code></h4>
+<p>新的 <code>execute</code> 子命令，用于根据与当前执行实体的关系选择实体：</p>
+<ul>
+<li><code>execute on &#x3C;relation></code></li>
+</ul>
+<p>关系：</p>
+<ul>
+<li><code>vehicle</code> - 执行实体正在骑乘的实体</li>
+<li><code>passengers</code> - 直接骑乘执行实体的所有实体（不包括间接乘客）</li>
+<li><code>controller</code> - 控制执行实体的实体（例如：船上的第一个乘客）</li>
+<li><code>owner</code> - 执行实体的主人，如果它是可驯服动物（如猫、狼或鹦鹉）</li>
+<li><code>leasher</code> - 用拴绳牵引执行实体的实体（如果拴在栅栏上，则可能是拴绳结）</li>
+<li><code>target</code> - 执行实体的攻击目标</li>
+<li><code>attacker</code> - 在之前 5 秒内最后伤害执行实体的实体</li>
+</ul>
+<p>如果该关系不适用于执行实体，或者没有匹配的实体，选择器将返回零个元素。</p>
+<h3><code>title</code></h3>
+<ul>
+<li><code>title times</code> 的所有时间参数现在都是持续时间，并支持 <code>t</code>、<code>s</code> 和 <code>d</code> 后缀</li>
+</ul>
+<h3><code>weather</code></h3>
+<ul>
+<li>如果未指定，天气变化的持续时间现在与游戏常规天气循环匹配</li>
+<li><code>duration</code> 参数现在是持续的刻数，并支持 <code>t</code>、<code>s</code> 和 <code>d</code> 后缀<ul>
+<li>要保留现有功能，您需要为已有的命令添加 <code>s</code> 后缀</li>
+</ul></li>
+</ul>
+<h3><code>ride</code></h3>
+<p>新命令，允许实体开始或停止骑乘其他实体</p>
+<p>语法：</p>
+<ul>
+<li><code>ride &#x3C;target> mount &#x3C;vehicle></code><ul>
+<li>使单个目标骑乘单个载具</li>
+<li>如果出现以下情况，命令将失败：<ul>
+<li><code>vehicle</code> 是玩家</li>
+<li><code>target</code> 已经在骑乘载具</li>
+<li><code>target</code> 和 <code>vehicle</code> 是同一个实体</li>
+<li><code>vehicle</code> 已经是 <code>target</code> 的乘客（直接或间接）</li>
+</ul></li>
+</ul></li>
+<li><code>ride &#x3C;target> dismount</code><ul>
+<li>让 <code>target</code> 从它骑乘的任何载具上下来</li>
+<li>如果 <code>target</code> 没有骑乘任何东西则失败</li>
+</ul></li>
+</ul>
+<h2>游戏规则</h2>
+<ul>
+<li>新增了 <code>commandModificationBlockLimit</code>，控制 <code>clone</code>、<code>fill</code> 和 <code>fillbiome</code> 一次执行中改变的方块最大数量</li>
+</ul>
+<h2>聊天组件</h2>
+<h3>翻译回退</h3>
+<p>为 <code>translate</code> 文本组件新增了可选的 <code>fallback</code> 字段。</p>
+<ul>
+<li>新字段是一个字符串，如果缺少翻译，将使用该字符串代替</li>
+<li>如果缺少 <code>fallback</code>，则保留旧行为（即使用键本身作为翻译）</li>
+</ul>
+<h1>实验性特性</h1>
+<h2>音符盒交互</h2>
+<ul>
+<li>生物头颅现在可以不用潜行直接放在音符盒顶部</li>
+</ul>
+<h1>23w03a 修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-26678" target="_blank" rel="noopener noreferrer">MC-26678</a> 伤害摇晃不再显示来袭伤害的方向</li>
+<li><a href="https://bugs.mojang.com/browse/MC-30403" target="_blank" rel="noopener noreferrer">MC-30403</a> 冲刺时下马不会取消冲刺</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121048" target="_blank" rel="noopener noreferrer">MC-121048</a> 当实体死亡时，战斗追踪器只记录致命一击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122595" target="_blank" rel="noopener noreferrer">MC-122595</a> /weather 命令持续时间为 0 时，天气持续更长时间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136534" target="_blank" rel="noopener noreferrer">MC-136534</a> 所有命令方块在使用脱字符表示法时都认为自己面向南方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149144" target="_blank" rel="noopener noreferrer">MC-149144</a> 按下另一个按钮并按 Tab 键可以选中多个按钮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155433" target="_blank" rel="noopener noreferrer">MC-155433</a> 漏斗矿车无法从混合物品堆中拾取匹配的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165595" target="_blank" rel="noopener noreferrer">MC-165595</a> level.dat 中的“Time”超过一定值后，守卫者光束无法渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181832" target="_blank" rel="noopener noreferrer">MC-181832</a> /spreadplayers 命令不会在指定维度中分散实体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191942" target="_blank" rel="noopener noreferrer">MC-191942</a> 多人游戏菜单中的按钮间距不均匀</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222518" target="_blank" rel="noopener noreferrer">MC-222518</a> 骷髅马/僵尸马与驴/骡的鞍和箱子已过时/存在错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224960" target="_blank" rel="noopener noreferrer">MC-224960</a> spectate 命令无法在不同维度之间工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230678" target="_blank" rel="noopener noreferrer">MC-230678</a> 在视觉上下雨的冻洋生物群系中，炼药锅会填充细雪</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233893" target="_blank" rel="noopener noreferrer">MC-233893</a> 冻洋生物群系的温暖区域中，燃烧的生物不会被雨熄灭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235260" target="_blank" rel="noopener noreferrer">MC-235260</a> 位于 (0, 0, 0) 的漏斗矿车传输物品速度比正常慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-247836" target="_blank" rel="noopener noreferrer">MC-247836</a> 激流在冻洋生物群系内的雨中不起作用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252773" target="_blank" rel="noopener noreferrer">MC-252773</a> 没有 instrument NBT 且带有其他 NBT 数据（如文本）的山羊角不会发声</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255545" target="_blank" rel="noopener noreferrer">MC-255545</a> 岩浆怪阴影不随大小变化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255811" target="_blank" rel="noopener noreferrer">MC-255811</a> Level#isRainingAt(BlockPos) 在下雪和寒冷的生物群系中始终返回 false，即使正在下雨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256292" target="_blank" rel="noopener noreferrer">MC-256292</a> 世界初始生成后，山羊不会在草地上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256555" target="_blank" rel="noopener noreferrer">MC-256555</a> 骆驼生成时会瞬间坐下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256576" target="_blank" rel="noopener noreferrer">MC-256576</a> 骑乘没有鞍的骆驼时，玩家会成为控制乘客，而其他玩家已在骑乘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256838" target="_blank" rel="noopener noreferrer">MC-256838</a> 骆驼的面朝方向不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257082" target="_blank" rel="noopener noreferrer">MC-257082</a> 骑乘实体或用鞘翅飞行时冲刺会改变视角视野</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257346" target="_blank" rel="noopener noreferrer">MC-257346</a> 空手的恼鬼会做出不雅手势</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257418" target="_blank" rel="noopener noreferrer">MC-257418</a> 骆驼有时在受到伤害时会瞬间坐下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257755" target="_blank" rel="noopener noreferrer">MC-257755</a> 如果您当前不是任何 Realm 的成员，按 Tab 键时 Realms 菜单中的元素不会按顺序选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257875" target="_blank" rel="noopener noreferrer">MC-257875</a> 在生存或冒险模式中使用火焰弹点燃苦力怕时，火焰弹不会被消耗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258163" target="_blank" rel="noopener noreferrer">MC-258163</a> ClientboundSectionBlocksUpdatePacket 在 2^19 个方块状态后序列化中断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258173" target="_blank" rel="noopener noreferrer">MC-258173</a> 睡觉时进入末地传送门会导致床被永久占用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258246" target="_blank" rel="noopener noreferrer">MC-258246</a> “遥测数据”按钮缺少省略号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258295" target="_blank" rel="noopener noreferrer">MC-258295</a> 工作站点附近时村民 AI 损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258430" target="_blank" rel="noopener noreferrer">MC-258430</a> LastPoseTime 值较大的骆驼会奇怪地偏移玩家视角模型</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258953" target="_blank" rel="noopener noreferrer">MC-258953</a> 内存不足界面中的标题包含未处理的原始消息</li>
+</ul>

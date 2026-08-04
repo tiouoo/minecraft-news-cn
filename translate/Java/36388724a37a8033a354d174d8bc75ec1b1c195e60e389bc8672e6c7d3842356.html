@@ -1,0 +1,149 @@
+<p>我们为您带来了 1.21 的第一个预发布版，包含可拴绳的船、可穿过传送门的末影珍珠以及错误修复！
+<p>在此快照中，我们暂时移除了使用火焰附加魔咒点燃方块的功能，因为我们想进一步优化它。此功能将在后续版本中重新加入。
+<p>传送愉快！ ;)
+<h1>新内容</h1>
+<h2>不祥试炼刷怪笼</h2>
+<ul><li>当试炼刷怪笼转换为不祥状态时，被其移除的生物现在会掉落它们之前从地面捡起的任何物品</ul>
+<h1>更改</h1>
+<ul>
+<li>重锤的攻击速度已改为 0.6
+<li>不同材料的门现在可以组成双开门
+<li>通过传送门投掷的末影珍珠现在可以将玩家传送到与当前所在维度不同的维度
+<li>现在可以骑乘实体（如马或矿车）穿过传送门
+<ul>
+<li>骑乘实体穿过传送门时，传送前的延迟不会生效
+</ul>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 46
+<li>移除了上个快照中引入的 <code>entitiesWithPassengersCanUsePortals</code> 游戏规则。实体带乘客使用传送门现在是默认行为。
+<li>报表数据生成器现在包含关于网络数据包的信息
+<li>游戏现在会将加载和保存失败区块的报表存储在 <code>debug</code> 目录中
+</ul>
+<h2>服务器链接</h2>
+<ul>
+<li>有一些通用用途的链接名称，如“支持”或“网站”，没有任何特殊功能
+</ul>
+<h1>数据包版本 42 到 46</h1>
+<ul>
+<li>为拼图结构和 <code>single_pool_element</code> 类型添加了新的可配置字段
+</ul>
+<h2>魔咒</h2>
+<h3>基于等级的值</h3>
+<h4><code>lookup</code></h4>
+<p>一种基于等级的值类型，将值列表映射到特定等级，并在等级大于提供的值的数量时应用后备值。字段：
+<ul>
+<li><code>values</code> - 按 <code>level - 1</code> 索引的值列表，如果存在则应用
+<li><code>fallback</code> - 一个后备的基于等级的值，当等级大于 <code>values</code> 的大小时应用
+</ul>
+<h3>效果条件</h3>
+<p>与战利品表不同，所有效果条件必须是内联对象，不能是引用。
+<h2>标签</h2>
+<h3>方块标签</h3>
+<ul>
+<li><code>fire_aspect_lightable</code> 已被移除
+<ul>
+<li>在此快照中，我们暂时移除了使用火焰附加魔咒点燃方块的功能，因为我们想进一步优化它。此功能将在后续版本中重新加入。
+</ul>
+</ul>
+<h2>战利品表</h2>
+<h3>条件</h3>
+<h4><code>random_chance_with_enchanted_bonus</code></h4>
+<ul>
+<li><code>chance</code>: 字段已被移除
+<li><code>unenchanted_chance</code>: 未附魔物品几率的新字段
+<li><code>enchanted_chance</code>: 附魔物品几率的新字段 - 一个基于等级的值
+</ul>
+<h2>结构</h2>
+<ul>
+<li>为 <code>minecraft:jigsaw</code> 类型的结构添加了 <code>liquid_settings</code> 字段。可能的值：
+<ul>
+<li><code>apply_waterlogging</code>: 如果任何可含水方块与现有水重叠，它将变为含水状态
+<li><code>ignore_waterlogging</code>: 不会使与现有水重叠的任何可含水方块含水
+<li>默认值为 <code>apply_waterlogging</code>
+</ul>
+<li>为 <code>single_pool_element</code> 元素类型添加了可选字段 <code>override_liquid_settings</code>
+<ul>
+<li>与拼图结构中 <code>liquid_settings</code> 的可能值相同
+<li>在此池元素生成时，覆盖从父级拼图结构继承的液体设置
+</ul>
+</ul>
+<h1>1.21 预发布版 1 中修复的错误</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-902 rel="noopener noreferrer"target=_blank>MC-902</a> 每次实体通过末地传送门时，末地黑曜石平台都会重置，这可能导致方块被删除
+<li><a href=https://bugs.mojang.com/browse/MC-50612 rel="noopener noreferrer"target=_blank>MC-50612</a> 当你在任何电源附近放置命令方块时，它们不会更新
+<li><a href=https://bugs.mojang.com/browse/MC-97087 rel="noopener noreferrer"target=_blank>MC-97087</a> 如果属性放在副手中，则它们不会在主手中生效
+<li><a href=https://bugs.mojang.com/browse/MC-114566 rel="noopener noreferrer"target=_blank>MC-114566</a> 在外圈末地岛屿上无法通过末地折跃门传送回中央岛屿
+<li><a href=https://bugs.mojang.com/browse/MC-148741 rel="noopener noreferrer"target=_blank>MC-148741</a> 某些界面中的选择框与它们的文本相比错位
+<li><a href=https://bugs.mojang.com/browse/MC-160140 rel="noopener noreferrer"target=_blank>MC-160140</a> 当玩家进入末地时，黑曜石平台上的潜影盒会被摧毁且不会掉落
+<li><a href=https://bugs.mojang.com/browse/MC-169698 rel="noopener noreferrer"target=_blank>MC-169698</a> 雪屋地下室中的方块在邻近水生成时可能会生成为含水状态
+<li><a href=https://bugs.mojang.com/browse/MC-170907 rel="noopener noreferrer"target=_blank>MC-170907</a> 网络位置增量是相对于错误的点进行处理的
+<li><a href=https://bugs.mojang.com/browse/MC-172031 rel="noopener noreferrer"target=_blank>MC-172031</a> 将末影珍珠投掷到下界或末地传送门中通常没有效果
+<li><a href=https://bugs.mojang.com/browse/MC-191591 rel="noopener noreferrer"target=_blank>MC-191591</a> 通过右键将鞍装备到马、僵尸马、骷髅马、骡子或驴身上时，鞍会丢失其 NBT 数据
+<li><a href=https://bugs.mojang.com/browse/MC-265583 rel="noopener noreferrer"target=_blank>MC-265583</a> 裤子皮肤自定义字符串的复数形式不正确
+<li><a href=https://bugs.mojang.com/browse/MC-265818 rel="noopener noreferrer"target=_blank>MC-265818</a> “gamerule.doVinesSpread.description” 字符串包含语法错误的用词
+<li><a href=https://bugs.mojang.com/browse/MC-266140 rel="noopener noreferrer"target=_blank>MC-266140</a> Realms 菜单中的“打开链接”按钮大小写不正确
+<li><a href=https://bugs.mojang.com/browse/MC-266471 rel="noopener noreferrer"target=_blank>MC-266471</a> 试炼密室可能与含水层相交，导致结构内的某些方块变为含水状态
+<li><a href=https://bugs.mojang.com/browse/MC-267050 rel="noopener noreferrer"target=_blank>MC-267050</a> 聊天禁用字符串缺少动词
+<li><a href=https://bugs.mojang.com/browse/MC-267071 rel="noopener noreferrer"target=_blank>MC-267071</a> “download.pack.failed” 字符串中的“packs”一词总是用复数形式
+<li><a href=https://bugs.mojang.com/browse/MC-267474 rel="noopener noreferrer"target=_blank>MC-267474</a> 引用玩家副手的字符串拼写不一致
+<li><a href=https://bugs.mojang.com/browse/MC-267954 rel="noopener noreferrer"target=_blank>MC-267954</a> Realms 世界升级和降级字符串的大小写不正确
+<li><a href=https://bugs.mojang.com/browse/MC-268023 rel="noopener noreferrer"target=_blank>MC-268023</a> “selectWorld.experimental.details.title” 字符串在实验性功能详情菜单中显示时大小写不正确
+<li><a href=https://bugs.mojang.com/browse/MC-268185 rel="noopener noreferrer"target=_blank>MC-268185</a> 试炼密室中的铜格栅变为含水状态
+<li><a href=https://bugs.mojang.com/browse/MC-269921 rel="noopener noreferrer"target=_blank>MC-269921</a> 风弹可以穿过角落投掷
+<li><a href=https://bugs.mojang.com/browse/MC-270181 rel="noopener noreferrer"target=_blank>MC-270181</a> 如果实体靠近玩家，风弹会穿过该实体
+<li><a href=https://bugs.mojang.com/browse/MC-270572 rel="noopener noreferrer"target=_blank>MC-270572</a> Programmer Art 资源包重复了某些 GUI 纹理文件
+<li><a href=https://bugs.mojang.com/browse/MC-270649 rel="noopener noreferrer"target=_blank>MC-270649</a> 挑战进度的标题宽度是根据进度计数器的斜杠格式计算的，导致在某些语言中重叠
+<li><a href=https://bugs.mojang.com/browse/MC-270795 rel="noopener noreferrer"target=_blank>MC-270795</a> 被不祥试炼刷怪笼移除的生物可能会删除捡起的物品
+<li><a href=https://bugs.mojang.com/browse/MC-270821 rel="noopener noreferrer"target=_blank>MC-270821</a> 如果普通试炼刷怪笼上次激活时为不祥状态，则第一次生成的生物会带有不祥试炼装备
+<li><a href=https://bugs.mojang.com/browse/MC-270981 rel="noopener noreferrer"target=_blank>MC-270981</a> 辅助功能设置中不可用视角摇晃开关
+<li><a href=https://bugs.mojang.com/browse/MC-271870 rel="noopener noreferrer"target=_blank>MC-271870</a> random_chance_with_looting 函数的基础值是基于附魔等级 1 的
+<li><a href=https://bugs.mojang.com/browse/MC-271897 rel="noopener noreferrer"target=_blank>MC-271897</a> 末地传送门会使物品消失
+<li><a href=https://bugs.mojang.com/browse/MC-271929 rel="noopener noreferrer"target=_blank>MC-271929</a> 应用多层“using_converts_to”会产生幽灵物品
+<li><a href=https://bugs.mojang.com/browse/MC-271971 rel="noopener noreferrer"target=_blank>MC-271971</a> 风弹有时不会防止摔落伤害
+<li><a href=https://bugs.mojang.com/browse/MC-272014 rel="noopener noreferrer"target=_blank>MC-272014</a> 末影龙死亡动画自 20w22a 起损坏（并在 20w45a 再次损坏）
+<li><a href=https://bugs.mojang.com/browse/MC-272038 rel="noopener noreferrer"target=_blank>MC-272038</a> 日志文件中有时会出现错误“Can't access registry ResourceKey[minecraft:root / minecraft:game_event]”
+<li><a href=https://bugs.mojang.com/browse/MC-272053 rel="noopener noreferrer"target=_blank>MC-272053</a> “armor_effectiveness” 效果对弹射物或间接伤害无效
+<li><a href=https://bugs.mojang.com/browse/MC-272073 rel="noopener noreferrer"target=_blank>MC-272073</a> 带有 billboard 和旋转值的物品展示实体会产生严重的视觉错误
+<li><a href=https://bugs.mojang.com/browse/MC-272079 rel="noopener noreferrer"target=_blank>MC-272079</a> 中/小型史莱姆和岩浆怪的攻击距离太短
+<li><a href=https://bugs.mojang.com/browse/MC-272198 rel="noopener noreferrer"target=_blank>MC-272198</a> 在末地城生成时，潜影贝的模型有时会出现偏移
+<li><a href=https://bugs.mojang.com/browse/MC-272253 rel="noopener noreferrer"target=_blank>MC-272253</a> 双手各持一把带有激流魔咒的三叉戟时，激流魔咒的强度会增加
+<li><a href=https://bugs.mojang.com/browse/MC-272258 rel="noopener noreferrer"target=_blank>MC-272258</a> 使用命令传送到其他维度时，现在会播放 block.portal.travel 声音
+<li><a href=https://bugs.mojang.com/browse/MC-272264 rel="noopener noreferrer"target=_blank>MC-272264</a> 辅助功能设置中的讲述人按钮在按下 Ctrl+B 时不会更新
+<li><a href=https://bugs.mojang.com/browse/MC-272267 rel="noopener noreferrer"target=_blank>MC-272267</a> “更改菜单背景的模糊程度”缺少标点
+<li><a href=https://bugs.mojang.com/browse/MC-272279 rel="noopener noreferrer"target=_blank>MC-272279</a> 包含 TrueType 字体的资源包在 x64 macOS 系统上无法加载
+<li><a href=https://bugs.mojang.com/browse/MC-272308 rel="noopener noreferrer"target=_blank>MC-272308</a> 美西螈在被拴绳时还可以再被拴上新的拴绳
+<li><a href=https://bugs.mojang.com/browse/MC-272311 rel="noopener noreferrer"target=_blank>MC-272311</a> 魔咒光泽有时在界面和第一人称视角中不会渲染
+<li><a href=https://bugs.mojang.com/browse/MC-272313 rel="noopener noreferrer"target=_blank>MC-272313</a> 尝试打开 Realms 菜单时游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-272315 rel="noopener noreferrer"target=_blank>MC-272315</a> entitiesWithPassengersCanUsePortals 游戏规则描述中缺少序列逗号
+<li><a href=https://bugs.mojang.com/browse/MC-272322 rel="noopener noreferrer"target=_blank>MC-272322</a> 当你骑乘实体穿过传送门时，你和实体可能会被传送到错误的地方
+<li><a href=https://bugs.mojang.com/browse/MC-272328 rel="noopener noreferrer"target=_blank>MC-272328</a> entitiesWithPassengersCanUsePortals 游戏规则描述缺少正确的术语大写
+<li><a href=https://bugs.mojang.com/browse/MC-272329 rel="noopener noreferrer"target=_blank>MC-272329</a> 骑乘实体进入传送门可能导致游戏软锁
+<li><a href=https://bugs.mojang.com/browse/MC-272333 rel="noopener noreferrer"target=_blank>MC-272333</a> 游戏规则 spawnRadius 在重生时不再生效（总是重生在同一个地方）
+<li><a href=https://bugs.mojang.com/browse/MC-272339 rel="noopener noreferrer"target=_blank>MC-272339</a> 双手各持一把弩时，快速装填效果会叠加
+<li><a href=https://bugs.mojang.com/browse/MC-272342 rel="noopener noreferrer"target=_blank>MC-272342</a> 挖掘疲劳属性 ID 'minecraft:effect.minining_fatigue' 中存在拼写错误
+<li><a href=https://bugs.mojang.com/browse/MC-272343 rel="noopener noreferrer"target=_blank>MC-272343</a> 骑乘实体时，末影珍珠不起作用
+<li><a href=https://bugs.mojang.com/browse/MC-272344 rel="noopener noreferrer"target=_blank>MC-272344</a> 被末影珍珠传送时，会播放“portal noise fades”声音
+<li><a href=https://bugs.mojang.com/browse/MC-272347 rel="noopener noreferrer"target=_blank>MC-272347</a> 从 24w21a 之前的版本升级不会更新由结构方块保存的结构
+<li><a href=https://bugs.mojang.com/browse/MC-272355 rel="noopener noreferrer"target=_blank>MC-272355</a> 在 NBT 文本格式化器的列表截断中，省略号文本被字符串化
+<li><a href=https://bugs.mojang.com/browse/MC-272361 rel="noopener noreferrer"target=_blank>MC-272361</a> 骑乘穿过传送门时，矿车和乘客会相对方块发生偏移
+<li><a href=https://bugs.mojang.com/browse/MC-272364 rel="noopener noreferrer"target=_blank>MC-272364</a> 玩家进入末地传送门时，会在黑曜石平台上方一格生成
+<li><a href=https://bugs.mojang.com/browse/MC-272365 rel="noopener noreferrer"target=_blank>MC-272365</a> 所有旗帜的背包图像完全为白色
+<li><a href=https://bugs.mojang.com/browse/MC-272369 rel="noopener noreferrer"target=_blank>MC-272369</a> 使用默认出生点时，可能会在固体方块中重生
+<li><a href=https://bugs.mojang.com/browse/MC-272374 rel="noopener noreferrer"target=_blank>MC-272374</a> 24w21b 不会升级之前版本的 attribute_modifiers
+<li><a href=https://bugs.mojang.com/browse/MC-272399 rel="noopener noreferrer"target=_blank>MC-272399</a> 已点燃的 TNT 实体无法再穿过末地传送门
+<li><a href=https://bugs.mojang.com/browse/MC-272400 rel="noopener noreferrer"target=_blank>MC-272400</a> 背包中带有旗帜的盾牌显示为白色
+<li><a href=https://bugs.mojang.com/browse/MC-272403 rel="noopener noreferrer"target=_blank>MC-272403</a> 传送门链接区块加载的更改
+<li><a href=https://bugs.mojang.com/browse/MC-272406 rel="noopener noreferrer"target=_blank>MC-272406</a> 僵尸尝试生成第二次增援时崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-272408 rel="noopener noreferrer"target=_blank>MC-272408</a> set_attributes 物品修饰器可以添加两次相同的属性修饰器
+<li><a href=https://bugs.mojang.com/browse/MC-272424 rel="noopener noreferrer"target=_blank>MC-272424</a> 区块的天空偶尔会出现大面积的暗区
+<li><a href=https://bugs.mojang.com/browse/MC-272427 rel="noopener noreferrer"target=_blank>MC-272427</a> 火焰、力量、冲击和穿透魔咒在物品最后一次使用时不再生效
+<li><a href=https://bugs.mojang.com/browse/MC-272430 rel="noopener noreferrer"target=_blank>MC-272430</a> 破坏胡萝卜钓竿/诡异菌钓竿会获得损坏的钓鱼竿
+<li><a href=https://bugs.mojang.com/browse/MC-272438 rel="noopener noreferrer"target=_blank>MC-272438</a> 末影水晶实体无法再穿过末地传送门
+<li><a href=https://bugs.mojang.com/browse/MC-272442 rel="noopener noreferrer"target=_blank>MC-272442</a> 唱片机的比较器输出在音乐唱片播放完毕后不再持续
+<li><a href=https://bugs.mojang.com/browse/MC-272445 rel="noopener noreferrer"target=_blank>MC-272445</a> 使用 Ctrl + 选取方块获得的命令方块在第一次尝试时不会激活
+<li><a href=https://bugs.mojang.com/browse/MC-272469 rel="noopener noreferrer"target=_blank>MC-272469</a> 当风弹、火球或潜影贝子弹在熔岩中时，会持续发出高分贝噪音
+<li><a href=https://bugs.mojang.com/browse/MC-272490 rel="noopener noreferrer"target=_blank>MC-272490</a> @n 可以选择正在死亡的实体，与 @e 不同
+<li><a href=https://bugs.mojang.com/browse/MC-272515 rel="noopener noreferrer"target=_blank>MC-272515</a> 组件已修改的鞍在发射器装到马、骡子或骆驼身上时，其组件会被清除
+</ul>

@@ -1,0 +1,74 @@
+<p>In this snapshot you can be on your merry way across the beautiful Soulsand Valleys with your freshly enchanted boots. It's a bit scary to be fair, so these boots will help you out with that bit...</p>
+<h1>Before we dive into this snapshot, a word about Redstone</h1>
+<p>Redstone is one of the coolest things in Minecraft and many of you are members of communities that focus on building mind-blowing redstone contraptions, farms, computing machines and 256x256 piston doors.</p>
+<p>A lot of redstone behaviour is currently categorized as “undefined”. This is when the behaviour of the block is not the result of intentional code but is a side-effect of unaccounted edge cases or quirks in the game code.​</p>
+<p>We know that many players consider undefined behaviour as a very interesting aspect of redstone and enjoy experimenting with and using undefined behaviour to build unique contraptions to share with the rest of the community.​</p>
+<p>However, the quirks of undefined behaviour can be quite surprising - even when building simple contraptions. This quirkiness can be a negative experience for players new to redstone and may turn them away from this very unique and exciting aspect of Minecraft as well as the vast redstone community behind it.​</p>
+<p>Our goal is to bring all redstone components up to a level of quality that we are happy with and we will be making adjustments where it makes the most sense for redstone going forward.</p>
+<p>Any changes we make will be communicated in the snapshot changelogs and as always we will be reading your feedback and comments.</p>
+<h1>New Features in 20w11a</h1>
+<ul>
+<li>Added Soul Speed enchantment</li>
+<li>Added Twisting Vines that grow upwards</li>
+<li>Nether gold ore can now be found in the nether - it is just like gold ore, but more Nether-y</li>
+</ul>
+<h2>Soul Speed</h2>
+<p>Never suffer again drudging through Soul Sand Valleys - Soul Speed has you covered!</p>
+<ul>
+<li>Shine your boots of choice with this soul-sucking enchantment to speed around on Soul Sand and Soul Soil!</li>
+<li>There's a downside, however: enchantments will slowly degrade your boots each Soul block you walk on</li>
+<li>Can only be obtained by bartering with those pesky Piglins</li>
+</ul>
+<h1>Changes in 20w11a</h1>
+<ul>
+<li>Bell blocks will now ring when hit by any projectile</li>
+<li>TNT and Campfires will now ignite when hit by any burning projectile</li>
+<li>Bone meal can now be used to grow kelp, weeping vines and twisting vines</li>
+<li>Hoes are now the appropriate tools for mining Hay, Targets, Dried Kelp Blocks, Shroomlights, Nether Wart Blocks and Warped Wart Blocks</li>
+<li>Doors, rails, buttons, pressure plates, redstone and more can now be placed on soulsand and full-block of snow layers</li>
+<li>Soul sand with a rail on top will no longer slow-down minecarts</li>
+</ul>
+<h1>Technical Changes in 20w11a</h1>
+<ul>
+<li><code>minecraft:soul_speed_blocks</code> is any block that the Soul Speed enchantment increases speed on</li>
+<li>New particle type: <code>soul</code></li>
+</ul>
+<h1>Fixed bugs in 20w11a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-81659" target="_blank" rel="noopener noreferrer">MC-81659</a> Fireball and witherskull hitboxes are frequently invisible for some seconds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134900" target="_blank" rel="noopener noreferrer">MC-134900</a> server.properties generator-settings for level-type FLAT not implemented; property is stored in ignored flat_world_options NBT</li>
+<li><a href="https://bugs.mojang.com/browse/MC-145140" target="_blank" rel="noopener noreferrer">MC-145140</a> Fireballs cannot be interacted with when summoned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-146928" target="_blank" rel="noopener noreferrer">MC-146928</a> Can't place doors, rails, buttons, pressure plate, redstone, etc. on soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148935" target="_blank" rel="noopener noreferrer">MC-148935</a> Zombies with no AI still convert into drowned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171079" target="_blank" rel="noopener noreferrer">MC-171079</a> Comparators no longer work as expected reading containers through powered blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171860" target="_blank" rel="noopener noreferrer">MC-171860</a> Nether fossils have code implying an unimplemented /locate function</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172266" target="_blank" rel="noopener noreferrer">MC-172266</a> Crossbow wielding piglins do not properly walk backwards to target the player when very close</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172323" target="_blank" rel="noopener noreferrer">MC-172323</a> Game crashes when summoning a hoglin with the attack damage attribute set to 0 or giving a hoglin weakness with a very high level (255)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172374" target="_blank" rel="noopener noreferrer">MC-172374</a> Can teleport to invalid y coordinates and crash the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172428" target="_blank" rel="noopener noreferrer">MC-172428</a> Piglins and hoglins don't look at their target</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172470" target="_blank" rel="noopener noreferrer">MC-172470</a> When the piglin holds the bow, it will try to attack and follow the enemy eventually  stood there not moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172530" target="_blank" rel="noopener noreferrer">MC-172530</a> Piglins indefinitely stand around dropped golden items if mobGriefing is disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172903" target="_blank" rel="noopener noreferrer">MC-172903</a> Piglins which convert into zombified piglins delete armor if equipped</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173156" target="_blank" rel="noopener noreferrer">MC-173156</a> Z-fighting at bottom of potted bamboo; bottom texture of bamboo is exposed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173167" target="_blank" rel="noopener noreferrer">MC-173167</a> Netherite sword/tools not sorted with other swords/tools</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173180" target="_blank" rel="noopener noreferrer">MC-173180</a> Hoglins are not scared of Warped Fungus in flower pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173219" target="_blank" rel="noopener noreferrer">MC-173219</a> No sound when climbing weeping vines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173243" target="_blank" rel="noopener noreferrer">MC-173243</a> Crying obsidian is movable by pistons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173283" target="_blank" rel="noopener noreferrer">MC-173283</a> Piglin admiring held gold ingot doesn't drop it when killed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173302" target="_blank" rel="noopener noreferrer">MC-173302</a> Crying Obsidian can be harvested with any pickaxe</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173384" target="_blank" rel="noopener noreferrer">MC-173384</a> Crying obsidian can be destroyed by the Ender Dragon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173433" target="_blank" rel="noopener noreferrer">MC-173433</a> Killing a baby Hoglin doesn't yield experience</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173462" target="_blank" rel="noopener noreferrer">MC-173462</a> Baby piglins can hold soul fire torches</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173467" target="_blank" rel="noopener noreferrer">MC-173467</a> Piglins admiring bartering gold ingot drop nothing when converting to Zombified Piglin</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173484" target="_blank" rel="noopener noreferrer">MC-173484</a> Death message from falling off a trapdoor does not mention it by name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173485" target="_blank" rel="noopener noreferrer">MC-173485</a> Death message from falling off scaffolding does not mention it by name</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173706" target="_blank" rel="noopener noreferrer">MC-173706</a> NullPointerException in server tick loop when trying to load a flatland world with Nether biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173725" target="_blank" rel="noopener noreferrer">MC-173725</a> Anvil name field doesn't automatically receive focus anymore and is unclickable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173731" target="_blank" rel="noopener noreferrer">MC-173731</a> Fire and soul fire play a sound and produce particles when extinguished</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173732" target="_blank" rel="noopener noreferrer">MC-173732</a> Fire and soul fire do not have loot tables</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173739" target="_blank" rel="noopener noreferrer">MC-173739</a> Missing sound for event: minecraft:block.smithing_table.use</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173766" target="_blank" rel="noopener noreferrer">MC-173766</a> Thrown tridents disappear after hitting and damaging a mob or entity</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173776" target="_blank" rel="noopener noreferrer">MC-173776</a> Hoes do not mine targets faster</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173792" target="_blank" rel="noopener noreferrer">MC-173792</a> End gateways don't work using enderpearls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173858" target="_blank" rel="noopener noreferrer">MC-173858</a> Unable to set "LeftHanded" to "1b" for piglins</li>
+</ul>

@@ -1,0 +1,63 @@
+<p>1.18 的首个预发布版来了！</p>
+<p>从现在开始，你看到的大多将是漏洞修复。此外，预发布版不遵循常规快照周三发布的节奏，所以请多加留意！</p>
+<p>话虽如此，这个预发布版引入了生物群系过渡，这意味着新旧地形之间将不再有生硬的边界。除此之外，我们还重新引入了放大化和巨型生物群系世界类型。</p>
+<p>挖矿愉快！</p>
+<h1>1.18 预发布版 1 中的更改</h1>
+<ul>
+<li>放大化和巨型生物群系世界已适配新地形，并重新在创建世界界面中可用</li>
+<li>从创建世界界面移除了“洞穴”和“浮空岛”世界类型</li>
+<li>新旧地形之间的过渡不再那么“悬崖式”<ul>
+<li>地表高度会混合吗？会。</li>
+<li>生物群系会混合吗？会。</li>
+<li>洞穴会混合吗？效果可能因人而异。</li>
+</ul></li>
+</ul>
+<h1>1.18 预发布版 1 中的技术性更改</h1>
+<ul>
+<li>数据生成器中的 <code>--report</code> 选项现在会生成完整的 worldgen 参考文件，而不仅仅是生物群系</li>
+</ul>
+<h1>1.18 预发布版 1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-46584" target="_blank" rel="noopener noreferrer">MC-46584</a> 在生存模式下，点击并拖动 MOUSE3（鼠标滚轮）划过物品槽时，会错误地尝试放置整组物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-53444" target="_blank" rel="noopener noreferrer">MC-53444</a> 骑乘位于世界边界外的可骑乘实体（船、猪等）可以让你离开世界边界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-54119" target="_blank" rel="noopener noreferrer">MC-54119</a> 可以在世界边界外和出生点保护区内放置/取走水、熔岩和睡莲</li>
+<li><a href="https://bugs.mojang.com/browse/MC-62550" target="_blank" rel="noopener noreferrer">MC-62550</a> 末地和下界的世界边界未能正确初始化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-96535" target="_blank" rel="noopener noreferrer">MC-96535</a> 带有 ShowParticles:0b 的药水效果的 Ambient 属性未被忽略</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113425" target="_blank" rel="noopener noreferrer">MC-113425</a> 玩家可以与世界边界外的实体交互</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117800" target="_blank" rel="noopener noreferrer">MC-117800</a> 半个床可以被放置在世界边界外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121997" target="_blank" rel="noopener noreferrer">MC-121997</a> 每个维度的世界边界都独立运作，且显示位置与实际位置不符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131808" target="_blank" rel="noopener noreferrer">MC-131808</a> 森林在正坐标边界附近不生成树木，但在负坐标边界处会越界生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136523" target="_blank" rel="noopener noreferrer">MC-136523</a> 末地维度中的世界边界不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187174" target="_blank" rel="noopener noreferrer">MC-187174</a> 世界边界未考虑下界坐标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206660" target="_blank" rel="noopener noreferrer">MC-206660</a> 如果正下方有方块，钟乳石不会正确掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215139" target="_blank" rel="noopener noreferrer">MC-215139</a> 洞穴中有些水不会开始流动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219035" target="_blank" rel="noopener noreferrer">MC-219035</a> 化石结构无法在区块东部和南部边缘的方块中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222388" target="_blank" rel="noopener noreferrer">MC-222388</a> y=0 以下的金合欢树经常长出光秃的枝干</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229013" target="_blank" rel="noopener noreferrer">MC-229013</a> 熔岩湖装饰器配置未被使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229517" target="_blank" rel="noopener noreferrer">MC-229517</a> 流浪者和溺尸的转化声音由友好生物混音器控制，而非敌对生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231666" target="_blank" rel="noopener noreferrer">MC-231666</a> 龙蛋可以传送到世界边界外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236610" target="_blank" rel="noopener noreferrer">MC-236610</a> 熔岩湖生成时周围没有石头</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236628" target="_blank" rel="noopener noreferrer">MC-236628</a> 熔岩池现在会使沙子下落，而不是在其下方生成砂岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236652" target="_blank" rel="noopener noreferrer">MC-236652</a> 生物群系内的天气有时可能不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236803" target="_blank" rel="noopener noreferrer">MC-236803</a> 在尖峭山峰、雪林、雪坡及冰封山峰的哨站中，掠夺者的生成数量极其稀少</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237040" target="_blank" rel="noopener noreferrer">MC-237040</a> 下落的方块在落地时有时仍会短暂消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237598" target="_blank" rel="noopener noreferrer">MC-237598</a> 投射物在离开模拟距离时会在空中异常抖动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237621" target="_blank" rel="noopener noreferrer">MC-237621</a> 某些山峰网格单元缺少生物群系定义，导致意外生成海洋</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237791" target="_blank" rel="noopener noreferrer">MC-237791</a> 在雪林、冰封山峰、雪坡和尖峭山峰上使用村民刷怪蛋不会生成雪原村民</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237954" target="_blank" rel="noopener noreferrer">MC-237954</a> “音乐之声”和“家的感觉”进度在内部被放置在不正确的标签页文件夹中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238038" target="_blank" rel="noopener noreferrer">MC-238038</a> 新添加的进度的命名空间 ID 与其翻译键不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238972" target="_blank" rel="noopener noreferrer">MC-238972</a> 沙漠中生成的砂岩极少或没有砂岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239714" target="_blank" rel="noopener noreferrer">MC-239714</a> 在沙漠超平坦世界中执行 /locate desert_pryamid 会导致世界冻结</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239851" target="_blank" rel="noopener noreferrer">MC-239851</a> 升级旧世界会导致树叶变成表面生成器方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239852" target="_blank" rel="noopener noreferrer">MC-239852</a> 熔岩池与要塞相交会导致末地传送门框架被删除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240021" target="_blank" rel="noopener noreferrer">MC-240021</a> 炼药锅中的 cullface 参数过多</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240481" target="_blank" rel="noopener noreferrer">MC-240481</a> 旧区块下方的新洞穴生成中不会生成深板岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240482" target="_blank" rel="noopener noreferrer">MC-240482</a> 旧区块的主世界中没有基岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240495" target="_blank" rel="noopener noreferrer">MC-240495</a> 在恶地或繁茂恶地生物群系中，深板岩不会在 Y=0 以下生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240503" target="_blank" rel="noopener noreferrer">MC-240503</a> 恶地和繁茂恶地中不会生成基岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240516" target="_blank" rel="noopener noreferrer">MC-240516</a> 噪声洞穴雕刻器不会在旧区块下方生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240531" target="_blank" rel="noopener noreferrer">MC-240531</a> 无论滑块的值如何，方块模拟距离始终为 8 个区块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240534" target="_blank" rel="noopener noreferrer">MC-240534</a> 点击 JFR 链接会将完整的服务端路径复制到剪贴板</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240631" target="_blank" rel="noopener noreferrer">MC-240631</a> 末地地形生成极其缓慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240998" target="_blank" rel="noopener noreferrer">MC-240998</a> 传送门不再以非实体处理方式加载区块</li>
+</ul>

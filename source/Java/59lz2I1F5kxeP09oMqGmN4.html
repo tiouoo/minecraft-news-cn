@@ -1,0 +1,78 @@
+<p>The second Caves &#x26; Cliffs: Part II snapshot is here! This snapshot mostly contains tweaks and bug fixes, but there are also some new technical additions such as a separate simulation distance slider and an increased thread count (no I'm not talking about the fancy sheets you're thinking about buying).</p>
+<p>Oh, and you also seemed to enjoy Strongholds quite a lot, so we decided to add them back into the game. Enjoy!</p>
+<h1>Known Issues in 21w38a</h1>
+<ul>
+<li>This snapshot is still not compatible with older worlds - to play in this snapshot, you will have to create a new world</li>
+<li>World saving can sometimes take a very long time - if you see the world stop moving for a time, this is why</li>
+</ul>
+<h1>Changes in 21w38a</h1>
+<ul>
+<li>Sprinting is no longer reduced to walking when gently brushing your sleeve against a wall</li>
+<li>Fixes for the distribution of ores</li>
+</ul>
+<h2>Ore distribution</h2>
+<ul>
+<li>Copper ore generates up to y 95 (as originally designed)</li>
+<li>Increased the amount of copper</li>
+<li>Lapis lazuli generates in blobs, like other ores (instead of spread out)</li>
+</ul>
+<h2>Sprinting</h2>
+<ul>
+<li>Previously, any collision with a block would reduce sprinting to walking. Now, for very minor angles of collision with a block, players retain their sprint. For larger angles of collision, the old behavior is retained.</li>
+</ul>
+<h1>Technical Changes in 21w38a</h1>
+<ul>
+<li>A new setting has been added: "Simulation distance"</li>
+<li>Maximum amount of background threads increased</li>
+<li>Added telemetry for world loading</li>
+</ul>
+<h2>Simulation distance setting</h2>
+<ul>
+<li>Entities will not be updated outside of simulation distance.</li>
+<li>Allows higher render distance with less CPU load.</li>
+<li>A new slider in video settings on the client.</li>
+<li>A new <code>simulation-distance</code> property in dedicated server properties.</li>
+<li>We will continue working on it with a goal of simulation distance also affecting block and fluid ticking.</li>
+</ul>
+<h2>Maximum amount of background threads increased</h2>
+<p>Various background tasks including worldgen are executed on a background thread pool. Its size equals the amount of available CPU threads minus one, but there was an upper limit of 7. Now this upper limit is 255. This should help higher-end machines with world-gen performance.</p>
+<p>The upper limit can be overridden by <code>max.bg.threads</code> Java system property, for example when running multiple servers on a single machine.</p>
+<h2>Telemetry</h2>
+<p>In this release, we are re-introducing diagnostic tracking, which was part of Minecraft: Java Edition until 2018. We are bringing it back to better understand our players and to improve their experience. Specifically, we hope to ensure stronger performance for the extremely heavy world generation in the second part of the Caves &#x26; Cliffs update later this year.</p>
+<p>In practice, this can mean identifying technical pain points in the game, like how less powerful hardware performs in high-complexity terrain. This information will also help us prioritize various aspects of development, balance game features (by learning, for instance, that the goats are pushing every single player off the cliffs) and lend new Minecrafters a helping hand (after realizing that many of them get stuck at the same points). All data is treated according to GDPR and CCPA best practices and is used to develop a better-performing and generally more enjoyable Minecraft: Java Edition.</p>
+<p>At this point the only implemented event is world load.</p>
+<h3>World Load event</h3>
+<ul>
+<li>Sent when loading singleplayer world or connecting to multiplayer server</li>
+<li>Contains following information:<ul>
+<li>launcher identifier</li>
+<li>user identitifer (XUID)</li>
+<li>client session id (changes on restart)</li>
+<li>world session id (changes per world load, to be reused for later events)</li>
+<li>game version</li>
+<li>operating system name and version</li>
+<li>Java runtime version</li>
+<li>if client or server is modded (same information as on crash logs)</li>
+<li>server type (single player, Realms or other)</li>
+<li>game mode</li>
+</ul></li>
+</ul>
+<h1>Bugs fixed in 21w38a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-44055" target="_blank" rel="noopener noreferrer">MC-44055</a> Game fails to switch the audio output from one device to another after the game has started (from title screen)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236611" target="_blank" rel="noopener noreferrer">MC-236611</a> No sound for using shears on weeping, twisting, cave vines or kelp</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236618" target="_blank" rel="noopener noreferrer">MC-236618</a> Strongholds don't generate in 21w37a</li>
+<li><ul>
+<li><a href="https://bugs.mojang.com/browse/MC-236621" target="_blank" rel="noopener noreferrer">MC-236621</a> Liquids sometimes do not propagate</li>
+</ul></li>
+<li><a href="https://bugs.mojang.com/browse/MC-236633" target="_blank" rel="noopener noreferrer">MC-236633</a> Random light level of 0 in sky</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236656" target="_blank" rel="noopener noreferrer">MC-236656</a> Crash when changing render distance / java.lang.ArrayIndexOutOfBoundsException: Index 28084 out of bounds for length 26136</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236665" target="_blank" rel="noopener noreferrer">MC-236665</a> Memory leak in 21w37a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236698" target="_blank" rel="noopener noreferrer">MC-236698</a> Big Spruce Trees don't generate in Groves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236711" target="_blank" rel="noopener noreferrer">MC-236711</a> Starting and stopping JFR profiling multiple times within the same minute overwrites previous JFR results saved during that minute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236718" target="_blank" rel="noopener noreferrer">MC-236718</a> Dripstone caves generate above the ground</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236795" target="_blank" rel="noopener noreferrer">MC-236795</a> Cannot start with alternate JVM due to JFR requirement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236873" target="_blank" rel="noopener noreferrer">MC-236873</a> Problems with JFR event metadata</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236967" target="_blank" rel="noopener noreferrer">MC-236967</a> Too many aquifers on biome surfaces at Y=63 and below</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237109" target="_blank" rel="noopener noreferrer">MC-237109</a> Aquifers often generate with harsh straight borders</li>
+</ul>

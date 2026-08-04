@@ -1,0 +1,118 @@
+<p>Let me tell you a little story about hubris. Well, not so much a story as a lament. Because some of you have been thinking that the warden was a little too easy. I won’t name names, but I know you’re out there. Why else would we be adding ranged attacks for this already terrifying mob? Was the sniffing not enough? When will it end? Not today, apparently.
+Enjoy a new terrifying warden along with more advancements and technical changes.</p>
+<h1>New Features in 22w15a</h1>
+<ul>
+<li>Added advancement "When the Squad Hops into Town" for getting each Frog variant on a Lead</li>
+<li>Added advancement "Sneak 100" for sneaking near a Sculk Sensor or Warden to prevent it hearing you</li>
+<li>Added a new ranged attack to the Warden.</li>
+</ul>
+<h2>Warden Ranged Attack</h2>
+<ul>
+<li>Building up high, hiding behind walls or being out of range of their powerful melee attack will cause Wardens to switch to their ranged attack<ul>
+<li>Their rib cages will open up to shriek a sonically charged ranged attack that can penetrate walls</li>
+</ul></li>
+</ul>
+<h1>Changes in 22w15a</h1>
+<ul>
+<li>Added Darkness effect to "How Did We Get Here?" advancement</li>
+<li>Allays have a natural health regen of 2 health per second</li>
+<li>The main menu background now shows a Wild Update panorama</li>
+<li>Mud generates all the way from the surface down to stone in Mangrove Swamps</li>
+<li>Tall Mangroves are far more common than Short Mangroves in Mangrove Swamps</li>
+<li>Moss Carpet generates on top of Mangrove Tree's roots</li>
+<li>The Wandering Trader will now sometimes offer Propagules for sale</li>
+<li>A previous change to Noteblocks that only Wool and Wool Carpets would block the sounds has been reverted</li>
+<li>Wardens can now sniff you from further away</li>
+<li>The vertical range Wardens get angry at a target while sniffing is now 20 blocks instead of 6 blocks</li>
+</ul>
+<h2>Changes to vibrations</h2>
+<ul>
+<li>Carpets, like Wool blocks, will now dampen the vibrations caused by their placing, breaking or dropping as items</li>
+<li>Carpets now also dampen the vibrations caused by running and jumping over them</li>
+</ul>
+<h1>Technical Changes in 22w15a</h1>
+<ul>
+<li>Removed <code>item_delivered_to_player</code> advancement trigger</li>
+<li>Added <code>thrown_item_picked_up_by_player</code> advancement trigger</li>
+</ul>
+<p>​- Added <code>avoid_vibration</code> advancement trigger</p>
+<ul>
+<li>Added <code>sonic_explosion</code> particle</li>
+</ul>
+<h2>Advancements</h2>
+<h3>New triggers</h3>
+<h4><code>thrown_item_picked_up_by_player</code></h4>
+<ul>
+<li>Triggered when a player picks up an item that was thrown by an entity</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a predicate for the player picking up the item</li>
+<li><code>entity</code> - a predicate for the entity that threw the item</li>
+<li><code>item</code> - a predicate for the item</li>
+</ul></li>
+</ul>
+<h4><code>avoid_vibration</code></h4>
+<ul>
+<li>Triggered when a vibration event is ignored because the source player is holding the sneak key</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+</ul></li>
+</ul>
+<h2>Game Events</h2>
+<ul>
+<li>Renamed game event tag <code>ignore_vibrations_on_occluding_block</code> to <code>dampenable_vibrations</code></li>
+<li>Added block tag <code>dampens_vibrations</code> to indicate blocks which will not trigger vibrations when placed, broken or stepped on</li>
+<li>Renamed item tag <code>occludes_vibration_signals</code> to <code>dampens_vibrations</code> item tag as well</li>
+</ul>
+<h1>Fixed bugs in 22w15a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-36783" target="_blank" rel="noopener noreferrer">MC-36783</a>  Item frames/Glow item frames don't change their hitbox if they contain a map</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147686" target="_blank" rel="noopener noreferrer">MC-147686</a>  Joining a world that uses custom resources shows default resources until fully loaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183520" target="_blank" rel="noopener noreferrer">MC-183520</a>  Phantoms with NoAI can go through blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212610" target="_blank" rel="noopener noreferrer">MC-212610</a>  Glow lichens cannot be put on soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212629" target="_blank" rel="noopener noreferrer">MC-212629</a>  Leashes from two or more invisible entities connect to each other</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216567" target="_blank" rel="noopener noreferrer">MC-216567</a>  Vines cannot be placed on the sides of 8 layers of snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216569" target="_blank" rel="noopener noreferrer">MC-216569</a>  Glow lichen cannot be placed on the side of 8 layers of snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219642" target="_blank" rel="noopener noreferrer">MC-219642</a>  Vines cannot be placed on the sides of soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231458" target="_blank" rel="noopener noreferrer">MC-231458</a>  The word "ingot" within the "Serious Dedication" advancement description is improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235035" target="_blank" rel="noopener noreferrer">MC-235035</a>  Sleeping in a custom dimension with "natural" set to false causes crash</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237924" target="_blank" rel="noopener noreferrer">MC-237924</a>  The word "villager" within the "Star Trader" advancement description is improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249072" target="_blank" rel="noopener noreferrer">MC-249072</a>  Sculk shriekers replace water blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249087" target="_blank" rel="noopener noreferrer">MC-249087</a>  The inside texture of mangrove roots darkens when solid blocks are placed adjacent to them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249094" target="_blank" rel="noopener noreferrer">MC-249094</a>  Unexpected culling of inner sculk shrieker faces</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249111" target="_blank" rel="noopener noreferrer">MC-249111</a>  sculk_charge cannot be used in /particle command</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249208" target="_blank" rel="noopener noreferrer">MC-249208</a>  Vines, glow lichens, and sculk veins cannot be placed on the side or top faces of mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249315" target="_blank" rel="noopener noreferrer">MC-249315</a>  Mangrove Roots cannot be composted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249347" target="_blank" rel="noopener noreferrer">MC-249347</a>  Map color for mangrove sign and mangrove wall sign is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249423" target="_blank" rel="noopener noreferrer">MC-249423</a>  You can't open the boat with chests without a shift, even when you can't get into the boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249445" target="_blank" rel="noopener noreferrer">MC-249445</a>  Activated sculk shriekers fail to summon the warden when broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249488" target="_blank" rel="noopener noreferrer">MC-249488</a>  Darkness pulsing option is not saved</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249495" target="_blank" rel="noopener noreferrer">MC-249495</a>  Inconsistent shading in boat item sprites</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a>  Warden despawns when far away</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249688" target="_blank" rel="noopener noreferrer">MC-249688</a>  Mangrove stairs come after nether wood stairs in the Building Blocks tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249737" target="_blank" rel="noopener noreferrer">MC-249737</a>  Allay can be pushed around with {NoAI:1b}</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249741" target="_blank" rel="noopener noreferrer">MC-249741</a>  New advancement names are not properly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249785" target="_blank" rel="noopener noreferrer">MC-249785</a>  Warden can be pushed when emerging and digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249917" target="_blank" rel="noopener noreferrer">MC-249917</a>  Mangrove trees don't replace certain blocks with roots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249923" target="_blank" rel="noopener noreferrer">MC-249923</a>  Recovery compass isn't sorted with regular compass in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249927" target="_blank" rel="noopener noreferrer">MC-249927</a>  You can use a Recovery Compass on a Lodestone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249931" target="_blank" rel="noopener noreferrer">MC-249931</a>  Growing a Mangrove Tree with bone meal creates a ghost block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249933" target="_blank" rel="noopener noreferrer">MC-249933</a>  Game crash related to the frog occurred (Accessing LegacyRandomSource from multiple threads)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249934" target="_blank" rel="noopener noreferrer">MC-249934</a>  Mangrove roots sometimes don't generate waterlogged when generating within water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249936" target="_blank" rel="noopener noreferrer">MC-249936</a>  Cave carvers don't cut through mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249938" target="_blank" rel="noopener noreferrer">MC-249938</a>  Mangrove Leaves do not drop from Silk Touch tools</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249942" target="_blank" rel="noopener noreferrer">MC-249942</a>  Water got removed after waterlogged Mangrove Propagule grows</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249947" target="_blank" rel="noopener noreferrer">MC-249947</a>  Top of Sculk Shrieker model is vertically squished</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249966" target="_blank" rel="noopener noreferrer">MC-249966</a>  Warden can forget a target it just roared at</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249968" target="_blank" rel="noopener noreferrer">MC-249968</a>  Powering a beacon disconnects player from server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249977" target="_blank" rel="noopener noreferrer">MC-249977</a>  Harsh chunk borders appear when upgrading a 1.18.2 world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249979" target="_blank" rel="noopener noreferrer">MC-249979</a>  Chance to have mangrove roots not waterlogged when growing from a sapling while underwater</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249980" target="_blank" rel="noopener noreferrer">MC-249980</a>  The Birthday Song advancement description is incorrectly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249984" target="_blank" rel="noopener noreferrer">MC-249984</a>  note_block is inconsistently spelled as noteblock in the allay_deliver_cake_to_noteblock advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250017" target="_blank" rel="noopener noreferrer">MC-250017</a>  UUID launch argument required</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250025" target="_blank" rel="noopener noreferrer">MC-250025</a>  The "You Got a Friend in Me" advancement is incorrectly presented in the past tense</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250099" target="_blank" rel="noopener noreferrer">MC-250099</a>  Mangrove Log and Mangrove Planks don't spawn in bonus chest</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250101" target="_blank" rel="noopener noreferrer">MC-250101</a>  Can't plant sugar cane on mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250103" target="_blank" rel="noopener noreferrer">MC-250103</a>  Can't plant bamboo on mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250104" target="_blank" rel="noopener noreferrer">MC-250104</a>  Can't plant big dripleaf on mud</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250106" target="_blank" rel="noopener noreferrer">MC-250106</a>  Overworld vegetation cannot be placed on muddy mangrove roots</li>
+</ul>

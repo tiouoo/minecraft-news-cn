@@ -1,0 +1,509 @@
+<p>我们现在为 Minecraft：Java 版发布 1.20.2。此版本在世界深处增加了更多钻石矿石，并更改了生物攻击范围，同时优化了游戏的网络性能，即使在低带宽连接下也能实现更流畅的在线游戏。</p>
+<p>此版本还为地图制作者和数据包及资源包创作者带来了新功能，例如宏函数、random 命令和资源包覆盖层。</p>
+<p>在 1.20.2 中，我们对玩家举报工具进行了一些重要更新，以更好地保护玩家的在线安全。您现在可以举报违反我们社区标准的玩家皮肤和用户名。</p>
+<p>可选的“村民交易再平衡”实验也在此版本中首次亮相，其中包含您可以尝试的交易变更。</p>
+<h1>新内容</h1>
+<h2>玩家皮肤与名称举报</h2>
+<p>我们正在对我们的玩家举报工具进行一些重要更新，以更好地保护玩家的在线安全。</p>
+<p>游玩 Minecraft 对每个人来说都应该是包容且安全的体验，因此除了游戏内聊天消息之外，您现在还可以在 Java 版中举报违反我们社区标准的玩家皮肤和用户名。</p>
+<p>与聊天举报一样，没有任何自动化流程。任何被举报的皮肤或用户名都将由训练有素的 Minecraft 审核员团队手动审查，他们会根据提交的证据来判断该皮肤和/或用户名是否违反我们的社区标准。违反这些标准的皮肤将被从 Minecraft 中移除，并且任何玩家都无法再使用。违反这些标准的用户名需要在玩家通过共享服务器或 Realm 在线游戏之前进行更改；不过单人游戏模式仍然可用。要了解有关此政策及其他安全政策的更多信息，包括封禁流程、申诉流程以及我们如何处理恶意或重复举报的详细信息，请访问我们的专用<a href="https://help.minecraft.net/hc/en-us/articles/7317376541197" target="_blank" rel="noopener noreferrer">常见问题解答页面</a>。</p>
+<ul>
+<li>玩家现在可以在社交互动界面中举报皮肤和名称</li>
+<li>如果某个皮肤或名称被举报，并被发现违反<a href="https://www.minecraft.net/community-standards" target="_blank" rel="noopener noreferrer">社区标准</a>，我们的人工审核员团队可以采取以下几种方式：<ul>
+<li>禁止任何玩家使用该皮肤</li>
+<li>禁止任何玩家使用该名称</li>
+<li>如果屡次违规，则暂停该玩家的在线游戏权限</li>
+</ul></li>
+<li>当某个皮肤被禁止使用时，使用该皮肤的玩家：<ul>
+<li>皮肤将被移除</li>
+<li>在启动游戏时会收到通知</li>
+<li>将自动分配一个默认皮肤</li>
+<li>仍可进行多人游戏和单人游戏</li>
+<li>可以随时选择新的自定义皮肤</li>
+</ul></li>
+<li>当某个玩家的名称被禁止使用时，该玩家：<ul>
+<li>需要选择一个新的名称</li>
+<li>在启动游戏时会收到通知</li>
+<li>在更改名称之前无法在线游戏</li>
+<li>仍可进行单人游戏</li>
+</ul></li>
+<li>被禁止使用的皮肤或名称将来不能被任何玩家使用</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>用于确定生物能否攻击玩家或其他生物的计算方式已更改</li>
+<li>钻石矿石现在在主世界的深板岩层中生成得更频繁</li>
+<li>优化了网络游戏体验</li>
+<li>治愈僵尸村民现在仅在第一次时提供大幅折扣<ul>
+<li>反复感染并治愈同一村民不再提供额外折扣</li>
+</ul></li>
+<li>海绵和湿海绵现在有各自自定义的声音</li>
+<li>创造模式中的玩家现在可以让屏障方块含水<ul>
+<li>水无法通过非直接交互（例如发射器）放入或取出</li>
+</ul></li>
+<li>所有实体骑乘在其他实体上的位置已调整，使其更合理</li>
+<li>添加了“叙述器快捷键”辅助功能选项（默认开启）<ul>
+<li>启用后，可以使用 <code>Ctrl+B</code> 切换叙述器的开关</li>
+</ul></li>
+<li>添加了“我要举报他们”玩家举报类别</li>
+<li>移除了 Herobrine</li>
+</ul>
+<h2>生物攻击范围更改</h2>
+<p>用于确定生物能否攻击玩家或其他生物的计算方式已更改。以前，生物的横向宽度用于确定其攻击范围，而高度没有影响。现在，生物可以攻击的区域是其包围盒在水平方向上的延伸。</p>
+<p>以下是一些新规则会影响生物攻击范围的情况：</p>
+<ul>
+<li>如果生物完全在你下方或完全在你上方，它将无法攻击到你</li>
+<li>骑乘中型生物（如马）时，你将免受小型生物（如小僵尸）的攻击</li>
+<li>骑乘高大生物（如骆驼）时，你将免受标准体型生物（如僵尸）的攻击</li>
+<li>此外，劫掠兽不再能隔着几格厚的墙壁攻击你</li>
+<li>然而，要逃离末影人，你需要离地至少 3 格，而不是以前的 1.5 格</li>
+<li>假设你的头部在范围内，生物将能用碰撞箱底部攻击你</li>
+<li>用于困住敌对生物的建筑可能需要调整以确保安全</li>
+</ul>
+<p>此更改不影响玩家的攻击范围，而且生物仍然需要看到目标才能发动攻击。</p>
+<h2>网络游戏</h2>
+<p>游戏的多人游戏模式已经过优化，以提供更流畅的在线游戏体验。如果您之前经历过断开连接或在线服务器加载缓慢的问题，此版本可能会显著改善这种体验。</p>
+<ul>
+<li>在加载服务器上的世界时，游戏世界现在会提前显示，而不是一直显示加载界面</li>
+<li>带宽极低的客户端在加载世界时将不会超时</li>
+<li>带宽较低的客户端可以在部分区块仍在加载时与世界交互</li>
+</ul>
+<h2>振动</h2>
+<ul>
+<li>振动不再有在模拟距离限制处丢失的风险</li>
+<li>使用骨粉会发出频率为 3 的 <code>item_interact_finish</code> 振动</li>
+<li>卸下物品会发出频率为 4 的新的 <code>unequip</code> 振动</li>
+<li>骆驼吃仙人掌会发出频率为 8 的 <code>eat</code> 振动</li>
+<li>兔子吃胡萝卜会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>狐狸吃甜浆果会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>雕纹书架从漏斗接收书时会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>海龟蛋开裂会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>海龟蛋孵化会发出频率为 12 的 <code>block_destroy</code> 振动</li>
+<li>火被水瓶浇灭会发出频率为 12 的 <code>block_destroy</code> 振动</li>
+<li>唤魔者召唤恼鬼或尖牙会发出频率为 14 的 <code>entity_place</code> 振动</li>
+</ul>
+<h2>其他小型调整</h2>
+<ul>
+<li>紫颂花不再为悬挂或站立方块提供支撑</li>
+<li>更新了制图师出售的探险家地图上的结构图标</li>
+<li>村民解锁新交易时，这些交易在界面中的顺序现在始终随机，而不是有时是确定性的</li>
+<li>用户界面中文本框的大小现在与按钮的大小一致</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1_20_2_release_4.jpg" alt="1.20.2 Release Image 4"></p>
+<h1>技术更改</h1>
+<ul>
+<li>资源包版本现在为 18</li>
+<li>数据包版本现在为 18</li>
+<li>已使用的命令历史现在会保存并可在各个世界间访问</li>
+<li>优化了网络，以改善低带宽连接上的体验</li>
+<li>增加了对多版本包的支持</li>
+<li>更改了网络协议，以便将来支持更多数据驱动的内容</li>
+<li>在 <code>server.properties</code> 中添加了新的 <code>log-ips</code> 选项</li>
+<li>增加了对数据包和资源包中符号链接的验证</li>
+<li>当通过 F3+B 显示碰撞箱时，带有乘客的实体会显示乘客的连接点</li>
+<li>调试界面上的图表现在可以通过 F3+1（饼图）和 F3+2（FPS 和 TPS）切换，而不是在打开界面时按住 Shift 或 Alt</li>
+<li>按 F3+3 现在会在调试界面上显示 ping 和接收的网络流量图表</li>
+<li><code>LWJGL</code> 库已升级至 3.3.2 版本</li>
+<li>游戏自带的默认 Java 版本已升级至 Microsoft OpenJDK 17.0.8</li>
+</ul>
+<h2>命令历史</h2>
+<ul>
+<li>您在聊天中发送的最后 50 条命令将在游戏会话之间被记住</li>
+<li>您可以在聊天中按上或下箭头访问命令和聊天历史</li>
+<li>普通聊天只在同一个游戏会话内保留（离开服务器或世界会清除它们）</li>
+<li>最近的命令存储在游戏文件夹中的 <code>command_history.txt</code> 中</li>
+</ul>
+<h2>网络优化</h2>
+<ul>
+<li>游戏数据包现在被合并成更大的 TCP 数据包，以减少 TCP 报头带来的开销，显著降低网络使用量</li>
+<li>区块不再作为一大批连续数据通过网络发送给客户端</li>
+<li>区块现在根据可用带宽以较小的批次发送，这意味着：<ul>
+<li>带宽极低的客户端在加载世界时将不会超时</li>
+<li>带宽较低的客户端可以在部分区块仍在加载时与世界交互</li>
+</ul></li>
+<li>现在只发送客户端渲染距离内的区块</li>
+</ul>
+<h2>多版本包</h2>
+<p>数据包和资源包中添加了新功能，使您可以创建与游戏多个版本兼容的包。</p>
+<h3>包元数据</h3>
+<ul>
+<li>包元数据现在包含一个可选字段 <code>supported_formats</code>，用于描述此包支持的包格式范围<ul>
+<li>示例：<code>16</code>、<code>[16,17]</code>、<code>{"min_inclusive": 16, "max_inclusive": 17}</code></li>
+</ul></li>
+<li><code>pack_format</code> 字段仍然是必需的，其格式保持不变，以便旧版本的游戏能够读取包数据<ul>
+<li>如果存在 <code>supported_formats</code>，它必须包含 <code>pack_format</code> 中声明的值</li>
+<li>注意：由于旧版本游戏会忽略此新信息，它们始终会看到一个“普通的”单版本包，没有任何扩展兼容性</li>
+</ul></li>
+</ul>
+<h3>覆盖层</h3>
+<ul>
+<li>包现在可以包含覆盖层目录（“overlays”）</li>
+<li>覆盖层是应用于包“普通”内容之上的子包<ul>
+<li>这些目录与顶层包具有相同的布局，包括 <code>assets</code> 和 <code>data</code> 目录</li>
+<li>如果覆盖层支持客户端的包格式，则可以应用它们</li>
+<li>覆盖层可以添加和替换文件，但不能移除文件<ul>
+<li>例如，如果应用了覆盖层 <code>foo</code>，则文件 <code>foo/assets/minecraft/textures/bar.png</code> 将替换 <code>assets/minecraft/textures/bar.png</code> 的内容</li>
+</ul></li>
+<li><code>pack.mcmeta</code> 和 <code>pack.png</code> 在覆盖层目录中会被忽略</li>
+</ul></li>
+<li>包元数据中增加了名为 <code>overlays</code> 的新部分<ul>
+<li>它包含一个 <code>entries</code> 字段，其中包含一个覆盖层列表</li>
+<li>每个覆盖层条目有两个字段：<ul>
+<li><code>formats</code> - 支持的格式范围</li>
+<li><code>directory</code> - 覆盖层目录（允许的字符：<code>a-z</code>、<code>0-9</code>、<code>_</code> 和 <code>-</code>）</li>
+</ul></li>
+</ul></li>
+<li>应用顺序：覆盖层从列表底部到顶部堆叠<ul>
+<li>例如，如果一个包有两个覆盖层：<code>"entries": [{"directory":"A", ...}, {"directory":"B", ...}]</code>，游戏将首先在 <code>B</code> 中查找，然后是 <code>A</code>，最后在顶层包目录中查找</li>
+</ul></li>
+</ul>
+<h2>符号链接验证</h2>
+<p>为了提高安全性，游戏现在还会检测数据包和资源包中使用的符号链接。</p>
+<ul>
+<li>此功能扩展了上一版本中在世界中添加的符号链接验证</li>
+<li>如果通过拖放添加的包包含不允许的符号链接，游戏现在会警告用户</li>
+<li>包含不允许的符号链接的包将不会在界面和命令中可见</li>
+<li>此外，未被识别为包的目录和文件将不再通过拖放复制</li>
+<li>有关详细说明，请参阅此<a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">帮助文章</a></li>
+</ul>
+<h2>网络协议</h2>
+<p>作为迈向更多数据驱动功能的持续工作的一部分，网络协议已更改，增加了新的配置阶段。</p>
+<ul>
+<li>配置阶段在登录阶段（即客户端账户验证后）自动开始，并持续到玩家加入世界（游戏阶段）为止</li>
+<li>客户端可以无限期停留在配置阶段 - 由服务器决定何时将其释放到世界中</li>
+<li>服务器也可以在客户端进入游戏阶段后要求其重新进入配置阶段<ul>
+<li>其他玩家会将此类客户端视为已断开连接</li>
+</ul></li>
+<li>处于配置阶段的用户不会出现在玩家列表中</li>
+<li>配置阶段允许的操作（从游戏阶段移入）：<ul>
+<li>配置数据驱动注册表</li>
+<li>配置启用的功能</li>
+</ul></li>
+<li>配置阶段和游戏阶段共有的操作：<ul>
+<li>应用服务器资源包</li>
+<li>更新标签</li>
+<li>交换自定义数据包</li>
+<li>Ping 和保活数据包</li>
+<li>发送客户端选项</li>
+</ul></li>
+<li>服务器现在将在配置阶段协商资源包<ul>
+<li>这意味着玩家在回答提示和重新加载资源时将不再处于世界中</li>
+</ul></li>
+</ul>
+<h3>安全聊天</h3>
+<ul>
+<li>客户端在收到无效聊天消息时将不再自行断开连接<ul>
+<li>而是会在聊天中显示一条占位消息</li>
+</ul></li>
+</ul>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>新选项：<code>log-ips</code>（默认 <code>true</code>）<ul>
+<li>设为 <code>false</code> 时，将阻止玩家 IP 在玩家加入游戏时被包含在日志中</li>
+</ul></li>
+</ul>
+<h2>遥测</h2>
+<ul>
+<li>在遥测数据收集界面中添加了一个链接到微软隐私声明的按钮</li>
+</ul>
+<h1>资源包版本 16</h1>
+<ul>
+<li>升级包的过程可以通过使用这个自动化的 <a href="https://github.com/Mojang/slicer/releases/tag/v1.1.2" target="_blank" rel="noopener noreferrer">Slicer</a> 工具来辅助完成</li>
+<li>所有包含多个 GUI 精灵图的纹理图集已被拆分成 <code>textures/gui/sprites</code> 下的单个精灵图（由 Slicer 工具自动处理）</li>
+<li>所有 <code>realms</code> 命名空间中的纹理都已移动到 <code>minecraft</code> 命名空间（由 Slicer 工具自动处理）</li>
+<li><code>villager2.png</code> 已重命名为 <code>villager.png</code>（由 Slicer 工具自动处理）</li>
+<li><code>icon/trial_available</code> 和 <code>realm_status/expires_soon</code> 这两个 GUI 精灵图现在使用 <code>.mcmeta</code> 声明来制作动画，而不是使用单独的精灵图（由 Slicer 工具自动处理）</li>
+<li>收纳袋提示框背景现在以九宫格精灵图的方式绘制</li>
+<li>辅助功能、语言、Realms 新闻按钮的图标已从其底层按钮纹理中拆分出来</li>
+<li>Realms 邀请按钮现在作为普通按钮纹理上的覆盖层绘制<ul>
+<li>此按钮的高亮纹理状态已被移除</li>
+</ul></li>
+<li>Realms 邀请数字图标的高亮状态已被移除</li>
+<li><code>notification\more.png</code> 上的感叹号已被移除</li>
+</ul>
+<h2>GUI 精灵图集</h2>
+<ul>
+<li>用于 GUI 绘制的精灵图已被拆分为单独的精灵图文件，而不是更大的精灵图集<ul>
+<li>例如，<code>widgets/button.png</code> 和 <code>widgets/button_highlighted.png</code> 已从 <code>widgets.png</code> 中拆分出来</li>
+</ul></li>
+<li>现在可以通过资源包单独覆盖每个精灵图，而不是替换整个图集</li>
+<li>精灵图从 <code>textures/gui/sprites</code> 目录加载到 <code>gui</code> 图集中</li>
+</ul>
+<h3>GUI 精灵图 .mcmeta</h3>
+<ul>
+<li>现在可以使用 <code>.mcmeta</code> 文件为 GUI 中使用的任何精灵图制作动画，类似其他图集<ul>
+<li><code>icon/trial_available</code> 和 <code>realm_status/expires_soon</code> 现在以这种方式制作动画</li>
+</ul></li>
+<li><code>gui</code> 图集中的精灵图现在可以通过 <code>.mcmeta</code> 文件中新的 <code>gui</code> 部分来配置缩放行为<ul>
+<li>例如，按钮纹理必须根据按钮应有的尺寸进行缩放</li>
+<li><code>.mcmeta</code> 中的 <code>gui</code> 部分包含一个 <code>scaling</code> 字段：<ul>
+<li><code>type</code>：以下之一：<code>stretch</code>（默认）、<code>tile</code> 或 <code>nine_slice</code></li>
+<li>当为 <code>stretch</code> 时，精灵图将在所需空间中拉伸<ul>
+<li>无需定义其他字段</li>
+</ul></li>
+<li>当为 <code>tile</code> 时，精灵图将从左上角开始在所需空间中重复<ul>
+<li><code>width</code>：此精灵图在屏幕上覆盖的像素宽度</li>
+<li><code>height</code>：此精灵图在屏幕上覆盖的像素高度</li>
+</ul></li>
+<li>当为 <code>nine_slice</code> 时，精灵图将被切成 4 个角、4 条边和 1 个中心切片，并将在所需空间中平铺<ul>
+<li><code>width</code>：此精灵图在屏幕上覆盖的像素宽度</li>
+<li><code>height</code>：此精灵图在屏幕上覆盖的像素高度</li>
+<li><code>border</code>：边框切片在屏幕上应覆盖的像素大小，以下之一：<ul>
+<li>常量整数，表示所有边的边框大小一致</li>
+<li>包含 <code>left</code>、<code>top</code>、<code>right</code> 和 <code>bottom</code> 的对象</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>资源包版本 17</h1>
+<ul>
+<li>文本框背景现在是一个位于 <code>widget/text_field</code> 和 <code>widget/text_field_highlighted</code> 的九宫格精灵图</li>
+<li>列表和文本框中的滚动条现在是一个位于 <code>widget/scroller</code> 的九宫格精灵图</li>
+</ul>
+<h1>资源包版本 18</h1>
+<ul>
+<li><code>map_icons.png</code> 纹理现在包含新的图标</li>
+</ul>
+<h1>数据包版本 16</h1>
+<ul>
+<li>游戏规则 <code>randomTickSpeed</code> 现在影响雪和冰的积累速度，其方式与影响农作物和其他受随机刻影响的方块相同</li>
+<li>添加了 <code>random</code> 命令</li>
+<li>添加了对函数宏的支持</li>
+<li>更改了显示实体的传送后插值</li>
+<li>添加了新属性 <code>generic.max_absorption</code></li>
+<li>将 <code>scoreboard</code> 命令的显示槽位参数中的 <code>belowName</code> 值重命名为 <code>below_name</code></li>
+<li>游戏事件更改</li>
+<li>新标签</li>
+</ul>
+<h2>命令</h2>
+<h3><code>random</code></h3>
+<p>一个用于随机化数值和控制随机序列的新命令。<code>value</code> 和 <code>roll</code> 形式可用于抽取随机值。使用 <code>roll</code> 时，结果值还会在聊天中显示给所有玩家。</p>
+<p>语法：</p>
+<pre><code>random value|roll &#x3C;range> [&#x3C;sequenceId>]
+random reset *|&#x3C;sequenceId> [&#x3C;seed>] [&#x3C;includeWorldSeed>] [&#x3C;includeSequenceId>]
+</code></pre>
+<p>参数：</p>
+<ul>
+<li><code>range</code>：要在之间随机化的值的范围，包含两端<ul>
+<li>例如，1..6 就是常规的 D6 掷骰</li>
+</ul></li>
+<li><code>sequenceId</code>：要采样或重置的随机序列的名称</li>
+<li><code>seed</code>：重置后用于随机序列的种子</li>
+<li><code>includeWorldSeed</code>：一个布尔值 [默认：<code>true</code>]，指定在为序列设定种子时是否包含世界种子<ul>
+<li><code>false</code> 表示无论命令在哪个世界中运行，该序列的结果都会相同</li>
+</ul></li>
+<li><code>includeSequenceId</code>：一个布尔值 [默认：<code>true</code>]，指定在为序列设定种子时是否包含序列 ID<ul>
+<li><code>false</code> 表示无论序列名称是什么，所有序列的结果都会相同</li>
+</ul></li>
+</ul>
+<p>默认情况下，所有序列都以 <code>0</code>、<code>true</code>、<code>true</code> 作为种子。使用 <code>*</code> 而不是序列 ID 会重置所有序列并设置默认参数。</p>
+<p>如果未指定种子，序列将重置为默认参数。</p>
+<p>请注意，不带序列 ID 使用的 <code>random value|roll &#x3C;range></code> 可供非管理员玩家使用。</p>
+<h2>函数</h2>
+<ul>
+<li>行末最后一个非空白字符为单个反斜杠 <code>\ </code> 时，现在允许命令在下一行继续<ul>
+<li>下一行的前导和尾随空白会在追加前被去除</li>
+</ul></li>
+</ul>
+<h3>宏</h3>
+<p>函数现在可以包含宏行，从而成为函数宏。</p>
+<ul>
+<li>任何以 <code>$</code> 开头（作为第一个非空格字符）的行都会标记为宏行</li>
+<li>宏行还包含一个或多个 <code>$(variable)</code> 形式的替换</li>
+<li>调用函数宏时，必须提供一个包含所有参数变量数据的复合标签</li>
+</ul>
+<h4>调用函数宏</h4>
+<p><code>function</code> 命令有新的形式：</p>
+<p><code>function &#x3C;id> &#x3C;compound></code>
+<code>function &#x3C;id> with &#x3C;data source> [&#x3C;path>]</code></p>
+<p>新参数：</p>
+<ul>
+<li><code>compound</code>：一个数据复合标签，用 <code>{}</code> 括起来</li>
+<li><code>data source</code>：数据源说明，类似于已经可用于 <code>data get</code> 的数据源</li>
+<li><code>path</code>：一个 NBT 路径说明</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>数据源和路径必须指定一个复合数据条目</li>
+<li>复合标签必须包含宏中使用的每个变量的一个条目</li>
+<li>复合标签中可能包含更多数据，如果有，则会被忽略</li>
+<li>使用数据复合标签调用非宏函数会被静默忽略</li>
+<li>调用宏时，提供的值会替换变量说明，并执行生成的命令</li>
+<li>变量替换后得到的行中出现任何语法错误都会导致整个函数调用被跳过</li>
+</ul>
+<h4>性能注意事项</h4>
+<p>使用宏意味着命令必须在变量替换后重新求值。与运行预解析的函数相比，这会产生额外开销。</p>
+<p>常规命令（非宏行）仍会被预解析。只有在调用宏时，包含变量替换的命令才会被解析，并且游戏会尝试缓存调用中使用的特定参数集的结果。</p>
+<p>这使得使用相同参数集重复调用比使用不同参数的新调用成本更低，但与常规函数相比仍存在额外开销。请注意，此缓存仅包含宏作为参数引用的值，因此提供的复合标签中的任何额外数据都会被忽略。</p>
+<h2>显示实体插值</h2>
+<ul>
+<li>显示实体现在会在更新后的第一个游戏刻开始更新其客户端侧的位置和旋转<ul>
+<li>在以前的版本中，更新在同一游戏刻内应用，导致运动不均匀</li>
+<li>新行为与盔甲架、生物和玩家类似</li>
+</ul></li>
+<li>在服务器上，位置和旋转仍然立即更新</li>
+<li>此插值的持续时间由字段 <code>teleport_duration</code> 控制<ul>
+<li><code>0</code> 表示更新立即应用</li>
+<li><code>1</code> 表示显示实体将在一个游戏刻内从当前位置移动到更新后的位置</li>
+<li>更高的值会将移动分散到多个游戏刻</li>
+<li>请注意，此值会被钳制以避免周期性位置更新导致的故障</li>
+<li>新值只适用于在其更改之后发生的位置和旋转更改<ul>
+<li>这意味着任何当前的移动都将继续不变</li>
+</ul></li>
+</ul></li>
+<li>注意：骑乘时的行为与先前版本保持不变</li>
+</ul>
+<h2>属性</h2>
+<ul>
+<li>添加了新属性 <code>generic.max_absorption</code><ul>
+<li><code>generic.max_absorption</code> 的作用类似于 <code>generic.max_health</code>，但它是 <code>AbsorptionAmount</code>（伤害吸收量）的上限，而不是 <code>Health</code>（生命值）的上限</li>
+<li>状态效果 <code>absorption</code>（伤害吸收）会增加 <code>generic.max_absorption</code>，并在应用时将 <code>AbsorptionAmount</code> 填满至最大值</li>
+</ul></li>
+</ul>
+<h2>游戏事件</h2>
+<ul>
+<li><code>entity_roar</code> 和 <code>entity_shake</code> 游戏事件已被移除，并替换为 <code>entity_action</code> 游戏事件</li>
+</ul>
+<h2>标签</h2>
+<ul>
+<li>添加了 <code>no_knockback</code> 伤害类型标签，使伤害本身不会造成击退<ul>
+<li>在原版中用于由事件引起的伤害，例如爆炸，这些伤害会单独施加击退</li>
+</ul></li>
+<li>添加了 <code>non_controlling_rider</code>，用于表示不会覆盖其载具移动控制的实体</li>
+<li>添加了 <code>concrete_powder</code> 方块标签，用于混凝土粉末方块</li>
+<li>添加了 <code>camel_sand_step_sound_blocks</code> 方块标签，用于产生 <code>entity.camel.step_sand</code> 声音的方块</li>
+</ul>
+<h1>数据包版本 17</h1>
+<ul>
+<li>更改了物品、实体和方块实体上的状态效果存储方式</li>
+<li>向盔甲纹饰图案添加了 <code>decal</code> 字段（默认：<code>false</code>）<ul>
+<li>如果为 <code>true</code>，图案纹理将根据底层盔甲进行遮罩</li>
+</ul></li>
+</ul>
+<h2>状态效果存储更改</h2>
+<ul>
+<li>游戏在将状态效果存储到世界时不再使用数值（例如，<code>4</code> 会变成 <code>minecraft:mining_fatigue</code>）</li>
+<li>多个状态效果字段已重命名，以与新结构保持一致</li>
+</ul>
+<h3>状态效果实例</h3>
+<p>此结构在许多地方使用，因此其更改将单独描述。</p>
+<ul>
+<li><code>Id</code> -> <code>id</code>，同时从数字改为字符串 ID</li>
+<li><code>Ambient</code> -> <code>ambient</code></li>
+<li><code>Amplifier</code> -> <code>amplifier</code></li>
+<li><code>Duration</code> -> <code>duration</code></li>
+<li><code>ShowParticles</code> -> <code>show_particles</code></li>
+<li><code>ShowIcon</code> -> <code>show_icon</code></li>
+<li><code>HiddenEffect</code> -> <code>hidden_effect</code>，同时由于它也是状态效果实例，更改会递归应用</li>
+<li><code>FactorCalculationData</code> -> <code>factor_calculation_data</code></li>
+</ul>
+<h3>物品</h3>
+<h4><code>potion</code>、<code>lingering_potion</code>、<code>splash_potion</code>、<code>tipped_arrow</code></h4>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h4><code>suspicous_stew</code></h4>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>，对于每个条目：<ul>
+<li><code>EffectId</code> -> <code>id</code>，同时从数字改为字符串 ID</li>
+<li><code>EffectDuration</code> -> <code>duration</code></li>
+</ul></li>
+</ul>
+<h3>实体</h3>
+<h4><code>mooshroom</code></h4>
+<ul>
+<li>移除了 <code>EffectId</code> 和 <code>EffectDuration</code></li>
+<li>添加了 <code>stew_effects</code>，其格式与 <code>suspicious_stew.effects</code> 标签相同（即效果 ID 和持续时间的列表）</li>
+</ul>
+<h4><code>area_effect_cloud</code></h4>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h4><code>arrow</code></h4>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h4>玩家、盔甲架和生物</h4>
+<ul>
+<li><code>ActiveEffects</code> -> <code>active_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h3>方块实体</h3>
+<p><code>beacon</code></p>
+<ul>
+<li><code>Primary</code> -> <code>primary_effect</code>，同时从数字改为字符串 ID</li>
+<li><code>Secondary</code> -> <code>secondary_effect</code>，同时从数字改为字符串 ID</li>
+</ul>
+<h2>战利品表</h2>
+<ul>
+<li>添加了 <code>sequence</code> 战利品函数<ul>
+<li>包含 1 个字段：<ul>
+<li><code>functions</code>：按顺序运行的子函数数组</li>
+</ul></li>
+<li>也可以声明为不带类型的内联数组<ul>
+<li>这与战利品函数 JSON 文件可以声明为组合函数数组的现有行为一致</li>
+</ul></li>
+</ul></li>
+<li>战利品表中的 <code>all_of</code> 谓词现在可以隐式声明为不带类型的内联数组<ul>
+<li>这同样与战利品谓词 JSON 文件可以声明为子谓词数组的现有行为一致</li>
+</ul></li>
+<li>战利品条件中的方块或流体状态属性匹配器不再接受非字符串值<ul>
+<li>属性匹配器中的任何数字或布尔值都必须用引号引起来</li>
+</ul></li>
+</ul>
+<h1>数据包版本 18</h1>
+<p>此数据包版本移除了在此版本开发期间存在过一段时间的 <code>execute if function</code> 和 <code>return run</code> 功能。这些命令的缺陷（参见漏洞 <a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a>、<a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> 和 <a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a>）需要一些重大更改才能修复，而我们不希望临近发布时进行这些更改。</p>
+<p>这些命令反而会在下一个快照系列早期重新引入，届时我们可以与包创作者一起花时间进行迭代和测试。</p>
+<ul>
+<li>移除了 <code>execute if|unless function</code> 命令形式</li>
+<li>移除了 <code>return run</code> 命令形式</li>
+<li>用作宏参数的数字现在无论数字类型如何，始终不带后缀插入</li>
+<li>添加了游戏规则 <code>enderPearlsVanishOnDeath</code>，控制投出的末影珍珠在投掷者死亡时是否消失（默认 <code>true</code>，与先前版本中的现有行为一致）</li>
+<li>添加了伤害类型标签 <code>always_kills_armor_stands</code>，用于应始终完全击杀盔甲架的伤害类型</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/1_20_2_experimental_4.jpg" alt="1.20.2 Experimental Image 4"></p>
+<h1>实验性功能</h1>
+<h2>村民交易再平衡</h2>
+<p>创建世界时的实验性功能界面现在有一个启用“村民交易再平衡”的选项。选择此选项后，一些村民交易将会改变。</p>
+<p>此实验对普通世界没有影响。您可以<a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">在此处</a>了解更多关于特性开关的信息。</p>
+<h3>图书管理员更改</h3>
+<ul>
+<li>来自不同生物群系的图书管理员现在出售不同的附魔书</li>
+<li>每个村庄生物群系都有一种特殊附魔，只有经验值满的大师级图书管理员才能提供</li>
+<li>这意味着玩家必须访问全部七个村庄生物群系才能获得全套村民附魔</li>
+<li>有两个隐藏的村庄生物群系不会生成村庄<ul>
+<li>玩家必须建造这些村庄才能访问其交易！</li>
+</ul></li>
+<li>一些附魔已被从村庄交易中移除，必须通过其他方式获得</li>
+</ul>
+<h3>制图师更改</h3>
+<ul>
+<li>制图师现在可以出售七种新的探险家地图<ul>
+<li>五种新地图指向五种不同类型的村庄</li>
+<li>另外两种新地图指向沼泽小屋和丛林神庙</li>
+</ul></li>
+<li>来自不同生物群系的制图师现在出售的地图范围不同</li>
+</ul>
+<h3>流浪商人更改</h3>
+<ul>
+<li>流浪商人现在价格更低，并且每种物品的库存量更高</li>
+<li>流浪商人现在出售原木</li>
+<li>流浪商人现在可以购买许多物品，而不仅仅出售</li>
+</ul>
+<h3>盔甲匠更改</h3>
+<ul>
+<li>来自不同生物群系的盔甲匠现在出售带有不同附魔的不同盔甲</li>
+<li>购买钻石盔甲现在需要少量钻石以及绿宝石</li>
+<li>许多其他盔甲匠交易也已更新</li>
+</ul>
+<h3>结构战利品</h3>
+<p>某些附魔书现在有很高的几率在一些结构中生成：</p>
+<ul>
+<li>远古城市：经验修补</li>
+<li>废弃矿井：效率（I 到 V）</li>
+<li>掠夺者前哨站：快速装填（I 到 III）</li>
+<li>沙漠神殿：耐久（I 到 III）</li>
+<li>丛林神庙：耐久（I 到 III）</li>
+</ul>
+<h1>1.20.2 中修复的漏洞</h1>
+<p>此版本修复了约 200 个漏洞。查看问题追踪器上的<a href="https://bugs.mojang.com/issues/?filter=27828" target="_blank" rel="noopener noreferrer">列表</a>。</p>

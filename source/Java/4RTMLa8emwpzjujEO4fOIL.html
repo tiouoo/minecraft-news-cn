@@ -1,0 +1,135 @@
+<p>Another Wednesday, another snapshot. This week's snapshot introduces a few new game rules and a few gameplay changes which include another round of inventory tweaks. As usual, there are a few bugfixes as well.</p>
+<p>Happy Mining!</p>
+<h1>Changes in 22w44a</h1>
+<ul>
+<li>Bamboo Mosaic can now be used as fuel</li>
+<li>Chiseled Bookshelves now works with Hoppers</li>
+<li>More changes to the Creative Inventory</li>
+<li>Monster Spawner changes</li>
+<li>Spawn Egg changes</li>
+<li>Step sound changes</li>
+</ul>
+<h2>Creative Inventory changes</h2>
+<p>A (hopefully) final round of changes have been made to the Creative Tab orderings to address feedback:</p>
+<ul>
+<li>Operator-only blocks and items can now be found in the Redstone Blocks tab if you have the required permissions</li>
+<li>Functional Blocks<ul>
+<li>Added:<ul>
+<li>Tinted Glass</li>
+<li>Bee Nest</li>
+</ul></li>
+<li>Moved Respawn Anchor before Beds</li>
+<li>Reordered Pressure Plates by functionality</li>
+<li>Moved End Portal Frame &#x26; Infested blocks into this tab from Natural Blocks tab</li>
+</ul></li>
+<li>Redstone Blocks<ul>
+<li>Added:<ul>
+<li>Chest</li>
+<li>Barrel</li>
+<li>Cauldron</li>
+<li>Furnace</li>
+<li>Composter</li>
+</ul></li>
+</ul></li>
+<li>Building Blocks<ul>
+<li>Added:<ul>
+<li>Chain</li>
+<li>Block of Amethyst</li>
+</ul></li>
+<li>Moved Block of Redstone and Block of Coal into this tab from Natural Blocks tab</li>
+</ul></li>
+<li>Crafting<ul>
+<li>Added:<ul>
+<li>Ancient Debris</li>
+</ul></li>
+</ul></li>
+<li>Reordered the following tabs for better consistency<ul>
+<li>Building Blocks</li>
+<li>Natural Blocks</li>
+<li>Consumables</li>
+</ul></li>
+<li>Reordered ore materials and blocks to be more consistent across tabs</li>
+</ul>
+<h2>Monster Spawners</h2>
+<ul>
+<li>Spawners no longer have a default mob spawn type when placed by a player (previously was the Pig)</li>
+<li>Will not emit fire particles when a mob spawn type has not been defined</li>
+<li>Renamed to Monster Spawner to match Bedrock, and removed purple text color</li>
+<li>Pick-block now works for Spawner blocks</li>
+<li>The mob type is now displayed in the hover description of a Spawner item stack<ul>
+<li>If a mob type has not been defined yet, the hover description will describe how to set it</li>
+</ul></li>
+</ul>
+<h2>Spawn Eggs</h2>
+<ul>
+<li>Added new Spawn Egg items for Ender Dragon, Iron Golem, Snow Golem and Wither mobs to Creative mode<ul>
+<li>Ender Dragon and Wither Spawn Eggs will only be available through commands to prevent accidental destruction of player builds</li>
+</ul></li>
+<li>Polar Bear Spawn Egg colors have changed to distinguish it from the Ghast Spawn Egg</li>
+</ul>
+<h2>Sounds</h2>
+<ul>
+<li>Step sounds can now be heard when walking on:<ul>
+<li>Carpets</li>
+<li>Lily Pads</li>
+<li>Small Amethyst Buds</li>
+</ul></li>
+<li>Step sounds can now be heard when walking through:<ul>
+<li>Nether Sprouts</li>
+<li>Glow Lichen</li>
+<li>Crimson Roots</li>
+<li>Warped Roots</li>
+</ul></li>
+</ul>
+<h1>Technical Changes in 22w44a</h1>
+<ul>
+<li>Added new game rules</li>
+</ul>
+<h2>Game Rules</h2>
+<ul>
+<li>Added <code>blockExplosionDropDecay</code>, <code>mobExplosionDropDecay</code> and <code>tntExplosionDropDecay</code> game rules<ul>
+<li>When set to <code>false</code>, all blocks drop loot</li>
+<li>When set to <code>true</code>, blocks drop loot randomly depending on how far from the explosion center</li>
+<li>Defaults to <code>false</code> for TNT, <code>true</code> for block and mob</li>
+</ul></li>
+<li>Added <code>snowAccumulationHeight</code> game rule<ul>
+<li>When it is snowing, this game rule determines the maximum number of Sniow Layers that can be accumulated in each block</li>
+<li>Defaults to <code>1</code></li>
+<li>Set to <code>0</code> makes no Snow form at all</li>
+<li>Set to <code>8</code> or above lets Snow form up to the level of a full block</li>
+</ul></li>
+<li>Added <code>waterSourceConversion</code> and <code>lavaSourceConversion</code> game rules<ul>
+<li>When set to <code>true</code>, allows new sources of that fluid to form</li>
+<li>Defaults to <code>true</code> for Water and <code>false</code> for lava</li>
+</ul></li>
+<li>Added <code>globalSoundEvents</code> game rule, controlling whether certain gameplay moments are heard by all players regardless of location<ul>
+<li>Defaults to <code>true</code></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 22w44</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-30403" target="_blank" rel="noopener noreferrer">MC-30403</a> Sprinting isn't canceled when dismounting rideable entities while sprinting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137136" target="_blank" rel="noopener noreferrer">MC-137136</a> Lily Pads use incorrect sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137306" target="_blank" rel="noopener noreferrer">MC-137306</a> Turtles don't have breeding delay</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191790" target="_blank" rel="noopener noreferrer">MC-191790</a> Re-creating a world doesn't allow a blank seed and uses recreated world's seed instead of random</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195780" target="_blank" rel="noopener noreferrer">MC-195780</a> "Data mode" and "Load mode" aren't capitalized while "Save Mode" and "Corner Mode" are</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244721" target="_blank" rel="noopener noreferrer">MC-244721</a> "Erase cached data" is not capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253387" target="_blank" rel="noopener noreferrer">MC-253387</a> Frog walking animation is slowed down when applied with slow falling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254435" target="_blank" rel="noopener noreferrer">MC-254435</a> Neither the secure chat warning toast nor the chat preview warning screen is presented to the player when joining a server using the --server argument</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255115" target="_blank" rel="noopener noreferrer">MC-255115</a> Lily pads do not produce sounds when walking on them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256463" target="_blank" rel="noopener noreferrer">MC-256463</a> Camels will not pathfind over 1.5 high blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256480" target="_blank" rel="noopener noreferrer">MC-256480</a> Non Flammable Wood Item tag contains 1.20 content even when disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256526" target="_blank" rel="noopener noreferrer">MC-256526</a> Bamboo Fence Gate has missing textures / culling issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256606" target="_blank" rel="noopener noreferrer">MC-256606</a> Camel walking animation is slowed down when applied with slow falling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256623" target="_blank" rel="noopener noreferrer">MC-256623</a> Bamboo mosaic slabs aren't flammable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256637" target="_blank" rel="noopener noreferrer">MC-256637</a> Some bamboo blocks can't be used as furnace fuel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256647" target="_blank" rel="noopener noreferrer">MC-256647</a> Mobs face south even with a given rotation value</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256768" target="_blank" rel="noopener noreferrer">MC-256768</a> Entities no longer have random rotations upon being summoned from spawn eggs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256879" target="_blank" rel="noopener noreferrer">MC-256879</a> Weighted pressure plates are placed wrong in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256881" target="_blank" rel="noopener noreferrer">MC-256881</a> The game crashes when pressing the ESC key while having draft chat reports saved</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256887" target="_blank" rel="noopener noreferrer">MC-256887</a> Tinted glass is not considered a 'Functional Block'</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256934" target="_blank" rel="noopener noreferrer">MC-256934</a> You aren't prompted to save your chat reports as drafts while only having report categories inputted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257058" target="_blank" rel="noopener noreferrer">MC-257058</a> Cactus is not grouped with sugar cane in Creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257059" target="_blank" rel="noopener noreferrer">MC-257059</a> Mushroom stem comes after nether fungus stems in Creative inventory, but mushroom blocks come before wart blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257060" target="_blank" rel="noopener noreferrer">MC-257060</a> Bee nest is absent from Functional Blocks</li>
+</ul>

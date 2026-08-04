@@ -1,0 +1,287 @@
+<p>Marvellous mountains and colossal caves, this snapshot has it all! Today we're bringing the Overworld revamp to regular snapshots. If you've been playing or checking out the experimental snapshots that we've been releasing, you should be familiar with what you're seeing. If not, you're in for a treat!</p>
+<p>Since we're extending the world height, and there are quite a few under-the-hood changes, we've been keeping an eye on how the game is running, and there are still improvements to be made. However, we would still appreciate it if you would be able to take this survey so that we can understand how you perceive the performance of this snapshot.</p>
+<p>It should also be noted that there is currently no upgrade path for existing worlds in this snapshot. This means that you can only create new worlds in this snapshot, and not play on any of your existing worlds. We're working on this and you should be able to play on your existing worlds in an upcoming snapshot not too far in the future.</p>
+<p>All of this said, we hope that you have a great time checking out these new additions. Watch your feet so that you don't fall into a very deep hole, and make sure you don't get punted off a mountain by a goat that's just minding its own business.</p>
+<p>Happy mining!</p>
+<h1>New Features in 21w37a</h1>
+<ul>
+<li>Added noise caves and aquifers</li>
+<li>Added Dripstone Caves underground biome</li>
+<li>Added Grove biome</li>
+<li>Added Lofty peaks biome</li>
+<li>Added Lush Caves underground biome</li>
+<li>Added Meadow biome</li>
+<li>Added Snowcapped peaks biome</li>
+<li>Added Snowy slopes biome</li>
+<li>Added Stony peaks biome</li>
+<li>New ore distribution and large ore veins</li>
+<li>Overworld build and generation limits have been expanded</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Enchanting Tables now emit a low amount of light</li>
+<li>Using shears on the tip of a Cave Vine, Twisting Vine, Weeping Wine or Kelp now causes it to stop growing</li>
+</ul>
+<h2>Dripstone Caves biome</h2>
+<ul>
+<li>Contains plenty of Pointed Dripstone and Dripstone Block on the floors and ceilings, and small pools of water</li>
+<li>In some places you'll find larger stalagmites, stalactites, and columns built from Dripstone Blocks</li>
+<li>Contains extra copper ore</li>
+</ul>
+<h2>Grove</h2>
+<ul>
+<li>Snowy terrain with big spruce trees and powder snow traps. Might want to wear leather boots!</li>
+<li>Tends to generate on high-altitude terrain beneath mountain peaks or on hilltops.</li>
+<li>Spawns wolfs, rabbits, and foxes.</li>
+</ul>
+<h2>Large ore veins</h2>
+<ul>
+<li>Ore veins are large, rare, snake-like underground ore formations</li>
+<li>Copper veins form between y 0 and y 50 and are mixed with Granite</li>
+<li>Iron veins form below y -60 and y -8 and are mixed with Tuff</li>
+</ul>
+<h2>Lofty peaks</h2>
+<ul>
+<li>Dramatic jagged mountain peaks with snow and stone</li>
+<li>Spawns goats</li>
+</ul>
+<h2>Lush Caves biome</h2>
+<ul>
+<li>Moss covers the floors and ceilings</li>
+<li>Spore Blossoms grow from the ceiling and drip particles</li>
+<li>Contains Clay pools with Dripleaf plants growing out of them</li>
+<li>Contains Azalea Bushes and Flowering Azalea Bushes</li>
+<li>The Azalea Tree loves to have its roots in Lush Caves, so if you find an Azalea Tree (either overground or in a cave) you know there is a Lush Cave beneath you</li>
+<li>Cave Vines with Glow Berries grow from the ceiling and light up the caves</li>
+</ul>
+<h2>Meadow biome</h2>
+<ul>
+<li>Large grassy and flowery biome that tends to generate high up on plateaus or next to large mountain ranges.</li>
+<li>Sometimes contains a lone tall oak or birch tree, often with a bee nest.</li>
+<li>Think Sound of Music!</li>
+<li>Spawns donkeys, rabbits, and sheep.</li>
+</ul>
+<h2>Mob Spawning</h2>
+<ul>
+<li>Monsters now only spawn in places where the light from blocks is 0 (sky light still prevents spawning like before)</li>
+<li>Fixed an issue where players in multiplayer can face more or far fewer enemies than intended, particularly when other players are flying</li>
+</ul>
+<h2>New ore distribution</h2>
+<ul>
+<li>Changed ore generation to match the new world height, and to add more strategy to mining.</li>
+<li>There is no longer a single y level that is best for all ores, you need to make tradeoffs.</li>
+<li>Iron ore generates below y 72, with a strong bias towards y 16.</li>
+<li>Iron ore also generates above 112, with more iron ore as you go higher.</li>
+<li>Copper ore generates between y 0 and y 96, with a strong bias towards y 48.</li>
+<li>Copper ore generates in larger amounts in dripstone caves biome.</li>
+<li>Lapis lazuli generates below y 64, with a strong bias towards y 0. However, Lapis below y -32 or above y 32 cannot generate exposed to air. It will either be buried or inside water.</li>
+<li>Coal generates above y 0, with a strong bias towards y 96 and above.</li>
+<li>Coal has reduced air exposure, so you will find more coal buried or underwater than exposed to air.</li>
+<li>Gold generates below y 32, with a strong bias towards y -16.</li>
+<li>Extra gold can (still) be found in badlands biomes.</li>
+<li>Redstone ore generates below y 16. Redstone ore generation gradually increases as you go below y -32 and further down.</li>
+<li>Diamond generates below y 16, with more diamond the lower you go.</li>
+<li>Diamonds have reduced air exposure, so you will find more diamond buried or underwater than exposed to air.</li>
+</ul>
+<h2>Noise caves and Aquifers</h2>
+<ul>
+<li>Noise caves are a new way of generating caves, providing more natural variety. They can get really huge sometimes!
+Noise caves come in three flavors:<ul>
+<li>Cheese caves. Like the holes in swiss cheese. These often form caverns of various size</li>
+<li>Spaghetti caves. Long squiggly tunnels, sometimes wide like tagliatelle</li>
+<li>Noodle caves. Thinner, squigglier, and more claustrophobic variant of spaghetti caves</li>
+</ul></li>
+<li>No, they aren't loud. The "noise" part of noise caves is a technical term and has nothing to do with sound</li>
+<li>The old cave carvers and canyons still generate, combining with the noise caves to form interesting cave systems</li>
+<li>As with carvers, when noise caves intersect the surface they form cave entrances</li>
+<li>An aquifer is an area with local water level, independent of sea level.
+Aquifers are used during world generation to generate bodies of water inside noise caves.
+This sometimes results in large underground lakes! They can also form inside mountains and on the surface.</li>
+<li>Aquifers below y0 will sometimes be lava aquifers instead of water aquifers</li>
+<li>Magma Blocks sometimes generates at the bottom of underground bodies of water</li>
+<li>Underwater cave carvers and underwater canyons have been removed, since aquifers are used to generate water in caves instead</li>
+</ul>
+<h2>Options</h2>
+<ul>
+<li>Added an accessibility option to stop the sky flashing during thunderstorms</li>
+<li>Added an option to specify the audio device used by the game</li>
+<li>Added "Toggle Sprint" and "Toggle Sneak" to the Controls settings</li>
+<li>Moved Keybinds out to their own settings screen, accessible from Controls</li>
+</ul>
+<h2>Snowcapped peaks</h2>
+<ul>
+<li>Smooth mountain peaks with ice and snow</li>
+<li>Spawns goats and yeti. No actually just goats.</li>
+</ul>
+<h2>Snowy slopes</h2>
+<ul>
+<li>Very snowy terrain that can hide powder snow traps. Might want to wear leather boots!</li>
+<li>Tends to generate on high-altitude terrain beneath mountain peaks or on hilltops.</li>
+<li>Spawns rabbits and goats.</li>
+</ul>
+<h2>Stony peaks</h2>
+<ul>
+<li>Stony mountain peaks that may be jagged or smooth</li>
+<li>Spawns goats</li>
+<li>Contains strips of calcite sometimes</li>
+</ul>
+<h2>World generation</h2>
+<ul>
+<li>Generation range and build limits have been expanded by 64 blocks up and 64 blocks down, to a total range of 384 blocks</li>
+<li>Underground features, structures, and caves generate all the way down to y-64</li>
+<li>Exception: Diorite and Granite and Andesite and Dirt don't generate below y0</li>
+<li>Tweaked size and positioning of Diorite, Andesite &#x26; Granite generation</li>
+<li>Dripstone clusters can no longer be found in normal caves, only in dripstone caves biome</li>
+<li>Starting from y0 and below deepslate gradually replaces all stone</li>
+<li>Deepslate blobs no longer generate above y0</li>
+<li>The terrain shape and elevation varies dramatically, indepedently from biomes. For example, forests and deserts could form up on a hill without needing a special biome just for that</li>
+<li>Less diorite/granite/andesite generates above y 60</li>
+<li>Strips of gravel can generate in stony shores</li>
+<li>Swamp trees can grow in water 2 blocks deep (instead of just 1 block deep)</li>
+</ul>
+<h1>Changes in 21w37a</h1>
+<ul>
+<li>Illagers (Vindicator, Pillager, Evoker) no longer attack baby villagers</li>
+<li>Axolotls now only spawn in lush caves</li>
+<li>Axolotls now have their own, separate, mob cap</li>
+<li>Raised the cloud level from 128 to 192</li>
+</ul>
+<h1>Technical Changes in 21w37a</h1>
+<ul>
+<li>Replaced the clientbound chunk update network packet with another one which additionally contains light update data. Separate light update packet still exists and is sent when light update happens without chunk update.</li>
+<li>View distance now causes chunks to load cylindrically around players instead of in a square</li>
+<li>Information about the world generation noise is now displayed on the debug screen</li>
+<li>Added <code>illageralt</code>, rune-like font from Minecraft Dungeons (currently only usable via commands)</li>
+<li>Added startup option <code>--jfrProfile</code> and command <code>jfr</code> to start profiling with Java FlightRecorder as well as a few custom events.</li>
+<li>Loot table functions <code>set_contents</code> and <code>set_loot_table</code> now require <code>type</code> field with valid block entity type</li>
+<li>Worlds last saved before Minecraft 1.2 ("pre-anvil") no longer can be opened directly</li>
+<li>Data pack format has been increased to 8</li>
+<li>New video setting "Priority updates".</li>
+<li>Removed length limits for scoreboard, score holder and team names</li>
+<li>Mob spawners can now override light checks for spawning</li>
+</ul>
+<h2>JFR Profiling</h2>
+<h3>Custom events</h3>
+<ul>
+<li><code>minecraft.ServerTickTime</code>: sampling event exposing average server tick times at one second intervals</li>
+<li><code>minecraft.ChunkGeneration</code>: time taken to generate individual chunk stages</li>
+<li><code>minecraft.PacketRead | minecraft.PacketSent</code>: network traffic</li>
+<li><code>minecraft.WorldLoadFinishedEvent</code>: initial world loading duration</li>
+</ul>
+<h3>Ending a profiling run</h3>
+<p>The run will then be stopped either by:</p>
+<ul>
+<li>shutting down the JVM</li>
+<li><code>jfr stop</code> in-game command</li>
+<li><code>jcmd</code> CLI tool</li>
+</ul>
+<h3>Overview</h3>
+<p>Java Flight Recorder (<a href="https://openjdk.java.net/jeps/328" target="_blank" rel="noopener noreferrer">https://openjdk.java.net/jeps/328</a>) is the internal JVM profiling tool bundled with the Java Runtime to analyze performance and runtime characteristics. It's a useful tool for exposing internal JVM performance metrics as well as custom metrics that can be monitored or analyzed using any stock Java profiler or monitoring agents.</p>
+<h3>Reports</h3>
+<p>A summary JSON report is written both to the log file and in the debug folder accompanied by a <code>.jfr</code> recording ready to be analyzed in i.e JMC <a href="https://github.com/openjdk/jmc" target="_blank" rel="noopener noreferrer">https://github.com/openjdk/jmc</a> or any other profiler tool supporting the format.</p>
+<h3>Starting a profiling run</h3>
+<p>A profiling run can be started using any of the following alternatives:</p>
+<ul>
+<li><code>--jfrProfile</code> startup flag when starting a Minecraft server or client</li>
+<li><code>jfr start</code> in-game command</li>
+<li>Regular Java CLI tools such as <code>jcmd</code></li>
+</ul>
+<h2>Loot tables</h2>
+<h3>Changed functions</h3>
+<h4><code>set_contents</code>, <code>set_loot_table</code></h4>
+<p>Added new mandatory field <code>type</code>. This type will be written into <code>BlockEntityTag.id</code>, to make sure this tag can be correctly migrated between versions</p>
+<h2>Old world conversion</h2>
+<ul>
+<li>Worlds last saved before Minecraft 1.2 ("pre-anvil") now require conversion in a previous version of a game to be able to be opened</li>
+<li>Conversion works best in versions 1.6.4 and before - worlds opened for the first time in later versions will have incorrect biome information</li>
+</ul>
+<h2>Priority update setting</h2>
+<ul>
+<li>This setting determines which chunks sections are updated synchronously during a single frame.</li>
+<li>The most conservative option "nearby" corresponds to the state before the update.</li>
+<li>The new options "by player" and "none" significantly reduce stutters when placing or removing blocks (especially light sources), but can potentially cause rare visually noticeable delays in world updates.</li>
+</ul>
+<h2>Spawner data changes</h2>
+<ul>
+<li>Spawners now support the <code>custom_spawn_rules</code> NBT in the <code>SpawnData</code> field and the <code>SpawnPotentials</code> list</li>
+<li><code>custom_spawn_rules</code> currently may contain fields <code>block_light_limit</code> and <code>sky_light_limit</code> - both are integer ranges with fields <code>min_inclusive</code> and <code>max_inclusive</code></li>
+<li>To make <code>SpawnPotentials</code> format similar to other weighted lists, structure was changed to <code>{weight: &#x3C;int>, data: &#x3C;previous contents without 'Weight', 'Entity' renamed to 'entity'>}</code></li>
+<li>To accomodate that change, previous contents of <code>SpawnData</code> were moved to <code>SpawnData.entity</code> (making format of that field same as elements of <code>SpawnPotentials.data</code>)</li>
+</ul>
+<p>Example:</p>
+<pre><code>SpawnData: {
+    entity: {
+        id: "minecraft:cow"
+    },
+    custom_spawn_rules: {
+          sky_light_limit: {min_inclusive: 10, max_inclusive: 15}
+    },
+}
+SpawnPotentials: [
+  {
+    data: {
+      custom_spawn_rules: {
+          block_light_limit: {min_inclusive: 0, max_inclusive: 15}
+      },
+      entity: {id: "minecraft:pig"},
+    },
+    weight: 2
+  },
+  {
+    data: {
+      custom_spawn_rules: {
+          block_light_limit: {min_inclusive: 5, max_inclusive: 10},
+          sky_light_limit: {min_inclusive: 10, max_inclusive: 15}
+      },
+      entity: {id: "minecraft:panda"}
+    },
+    weight: 1
+  }
+]
+</code></pre>
+<h1>Fixed bugs in 21w37a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29274" target="_blank" rel="noopener noreferrer">MC-29274</a> Withers will not pursue players in survival mode unless attacked</li>
+<li><a href="https://bugs.mojang.com/browse/MC-30560" target="_blank" rel="noopener noreferrer">MC-30560</a> River through Eroded Badlands biome generates floating rock formations at water surface</li>
+<li><a href="https://bugs.mojang.com/browse/MC-54545" target="_blank" rel="noopener noreferrer">MC-54545</a> Client render distance doesn't adjust to server render distance if they are different, causing faulty chunk loading</li>
+<li><a href="https://bugs.mojang.com/browse/MC-65628" target="_blank" rel="noopener noreferrer">MC-65628</a> Desert pyramids generate underground when using amplified or custom terrain</li>
+<li><a href="https://bugs.mojang.com/browse/MC-123277" target="_blank" rel="noopener noreferrer">MC-123277</a> Too long scoreboard objectives and team names are not detected when commands are parsed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-129266" target="_blank" rel="noopener noreferrer">MC-129266</a> Jagged ocean transitions and slower biome generation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138801" target="_blank" rel="noopener noreferrer">MC-138801</a> The interactions between a biome and another biome and its variants are inconsistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-140690" target="_blank" rel="noopener noreferrer">MC-140690</a> Giant Spruce Taiga Hills has no difference with Giant Spruce Taiga</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159025" target="_blank" rel="noopener noreferrer">MC-159025</a> Drowned do not spawn in warm ocean biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160710" target="_blank" rel="noopener noreferrer">MC-160710</a> Chat messages written while sleeping are deleted after waking up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166423" target="_blank" rel="noopener noreferrer">MC-166423</a> Splash water bottles don't damage endermen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182362" target="_blank" rel="noopener noreferrer">MC-182362</a> Score callbacks with a too long name break callback chain</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202376" target="_blank" rel="noopener noreferrer">MC-202376</a> Rabbits, instead of spawning on snow blocks, spawn on snow layers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208601" target="_blank" rel="noopener noreferrer">MC-208601</a> Axolotls do not avoid danger when pathfinding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212113" target="_blank" rel="noopener noreferrer">MC-212113</a> Glow Lichen can spawn underwater whilst not in a cave.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213779" target="_blank" rel="noopener noreferrer">MC-213779</a> FPS drops when looking up in a tall world (4064 blocks)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214783" target="_blank" rel="noopener noreferrer">MC-214783</a> Oceans generate with stone floors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214797" target="_blank" rel="noopener noreferrer">MC-214797</a> Pointed dripstone can generate floating at transitions between local water levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214799" target="_blank" rel="noopener noreferrer">MC-214799</a> Aquifiers sometimes create air pockets</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214864" target="_blank" rel="noopener noreferrer">MC-214864</a> Hard edges when new caves generate near surface</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214989" target="_blank" rel="noopener noreferrer">MC-214989</a> Isolated floating mineshaft platform</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215296" target="_blank" rel="noopener noreferrer">MC-215296</a> Mineshafts often don't generate in floating island worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215876" target="_blank" rel="noopener noreferrer">MC-215876</a> Dirt can generate below y=0 from mineshafts</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216784" target="_blank" rel="noopener noreferrer">MC-216784</a> Ruined Portals don't generate below y=0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216952" target="_blank" rel="noopener noreferrer">MC-216952</a> Some chunks interrupting with cave systems filled with blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216967" target="_blank" rel="noopener noreferrer">MC-216967</a> Kelp &#x26; Seagrass can generate in aquifers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217465" target="_blank" rel="noopener noreferrer">MC-217465</a> Unnatural shape looking like a chunk border but appears to be completely unrelated to chunk borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217509" target="_blank" rel="noopener noreferrer">MC-217509</a> Inefficient generation of aquifers, noise caves and ore veins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219774" target="_blank" rel="noopener noreferrer">MC-219774</a> Magma blocks generate everywhere underwater in 21w10a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219946" target="_blank" rel="noopener noreferrer">MC-219946</a> Weird flat sections of terrain</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221777" target="_blank" rel="noopener noreferrer">MC-221777</a> Horses donkeys, mules, llamas, and trader llamas do not follow players holding food</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221815" target="_blank" rel="noopener noreferrer">MC-221815</a> Flat roofs in underwater caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221917" target="_blank" rel="noopener noreferrer">MC-221917</a> Dripstone, pointed dripstone, and cave magma generate in oceans</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222051" target="_blank" rel="noopener noreferrer">MC-222051</a> Iron Ore generation was not increased in 21w13a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222379" target="_blank" rel="noopener noreferrer">MC-222379</a> Magma can spawn under air in underwater caves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223044" target="_blank" rel="noopener noreferrer">MC-223044</a> Floating Water can generate in ravines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223051" target="_blank" rel="noopener noreferrer">MC-223051</a> Dripstone can generate in surface lakes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223148" target="_blank" rel="noopener noreferrer">MC-223148</a> Extended height message goes behind the scrolling bar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226184" target="_blank" rel="noopener noreferrer">MC-226184</a> Axolotls pathfinding to water can sometimes fall in wide holes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227244" target="_blank" rel="noopener noreferrer">MC-227244</a> Ore blocks from ore veins float in underwater magma ravines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230343" target="_blank" rel="noopener noreferrer">MC-230343</a> Parity issue: enchanting tables do not emit a light level of 7</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231721" target="_blank" rel="noopener noreferrer">MC-231721</a> Dinnerbone Animals do not look at food correctly.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231863" target="_blank" rel="noopener noreferrer">MC-231863</a> Game crashes when trying to access the realms settings</li>
+</ul>

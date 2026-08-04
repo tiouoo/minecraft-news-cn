@@ -1,0 +1,69 @@
+<p>介绍 1.19 的第一个预发布版：荒野更新！</p>
+<p>从现在开始，你将主要看到 bug 的修复。此外，预发布版不遵循常规的每周三发布快照的节奏，所以请留意下一个预发布版 ;)</p>
+<p>一如既往，非常感谢社区在整个快照系列中提供的反馈、报告的 bug 和绝妙的想法。让预发布版开始吧！</p>
+<h1>1.19 预发布版 1 中的更改</h1>
+<ul>
+<li>略微减少了红树林沼泽中红树的数量</li>
+<li>末影人、骷髅、凋灵骷髅和猪灵现在可以在下界更广泛的光照等级范围内生成（从光照等级 0 到 11）</li>
+<li>当你开始或结束“使用”具有开始和结束状态的物品（如弓、弩、山羊角、盾牌、食物）时，现在会发出物品交互振动</li>
+<li>潜行时现在会忽略物品交互振动</li>
+<li>将非盔甲物品（如南瓜和头颅）放入头部装备槽时，现在会播放通用的装备声音</li>
+</ul>
+<h1>1.19 预发布版 1 中的技术更改</h1>
+<ul>
+<li><code>place template</code> 的模板参数现在支持自动补全</li>
+<li>自定义服务器现在可以通过发送新的网络数据包来为某些客户端启用或禁用聊天预览</li>
+<li>现在，聊天相关命令（如 <code>/say</code> 和 <code>/msg</code>）也会显示聊天预览</li>
+<li><code>test-rainbow-chat</code> 已从 <code>server.properties</code> 中移除</li>
+</ul>
+<h2>新增游戏事件</h2>
+<ul>
+<li><code>note_block_play</code>，振动频率为 6</li>
+<li><code>instrument_play</code>，振动频率为 15</li>
+</ul>
+<h1>修复了 1.19 预发布版 1 中的 bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-94060" target="_blank" rel="noopener noreferrer">MC-94060</a> 通过物品栏或发射器装备盔甲/鞘翅时不播放声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134892" target="_blank" rel="noopener noreferrer">MC-134892</a> PacketBuffer.writeString 的最大长度以字节为单位，而 readString 以字符为单位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209222" target="_blank" rel="noopener noreferrer">MC-209222</a> 尝试打开 Minecraft Realms 菜单时声称客户端已过期，即使快照可能比正式版更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210279" target="_blank" rel="noopener noreferrer">MC-210279</a> 刷怪笼召唤实体时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213915" target="_blank" rel="noopener noreferrer">MC-213915</a> 通过物品栏装备盔甲不计为振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218222" target="_blank" rel="noopener noreferrer">MC-218222</a> 幽匿感测体的距离值被限制为整数</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225195" target="_blank" rel="noopener noreferrer">MC-225195</a> 山羊在受到它们最喜欢的食物引诱时不会恐慌</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230735" target="_blank" rel="noopener noreferrer">MC-230735</a> “FOV 效果”设置的描述不准确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249141" target="_blank" rel="noopener noreferrer">MC-249141</a> 青蛙行走时不会产生字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249164" target="_blank" rel="noopener noreferrer">MC-249164</a> entity.frog.tounge 声音的拼写错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249209" target="_blank" rel="noopener noreferrer">MC-249209</a> 青蛙在受到它们最喜欢的食物引诱时不会恐慌</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249260" target="_blank" rel="noopener noreferrer">MC-249260</a> 蝌蚪不会被粘液球引诱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249328" target="_blank" rel="noopener noreferrer">MC-249328</a> 青蛙在被粘液球引诱时可以四处跳跃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249456" target="_blank" rel="noopener noreferrer">MC-249456</a> 蝌蚪会掉落经验，与其他幼年生物不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249619" target="_blank" rel="noopener noreferrer">MC-249619</a> 当你踩在幽匿感测体上时，其比较器频率是它最后听到的频率</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249711" target="_blank" rel="noopener noreferrer">MC-249711</a> 悦灵从地面拾取的物品在它们的碰撞箱上方飞得太高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249757" target="_blank" rel="noopener noreferrer">MC-249757</a> “它传播了”进度不是“怪物猎人”的子进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249834" target="_blank" rel="noopener noreferrer">MC-249834</a> 将物品交换到玩家的副手可以产生振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249980" target="_blank" rel="noopener noreferrer">MC-249980</a> “生日歌”进度的描述没有将单词“Cake”大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250006" target="_blank" rel="noopener noreferrer">MC-250006</a> 英国猫的 ID 与纹理名称不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250019" target="_blank" rel="noopener noreferrer">MC-250019</a> 当村民被僵尸转化为僵尸村民时，幽匿催化体会触发</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250317" target="_blank" rel="noopener noreferrer">MC-250317</a> 用桶捞起蝌蚪时的字幕是通用的“桶装满了”字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250351" target="_blank" rel="noopener noreferrer">MC-250351</a> /tp 的“参数”在 Tab 补全选项中重复</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250919" target="_blank" rel="noopener noreferrer">MC-250919</a> 当尝试加载包含命令方块的区块时，服务器崩溃，这些命令方块的“上一输出”字段中包含大量字符</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250932" target="_blank" rel="noopener noreferrer">MC-250932</a> 山羊角字幕的大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250940" target="_blank" rel="noopener noreferrer">MC-250940</a> 吹奏山羊角不会被检测为振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251132" target="_blank" rel="noopener noreferrer">MC-251132</a> 服务器记录“游戏测试服务器”消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251312" target="_blank" rel="noopener noreferrer">MC-251312</a> /say 命令中的实体选择器不再被解析</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251355" target="_blank" rel="noopener noreferrer">MC-251355</a> 盆栽红树胎生苗的模型不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251405" target="_blank" rel="noopener noreferrer">MC-251405</a> 结构方块的消息被格式化为聊天消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251479" target="_blank" rel="noopener noreferrer">MC-251479</a> 重复的对象键[语言文件]</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251550" target="_blank" rel="noopener noreferrer">MC-251550</a> 在 32 位操作系统上启动游戏失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251640" target="_blank" rel="noopener noreferrer">MC-251640</a> 在聊天消息中使用特殊字符时出现 io.netty.handler.codec.EncoderException</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251641" target="_blank" rel="noopener noreferrer">MC-251641</a> 游戏因监守者愤怒而崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251647" target="_blank" rel="noopener noreferrer">MC-251647</a> 如果将“打开聊天”的控制设置为回车键，聊天会自行关闭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251649" target="_blank" rel="noopener noreferrer">MC-251649</a> 点击“命令不完整”消息会移除聊天中的“/”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251650" target="_blank" rel="noopener noreferrer">MC-251650</a> 铁傀儡可以在不可生成的方块上生成，如树叶、玻璃、海晶灯等</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251652" target="_blank" rel="noopener noreferrer">MC-251652</a> 监守者的出现/咆哮/音波攻击/挖掘动画（可能还有其他类似动画）在玩家先看向监守者之前不会开始</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251656" target="_blank" rel="noopener noreferrer">MC-251656</a> /say 命令从命令方块、服务器控制台或 RCON 发送时，无法应用服务器消息样式，这与 /msg 不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251690" target="_blank" rel="noopener noreferrer">MC-251690</a> 监守者可以在任何非完整方块上生成，只要它是实心的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251736" target="_blank" rel="noopener noreferrer">MC-251736</a> 反射的恶魂火球无法击中恶魂</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251762" target="_blank" rel="noopener noreferrer">MC-251762</a> 你可以使用双斜杠前缀运行命令</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251773" target="_blank" rel="noopener noreferrer">MC-251773</a> 数据生成器的 --dev 参数不再正确地将 NBT 转换为 SNBT</li>
+</ul>

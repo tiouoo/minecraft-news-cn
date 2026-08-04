@@ -1,0 +1,136 @@
+<p>我们很高兴分享另一个快照，这次提前展示一些激动人心的新冒险，它们以试炼密室的形式在地下等待着你们！</p>
+<p>试炼密室旨在成为主世界地表下方中等深度处隐藏的战斗与探索挑战。试炼密室带来了新的装饰与光源方块、全新的试炼刷怪笼以呈现不同风格的多生物战斗，还有眉毛浓密的旋风人——一种试炼密室特有的新生物，会给你的战斗增添不少混乱。</p>
+<p>采矿愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>刷怪笼现在在向内看时会渲染其内面</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 24</li>
+<li>资源包版本现在为 21</li>
+</ul>
+<h1>数据包版本 24</h1>
+<ul>
+<li>添加了实验性的旋风人生物</li>
+<li>添加了实验性的试炼刷怪笼方块</li>
+<li>将 Jigsaw 结构变量 <code>size</code> 的最大值从 7 增加到 20</li>
+<li>添加了 <code>trial_chambers_copper_bulb_degradation</code> 结构处理器列表</li>
+</ul>
+<h1>资源包版本 21</h1>
+<ul>
+<li><code>uniform</code> 字体已更新为使用 Unifont 15.1.04（原为 15.0.06）</li>
+<li>现在唯一支持的纹理格式为 .png</li>
+</ul>
+<h2>旋风人生物</h2>
+<ul>
+<li>为实验性旋风人生物添加了实体模型与纹理：<ul>
+<li><code>breeze</code>、<code>wind_charge</code></li>
+</ul></li>
+<li>添加了着色器：<ul>
+<li><code>breeze_wind</code></li>
+</ul></li>
+</ul>
+<h1>实验性特性</h1>
+<h2>添加了旋风人生物</h2>
+<ul>
+<li>旋风人是一种狡猾的敌对生物，可通过试炼密室中某些房间内的试炼刷怪笼生成</li>
+<li>旋风人主要通过围绕目标跳跃来移动，有时会跳出相当远的距离</li>
+<li>旋风人是一名具有攻击性的对手，会向目标发射以风弹弹射物形式存在的易变风能</li>
+<li>风弹直接碰撞实体时会造成少量伤害</li>
+<li>风弹弹射物在碰撞实体或方块后会产生风爆，将区域内的实体击退数格</li>
+<li>风爆还会产生“触发”某些方块的效果：<ul>
+<li>非铁门和活板门会被翻转</li>
+<li>栅栏门会被翻转</li>
+<li>按钮会被按下</li>
+<li>拉杆会被拨动</li>
+<li>钟会被敲响并摆动</li>
+<li>点燃的蜡烛（无论是独立的还是蛋糕上的）会被熄灭</li>
+</ul></li>
+<li>风爆对铁门、铁活板门或任何被红石信号固定在原位的方块没有效果</li>
+</ul>
+<h2>试炼刷怪笼</h2>
+<ul>
+<li>试炼刷怪笼是刷怪笼的新变种，在完成后会弹出奖励，并可在多人游戏中提供不同层级的挑战</li>
+<li>每当试炼刷怪笼感知到附近一位新玩家，挑战等级就会提升<ul>
+<li>在试炼刷怪笼冷却期间重置之前，挑战等级不会降低</li>
+</ul></li>
+<li>与普通刷怪笼不同，试炼刷怪笼会生成与其当前挑战等级成比例的有限数量的生物<ul>
+<li>它只会在视线范围内的位置生成生物</li>
+<li>无论生物本身对光照水平有何要求，它都能生成生物</li>
+<li>生成的生物具有持久性</li>
+</ul></li>
+<li>当所有生物都被击败后，试炼刷怪笼会弹出与当前挑战等级成比例的一组奖励<ul>
+<li>弹出奖励后，试炼刷怪笼将进入 30 分钟冷却时间，此期间不再生成生物</li>
+</ul></li>
+<li>生存模式中玩家无法合成或获得试炼刷怪笼——相反，它们会自然生成在试炼密室中的各个位置</li>
+<li>试炼刷怪笼的挖掘速度极慢且抗爆，即使使用精准采集也不会掉落</li>
+<li>在创造模式放置时，试炼刷怪笼默认不设置生物类型<ul>
+<li>手持刷怪蛋与之交互即可设置生物类型</li>
+</ul></li>
+<li>创造模式和旁观模式的玩家不会被试炼刷怪笼检测或感知到</li>
+</ul>
+<h2>试炼密室</h2>
+<ul>
+<li>试炼密室是主世界中的一种新结构，玩家可以在游戏中期探索并接受战斗挑战<ul>
+<li>试炼密室由多种铜和凝灰岩方块构成，从大到小都有</li>
+<li>试炼密室在地下深板岩层中相对常见</li>
+</ul></li>
+<li>每个试炼密室的布局均为程序化生成，并可能包含陷阱、奖励箱和多种战斗空间<ul>
+<li>补给箱可在不同房间之间找到，并为你提供有助于完成试炼的方块和物品</li>
+<li>奖励箱由每个房间中的挑战所守护，可成为许多高级附魔书和装备的来源</li>
+<li>奖励箱中的战利品仍在迭代中，绝非最终版本</li>
+</ul></li>
+<li>每个试炼密室都会包含拥有近战、小型近战或远程类别的试炼刷怪笼：<ul>
+<li>近战<ul>
+<li>僵尸</li>
+<li>尸壳</li>
+<li>史莱姆</li>
+</ul></li>
+<li>小型近战<ul>
+<li>蜘蛛</li>
+<li>洞穴蜘蛛</li>
+<li>小僵尸</li>
+<li>蠹虫</li>
+</ul></li>
+<li>远程<ul>
+<li>骷髅</li>
+<li>流浪者</li>
+<li>使用剧毒之箭的骷髅</li>
+</ul></li>
+</ul></li>
+<li>生成时，每个试炼刷怪笼类别在整个结构中只会使用一种生物，并且这些生物会为每个试炼密室随机选择<ul>
+<li>例如，一个试炼密室可能只生成僵尸、洞穴蜘蛛和流浪者，而另一个可能只生成史莱姆、蠹虫和骷髅</li>
+<li>例外情况是特殊房间中的一些试炼刷怪笼，它们总是生成旋风人</li>
+</ul></li>
+</ul>
+<h3>已知问题</h3>
+<ul>
+<li>走廊有时会以死胡同告终</li>
+<li>含水层、繁茂洞穴和幽匿脉络有时会与试炼密室相交</li>
+</ul>
+<h2>试炼钥匙</h2>
+<ul>
+<li>一种只能从试炼刷怪笼获得的物品</li>
+<li>试炼钥匙目前没有任何功能</li>
+</ul>
+<h1>快照 23w45a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-131646" target="_blank" rel="noopener noreferrer">MC-131646</a> 溺尸刷怪笼只在溺尸生成的生物群系中生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177446" target="_blank" rel="noopener noreferrer">MC-177446</a> playerdata 条目中的 “RootVehicle” 标签未被升级</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186797" target="_blank" rel="noopener noreferrer">MC-186797</a> 时钟和指南针在合成输出槽中正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255244" target="_blank" rel="noopener noreferrer">MC-255244</a> 使用 /fill 时无法保留 NBT 链接/引用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265702" target="_blank" rel="noopener noreferrer">MC-265702</a> 命令中的文本组件接受格式错误的 JSON</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265747" target="_blank" rel="noopener noreferrer">MC-265747</a> 在创造模式下击打 TNT 矿车会掉落矿车</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265875" target="_blank" rel="noopener noreferrer">MC-265875</a> 指南针、时钟和恢复指南针在合成器的输出槽中正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266054" target="_blank" rel="noopener noreferrer">MC-266054</a> 铜灯上水纹理显示在侧面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266056" target="_blank" rel="noopener noreferrer">MC-266056</a> 生物在大多数铜格栅方块变体中窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266063" target="_blank" rel="noopener noreferrer">MC-266063</a> 铜门和铜活板门放置时发出通用金属声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266090" target="_blank" rel="noopener noreferrer">MC-266090</a> 光能穿过铜灯</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266091" target="_blank" rel="noopener noreferrer">MC-266091</a> 铜灯无法正确剔除面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266096" target="_blank" rel="noopener noreferrer">MC-266096</a> 生物可以在氧化或涂蜡的铜格栅上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266248" target="_blank" rel="noopener noreferrer">MC-266248</a> 授予/撤销已授予/已撤销的进度时没有错误消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266256" target="_blank" rel="noopener noreferrer">MC-266256</a> 欢迎界面中的“无障碍选项”按钮仍需要自己的字符串</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266287" target="_blank" rel="noopener noreferrer">MC-266287</a> 无法加载 .dat 和 .nbt 文件（服务器列表和已保存的快捷栏）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266289" target="_blank" rel="noopener noreferrer">MC-266289</a> 无法保存数据 raids.dat 和 random_sequences.dat</li>
+</ul>

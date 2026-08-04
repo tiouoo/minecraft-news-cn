@@ -1,0 +1,105 @@
+<p>本周的快照带来了一些调整、错误修复和技术变更！</p>
+<p>我们还发布了一项调查，以便您告诉我们您对下界更新的看法。您可以点击<a href="https://www.surveymonkey.com/r/SF65G2F" target="_blank" rel="noopener noreferrer">此处</a>找到它。如果您能抽出时间填写，我们将非常感激。</p>
+<h1>20w17a 中的新特性</h1>
+<ul>
+<li>添加了实体距离缩放选项，范围从50%到500%</li>
+<li>现在可以在“创建世界”界面中更改难度和游戏规则</li>
+</ul>
+<h1>20w17a 中的更改</h1>
+<ul>
+<li>改进了锻造台界面</li>
+<li>废弃传送门现在生成频率降低</li>
+<li>将“灵魂火焰火把”和“灵魂火焰灯笼”更名为“灵魂火把”和“灵魂灯笼”</li>
+<li>调整了堡垒遗迹的战利品</li>
+<li>墙现在会在更多方块（如压力板和旗帜）下方生成立柱</li>
+<li>如果没有可选世界，“单人游戏”按钮将直接跳转到“创建世界”界面</li>
+</ul>
+<h1>20w17a 中的技术性更改</h1>
+<ul>
+<li>区块中的方块存储格式略有更改，以加快各种任务（渲染、寻路、世界生成等）的速度</li>
+<li>聊天组件样式现在可以选择字体</li>
+<li>支持完整的 Unicode 字符范围（有些人可能知道这意味着什么 😉）</li>
+<li>添加了 <code>attribute</code> 命令</li>
+</ul>
+<h2>世界保存格式</h2>
+<ul>
+<li>保存 <code>level.dat</code> 现在使用随机命名的临时文件（而不是每次都使用 <code>level.dat_new</code>）</li>
+<li><code>player/*.dat</code> 现在以类似于 <code>level.dat</code> 的方式保存（包括保留 <code>.dat_old</code> 文件）</li>
+</ul>
+<h2>方块存储</h2>
+<p><code>Sections</code> 元素中的 <code>BlockStates</code> 不再包含跨越多个64位字段的值。如果每个方块的位数不是二的幂（即单个64位值不能填满整数个方块状态），则部分位将不会被使用。
+例如，如果单个方块状态占用5位，则每个64位字段的最高4位将未被使用。这也意味着存储大小略有增加（在5位情况下，从320个64位字段增加到342个）。</p>
+<h2>命令</h2>
+<h3><code>attribute</code></h3>
+<p>对单个实体添加或修改属性。可能的语法：
+参数：</p>
+<ul>
+<li><code>attribute &#x3C;target> &#x3C;attribute> get [&#x3C;scale>]</code> - 获取属性的总值</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> base set &#x3C;value></code> - 设置基础值</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> base get [&#x3C;scale>]</code> - 获取基础值</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier add &#x3C;uuid> &#x3C;name> &#x3C;value> add|multiply|multiply_base</code> - 添加修饰符（如果修饰符已存在则失败）</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier remove &#x3C;uuid></code> - 移除修饰符</li>
+<li><code>attribute &#x3C;target> &#x3C;attribute> modifier value get &#x3C;uuid> [&#x3C;scale>]</code> - 获取修饰符的值</li>
+<li><code>target</code> - 单个实体（注意：只有玩家、盔甲架和生物拥有属性）</li>
+<li><code>attribute</code> - 属性的名称（如 <code>minecraft:generic.max_health</code>）</li>
+<li><code>name</code> - 描述修饰符可读名称的字符串（可带引号）</li>
+<li><code>value</code> - 浮点数值（注意：某些属性对最终值有限制，因此您的更改可能不明显）</li>
+</ul>
+<h2>聊天组件</h2>
+<h3>悬停事件参数</h3>
+<ul>
+<li><code>style.hoverEvent</code> 参数现在有一个参数 <code>contents</code>，其内容取决于类型：<ul>
+<li>对于 <code>show_text</code> - 聊天组件</li>
+<li>对于 <code>show_item</code> - 要么是物品 ID，要么是包含字段 <code>id</code>、<code>count</code> 和 <code>tag</code> 的对象（最后一个为序列化 NBT）</li>
+<li>对于 <code>show_entity</code> - 包含字段 <code>id</code>（UUID）、<code>name</code>（聊天组件）和 <code>type</code>（实体类型资源位置）的对象</li>
+</ul></li>
+<li>旧的 <code>value</code> 参数现已弃用（但仍受支持）</li>
+</ul>
+<h3>颜色</h3>
+<p><code>color</code> 属性现在可以包含以 <code>#</code> 为前缀的 RGB 值。例如，<code>#55ff55</code> 将产生与 <code>green</code> 相同的颜色。</p>
+<h3>自定义字体</h3>
+<p>聊天组件样式现在支持 <code>font</code> 属性，该属性是资源包中字体的资源位置。未设置该属性等同于 <code>minecraft:default</code>。</p>
+<h2>字体</h2>
+<ul>
+<li><code>Force Unicode</code> 选项现在在普通字体和替代字体（称为 <code>uniform.json</code>）之间切换——无需重新加载</li>
+</ul>
+<h1>20w17a 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-5410" target="_blank" rel="noopener noreferrer">MC-5410</a> 在创造模式中，贴着梯子或藤蔓飞行下降会被阻止。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-31032" target="_blank" rel="noopener noreferrer">MC-31032</a> 单独使用一张空地图不会增加 minecraft.used:minecraft.map。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-46417" target="_blank" rel="noopener noreferrer">MC-46417</a> 旁观模式中会生成疾跑粒子。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-56373" target="_blank" rel="noopener noreferrer">MC-56373</a> 选择器和计分板文本组件在悬停事件中不起作用。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-94535" target="_blank" rel="noopener noreferrer">MC-94535</a> 飞得非常贴近地面并按住 CTRL 时，会产生行走粒子。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-96319" target="_blank" rel="noopener noreferrer">MC-96319</a> 生物寻路 AI 不将某些方块视为障碍物，并且无法在其上方寻路。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-100195" target="_blank" rel="noopener noreferrer">MC-100195</a> 玩家在游泳时或使用鞘翅或激流三叉戟飞行时进入矿车/船，会保留1格的碰撞箱。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114544" target="_blank" rel="noopener noreferrer">MC-114544</a> 睡觉时被“此服务器未启用飞行”踢出。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-120572" target="_blank" rel="noopener noreferrer">MC-120572</a> /recipe 命令导致游戏崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-126244" target="_blank" rel="noopener noreferrer">MC-126244</a> '/locate'、探险家地图和藏宝图可能导致严重的 TPS 延迟，如果关闭了结构生成，甚至会导致服务器完全冻结。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149704" target="_blank" rel="noopener noreferrer">MC-149704</a> 连续两次潜行/下蹲会使玩家疾跑。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169514" target="_blank" rel="noopener noreferrer">MC-169514</a> 驯服的鹦鹉除非在飞行中，否则无法重命名。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171561" target="_blank" rel="noopener noreferrer">MC-171561</a> 同一时间只能有一名玩家访问潜影盒。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174359" target="_blank" rel="noopener noreferrer">MC-174359</a> 猪灵更喜欢使用未附魔的金制物品，而不是附魔的金制物品。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175113" target="_blank" rel="noopener noreferrer">MC-175113</a> 雨水会阻止实体在火中燃烧。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175186" target="_blank" rel="noopener noreferrer">MC-175186</a> 重生时不会检查“重生方块”是否是该维度的正确方块。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175998" target="_blank" rel="noopener noreferrer">MC-175998</a> 炽足兽在两个方块之间移动或斜向撞入方块时移动得非常快。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176029" target="_blank" rel="noopener noreferrer">MC-176029</a> 用一组指南针右键点击磁石会将整组指南针全部转化。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176060" target="_blank" rel="noopener noreferrer">MC-176060</a> 配方书不再载入完整的空地图配方。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176104" target="_blank" rel="noopener noreferrer">MC-176104</a> 掉落的指南针总是指向上方。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176116" target="_blank" rel="noopener noreferrer">MC-176116</a> 炽足兽身上的鞍纹理是反的。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176521" target="_blank" rel="noopener noreferrer">MC-176521</a> 在合成界面中，当配方书按钮高亮时按下空格键不会切换配方书。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177346" target="_blank" rel="noopener noreferrer">MC-177346</a> 如果生物转身，生物手中的指南针不会指向正确的位置。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177776" target="_blank" rel="noopener noreferrer">MC-177776</a> 下界合金锭无法与其他锭正确排序。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177780" target="_blank" rel="noopener noreferrer">MC-177780</a> 潜影盒在播放关闭动画时无法再被打开。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177796" target="_blank" rel="noopener noreferrer">MC-177796</a> 黑石墙与其他所有墙不同，被归入“建筑方块”类别而非“装饰方块”类别。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177862" target="_blank" rel="noopener noreferrer">MC-177862</a> 磨光黑石按钮和压力板在创造模式物品栏中的位置错误。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177885" target="_blank" rel="noopener noreferrer">MC-177885</a> 隐形的马会显示花纹。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177997" target="_blank" rel="noopener noreferrer">MC-177997</a> 幼年僵尸疣猪兽仍然使用与成年个体相同的攻击伤害。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178086" target="_blank" rel="noopener noreferrer">MC-178086</a> 使用灵魂疾行附魔飞过灵魂方块时靠近地面会加速玩家并产生灵魂粒子。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178093" target="_blank" rel="noopener noreferrer">MC-178093</a> 猪灵在物品栏已满时不会拾取金锭进行以物易物，即使你仍然可以右键点击与它们进行以物易物。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178259" target="_blank" rel="noopener noreferrer">MC-178259</a> 当铁傀儡的攻击伤害属性设置为 0.5d 时游戏崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178316" target="_blank" rel="noopener noreferrer">MC-178316</a> 发射器尝试给已充满的重生锚充能时，会播放“发射物品”的声音而不是“发射器失败”的声音。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178630" target="_blank" rel="noopener noreferrer">MC-178630</a> TNT 的视点高度改变。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178797" target="_blank" rel="noopener noreferrer">MC-178797</a> 屏障方块会在堡垒遗迹中生成。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178955" target="_blank" rel="noopener noreferrer">MC-178955</a> 废弃传送门将恶地视为山地生物群系。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179542" target="_blank" rel="noopener noreferrer">MC-179542</a> 玄武岩三角洲的方块会覆盖下界要塞中的下界砖。</li>
+</ul>

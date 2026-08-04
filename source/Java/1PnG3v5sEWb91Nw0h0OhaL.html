@@ -1,0 +1,76 @@
+<p>This snapshot brings about a few redstone-focused changes. Notably, we’re tweaking the tick delay behavior of the crafter and the copper bulb while they’re still in experimental development.</p>
+<p>With these changes, we aim to make the crafter more consistent with other blocks that drop or eject items, and the copper bulb with other blocks that react or change state when a connected redstone signal changes. As a result of this, some contraptions built during the last few snapshots may no longer work properly.</p>
+<p>We're really excited about the tinkering opportunities both these new redstone blocks bring to the world. Please keep sending all your thoughts about them to Minecraft Feedback so we can keep building Minecraft together!</p>
+<p>Enjoy!</p>
+<h1>Changes</h1>
+<ul>
+<li>Updated Crafter textures</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 25</li>
+</ul>
+<h1>Data Pack Version 25</h1>
+<ul>
+<li>Added individual display names for scoreboard entries</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>scoreboard</code></h3>
+<h4>Display names</h4>
+<ul>
+<li>Each entry in a scoreboard can now have a custom display name</li>
+<li>Those values are kept separate per objective and score holder</li>
+<li>If the name is not present, the score holder name is used (i.e. the old behavior)</li>
+<li>If the score is reset or the whole objective is removed, the name is not preserved</li>
+<li>Team decorations will still be applied to names as normal</li>
+<li>Subcommands for managing names:<ul>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective> &#x3C;text component></code> - set display name</li>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective></code> - clear display name</li>
+</ul></li>
+</ul>
+<h4>Display name auto-update</h4>
+<ul>
+<li>To make display name management easier, objectives can also be configured to auto-update display names on every score update</li>
+<li>This option is disabled by default</li>
+<li>If a score holder has no display name (because it can't be attributed to any currently loaded entity), the current name is preserved</li>
+<li>Command to control auto-update for objective:<ul>
+<li><code>scoreboard objectives modify &#x3C;scoreboard> displayautoupdate [true|false]</code></li>
+</ul></li>
+</ul>
+<h4>Number formatting</h4>
+<ul>
+<li>Scores in numeric form can now be formatted</li>
+<li>Formats can be set for both objectives and individual scores</li>
+<li>Scores with set formats will render the same in all context (sidebar, under player name, etc.)</li>
+<li>Subcommands for managing formats:<ul>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat &#x3C;format></code> - for setting default format for an objective</li>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat</code> - for clearing default format for an objective</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score> &#x3C;format></code> - for setting format for a specific score holder</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score></code> - for clearing format for a specific score holder</li>
+</ul></li>
+</ul>
+<p>Formats:</p>
+<ul>
+<li><code>styled &#x3C;style></code> - score will be displayed with selected style (like <code>{"bold":true}</code>)</li>
+<li><code>fixed &#x3C;text component></code> - score will be replaced with text</li>
+<li><code>blank</code> - score will not be displayed</li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w46a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-259321" target="_blank" rel="noopener noreferrer">MC-259321</a> Spawner counts related entities against MaxNearbyEntities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265662" target="_blank" rel="noopener noreferrer">MC-265662</a> "Cannot kick server owner in LAN game" message when trying to kick yourself from non-LAN singleplayer world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265873" target="_blank" rel="noopener noreferrer">MC-265873</a> Narrator Hotkey description mentions the wrong modifier key on macOS</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265910" target="_blank" rel="noopener noreferrer">MC-265910</a> Crafter block has a one game tick cooldown</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265950" target="_blank" rel="noopener noreferrer">MC-265950</a> Crafters will stack items when outputting into chiseled bookshelf</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266076" target="_blank" rel="noopener noreferrer">MC-266076</a> Copper Grates can't be waterlogged</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266099" target="_blank" rel="noopener noreferrer">MC-266099</a> Spectating an entity that takes damage makes the camera shake</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266120" target="_blank" rel="noopener noreferrer">MC-266120</a> Some advancements for 1.21 block recipes are in the regular datapack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266148" target="_blank" rel="noopener noreferrer">MC-266148</a> Some Crafting recipes for the new copper blocks appear when Experiment is disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266190" target="_blank" rel="noopener noreferrer">MC-266190</a> Tuff blockset color palette is inconsistent with itself</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266437" target="_blank" rel="noopener noreferrer">MC-266437</a> Wind charge subtitles are improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266445" target="_blank" rel="noopener noreferrer">MC-266445</a> Breeze mob doesn't count to Monster Hunter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266455" target="_blank" rel="noopener noreferrer">MC-266455</a> Breeze spawn eggs are in the incorrect place in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266459" target="_blank" rel="noopener noreferrer">MC-266459</a> The hitboxes and models of wind charges are misaligned</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266538" target="_blank" rel="noopener noreferrer">MC-266538</a> Trial spawners can be replaced by lava pools and other features</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266622" target="_blank" rel="noopener noreferrer">MC-266622</a> Wind Charges can't switch levers off</li>
+</ul>

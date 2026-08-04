@@ -1,0 +1,166 @@
+<p>已经到周二了？肯定没错，快照发布室的灯亮着呢！</p>
+<p>在本次快照更新中，我们为即将上线的“混乱坐骑”版本内容进一步打磨优化，同时调整创造模式物品栏内生成蛋的排序，让分类更贴合主题。技术层面，资源包创作者在制作方块模型时将拥有更高自由度。完整更新日志请查阅下方内容！</p>
+<p>挖矿愉快！</p>
+<h1>更新内容</h1>
+<h2>生物</h2>
+<ul>
+<li>焦枯生物现在免疫虚弱效果</li>
+<li>马、骡子、驴、骆驼、僵尸马与尸壳骆驼被其他生物骑乘时不会陷入惊慌状态</li>
+<li>鹦鹉螺与僵尸鹦鹉螺发起冲刺攻击时，会播放冲刺音效</li>
+</ul>
+<h2>物品</h2>
+<ul>
+<li>长矛不再触发物品交互振动</li>
+<li>创造模式物品栏内的生成蛋现已按照主题分类排序，分类如下：
+<ul>
+<li>主世界
+<ul>
+<li>农场动物</li>
+<li>坐骑</li>
+<li>宠物</li>
+<li>野生动物</li>
+<li>水生生物</li>
+<li>其他</li>
+<li>傀儡</li>
+<li>村民</li>
+<li>亡灵生物</li>
+<li>蜘蛛类</li>
+<li>怪物</li>
+<li>灾厄村民</li>
+</ul>
+</li>
+<li>下界</li>
+<li>末地</li>
+</ul>
+</li>
+</ul>
+<h2>界面</h2>
+<ul>
+<li>新增鹦鹉螺与僵尸鹦鹉螺的物品栏界面</li>
+<li>选项“显示音乐提示弹窗”重命名为“音乐弹窗”
+<ul>
+<li>为“音乐弹窗”选项新增第三种状态，设置后仅在暂停菜单显示弹窗</li>
+</ul>
+</li>
+<li>新增飞溅文本：<q>没有人能轻易徒步走到远陆</q></li>
+</ul>
+<blockquote>
+<p><strong>开发人员备注：</strong><em>该说法已于2025年10月4日被证伪</em></p>
+</blockquote>
+<h1>技术性改动</h1>
+<ul>
+<li>数据包版本现已更新至 93.1</li>
+<li>资源包版本现已更新至 74.0</li>
+</ul>
+<h1>数据包版本 93.1</h1>
+<h2>物品组件</h2>
+<h3>默认物品组件</h3>
+<p>为以下鱼桶物品添加食物属性：</p>
+<ul>
+<li><code>minecraft:cod_bucket</code>（鳕鱼桶）</li>
+<li><code>minecraft:salmon_bucket</code>（鲑鱼桶）</li>
+<li><code>minecraft:pufferfish_bucket</code>（河豚桶）</li>
+<li><code>minecraft:tropical_fish_bucket</code>（热带鱼桶）</li>
+</ul>
+<h3><code>minecraft:use_effects</code>（使用效果）</h3>
+<p>新增字段 <code>interact_vibrations</code>：布尔值，控制使用该物品是否发出 <code>minecraft:item_interact_start</code> 和 <code>minecraft:item_interact_finish</code> 游戏事件。默认值：<code>true</code></p>
+<h2>战利品表</h2>
+<p>恢复 <code>contents</code> 作为 <code>minecraft:dynamic</code> 战利品池条目支持的参数值</p>
+<blockquote>
+<p><strong>开发人员备注</strong>：<em>此前快照引入槽位源机制时移除了该参数支持，槽位源本应替代它的功能。但社区反馈表明，当前槽位源尚无法覆盖全部使用场景，因此我们暂时恢复该参数支持，直至完善替代方案。</em></p>
+</blockquote>
+<h1>资源包版本 74.0</h1>
+<ul>
+<li>静止水与静止熔岩所使用的纹理现在硬编码锁定为 <code>minecraft:block/water_still</code> 和 <code>minecraft:block/lava_still</code></li>
+<li>为后续开发做准备：若任意图集内定义的精灵存在重名，游戏将输出警告日志</li>
+<li>方块模型与方块状态格式得到扩展，支持更多旋转方式</li>
+</ul>
+<h2>纹理</h2>
+<ul>
+<li>信标不再支持半透明纹理</li>
+<li>新增 <code>gui/container/nautilus</code>，用于鹦鹉螺物品栏界面</li>
+</ul>
+<h2>界面精灵</h2>
+<ul>
+<li>新增 <code>container/slot/nautilus_armor_inventory</code> ——鹦鹉螺物品栏界面使用的鹦鹉螺图标</li>
+</ul>
+<h2>音效事件</h2>
+<ul>
+<li>新增 <code>entity.zombie_horse.eat</code>（僵尸马进食音效）</li>
+</ul>
+<h2>方块模型</h2>
+<ul>
+<li>方块模型元素现在支持围绕多个坐标轴旋转
+<ul>
+<li>模型旋转顺序：先绕X轴，再绕Y轴，最后绕Z轴</li>
+<li>新增字段：
+<ul>
+<li><code>x</code> — 绕X轴旋转角度（浮点数值），默认 <code>0.0</code></li>
+<li><code>y</code> — 绕Y轴旋转角度（浮点数值），默认 <code>0.0</code></li>
+<li><code>z</code> — 绕Z轴旋转角度（浮点数值），默认 <code>0.0</code></li>
+</ul>
+</li>
+<li>原有 <code>axis</code>（轴）与 <code>angle</code>（角度）字段仍可继续使用
+<ul>
+<li>若新旧两套旋转字段同时存在，优先使用旧格式参数</li>
+</ul>
+</li>
+<li>原先角度限制 <code>[-45, 45]</code> 的约束已移除
+<ul>
+<li>注意：方块面名称不会随旋转发生改变。依赖方块面朝向的功能（如面剔除）始终基于原始朝向判定</li>
+</ul>
+</li>
+</ul>
+<h2>方块状态模型调度</h2>
+<ul>
+<li>方块状态调度文件（存放路径 <code>assets/.../blockstates/</code>）中的变体配置现已支持绕Z轴旋转
+<ul>
+<li>新增可选字段 <code>z</code>，格式与现有的 <code>x</code>、<code>y</code> 一致：整数，可选值 <code>0</code>（默认）、<code>90</code>、<code>180</code>、<code>270</code></li>
+<li>Z轴旋转将在X轴、Y轴旋转完成后执行</li>
+</ul>
+</li>
+</ul>
+<h1>25w46a 修复漏洞列表</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-266425 rel="noopener noreferrer"target=_blank>MC-266425</a> 新版涂蜡铜块配方无法归类分组</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302815 rel="noopener noreferrer"target=_blank>MC-302815</a> 闪电击中猪生成的僵尸猪灵没有概率手持黄金长矛</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302825 rel="noopener noreferrer"target=_blank>MC-302825</a> 部分物品蓄力动画显示异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302851 rel="noopener noreferrer"target=_blank>MC-302851</a> 使用鱼桶喂食鹦鹉螺的恢复量远低于直接使用鱼物品</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302890 rel="noopener noreferrer"target=_blank>MC-302890</a> 玩家可以同时进行长矛戳刺攻击与蓄力攻击</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302892 rel="noopener noreferrer"target=_blank>MC-302892</a> 乘船手持长矛时，玩家手臂模型会与身体、头部穿插</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302893 rel="noopener noreferrer"target=_blank>MC-302893</a> 玩家从水面看向水下实体时，无法渲染实体碰撞箱</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302935 rel="noopener noreferrer"target=_blank>MC-302935</a> 骷髅射击前手臂位置摆放错误</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302958 rel="noopener noreferrer"target=_blank>MC-302958</a> 鹦鹉螺嘴部纹理错位</li>
+<li><a href=https://bugs.mojang.com/browse/MC-302998 rel="noopener noreferrer"target=_blank>MC-302998</a> 生物手持长矛转身时，手臂模型会穿插身体与头部</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303149 rel="noopener noreferrer"target=_blank>MC-303149</a> 带有特定参数的指令会因函数深度递归造成游戏崩溃</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303331 rel="noopener noreferrer"target=_blank>MC-303331</a> 喂食僵尸马红蘑菇没有音效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303395 rel="noopener noreferrer"target=_blank>MC-303395</a> 在领域选择界面无法双击服务器区域进行选中</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303396 rel="noopener noreferrer"target=_blank>MC-303396</a> 通过键盘导航打开资源包/数据包菜单时，搜索框不会自动获得焦点</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303404 rel="noopener noreferrer"target=_blank>MC-303404</a> 旁观模式下使用长矛蓄力仍能对实体造成伤害</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303431 rel="noopener noreferrer"target=_blank>MC-303431</a> 将调试快捷键设置为鼠标按键后，无法在游戏模式切换器切换目标模式</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303443 rel="noopener noreferrer"target=_blank>MC-303443</a> 透明与半透明方块会渲染在钓鱼线前方</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303625 rel="noopener noreferrer"target=_blank>MC-303625</a> 开启高级透明度后，实体、粒子、云、水体、半透明方块与特殊渲染方块会渲染在方块碰撞箱前方</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303653 rel="noopener noreferrer"target=_blank>MC-303653</a> 尸壳骆驼进食后会显示繁殖爱心特效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303695 rel="noopener noreferrer"target=_blank>MC-303695</a> 游戏处于刻冻结状态时重载纹理，会导致动态纹理渲染出错</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303751 rel="noopener noreferrer"target=_blank>MC-303751</a> 焦枯生物模型存在UV映射问题</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303755 rel="noopener noreferrer"target=_blank>MC-303755</a> 将鼠标悬停在村民与流浪商人交易界面滚动条上时，光标不会变为调整大小样式</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303757 rel="noopener noreferrer"target=_blank>MC-303757</a> 鼠标悬停在附魔台界面附魔选项上时，光标样式不正确</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303758 rel="noopener noreferrer"target=_blank>MC-303758</a> 鼠标悬停在配方书各类控件上时，光标不会切换为手型</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303761 rel="noopener noreferrer"target=_blank>MC-303761</a> 鼠标悬停在切石机界面输出按钮与滚动条时，光标样式异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303762 rel="noopener noreferrer"target=_blank>MC-303762</a> 鼠标悬停在织布机界面输出按钮与滚动条时，光标样式异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303763 rel="noopener noreferrer"target=_blank>MC-303763</a> 鼠标悬停在合成器界面合成槽时，光标不会切换为手型</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303764 rel="noopener noreferrer"target=_blank>MC-303764</a> 鼠标悬停在创造模式物品栏标签与滚动条上时，光标样式异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303765 rel="noopener noreferrer"target=_blank>MC-303765</a> 鼠标悬停在进度界面标签上时，光标不会切换为手型</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303790 rel="noopener noreferrer"target=_blank>MC-303790</a> 方块破坏粒子与方块轮廓会渲染在玻璃、信标后方</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303882 rel="noopener noreferrer"target=_blank>MC-303882</a> 第三人称视角下，副手装填弩、主手握持长矛蓄力时视觉效果异常</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303940 rel="noopener noreferrer"target=_blank>MC-303940</a> 下界合金马铠会被岩浆/火焰烧毁</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303943 rel="noopener noreferrer"target=_blank>MC-303943</a> 溺尸不再受到水体减速效果</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303944 rel="noopener noreferrer"target=_blank>MC-303944</point> 玩家处于虚假疾跑状态时，击退攻击会重复播放音效</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303945 rel="noopener noreferrer"target=_blank>MC-303945</a> 鹦鹉模仿焦枯生物时的隐藏字幕与原生焦枯生物字幕不匹配</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303947 rel="noopener noreferrer"target=_blank>MC-303947</a> 点击带有「不可破坏」「滑翔器」「无实体投射物」组件的物品会引发游戏崩溃</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303948 rel="noopener noreferrer"target=_blank>MC-303948</a> 下界合金马铠纹理与基岩版不一致</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303956 rel="noopener noreferrer"target=_blank>MC-303956</a> 长矛戳刺后立刻蓄力攻击，蓄力伤害会降低</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303961 rel="noopener noreferrer"target=_blank>MC-303961</a> 疾跑暴击状态会同时播放疾跑击退音效与暴击音效，但实际仅触发暴击</li>
+<li><a href=https://bugs.mojang.com/browse/MC-303974 rel="noopener noreferrer"target=_blank>MC-303974</a> 调试界面不再显示天数计数器</li>
+<li><a href=https://bugs.mojang.com/browse/MC-304061 rel="noopener noreferrer"target=_blank>MC-304061</a> 新世界的世界边界预警时长不符合预期</li>
+</ul>

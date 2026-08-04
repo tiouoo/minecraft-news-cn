@@ -1,0 +1,109 @@
+<p>In this snapshot you can be on your merry way across the beautiful Soulsand Valleys with your freshly enchanted boots. It's a bit scary to be fair, so these boots will help you out with that bit...</p>
+<p>This update can also be found on <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-20w12a" target="_blank" rel="noopener noreferrer">minecraft.net</a>.</p>
+<p>If you find any bugs, please report them on the official <a href="https://aka.ms/snapshotbugs?ref=reddit" target="_blank" rel="noopener noreferrer">Minecraft Issue Tracker</a>.</p>
+<h1>New Features in 20w12a</h1>
+<ul>
+<li>Added the respawn anchor that can set your respawn point in the Nether. Use while holding Glowstone to charge to a maximum of four charges - each respawn depletes one charge</li>
+<li>Added polished basalt! Smelt your basalt to make it clean and shiny!</li>
+<li>Warped and crimson nylium can now be bonemealed to get more of the strange new vegetation</li>
+<li>Hoes are now the appropriate tool to mine sponges and wet sponges</li>
+</ul>
+<h1>Changes in 20w12a</h1>
+<ul>
+<li>When fishing, treasure loot can now only be obtained by fishing in open waters</li>
+<li>Reduced the maximum distance a bee can wander away from its home hive when randomly wandering to around 22 blocks</li>
+<li>Nether gold ore can now be mined with any type of pickaxe and drops a few gold nuggets</li>
+<li>Parrots imitate hostile mobs less often</li>
+<li>Parrots do not randomly imitate hostile mobs when gamemode is on peaceful</li>
+<li>New mood detection algorithm for cave sounds</li>
+</ul>
+<h1>Technical Changes in 20w12a</h1>
+<h2>Commands</h2>
+<h3>spawnpoint</h3>
+<p>The spawnpoint command now supports being run in any dimension.</p>
+<h3>UUIDs in NBT</h3>
+<p>UUIDs stored in NBT are now represented as an array of four integers.
+Example: <code>{UUID:[I;1498693494,1027158888,1898994005,860320107]}</code>
+Along with that a couple of fields have been renamed:</p>
+<ul>
+<li><code>OwnerUUID</code> of tamed animals, area effect clouds, evoker fangs and projectiles is now simply <code>Owner</code></li>
+<li><code>TrustedUUIDs</code> of foxes is now <code>Trusted</code></li>
+<li><code>target_uuid</code> of conduits is now <code>Target</code></li>
+</ul>
+<h2>Loot Tables</h2>
+<h3>Entity Predicate</h3>
+<ul>
+<li>Added <code>fishing_hook</code> sub-predicate</li>
+</ul>
+<h4><code>fishing_hook</code></h4>
+<p>Check properties of the fishing hook</p>
+<h5>Parameters</h5>
+<p>to be open water if there are no blocks above water and no solid underwater blocks around, all water blocks are source
+blocks and there are no bubble columns.</p>
+<ul>
+<li><code>in_open_water</code> - Matches whether the fishing location is open water fishing or not. A fishing location is considered</li>
+</ul>
+<h1>Fixed bugs in 20w11a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-3328" target="_blank" rel="noopener noreferrer">MC-3328</a> Dismounting an entity places riding entity / player half block too high</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64242" target="_blank" rel="noopener noreferrer">MC-64242</a> Silent tag is not working for some entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-100342" target="_blank" rel="noopener noreferrer">MC-100342</a> Several Non-Ticking blocks are marked as ticking forcing the growth-algorithm to check chunks needlessly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113809" target="_blank" rel="noopener noreferrer">MC-113809</a> Chorus Flower plant, Bamboo, Sugarcane, Cactus and other plants grow instantly when supporting block is replaced with same block type</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114000" target="_blank" rel="noopener noreferrer">MC-114000</a> Mouse click in cat hissing sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122128" target="_blank" rel="noopener noreferrer">MC-122128</a> Recipe book resets itself to closed state after death</li>
+<li><a href="https://bugs.mojang.com/browse/MC-129137" target="_blank" rel="noopener noreferrer">MC-129137</a> Parrots imitating hostile mobs in peaceful is not that peaceful</li>
+<li><a href="https://bugs.mojang.com/browse/MC-130137" target="_blank" rel="noopener noreferrer">MC-130137</a> Grass and mycelium don't decay underwater</li>
+<li><a href="https://bugs.mojang.com/browse/MC-140545" target="_blank" rel="noopener noreferrer">MC-140545</a> Pathfinding prefers North (negative Z) direction</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148936" target="_blank" rel="noopener noreferrer">MC-148936</a> Parrot summoned with negative Age has smaller hitbox</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149375" target="_blank" rel="noopener noreferrer">MC-149375</a> Camera can be positioned inside of snow layers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160959" target="_blank" rel="noopener noreferrer">MC-160959</a> Clicking onto a bed in daytime doesn't grant the advancement "Sweet Dreams"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-161754" target="_blank" rel="noopener noreferrer">MC-161754</a> Item duplication with chested donkeys, mules and llamas</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163918" target="_blank" rel="noopener noreferrer">MC-163918</a> Bees not animating their pollen gathering</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166980" target="_blank" rel="noopener noreferrer">MC-166980</a> Bees become stuck wandering to the north-west after completing a task, or randomly in large numbers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168384" target="_blank" rel="noopener noreferrer">MC-168384</a> NBT-Tag "Silent:1b" doesn't work for bees.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169965" target="_blank" rel="noopener noreferrer">MC-169965</a> Potion effect timers for higher levels can remain at 0:00 after the higher level has run out if multiple levels of the same effect were applied in descending order</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170584" target="_blank" rel="noopener noreferrer">MC-170584</a> Structure taiga_meeting_point_2 from zombie villages has 1 misrotated log</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170591" target="_blank" rel="noopener noreferrer">MC-170591</a> Misrotated floor blocks in desert_tool_smith_1 basement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170773" target="_blank" rel="noopener noreferrer">MC-170773</a> Recipe book and filtering craftable do not stay open for blast furnace and smoker when (re)loading the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170940" target="_blank" rel="noopener noreferrer">MC-170940</a> Netherite ingot recipes are not grouped</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171133" target="_blank" rel="noopener noreferrer">MC-171133</a> Camera can be positioned inside of soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172188" target="_blank" rel="noopener noreferrer">MC-172188</a> Hoglins are not required by 'Two by Two' advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172690" target="_blank" rel="noopener noreferrer">MC-172690</a> Smelting netherite scraps doesn't provide the right amount of experience</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172820" target="_blank" rel="noopener noreferrer">MC-172820</a> Piglins can turn into adult chicken jockeys in the overworld</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173199" target="_blank" rel="noopener noreferrer">MC-173199</a> Fossils in the nether cause caves / floating islands to generate and can break through the nether roof</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173220" target="_blank" rel="noopener noreferrer">MC-173220</a> Dismounting passenger moves to a nearby block when ridden entity dies</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173420" target="_blank" rel="noopener noreferrer">MC-173420</a> Sign crafting recipes of various wood types are not grouped</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173487" target="_blank" rel="noopener noreferrer">MC-173487</a> Falling out of water death message still does not seem to appear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173552" target="_blank" rel="noopener noreferrer">MC-173552</a> Nether Fossile support islands cut off at chunk borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173791" target="_blank" rel="noopener noreferrer">MC-173791</a> Mobs dismount vehicles only in front of the boat, even if there is danger ahead</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173828" target="_blank" rel="noopener noreferrer">MC-173828</a> Village church entrance does not generate correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173832" target="_blank" rel="noopener noreferrer">MC-173832</a> Crimson and Warped Hyphae and Stripped Hyphae are switched in Creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173837" target="_blank" rel="noopener noreferrer">MC-173837</a> Removing fire and soul fire with shears will reduce the shears' durability</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174049" target="_blank" rel="noopener noreferrer">MC-174049</a> Fireworks shot from a crossbow do not explode instantly when hitting a solid block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174071" target="_blank" rel="noopener noreferrer">MC-174071</a> Roof of savanna_mason_1 is cut off</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174072" target="_blank" rel="noopener noreferrer">MC-174072</a> Structure savanna_temple_2 contains one misrotated block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174073" target="_blank" rel="noopener noreferrer">MC-174073</a> Two misrotated blocks in savanna_small_house_5</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174075" target="_blank" rel="noopener noreferrer">MC-174075</a> Misrotated block in savanna_butchers_shop_1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174076" target="_blank" rel="noopener noreferrer">MC-174076</a> Inconsistent rotation of logs under windows in savanna_small_house_4</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174077" target="_blank" rel="noopener noreferrer">MC-174077</a> Structure snowy_library_1 no longer has snow under the roof</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174078" target="_blank" rel="noopener noreferrer">MC-174078</a> Three misrotated blocks in snowy_armorer_house_2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174079" target="_blank" rel="noopener noreferrer">MC-174079</a> Misrotated block at snowy_weapon_smith_1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174082" target="_blank" rel="noopener noreferrer">MC-174082</a> Three misrotated blocks in snowy_small_house_2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174083" target="_blank" rel="noopener noreferrer">MC-174083</a> Three misrotated blocks in snowy_butchers_shop_1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174174" target="_blank" rel="noopener noreferrer">MC-174174</a> Arrow animation stuck on loop when a flame bow is used to detonate TNT</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174234" target="_blank" rel="noopener noreferrer">MC-174234</a> Village structure snowy_masons_house_1 has two misrotated blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174258" target="_blank" rel="noopener noreferrer">MC-174258</a> Fixed item frames do not take void damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174391" target="_blank" rel="noopener noreferrer">MC-174391</a> Several misrotated blocks at snowy_medium_house_2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174429" target="_blank" rel="noopener noreferrer">MC-174429</a> Chorus flowers remove arrow and trident velocity</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174464" target="_blank" rel="noopener noreferrer">MC-174464</a> Soul speed decreases durability on boots in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174466" target="_blank" rel="noopener noreferrer">MC-174466</a> Soul speed particles are generated in spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174467" target="_blank" rel="noopener noreferrer">MC-174467</a> Placing fire on soul sand does not place soul fire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174476" target="_blank" rel="noopener noreferrer">MC-174476</a> Soul fire torch is in the piglin_repellents item tag twice</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174480" target="_blank" rel="noopener noreferrer">MC-174480</a> Piglins are not attracted to Nether gold ore</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174489" target="_blank" rel="noopener noreferrer">MC-174489</a> Shroomlight preferred tool is now both Axe and Hoe</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174502" target="_blank" rel="noopener noreferrer">MC-174502</a> Soul Speed 3 on Soul Soil in water keeps and increases player momentum</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174513" target="_blank" rel="noopener noreferrer">MC-174513</a> Soul Speed Enchanted Books from bartering with piglins do not work in an anvil</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174522" target="_blank" rel="noopener noreferrer">MC-174522</a> Soul Speed doesn't break boots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174690" target="_blank" rel="noopener noreferrer">MC-174690</a> Soul speed enchantment books can be found in chests</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174785" target="_blank" rel="noopener noreferrer">MC-174785</a> Mining speed of crimson and warped wall signs is not affected by an axe</li>
+</ul>

@@ -1,0 +1,58 @@
+<p>在本周的快照中，我们暂停添加新功能，转而改进已添加的功能，包括修复命令，以及让饰纹陶罐能够使用战利品表。</p>
+<h1>更改</h1>
+<ul>
+<li>铜门和铜活板门的纹理已更新</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 23</li>
+</ul>
+<h1>数据包版本 23</h1>
+<ul>
+<li>饰纹陶罐现在可以使用战利品表，并会读取 <code>LootTable</code> 标签键</li>
+<li>对命令函数进行了额外更改</li>
+</ul>
+<h2>命令</h2>
+<h3><code>tick</code></h3>
+<ul>
+<li><code>tick step</code> 命令中的 <code>&#x3C;time></code> 参数现在是可选的。默认值为 1</li>
+</ul>
+<h3><code>return</code></h3>
+<ul>
+<li><code>return run</code> 现在将始终返回<ul>
+<li>如果所返回的命令没有有效结果，包含 <code>return run</code> 的函数将会失败（即 <code>success=0</code> 和 <code>result=0</code>）</li>
+</ul></li>
+<li><code>return run</code> 现在将与结果值一同传播成功值（之前始终将成功值设为 <code>1</code>）</li>
+<li><code>return run</code> 现在也允许存储数值——这意味着 <code>execute store ... run return run some_command</code> 会同时存储数值并将数值返回至函数外部</li>
+<li>新增了子命令 <code>return fail</code>，使整个函数失败（即返回 <code>success=0</code> 和 <code>result=0</code>）</li>
+</ul>
+<h3><code>function</code></h3>
+<ul>
+<li>如果 <code>function &#x3C;function tag></code> 与 <code>return run</code> 结合运行多个函数，执行将在任何函数中的第一个 <code>return</code> 后停止</li>
+<li>当与 <code>return run</code> 一起运行时，单次调用 <code>function</code> 命令总是会返回<ul>
+<li>例如，<code>return run execute [split context] run function &#x3C;some function with conditional return></code> 在处理第一个上下文后总是会返回</li>
+</ul></li>
+</ul>
+<h3><code>execute if|unless function</code></h3>
+<ul>
+<li>如果所有函数都没有返回，<code>execute if|unless function</code> 将不再总是失败<ul>
+<li>如果所调用的函数中没有 <code>return</code>，则 <code>if</code> 会失败，<code>unless</code> 会通过</li>
+<li>所调用函数中的第一个 <code>return</code> 将返回（针对单个上下文）</li>
+</ul></li>
+</ul>
+<h1>修复的快照 23w44a 漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-219293" target="_blank" rel="noopener noreferrer">MC-219293</a> 通过紫颂果传送时，打嗝声和传送声会在错误的位置播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265805" target="_blank" rel="noopener noreferrer">MC-265805</a> 执行尾递归函数时，内存资源的消耗随递归深度线性增长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266052" target="_blank" rel="noopener noreferrer">MC-266052</a> 开启或关闭铜灯泡时的字幕显示原始翻译字符串</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266053" target="_blank" rel="noopener noreferrer">MC-266053</a> 打开或关闭铜活板门时的字幕显示原始翻译字符串</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266064" target="_blank" rel="noopener noreferrer">MC-266064</a> 在磨制凝灰岩上行走时脚步声缺少字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266084" target="_blank" rel="noopener noreferrer">MC-266084</a> 铜门顶部包含窗户的开放部分</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266086" target="_blank" rel="noopener noreferrer">MC-266086</a> 凝灰岩砖未能与其他砖正确对齐</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266105" target="_blank" rel="noopener noreferrer">MC-266105</a> 游戏刻被冻结时生成的蝙蝠头部上下颠倒</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266112" target="_blank" rel="noopener noreferrer">MC-266112</a> 新蝙蝠的耳朵比官方渲染和基岩版的更低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266117" target="_blank" rel="noopener noreferrer">MC-266117</a> 雕纹铜块无法从切制铜块中用切石机切割而成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266147" target="_blank" rel="noopener noreferrer">MC-266147</a> 铜门物品的纹理与方块不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266197" target="_blank" rel="noopener noreferrer">MC-266197</a> Realms 菜单中的“立即转移”按钮无法通过键盘导航选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266215" target="_blank" rel="noopener noreferrer">MC-266215</a> 新蝙蝠头部的枢轴点与基岩版的不同</li>
+</ul>

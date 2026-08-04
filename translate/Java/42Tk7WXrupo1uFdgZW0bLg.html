@@ -1,0 +1,44 @@
+<h1>1.15.2 中的更改</h1>
+<ul>
+<li>蜜蜂不再因附近的蜂巢/蜂箱被使用精准采集工具破坏而被激怒</li>
+<li>新增了 <code>doPatrolSpawning</code> 和 <code>doTraderSpawning</code> 游戏规则，分别用于控制巡逻队和流浪商人的生成</li>
+<li>在方块模型中新增了 <code>gui_light</code> 选项，用于控制模型在 GUI 中作为物品渲染时的光照<ul>
+<li>控制物品栏槽位内渲染方块模型时的光照。若设置为 <code>side</code>，模型将像方块一样渲染；若设置为 <code>front</code>，模型将像平面物品一样着色</li>
+</ul></li>
+<li>任何在同一 Y 轴上距离花朵 2 格以内生长的白桦或橡树树苗，都有 5% 的几率生成蜂巢</li>
+<li>蜂巢现在有 2% 的几率在繁花森林中生成</li>
+<li>蜂巢现在有 0.2% 的几率在森林、繁茂丘陵、白桦森林、高大白桦森林、白桦森林丘陵和高大白桦丘陵生物群系中生成</li>
+<li>修复漏洞</li>
+</ul>
+<h1>1.15.2 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-169825" target="_blank" rel="noopener noreferrer">MC-169825</a> - 从单人世界断开连接时，窗口标题中显示“多人游戏（第三方）”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169839" target="_blank" rel="noopener noreferrer">MC-169839</a> - 某些覆盖更低等级效果的药水效果在持续时间结束后不会被移除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169840" target="_blank" rel="noopener noreferrer">MC-169840</a> - 在 2 级信标效果下饮用 1 级药水然后离开，会导致该效果丢失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169848" target="_blank" rel="noopener noreferrer">MC-169848</a> - 尝试从种植的树生成蜂箱时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169886" target="_blank" rel="noopener noreferrer">MC-169886</a> - 1.15.2 PR1 中没有旧世界保护</li>
+<li><a href="https://bugs.mojang.com/browse/MC-862" target="_blank" rel="noopener noreferrer">MC-862</a> - 出生点保护对物品展示框、画和盔甲架无效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-1541" target="_blank" rel="noopener noreferrer">MC-1541</a> - 信标效果会移除相同类型的药水效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-51053" target="_blank" rel="noopener noreferrer">MC-51053</a> - 动力矿车在转弯后失去动力</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150575" target="_blank" rel="noopener noreferrer">MC-150575</a> - 让混凝土粉末落到水旁边时不会变成混凝土</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153987" target="_blank" rel="noopener noreferrer">MC-153987</a> - 穿着鞘翅时从梯子上摔落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165695" target="_blank" rel="noopener noreferrer">MC-165695</a> - 漏斗从蜂箱和蜂巢中收集蜜脾时只会拾取一个蜜脾</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166312" target="_blank" rel="noopener noreferrer">MC-166312</a> - 织布机界面中的图案图标太暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166319" target="_blank" rel="noopener noreferrer">MC-166319</a> - 链接确认界面中“Open in browser”的“b”为小写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166324" target="_blank" rel="noopener noreferrer">MC-166324</a> - “Raw input”按钮的“i”为小写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166722" target="_blank" rel="noopener noreferrer">MC-166722</a> - 一些自定义物品模型在物品栏中会显得很暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167018" target="_blank" rel="noopener noreferrer">MC-167018</a> - 暴击粒子贴图中错位了一个像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167079" target="_blank" rel="noopener noreferrer">MC-167079</a> - 马铠的纹理错位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167201" target="_blank" rel="noopener noreferrer">MC-167201</a> - 隐形的发光实体不遵循其队伍颜色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167219" target="_blank" rel="noopener noreferrer">MC-167219</a> - 多次重载资源包会导致严重卡顿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167220" target="_blank" rel="noopener noreferrer">MC-167220</a> - 标记盔甲架上的物品不再发光</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167235" target="_blank" rel="noopener noreferrer">MC-167235</a> - 上床的判定距离偏离中心</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167344" target="_blank" rel="noopener noreferrer">MC-167344</a> - com.mojang.blaze3d.platform.ClipboardManager 会泄漏直接缓冲区</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167416" target="_blank" rel="noopener noreferrer">MC-167416</a> - 怪物阻止你睡觉的判定距离偏离中心</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167444" target="_blank" rel="noopener noreferrer">MC-167444</a> - iron_golem_crackiness_* 纹理出现在受伤的隐形铁傀儡身上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167709" target="_blank" rel="noopener noreferrer">MC-167709</a> - 乘船、矿车或其他实体进入蜂箱或蜂巢的蜜蜂，再也不能离开蜂箱或蜂巢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168091" target="_blank" rel="noopener noreferrer">MC-168091</a> - 将混凝土粉末丢入深水中时不会变成混凝土</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168230" target="_blank" rel="noopener noreferrer">MC-168230</a> - 末影水晶的光束变暗/去饱和</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168467" target="_blank" rel="noopener noreferrer">MC-168467</a> - 蜜蜂不记得已经授粉的农作物数量</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169157" target="_blank" rel="noopener noreferrer">MC-169157</a> - 破坏正前方被堵住的蜂箱会使蜜蜂消失</li>
+</ul>

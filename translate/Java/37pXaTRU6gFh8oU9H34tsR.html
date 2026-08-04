@@ -1,0 +1,429 @@
+<p>我个人非常确信游戏已经很完美了，但看来我们的开发者们并不这么认为。
+我们现在发布了 Minecraft 1.20.2 的第一个快照！</p>
+<p>本快照带来了钻石矿石生成的变化、屏障方块可含水，以及村民治疗的变化。它还带来了一个新的实验性功能开关，更新了村民交易，我们非常期待听到你的反馈。
+除了大量错误修复外，你还会在本快照中看到许多技术特性和改动，包括新命令、函数宏、持久命令历史、网络性能改进等等。</p>
+<p>挖矿愉快！</p>
+<h1>23w31a 的新实验性特性</h1>
+<h2>村民交易再平衡</h2>
+<p>本快照引入了一个新的实验性功能开关，更新了流浪商人和图书管理员的交易。
+如果你想测试新的交易，必须在创建新世界时在“实验”菜单中打开此功能开关。你可以<a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">在此</a>找到更多关于功能开关的信息。</p>
+<p>由于这是一个实验，随着工作的继续，我们非常感激你的反馈，这也能帮助我们决定村民交易的未来方向。请访问<a href="https://aka.ms/VillagerTradingFeedback" target="_blank" rel="noopener noreferrer">此链接</a>分享你的想法！</p>
+<h3>图书管理员改动</h3>
+<p>在这些改动之前，玩家可以从任何图书管理员那里获得任何村庄附魔。一个新手图书管理员就能出售游戏中最强的附魔！对一些玩家来说，这感觉太过随机，并且与使用附魔台或在地牢结构中寻找附魔书相比，交易显得过于强大。</p>
+<p>根据新规则，来自不同生物群系的图书管理员出售不同的附魔，而且每个村庄生物群系都有一种只有大师级图书管理员才会出售的附魔。</p>
+<p>玩家必须努力才能获得最佳交易，而不是依赖随机概率。我们希望这能让图书管理员交易更有趣、更具技巧性，同时通过出售的附魔揭示每种村庄类型的一些历史线索。</p>
+<ul>
+<li>来自不同生物群系的图书管理员现在出售不同的附魔书</li>
+<li>每个村庄生物群系都有一种特殊附魔，只有满经验的大师级图书管理员才能提供</li>
+<li>这意味着玩家必须访问全部七种村庄生物群系才能获得全套村民附魔</li>
+<li>有两个秘密的村庄生物群系，不会自然生成村庄<ul>
+<li>玩家必须自己建造这些村庄才能解锁它们的交易！</li>
+</ul></li>
+<li>一些附魔已从村庄交易中移除，必须通过其他方式获得</li>
+</ul>
+<h3>流浪商人改动</h3>
+<p>一些玩家觉得流浪商人的价格不公平，而且出售的有用物品不多。我们降低了价格，增加了更多交易项目，并提高了可用数量。流浪商人现在也会向玩家购买有用物品，因此即使你不打算买任何东西，也可以通过提供补给来帮助他们的旅程。</p>
+<ul>
+<li>流浪商人现在价格更低，而且每种物品的库存数量更多</li>
+<li>流浪商人现在出售原木</li>
+<li>流浪商人现在可以购买许多物品，而不仅仅是出售</li>
+</ul>
+<h1>改动</h1>
+<ul>
+<li>钻石矿石现在在主世界的深板岩层中生成更频繁</li>
+<li>治疗僵尸村民现在只在第一次时提供大幅折扣<ul>
+<li>不再因为反复感染和治疗同一个村民而获得额外折扣</li>
+</ul></li>
+<li>屏障方块现在可以在创造模式下被玩家含水<ul>
+<li>无法通过非直接交互（如发射器）在其中放置或取出水</li>
+</ul></li>
+<li>玩家在骑乘载具时不再能下蹲</li>
+<li>紫颂花不再能够支撑悬垂或站立方块</li>
+</ul>
+<h2>钻石矿石分布</h2>
+<p>在本快照中，我们增加了在世界最深处发现的钻石矿石数量。我们的目标是让在深板岩层挖掘钻石更有回报。我们希望听到你对此的反馈！请尝试你最喜欢的挖掘技术，并在<a href="https://aka.ms/OreDistributionFeedback" target="_blank" rel="noopener noreferrer">此反馈网站</a>上告诉我们体验如何。</p>
+<h1>技术性改动</h1>
+<ul>
+<li>资源包版本现在为 16</li>
+<li>数据包版本现在为 16</li>
+<li>使用过的命令历史现在会保存，并可在不同世界间访问</li>
+<li>优化了区块发送给客户端的方式，使低带宽互联网连接的玩家可以在多人服务器上游戏</li>
+<li>添加了对多版本包的支持</li>
+<li>更改了网络协议，为未来更多的数据驱动内容做准备</li>
+<li>在<code>server.properties</code>中添加了新的<code>log-ips</code>选项</li>
+<li>为数据包和资源包中的符号链接添加了验证</li>
+<li>当通过 F3+B 显示碰撞箱时，带有乘客的实体会显示乘客的连接点</li>
+</ul>
+<h2>命令历史</h2>
+<ul>
+<li>你在聊天中发送的最后 50 条命令会在游戏会话之间被记住</li>
+<li>你可以通过在聊天中按上或下箭头来访问命令和聊天历史</li>
+<li>普通聊天仅在同一游戏会话内保留（离开服务器或世界时会清除）</li>
+<li>最近的命令存储在游戏文件夹中的<code>command_history.txt</code>中</li>
+</ul>
+<h2>区块发送优化</h2>
+<ul>
+<li>区块不再以一大整批的方式通过网络发送到客户端</li>
+<li>而是根据可用带宽以较小的批次发送。这意味着：<ul>
+<li>连接带宽极低的客户端在加载世界时不会超时</li>
+<li>低带宽连接客户端可以在某些区块仍在加载时与世界交互</li>
+</ul></li>
+<li>现在只发送客户端渲染距离内的区块</li>
+</ul>
+<h2>多版本包</h2>
+<p>为数据包和资源包添加了新特性，以允许创建与多个游戏版本兼容的包。</p>
+<h3>包元数据</h3>
+<ul>
+<li>包元数据现在包含一个可选字段<code>supported_formats</code>，用于描述此包支持的包格式范围<ul>
+<li>示例：<code>16</code>、<code>[16,17]</code>、<code>{"min_inclusive": 16, "max_inclusive": 17}</code></li>
+</ul></li>
+<li><code>pack_format</code>字段仍然是必需的，其格式保持不变，以便旧版游戏能够读取包数据<ul>
+<li>如果存在<code>supported_formats</code>，它必须包含<code>pack_format</code>中声明的值</li>
+<li>注意：由于旧版游戏会忽略这个新信息，它们始终会将包视为“正常的”单版本包，没有任何扩展兼容性</li>
+</ul></li>
+</ul>
+<h3>覆盖层</h3>
+<ul>
+<li>包现在可以包含覆盖层目录（“overlays”）</li>
+<li>覆盖层是应用到包“正常”内容的子包<ul>
+<li>这些目录与顶层包具有相同的布局，包括<code>assets</code>和<code>data</code>目录</li>
+<li>如果覆盖层支持客户端的包格式，则可以应用</li>
+<li>覆盖层可以添加和替换文件，但不能删除它们<ul>
+<li>例如，如果应用了覆盖层<code>foo</code>，文件<code>foo/assets/minecraft/textures/bar.png</code>将替换<code>assets/minecraft/textures/bar.png</code>的内容</li>
+</ul></li>
+<li><code>pack.mcmeta</code>和<code>pack.png</code>在覆盖层目录中被忽略</li>
+</ul></li>
+<li>包元数据中添加了一个名为<code>overlays</code>的新部分<ul>
+<li>它包含一个<code>entries</code>字段，其中包含一个覆盖层列表</li>
+<li>每个覆盖层条目有两个字段：<ul>
+<li><code>formats</code> - 支持的格式范围</li>
+<li><code>directory</code> - 覆盖层目录（允许的字符：<code>a-z</code>、<code>0-9</code>、<code>_</code>和<code>-</code>）</li>
+</ul></li>
+</ul></li>
+<li>应用顺序：覆盖层从列表底部向顶部叠加<ul>
+<li>例如，如果一个包有两个覆盖层：<code>"entries": [{"directory":"A", ...}, {"directory":"B", ...}]</code>，游戏将首先查找<code>B</code>，然后<code>A</code>，最后在顶层包目录中查找</li>
+</ul></li>
+</ul>
+<h2>网络协议</h2>
+<p>作为持续推进数据驱动特性工作的一部分，网络协议已更改，新增了一个配置阶段。</p>
+<ul>
+<li>配置阶段在登录阶段（即客户端账户验证后）自动开始，并持续到玩家加入世界（游戏阶段）</li>
+<li>客户端可以无限期停留在配置阶段——由服务器决定何时将其释放到世界</li>
+<li>服务器也可以在客户端进入游戏阶段后请求其重新进入配置阶段<ul>
+<li>其他玩家会将此类客户端视为已断开连接</li>
+</ul></li>
+<li>处于配置阶段的用户不会在玩家列表中显示</li>
+<li>配置阶段允许的操作（从游戏阶段移出）<ul>
+<li>配置数据驱动注册表</li>
+<li>配置启用的特性</li>
+</ul></li>
+<li>配置阶段和游戏阶段共享的操作：<ul>
+<li>应用服务器资源包</li>
+<li>更新标签</li>
+<li>交换自定义数据包</li>
+<li>Ping 和保持连接数据包</li>
+</ul></li>
+<li>服务器现在会在配置阶段协商资源包<ul>
+<li>这意味着玩家在回答提示和重新加载资源时不再处于世界中</li>
+</ul></li>
+</ul>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>新选项：<code>log-ips</code>（默认为 true）<ul>
+<li>当设置为<code>false</code>时，将防止玩家加入游戏时其 IP 被记录在日志中</li>
+</ul></li>
+</ul>
+<h2>符号链接验证</h2>
+<p>为了提高安全性，游戏现在还会检测数据包和资源包内部使用的符号链接。</p>
+<ul>
+<li>此功能扩展了上一个版本中添加的世界中的符号链接验证</li>
+<li>如果通过拖放添加的包包含不允许的符号链接，游戏现在会警告用户</li>
+<li>包含不允许的符号链接的包将不会在 UI 和命令中显示</li>
+<li>此外，未被识别为包的目录和文件将不再通过拖放复制</li>
+<li>有关详细说明，请参阅这篇<a href="https://aka.ms/MinecraftSymLinks" target="_blank" rel="noopener noreferrer">帮助文章</a></li>
+</ul>
+<h2>遥测</h2>
+<ul>
+<li>在遥测数据收集屏幕中添加了一个指向 Microsoft 隐私声明的按钮</li>
+</ul>
+<h2>资源包版本 16</h2>
+<ul>
+<li>升级你的包的过程可以通过使用这个自动化的<a href="https://github.com/Mojang/slicer/releases/tag/v1.1" target="_blank" rel="noopener noreferrer">Slicer</a>工具来辅助</li>
+<li>所有包含多个 GUI 精灵的纹理表已拆分为<code>textures/gui/sprites</code>下的单个精灵文件（由 Slicer 工具自动完成）</li>
+<li><code>realms</code>命名空间中的所有纹理已移入<code>minecraft</code>命名空间（由 Slicer 工具自动完成）</li>
+<li><code>villager2.png</code>已重命名为<code>villager.png</code>（由 Slicer 工具自动完成）</li>
+<li><code>icon/trial_available</code>和<code>realm_status/expires_soon</code> GUI 精灵使用<code>.mcmeta</code>声明进行动画，而不是单独的精灵（由 Slicer 工具自动完成）</li>
+<li>收纳袋提示框背景现在绘制为九宫格精灵</li>
+<li>无障碍、语言、Realms 新闻按钮的图标已从其底层的按钮纹理中拆分出来</li>
+<li>Realms 邀请按钮现在绘制为正常按钮纹理上的覆盖层<ul>
+<li>此按钮的突出显示纹理状态已移除</li>
+</ul></li>
+<li>Realms 邀请号码图标的突出显示状态已移除</li>
+<li><code>notification\more.png</code>上的感叹号已移除</li>
+</ul>
+<h3>GUI 精灵表</h3>
+<ul>
+<li>用于 GUI 绘制的精灵已拆分为单独的精灵文件，而不是较大的精灵表<ul>
+<li>例如，<code>widgets/button.png</code>和<code>widgets/button_highlighted.png</code>已从<code>widgets.png</code>中拆分出来</li>
+</ul></li>
+<li>每个精灵现在都可以单独被资源包覆盖，而不是替换整个表</li>
+<li>精灵从<code>textures/gui/sprites</code>目录加载到<code>gui</code>图集</li>
+</ul>
+<h4>GUI 精灵 .mcmeta</h4>
+<ul>
+<li>任何精灵现在都可以使用<code>.mcmeta</code>文件进行动画，类似于其他图集<ul>
+<li><code>icon/trial_available</code>和<code>realm_status/expires_soon</code>现在以这种方式动画</li>
+</ul></li>
+<li><code>gui</code>图集中的精灵现在可以通过<code>.mcmeta</code>文件中的新<code>gui</code>部分来配置缩放行为<ul>
+<li>例如，按钮纹理必须根据按钮应有的大小进行缩放</li>
+<li><code>.mcmeta</code>中的<code>gui</code>部分包含一个<code>scaling</code>字段：<ul>
+<li><code>type</code>：以下之一：<code>stretch</code>（默认）、<code>tile</code>或<code>nine_slice</code></li>
+<li>当使用<code>stretch</code>时，精灵将拉伸到所需空间<ul>
+<li>无需定义额外字段</li>
+</ul></li>
+<li>当使用<code>tile</code>时，精灵将从左上角开始重复平铺到所需空间<ul>
+<li><code>width</code>：此精灵在屏幕上宽度方向覆盖的像素数</li>
+<li><code>height</code>：此精灵在屏幕上高度方向覆盖的像素数</li>
+</ul></li>
+<li>当使用<code>nine_slice</code>时，精灵将被切分为 4 个角、4 条边和 1 个中心切片，这些切片将平铺到所需空间<ul>
+<li><code>width</code>：此精灵在屏幕上宽度方向覆盖的像素数</li>
+<li><code>height</code>：此精灵在屏幕上高度方向覆盖的像素数</li>
+<li><code>border</code>：边框切片在屏幕上应覆盖的像素大小，以下之一：<ul>
+<li>用于所有侧边统一边框大小的常量整数</li>
+<li>包含<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>的对象</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>数据包版本 16</h2>
+<ul>
+<li>游戏规则<code>randomTickSpeed</code>现在影响积雪和结冰的累积速率，方式与影响农作物和其他受随机刻影响的方块相同</li>
+<li>添加了<code>random</code>命令</li>
+<li><code>execute</code>命令的新形式：<code>execute if function</code></li>
+<li><code>return</code>命令的新形式：<code>return run</code></li>
+<li>添加了对函数宏的支持</li>
+<li>更改了显示实体传送后的插值</li>
+<li>添加了新属性<code>generic.max_absorption</code></li>
+<li>将<code>scoreboard</code>命令中的 display 槽位参数中的<code>belowName</code>重命名为<code>below_name</code></li>
+<li>游戏事件更改</li>
+<li>新标签</li>
+</ul>
+<h3>命令</h3>
+<h4><code>random</code></h4>
+<p>一个用于随机化值和控制随机序列的新命令。<code>value</code>和<code>roll</code>形式可用于抽取随机值。对于<code>roll</code>，结果值也会显示在聊天中供所有玩家看到。</p>
+<p>语法：</p>
+<pre><code>random value|roll &#x3C;range> [&#x3C;sequenceId>]
+random reset *|&#x3C;sequenceId> [&#x3C;seed>] [&#x3C;includeWorldSeed>] [&#x3C;includeSequenceId>]
+</code></pre>
+<p>参数：</p>
+<ul>
+<li><code>range</code>：要随机化的值范围，包含两端<ul>
+<li>例如，1..6 是普通的 D6 掷骰</li>
+</ul></li>
+<li><code>sequenceId</code>：要采样或重置的随机序列的名称</li>
+<li><code>seed</code>：重置后用于随机序列的种子</li>
+<li><code>includeWorldSeed</code>：一个布尔值 [默认：<code>true</code>]，指定在为序列播种时是否包含世界种子<ul>
+<li><code>false</code>意味着无论命令在哪个世界中运行，序列都会计算出相同的结果</li>
+</ul></li>
+<li><code>includeSequenceId</code>：一个布尔值 [默认：<code>true</code>]，指定在为序列播种时是否包含序列 ID<ul>
+<li><code>false</code>意味着无论序列名称如何，所有序列都会计算出相同的结果</li>
+</ul></li>
+</ul>
+<p>默认情况下，所有序列都以<code>0</code>、<code>true</code>、<code>true</code>作为种子。使用<code>*</code>而不是序列 ID 会重置所有序列并设置默认参数。</p>
+<p>如果未指定种子，序列将重置为默认参数。</p>
+<p>请注意，不带序列 ID 使用的<code>random value|roll &#x3C;range></code>可供非管理员玩家使用。</p>
+<h4><code>execute if function</code></h4>
+<p>一个新的 execute 子命令，用于运行函数或函数标签并匹配返回值。如果给定了标签，所有函数都会运行，无论先前函数的结果如何。语法：</p>
+<p><code>execute if|unless function &#x3C;function> &#x3C;continuation></code></p>
+<p>参数：</p>
+<ul>
+<li><code>function</code>：要运行的函数或标签</li>
+</ul>
+<h5>匹配</h5>
+<p>运行的函数的返回值匹配：</p>
+<ul>
+<li>匹配成功需要至少一个函数成功</li>
+<li>成功调用定义为这样的函数：<ul>
+<li>使用<code>return</code>命令返回值</li>
+<li>返回值不为 0</li>
+</ul></li>
+</ul>
+<h4><code>return run</code></h4>
+<p><code>return</code>命令的一种新形式现已可用：<code>return run</code>。语法：</p>
+<p><code>return run &#x3C;command></code></p>
+<p>这会从运行指定<code>command</code>中获取<code>result</code>值，并将其作为函数的返回值。在其他所有方面，它都像带有指定返回值的<code>return</code>一样工作。如果给定的命令失败，返回值为<code>0</code>。</p>
+<h3>函数</h3>
+<ul>
+<li>一行中最后一个非空白字符为单个反斜杠<code>\ </code>时，现在允许命令在下一行继续<ul>
+<li>下一行的前导和尾随空白会在追加前被去除</li>
+</ul></li>
+</ul>
+<h4>宏</h4>
+<p>函数现在可以包含宏行，使其成为函数宏。</p>
+<ul>
+<li>任何以<code>$</code>（作为第一个非空格字符）开头的行都标记为宏行</li>
+<li>宏行还包含一个或多个<code>$(variable)</code>形式的替换</li>
+<li>调用函数宏时，必须提供一个包含所有参数变量数据的复合标签</li>
+</ul>
+<h5>调用函数宏</h5>
+<p><code>function</code>命令有了新形式：</p>
+<pre><code>function &#x3C;id> &#x3C;compound>
+function &#x3C;id> with &#x3C;data source> [&#x3C;path>]
+</code></pre>
+<p>新参数：</p>
+<ul>
+<li><code>compound</code>：一个数据复合标签，用<code>{}</code>括起来</li>
+<li><code>data source</code>：数据源规范，就像已经可用于<code>data get</code>的那样</li>
+<li><code>path</code>：NBT 路径规范</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>数据源和路径必须指定一个复合数据条目</li>
+<li>复合标签必须包含宏中使用的每个变量的一个条目</li>
+<li>复合标签中可能存在更多数据，如果有，则会被忽略</li>
+<li>使用数据复合标签调用非宏函数会被静默忽略</li>
+<li>调用宏时，提供的值会替换变量规范，然后执行生成的命令</li>
+<li>变量替换所产生的行中的任何语法错误都会导致整个函数调用被跳过</li>
+</ul>
+<h5>性能注意事项</h5>
+<p>使用宏意味着命令必须在变量替换后重新求值。与运行预解析的函数相比，这会带来额外开销。</p>
+<p>常规命令（非宏行）仍然会预解析。只有在调用宏时，才会解析其中包含变量替换的命令，并且游戏会尝试缓存调用中使用的特定参数集的结果。</p>
+<p>这使得使用相同参数集的重复调用比使用不同参数的新调用更便宜，但与常规函数相比仍然存在开销。请注意，只有宏作为参数引用的值才会包含在此缓存中，因此提供的复合标签中的任何额外数据都会被忽略。</p>
+<h3>显示实体插值</h3>
+<ul>
+<li>显示实体现在会在更新后的第一个游戏刻开始更新其客户端侧的位置和旋转<ul>
+<li>在以前的版本中，更新在同一刻内应用，导致运动不均匀</li>
+<li>新行为现在类似于盔甲架、生物和玩家</li>
+</ul></li>
+<li>在服务器上，位置和旋转仍然会立即更新</li>
+<li>此插值的持续时间由<code>teleport_duration</code>字段控制<ul>
+<li><code>0</code>表示更新会立即应用</li>
+<li><code>1</code>表示显示实体将在一次游戏刻内从当前位置移动到更新后的位置</li>
+<li>更高的值会将移动分散到多个游戏刻</li>
+<li>请注意，此值会被限制以避免周期性位置更新导致的故障</li>
+<li>新值仅适用于其更改后发生的位置和旋转变化<ul>
+<li>这意味着任何当前的移动都会保持不变</li>
+</ul></li>
+</ul></li>
+<li>注意：骑乘时的行为与以前版本保持不变</li>
+</ul>
+<h3>属性</h3>
+<ul>
+<li>添加了新属性<code>generic.max_absorption</code><ul>
+<li><code>generic.max_absorption</code>的作用类似于<code>generic.max_health</code>，但它是<code>AbsorptionAmount</code>的上限，而不是<code>Health</code>的上限</li>
+<li>生物效果<code>absorption</code>会增加<code>generic.max_absorption</code>，并在应用时将<code>AbsorptionAmount</code>填满至最大值</li>
+</ul></li>
+</ul>
+<h3>游戏事件</h3>
+<ul>
+<li><code>entity_roar</code>和<code>entity_shake</code>游戏事件已移除，替换为<code>entity_action</code>游戏事件</li>
+</ul>
+<h3>标签</h3>
+<ul>
+<li>添加了<code>no_knockback</code>伤害类型标签，使伤害本身不再造成击退<ul>
+<li>在原版中用于由事件造成的伤害，例如爆炸，它们会单独施加击退</li>
+</ul></li>
+<li>添加了<code>non_controlling_rider</code>，表示不会覆盖其载具移动控制的实体</li>
+<li>为混凝土粉末方块添加了<code>concrete_powder</code>方块标签</li>
+<li>为产生<code>entity.camel.step_sand</code>声音的方块添加了<code>camel_sand_step_sound_blocks</code>方块标签</li>
+</ul>
+<h1>修复 23w31a 快照中的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29371" target="_blank" rel="noopener noreferrer">MC-29371</a> 多个按钮和图标在悬停时使用旧的提示框设计</li>
+<li><a href="https://bugs.mojang.com/browse/MC-67532" target="_blank" rel="noopener noreferrer">MC-67532</a> 选中的快捷栏槽位纹理底部 2 行像素不在游戏中显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-69387" target="_blank" rel="noopener noreferrer">MC-69387</a> “/item”命令无法替换唱片机中的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-80876" target="_blank" rel="noopener noreferrer">MC-80876</a> 实体骑乘坐骑时总是有相同的偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-85582" target="_blank" rel="noopener noreferrer">MC-85582</a> 物品栏中的实体模型可以在黑框边界之外渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-93320" target="_blank" rel="noopener noreferrer">MC-93320</a> 即使 randomTickSpeed 为 0，水也会结冰</li>
+<li><a href="https://bugs.mojang.com/browse/MC-121772" target="_blank" rel="noopener noreferrer">MC-121772</a> 在 macOS 上按住 Shift 时无法滚动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122296" target="_blank" rel="noopener noreferrer">MC-122296</a> 在 Mac [Magic Mouse] 上水平滚动不工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122547" target="_blank" rel="noopener noreferrer">MC-122547</a> 屏障可以产生坠落粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-140646" target="_blank" rel="noopener noreferrer">MC-140646</a> 使用 Shift 选择文本时文本字段不滚动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147766" target="_blank" rel="noopener noreferrer">MC-147766</a> Shift 键保持按下状态，直到按下其他键</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164080" target="_blank" rel="noopener noreferrer">MC-164080</a> 骑在恶魂上的实体部分或完全在其内部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181190" target="_blank" rel="noopener noreferrer">MC-181190</a> 如果村民被再次感染并再次治疗，治疗村民的折扣会成倍增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190815" target="_blank" rel="noopener noreferrer">MC-190815</a> 潜影盒打开时不传导红石，但打开时不触发红石更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215768" target="_blank" rel="noopener noreferrer">MC-215768</a> 幽匿感测体无法检测海龟清除沙子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228420" target="_blank" rel="noopener noreferrer">MC-228420</a> 加入服务器/穿越维度/重生时世界不加载/从世界中掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230732" target="_blank" rel="noopener noreferrer">MC-230732</a> 在服务器中运行世界时，Minecraft 的局部难度设置计算/显示错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-232840" target="_blank" rel="noopener noreferrer">MC-232840</a> 小僵尸的腿会穿入其骑乘的生物的头部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242076" target="_blank" rel="noopener noreferrer">MC-242076</a> 蜘蛛骑士的骷髅坐在蜘蛛模型“内部”而不是蜘蛛上面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242092" target="_blank" rel="noopener noreferrer">MC-242092</a> 岩浆怪（magmacube.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242395" target="_blank" rel="noopener noreferrer">MC-242395</a> 烈焰人（blaze.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242396" target="_blank" rel="noopener noreferrer">MC-242396</a> 盔甲架（wood.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242397" target="_blank" rel="noopener noreferrer">MC-242397</a> 牛、红色和棕色哞菇（red/brown_mooshroom.png 和 cow.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242398" target="_blank" rel="noopener noreferrer">MC-242398</a> 绵羊和羊皮毛（sheep.png 和 sheep_fur.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242591" target="_blank" rel="noopener noreferrer">MC-242591</a> 羊驼和行商羊驼（white/gray/creamy/brown.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242592" target="_blank" rel="noopener noreferrer">MC-242592</a> 北极熊（polarbear.png）的纹理图包含未使用的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249109" target="_blank" rel="noopener noreferrer">MC-249109</a> 嗅探兽、青蛙、山羊和骆驼被拴绳拴住时不会惊慌</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252231" target="_blank" rel="noopener noreferrer">MC-252231</a> 温暖青蛙的纹理有不一致的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254100" target="_blank" rel="noopener noreferrer">MC-254100</a> 铁傀儡生成率降低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255967" target="_blank" rel="noopener noreferrer">MC-255967</a> 旧区块如果新生成会在 Y=0 以下生成深暗生物群系，但不会完全生成；只有远古城市会生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256466" target="_blank" rel="noopener noreferrer">MC-256466</a> 竹筏实体被命名为船</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256482" target="_blank" rel="noopener noreferrer">MC-256482</a> 幽匿感测体不会在骆驼站起或坐下时被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256485" target="_blank" rel="noopener noreferrer">MC-256485</a> 在村庄中生成的骆驼可以在方块内部生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256641" target="_blank" rel="noopener noreferrer">MC-256641</a> 竹栅栏和竹栅栏门没有与合成台中的其他栅栏和栅栏门归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256675" target="_blank" rel="noopener noreferrer">MC-256675</a> 骆驼坐下时，其腿与鞍的纹理之间发生 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256690" target="_blank" rel="noopener noreferrer">MC-256690</a> 当方块被放置在骆驼上方时，骆驼会尝试站起，如果方块在眼睛高度，则会导致其受到窒息伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257342" target="_blank" rel="noopener noreferrer">MC-257342</a> 在 3 格高的区域骑乘骆驼时会减速</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257431" target="_blank" rel="noopener noreferrer">MC-257431</a> 竹栅栏门使用了错误的纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257628" target="_blank" rel="noopener noreferrer">MC-257628</a> 幽匿感测体不会在骆驼冲刺时被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258379" target="_blank" rel="noopener noreferrer">MC-258379</a> 一致性问题：骆驼耳朵的位置在不同平台上不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258620" target="_blank" rel="noopener noreferrer">MC-258620</a> 猪灵每 121 游戏刻进行一次以物易物，而不是每 120 游戏刻</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259152" target="_blank" rel="noopener noreferrer">MC-259152</a> 潜行时物品栏中显示的玩家模型在不同版本间不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259382" target="_blank" rel="noopener noreferrer">MC-259382</a> 当给自己无效纹饰图案或材料的盔甲时，会重复记录消息“Failed to get element”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259401" target="_blank" rel="noopener noreferrer">MC-259401</a> 附魔台和锻造台中的青金石图标不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259452" target="_blank" rel="noopener noreferrer">MC-259452</a> 小骆驼的躺下/站起声音没有加速</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259769" target="_blank" rel="noopener noreferrer">MC-259769</a> 烟花爆炸不再对实体造成击退</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259794" target="_blank" rel="noopener noreferrer">MC-259794</a> 带有绑定诅咒附魔的盔甲无法在创造模式下通过右键点击交换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260054" target="_blank" rel="noopener noreferrer">MC-260054</a> 粉红色花簇的碰撞箱不会根据内容物调整</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260058" target="_blank" rel="noopener noreferrer">MC-260058</a> 选取方块对空白饰纹陶罐无法正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260085" target="_blank" rel="noopener noreferrer">MC-260085</a> 在屏障上使用刷子时会产生粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260096" target="_blank" rel="noopener noreferrer">MC-260096</a> 饰纹陶罐没有创造模式提示框</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260485" target="_blank" rel="noopener noreferrer">MC-260485</a> “/item”命令无法移除雕纹书架中的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260490" target="_blank" rel="noopener noreferrer">MC-260490</a> 对于非默认大小的生物，乘客的骑乘位置过低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260604" target="_blank" rel="noopener noreferrer">MC-260604</a> 连续使用 /fill 后出现可怕的音量</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260675" target="_blank" rel="noopener noreferrer">MC-260675</a> 饰纹陶罐在放置后的第一帧渲染为空白</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260968" target="_blank" rel="noopener noreferrer">MC-260968</a> 旁白在世界选择屏幕中不朗读“Experimental（实验）”一词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261123" target="_blank" rel="noopener noreferrer">MC-261123</a> item_display 实体被用作乘客时会破坏某些生物的 AI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261182" target="_blank" rel="noopener noreferrer">MC-261182</a> 告示牌颜色在世界中和编辑屏幕中看起来不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261369" target="_blank" rel="noopener noreferrer">MC-261369</a> 洗过的旗帜无法与空白旗帜堆叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261411" target="_blank" rel="noopener noreferrer">MC-261411</a> 所有锻造模板共享相同的翻译键</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261420" target="_blank" rel="noopener noreferrer">MC-261420</a> 幽匿感测体和校准幽匿感测体无法检测女巫喝药水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261427" target="_blank" rel="noopener noreferrer">MC-261427</a> 幽匿感测体和校准幽匿感测体无法检测不死图腾激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261440" target="_blank" rel="noopener noreferrer">MC-261440</a> 调整窗口大小会导致无法在铁砧中更改名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261611" target="_blank" rel="noopener noreferrer">MC-261611</a> 对着涂蜡告示牌放置方块时不会播放方块的放置声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261657" target="_blank" rel="noopener noreferrer">MC-261657</a> 幽匿感测体的范围仍然是球形的，导致从同一方块内会产生不同的输出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261739" target="_blank" rel="noopener noreferrer">MC-261739</a> 竹筏紧邻视觉上的半格方块时出现 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261965" target="_blank" rel="noopener noreferrer">MC-261965</a> 手持荧光墨囊与空白告示牌交互时，尽管没有消耗荧光墨囊，仍会授予“Glow and Behold!”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262108" target="_blank" rel="noopener noreferrer">MC-262108</a> 锻造台 GUI 与自定义配方的问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262132" target="_blank" rel="noopener noreferrer">MC-262132</a> Pigstep 音乐唱片在创造模式菜单中的位置错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262295" target="_blank" rel="noopener noreferrer">MC-262295</a> 诡异和绯红悬挂告示牌使用它们各自的木板声音，尽管它们的去皮菌柄有独特的声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262436" target="_blank" rel="noopener noreferrer">MC-262436</a> 在创造模式中复制陶罐不会保存 NBT 数据</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262442" target="_blank" rel="noopener noreferrer">MC-262442</a> 骆驼站得离引诱它们的玩家太近</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262613" target="_blank" rel="noopener noreferrer">MC-262613</a> 生物无法控制某些可骑乘生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262615" target="_blank" rel="noopener noreferrer">MC-262615</a> 被骑乘的骆驼需要先装备鞍才能被生物控制移动，这与其他可骑乘生物不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262620" target="_blank" rel="noopener noreferrer">MC-262620</a> 羊驼和行商羊驼需要被驯服才能被生物骑乘，这与其他可骑乘生物不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262636" target="_blank" rel="noopener noreferrer">MC-262636</a> 带有着陆为史莱姆或岩浆怪的乘客的生物无法移动并无法正常运行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262638" target="_blank" rel="noopener noreferrer">MC-262638</a> 当“Size:0”的史莱姆和岩浆怪骑乘某些生物时，渲染位置过低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262720" target="_blank" rel="noopener noreferrer">MC-262720</a> 粉红色花簇的一根花茎具有不完整的模型</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262751" target="_blank" rel="noopener noreferrer">MC-262751</a> 空白饰纹陶罐的 NBT 取决于获得它的方法</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262766" target="_blank" rel="noopener noreferrer">MC-262766</a> NBSP 是一个有效的不可见字符，可以添加到书标题中从而使它们有空白名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262804" target="_blank" rel="noopener noreferrer">MC-262804</a> 玩家的游泳动画对其他玩家而言是抖动的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262947" target="_blank" rel="noopener noreferrer">MC-262947</a> “Smithing with Style”进度在完成时不奖励经验</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263011" target="_blank" rel="noopener noreferrer">MC-263011</a> 嗅探兽可以在极远的距离嗅探并跟随玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263049" target="_blank" rel="noopener noreferrer">MC-263049</a> 骆驼在熔岩中无限冲刺</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263126" target="_blank" rel="noopener noreferrer">MC-263126</a> 海绵吸水时不再发出声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263200" target="_blank" rel="noopener noreferrer">MC-263200</a> 骑乘小嗅探兽的实体渲染位置过高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263283" target="_blank" rel="noopener noreferrer">MC-263283</a> 在 1.20 中加载带有告示牌的 1.12.2 结构方块会移除文本</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263313" target="_blank" rel="noopener noreferrer">MC-263313</a> 无法使用 TAB 键初始创建 Realm</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263322" target="_blank" rel="noopener noreferrer">MC-263322</a> 当骆驼走在可疑的沙子上时，产生的声音是“camel steps”而不是“camel sands”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263387" target="_blank" rel="noopener noreferrer">MC-263387</a> 聊天滚动条不再渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263430" target="_blank" rel="noopener noreferrer">MC-263430</a> TickingTracker 中的内存泄漏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263833" target="_blank" rel="noopener noreferrer">MC-263833</a> Minecraft 错误地假设它能够在 Wayland 上设置窗口图标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263879" target="_blank" rel="noopener noreferrer">MC-263879</a> 打开的潜影盒传导红石能量</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264356" target="_blank" rel="noopener noreferrer">MC-264356</a> 被拴绳拴住的嗅探兽会永远在同一个地方挖掘，忽略“探索过的位置”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264467" target="_blank" rel="noopener noreferrer">MC-264467</a> GUI 纹理“villager2.png”包含未使用的部分</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264468" target="_blank" rel="noopener noreferrer">MC-264468</a> GUI 纹理“legacy_smithing.png”仍然存在于游戏文件中，尽管已不再使用</li>
+</ul>

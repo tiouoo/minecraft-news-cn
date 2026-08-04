@@ -1,0 +1,268 @@
+<p>大家好！在这个快照中，我们修复了末影珍珠无法将玩家传送到撞击点的 bug。末影珍珠现在在被投掷时还会加载区块。挖矿愉快！
+<h1>新内容</h1>
+<h1>更改</h1>
+<ul>
+<li>投掷的末影珍珠现在会加载并 tick 区块
+<li>添加了对高级挪威语的语言支持
+</ul>
+<h2>末影珍珠区块加载</h2>
+<ul>
+<li>末影珍珠现在会确保它们所在或进入的区块始终处于加载并进行 tick 的状态
+<li>它们穿越到新维度时也会加载区块，以便始终能够继续移动
+<li>这确保了末影珍珠总能落地，并使跨维度末影珍珠旅行更加可预测
+<li>末影珍珠现在会在玩家登出时卸载，并在该玩家重新登录时重新出现，与当前坐骑的行为类似
+</ul>
+<h2>生物转化详情</h2>
+<p>在上周的快照中，我们修复了一个与生物从一种类型转化为另一种类型（例如：僵尸转化为溺尸）时哪些数据会被传递相关的 bug。本周，我们还原了其中一些更改（生命值、属性和战利品表不再被传递）。
+<ul>
+<li><p>以下是生物转化时被传递的标签、数据和其他属性的完整列表（仅适用于可能具有这些属性的生物）：
+<ul>
+<li><code>AbsorptionAmount</code>
+<li><code>active_effects</code>
+<li><code>Age</code>
+<li><code>AngerTime</code>
+<li><code>AngryAt</code>
+<li><code>ArmorDropChances</code>
+<li><code>ArmorItems</code>
+<li><code>Brain.memories.minecraft:angry_at.ttl</code>
+<li><code>Brain.memories.minecraft:angry_at.value</code>
+<li><code>CanBreakDoors</code>
+<li><code>CanPickUpLoot</code>
+<li><code>CustomNameVisible</code>
+<li><code>CustomName</code>
+<li><code>fall_distance</code>
+<li><code>FallFlying</code>
+<li><code>Fire</code>
+<li><code>ForcedAge</code>
+<li><code>HandDropChances</code>
+<li><code>HandItems</code>
+<li><code>HurtByTimestamp</code>
+<li><code>HurtTime</code>
+<li><code>Invulnerable</code>
+<li><code>IsBaby</code>
+<li><code>Leash</code>
+<li><code>LeftHanded</code>
+<li><code>Motion</code>
+<li><code>NoAI</code>
+<li><code>NoGravity</code>
+<li><code>OnGround</code>
+<li><code>Passengers</code>
+<li><code>PersistenceRequired</code>
+<li><code>PortalCooldown</code>
+<li><code>Position</code>
+<li><code>RootVehicle</code>
+<li><code>Rotation</code>
+<li><code>Silent</code>
+<li><code>SleepingX</code>
+<li><code>SleepingY</code>
+<li><code>SleepingZ</code>
+<li><code>Tags</code>
+<li><code>Team</code>
+</ul>
+<li><p>分裂成多个生物而不是从一种类型转化为另一种类型的生物不会传递以下属性：
+<ul>
+<li><code>ArmorDropChances</code>
+<li><code>ArmorItems</code>
+<li><code>fall_distance</code>
+<li><code>FallFlying</code>
+<li><code>HandDropChances</code>
+<li><code>HandItems</code>
+<li><code>HurtByTimestamp</code>
+<li><code>HurtTime</code>
+<li><code>Leash</code>
+<li><code>Motion</code>
+<li><code>OnGround</code>
+<li><code>Passengers</code>
+<li><code>Position</code>
+<li><code>Rotation</code>
+<li><code>SleepingX</code>
+<li><code>SleepingY</code>
+<li><code>SleepingZ</code>
+</ul>
+<li><p>MC-88967 中提到的一些属性在任何转化中都不会被有意传递：
+<ul>
+<li>属性
+<li>流言
+<li>生命值
+<li>战利品表
+<li>VillagerData
+<li>经验值
+</ul>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在是 53
+<li>资源包版本现在是 38
+</ul>
+<h1>数据包版本 53</h1>
+<h2>战利品表</h2>
+<ul>
+<li>工具值（用于 <code>match_tool</code> 等函数）现在可用于一些额外的战利品表类型
+<ul>
+<li><code>archaeology</code> - 使用的刷子
+<li><code>vault</code> - 插入的钥匙（显示物品时不可用）
+<li><code>shearing</code> - 剪刀
+</ul>
+<li>鸡下蛋现在由位于 <code>gameplay/chicken_lay</code> 的战利品表控制
+<li>犰狳随机掉落鳞甲现在由位于 <code>gameplay/armadillo_shed</code> 的战利品表控制
+</ul>
+<h3>村庄英雄赠礼战利品表</h3>
+<ul>
+<li>村民给予的战利品现在由两个额外的战利品表控制：
+<ul>
+<li><code>gameplay/hero_of_the_village/unemployed_gift</code> - 村民失业时使用
+<li><code>gameplay/hero_of_the_village/baby_gift</code> - 村民为幼年时使用
+</ul>
+</ul>
+<h2>标签</h2>
+<h3>物品标签</h3>
+<ul>
+<li><code>duplicates_allays</code>：可用于在悦灵跳舞时复制悦灵的物品
+<li><code>panda_eats_from_ground</code>：熊猫会从地上捡起来吃的物品
+<li><code>brewing_fuel</code>：可在酿造台中用作燃料的物品
+</ul>
+<h2>物品组件更改</h2>
+<h3><code>minecraft:fire_resistant</code> -> <code>minecraft:damage_resistant</code></h3>
+<ul>
+<li>有一个新字段：<code>types</code>，为带哈希前缀的伤害类型标签
+<ul>
+<li>带有此组件的物品在实体形态下会对标签中包含的伤害类型具有抗性
+<li>此组件还会影响当穿戴者受到特定伤害类型的伤害时，已装备的物品是否会被损坏
+</ul>
+</ul>
+<h3><code>minecraft:item_name</code></h3>
+<ul>
+<li>此组件提供的名称始终具有最低优先级
+<ul>
+<li>这意味着它会被诸如 <code>minecraft:potion_contents</code> 之类的组件覆盖
+</ul>
+</ul>
+<h3><code>minecraft:potion_contents</code></h3>
+<ul>
+<li>添加了可选字符串字段 <code>custom_name</code>
+<ul>
+<li>存在时，它将用于生成所在物品堆叠的名称
+<li>例如，如果值为 <code>foo</code> 且物品为 <code>minecraft:lingering_potion</code>，则物品名称将是 <code>item.minecraft.lingering_potion.effect.foo</code> 的翻译
+</ul>
+</ul>
+<h3><code>minecraft:equippable</code></h3>
+<ul>
+<li>添加了以下字段
+<ul>
+<li><code>swappable</code>：布尔值（默认：<code>true</code>），物品是否可以通过右键点击装备到相关槽位
+<li><code>damage_on_hurt</code>：布尔值（默认：<code>true</code>），当穿戴实体受到伤害时此物品是否会被损坏
+</ul>
+</ul>
+<h3>添加了 <code>minecraft:death_protection</code></h3>
+<ul>
+<li>如果存在，此物品将通过恢复 1 点生命值来保护持有者免于死亡
+<li>格式：包含字段的对象
+<ul>
+<li><code>death_effects</code>：可选的效果列表，在物品保护持有者时应用
+<ul>
+<li>这些效果与 <code>consumable</code> 组件中 <code>on_consume_effects</code> 字段指定的效果相同
+</ul>
+</ul>
+</ul>
+<h2>谓词</h2>
+<h3><code>salmon</code> 实体子谓词</h3>
+<ul>
+<li>添加了 <code>minecraft:salmon</code> 实体子谓词
+<li>字段：
+<ul>
+<li><code>variant</code>：<code>small</code>、<code>medium</code>、<code>large</code> 之一
+</ul>
+</ul>
+<h2>进度</h2>
+<h3>触发器</h3>
+<h4><code>minecraft:killed_by_crossbow</code> -> <code>minecraft:killed_by_arrow</code></h4>
+<ul>
+<li>现在每当箭矢杀死实体时就会触发，而不仅限于从弩发射时
+<li>新增了可选的物品谓词字段 <code>fired_from_weapon</code>
+<ul>
+<li>可用于匹配射出该箭矢所使用的物品
+</ul>
+</ul>
+<h1>资源包版本 38</h1>
+<h2>GUI 精灵图</h2>
+<ul>
+<li>现在可以通过替换精灵图来自定义高亮槽位的外观：
+<ul>
+<li><code>container/slot_highlight_front</code>：在高亮槽位前方渲染的精灵图
+<li><code>container/slot_highlight_back</code>：在高亮槽位后方渲染的精灵图
+</ul>
+<li>同样，收纳袋内高亮物品的外观可以使用以下精灵图自定义：
+<ul>
+<li><code>container/bundle/slot_highlight_front</code>
+<li><code>container/bundle/slot_highlight_back</code>
+</ul>
+</ul>
+<h1>修复的 Bug</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-119369 rel="noopener noreferrer"target=_blank>MC-119369</a> 船在特定距离坠落时会撞坏/破裂并可能杀死乘客
+<li><a href=https://bugs.mojang.com/browse/MC-206436 rel="noopener noreferrer"target=_blank>MC-206436</a> 切石机在按住 Shift 点击时会忽略任何超过 64 的物品
+<li><a href=https://bugs.mojang.com/browse/MC-260537 rel="noopener noreferrer"target=_blank>MC-260537</a> 树木生长可以替换掉“persistent”方块状态设为 true 的树叶
+<li><a href=https://bugs.mojang.com/browse/MC-265399 rel="noopener noreferrer"target=_blank>MC-265399</a> 当屏幕上还有其他玩家时，退出游泳/爬行状态时的玩家头部位置不正确
+<li><a href=https://bugs.mojang.com/browse/MC-275205 rel="noopener noreferrer"target=_blank>MC-275205</a> 手部动画有延迟，并且不会一直播放
+<li><a href=https://bugs.mojang.com/browse/MC-275300 rel="noopener noreferrer"target=_blank>MC-275300</a> 重锤猛击伤害对生物无效，尽管粒子和声音都会出现
+<li><a href=https://bugs.mojang.com/browse/MC-275302 rel="noopener noreferrer"target=_blank>MC-275302</a> 末地水晶的动画速度不再恒定
+<li><a href=https://bugs.mojang.com/browse/MC-275352 rel="noopener noreferrer"target=_blank>MC-275352</a> Programmer Art 中光灵箭的纹理未正确更新
+<li><a href=https://bugs.mojang.com/browse/MC-275406 rel="noopener noreferrer"target=_blank>MC-275406</a> “options.rotateWithMinecart.tooltip”中存在语法错误
+<li><a href=https://bugs.mojang.com/browse/MC-275468 rel="noopener noreferrer"target=_blank>MC-275468</a> 游戏规则 minecartMaxSpeed 无法通过函数设置
+<li><a href=https://bugs.mojang.com/browse/MC-275504 rel="noopener noreferrer"target=_blank>MC-275504</a> 自定义模型数据未应用于打开的收纳袋
+<li><a href=https://bugs.mojang.com/browse/MC-275538 rel="noopener noreferrer"target=_blank>MC-275538</a> 旋风人在玩家非常接近时仍然不会攻击
+<li><a href=https://bugs.mojang.com/browse/MC-275751 rel="noopener noreferrer"target=_blank>MC-275751</a> 从爬行状态出来时头部会突然弹回
+<li><a href=https://bugs.mojang.com/browse/MC-275765 rel="noopener noreferrer"target=_blank>MC-275765</a> 字符串 gamerule.minecartMaxSpeed.description 中缺少句号
+<li><a href=https://bugs.mojang.com/browse/MC-275792 rel="noopener noreferrer"target=_blank>MC-275792</a> 火把和灵魂火把的底面没有对实心方块进行剔除
+<li><a href=https://bugs.mojang.com/browse/MC-275833 rel="noopener noreferrer"target=_blank>MC-275833</a> 手部动画的播放位置比以前更高
+<li><a href=https://bugs.mojang.com/browse/MC-275883 rel="noopener noreferrer"target=_blank>MC-275883</a> 骑着矿车组撞墙会冻结游戏
+<li><a href=https://bugs.mojang.com/browse/MC-275909 rel="noopener noreferrer"target=_blank>MC-275909</a> 被生物的猛击杀死时显示了错误的死亡消息
+<li><a href=https://bugs.mojang.com/browse/MC-275964 rel="noopener noreferrer"target=_blank>MC-275964</a> 通过交换物品而被鼠标光标持有的收纳袋可以保持展开状态
+<li><a href=https://bugs.mojang.com/browse/MC-275990 rel="noopener noreferrer"target=_blank>MC-275990</a> 收纳袋可以通过工作台保持展开状态
+<li><a href=https://bugs.mojang.com/browse/MC-276025 rel="noopener noreferrer"target=_blank>MC-276025</a> 模型覆盖未应用于打开的收纳袋中显示的物品
+<li><a href=https://bugs.mojang.com/browse/MC-276111 rel="noopener noreferrer"target=_blank>MC-276111</a> 从桶中生成的鲑鱼在 1 tick 内尺寸不正确
+<li><a href=https://bugs.mojang.com/browse/MC-276127 rel="noopener noreferrer"target=_blank>MC-276127</a> 蜂巢提示框中的分数未用空格填充
+<li><a href=https://bugs.mojang.com/browse/MC-276134 rel="noopener noreferrer"target=_blank>MC-276134</a> 悬停在收纳袋上时无法在创造模式物品栏中滚动
+<li><a href=https://bugs.mojang.com/browse/MC-276263 rel="noopener noreferrer"target=_blank>MC-276263</a> explosion_power nbt 对 TNT 矿车无效
+<li><a href=https://bugs.mojang.com/browse/MC-276293 rel="noopener noreferrer"target=_blank>MC-276293</a> 生物不再受到甜浆果丛的伤害
+<li><a href=https://bugs.mojang.com/browse/MC-276295 rel="noopener noreferrer"target=_blank>MC-276295</a> 僵尸总是杀死村民
+<li><a href=https://bugs.mojang.com/browse/MC-276296 rel="noopener noreferrer"target=_blank>MC-276296</a> 穿戴的锁链盔甲存在缺失的纹理
+<li><a href=https://bugs.mojang.com/browse/MC-276297 rel="noopener noreferrer"target=_blank>MC-276297</a> 穿戴的下界合金盔甲显示为钻石盔甲
+<li><a href=https://bugs.mojang.com/browse/MC-276299 rel="noopener noreferrer"target=_blank>MC-276299</a> 马铠在马匹物品栏中渲染不正确
+<li><a href=https://bugs.mojang.com/browse/MC-276301 rel="noopener noreferrer"target=_blank>MC-276301</a> 物品提示框的内边距消失了
+<li><a href=https://bugs.mojang.com/browse/MC-276304 rel="noopener noreferrer"target=_blank>MC-276304</a> 雕刻南瓜和头颅可以通过右键装备
+<li><a href=https://bugs.mojang.com/browse/MC-276310 rel="noopener noreferrer"target=_blank>MC-276310</a> 玩家在胸甲槽位穿戴非胸甲物品时，披风会与身体分离
+<li><a href=https://bugs.mojang.com/browse/MC-276311 rel="noopener noreferrer"target=_blank>MC-276311</a> 玩家使用非鞘翅物品飞行时，披风不合逻辑地朝上
+<li><a href=https://bugs.mojang.com/browse/MC-276314 rel="noopener noreferrer"target=_blank>MC-276314</a> 风弹直接击中实体时，会使实体被抛到极高处
+<li><a href=https://bugs.mojang.com/browse/MC-276315 rel="noopener noreferrer"target=_blank>MC-276315</a> 传送命令在实体的位置运行，并忽略来自执行上下文的位置
+<li><a href=https://bugs.mojang.com/browse/MC-276316 rel="noopener noreferrer"target=_blank>MC-276316</a> 末影珍珠不再将实体传送到撞击点
+<li><a href=https://bugs.mojang.com/browse/MC-276317 rel="noopener noreferrer"target=_blank>MC-276317</a> 弹射物的运动改变时，其视觉更新缓慢
+<li><a href=https://bugs.mojang.com/browse/MC-276320 rel="noopener noreferrer"target=_blank>MC-276320</a> 盾牌不再格挡来袭的弹射物
+<li><a href=https://bugs.mojang.com/browse/MC-276321 rel="noopener noreferrer"target=_blank>MC-276321</a> 鞘翅在受到伤害时损失耐久度
+<li><a href=https://bugs.mojang.com/browse/MC-276322 rel="noopener noreferrer"target=_blank>MC-276322</a> 船被摧毁时不会以物品形式掉落
+<li><a href=https://bugs.mojang.com/browse/MC-276326 rel="noopener noreferrer"target=_blank>MC-276326</a> “Air”物品丢失了名称
+<li><a href=https://bugs.mojang.com/browse/MC-276327 rel="noopener noreferrer"target=_blank>MC-276327</a> item_name 组件不再覆盖药水名称
+<li><a href=https://bugs.mojang.com/browse/MC-276335 rel="noopener noreferrer"target=_blank>MC-276335</a> 被治愈的村民移动速度错误
+<li><a href=https://bugs.mojang.com/browse/MC-276338 rel="noopener noreferrer"target=_blank>MC-276338</a> 转化后的生物保留与最初生物相同的战利品表
+<li><a href=https://bugs.mojang.com/browse/MC-276339 rel="noopener noreferrer"target=_blank>MC-276339</a> 由村民转化的女巫移动速度非常快
+<li><a href=https://bugs.mojang.com/browse/MC-276344 rel="noopener noreferrer"target=_blank>MC-276344</a> 收纳袋中悬停的物品不会反映任何 tooltip_style 组件
+<li><a href=https://bugs.mojang.com/browse/MC-276364 rel="noopener noreferrer"target=_blank>MC-276364</a> 带有 equippable 标签的非盔甲物品无法给予狼
+<li><a href=https://bugs.mojang.com/browse/MC-276365 rel="noopener noreferrer"target=_blank>MC-276365</a> 切换物品和物品使用动画时，盔甲袖子不跟随手臂
+<li><a href=https://bugs.mojang.com/browse/MC-276370 rel="noopener noreferrer"target=_blank>MC-276370</a> 金盔甲部件的最大耐久度错误
+<li><a href=https://bugs.mojang.com/browse/MC-276376 rel="noopener noreferrer"target=_blank>MC-276376</a> /tp 命令无法传送到正确的朝向角度
+<li><a href=https://bugs.mojang.com/browse/MC-276378 rel="noopener noreferrer"target=_blank>MC-276378</a> 转化的女巫失去盔甲，但仍受到盔甲的保护
+<li><a href=https://bugs.mojang.com/browse/MC-276383 rel="noopener noreferrer"target=_blank>MC-276383</a> 对船使用选取方块会导致游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-276384 rel="noopener noreferrer"target=_blank>MC-276384</a> 玩家移动时披风与身体分离
+<li><a href=https://bugs.mojang.com/browse/MC-276394 rel="noopener noreferrer"target=_blank>MC-276394</a> 一些特殊渲染的元素不再受任何类型的雾影响
+<li><a href=https://bugs.mojang.com/browse/MC-276415 rel="noopener noreferrer"target=_blank>MC-276415</a> 海龟壳头盔装备在头部以外的任何槽位时不会给予水下呼吸效果
+<li><a href=https://bugs.mojang.com/browse/MC-276429 rel="noopener noreferrer"target=_blank>MC-276429</a> 弹射物击中方块后仍会移动
+<li><a href=https://bugs.mojang.com/browse/MC-276433 rel="noopener noreferrer"target=_blank>MC-276433</a> set_enchantments 函数会从书中移除附魔组件
+<li><a href=https://bugs.mojang.com/browse/MC-276463 rel="noopener noreferrer"target=_blank>MC-276463</a> 猪灵在以物易物时盔甲与身体分离
+<li><a href=https://bugs.mojang.com/browse/MC-276476 rel="noopener noreferrer"target=_blank>MC-276476</a> 当船被危险物摧毁时崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-276480 rel="noopener noreferrer"target=_blank>MC-276480</a> 弹射物被弹开时不再正确移动
+<li><a href=https://bugs.mojang.com/browse/MC-276484 rel="noopener noreferrer"target=_blank>MC-276484</a> 火球和凋灵之首造成过高伤害
+<li><a href=https://bugs.mojang.com/browse/MC-276495 rel="noopener noreferrer"target=_blank>MC-276495</a> 创造模式玩家在投掷激流三叉戟时可以穿过下界传送门而不会被传送
+<li><a href=https://bugs.mojang.com/browse/MC-276501 rel="noopener noreferrer"target=_blank>MC-276501</a> 返回的三叉戟卡在方块上，并不断发出声音
+<li><a href=https://bugs.mojang.com/browse/MC-276527 rel="noopener noreferrer"target=_blank>MC-276527</a> 重复 UUID 错误导致玩家骑乘被闪电转化的猪时被传送到原点
+<li><a href=https://bugs.mojang.com/browse/MC-276533 rel="noopener noreferrer"target=_blank>MC-276533</a> 当三个或更多骷髅即将射出箭矢时游戏崩溃
+</ul>

@@ -1,0 +1,57 @@
+<p>We are now releasing Snapshot 23w40a, the first snapshot for 1.20.3! This snapshot contains improvements for shields, changes to chat component serialization and bug fixes.</p>
+<h1>Changes</h1>
+<ul>
+<li>When a player is blocking with a shield, the arm with the shield now follows the direction the player is looking at, when viewed from third person perspective</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 19</li>
+<li>A few minor changes to chat component serialization</li>
+</ul>
+<h2>Chat components</h2>
+<h3>Serialization</h3>
+<ul>
+<li>Plain-text chat components (text, no sibilings, no stylings) are now always serialized as string instead of <code>{"text': "blah"}</code></li>
+<li>Chat components now serialize to NBT when sent over network</li>
+<li>Chat components now have an optional <code>type</code> value (allowed values: <code>text</code>, <code>translatable</code>, <code>score</code>, <code>nbt</code>, <code>keybind</code>) to speed up parsing and improve error checking</li>
+<li><code>id</code> field in <code>show_entity</code> <code>hoverEvent</code> style now also accepts UUID as an array of 4 ints</li>
+<li>Numeric and boolean arguments for <code>translate</code> component are no longer converted to string</li>
+<li>The following JSON component representations are no longer accepted:<ul>
+<li><code>null</code></li>
+<li><code>[]</code></li>
+</ul></li>
+<li>Errors in following style fields are no longer silently ignored:<ul>
+<li><code>color</code></li>
+<li><code>clickEvent</code></li>
+<li><code>hoverEvent</code></li>
+<li><code>hoverEvent[action=show_entity].contents.name</code></li>
+<li><code>hoverEvent[action=show_item].contents.tag</code></li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 19</h1>
+<h2>Tags</h2>
+<ul>
+<li>Added <code>can_breathe_under_water</code> entity type tag which disables drowning</li>
+<li>Added <code>can_break_armor_stands</code> damage type tag for damage types that can incrementally knock down armor stands</li>
+</ul>
+<h1>Fixed bugs in 23w40a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-47607" target="_blank" rel="noopener noreferrer">MC-47607</a> Barrier particles aren't shown if particles are set to minimal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-50647" target="_blank" rel="noopener noreferrer">MC-50647</a> Slime mob spawners spawn slimes only in slime chunks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-78314" target="_blank" rel="noopener noreferrer">MC-78314</a> (Marker) Armor stands create bubbles in water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-109101" target="_blank" rel="noopener noreferrer">MC-109101</a> Shields do not block damage while the player faces straight up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114761" target="_blank" rel="noopener noreferrer">MC-114761</a> Area effect cloud applies effect to dying mob</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172398" target="_blank" rel="noopener noreferrer">MC-172398</a> Fire texture renders according to the player's rotation in the player inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221558" target="_blank" rel="noopener noreferrer">MC-221558</a> Light particles aren't shown if particles are set to minimal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227255" target="_blank" rel="noopener noreferrer">MC-227255</a> Beehives and bee nests do not rotate/mirror correctly in structure blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236946" target="_blank" rel="noopener noreferrer">MC-236946</a> Shield attack vector is normalized incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253819" target="_blank" rel="noopener noreferrer">MC-253819</a> Bells don't rotate correctly when loaded by structure/jigsaw blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254850" target="_blank" rel="noopener noreferrer">MC-254850</a> An operator can kick a host of a LAN world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255173" target="_blank" rel="noopener noreferrer">MC-255173</a> Nether portal teleportation is inaccurate at large coordinate values</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261303" target="_blank" rel="noopener noreferrer">MC-261303</a> Decorated pots have an unused "cracked" block state</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263123" target="_blank" rel="noopener noreferrer">MC-263123</a> Mending incorrectly calculates overflow after full repair</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264748" target="_blank" rel="noopener noreferrer">MC-264748</a> GLX._initGlfw Treats Pointer as a String</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265353" target="_blank" rel="noopener noreferrer">MC-265353</a> Clocks and Compasses in Item Display Entities don't show correct time/direction</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265462" target="_blank" rel="noopener noreferrer">MC-265462</a> Sending resource pack during play phase shows loading terrain screen for a long time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265519" target="_blank" rel="noopener noreferrer">MC-265519</a> Game minimizes when certain areas of the screen are clicked on Mac in fullscreen mode</li>
+</ul>

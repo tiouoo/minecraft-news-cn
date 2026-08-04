@@ -1,0 +1,62 @@
+<p>We're bringing you the first Pre-Release of 1.20.3 with updates to server resource pack handling and bug fixes!</p>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 26</li>
+<li>The Resource Pack version is now 22</li>
+<li>Changes to downloaded/world resource pack handling</li>
+</ul>
+<h2>World resource packs</h2>
+<p>Changes apply to world resource packs (<code>resources.zip</code>), Realms resource packs and resource packs controlled by dedicated servers.</p>
+<h3>UI</h3>
+<ul>
+<li>Download screen has been replaced with a toast</li>
+<li>World resource pack application will start together with chunk loading</li>
+</ul>
+<h3>Local storage</h3>
+<p>Downloaded packs are now stored in <code>downloads</code> directory (with different file organization than old <code>server-resource-packs</code>)</p>
+<ul>
+<li>Files in this directory are no longer automatically cleaned (previously only up 10 packs were kept)</li>
+<li>Additionally, inside this directory there is also log file <code>log.json</code> that stores information about downloaded files for debug purposes</li>
+</ul>
+<h3>Server config</h3>
+<p>Downloaded packs now have unique id (GUID/UUID) that can be used to differentiate them</p>
+<ul>
+<li>This value for dedicated server pack can be configured with <code>resource-pack-id</code> option in <code>server.properties</code></li>
+<li>If the value is missing, it will be generated based on URL</li>
+<li>If hash of a pack is not set, this pack will be redownloaded before every application<ul>
+<li>Previously, if hash was missing, latest downloaded version of pack was applied</li>
+</ul></li>
+</ul>
+<h3>Packets</h3>
+<p>Some additional options are added for 3rd-party servers software:</p>
+<ul>
+<li>Client can now accept multiple server resource packs</li>
+<li>New packet was added to un-apply server resource packs</li>
+<li>Resource packs are no longer cleaned when entering configuration phase</li>
+</ul>
+<h1>Data Pack Version 26</h1>
+<ul>
+<li>Renamed <code>minecraft:grass</code> block and item to <code>minecraft:short_grass</code></li>
+</ul>
+<h1>Resource Pack Version 22</h1>
+<ul>
+<li>Renamed <code>minecraft:grass</code> block and item to <code>minecraft:short_grass</code></li>
+</ul>
+<h1>Fixed bugs in 1.20.3 Pre-Release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-142160" target="_blank" rel="noopener noreferrer">MC-142160</a> pausedTickDelta updated when the game is unpaused rather than paused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164316" target="_blank" rel="noopener noreferrer">MC-164316</a> Resource pack update by a hash doesn't work</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251126" target="_blank" rel="noopener noreferrer">MC-251126</a> Server resource pack is not redownloaded when a hash mismatch is detected with the previously downloaded version</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265927" target="_blank" rel="noopener noreferrer">MC-265927</a> Edit box length restrictions can result in unpaired surrogate characters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265929" target="_blank" rel="noopener noreferrer">MC-265929</a> Ctrl+Backspacing a word with non-BMP characters in an edit box deletes additional characters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266456" target="_blank" rel="noopener noreferrer">MC-266456</a> Breezes in minecarts or boats are passive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266468" target="_blank" rel="noopener noreferrer">MC-266468</a> Breeze cannot attack in deep water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266472" target="_blank" rel="noopener noreferrer">MC-266472</a> Charged creeper / wither armor is rendered incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266507" target="_blank" rel="noopener noreferrer">MC-266507</a> Number of block drops from TNT explosions is capped to 16</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266563" target="_blank" rel="noopener noreferrer">MC-266563</a> End Crystals and TNT Minecarts that explode without a source entity deal no damage at all</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266571" target="_blank" rel="noopener noreferrer">MC-266571</a> Breezes won't attack while under the effects of levitation status</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266656" target="_blank" rel="noopener noreferrer">MC-266656</a> The interpolation of particle, entity and block entity transforms is disrupted when pausing the game in singleplayer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266723" target="_blank" rel="noopener noreferrer">MC-266723</a> Monsters Hunted advancement requires killing a Breeze even when they're disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266724" target="_blank" rel="noopener noreferrer">MC-266724</a> scoreboard players reset <targets> <objective> no longer works</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266729" target="_blank" rel="noopener noreferrer">MC-266729</a> Unformatted objects in scoreboard error messages</li>
+</ul>

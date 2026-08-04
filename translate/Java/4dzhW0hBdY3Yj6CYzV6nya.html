@@ -1,0 +1,181 @@
+<h1>21w05a 的新特性</h1>
+<ul>
+<li>杜鹃花丛以及盛开的杜鹃花丛！</li>
+<li>添加了洞穴藤蔓和荧光浆果！</li>
+<li>添加了垂滴叶！</li>
+<li>为即将到来的繁茂洞穴添加了装饰方块：垂根和缠根泥土！</li>
+<li>添加了苔藓！</li>
+<li>添加了孢子花！</li>
+</ul>
+<h2>洞穴藤蔓和荧光浆果</h2>
+<ul>
+<li>洞穴藤蔓像垂泪藤一样从天花板向下生长</li>
+<li>生长时有机会结出荧光浆果</li>
+<li>荧光浆果既是天然光源，也是食物来源</li>
+<li>狐狸会吃荧光浆果</li>
+<li>使用荧光浆果可种植新的洞穴藤蔓</li>
+<li>对洞穴藤蔓使用骨粉会长出荧光浆果</li>
+</ul>
+<h2>垂滴叶</h2>
+<ul>
+<li>小型垂滴叶需要水分，因此会生长在黏土上或水下</li>
+<li>对小型垂滴叶使用骨粉会使其生长为大型垂滴叶。</li>
+<li>对大型垂滴叶使用骨粉会使其长得更高</li>
+<li>如果站在大型垂滴叶上，它过一会儿会倾斜，然后你会掉下来</li>
+<li>你可以潜行或跳跃来防止大型垂滴叶倾斜</li>
+<li>倾斜的大型垂滴叶过一会儿会重新竖起</li>
+<li>大型垂滴叶被弹射物击中时会破坏</li>
+<li>流浪商人有时会出售小型垂滴叶植物</li>
+</ul>
+<h2>苔藓</h2>
+<ul>
+<li>两种新的装饰方块：苔藓块和苔藓地毯</li>
+<li>苔藓地毯可以用苔藓块合成</li>
+</ul>
+<h2>孢子花</h2>
+<ul>
+<li>一种漂亮的巨型花朵，可放置在天花板上</li>
+<li>它会滴落粒子</li>
+</ul>
+<h1>21w05a 的更改</h1>
+<ul>
+<li>切石机现在可用于合成不同变种的铜块</li>
+<li>铜的氧化阶段现在按氧化程度从低到高分别称为“铜块”、“外露铜块”、“风化铜块”和“氧化铜块”。</li>
+<li>溺尸现在有几率掉落铜锭，不再掉落金锭</li>
+<li>添加了新的幽匿感测体事件</li>
+<li>细雪的改动</li>
+</ul>
+<h2>幽匿感测体更改</h2>
+<p>添加了以下幽匿感测体会响应的游戏事件，以及相应的频率值：</p>
+<table>
+<thead>
+<tr>
+<th>振动类型</th>
+<th>频率值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矿车移动、敲钟、方块变化</td>
+<td>6</td>
+</tr>
+<tr>
+<td>饮用完成、点燃引线</td>
+<td>7</td>
+</tr>
+<tr>
+<td>生物互动</td>
+<td>8</td>
+</tr>
+<tr>
+<td>装备、剪除、劫掠兽咆哮</td>
+<td>9</td>
+</tr>
+<tr>
+<td>实体放置</td>
+<td>12</td>
+</tr>
+<tr>
+<td>实体被杀死</td>
+<td>13</td>
+</tr>
+<tr>
+<td>潜影贝关闭</td>
+<td>14</td>
+</tr>
+<tr>
+<td>潜影贝打开</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>Block Change</code> 用于玩家或发射器的行为改变了方块时。例如：蛋糕片被吃掉时。</li>
+<li><code>Mob Interact</code> 用于导致振动的特定生物互动事件。</li>
+<li><code>Prime Fuse</code> 适用于 TNT 和苦力怕。</li>
+</ul>
+<h2>细雪更改</h2>
+<ul>
+<li>着火的箭现在碰到细雪时会被熄灭</li>
+<li>骷髅现在在冰冻时会转化为流浪者</li>
+<li>细雪现在能被活塞和粘性活塞推动</li>
+<li>狐狸现在可以在细雪上行走而不会陷进去</li>
+</ul>
+<h1>21w05a 的技术性更改</h1>
+<ul>
+<li>提高了在物品模型上使用大量覆盖项时的性能</li>
+<li>铜的氧化现在是一种随机刻效果，因此会受到 randomTickSpeed 游戏规则的影响</li>
+</ul>
+<h1>21w05a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-9568" target="_blank" rel="noopener noreferrer">MC-9568</a> 生物在固体方块附近长大时会窒息/穿过方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-130098" target="_blank" rel="noopener noreferrer">MC-130098</a> 调试世界将玩家生成在 y=2 处，而不是生成在所有方块所在的 y=70 处</li>
+<li><a href="https://bugs.mojang.com/browse/MC-142711" target="_blank" rel="noopener noreferrer">MC-142711</a> 幼年海龟被推向天花板时会受到伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148432" target="_blank" rel="noopener noreferrer">MC-148432</a> 同时处于水和岩浆中时声音刷屏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149495" target="_blank" rel="noopener noreferrer">MC-149495</a> 重新加载游戏后，河豚未与绊线碰撞却触发了绊线</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152265" target="_blank" rel="noopener noreferrer">MC-152265</a> 启动服务器时输出“无法解析 ItemStack 的 BlockEntity”错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153254" target="_blank" rel="noopener noreferrer">MC-153254</a> 幼年僵尸/猪灵被气泡柱推向天花板时会受到伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163673" target="_blank" rel="noopener noreferrer">MC-163673</a> 幼年尸壳、猪灵、僵尸、僵尸村民和僵尸猪灵跳入上方有固体方块的空间时会受到伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186879" target="_blank" rel="noopener noreferrer">MC-186879</a> 同时站在火和水中会不断播放熄灭声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191714" target="_blank" rel="noopener noreferrer">MC-191714</a> 当骑乘马/船时站在耕地上，且耕地变成泥土时，玩家会被卸下，导致不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198432" target="_blank" rel="noopener noreferrer">MC-198432</a> 重新加载世界后河豚会穿过方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-199356" target="_blank" rel="noopener noreferrer">MC-199356</a> options.txt 中的 chatDelay 在冒号和值之间有一个空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200906" target="_blank" rel="noopener noreferrer">MC-200906</a> 重新加载世界时河豚的碰撞箱不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204801" target="_blank" rel="noopener noreferrer">MC-204801</a> 大量铜块会导致服务器卡顿，并使世界保存耗时过长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205079" target="_blank" rel="noopener noreferrer">MC-205079</a> 在某些生物群系中，炼药锅不会被细雪填满</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205401" target="_blank" rel="noopener noreferrer">MC-205401</a> 当白天会燃烧的生物处于细雪中时，“火熄灭”的声音会反复播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205477" target="_blank" rel="noopener noreferrer">MC-205477</a> 服务器卡顿时尝试上下船偶尔会出现不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205735" target="_blank" rel="noopener noreferrer">MC-205735</a> 幼年牛会在楼梯上窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206113" target="_blank" rel="noopener noreferrer">MC-206113</a> 细雪会导致与下落的方块出现 Z-Fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207258" target="_blank" rel="noopener noreferrer">MC-207258</a> 幽匿感测体不会对行驶中的矿车作出反应</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207261" target="_blank" rel="noopener noreferrer">MC-207261</a> 敲钟事件不被视为振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207262" target="_blank" rel="noopener noreferrer">MC-207262</a> 饮用药水或牛奶不会引起振动，尽管吃东西会</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207263" target="_blank" rel="noopener noreferrer">MC-207263</a> 不一致性：用液体或细雪填充炼药锅不会被幽匿感测体检测到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207277" target="_blank" rel="noopener noreferrer">MC-207277</a> 幽匿感测体无法检测使用火焰弹点火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207283" target="_blank" rel="noopener noreferrer">MC-207283</a> 熄灭营火不会被幽匿感测体检测到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207300" target="_blank" rel="noopener noreferrer">MC-207300</a> 末影人放置或拾取方块不会被幽匿感测体检测到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207329" target="_blank" rel="noopener noreferrer">MC-207329</a> 幽匿感测体无法正确检测其他生物的进食行为</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207340" target="_blank" rel="noopener noreferrer">MC-207340</a> 幽匿感测体不会检测到倒出鱼桶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207358" target="_blank" rel="noopener noreferrer">MC-207358</a> 幽匿感测体不会检测潜影贝的打开和关闭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207384" target="_blank" rel="noopener noreferrer">MC-207384</a> 火矢会反复触发幽匿感测体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207387" target="_blank" rel="noopener noreferrer">MC-207387</a> 幽匿感测体能够感知在水中潜行移动的玩家，即使他们不是在游泳</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207391" target="_blank" rel="noopener noreferrer">MC-207391</a> 幽匿感测体不会检测某些飞行生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207397" target="_blank" rel="noopener noreferrer">MC-207397</a> 玩家同时着火和冰冻时，每刻都会播放火熄灭的声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207407" target="_blank" rel="noopener noreferrer">MC-207407</a> 村庄总是至少会在 y=0 处生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207417" target="_blank" rel="noopener noreferrer">MC-207417</a> 直接破坏火焰不会触发幽匿感测体，但移除其支撑方块却会正确触发</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207418" target="_blank" rel="noopener noreferrer">MC-207418</a> 破坏画/物品展示框/荧光物品展示框不会触发幽匿感测体，尽管放置它们会触发</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207445" target="_blank" rel="noopener noreferrer">MC-207445</a> 幽匿感测体不会检测鱿鱼游泳</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207473" target="_blank" rel="noopener noreferrer">MC-207473</a> 幽匿感测体不会检测恶魂射击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207520" target="_blank" rel="noopener noreferrer">MC-207520</a> 幽匿感测体不会对劫掠兽的咆哮作出反应</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207521" target="_blank" rel="noopener noreferrer">MC-207521</a> 豹猫和猫在潜行时仍然会发出振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207592" target="_blank" rel="noopener noreferrer">MC-207592</a> 潜行时用带有火矢魔咒的弓射击会触发幽匿感测体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207600" target="_blank" rel="noopener noreferrer">MC-207600</a> 幽匿感测体会检测到钓鱼竿的错误声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207670" target="_blank" rel="noopener noreferrer">MC-207670</a> 幽匿感测体不会检测船和矿车的放置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207671" target="_blank" rel="noopener noreferrer">MC-207671</a> 幽匿感测体不会检测将蜡烛插到蛋糕上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207672" target="_blank" rel="noopener noreferrer">MC-207672</a> 幽匿感测体不会检测用打火石点燃苦力怕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207673" target="_blank" rel="noopener noreferrer">MC-207673</a> 幽匿感测体不会检测用打火石点燃 TNT</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207674" target="_blank" rel="noopener noreferrer">MC-207674</a> 幽匿感测体不会检测将物品放入花盆</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207675" target="_blank" rel="noopener noreferrer">MC-207675</a> 幽匿感测体不会检测将书放在讲台上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207677" target="_blank" rel="noopener noreferrer">MC-207677</a> 幽匿感测体不会检测用瓶子收集水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207678" target="_blank" rel="noopener noreferrer">MC-207678</a> 幽匿感测体不会检测收集蜂蜜瓶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207679" target="_blank" rel="noopener noreferrer">MC-207679</a> 幽匿感测体不会检测在创造模式下破坏蜂巢和蜂箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207745" target="_blank" rel="noopener noreferrer">MC-207745</a> 幽匿感测体不会检测末影龙发射火球</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208193" target="_blank" rel="noopener noreferrer">MC-208193</a> 幽匿感测体不会检测从花盆中取出物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208194" target="_blank" rel="noopener noreferrer">MC-208194</a> 幽匿感测体不会检测蜡烛蛋糕被食用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208477" target="_blank" rel="noopener noreferrer">MC-208477</a> 进入高度高于最大高度的维度会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209361" target="_blank" rel="noopener noreferrer">MC-209361</a> 瞬间点击替换竹笋下方的方块为另一根竹子时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209625" target="_blank" rel="noopener noreferrer">MC-209625</a> 幼年羊驼在固体方块下方且站在地毯上时会窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212117" target="_blank" rel="noopener noreferrer">MC-212117</a> 在岩浆中放置发光地衣会创建含水的发光地衣</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212141" target="_blank" rel="noopener noreferrer">MC-212141</a> 升级到 21w03a 时潜影贝会被旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212149" target="_blank" rel="noopener noreferrer">MC-212149</a> 当玩家通过下界传送门传送并重新加载含有潜影贝的活动区块时，潜影贝有时会出现错误旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212284" target="_blank" rel="noopener noreferrer">MC-212284</a> 拥挤的实体在成长为成年体时被推过方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212290" target="_blank" rel="noopener noreferrer">MC-212290</a> 在某些情况下，“setblock”和“fill”命令在高度 1024 或更高处不起作用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212291" target="_blank" rel="noopener noreferrer">MC-212291</a> 客户端可以不依赖服务器地从载具上下来，导致不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212331" target="_blank" rel="noopener noreferrer">MC-212331</a> 船会按船朝向的方向将你放下，而非按玩家朝向的方向</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212347" target="_blank" rel="noopener noreferrer">MC-212347</a> 导入自定义世界文件时，高度上限被限制为 2047 而不是 2048</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212422" target="_blank" rel="noopener noreferrer">MC-212422</a> 生成具有更高高度限制的世界时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212532" target="_blank" rel="noopener noreferrer">MC-212532</a> 当潜影贝被另一个潜影贝的潜影贝弹射物击中后，生成的潜影贝会出现轻微旋转错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212537" target="_blank" rel="noopener noreferrer">MC-212537</a> 站在潜影贝附近时，它们打开时会轻微抬起你</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212541" target="_blank" rel="noopener noreferrer">MC-212541</a> 潜影贝在生成时通常会错误地旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213512" target="_blank" rel="noopener noreferrer">MC-213512</a> 铜块的命名与基岩版不同</li>
+</ul>

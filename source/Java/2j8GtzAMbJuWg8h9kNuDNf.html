@@ -1,0 +1,43 @@
+<p>Hey everyone! As a few of you might have noticed, we’ve made the decision to postpone the release of 1.19.1 and we're now going back into pre-release mode. This is in order to address a few of our more noticeable issues. We've yet to fully decide on a new release date, but it won't be too far in the future.</p>
+<p>We’ve received a lot of feedback regarding the Player Chat Report feature, which is something we address specifically in a newly released post <a href="https://www.minecraft.net/article/addressing-player-chat-reporting-tool" target="_blank" rel="noopener noreferrer">here</a>, as well as in our <a href="https://aka.ms/chatreportingfaq" target="_blank" rel="noopener noreferrer">FAQ</a> which hopefully answers all your questions!</p>
+<h1>Changes in 1.19.1 Pre-Release 2</h1>
+<p>We've added the ability to see the signing status of chat messages – this is so you can easily tell when a server is tampering with, or removing the signing security of, their players' messages.</p>
+<h2>Chat Trust Status</h2>
+<ul>
+<li>Messages that are not signed with the Secure Chat system, or have been tampered with by the server will now be marked<ul>
+<li>Messages with missing or invalid signatures are marked as "Not Secure"</li>
+<li>Messages that are detected as modified are marked as "Modified"</li>
+</ul></li>
+<li>The trust status of messages are displayed with both a colored indicator and an icon<ul>
+<li>The colored indicator is always visible</li>
+<li>The icon is only visible when the chat screen is open</li>
+</ul></li>
+<li>Hovering over the icon will provide more information about the trust status<ul>
+<li>For modified messages, the original secure text will also be displayed in the tooltip</li>
+</ul></li>
+</ul>
+<h1>Technical changes in 1.19.1 Pre-Release 2</h1>
+<h2>Chat Types</h2>
+<ul>
+<li>Chat types added to the <code>chat_types</code> registry are now only used for player chat, and not system messages<ul>
+<li>The <code>system</code> and <code>game_info</code> chat types have been removed</li>
+</ul></li>
+<li>Chat types have been simplified and are now only required to define <code>chat</code> and <code>narration</code> decorations<ul>
+<li>Chat types no longer support overlays</li>
+<li>A system message should instead be used to display overlays</li>
+</ul></li>
+</ul>
+<h2>server.properties</h2>
+<ul>
+<li><code>enforce-secure-profile</code> is now defaulted to <code>true</code> for dedicated servers</li>
+</ul>
+<h1>Fixed Bugs in 1.19.1 Pre-Release 2</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253112" target="_blank" rel="noopener noreferrer">MC-253112</a> The game output console is logged with warnings regarding chat packets with invalid signatures when using entity selectors within commands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253121" target="_blank" rel="noopener noreferrer">MC-253121</a> Entities and other non-player chat message sources appear as players on the Select Chat Messages to Report screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253493" target="_blank" rel="noopener noreferrer">MC-253493</a> The descriptions of report categories can once again overlap the "Description:" subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253495" target="_blank" rel="noopener noreferrer">MC-253495</a> Selection boxes of fields within the "Select Report Category" menu list don't contain white outlines when selected using the TAB key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253497" target="_blank" rel="noopener noreferrer">MC-253497</a> Entities and other non-player chat message sources appear in the Social Interactions menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253501" target="_blank" rel="noopener noreferrer">MC-253501</a> Long messages within the "Select Chat Messages to Report" menu can extend beyond selection boxes and past the scroll bar</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253517" target="_blank" rel="noopener noreferrer">MC-253517</a> Online players cannot connect to offline server because "invalid profile public key signature"</li>
+</ul>

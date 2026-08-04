@@ -1,0 +1,108 @@
+<p>In this weeks Snapshot we're bringing you tweaks to the Trail Ruins, new command functionality, a new advancement trigger, and more!</p>
+<p>Happy mining!</p>
+<p>Edit: We have published a fix for a crash issue in this Snapshot. If you are experiencing crashes, please try closing all instances of the game and restarting the Launcher.</p>
+<h1>Changes</h1>
+<ul>
+<li>All Pottery Shards has been renamed to Pottery Sherds</li>
+<li>If a vibration is scheduled to be received by a Sculk Sensor or Sculk Shrieker, they will stay queued until all adjacent chunks are loaded and ticking<ul>
+<li>Prevents vibration resonance setups from breaking when unloading their chunks from a distance</li>
+</ul></li>
+<li>The game's application icon has been updated<ul>
+<li>This will be a Grass Block in release versions, and a Dirt Block in snapshot versions</li>
+</ul></li>
+<li>Added native support for ARM64 machine architecture on Windows<ul>
+<li>To try this out, you need to manually specify a native Java Executable in the launcher</li>
+</ul></li>
+</ul>
+<h2>Sniffer</h2>
+<ul>
+<li>Sniffers can now be tempted by Torchflower seeds</li>
+</ul>
+<h2>Trail Ruins</h2>
+<ul>
+<li>Reworked structures based on community feedback</li>
+<li>Added more structure variants</li>
+<li>Sand no longer generates within the structures</li>
+<li>Tweaked the amount of gravel and dirt</li>
+<li>Tweaked the amount of Suspicious Gravel</li>
+<li>Split the loot tables for the Suspicious Gravel within the structure. There is now a dedicated loot table for Rare loot items (e.g. Pottery Sherds, Smithing Templates), and a dedicated loot table for more common loot drops (e.g. Stained Glass Pane, Tools, Candles, etc.)</li>
+<li>Due to these changes you might see errors like <code>Failed to get element ResourceKey[minecraft:worldgen/processor_list / minecraft:trail_ruins_suspicious_sand]</code> in an old snapshot world. These are harmless, but existing Trail Ruin structures that was not previously fully loaded might be missing parts of the structure.</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The data pack version is now 14, accounting for item display orientation changes</li>
+<li>Added a <code>return</code> command</li>
+<li>Added <code>recipe_crafted</code> advancement trigger</li>
+</ul>
+<h2>Commands</h2>
+<h3><code>return</code></h3>
+<p>The <code>return</code> command can be used to control execution flow inside functions and change their return value. Effects:</p>
+<ul>
+<li>Remaining separate top-level commands in the currently executing function (if any) are skipped</li>
+<li>The result value of the <code>function</code> command that triggered the function is changed from the number of commands executed to <code>value</code></li>
+<li>The result value of the <code>return</code> command is also <code>value</code></li>
+</ul>
+<p>Syntax:</p>
+<p><code>return &#x3C;value></code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>value</code>: An integer return value</li>
+</ul>
+<h2>Advancements</h2>
+<h3>New triggers</h3>
+<h4><code>recipe_crafted</code></h4>
+<ul>
+<li>Triggered when crafting a recipe</li>
+<li>Conditions:<ul>
+<li><code>recipe_id</code> - the resource location of the recipe crafted</li>
+<li><code>ingredients</code> - an array of predicates for the item stacks used in the recipe<ul>
+<li>A single item stack can only be used to fulfill one predicate</li>
+<li>Each predicate needs to be fulfilled to trigger the advancement. This allows for seperation between recipes that have same identifier but use different ingredients.</li>
+<li>This field is optional. When not provided, or left empty, only the <code>recipe_id</code> will dictate the success of the trigger</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>Tags</h2>
+<ul>
+<li>Added <code>villager_plantable_seeds</code> to represent which kind of seeds Villagers can farm</li>
+<li>Added <code>maintains_farmland</code> to represent which blocks will not cause farmland to be converted into dirt when placed on top of it</li>
+</ul>
+<h2>Display entity</h2>
+<h3>Rendering changes</h3>
+<ul>
+<li><code>item_display</code> items have been rotated 180 degrees around Y axis to better match transformation applied when rendering items on armor stand head and in item frames<ul>
+<li>For reference, order of transformations applied to model (starting from innermost) is <code>item_transform</code>, rotate Y 180, <code>transformation</code> field, entity orientation (billboard option + <code>Rotation</code> field + <code>Pos</code> field)</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 23w16a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-162253" target="_blank" rel="noopener noreferrer">MC-162253</a> Lag spike when crossing certain chunk borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169498" target="_blank" rel="noopener noreferrer">MC-169498</a> Empty top subchunks don't update skylight in some cases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170010" target="_blank" rel="noopener noreferrer">MC-170010</a> Sky-lightmaps not properly initialized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170012" target="_blank" rel="noopener noreferrer">MC-170012</a> Lightmaps are missing for initial skylight</li>
+<li><a href="https://bugs.mojang.com/browse/MC-199752" target="_blank" rel="noopener noreferrer">MC-199752</a> Polished Blackstone Button takes longer to break than other buttons</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207251" target="_blank" rel="noopener noreferrer">MC-207251</a> Sculk sensors and shriekers do not work correctly when cloned, generated on superflat worlds or placed with custom structures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249450" target="_blank" rel="noopener noreferrer">MC-249450</a> Sculk shriekers placed with NBT don't receive signals from nearby sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252786" target="_blank" rel="noopener noreferrer">MC-252786</a> SculkSensorBlockEntity and SculkShriekerBlockEntity leak VibrationListeners on update</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254410" target="_blank" rel="noopener noreferrer">MC-254410</a> /setidletimeout set to a timer longer than 35791 disconnects idle player immediately</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257178" target="_blank" rel="noopener noreferrer">MC-257178</a> Chiseled Bookshelf redstone behavior is inconsistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260038" target="_blank" rel="noopener noreferrer">MC-260038</a> Sniffer does not have smooth animation transitions for some of its animations, like sniffing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260219" target="_blank" rel="noopener noreferrer">MC-260219</a> Sniffer eating sounds aren't played when feeding them the last item of torchflower seeds within a stack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260221" target="_blank" rel="noopener noreferrer">MC-260221</a> Sniffers can still dig when floated by levitation status effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260237" target="_blank" rel="noopener noreferrer">MC-260237</a> Sniffers can sniff while panicking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260466" target="_blank" rel="noopener noreferrer">MC-260466</a> Torchflower doesn't maintain farmland used to grow it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260849" target="_blank" rel="noopener noreferrer">MC-260849</a> Sniffer can't get into minecart</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261214" target="_blank" rel="noopener noreferrer">MC-261214</a> Amethyst in calibrated sculk sensor is shaded and not stretched</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261286" target="_blank" rel="noopener noreferrer">MC-261286</a> Walking near liquids causes stone footstep sounds to play</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261515" target="_blank" rel="noopener noreferrer">MC-261515</a> You can't brush blocks if a dropped item is between you and the block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261605" target="_blank" rel="noopener noreferrer">MC-261605</a> Splash text sometimes covers several letters of "Java Edition"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261608" target="_blank" rel="noopener noreferrer">MC-261608</a> Sculk sensors and calibrated sculk sensors lack a cooldown state</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261620" target="_blank" rel="noopener noreferrer">MC-261620</a> Crash when modifying age property of a pitcher crop</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261625" target="_blank" rel="noopener noreferrer">MC-261625</a> "Programmer Art" and "High contrast" built-in Resource Packs are incompatible</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261643" target="_blank" rel="noopener noreferrer">MC-261643</a> Villagers can't plant torchflower seeds or pitcher plant pods, despite picking them up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261646" target="_blank" rel="noopener noreferrer">MC-261646</a> Subtitle for Sniffers laying eggs is "Chicken plops"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261740" target="_blank" rel="noopener noreferrer">MC-261740</a> Feeding a Sniffer while it is digging causes it to lay motionless for a while then dig again with no animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261746" target="_blank" rel="noopener noreferrer">MC-261746</a> Incorrect sound event ID spelling for "block.sniffer.egg_crack" and "block.sniffer.egg_hatch"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261804" target="_blank" rel="noopener noreferrer">MC-261804</a> Expired Key preventing players from logging in on servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261857" target="_blank" rel="noopener noreferrer">MC-261857</a> Using the "/setblock", "/fill", or "/clone" commands to create little amounts of blocks in completely isolated areas causes large client-side stutters</li>
+</ul>

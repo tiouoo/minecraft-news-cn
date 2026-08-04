@@ -1,0 +1,129 @@
+<p>Did you know that Camels walk by lifting both legs on one side at the same time? Yes, in snapshot 22w43a, Minecraft knows too! This snapshot also contains another round of tweaks to the Creative Inventory.</p>
+<p>Happy Mining!</p>
+<h1>Changes in 22w43a</h1>
+<ul>
+<li>Changed the colours of the Camel Spawn Egg</li>
+<li>Tweaked Camel walk cycle animation</li>
+<li>Fence Gates no longer provide center support beneath them</li>
+<li>The Chat Reporting screen now shows when the player being reported rejoined chat</li>
+<li>More Changes to the Creative Inventory</li>
+<li>Added Draft Player Reports</li>
+</ul>
+<h2>More Changes to the Creative Inventory</h2>
+<p>A lot of feedback has come pouring in as a result of the creative inventory ordering changes.</p>
+<h3>Changes</h3>
+<ul>
+<li>Change the icons of creative tabs for better color coding as well as show most iconic visuals</li>
+<li>Nature Blocks tab has been renamed to Natural Blocks</li>
+<li>Moved dirts and stones to top of Natural Blocks tab which was a big ask from many people (saying they use many of those blocks more than flowers etc)</li>
+<li>Fixed Water Bottles not populating in the Consumables tab</li>
+<li>Reordered Quartz so Smooth Quartz is a separate section of blocks</li>
+<li>Climbable plant blocks are now together in the Natural Blocks tab</li>
+<li>Fixed order of Waxed Copper blocks</li>
+<li>Fixed order of Coral Blocks to be consistent</li>
+<li>Made sure Netherrack was next to Nylium in Natural Blocks tab</li>
+<li>Reordered equipment so golden tools and weapons were in a logical order</li>
+<li>Moved normal Rails to be before special Rails</li>
+<li>Order colored blocks by their gradient (Wool, Terracotta, Candles, Banners, Stained Glass, etc)</li>
+<li>Moved Signs up higher in the Functional Blocks tab as it is used quite often by players</li>
+<li>Basalt blocks are now found after Nether Brick blocks in the Building Blocks tab, next to Blackstone</li>
+<li>Generally reordered the plants of the Natural Blocks tab</li>
+</ul>
+<h3>Additions</h3>
+<ul>
+<li>Added to Redstone Blocks tab<ul>
+<li>Boat with Chests</li>
+<li>Bell</li>
+<li>Big Dripleaf</li>
+<li>White Wool next to Sculk Sensor</li>
+<li>String next to Tripwire Hook</li>
+<li>Redstone Ores</li>
+<li>Chiselled Bookshelf</li>
+</ul></li>
+<li>Added to Consumables tab<ul>
+<li>Milk Buckets</li>
+</ul></li>
+<li>Added to Functional Blocks tab<ul>
+<li>Ominous Banner</li>
+<li>Dragon Egg</li>
+<li>Lectern</li>
+<li>Lightning Rod</li>
+<li>Note Block</li>
+</ul></li>
+<li>Added to Crafting tab<ul>
+<li>Snowball</li>
+</ul></li>
+<li>Added to Spawn Eggs tab<ul>
+<li>Spawner</li>
+</ul></li>
+<li>Added to Combat tab<ul>
+<li>TNT</li>
+<li>End Crystal</li>
+</ul></li>
+<li>Added to Tools &#x26; Utilities tab<ul>
+<li>Bone Meal</li>
+</ul></li>
+</ul>
+<h2>Added Draft Player Reports</h2>
+<p>Player Reports can now be kept temporarily as a draft while connected to a server.</p>
+<ul>
+<li>When exiting the Player Reporting screen, the report can be either discarded or kept as a draft<ul>
+<li>The draft will always be kept if the screen was forcefully closed (e.g. player dying)</li>
+</ul></li>
+<li>Draft reports are kept until the player leaves the current server or world<ul>
+<li>When leaving, the player will be prompted to either discard or finish and send the report</li>
+</ul></li>
+</ul>
+<h1>Technical Changes in 22w43a</h1>
+<ul>
+<li>Migrated linear algebra types to Java OpenGL Math Library (JOML)</li>
+</ul>
+<h2>Network Protocol</h2>
+<ul>
+<li>Servers can now lazily distribute players' profile public keys along with their first chat packet</li>
+<li>Profile public keys will now be refreshed without reconnecting</li>
+<li>Clients now reset their chat session on receiving a login packet</li>
+</ul>
+<h1>Fixed Bugs in 22w43a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-84873" target="_blank" rel="noopener noreferrer">MC-84873</a> DeathTime values 20+ cause corrupted mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-92017" target="_blank" rel="noopener noreferrer">MC-92017</a>  Shield damage direction is incorrect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-128003" target="_blank" rel="noopener noreferrer">MC-128003</a>  When destroying one block of tall seagrass, the other block becomes air when destroyed, rather than water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188247" target="_blank" rel="noopener noreferrer">MC-188247</a>  Explosions from end crystals can't be blocked by shields</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188506" target="_blank" rel="noopener noreferrer">MC-188506</a>  AngryAt cannot be manually applied to endermen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189911" target="_blank" rel="noopener noreferrer">MC-189911</a>  Splash water bottles don't extinguish mobs and player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191948" target="_blank" rel="noopener noreferrer">MC-191948</a>  Ghast fireballs explosions still inflict damage when blocked by a shield</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198493" target="_blank" rel="noopener noreferrer">MC-198493</a>  Villagers lose their discounts when relogging while it is a zombie villager</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200006" target="_blank" rel="noopener noreferrer">MC-200006</a>  Explosions from beds and respawn anchors can't be blocked by shields</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202513" target="_blank" rel="noopener noreferrer">MC-202513</a>  Weeping vines and twisting vines are not grouped with regular vines in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222407" target="_blank" rel="noopener noreferrer">MC-222407</a>  Endermen holding big dripleaf stems don't drop big dripleaves upon being killed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244694" target="_blank" rel="noopener noreferrer">MC-244694</a>  The sounds of goats stomping and ramming aren't controlled by the "Friendly Creatures" sound slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249691" target="_blank" rel="noopener noreferrer">MC-249691</a>  Nylium is not grouped with netherrack in the Creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252214" target="_blank" rel="noopener noreferrer">MC-252214</a>  Going into water does not extinguish the fire on you if you're in a boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253542" target="_blank" rel="noopener noreferrer">MC-253542</a>  Spawner blocks with SpawnPotential and no SpawnData will crash during worldgen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254597" target="_blank" rel="noopener noreferrer">MC-254597</a>  Mobs hurt by water don't take water damage when they are on a boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254634" target="_blank" rel="noopener noreferrer">MC-254634</a>  POIs are not created properly when upgrading worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256462" target="_blank" rel="noopener noreferrer">MC-256462</a>  If camel is sitting while exiting and reloading the world, it will play the sitting animation again</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256476" target="_blank" rel="noopener noreferrer">MC-256476</a>  Panorama Scroll Speed isn't saved</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256483" target="_blank" rel="noopener noreferrer">MC-256483</a>  Acacia hanging signs cannot be crafted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256494" target="_blank" rel="noopener noreferrer">MC-256494</a>  Birch hanging signs cannot be crafted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256495" target="_blank" rel="noopener noreferrer">MC-256495</a>  Z-fighting occurs when the legs of camels intersect one another</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256502" target="_blank" rel="noopener noreferrer">MC-256502</a>  Crash when pressing certain buttons while on spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256515" target="_blank" rel="noopener noreferrer">MC-256515</a>  Hanging signs connect weirdly on the bottom of a fence gate.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256522" target="_blank" rel="noopener noreferrer">MC-256522</a>  Coral Blocks are sorted different than Corals and Coral Fans</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256534" target="_blank" rel="noopener noreferrer">MC-256534</a>  Saved hotbars can import disabled items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256573" target="_blank" rel="noopener noreferrer">MC-256573</a>  Water bottles, awkward/mundane/thick potions and tipped arrows don't appear in the Creative Inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256575" target="_blank" rel="noopener noreferrer">MC-256575</a>  Some of the translation keys were merged, resulting in some language translation errors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256581" target="_blank" rel="noopener noreferrer">MC-256581</a>  Lightning Rod isn't in Functional Blocks tab in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256582" target="_blank" rel="noopener noreferrer">MC-256582</a>  Lectern isn't in Functional Blocks tab in creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256612" target="_blank" rel="noopener noreferrer">MC-256612</a>  Waxed Exposed Copper blocks are out of order in Building Blocks creative tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256639" target="_blank" rel="noopener noreferrer">MC-256639</a>  Allays, Piglins, and Villagers lose inventory if unloaded and reloaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256661" target="_blank" rel="noopener noreferrer">MC-256661</a>  Line spacing on Hanging Signs is too small, causing certain characters to overlap</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256705" target="_blank" rel="noopener noreferrer">MC-256705</a>  Discrepancy exists between identifier-allowed characters and path segment-allowed characters</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256734" target="_blank" rel="noopener noreferrer">MC-256734</a>  Entities will often spin while pathfinding on top of wall hanging signs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256843" target="_blank" rel="noopener noreferrer">MC-256843</a>  Milk Bucket isn't in the Consumable Tab in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256845" target="_blank" rel="noopener noreferrer">MC-256845</a>  Nether Wart isn't in the Nature Blocks tab in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256846" target="_blank" rel="noopener noreferrer">MC-256846</a>  Chiseled Bookshelf isn't in the Redstone Blocks Tab in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256847" target="_blank" rel="noopener noreferrer">MC-256847</a>  Bone Meal isn't in the Tools &#x26; Utilities Tab in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256848" target="_blank" rel="noopener noreferrer">MC-256848</a>  String isn't in the Redstone Blocks Tab in the creative inventory</li>
+</ul>

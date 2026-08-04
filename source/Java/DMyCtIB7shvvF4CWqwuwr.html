@@ -1,0 +1,94 @@
+<p>In this snapshot we've tweaked the armor trim feature and redefined the Create New World user experience flow.</p>
+<p>Happy world creating!</p>
+<h1>Changes</h1>
+<ul>
+<li>Updated the Create New World screen</li>
+<li>Interacting with armor or elytra items in-hand will now swap them with equipped gear</li>
+<li>The enchantment glint has been further tweaked to be slower and less visible, but also have more contrast in some intervals</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Changed how tooltips in the menu UI are positioned so buttons are still readable</li>
+<li>Added two new options in the Accessibility menu for adjusting the speed and transparency of enchantment glints</li>
+</ul>
+<h2>Updated Create New World Screen</h2>
+<ul>
+<li>The screen is now organized into three tabs<ul>
+<li>The Game-Tab allows to set the world name, Gamemode, Difficultly and whether to allow cheats</li>
+<li>The World-Tab allows to set the World-Type and Seed, and to toggle the generation of structures and the bonus chest</li>
+<li>The More-Tab provides access to the Game Rules and DataPack Selection Screen</li>
+</ul></li>
+<li>Removed the Import Settings button and the corresponding Export Settings button in the Edit World Screen</li>
+</ul>
+<h1>Technical Changes</h1>
+<h2>Trim Patterns &#x26; Materials</h2>
+<ul>
+<li>The following data is now also defined by a trim material:<ul>
+<li><code>override_armor_materials</code> which is an optional map of armor material to overriden color palette<ul>
+<li>Map key is the armor material that this trim material wants to override with a different color palette</li>
+<li>Map value is the name of the color palette that will be used when this trim material is applied to an armor piece with the corresponding armor material</li>
+</ul></li>
+</ul></li>
+<li>The following data is no longer defined by a trim material:<ul>
+<li><code>incompatible_armor_material</code></li>
+</ul></li>
+</ul>
+<h2>Commands</h2>
+<h3><code>effect</code></h3>
+<ul>
+<li><code>infinite</code> is now a valid option for effect durations<ul>
+<li>Infinite effect durations show up as "∞" in the player inventory view</li>
+</ul></li>
+</ul>
+<h1>Experimental Features</h1>
+<ul>
+<li>Armor trims can now be applied to leather armor</li>
+<li>Armor can now have trims of the same material it is made out of<ul>
+<li>For example, a Golden Chestplate with a Golden Armor Trim is now possible</li>
+</ul></li>
+<li>The texture of the Dune armor trim has been tweaked so that the symbol on the chestplate is moved up a few pixels</li>
+<li>Loot tables for smithing templates have been adjusted</li>
+</ul>
+<h2>Loot tables for smithing templates</h2>
+<ul>
+<li>The following common armor trims now always generate 2 templates in a chest when found:<ul>
+<li>Dune</li>
+<li>Coast</li>
+<li>Wild</li>
+<li>Sentry</li>
+</ul></li>
+<li>This is to give new players a chance to understand that smithing templates are consumed when used</li>
+<li>Netherite Upgrade smithing templates have been made twice as common<ul>
+<li>While we do want Netherite upgrading to be more challenging, we felt the previous rates did not encourage further exploration after finding the first Netherite Upgrade template</li>
+</ul></li>
+<li>1 Eye Armor Trim is now guaranteed in every Stronghold library chest<ul>
+<li>This is so even in the most unlucky worlds, this armor trim can still be found</li>
+</ul></li>
+<li>Woodland Mansions now have a greatly increased chance of generating the Vex Armor Trim smithing template<ul>
+<li>Woodland Mansions already have very few chests that utilize loot tables - in unlucky generations, none at all. It was too rare to find one of these trims, and we want the challenge of getting the Vex Armor Trim to be more about finding a Woodland Mansion to begin with</li>
+</ul></li>
+<li>Across the board, smithing templates have been made slightly more common<ul>
+<li>Due to the method of crafting copies of templates, we want the process of discovering another template in a structure to feel like the player has just saved 7 diamonds. If the templates are too rare, this situation does not happen as much, meaning players will not be encouraged to explore more structures</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w05a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-127749" target="_blank" rel="noopener noreferrer">MC-127749</a> Cape is jittering; movement way sharper than in snapshot 18w03b</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147711" target="_blank" rel="noopener noreferrer">MC-147711</a> Drowned no longer have a different swimming animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216270" target="_blank" rel="noopener noreferrer">MC-216270</a> It's not possible to replace armor by right clicking while holding the armor item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252625" target="_blank" rel="noopener noreferrer">MC-252625</a> Frogs play a running animation after the NoAI NBT is applied</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254074" target="_blank" rel="noopener noreferrer">MC-254074</a> Frogs don't play their walking animation when they take damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256479" target="_blank" rel="noopener noreferrer">MC-256479</a> Camels don't play their walking animations when they are damaged</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256493" target="_blank" rel="noopener noreferrer">MC-256493</a> Camels don't have smooth transitions to their idle states when they stop moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256650" target="_blank" rel="noopener noreferrer">MC-256650</a> Frogs don't have smooth transitions to their idle states when they stop moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256664" target="_blank" rel="noopener noreferrer">MC-256664</a> Camels play their walking animations after the "NoAI" NBT tag is applied to them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257464" target="_blank" rel="noopener noreferrer">MC-257464</a> Axolotl walking animation stutters when moving slowly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259206" target="_blank" rel="noopener noreferrer">MC-259206</a> The accessibility onboarding screen can not display any language other than English (US)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259357" target="_blank" rel="noopener noreferrer">MC-259357</a> Text inside the smithing table GUI renders behind the armor stand model in some languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259362" target="_blank" rel="noopener noreferrer">MC-259362</a> The "item.minecraft.smithing_template.netherite_upgrade.additions_slot_description" string is missing an article before the word "Netherite"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259370" target="_blank" rel="noopener noreferrer">MC-259370</a> Stronghold library loot table has been replaced by stronghold altar loot table</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259389" target="_blank" rel="noopener noreferrer">MC-259389</a> Incompatible crafting arrow overlay in the new smithing GUI uses the position of the legacy smithing GUI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259399" target="_blank" rel="noopener noreferrer">MC-259399</a> The armor stand model within the smithing table GUI doesn't render the output item after resizing the game window</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259418" target="_blank" rel="noopener noreferrer">MC-259418</a> Camels with large "LastPoseTick" NBT values still behave strangely and cause a variety of issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259420" target="_blank" rel="noopener noreferrer">MC-259420</a> Pixels not present in the palettes get erased, not kept</li>
+</ul>

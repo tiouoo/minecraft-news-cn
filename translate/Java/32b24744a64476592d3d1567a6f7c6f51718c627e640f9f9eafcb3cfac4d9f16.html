@@ -1,0 +1,381 @@
+<p>现在是 Minecraft 1.20.5 第一个预发布版发布的时候了，其中包含对试炼密室和不祥试炼的一些调整，以及新的进度、大量的技术调整和更改，还有大量的漏洞修复。
+<p>从现在起，你应该会看到漏洞在陆续被修复。除此之外，预发布版不遵循常规的周三快照发布节奏，所以请留意下一个预发布版。
+<h1>实验性特性</h1>
+<h2>试炼密室</h2>
+<ul>
+<li>现在在地下生成时会更一致地被地形掩埋
+<li>重做了 'Chamber 6'，增加了变体，并更名为 'Assembly'
+<li>为密室添加了新的陷阱发射器样式
+<li>修复了走廊中各种断裂的拼图连接
+<li>Chamber Eruption：
+<ul>
+<li>阻止凝灰岩砖在空中生成
+<li>为象限添加了更多灯光
+</ul>
+</ul>
+<h2>不祥试炼</h2>
+<ul>
+<li>能够穿戴装备的生物现在通常会携带附魔武器和盔甲生成
+<ul>
+<li>盔甲附魔包括保护 IV、弹射物保护 IV 和火焰保护 IV
+<li>武器附魔包括锋利 I、击退 I、力量 I 和冲击 I
+</ul>
+<li>穿戴装备的生物死亡时不再有机会掉落其装备
+<li>当不祥试炼刷怪笼选择将弹射物投射到哪个实体上时，现在有 50% 的几率选择玩家
+<ul>
+<li>弹射物现在会在所选实体上方更精准地生成
+</ul>
+</ul>
+<h2>编织</h2>
+<ul>
+<li>现在死亡时会更一致地生成 2-3 个蜘蛛网
+<li>玩家现在会受到通过蜘蛛网时的移动增益影响
+<ul>
+<li>以正常速度的 50% 而不是 25% 移动通过蜘蛛网
+</ul>
+</ul>
+<h2>寄生</h2>
+<ul>
+<li>现在有 10% 的几率生成 1-2 只蠹虫，而不是 5%
+<li>蠹虫现在会在实体边界框的中心生成，并朝实体面朝的方向甩出
+</ul>
+<h2>渗浆</h2>
+<ul>
+<li>在给定的 5x5x5 区域内，只会生成最多不超过实体挤压上限数量的史莱姆
+</ul>
+<h2>进度</h2>
+<ul>
+<li>添加了 <code>Revaulting</code> - 使用不祥试炼钥匙解锁不祥宝库
+</ul>
+<h1>1.20.5-pre1 的新特性</h1>
+<h2>进度</h2>
+<ul>
+<li>添加了以下进度：
+<ul>
+<li><code>Isn't it Scute?</code> - 使用刷子从犰狳身上获得犰狳鳞甲
+<li><code>Snip it!</code> - 使用剪刀从狼身上移除狼铠
+<li><code>Good as New</code> - 使用犰狳鳞甲修复损坏的狼铠
+<li><code>The Whole Pack</code> - 驯服每种狼变体中的一只
+</ul>
+</ul>
+<h1>1.20.5-pre1 的更改</h1>
+<ul>
+<li>添加了对 Viossa 语言的支持
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 39
+</ul>
+<h1>数据包版本 39</h1>
+<ul>
+<li>添加了新的物品子谓词和战利品函数
+<li>为结构添加了新的地形适应类型：<code>encapsulate</code>
+<ul>
+<li>会在结构的每个部分周围增加密度
+<li>非常适合需要完全被地下覆盖的结构
+</ul>
+<li>已移除成书中的页数限制
+<li>在命令和数据包定义中，不再允许组合使用 <code>max_stack_size</code> 和 <code>max_damage</code> 组件
+<li>在实体 <code>equipment</code> 子谓词中添加了一个新选项 <code>body</code>，用于匹配实体身体盔甲槽中的物品
+<li><code>food</code> 组件上的 <code>saturation_modifier</code> 字段已替换为 <code>saturation</code>
+<ul>
+<li><code>saturation</code> 是添加到玩家饱和度的确切值
+<li>相对于以前的 <code>saturation_modifier</code>，其定义为 <code>saturation = nutrition * saturation_modifier * 2</code>
+</ul>
+<li>命令和区域效果云中的粒子表示方式已更改
+<li>更改了刷怪笼的 <code>SpawnPotentials</code> 和试炼刷怪笼配置的 <code>spawn_potentials</code> 中的可选 <code>equipment_loot_table</code> 字段
+<ul>
+<li>现在命名为 <code>equipment</code>，而不是 <code>equipment_loot_table</code>
+<li>格式：包含字段的对象
+<ul>
+<li><code>loot_table</code> - 用于生成装备的战利品表
+<li><code>slot_drop_chances</code> - 可选的装备槽位到指定掉落几率的映射
+<ul>
+<li>也可以是单个值而不是列表，以应用于所有槽位：例如，<code>slot_drop_chances: 0.0f</code> 将对所有槽位应用 0% 的几率
+</ul>
+</ul>
+<li>例如 <code>equipment: {loot_table: "minecraft:equipment/trial_chamber", slot_drop_chances: {"head": 0.0f, "chest": 0.25f, "legs": 1.0f, "feet": 0.25f}}</code>
+<li>如果存在，从指定战利品表中抽取的物品将装备到生成的生物身上
+</ul>
+<li>移除了物品标签 <code>minecraft:tools</code>（与 <code>minecraft:breaks_decorated_pots</code> 重叠）
+<li>添加了实体类型标签 <code>minecraft:punchable_projectiles</code>，用于应能被拳头击中并偏转向玩家视线方向的弹射物
+<li>添加了附魔标签 <code>minecraft:tooltip_order</code>，用于控制附魔在工具提示中的列出顺序
+</ul>
+<h2>修改的战利品函数</h2>
+<h3><code>set_contents</code></h3>
+<ul>
+<li>未使用的字段 <code>type</code> 已被移除
+<li>添加了新的必填字段 <code>component</code>：
+<ul>
+<li>描述要用物品填充的目标组件
+<li>现有内容将被替换
+<li>允许的值：<code>container</code>、<code>bundle_contents</code>、<code>charged_projectiles</code>
+<li><code>bundle_contents</code> 和 <code>charged_projectiles</code> 将忽略空堆叠
+</ul>
+</ul>
+<h3><code>set_custom_data</code></h3>
+<p>字段 <code>tag</code> 现在既接受以字符串形式编写的 SNBT 数据（现有格式），也接受未展平的标签
+<h2>新的战利品函数</h2>
+<h3><code>modify_contents</code></h3>
+<ul>
+<li>将修饰符函数应用于组件内的每个物品
+<li>如果组件不存在，则不会添加它
+<li>字段：
+<ul>
+<li><code>conditions</code> - 用于过滤此函数的条件列表
+<li><code>component</code> - 目标组件
+<ul>
+<li>允许的值：<code>container</code>、<code>bundle_contents</code>、<code>charged_projectiles</code>
+</ul>
+<li><code>modifier</code> - 要应用于容器内每个物品的函数或函数列表
+</ul>
+</ul>
+<h3><code>set_item</code></h3>
+<ul>
+<li>替换物品堆叠的物品类型，而不改变数量和组件
+<li>字段：
+<ul>
+<li><code>conditions</code> - 用于过滤此函数的条件列表
+<li><code>item</code> - 新的物品类型
+</ul>
+</ul>
+<h3><code>filtered</code></h3>
+<ul>
+<li>仅对匹配物品谓词的物品应用子函数
+<li>字段：
+<ul>
+<li><code>conditions</code> - 用于过滤此函数的条件列表
+<li><code>item_filter</code> - 用于匹配物品的物品谓词
+<li><code>modifier</code> - 应用于匹配物品的函数
+</ul>
+</ul>
+<h3><code>set_custom_model_data</code></h3>
+<ul>
+<li>设置 <code>custom_model_data</code> 组件
+<li>字段：
+<ul>
+<li><code>conditions</code> - 用于过滤此函数的条件列表
+<li><code>value</code> - 整数数字提供器
+</ul>
+</ul>
+<h2>新的物品子谓词</h2>
+<p>组件谓词的通用规则：
+<ul>
+<li>除非另有说明，谓词中与组件中字段同名的字段（即与谓词同名）将匹配该字段的值
+<li>这些字段通常与组件中的类型相同，但将是可选的
+<li>例外：
+<ul>
+<li>列表字段将被替换为集合匹配器（见下文）
+<li>整数和浮点字段将被替换为范围
+<li>注册表 ID 将被替换为接受 ID、ID 列表或标签的类型
+</ul>
+</ul>
+<h3>集合匹配器</h3>
+<p>集合匹配器是用于匹配集合的谓词共享部分。此匹配器的每个实例都具有相同字段和相同功能，唯一不同的是所匹配元素的类型。字段：
+<ul>
+<li><code>size</code> - 用于匹配集合大小的整数范围
+<li><code>contains</code> - 元素谓词列表
+<ul>
+<li>所有条件都必须匹配，谓词才能通过
+<li>并非测试容器中的所有元素都必须匹配
+<li>元素可以按任意顺序排列
+<li>单个元素可以匹配多个谓词
+<li>示例（当匹配物品堆叠时）：
+<ul>
+<li><code>{contents:[{item:diamond}]}</code> - 当至少有一个钻石物品时匹配
+<li><code>{contents:[{item:diamond}, {item:dirt}]}</code> - 当至少有一个钻石物品且至少有一个泥土物品时匹配
+</ul>
+</ul>
+<li><code>count</code> - 关于元素数量的匹配器列表
+<ul>
+<li>条目字段：
+<ul>
+<li><code>test</code> - 元素匹配器
+<li><code>count</code> - 可选的整数范围，用于检查通过 <code>test</code> 的元素数量
+</ul>
+<li>示例（当匹配物品堆叠时）：
+<ul>
+<li><code>{count:[{count:3,test:{items:diamond}}]}}</code> 仅当正好有 3 堆钻石时（无论堆叠大小）才会匹配
+</ul>
+</ul>
+</ul>
+<h3><code>container</code></h3>
+<ul>
+<li><code>container</code> 组件的匹配器（例如潜影盒）
+<li>字段：
+<ul>
+<li><code>items</code> - 可选的集合匹配器
+<ul>
+<li>注意：空物品会被忽略。这意味着 <code>container~{items:{size:3}}</code> 仅在容器中恰好有 3 个非空堆叠时才会通过
+</ul>
+</ul>
+</ul>
+<h2><code>bundle_contents</code></h2>
+<ul>
+<li><code>bundle_contents</code> 组件的匹配器
+<li>字段：
+<ul>
+<li><code>items</code> - 可选的集合匹配器
+</ul>
+</ul>
+<h2><code>firework_explosion</code></h2>
+<ul>
+<li><code>firework_explosion</code> 组件的匹配器
+<li>字段
+<ul>
+<li><code>shape</code> - 可选形状匹配器，与 <code>minecraft:firework_explosion</code> 组件中的 <code>shape</code> 字段值相同
+<li><code>has_trail</code> - 可选的布尔值
+<li><code>has_twinkle</code> - 可选的布尔值
+</ul>
+</ul>
+<h2><code>fireworks</code></h2>
+<ul>
+<li><code>fireworks</code> 组件的匹配器
+<li>字段：
+<ul>
+<li><code>explosions</code> - 可选的集合匹配器，用于 <code>firework_explosion</code> 谓词
+<li><code>flight_duration</code> - 可选的飞行持续时间整数范围检查
+</ul>
+<li>示例：<code>minecraft:fireworks~{explosions:{contains:[{shape:small_ball}]}}]</code> - 如果烟花至少有一个 <code>small_ball</code> 形状的爆炸，则匹配
+</ul>
+<h2><code>writable_book_content</code></h2>
+<ul>
+<li><code>writable_book_content</code> 组件的匹配器
+<li>字段
+<ul>
+<li><code>pages</code> - 可选的字符串集合匹配器（仅匹配页面未过滤的内容）
+</ul>
+</ul>
+<h2><code>fireworks</code></h2>
+<ul>
+<li><code>written_book_content</code> 组件的匹配器
+<li>字段
+<ul>
+<li><code>pages</code> - 可选的聊天组件集合匹配器（仅匹配页面未过滤的内容）
+<li><code>author</code> - 可选的字符串值
+<li><code>title</code> - 可选的字符串值（仅匹配值）
+<li><code>generation</code> - 可选的世代整数范围检查
+<li><code>resolved</code> - 可选的布尔值
+</ul>
+</ul>
+<h2><code>attribute_modifiers</code></h2>
+<ul>
+<li><code>attribute_modifiers</code> 组件的匹配器
+<li>字段：
+<ul>
+<li><code>modifiers</code> - 可选的集合匹配器，用于以下具有以下字段的条目：
+<ul>
+<li><code>attribute</code> - 可选的 ID、ID 列表或标签，用于匹配属性
+<li><code>id</code> - 可选的 UUID
+<li><code>name</code> - 可选的字符串
+<li><code>amount</code> - 可选的双精度范围检查
+<li><code>operation</code> - 可选的操作类型（与 <code>attribute_modifiers</code> 组件中的 <code>operation</code> 字段值相同）
+<li><code>slot</code> - 可选的适用槽位类型（与 <code>attribute_modifiers</code> 组件中的 <code>slot</code> 字段值相同）
+</ul>
+</ul>
+</ul>
+<h2><code>trim</code></h2>
+<ul>
+<li><code>trim</code> 组件的匹配器
+<li>字段：
+<ul>
+<li><code>material</code> - 可选的 ID、ID 列表或标签，用于匹配材料
+<li><code>pattern</code> - 可选的 ID、ID 列表或标签，用于匹配图案
+</ul>
+</ul>
+<h2>粒子表示方式</h2>
+<ul>
+<li>命令和区域效果云中的 <code>Particles</code> 等字段中的粒子选项现在使用与世界生成文件相同的表示方式（例如现有生物群系的环境粒子设置）
+<li>例如，命令 <code>/particle minecraft:dust 1.0 0.0 0.0 2.0 ...</code> 变成 <code>/particle minecraft:dust{color:[1.0, 0.0, 0.0], scale:2.0} ...</code>
+<li>没有额外选项的粒子语法（如 <code>minecraft:villager</code>）保持不变
+<li>方块粒子（<code>minecraft:block</code>、<code>minecraft:block_marker</code>、<code>minecraft:falling_dust</code>、<code>minecraft:dust_pillar</code>）选项的更改：
+<ul>
+<li>字段 <code>value</code> 已重命名为 <code>block_state</code>
+<li>字段 <code>block_state</code> 现在也接受纯方块名称来表示默认方块状态
+<li>示例转换：
+<ul>
+<li><code>minecraft:block minecraft:redstone_lamp[lit=true]</code> -> <code>minecraft:block{block_state: {Name: "minecraft:redstone_lamp", Properties: {lit: "true"}}}</code>
+<li><code>minecraft:block minecraft:diamond_block</code> -> <code>minecraft:block{block_state: "minecraft:diamond_block"}</code>
+</ul>
+</ul>
+<li><code>minecraft:item</code> 选项的更改：
+<ul>
+<li>字段 <code>value</code> 已重命名为 <code>item</code>
+<li>字段 <code>item</code> 现在也接受纯物品名称来表示具有默认组件的物品堆叠
+<li><code>count</code> 字段现在被忽略
+<li>示例转换：
+<ul>
+<li><code>minecraft:item minecraft:dirt</code> -> <code>minecraft:item{item: {id: "minecraft:dirt"}}</code>
+<li><code>minecraft:item minecraft:dirt</code> -> <code>minecraft:item{item: "minecraft:dirt"}</code>
+</ul>
+</ul>
+<li><code>dust_color_transition</code> 选项的更改：
+<ul>
+<li>字段 <code>fromColor</code> 已重命名为 <code>from_color</code>
+<li>字段 <code>toColor</code> 已重命名为 <code>to_color</code>
+<li>示例转换：<code>dust_color_transition 1.0 0.0 0.0 0.5 0.0 1.0 0.5</code> -> <code>dust_color_transition{from_color: [1.0f, 0.0f, 0.0f], scale: 0.5f, to_color: [0.0f, 1.0f, 0.5f]}</code>
+</ul>
+<li><code>entity_effect</code> 选项的更改：
+<ul>
+<li>字段 <code>value</code> 已重命名为 <code>color</code>
+<li>字段 <code>color</code> 现在也接受表示 RGBA 颜色的浮点数列表
+</ul>
+</ul>
+<h1>1.20.5 预发布版 1 修复的漏洞</h1>
+<ul>
+<li><a href=https://bugs.mojang.com/browse/MC-165435 rel="noopener noreferrer"target=_blank>MC-165435</a> 站在 2×2 岩浆块气泡柱中间时，无法在创造模式下触发飞行模式
+<li><a href=https://bugs.mojang.com/browse/MC-188497 rel="noopener noreferrer"target=_blank>MC-188497</a> 无法在召唤时设置 AngerTime 和 AngryAt
+<li><a href=https://bugs.mojang.com/browse/MC-207353 rel="noopener noreferrer"target=_blank>MC-207353</a> 如果攻击造成 0 伤害，恶魂火球和风弹无法在近战中被改变方向
+<li><a href=https://bugs.mojang.com/browse/MC-263315 rel="noopener noreferrer"target=_blank>MC-263315</a> 无法通过 /execute on target 检测疣猪兽/僵尸疣猪兽的攻击目标
+<li><a href=https://bugs.mojang.com/browse/MC-264456 rel="noopener noreferrer"target=_blank>MC-264456</a> 青蛙和美西螈攻击的目标实体无法通过 /execute on target 检测到
+<li><a href=https://bugs.mojang.com/browse/MC-265390 rel="noopener noreferrer"target=_blank>MC-265390</a> Forceload 命令提供了错误的输出
+<li><a href=https://bugs.mojang.com/browse/MC-267934 rel="noopener noreferrer"target=_blank>MC-267934</a> 发送 ClientboundTransferPacket 后接着断开连接只会将玩家踢出
+<li><a href=https://bugs.mojang.com/browse/MC-268000 rel="noopener noreferrer"target=_blank>MC-268000</a> 使用 /give 给予玩家头颅时客户端崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-268346 rel="noopener noreferrer"target=_blank>MC-268346</a> 当 generic.jump_strength 设置为 0 时，跳跃可以使用，从而导致速度提升
+<li><a href=https://bugs.mojang.com/browse/MC-268947 rel="noopener noreferrer"target=_blank>MC-268947</a> 当 minecraft:generic.gravity 属性增加时，无法可靠地开始飞行
+<li><a href=https://bugs.mojang.com/browse/MC-269191 rel="noopener noreferrer"target=_blank>MC-269191</a> 旧村民无法交易
+<li><a href=https://bugs.mojang.com/browse/MC-269192 rel="noopener noreferrer"target=_blank>MC-269192</a> 旋风人不受 'execute on target' 命令的影响
+<li><a href=https://bugs.mojang.com/browse/MC-269266 rel="noopener noreferrer"target=_blank>MC-269266</a> 来自苦力怕爆炸的区域效果云粒子颜色不正确
+<li><a href=https://bugs.mojang.com/browse/MC-269320 rel="noopener noreferrer"target=_blank>MC-269320</a> 超过 100 页的书在升级时会被截断
+<li><a href=https://bugs.mojang.com/browse/MC-269357 rel="noopener noreferrer"target=_blank>MC-269357</a> Flow 和 guster 旗帜图案的描述显示为原始翻译字符串
+<li><a href=https://bugs.mojang.com/browse/MC-269366 rel="noopener noreferrer"target=_blank>MC-269366</a> 与其他工具不同，重锤无法打破饰纹陶罐
+<li><a href=https://bugs.mojang.com/browse/MC-269496 rel="noopener noreferrer"target=_blank>MC-269496</a> 如果你在矿车或船中与旋风人战斗，你不会受到任何伤害
+<li><a href=https://bugs.mojang.com/browse/MC-269501 rel="noopener noreferrer"target=_blank>MC-269501</a> 快捷栏上方的文本没有背景，即使在旁观者模式下将“文本背景”设置设为“始终显示”时也是如此
+<li><a href=https://bugs.mojang.com/browse/MC-269508 rel="noopener noreferrer"target=_blank>MC-269508</a> 玩家从音爆中落地时跳跃会保持垂直动量
+<li><a href=https://bugs.mojang.com/browse/MC-269609 rel="noopener noreferrer"target=_blank>MC-269609</a> 与箭和三叉戟不同，风弹可以伤害停歇在末地传送门上的末影龙
+<li><a href=https://bugs.mojang.com/browse/MC-269610 rel="noopener noreferrer"target=_blank>MC-269610</a> 当凋灵生命值达到一半或以下时，风弹有能力伤害它
+<li><a href=https://bugs.mojang.com/browse/MC-269680 rel="noopener noreferrer"target=_blank>MC-269680</a> 在将物品堆叠的 max_stack_size 修改为低于其当前堆叠数量后尝试保存时，游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-269707 rel="noopener noreferrer"target=_blank>MC-269707</a> 酿造台槽位人为地设置了 64 的最大堆叠数量
+<li><a href=https://bugs.mojang.com/browse/MC-269765 rel="noopener noreferrer"target=_blank>MC-269765</a> 在下落过程中击中目标后，重锤伤害不会重置
+<li><a href=https://bugs.mojang.com/browse/MC-269933 rel="noopener noreferrer"target=_blank>MC-269933</a> limit_count 物品修饰符可以创建超出堆叠上限的物品
+<li><a href=https://bugs.mojang.com/browse/MC-269947 rel="noopener noreferrer"target=_blank>MC-269947</a> 用重锤连续点击会造成非常高的伤害
+<li><a href=https://bugs.mojang.com/browse/MC-269948 rel="noopener noreferrer"target=_blank>MC-269948</a> “minecraft:event.mob_effect.raid_omen”声音事件的字幕显示为原始翻译字符串
+<li><a href=https://bugs.mojang.com/browse/MC-269949 rel="noopener noreferrer"target=_blank>MC-269949</a> 新的“突袭之兆”效果纹理使用 Programmer Art 唤魔者作为基础
+<li><a href=https://bugs.mojang.com/browse/MC-269954 rel="noopener noreferrer"target=_blank>MC-269954</a> 使用带有风爆附魔的重锤击中非生物实体时，会将玩家向上推进，即使他们在飞行中也是如此
+<li><a href=https://bugs.mojang.com/browse/MC-269955 rel="noopener noreferrer"target=_blank>MC-269955</a> 在创造模式下飞行时，用带有风爆附魔的重锤攻击末影龙会将玩家向上推，这与攻击其他生物时不同
+<li><a href=https://bugs.mojang.com/browse/MC-269959 rel="noopener noreferrer"target=_blank>MC-269959</a> 加载进入世界时，控制台打印出“Not a list”
+<li><a href=https://bugs.mojang.com/browse/MC-269961 rel="noopener noreferrer"target=_blank>MC-269961</a> 带有编织效果的非玩家实体无法以正常速度穿过蜘蛛网
+<li><a href=https://bugs.mojang.com/browse/MC-269963 rel="noopener noreferrer"target=_blank>MC-269963</a> 当实验性特性被禁用时，不祥之兆不会被移除
+<li><a href=https://bugs.mojang.com/browse/MC-269974 rel="noopener noreferrer"target=_blank>MC-269974</a> 带有编织效果的生物死亡时，无法用蜘蛛网替换可替换方块
+<li><a href=https://bugs.mojang.com/browse/MC-269976 rel="noopener noreferrer"target=_blank>MC-269976</a> 可以通过村民交易获得风爆附魔书
+<li><a href=https://bugs.mojang.com/browse/MC-269977 rel="noopener noreferrer"target=_blank>MC-269977</a> 可以在附魔台上获得风爆附魔
+<li><a href=https://bugs.mojang.com/browse/MC-269980 rel="noopener noreferrer"target=_blank>MC-269980</a> 风爆附魔由普通攻击触发，而不是猛击攻击
+<li><a href=https://bugs.mojang.com/browse/MC-269993 rel="noopener noreferrer"target=_blank>MC-269993</a> 使用带有风爆附魔的重锤击中风弹会产生非常高的向上动量
+<li><a href=https://bugs.mojang.com/browse/MC-269999 rel="noopener noreferrer"target=_blank>MC-269999</a> 可以在未启用实验性特性的情况下获得寄生、渗浆和编织药水
+<li><a href=https://bugs.mojang.com/browse/MC-270001 rel="noopener noreferrer"target=_blank>MC-270001</a> 粒子 'minecraft:item minecraft:air' 会导致客户端崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-270004 rel="noopener noreferrer"target=_blank>MC-270004</a> 给自己一个风爆附魔等级高于 3 的物品，然后击中某些实体会导致游戏崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-270005 rel="noopener noreferrer"target=_blank>MC-270005</a> 重锤的猛击攻击可以在单次下落中触发多次
+<li><a href=https://bugs.mojang.com/browse/MC-270009 rel="noopener noreferrer"target=_blank>MC-270009</a> 带有寄生效果的生物可以在未实际受伤的情况下生成蠹虫
+<li><a href=https://bugs.mojang.com/browse/MC-270048 rel="noopener noreferrer"target=_blank>MC-270048</a> 宝库纹理不一致
+<li><a href=https://bugs.mojang.com/browse/MC-270060 rel="noopener noreferrer"target=_blank>MC-270060</a> 试炼刷怪笼纹理的发光部分不一致
+<li><a href=https://bugs.mojang.com/browse/MC-270094 rel="noopener noreferrer"target=_blank>MC-270094</a> 制箭师会在未启用实验性特性的情况下出售新的药箭
+<li><a href=https://bugs.mojang.com/browse/MC-270099 rel="noopener noreferrer"target=_blank>MC-270099</a> 即使 mobGriefing 被禁用，杀死带有编织效果的生物仍会放置蜘蛛网
+<li><a href=https://bugs.mojang.com/browse/MC-270119 rel="noopener noreferrer"target=_blank>MC-270119</a> /item 命令的 contents 槽位对射出的箭、三叉戟和火球无效
+<li><a href=https://bugs.mojang.com/browse/MC-270125 rel="noopener noreferrer"target=_blank>MC-270125</a> 风爆可以从箱子战利品和钓鱼战利品中获得
+<li><a href=https://bugs.mojang.com/browse/MC-270158 rel="noopener noreferrer"target=_blank>MC-270158</a> 当重锤处于冷却时，风爆仍会激活
+<li><a href=https://bugs.mojang.com/browse/MC-270161 rel="noopener noreferrer"target=_blank>MC-270161</a> 风爆附魔对载具实体效果显着更强
+<li><a href=https://bugs.mojang.com/browse/MC-270201 rel="noopener noreferrer"target=_blank>MC-270201</a> 钓鱼竿的鱼线在第三人称中不考虑 scale 属性
+<li><a href=https://bugs.mojang.com/browse/MC-270236 rel="noopener noreferrer"target=_blank>MC-270236</a> area_effect_cloud 和滞留药水导致 potion_contents.custom_color 略微透明
+<li><a href=https://bugs.mojang.com/browse/MC-270412 rel="noopener noreferrer"target=_blank>MC-270412</a> 风弹物品在非实验性世界中崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-270475 rel="noopener noreferrer"target=_blank>MC-270475</a> 容器组件槽位 -1 崩溃
+</ul>

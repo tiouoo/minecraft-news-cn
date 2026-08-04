@@ -1,0 +1,99 @@
+<p>A  chance to re-live the good old times appears in snapshot 22w16a with the ability to de-fragment a Disc - a new Music Disc, to be precise! This snapshot also comes with even more new music, tweaks to the Allay and to top it off it makes some random gameplay events slightly more predictable.</p>
+<p>Enjoy!</p>
+<h1>New Features in 22w16a</h1>
+<ul>
+<li>Added new music</li>
+<li>Added Disc Fragment 5 and Music Disc 5</li>
+</ul>
+<h2>Four new music tracks</h2>
+<ul>
+<li>The new music tracks are called Ancestry, Aerie, Firebugs and Labyrinthine</li>
+<li>They play in certain biomes and in the main menu</li>
+</ul>
+<h2>Music Disc 5</h2>
+<p>A new music disc has been added to the game.</p>
+<ul>
+<li>Unlike other discs, it can only be obtained by finding and crafting 9 Disc Fragments together</li>
+<li>These Disc Fragments can be found rarely in Ancient City chests</li>
+</ul>
+<h1>Changes in 22w16a</h1>
+<ul>
+<li>Allay tweaks</li>
+<li>Improved the predictability a number of gameplay elements</li>
+<li>Frogs can now spawn on Grass, Mud, Moss Carpet, Mangrove Roots and Muddy Mangrove Roots</li>
+<li>Froglights are now movable by pistons</li>
+</ul>
+<h2>Allay tweaks</h2>
+<ul>
+<li>Allay health raised from 10 to 20</li>
+<li>Delay after item throw lowered from 5 secs to 3 secs</li>
+<li>Item search range raised from 9 to 32</li>
+<li>Movement speed changes:<ul>
+<li>Allay is now slower when just wandering</li>
+<li>Allay is now faster when collecting items, going to the player or going to a noteblock</li>
+</ul></li>
+<li>Throw arc has changed following community feedback</li>
+</ul>
+<h2>Predictability of randomized events</h2>
+<p>Some randomized events are now more predictable and no longer have a possibility of extreme behaviors.</p>
+<ul>
+<li>Placement and velocity of things dropped from Droppers/Dispensers</li>
+<li>Placement and velocity of items spawned from containers upon destroy</li>
+<li>Randomized <code>follow_range</code> component attribute for mobs</li>
+<li>Velocity of Horses spawned from skeleton traps</li>
+<li>Blaze random position and randomized speed of Blaze projectiles</li>
+<li>Randomized portion of damage and velocity of Arrows</li>
+<li>Randomized flight pattern of Fireworks</li>
+<li>Bobbing patterns and time until a fish for Fishing Rods</li>
+</ul>
+<h1>Technical Changes in 22w16a</h1>
+<ul>
+<li><code>LWJGL</code> library has been updated to version 3.3.1</li>
+<li>Added a heap memory allocation metric to the F3 debug screen</li>
+<li>Added doWardenSpawning game rule</li>
+<li>Updates to paintings</li>
+</ul>
+<h2>Painting</h2>
+<ul>
+<li>Paintings that are placeable in survival can now be controlled with the <code>painting_variant/placeable</code> tag</li>
+<li>Added unused paintings from Bedrock edition (<code>earth</code>, <code>wind</code>, <code>fire</code>, <code>water</code>)<ul>
+<li>These paintings are not placeable by default, but can be added through a datapack</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 22w16a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-81870" target="_blank" rel="noopener noreferrer">MC-81870</a> Editing entitydata of Painting does not reflect ingame until chunk reload</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111809" target="_blank" rel="noopener noreferrer">MC-111809</a> Paintings unrender when entity data is updated rapidly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187188" target="_blank" rel="noopener noreferrer">MC-187188</a> Painting NBT and registry contain a typo: "Motive" instead of "Motif"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226184" target="_blank" rel="noopener noreferrer">MC-226184</a> Axolotls pathfinding to water can sometimes fall in wide holes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228049" target="_blank" rel="noopener noreferrer">MC-228049</a> Axolotl can't pathfind through open doors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228174" target="_blank" rel="noopener noreferrer">MC-228174</a> Axolotls try to pathfind through 2 tall walls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244957" target="_blank" rel="noopener noreferrer">MC-244957</a> "Search" Option in Social Interactions Screen is not labeled in the right order when using Tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245001" target="_blank" rel="noopener noreferrer">MC-245001</a> "Manage with Microsoft account" button in Social Interactions menu is not centered</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249084" target="_blank" rel="noopener noreferrer">MC-249084</a> No sound is present for placing a Bucket of Tadpole</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249092" target="_blank" rel="noopener noreferrer">MC-249092</a> Mangrove Stripped Log, Stripped Wood and Wood are in the incorrect order in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249176" target="_blank" rel="noopener noreferrer">MC-249176</a> Froglights are not visible on maps</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249193" target="_blank" rel="noopener noreferrer">MC-249193</a> Frog can't pathfind through open doors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249217" target="_blank" rel="noopener noreferrer">MC-249217</a> Fluid level next to froglights is too low</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249245" target="_blank" rel="noopener noreferrer">MC-249245</a> Turtle can't pathfind through open doors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249246" target="_blank" rel="noopener noreferrer">MC-249246</a> Strider can't pathfind through open doors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249265" target="_blank" rel="noopener noreferrer">MC-249265</a> Some blocks cannot be placed on froglights</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249459" target="_blank" rel="noopener noreferrer">MC-249459</a> Cactus is not destroyed by froglights</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249663" target="_blank" rel="noopener noreferrer">MC-249663</a> The subtitles of some parrot imitation sounds are inconsistent with the original sounds' subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249679" target="_blank" rel="noopener noreferrer">MC-249679</a> Incorrect activation of warden's sniffing animations and behavior</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249715" target="_blank" rel="noopener noreferrer">MC-249715</a> Allays don't drop their held items upon death</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249766" target="_blank" rel="noopener noreferrer">MC-249766</a> Allays can despawn after being given an item if they haven't picked up any items yet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249790" target="_blank" rel="noopener noreferrer">MC-249790</a> Allay follows and drops items for players in spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249838" target="_blank" rel="noopener noreferrer">MC-249838</a> Allays lose their idle animation once they start moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249855" target="_blank" rel="noopener noreferrer">MC-249855</a> Parity Issue: Allays don't have a flying animation in Java</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249912" target="_blank" rel="noopener noreferrer">MC-249912</a> minecraft:ancient_city/city_center_3 is one block shorter compared than the other ancient city centers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249928" target="_blank" rel="noopener noreferrer">MC-249928</a> Mangrove tree roots do not update blocks around them when generating</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250039" target="_blank" rel="noopener noreferrer">MC-250039</a> Wardens can get angry at mobs outside world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250040" target="_blank" rel="noopener noreferrer">MC-250040</a> Wardens can hear mobs beyond the world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250041" target="_blank" rel="noopener noreferrer">MC-250041</a> Wardens can spawn outside of world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250044" target="_blank" rel="noopener noreferrer">MC-250044</a> Observers don't detect mangrove roots when tree grows</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250094" target="_blank" rel="noopener noreferrer">MC-250094</a> Wardens ignore /kill execution whilst they're emerging or digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250095" target="_blank" rel="noopener noreferrer">MC-250095</a> Wardens can spawn in very narrow places, causing them to suffocate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250293" target="_blank" rel="noopener noreferrer">MC-250293</a> The "allay_dust" particle is unused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250294" target="_blank" rel="noopener noreferrer">MC-250294</a> Parity Issue: Allays item detection range is significantly smaller than in Bedrock</li>
+</ul>

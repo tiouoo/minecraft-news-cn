@@ -1,0 +1,46 @@
+<p>我们现在为 Minecraft 1.19.4 发布第二个预发布版。此预发布版包含漏洞修复，以及饰纹陶罐模型的更新。</p>
+<p>提醒一下，1.19.4 的预发布版周期将继续以漏洞修复为主。</p>
+<p>挖矿愉快！</p>
+<h1>技术性更改</h1>
+<h2>生物行为</h2>
+<ul>
+<li>现在，只有位于 <code>dismounts_underwater</code> 实体标签中的生物才会在水中强制骑乘者下坐骑</li>
+</ul>
+<h1>实验性特性的更改</h1>
+<h2>樱花生物群系和樱花木</h2>
+<ul>
+<li>更新了粉红色花瓣的纹理</li>
+<li>更新了樱花木门、樱花树苗和樱花木箱船的纹理</li>
+</ul>
+<h2>饰纹陶罐</h2>
+<ul>
+<li>更新了饰纹陶罐模型的颈部<ul>
+<li>对于之前的陶罐，我们决定让陶罐的颈部可以与方块穿插，以便在建造时更加灵活</li>
+<li>然而，这导致了一些 Z-fighting 问题，即两个物体处于完全相同的位置并导致闪烁</li>
+<li>新的更复杂的方块模型可以防止这个问题</li>
+</ul></li>
+</ul>
+<h1>修复 1.19.4 预发布版 2 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-137552" target="_blank" rel="noopener noreferrer">MC-137552</a> 已装填的弩在物品展示框中以及掉落在地面上时看起来像是未装填的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229293" target="_blank" rel="noopener noreferrer">MC-229293</a> 投射问题：在远处被破坏的方块会将物品掉落到错误的位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259208" target="_blank" rel="noopener noreferrer">MC-259208</a> 僵尸骑鸡或骷髅骑蜘蛛时，不会被 /execute on controller 命令视为控制器</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259609" target="_blank" rel="noopener noreferrer">MC-259609</a> 选中按钮和滑块的工具提示不会在预期时消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259831" target="_blank" rel="noopener noreferrer">MC-259831</a> 自 23w06a 起，UI 按钮会破坏某些资源包</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259839" target="_blank" rel="noopener noreferrer">MC-259839</a> damage_type 标签 “bypasses_armor” 中存在重复的 “minecraft:freeze”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259885" target="_blank" rel="noopener noreferrer">MC-259885</a> 在 F1 模式下进入制作人员名单画面时，Minecraft: Java Edition 徽标无法正确显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259961" target="_blank" rel="noopener noreferrer">MC-259961</a> item_display 不会考虑某些 NBT 标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259979" target="_blank" rel="noopener noreferrer">MC-259979</a> 当使用 /damage 并指定 freeze 类型时，炽足兽和烈焰人不会受到五倍伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260208" target="_blank" rel="noopener noreferrer">MC-260208</a> 出生点区块中带有 interpolation_duration 大于 0 的展示实体在重新加入时视觉上会重置为默认变换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260268" target="_blank" rel="noopener noreferrer">MC-260268</a> 在“遥测数据收集”界面中无法使用方向键滚动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260324" target="_blank" rel="noopener noreferrer">MC-260324</a> 樱花木箱船物品纹理中有一个放错位置的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260335" target="_blank" rel="noopener noreferrer">MC-260335</a> 在村民交易菜单中，若某个物品缺货但有足够货币支付，点击该物品仍会进行购买</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260364" target="_blank" rel="noopener noreferrer">MC-260364</a> 樱花木门物品纹理不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260427" target="_blank" rel="noopener noreferrer">MC-260427</a> 按钮文字在菜单外可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260434" target="_blank" rel="noopener noreferrer">MC-260434</a> 创建新世界菜单中没有“将保存于...”文本</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260436" target="_blank" rel="noopener noreferrer">MC-260436</a> 1.19.4-pre1 中的物品标签包含多余的条目</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260438" target="_blank" rel="noopener noreferrer">MC-260438</a> 收纳袋界面中的物品不会渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260443" target="_blank" rel="noopener noreferrer">MC-260443</a> 加载快照 23w07a 的实验性世界时会提示可以“安全模式”打开，但点击“安全模式”后无反应</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260445" target="_blank" rel="noopener noreferrer">MC-260445</a> 玩家在乘船或木筏时可以向上爬一格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260461" target="_blank" rel="noopener noreferrer">MC-260461</a> 水生生物无法在水中被骑乘</li>
+</ul>

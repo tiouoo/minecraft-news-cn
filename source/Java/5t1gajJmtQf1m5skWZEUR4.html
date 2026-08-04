@@ -1,0 +1,60 @@
+<p>We're now releasing Minecraft: Java Edition 1.17.1. This release changes some behaviours of the features added in Caves &#x26; Cliffs: Part I, and it also fixes a few bugs and critical issues.</p>
+<h1>Changes in 1.17.1</h1>
+<ul>
+<li>Blue axolotls can now only be obtained through breeding</li>
+<li>Non-screaming goats now have a rare chance to produce a screaming goat when bred</li>
+<li>Status effects on goats now also apply when the goat is jumping or ramming</li>
+<li>Raised the drop rate for copper ingots from Drowned to 11% + 2% per level of looting</li>
+<li>Powder snow now fills cauldrons 2 times faster than before (still pretty slowly, though!)</li>
+<li>Zombies, Zombie Villagers, Husks and Drowned will no longer pick up glow ink sacs</li>
+</ul>
+<h1>Technical Changes in 1.17.1</h1>
+<ul>
+<li>Deaths of named mobs are now logged</li>
+<li>In case of DNS-based redirection, the client will send the hostname actually used to connect (this restores the pre-1.17 behaviour)</li>
+</ul>
+<h1>Fixed bugs in 1.17.1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-123654" target="_blank" rel="noopener noreferrer">MC-123654</a> - "Sun, moon, and/or clouds are not showing if render distance is below 4"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131290" target="_blank" rel="noopener noreferrer">MC-131290</a> - "Enchantments are saved as shorts, but are loaded as and function with integer values"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156155" target="_blank" rel="noopener noreferrer">MC-156155</a> - Turkish lira sign (₺) appears as □ in the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194736" target="_blank" rel="noopener noreferrer">MC-194736</a> - Duplicate text mapping for U+00B7</li>
+<li><a href="https://bugs.mojang.com/browse/MC-196999" target="_blank" rel="noopener noreferrer">MC-196999</a> - U+1FEC is wrong in Minecraft's font</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213986" target="_blank" rel="noopener noreferrer">MC-213986</a> - Pistons and dispensers can be used to create ghost blocks using powder snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219018" target="_blank" rel="noopener noreferrer">MC-219018</a> - Ghost items can be created using /item (server doesn't update client inventory correctly)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219290" target="_blank" rel="noopener noreferrer">MC-219290</a> - Calcite is too quiet compared to other blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221656" target="_blank" rel="noopener noreferrer">MC-221656</a> - Creative mode obtained Bucket of Axolotl/Tropical Fish only spawns one kind axolotl/tropical fish</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222731" target="_blank" rel="noopener noreferrer">MC-222731</a> - Captured axolotl constantly tries to leave water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223350" target="_blank" rel="noopener noreferrer">MC-223350</a> - Loaded chunks sometimes don't render until the player moves their head slightly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223368" target="_blank" rel="noopener noreferrer">MC-223368</a> - Strength and weakness potions / custom attack damage attributes does not change damage from goats</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224894" target="_blank" rel="noopener noreferrer">MC-224894</a> - Light tickets are released too early</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225816" target="_blank" rel="noopener noreferrer">MC-225816</a> - Hanging Roots appear large when an item entity</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226461" target="_blank" rel="noopener noreferrer">MC-226461</a> - Logs can be replaced with stone near lava pools</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226505" target="_blank" rel="noopener noreferrer">MC-226505</a> - Goat's long jump is not affected by the jump boost effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226512" target="_blank" rel="noopener noreferrer">MC-226512</a> - Goats do not use the damage of held items when ramming entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226926" target="_blank" rel="noopener noreferrer">MC-226926</a> - Emerald ore generates too often</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226948" target="_blank" rel="noopener noreferrer">MC-226948</a> - Withers are now affected by potion effects</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227387" target="_blank" rel="noopener noreferrer">MC-227387</a> - World gen datapacks will likely crash or softlock the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227435" target="_blank" rel="noopener noreferrer">MC-227435</a> - Lag when placing heads of non-existent players when on servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227483" target="_blank" rel="noopener noreferrer">MC-227483</a> - root_system feature config's codec uses a wrong field</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227520" target="_blank" rel="noopener noreferrer">MC-227520</a> - Overworld Fossils always generate at bedrock level</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227557" target="_blank" rel="noopener noreferrer">MC-227557</a> - End portal texture appears stretched after world conversion</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227618" target="_blank" rel="noopener noreferrer">MC-227618</a> - Small dripleaf is consumed without being placed when used on tall seagrass</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227651" target="_blank" rel="noopener noreferrer">MC-227651</a> - Group for lapis lazuli ore smelting and blasting recipes is misspelled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227821" target="_blank" rel="noopener noreferrer">MC-227821</a> - Client crash when trying to create/edit realm immediately after deleting previous one</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227891" target="_blank" rel="noopener noreferrer">MC-227891</a> - Ender pearls despawn when player logs out of a server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228219" target="_blank" rel="noopener noreferrer">MC-228219</a> - Thrown ender pearls disappear upon entering the exit end portal</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228343" target="_blank" rel="noopener noreferrer">MC-228343</a> - java.lang.NullPointerException when random_selector default feature isn't found</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228430" target="_blank" rel="noopener noreferrer">MC-228430</a> - "Very long loading pause while booting the game (""Failed to add PDH Counter"", caused by oshi)"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228599" target="_blank" rel="noopener noreferrer">MC-228599</a> - Attempting to walk through flowing water constantly switches the player from swimming into normal mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228802" target="_blank" rel="noopener noreferrer">MC-228802</a> - "Chunks not loading on a server / Cannot invoke ""cmq.a(int, int, int)"" because ""☃"" is null"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228828" target="_blank" rel="noopener noreferrer">MC-228828</a> - "Specifying the --server parameter when starting the game, causes the game to crash"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228858" target="_blank" rel="noopener noreferrer">MC-228858</a> - Axolotls despawning though named and on leashes.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229169" target="_blank" rel="noopener noreferrer">MC-229169</a> - Piglins can no longer hear players breaking protected blocks through walls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229191" target="_blank" rel="noopener noreferrer">MC-229191</a> - Diamond ore distribution changed between 1.16.5 and 1.17</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229246" target="_blank" rel="noopener noreferrer">MC-229246</a> - Piglins and piglin brutes no longer call other piglins after attacking one of them behind walls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229299" target="_blank" rel="noopener noreferrer">MC-229299</a> - Blue axolotls can spawn naturally</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229441" target="_blank" rel="noopener noreferrer">MC-229441</a> - You can steal the item a villager is holding for trade by killing it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229614" target="_blank" rel="noopener noreferrer">MC-229614</a> - Wandering Trader obtained tropical fish are only white kob</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230716" target="_blank" rel="noopener noreferrer">MC-230716</a> - """death.attack.dryout"" and ""death.attack.dryout.player"" display raw translation strings (are untranslated)"</li>
+</ul>

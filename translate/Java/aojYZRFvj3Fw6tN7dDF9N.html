@@ -1,0 +1,83 @@
+<p>周四快照！除了修复一些漏洞和对花哨的标签及命令进行一些更改外，我们引入了“聊天预览”功能，用于对服务器动态设置样式的聊天消息进行加密签名。并且仅在本快照中，我们在 <code>server.properties</code> 中保留了测试选项 <code>test-rainbow-chat</code>，它可以与新的 <code>previews-chat</code> 选项一起设置为 true 进行测试。如果你对此感兴趣，尤其是如果你运营服务器，我们希望听到你的反馈。</p>
+<p>尽情享受！</p>
+<h1>22w19a 更新内容</h1>
+<ul>
+<li>循声守卫和铁傀儡现在会确保生成在实心方块上方</li>
+</ul>
+<h1>22w19a 的技术更改</h1>
+<ul>
+<li>服务器现在可以启用聊天预览，即在聊天输入框上方显示服务器控制的预览</li>
+<li>对 locate 和 place 命令的更改</li>
+<li>兴趣点标签</li>
+</ul>
+<h2>聊天预览</h2>
+<ul>
+<li>服务器可以通过在 <code>server.properties</code> 中设置 <code>previews-chat=true</code> 来启用聊天预览</li>
+<li>启用后，聊天输入框上方会出现一个服务器控制的预览，显示消息发送后的效果</li>
+<li>服务器可以用它来预览应用了样式（如表情或聊天变色）的消息</li>
+<li>聊天预览会在消息输入时（甚至发送前）将聊天消息发送到服务器<ul>
+<li>服务器随后实时返回带样式的预览</li>
+<li>这样服务器就可以应用动态消息样式，同时仍允许聊天被安全签名</li>
+</ul></li>
+<li>当加入启用了聊天预览的服务器时，客户端会显示警告界面，并且可以在聊天设置中全局禁用</li>
+<li>动态聊天样式也可以由服务器控制，但只有在启用聊天预览时才会被签名<ul>
+<li>客户端可以选择在聊天设置中启用“仅显示已签名聊天”，以始终显示原始的已签名消息</li>
+</ul></li>
+</ul>
+<h2>命令</h2>
+<ul>
+<li>为 <code>place</code> 命令添加了 template 子命令</li>
+<li><code>locate</code> 命令移至 <code>locate structure</code>，<code>locatebiome</code> 移至 <code>locate biome</code></li>
+<li>添加了 <code>locate poi &#x3C;type: point_of_interest_type></code></li>
+<li>服务器现在还会在玩家连接后发送额外的图标和 MOTD 数据包<ul>
+<li>这允许设置了 <code>enable-status=false</code> 的服务器为成功连接的玩家设置图标和 MOTD</li>
+</ul></li>
+</ul>
+<h3>Place template</h3>
+<p><code>place</code> 命令现在还可以在指定位置放置模板。语法：<code>place template &#x3C;template> [pos] [rotation] [mirror] [integrity] [seed]</code></p>
+<ul>
+<li><code>place template</code> 的作用类似于在结构方块 UI 中使用加载按钮</li>
+</ul>
+<p>参数：</p>
+<ul>
+<li><code>template</code>：要加载并放置的模板（“结构方块文件”）的命名空间 ID</li>
+<li><code>rotation</code>：要应用的旋转（如果省略，则使用 <code>none</code>）</li>
+<li><code>mirror</code>：要应用的镜像（如果省略，则使用 <code>none</code>）</li>
+<li><code>integrity</code>：结构完整性，范围为 0 到 1 之间的值</li>
+<li><code>seed</code>：当完整性小于 1 时，用于随机化损坏的种子</li>
+</ul>
+<h2>兴趣点类型</h2>
+<ul>
+<li>移除了 <code>unemployed</code> 和 <code>nitwit</code> 这两种 <code>point_of_interest_type</code></li>
+<li>为职业为 <code>none</code> 的村民所寻找的所有工作站点添加了标签 <code>point_of_interest_type/acquirable_job_site</code></li>
+<li>为属于村庄一部分的 PoI 添加了标签 <code>point_of_interest_type/village</code></li>
+<li>为所有被蜜蜂作为目标的 PoI 添加了标签 <code>point_of_interest_type/bee_home</code></li>
+</ul>
+<h1>22w19a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-197647" target="_blank" rel="noopener noreferrer">MC-197647</a> 当玩家潜行且头顶有方块时，无法从方块边缘跳下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-231600" target="_blank" rel="noopener noreferrer">MC-231600</a> 幽匿感测体紧邻激活的大型垂滴叶时会持续接收振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249130" target="_blank" rel="noopener noreferrer">MC-249130</a> 蝌蚪在相邻方块内孵化，导致其窒息死亡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249161" target="_blank" rel="noopener noreferrer">MC-249161</a> 青蛙经常卡在睡莲下方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249634" target="_blank" rel="noopener noreferrer">MC-249634</a> 循声守卫被分散注意力后仍会继续嗅探</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a> 循声守卫在远处时会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249801" target="_blank" rel="noopener noreferrer">MC-249801</a> 废弃矿井可能与远古城市相交</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249888" target="_blank" rel="noopener noreferrer">MC-249888</a> 循声守卫被烈焰人火球击中时不会发怒</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249910" target="_blank" rel="noopener noreferrer">MC-249910</a> 循声守卫的“附近最近”声音未被使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249966" target="_blank" rel="noopener noreferrer">MC-249966</a> 循声守卫可能在刚对目标咆哮后停止追击</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250172" target="_blank" rel="noopener noreferrer">MC-250172</a> 循声守卫在发动音爆攻击时不会转向攻击方向</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250233" target="_blank" rel="noopener noreferrer">MC-250233</a> 从刷怪蛋召唤出的循声守卫突然失去 AI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250255" target="_blank" rel="noopener noreferrer">MC-250255</a> 循声守卫的音爆无法伤害末影龙，只能将其击退</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250272" target="_blank" rel="noopener noreferrer">MC-250272</a> 循声守卫会在无碰撞的方块中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250353" target="_blank" rel="noopener noreferrer">MC-250353</a> 循声守卫不能像其他生物一样生成在单层雪上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250357" target="_blank" rel="noopener noreferrer">MC-250357</a> 当玩家举起盾牌时，幽匿感测体和循声守卫会检测到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250948" target="_blank" rel="noopener noreferrer">MC-250948</a> 循声守卫的远程攻击不再受游戏难度影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250966" target="_blank" rel="noopener noreferrer">MC-250966</a> 死于循声守卫的音爆不计为循声守卫的击杀</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251029" target="_blank" rel="noopener noreferrer">MC-251029</a> 循声守卫冻结并停止对玩家敌对</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251263" target="_blank" rel="noopener noreferrer">MC-251263</a> 尝试打开单人世界时提示“Invalid signature for profile public key”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251316" target="_blank" rel="noopener noreferrer">MC-251316</a> 加载由拼图方块组成的区块时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251321" target="_blank" rel="noopener noreferrer">MC-251321</a> 循声守卫在钻出时会被爆炸推开</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251350" target="_blank" rel="noopener noreferrer">MC-251350</a> /give @s goat_horn 给予未注册的山羊角</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251396" target="_blank" rel="noopener noreferrer">MC-251396</a> java.lang.IllegalArgumentException: Name and ID cannot both be blank</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251464" target="_blank" rel="noopener noreferrer">MC-251464</a> 被动生物受到循声守卫音爆伤害时不会惊慌逃跑</li>
+</ul>

@@ -1,0 +1,219 @@
+<p>Tuesday is the new Wednesday, did you know? Here is snapshot 23w04a with a new experimental Armor Trim Smithing feature in the Update_1_20 experimental pack.</p>
+<p>Happy trimming!</p>
+<h1>Changes</h1>
+<ul>
+<li>Enchantment glint on items and armor is now more subtle</li>
+</ul>
+<h1>Experimental Features</h1>
+<ul>
+<li>Added a new armor trimming system to visually customize your armor</li>
+<li>Added Smithing Template items</li>
+<li>Redesigned the Smithing Table</li>
+<li>Changed how Netherite equipment is crafted</li>
+</ul>
+<h2>Smithing Templates</h2>
+<ul>
+<li>Smithing Tables have been redesigned into a workstation for physical equipment upgrades and modifications</li>
+<li>Alongside slots for combining a piece of equipment and materials, there is now a required slot for an item type called Smithing Templates</li>
+<li>Smithing Templates define what type of upgrade you will be making to equipment<ul>
+<li>It specifies both what type of items you can upgrade, and which ingredients are valid to customize the upgrade</li>
+<li>There are currently two categories of Smithing Templates: Armor Trim and Netherite Upgrade</li>
+</ul></li>
+<li>Smithing Templates are consumed when used to upgrade an item in the Smithing Table</li>
+<li>You can craft a copy of a Smithing Template in the Crafting Table with 7 diamonds + 1 block of material that the template is made out of + 1 smithing template, which will output 2 of the same Smithing Template</li>
+</ul>
+<h2>Netherite Equipment</h2>
+<ul>
+<li>Netherite equipment crafting now also requires a Netherite Upgrade Smithing Template</li>
+<li>Netherite Upgrade Smithing Templates can be found randomly in all Bastion Remnant chests, and there is a guarantee of 2 in every Treasure Room Bastion Remnant</li>
+<li>This change was made for a variety of reasons:<ul>
+<li>Increase the time players utilize Diamond equipment before Netherite</li>
+<li>Make Netherite equipment a more significant achievement in the game's progression</li>
+<li>Adapt Netherite more naturally into the new Smithing Table crafting system</li>
+</ul></li>
+</ul>
+<h2>Armor Trims</h2>
+<ul>
+<li>You can now visually customize your armor with a variety of unique trims at the Smithing Table<ul>
+<li>All armor is viable for trims except for leather armor</li>
+</ul></li>
+<li>Armor trims are purely visual with no gameplay benefits, and can only be applied to Helmets, Chestplates, Leggings and Boots<ul>
+<li>All trim patterns are visually the same on an armor's item icon, but the color will still change based on the trim material</li>
+<li>To check which trim pattern a piece of armor has, you can hover over it in the inventory</li>
+</ul></li>
+<li>Armor Trim Smithing Templates can be found all throughout the world, and each of the following structures contain their own unique Smithing Template:<ul>
+<li>Pillager Outpost<ul>
+<li>Sentry Armor Trim</li>
+</ul></li>
+<li>Desert Pyramid<ul>
+<li>Dune Armor Trim</li>
+</ul></li>
+<li>Shipwreck<ul>
+<li>Coast Armor Trim</li>
+</ul></li>
+<li>Jungle Temple<ul>
+<li>Wild Armor Trim</li>
+</ul></li>
+<li>Ocean Monument<ul>
+<li>Tide Armor Trim</li>
+</ul></li>
+<li>Ancient City<ul>
+<li>Ward Armor Trim</li>
+</ul></li>
+<li>Woodland Mansion<ul>
+<li>Vex Armor Trim</li>
+</ul></li>
+<li>Nether Fortress<ul>
+<li>Rib Armor Trim</li>
+</ul></li>
+<li>Bastion Remnant<ul>
+<li>Snout Armor Trim</li>
+</ul></li>
+<li>Stronghold<ul>
+<li>Eye Armor Trim</li>
+</ul></li>
+<li>End City<ul>
+<li>Spire Armor Trim</li>
+</ul></li>
+</ul></li>
+<li>Smithing Templates are found in chests in their respective structure, except for the Ocean Monument. Instead of finding it in chests, Elder Guardians sometimes drop a Smithing Template upon death</li>
+<li>Some Armor Trim Smithing Templates are rarer than others, so be on the lookout for them to impress your friends!</li>
+<li>An armor trim has two properties: a pattern and a material<ul>
+<li>The pattern is defined by the Smithing Template used to apply the trim, and represents the visual pattern of the trim</li>
+<li>The material is defined by what ingredient you used to apply the trim, and represents the color of the trim</li>
+</ul></li>
+<li>The viable ingredients you can use to define the color of your armor trim are the following:<ul>
+<li>Iron</li>
+<li>Copper</li>
+<li>Gold</li>
+<li>Lapis</li>
+<li>Emerald</li>
+<li>Diamond</li>
+<li>Netherite</li>
+<li>Redstone</li>
+<li>Amethyst</li>
+<li>Quartz</li>
+</ul></li>
+<li>Armor cannot have the same material it is made of applied to it as a trim<ul>
+<li>For example, a Golden Chestplate cannot have a Golden Armor Trim</li>
+</ul></li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>
+<p>Added a new type of atlas configuration source: <code>paletted_permutations</code></p>
+</li>
+<li>
+<p>Armor Stands now preserve custom names when placed and broken</p>
+</li>
+<li>
+<p>A new registry <code>trim_pattern</code> has been added for the armor trim system</p>
+</li>
+<li>
+<p>A new recipe serializer <code>smithing_transform</code> has been added for the updated Netherite Upgrade recipe</p>
+</li>
+<li>
+<p>A new recipe serializer <code>smithing_trim</code> has been added for the new Armor Trim recipe</p>
+</li>
+<li>
+<p>Smithing table has temporarily two menu types</p>
+<ul>
+<li>Old menu without Smithing Template slot has been renamed to <code>legacy_smithing</code><ul>
+<li>Will be removed when Armor Trim feature stops being an experimental feature</li>
+</ul></li>
+<li>New menu with Smithing Template slot was added called <code>smithing</code></li>
+</ul>
+</li>
+<li>
+<p>Added new flag (value 128) to <code>HideFlags</code> NBT field for hiding armor trim item tooltips</p>
+</li>
+</ul>
+<h2>Paletted Permutations</h2>
+<ul>
+<li><code>paletted_permutations</code> is a new type of atlas configuration source used to dynamically generate new textures in memory based on a set of color palettes</li>
+<li>Color palettes allow you to swap out the colors of a texture without having to supply all files for the variants of a texture in a resource pack</li>
+<li>This is useful for things like armor trims, where you want to be able to change the color of parts of the armor without having to create a new texture for each color</li>
+<li>The <code>paletted_permutations</code> source has a set of required parameters:<ul>
+<li><code>textures</code> A list of namespaced locations of base textures<ul>
+<li>These textures will be used to generate variants of them that have been modified by color palettes</li>
+</ul></li>
+<li><code>palette_key</code> A namespaced location of a color palette key file<ul>
+<li>A color palette key is used to define the set of key pixel colors we want to swap out with the color palettes defined below</li>
+</ul></li>
+<li><code>permutations</code> A map of permutations from suffix to a namespaced location of a color palette file<ul>
+<li>The suffix is appended  at the beginning to the resource location of the output variant textures, with a <code>_</code> character separating the suffix and the base texture name</li>
+<li>The color palette is a texture file with a set of pixels that are used for replacing pixels that match the color palette key in each base texture</li>
+<li>The number of pixels in each color palette must be the same as that of the <code>palette_key</code> defined for this source</li>
+<li>Key matching is done by comparing the RGB values of each pixel in the <code>palette_key</code> to the RGB values of each pixel in the color palette</li>
+<li>Alpha channel is ignored for key matching, but in the resulting texture the alpha channel is multiplied with the color palette's alpha channel</li>
+<li>Pixels that do not match the <code>palette_key</code> are copied over to the resulting texture as-is</li>
+</ul></li>
+</ul></li>
+<li>After defining a <code>paletted_permutations</code> source, you can then reference those namespaced output textures in other resources in your resource pack<ul>
+<li>For example, if you have the following <code>paletted_permutations</code> source:<pre><code>{
+    "type": "paletted_permutations",
+    "textures": [
+        "minecraft:item/leather_helmet",
+        "minecraft:item/leather_chestplate",
+        "minecraft:item/leather_leggings",
+        "minecraft:item/leather_boots"
+    ],
+    "palette_key": "minecraft:colormap/color_palettes/leather_armor_color_key",
+    "permutations": {
+        "red": "minecraft:colormap/color_palettes/red",
+        "green": "minecraft:colormap/color_palettes/green",
+        "blue": "minecraft:colormap/color_palettes/blue"
+    }
+}
+</code></pre></li>
+<li>You can then reference the resulting textures in other resources like this:<pre><code>{
+    "textures": {
+        "layer0": "minecraft:item/leather_helmet_red",
+        "layer1": "minecraft:item/leather_chestplate_green",
+        "layer2": "minecraft:item/leather_boots_blue"
+    }
+}
+</code></pre></li>
+</ul></li>
+</ul>
+<h2>Trim Patterns &#x26; Materials</h2>
+<ul>
+<li>Trim patterns and materials for armor are defined by the server through the <code>trim_pattern</code> and <code>trim_material</code> registry respectively<ul>
+<li>As a result, new trim patterns and materials can be added via data packs</li>
+</ul></li>
+<li>These are synchronized to clients when they join the server<ul>
+<li>However, clients must have an accompanying resource pack to see those registered trim patterns and materials</li>
+<li>The paths to these textures are inferred based on the filename of the pattern json, and will try to find the textures within the same namespace as the trim pattern's <code>name</code> field</li>
+</ul></li>
+<li>The following data is defined by a trim pattern:<ul>
+<li><code>asset_id</code> which is a namespaced id used to infer texture locations and localization</li>
+<li><code>template_item</code> which is the id of the smithing template item used to apply the trim pattern</li>
+<li><code>description</code> which is a text component used for displaying the pattern name of an armor trim when hovering an armor itemstack</li>
+</ul></li>
+<li>The following data is defined by a trim material:<ul>
+<li><code>asset_name</code> which is a string used as a suffix for armor trim texture locations</li>
+<li><code>ingredient</code> which is the id of the ingredient item used to apply the trim material</li>
+<li><code>item_model_index</code> which is a float which defines the item model override each armor item model should target to change their visuals for this material</li>
+<li><code>incompatible_armor_material</code> which is an optional id of the armor material this trim material cannot be applied to</li>
+<li><code>description</code> which is a text component used for displaying the material name of an armor trim when hovering an armor itemstack<ul>
+<li>The style defined in this description is applied to the armor trim pattern <code>description</code> as well</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>Commands</h2>
+<ul>
+<li>New relation available for <code>execute on</code>: <code>origin</code>:<ul>
+<li>shooter, if the executing entity is a projectile (like arrow, fireball, trident, firework, thrown potion, etc.)</li>
+<li>thrower, if the executing entity is an item</li>
+<li>source of effect, if the executing entity is an area effect cloud</li>
+<li>igniter, if the executing entity is a primed tnt</li>
+<li>summoner, if the executing entity is evoker fangs or a vex</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 23w04a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-198809" target="_blank" rel="noopener noreferrer">MC-198809</a> Blast Protection does not reduce explosion knockback except at very high levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259189" target="_blank" rel="noopener noreferrer">MC-259189</a> "Narrator: Not Available" isn't grayed out on accessibility splash</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259204" target="_blank" rel="noopener noreferrer">MC-259204</a> All goat horns display as Ponder goat horns and play the Ponder instrument</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259211" target="_blank" rel="noopener noreferrer">MC-259211</a> You cannot select incompatible resource packs within the resource packs menu via keyboard navigation</li>
+</ul>

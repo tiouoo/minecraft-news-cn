@@ -1,0 +1,80 @@
+<p>本周的快照引入了数据包中自定义生物群系的实验性支持。这项工作涉及重新处理一些幕后的内部管线，所以可能有点“漏水”。我们希望没有重要的部件滴漏出来，但如果真的漏了，请帮我们捡起来。</p>
+<p>一如既往，如果你在快照中尝试世界，请务必进行备份。</p>
+<h1>20w28a 中的更改</h1>
+<p>​</p>
+<ul>
+<li>村民在加入村庄、认领床或获得工作站/职业时现在会发出绿色粒子。</li>
+<li>酿造台现在可以用黑石合成。</li>
+<li>调整了以物易物的战利品。</li>
+<li>不死图腾在激活时现在会提供 40 秒的抗火状态效果。</li>
+</ul>
+<p>​</p>
+<h1>20w28a 中的技术更改</h1>
+<p>​</p>
+<ul>
+<li>自定义世界现在支持自定义生物群系。</li>
+<li>专用服务器现在可以对客户端进行速率限制。</li>
+</ul>
+<p>​</p>
+<h2>自定义世界生成</h2>
+<p>​</p>
+<ul>
+<li>现在对数据包中的 <code>worldgen</code> 文件夹提供了实验性支持。</li>
+<li><code>worldgen/biome</code> 可以包含生物群系定义。</li>
+<li><code>worldgen/configured_carver</code> 可以包含世界雕刻器设置的的定义。</li>
+<li><code>worldgen/configured_feature</code> 可以包含地物放置的定义。</li>
+<li><code>worldgen/configured_structure_feature</code> 可以包含结构放置的定义。</li>
+<li><code>worldgen/configured_surface_builder</code> 可以包含地表定义。</li>
+<li><code>worldgen/processor_list</code> 可以包含方块处理器的集合。</li>
+<li><code>worldgen/template_pool</code> 可以包含用于拼图结构的池定义。</li>
+<li>自定义生物群系现在可以用于单一生物群系/洞穴/浮空岛世界类型（请先添加包含该生物群系的数据包）。</li>
+<li>自定义生物群系现在可以用于自定义维度生成器中。</li>
+</ul>
+<p>​</p>
+<h2>专用服务器数据包限制</h2>
+<p>​</p>
+<ul>
+<li>专用服务器现在可以踢出在一秒内持续发送过多数据包的客户端。</li>
+<li>通过 <code>server.properties</code> 中的 <code>rate-limit</code> 设置进行控制。</li>
+<li>默认速率限制为 0，表示“无限制”。</li>
+</ul>
+<p>​</p>
+<h1>20w28a 中修复的漏洞</h1>
+<p>​</p>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-34661" target="_blank" rel="noopener noreferrer">MC-34661</a> 荆棘附魔导致护甲耐久度双重损耗。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-65953" target="_blank" rel="noopener noreferrer">MC-65953</a> 标签 IsBaby 和 IsVillager 无法通过 /entitydata 从 true 改为 false。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171363" target="_blank" rel="noopener noreferrer">MC-171363</a> 下界森林生物群系：大型真菌和小型植物只生成在菌岩的最顶层，导致所有较低层都没有植物。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172221" target="_blank" rel="noopener noreferrer">MC-172221</a> 疣猪兽、僵尸疣猪兽、劫掠兽、铁傀儡和北极熊如果部分踩在空中，就不会走下方块。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173526" target="_blank" rel="noopener noreferrer">MC-173526</a> 所有矿车都能在熔岩中存活。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174479" target="_blank" rel="noopener noreferrer">MC-174479</a> 无法在灵魂沙上放置海泡菜。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174520" target="_blank" rel="noopener noreferrer">MC-174520</a> 灵魂粒子纹理在第一帧不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176753" target="_blank" rel="noopener noreferrer">MC-176753</a> 当猪灵的 CanPickUpLoot 标签设置为 0b 时，它们会站在掉落的金制物品周围。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179369" target="_blank" rel="noopener noreferrer">MC-179369</a> 流浪商人在下界和末地总是隐形的。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181204" target="_blank" rel="noopener noreferrer">MC-181204</a> doDaylightCycle 按钮的标签略有错误。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181233" target="_blank" rel="noopener noreferrer">MC-181233</a> 生物无法在木质活板门上生成，但可以在铁质和下界菌类活板门上生成。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182430" target="_blank" rel="noopener noreferrer">MC-182430</a> 猪灵如果无法够到金锭，会不断尝试捡起并失败。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182868" target="_blank" rel="noopener noreferrer">MC-182868</a> 自 1.14 以来，如果铁轨位于非完整方块上方，铁轨更新会卡顿 4-5 倍。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185684" target="_blank" rel="noopener noreferrer">MC-185684</a> 末影人在受到攻击时可以传送，而以前在这种情况下它们不会传送。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185925" target="_blank" rel="noopener noreferrer">MC-185925</a> 类型转换问题：矿脉生成使用 32 位浮点数，导致精度损失和潜在崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187112" target="_blank" rel="noopener noreferrer">MC-187112</a> 拼图方块中的“Keep Jigsaws”按钮有多余空格。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187126" target="_blank" rel="noopener noreferrer">MC-187126</a> 拼图方块界面在按下“Generate”时不会关闭。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187129" target="_blank" rel="noopener noreferrer">MC-187129</a> 拼图方块在按下“Done”并重新打开界面之前，不会生成正确的结构。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188459" target="_blank" rel="noopener noreferrer">MC-188459</a> 盆栽仙人掌仍然缺少顶部的 cullface 参数。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188534" target="_blank" rel="noopener noreferrer">MC-188534</a> 盆栽仙人掌缺少底面。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189769" target="_blank" rel="noopener noreferrer">MC-189769</a> 真菌会穿过火焰生长。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190098" target="_blank" rel="noopener noreferrer">MC-190098</a> 专用服务器的结构大小和偏移仍限制为 32。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190852" target="_blank" rel="noopener noreferrer">MC-190852</a> 在从右到左的语言中，进度公告消息的括号发生了反转。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190856" target="_blank" rel="noopener noreferrer">MC-190856</a> '/list uuids' 在从右到左的语言中错误显示括号。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190860" target="_blank" rel="noopener noreferrer">MC-190860</a> 聊天和命令方块中的“/”（斜杠）在从右到左的语言中显示传统格式符号。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190891" target="_blank" rel="noopener noreferrer">MC-190891</a> 某些红石电路会导致卡顿。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190892" target="_blank" rel="noopener noreferrer">MC-190892</a> 在从右到左的语言中，药水效果中的括号会反转。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191501" target="_blank" rel="noopener noreferrer">MC-191501</a> 在 1.16 中打开 1.14 早期版本的世界会导致村民消失。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191571" target="_blank" rel="noopener noreferrer">MC-191571</a> 在从右到左的语言中方括号发生反转。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191579" target="_blank" rel="noopener noreferrer">MC-191579</a> 在从右到左的语言中，署名界面的格式损坏。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191656" target="_blank" rel="noopener noreferrer">MC-191656</a> 从右到左的语言在创造模式搜索菜单中不能按预期工作。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192306" target="_blank" rel="noopener noreferrer">MC-192306</a> 绯红木台阶和诡异木台阶在地图上使用不正确的颜色。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193073" target="_blank" rel="noopener noreferrer">MC-193073</a> 当猪灵或猪灵蛮兵转化为僵尸猪灵时游戏崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193089" target="_blank" rel="noopener noreferrer">MC-193089</a> 生物如果同时处于熔岩和水中，将不再受到伤害。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193125" target="_blank" rel="noopener noreferrer">MC-193125</a> 无法使用“物品栏”键在配方书中输入，反而会关闭界面（默认键：“E”）。</li>
+</ul>

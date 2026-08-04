@@ -1,0 +1,29 @@
+<p>大家好，</p>
+<p>在开始今天的预发布版之前，我们想花一点时间，向一位多年来对 Minecraft 社区产生了巨大影响、并感动了许多人的人致以敬意。<strong>Technoblade</strong> 已成为善良源泉的代名词——一股积极的力量，一次又一次地让无数人开心快乐，也是我们这个大家庭的一员，我们为此深感自豪。</p>
+<p>Minecraft 就是它的社区，因此，我们中有如此多的人为他的离世而哀悼，来自世界各地的敬意与关爱纷至沓来，也就不足为奇了。</p>
+<p>谨代表 Java 团队——感谢 Technoblade 带给我们的回忆、所有欢乐与笑声。我们将深深怀念你。我们与你家人和朋友同在。</p>
+<hr>
+<p>关于 1.19.1：我们仍有若干修复正在筹备中，并将在近期推出另一个预发布版。之后，待一切测试验证完毕，我们将力求发布候选版本。</p>
+<h1>1.19.1 预发布版 3 的更改</h1>
+<ul>
+<li>将聊天滚动条移到聊天窗口的右侧</li>
+<li>系统消息（非玩家聊天，例如由命令输出的消息）会以灰色标记显示</li>
+</ul>
+<h1>1.19.1 预发布版 3 的技术性更改</h1>
+<ul>
+<li>自定义服务器现在可以通过一个新的网络数据包为常规聊天设置自己的自动补全选项</li>
+<li>社交互动界面中的玩家列表现在会将最近看到其消息的玩家条目置于列表顶部</li>
+<li><code>msg_command</code> 聊天类型已被拆分为 <code>msg_command_incoming</code> 和 <code>msg_command_outgoing</code></li>
+<li>聊天类型参数 <code>team_name</code> 已被重命名为 <code>target</code><ul>
+<li>此聊天类型参数现在用于 <code>msg_command_outgoing</code></li>
+</ul></li>
+</ul>
+<h1>1.19.1 预发布版 3 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253182" target="_blank" rel="noopener noreferrer">MC-253182</a> 字符串 "gui.abuseReport.reason.self_harm_or_suicide.description" 中第二个反身代词使用有误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253214" target="_blank" rel="noopener noreferrer">MC-253214</a> 工具提示在某些情况下会出现偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253223" target="_blank" rel="noopener noreferrer">MC-253223</a> 字符串 "gui.abuseReport.reason.terrorism_or_violent_extremism.description" 中有一个介词使用不当</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253496" target="_blank" rel="noopener noreferrer">MC-253496</a> /execute as {player} run say 也会被计入举报系统</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253742" target="_blank" rel="noopener noreferrer">MC-253742</a> 聊天滚动条会与用于显示消息信任状态的彩色标记重叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253773" target="_blank" rel="noopener noreferrer">MC-253773</a> 私聊消息会显示为已被服务器修改</li>
+</ul>

@@ -1,0 +1,67 @@
+<p>新年快乐！2022年第一个快照上线啦。这个快照系列将引领我们走向1.18.2的发布。在转向荒野更新的快照之前，我们希望通过此次发布解决一些问题。</p>
+<p>本次快照对世界种子输入进行了调整，新增了<code>placefeature</code>命令。此外，还修复了许多漏洞。</p>
+<p>祝采矿愉快！</p>
+<h1>22w03a中的更改</h1>
+<ul>
+<li>数字零作为种子时，不再作为特殊情况进行处理</li>
+<li>输入种子前后多余的空格现会被自动去除</li>
+<li>末影箱不再于圣诞节期间进行礼品包装</li>
+</ul>
+<h1>22w03a中的技术性更改</h1>
+<ul>
+<li><code>locate</code>命令现使用命名空间ID作为参数</li>
+<li>新增命令：<code>placefeature</code></li>
+</ul>
+<h2><code>placefeature</code></h2>
+<p>新命令，可在指定位置放置一个已配置的地物。语法：<code>placefeature &#x3C;id> [pos]</code></p>
+<p>参数：</p>
+<ul>
+<li><code>id</code>：要放置的已配置地物的命名空间ID</li>
+<li><code>pos</code>：作为地物放置原点的位置（若省略，则使用<code>~ ~ ~</code>）</li>
+</ul>
+<h1>22w03a中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-83938" target="_blank" rel="noopener noreferrer">MC-83938</a> 站在具有实心碰撞箱的实体（潜影贝、船）上会因飞行而被踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-98727" target="_blank" rel="noopener noreferrer">MC-98727</a> 服务器：跳跃上升时进入船/矿车/马会因飞行而被踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111082" target="_blank" rel="noopener noreferrer">MC-111082</a> 在未启用飞行的服务器上骑乘具有NoGravity标签的船会因飞行而被踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-126772" target="_blank" rel="noopener noreferrer">MC-126772</a> 在低渲染距离下，水下迷雾无法正确隐藏区块边缘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-135989" target="_blank" rel="noopener noreferrer">MC-135989</a> 使用带有激流附魔的三叉戟会因飞行而被踢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167763" target="_blank" rel="noopener noreferrer">MC-167763</a> 失明效果在特定显卡下无法作用于水下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185545" target="_blank" rel="noopener noreferrer">MC-185545</a> 玩家的击退抗性仍受概率影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185695" target="_blank" rel="noopener noreferrer">MC-185695</a> 缠怨藤无法稳定地保护玩家免受摔落伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205232" target="_blank" rel="noopener noreferrer">MC-205232</a> 玩家在失明效果下能在细雪中看得更远</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223834" target="_blank" rel="noopener noreferrer">MC-223834</a> 尖嘴滴水石能在某些非完整（非固体）方块下方生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226359" target="_blank" rel="noopener noreferrer">MC-226359</a> 零宽非连接符显示为“ZWNJ”框</li>
+<li><a href="https://bugs.mojang.com/browse/MC-229313" target="_blank" rel="noopener noreferrer">MC-229313</a> 某些能抵消摔落伤害的方块在特定高度下无法稳定保护生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230905" target="_blank" rel="noopener noreferrer">MC-230905</a> 在部分迷雾减弱的场景中，天空背景可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233599" target="_blank" rel="noopener noreferrer">MC-233599</a> /spreadplayers命令不允许"under"参数为负值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-235574" target="_blank" rel="noopener noreferrer">MC-235574</a> 用带有up:false方块状态的墙替换方块时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236693" target="_blank" rel="noopener noreferrer">MC-236693</a> 控制子菜单中的“完成”按钮位置过低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237262" target="_blank" rel="noopener noreferrer">MC-237262</a> 崩溃报告和刻分析导致日志刷屏“Failed to find module info for _”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238114" target="_blank" rel="noopener noreferrer">MC-238114</a> 草甸树木生成时可能没有蜂巢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238866" target="_blank" rel="noopener noreferrer">MC-238866</a> 雪/细雪可生成于水下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239031" target="_blank" rel="noopener noreferrer">MC-239031</a> 自21w41a起区块渲染故障持续存在</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239436" target="_blank" rel="noopener noreferrer">MC-239436</a> 超长洞穴中的剔除错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-240559" target="_blank" rel="noopener noreferrer">MC-240559</a> JFR JSON报告中的bytesPerSecond计算错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241152" target="_blank" rel="noopener noreferrer">MC-241152</a> 细雪属于#goat_spawnable_on方块标签 / 山羊能在细雪上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241205" target="_blank" rel="noopener noreferrer">MC-241205</a> 砂岩生成2-5层而非3-8层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242010" target="_blank" rel="noopener noreferrer">MC-242010</a> 雪块、细雪不属于#azalea_root_replaceable / 缠根泥土无法替换雪块和细雪</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242331" target="_blank" rel="noopener noreferrer">MC-242331</a> 实体的显示速度快于区块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242543" target="_blank" rel="noopener noreferrer">MC-242543</a> 窒息判定始终使用实体头部中心位置作为判定点和碰撞箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-242709" target="_blank" rel="noopener noreferrer">MC-242709</a> 尖嘴滴水石簇在蓄水层中生成时会造成地面空洞</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243015" target="_blank" rel="noopener noreferrer">MC-243015</a> 区块生成时的下落方块会产生大量实体并导致（客户端）卡顿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243196" target="_blank" rel="noopener noreferrer">MC-243196</a> 另一名玩家进入或离开船时，驾驶员视角会重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243245" target="_blank" rel="noopener noreferrer">MC-243245</a> 无法使用Tab键选择“什么是Realms？”按钮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243489" target="_blank" rel="noopener noreferrer">MC-243489</a> 控制台刷屏：Skipping update for removed player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-243619" target="_blank" rel="noopener noreferrer">MC-243619</a> 袭击波次可在模拟距离之外生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244164" target="_blank" rel="noopener noreferrer">MC-244164</a> 升级到1.18后箱子变得不可见且为空</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244174" target="_blank" rel="noopener noreferrer">MC-244174</a> 虚空、失明、水、熔岩和细雪的迷雾效果呈圆柱形</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245345" target="_blank" rel="noopener noreferrer">MC-245345</a> 重新加载区块时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245347" target="_blank" rel="noopener noreferrer">MC-245347</a> 使用鞘翅飞行并撞上浮空流动水时，有时不会重置摔落伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245406" target="_blank" rel="noopener noreferrer">MC-245406</a> 加载1.18之前的区块导致内存泄漏并引发崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245416" target="_blank" rel="noopener noreferrer">MC-245416</a> 小海龟在灵魂沙上窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246445" target="_blank" rel="noopener noreferrer">MC-246445</a> 当发射器中的剪刀对#beehives标签中的非蜂箱方块使用时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246449" target="_blank" rel="noopener noreferrer">MC-246449</a> 当村民试图打开#wooden_doors标签中的非门方块时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246464" target="_blank" rel="noopener noreferrer">MC-246464</a> 在暖水海洋中发射骨粉，且#wall_corals中存在没有facing方块状态的方块时，游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-247415" target="_blank" rel="noopener noreferrer">MC-247415</a> 珊瑚礁生成期间，珊瑚相关方块标签为空时游戏崩溃</li>
+</ul>

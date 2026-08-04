@@ -1,0 +1,80 @@
+<p>This week's snapshot introduces experimental support for custom biomes in data packs. This work has involved redoing some of the internal plumbing of things behind the scene, so it might be a bit leaky. We hope no important parts drip out, but if they do, pick them back up for us, please.</p>
+<p>As always, make sure to make backups if you try a world in a snapshot.</p>
+<h1>Changes in 20w28a</h1>
+<p>​</p>
+<ul>
+<li>Villagers now emit green particles when joining a village, setting a home bed, or acquiring a job site/profession</li>
+<li>Brewing stands can now be crafted with blackstone</li>
+<li>Tweaked bartering loot</li>
+<li>Totems of undying now give the fire resistance status affect for 40 seconds when activated</li>
+</ul>
+<p>​</p>
+<h1>Technical Changes in 20w28a</h1>
+<p>​</p>
+<ul>
+<li>Custom worlds now support custom biomes</li>
+<li>Dedicated servers can now rate limit clients</li>
+</ul>
+<p>​</p>
+<h2>Customized world generation</h2>
+<p>​</p>
+<ul>
+<li>There is now experimental support for a <code>worldgen</code> folder in data packs</li>
+<li><code>worldgen/biome</code> can contain biome definitions</li>
+<li><code>worldgen/configured_carver</code> can contain definitions for world carver settings</li>
+<li><code>worldgen/configured_feature</code> can contain definitions for feature placements</li>
+<li><code>worldgen/configured_structure_feature</code> can contain definitions for structure placements</li>
+<li><code>worldgen/configured_surface_builder</code> can contain definitions for surfaces</li>
+<li><code>worldgen/processor_list</code> can contain sets of block processors</li>
+<li><code>worldgen/template_pool</code> can contain pool definitions for jigsaw structures</li>
+<li>Custom biomes can now be used in the single biome/caves/floating islands world types (add the data pack containing the biome first)</li>
+<li>Custom biomes can now be used in custom dimension generators</li>
+</ul>
+<p>​</p>
+<h2>Dedicated server packet limit</h2>
+<p>​</p>
+<ul>
+<li>Dedicated servers can now kick clients that consistently send too many packets within a second</li>
+<li>Controlled with the <code>rate-limit</code> settings in <code>server.properties</code></li>
+<li>The default rate limit of 0 means "no limit"</li>
+</ul>
+<p>​</p>
+<h1>Fixed bugs in 20w28a</h1>
+<p>​</p>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-34661" target="_blank" rel="noopener noreferrer">MC-34661</a> Thorns enchantment causes double armor decay</li>
+<li><a href="https://bugs.mojang.com/browse/MC-65953" target="_blank" rel="noopener noreferrer">MC-65953</a> Tags IsBaby and IsVillager can't be changed from true to false with /entitydata</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171363" target="_blank" rel="noopener noreferrer">MC-171363</a> Nether forest biomes: Large fungi and small plants only generate on the topmost layer of nylium, leaving all lower layers devoid of flora</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172221" target="_blank" rel="noopener noreferrer">MC-172221</a> Hoglins, zoglins, ravagers, iron golems, and polar bears won't walk down a block if they are partially walking on air</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173526" target="_blank" rel="noopener noreferrer">MC-173526</a> All Minecarts can survive in lava</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174479" target="_blank" rel="noopener noreferrer">MC-174479</a> Cannot place sea pickles on soul sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174520" target="_blank" rel="noopener noreferrer">MC-174520</a> Soul particle texture is incorrect for the first frame</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176753" target="_blank" rel="noopener noreferrer">MC-176753</a> Piglins stand around dropped golden items if their "CanPickUpLoot" tag is set to "0b"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179369" target="_blank" rel="noopener noreferrer">MC-179369</a> Wandering Traders are always invisible in the Nether and the End</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181204" target="_blank" rel="noopener noreferrer">MC-181204</a> doDaylightCycle button slightly incorrectly labeled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181233" target="_blank" rel="noopener noreferrer">MC-181233</a> Mobs cannot spawn on wooden trapdoors, but can on iron and nether fungus trapdoors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182430" target="_blank" rel="noopener noreferrer">MC-182430</a> Piglins continuously try and fail to pick up gold ingots if they can't reach them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182868" target="_blank" rel="noopener noreferrer">MC-182868</a> Rail updates are 4-5x times laggier since 1.14 if the rail is on top of a non-full cube</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185684" target="_blank" rel="noopener noreferrer">MC-185684</a> Enderman can teleport when hit in cases where they previously would not teleport</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185925" target="_blank" rel="noopener noreferrer">MC-185925</a> Casting issue: Mineral vein generation uses 32-bit floats, leading to precision loss and potential crashes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187112" target="_blank" rel="noopener noreferrer">MC-187112</a> Extra space in "Keep Jigsaws" button in jigsaw block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187126" target="_blank" rel="noopener noreferrer">MC-187126</a> Jigsaw block UI is not closed when pressing "Generate"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187129" target="_blank" rel="noopener noreferrer">MC-187129</a> Jigsaw blocks do not generate the correct structure until "Done" is pressed and the UI is reopened</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188459" target="_blank" rel="noopener noreferrer">MC-188459</a> Potted cactus still missing cullface argument for top</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188534" target="_blank" rel="noopener noreferrer">MC-188534</a> Potted cactus missing bottom face</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189769" target="_blank" rel="noopener noreferrer">MC-189769</a> Fungi grows through fire</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190098" target="_blank" rel="noopener noreferrer">MC-190098</a> Structure size and offset still limited to 32 for dedicated servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190852" target="_blank" rel="noopener noreferrer">MC-190852</a> Advancement announcement message has switched brackets for right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190856" target="_blank" rel="noopener noreferrer">MC-190856</a> '/list uuids' shows parentheses incorrectly for right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190860" target="_blank" rel="noopener noreferrer">MC-190860</a> '/' (slash) in chat and command block shows legacy formatting symbol for right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190891" target="_blank" rel="noopener noreferrer">MC-190891</a> Certain redstone circuits causing lag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190892" target="_blank" rel="noopener noreferrer">MC-190892</a> Brackets in potion effects are reversed in right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191501" target="_blank" rel="noopener noreferrer">MC-191501</a> Opening a world from earlier 1.14 releases in 1.16 causes villagers to vanish</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191571" target="_blank" rel="noopener noreferrer">MC-191571</a> Switched square brackets for right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191579" target="_blank" rel="noopener noreferrer">MC-191579</a> Book signing GUI has broken formatting for right-to-left languages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191656" target="_blank" rel="noopener noreferrer">MC-191656</a> Right-to-left languages don't perform as expected in creative search menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192306" target="_blank" rel="noopener noreferrer">MC-192306</a> Crimson and warped slabs use incorrect colors on maps</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193073" target="_blank" rel="noopener noreferrer">MC-193073</a> Game crashes when Piglins or Piglin Brutes convert to Zombified Piglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193089" target="_blank" rel="noopener noreferrer">MC-193089</a> Mobs do not get damaged anymore if they're in lava and water at the same time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193125" target="_blank" rel="noopener noreferrer">MC-193125</a> Cannot use "Inventory" key to write in recipe book, it closes GUI instead (Default: "E")</li>
+</ul>

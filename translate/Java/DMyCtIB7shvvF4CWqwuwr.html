@@ -1,0 +1,94 @@
+<p>在这个快照中，我们调整了盔甲纹饰功能，并重新定义了“创建新世界”的用户体验流程。</p>
+<p>祝您创造世界愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>更新了“创建新世界”界面</li>
+<li>现在，手持盔甲或鞘翅物品时与之互动，会将其与已装备的装备进行交换</li>
+<li>附魔闪光效果进一步调整，现在更慢、更不明显，但在某些间隔内对比度更高</li>
+</ul>
+<h2>辅助功能</h2>
+<ul>
+<li>更改了菜单界面中提示框的位置，以便按钮仍然可读</li>
+<li>在辅助功能菜单中新增了两个选项，用于调整附魔闪光的速度和透明度</li>
+</ul>
+<h2>更新后的“创建新世界”界面</h2>
+<ul>
+<li>该界面现在分为三个标签页<ul>
+<li>“游戏”标签页允许设置世界名称、游戏模式、难度以及是否允许作弊</li>
+<li>“世界”标签页允许设置世界类型和种子，并切换结构生成和奖励箱</li>
+<li>“更多”标签页提供对游戏规则和数据包选择界面的访问</li>
+</ul></li>
+<li>移除了“编辑世界”界面中的“导入设置”按钮和相应的“导出设置”按钮</li>
+</ul>
+<h1>技术更改</h1>
+<h2>纹饰图案与材料</h2>
+<ul>
+<li>以下数据现在也由纹饰材料定义：<ul>
+<li><code>override_armor_materials</code>，这是一个可选的映射，将盔甲材料映射到覆盖的颜色调色板<ul>
+<li>映射键是该纹饰材料想要用不同颜色调色板覆盖的盔甲材料。</li>
+<li>映射值是将此纹饰材料应用于具有相应盔甲材料的盔甲件时使用的颜色调色板的名称。</li>
+</ul></li>
+</ul></li>
+<li>以下数据不再由纹饰材料定义：<ul>
+<li><code>incompatible_armor_material</code></li>
+</ul></li>
+</ul>
+<h2>命令</h2>
+<h3><code>effect</code></h3>
+<ul>
+<li><code>infinite</code> 现在可作为效果持续时间的有效选项<ul>
+<li>无限效果持续时间在玩家物品栏视图中显示为“∞”。</li>
+</ul></li>
+</ul>
+<h1>实验性功能</h1>
+<ul>
+<li>盔甲纹饰现在可以应用于皮革盔甲。</li>
+<li>盔甲现在可以使用与其制作材料相同的材料进行纹饰。<ul>
+<li>例如，现在可以用金色盔甲纹饰装饰金色胸甲。</li>
+</ul></li>
+<li>沙丘盔甲纹饰的纹理已调整，使胸甲上的符号上移了几个像素。</li>
+<li>锻造模板的战利品表已调整。</li>
+</ul>
+<h2>锻造模板的战利品表</h2>
+<ul>
+<li>以下常见盔甲纹饰在被发现时，现在总是在箱子中生成2个模板：<ul>
+<li>沙丘</li>
+<li>海岸</li>
+<li>荒野</li>
+<li>哨兵</li>
+</ul></li>
+<li>这是为了给新玩家一个机会，让他们理解锻造模板在使用时会被消耗。</li>
+<li>下界合金升级锻造模板的生成率提高了一倍。<ul>
+<li>虽然我们确实希望下界合金升级更具挑战性，但我们认为此前的生成率在玩家找到第一个下界合金升级模板后，无法鼓励他们进一步探索。</li>
+</ul></li>
+<li>现在每个要塞图书馆的箱子中必定会生成1个“眼眸”盔甲纹饰。<ul>
+<li>这样即使在最不走运的世界中，这种盔甲纹饰仍然可以被找到。</li>
+</ul></li>
+<li>林地府邸现在生成“恼鬼”盔甲纹饰锻造模板的几率大大增加。<ul>
+<li>林地府邸本来就很少有使用战利品表的箱子——在运气不好的生成中，甚至一个都没有。找到这些纹饰的几率过于稀有，而我们希望获得“恼鬼”盔甲纹饰的挑战更侧重于首先找到林地府邸。</li>
+</ul></li>
+<li>总的来说，锻造模板的生成现在略微更常见。<ul>
+<li>由于制作模板副本的方法，我们希望玩家在某个遗迹中发现另一个模板时，会感觉自己刚刚节省了7个钻石。如果模板过于稀有，这种情况就不太会发生，这意味着玩家不会受到鼓励去探索更多遗迹。</li>
+</ul></li>
+</ul>
+<h1>快照23w05a中修复的Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-127749" target="_blank" rel="noopener noreferrer">MC-127749</a> 披风抖动；移动比在快照18w03b中更加生硬。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147711" target="_blank" rel="noopener noreferrer">MC-147711</a> 溺尸不再有不同的游泳动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216270" target="_blank" rel="noopener noreferrer">MC-216270</a> 手持盔甲物品时无法通过右键点击来替换盔甲。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252625" target="_blank" rel="noopener noreferrer">MC-252625</a> 应用NoAI NBT后，青蛙会播放跑步动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254074" target="_blank" rel="noopener noreferrer">MC-254074</a> 青蛙在受到伤害时不播放走路动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256479" target="_blank" rel="noopener noreferrer">MC-256479</a> 骆驼在受到伤害时不播放走路动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256493" target="_blank" rel="noopener noreferrer">MC-256493</a> 骆驼在停止移动时没有流畅的过渡到待机状态。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256650" target="_blank" rel="noopener noreferrer">MC-256650</a> 青蛙在停止移动时没有流畅的过渡到待机状态。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256664" target="_blank" rel="noopener noreferrer">MC-256664</a> 骆驼在应用“NoAI”NBT标签后会播放走路动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257464" target="_blank" rel="noopener noreferrer">MC-257464</a> 美西螈在缓慢移动时行走动画会卡顿。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259206" target="_blank" rel="noopener noreferrer">MC-259206</a> 辅助功能引导界面无法显示英语（美国）以外的任何语言。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259357" target="_blank" rel="noopener noreferrer">MC-259357</a> 在某些语言中，锻造台GUI内的文本会渲染在盔甲架模型后面。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259362" target="_blank" rel="noopener noreferrer">MC-259362</a> 字符串“item.minecraft.smithing_template.netherite_upgrade.additions_slot_description”中“Netherite”一词前缺少冠词。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259370" target="_blank" rel="noopener noreferrer">MC-259370</a> 要塞图书馆的战利品表被要塞祭坛的战利品表替换了。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259389" target="_blank" rel="noopener noreferrer">MC-259389</a> 新锻造GUI中不兼容合成的箭头覆盖层使用了旧版锻造GUI的位置。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259399" target="_blank" rel="noopener noreferrer">MC-259399</a> 调整游戏窗口大小后，锻造台GUI中的盔甲架模型不会渲染输出物品。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259418" target="_blank" rel="noopener noreferrer">MC-259418</a> 具有较大“LastPoseTick”NBT值的骆驼仍然行为异常，并导致各种问题。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259420" target="_blank" rel="noopener noreferrer">MC-259420</a> 调色板中不存在的像素会被擦除，而不是保留。</li>
+</ul>

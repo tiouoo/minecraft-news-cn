@@ -1,0 +1,57 @@
+<p>我们现在发布快照 23w40a，这是 1.20.3 的第一个快照！此快照包含盾牌的改进、聊天组件序列化的更改和 Bug 修复。</p>
+<h1>更改</h1>
+<ul>
+<li>当玩家用盾牌格挡时，从第三人称视角观看，持有盾牌的手臂现在会跟随玩家注视的方向</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 19</li>
+<li>对聊天组件序列化进行了一些小改动</li>
+</ul>
+<h2>聊天组件</h2>
+<h3>序列化</h3>
+<ul>
+<li>纯文本聊天组件（文本、无兄弟组件、无样式）现在始终序列化为字符串，而不是 <code>{"text': "blah"}</code></li>
+<li>聊天组件现在通过网络发送时会序列化为 NBT</li>
+<li>聊天组件现在有一个可选的 <code>type</code> 值（允许的值：<code>text</code>、<code>translatable</code>、<code>score</code>、<code>nbt</code>、<code>keybind</code>），以加快解析速度并改进错误检查</li>
+<li><code>show_entity</code> <code>hoverEvent</code> 样式中的 <code>id</code> 字段现在也接受 UUID 作为 4 个整数的数组</li>
+<li><code>translate</code> 组件的数字和布尔参数不再转换为字符串</li>
+<li>不再接受以下 JSON 组件表示形式：<ul>
+<li><code>null</code></li>
+<li><code>[]</code></li>
+</ul></li>
+<li>以下样式字段中的错误不再被静默忽略：<ul>
+<li><code>color</code></li>
+<li><code>clickEvent</code></li>
+<li><code>hoverEvent</code></li>
+<li><code>hoverEvent[action=show_entity].contents.name</code></li>
+<li><code>hoverEvent[action=show_item].contents.tag</code></li>
+</ul></li>
+</ul>
+<h1>数据包版本 19</h1>
+<h2>标签</h2>
+<ul>
+<li>添加了 <code>can_breathe_under_water</code> 实体类型标签，该标签会禁用溺水</li>
+<li>添加了 <code>can_break_armor_stands</code> 伤害类型标签，用于可以逐渐击倒盔甲架的伤害类型</li>
+</ul>
+<h1>23w40a 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-47607" target="_blank" rel="noopener noreferrer">MC-47607</a> 如果粒子设置为最少，屏障粒子不会显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-50647" target="_blank" rel="noopener noreferrer">MC-50647</a> 史莱姆刷怪笼只在史莱姆区块中生成史莱姆</li>
+<li><a href="https://bugs.mojang.com/browse/MC-78314" target="_blank" rel="noopener noreferrer">MC-78314</a> （Marker）盔甲架在水中产生气泡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-109101" target="_blank" rel="noopener noreferrer">MC-109101</a> 当玩家面朝正上方时，盾牌无法格挡伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114761" target="_blank" rel="noopener noreferrer">MC-114761</a> 区域效果云对正在死亡的生物施加效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172398" target="_blank" rel="noopener noreferrer">MC-172398</a> 在玩家物品栏中，火焰纹理根据玩家的旋转进行渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221558" target="_blank" rel="noopener noreferrer">MC-221558</a> 如果粒子设置为最少，光源粒子不会显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-227255" target="_blank" rel="noopener noreferrer">MC-227255</a> 蜂箱和蜂巢在结构方块中无法正确旋转/镜像</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236946" target="_blank" rel="noopener noreferrer">MC-236946</a> 盾牌攻击向量被错误归一化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253819" target="_blank" rel="noopener noreferrer">MC-253819</a> 钟在由结构方块/拼图方块加载时无法正确旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254850" target="_blank" rel="noopener noreferrer">MC-254850</a> 管理员可以踢出局域网世界的主机</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255173" target="_blank" rel="noopener noreferrer">MC-255173</a> 在大坐标值下，下界传送门传送不准确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261303" target="_blank" rel="noopener noreferrer">MC-261303</a> 饰纹陶罐有一个未使用的“cracked”方块状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263123" target="_blank" rel="noopener noreferrer">MC-263123</a> 经验修补在完全修复后错误地计算溢出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264748" target="_blank" rel="noopener noreferrer">MC-264748</a> GLX._initGlfw 将指针视为字符串</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265353" target="_blank" rel="noopener noreferrer">MC-265353</a> 物品显示实体中的时钟和指南针不显示正确的时间/方向</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265462" target="_blank" rel="noopener noreferrer">MC-265462</a> 在游戏阶段发送资源包会长时间显示加载地形屏幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265519" target="_blank" rel="noopener noreferrer">MC-265519</a> 在 Mac 全屏模式下，点击屏幕的某些区域时游戏会最小化</li>
+</ul>

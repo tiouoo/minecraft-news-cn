@@ -1,0 +1,107 @@
+<p>是时候发布一个高级快照了！在这个快照中，你也可以再次打开以前版本的世界——但有一个重要警告！我们计划为洞穴与山崖：第二部分引入的衔接技术尚未可用。如果你在这个快照中打开一个旧世界，它将在当前世界底部下方用空气填充，并在可见的区块边界处显示新区域。</p>
+<p><strong>我们强烈建议在加载此快照中的世界之前备份你的世界。</strong></p>
+<h1>21w39a 的新特性</h1>
+<ul>
+<li>添加了洞穴与山崖：第二部分的进度</li>
+</ul>
+<h2>进度</h2>
+<ul>
+<li>添加“洞穴与山崖”进度：从主世界顶部坠落到底部</li>
+<li>添加“宾至如归”进度：在主世界乘坐炽足兽在熔岩上移动 50 格</li>
+<li>添加“星际商人”进度：在建筑高度限制处与村民交易</li>
+<li>添加“音乐之声”进度：在草甸生物群系中使用唱片机播放音乐</li>
+</ul>
+<h1>21w39a 的更改</h1>
+<ul>
+<li>调整了山峰，使小山看起来更像真正的崎岖山峰，而不是平坦的丘陵土丘</li>
+<li>草甸中的孤树现在总是会包含一个蜂巢</li>
+<li>溺尸现在可以在溶洞中的含水层生成</li>
+<li>僵尸不再在溶洞中生成</li>
+<li> buried treasure chests 现在可以包含水肺药水</li>
+<li>默认亮度更改为 50</li>
+<li>重新设计了效果在物品栏界面中的显示方式，使其在配方书打开时也能显示</li>
+<li></li>
+</ul>
+<h2>效果</h2>
+<ul>
+<li>你的效果列表现在显示在物品栏的右侧，而不是左侧</li>
+<li>当物品栏效果列表可见时，它会从游戏视图中隐藏，以减少屏幕杂乱</li>
+<li>现在有两种查看效果列表的模式：紧凑型和经典型<ul>
+<li>经典模式是预先存在的效果列表，一个接一个显示</li>
+<li>紧凑模式是每个效果只显示一个图标，适合小屏幕空间</li>
+</ul></li>
+<li>游戏会自动在两种外观之间切换，以适应可用的屏幕空间（包括配方书打开时）</li>
+</ul>
+<h1>21w39a 的技术更改</h1>
+<ul>
+<li>添加了 <code>fall_from_height</code> 和 <code>ride_entity_distance</code> 进度触发器</li>
+<li>将 <code>nether_travel</code> 更改为与其他类似触发器匹配</li>
+<li>添加了新的战利品表函数 <code>set_potion</code></li>
+<li>更改了磁盘上的区块格式</li>
+<li>资源包格式已提升到 8</li>
+<li>独立的 <code>server.jar</code> 现在捆绑了各个库，而不是作为扁平存档</li>
+</ul>
+<h2>进度</h2>
+<h3>新触发器</h3>
+<h4><code>fall_from_height</code></h4>
+<ul>
+<li>在玩家坠落落地后触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 触发此进度的玩家</li>
+<li><code>start_position</code> - 坠落开始前最后位置的位置谓词</li>
+<li><code>distance</code> - <code>start_position</code> 与玩家之间距离的谓词</li>
+</ul></li>
+</ul>
+<h4><code>ride_entity_in_lava</code></h4>
+<ul>
+<li>当玩家在熔岩中骑乘时，每个游戏刻都会触发</li>
+<li>条件<ul>
+<li><code>player</code> - 触发此进度的玩家</li>
+<li><code>start_position</code> - 骑乘开始时的位置（在熔岩上的第一个刻）</li>
+<li><code>distance</code> - <code>start_position</code> 与玩家之间距离的谓词</li>
+</ul></li>
+</ul>
+<h3>更改的触发器</h3>
+<h4><code>nether_travel</code></h4>
+<ul>
+<li><code>entered</code> 条件重命名为 <code>start_position</code></li>
+<li><code>exited</code> 已移除，因为它与 <code>player.location</code> 相同</li>
+</ul>
+<h2>战利品表</h2>
+<h3>新函数</h3>
+<h4><code>set_potion</code></h4>
+<p>在任何物品上设置 <code>Potion</code> 标签</p>
+<h5>参数：</h5>
+<ul>
+<li><code>id</code> - 药水 ID</li>
+</ul>
+<h2>世界数据：区块格式</h2>
+<ul>
+<li>区块的 <code>Level.Sections[].BlockStates</code> 和 <code>Level.Sections[].Palette</code> 已移动到 <code>Level.Sections[].block_states</code> 中的容器结构中</li>
+<li>区块的 <code>Level.Biomes</code> 现在使用调色板，并位于 <code>Level.Sections[].biomes</code> 中类似的容器结构中</li>
+<li>区块的 <code>Level.CarvingMasks[]</code> 现在是 <code>long[]</code>，而不是 <code>byte[]</code></li>
+</ul>
+<h2>资源包格式</h2>
+<ul>
+<li><code>minecraft/textures/gui/container/inventory.png</code> 现在包含一个额外的精灵图，用于物品栏中效果列表的细长布局版本</li>
+</ul>
+<h2>服务端捆绑</h2>
+<ul>
+<li><code>server.jar</code> 现在捆绑各个库，而不是将所有文件合并到单个存档中</li>
+<li>此更改旨在解决与 Java 模块相关的某些问题</li>
+<li>启动时，<code>server.jar</code> 会将库解压到由 <code>bundlerRepoDir</code> 配置的目录（默认：工作目录）</li>
+<li>要运行不同于服务端的主类，请使用 <code>bundlerMainClass</code> 属性（例如 <code>java -DbundlerMainClass=net.minecraft.data.Main -jar server.jar --reports</code>），或手动解压 jar 并使用 <code>META-INF/classpath-joined</code> 的内容用于命令行</li>
+</ul>
+<h1>21w39a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-116359" target="_blank" rel="noopener noreferrer">MC-116359</a> 配方书打开时，状态效果不在物品栏中显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149822" target="_blank" rel="noopener noreferrer">MC-149822</a> 物品栏中状态效果显示的底部边框缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193348" target="_blank" rel="noopener noreferrer">MC-193348</a> 状态效果条在创造模式下移动玩家的物品栏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-196723" target="_blank" rel="noopener noreferrer">MC-196723</a> 在物品栏中于创造模式获得的药水效果直到重新打开物品栏后才显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214894" target="_blank" rel="noopener noreferrer">MC-214894</a> 竹子会在丛林下的洞穴中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214959" target="_blank" rel="noopener noreferrer">MC-214959</a> 甘蔗在洞穴中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218167" target="_blank" rel="noopener noreferrer">MC-218167</a> 聊天会导致卡顿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236755" target="_blank" rel="noopener noreferrer">MC-236755</a> “功能放置”崩溃 / java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236903" target="_blank" rel="noopener noreferrer">MC-236903</a> 自然生成的洞穴藤蔓的 age 在 17-25 之间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237505" target="_blank" rel="noopener noreferrer">MC-237505</a> 某些生物群系构建器调试值不改变</li>
+</ul>

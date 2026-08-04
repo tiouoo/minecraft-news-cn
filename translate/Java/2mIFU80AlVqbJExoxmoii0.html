@@ -1,0 +1,41 @@
+<p>今天我们为 Minecraft Java 版发布了快照 20w29a。我们修复了一些 bug，但也悄悄加入了一两个技术性改动！</p>
+<h1>20w29a 中的更改</h1>
+<ul>
+<li>工具现在会按材质在创造模式物品栏中进行排序</li>
+</ul>
+<h1>20w29a 中的技术性更改</h1>
+<h2>命令</h2>
+<h3>spawnpoint 与 setworldspawn</h3>
+<p>添加了角度参数，用于设置重生玩家的默认朝向角度。<br>
+语法：<code>spawnpoint [targets] [pos] [angle]</code><br>
+语法：<code>setworldspawn [pos] [angle]</code>
+新参数：</p>
+<ul>
+<li><code>angle</code>：以度表示的浮点角度。支持相对坐标修饰符 <code>~</code></li>
+</ul>
+<h2>自定义世界生成</h2>
+<ul>
+<li><code>worldgen/noise_settings</code> 现在可以包含噪声配置</li>
+</ul>
+<h1>20w29a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-194464" target="_blank" rel="noopener noreferrer">MC-194464</a> "large_oak_foliage_placer" 被错误序列化为 "blob_foliage_placer"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194298" target="_blank" rel="noopener noreferrer">MC-194298</a> 骨粉无法生成花朵</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194257" target="_blank" rel="noopener noreferrer">MC-194257</a> 在 vanilla_worldgen 配置中，有若干处 "snowy" 被拼写为 "snovy"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194220" target="_blank" rel="noopener noreferrer">MC-194220</a> 不死图腾给予你抗火 II，而不是最高等级的抗火 I</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194200" target="_blank" rel="noopener noreferrer">MC-194200</a> 白桦树在桦木森林和桦木森林丘陵生物群系中生成不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-194173" target="_blank" rel="noopener noreferrer">MC-194173</a> 在流畅和优质的图像设置下，拾取物品或经验时，碰撞箱会偏移渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193662" target="_blank" rel="noopener noreferrer">MC-193662</a> 创造模式下飞行时，玩家略高于方块并潜行、跳跃，会被限制在该方块上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-193560" target="_blank" rel="noopener noreferrer">MC-193560</a> 在特定情况下，鞘翅上的附魔闪光不会渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192021" target="_blank" rel="noopener noreferrer">MC-192021</a> 在极佳图像设置下，透明方块上的附魔闪光效果无法正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191623" target="_blank" rel="noopener noreferrer">MC-191623</a> 末影龙被打败后，末影龙战斗音乐不会停止</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191031" target="_blank" rel="noopener noreferrer">MC-191031</a> 旁观模式下的玩家可以与船互动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190559" target="_blank" rel="noopener noreferrer">MC-190559</a> 幼年炽足兽在雨天处于熔岩中时不会死亡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189788" target="_blank" rel="noopener noreferrer">MC-189788</a> 船移动时，船上的某些生物有时会受到溺水伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185019" target="_blank" rel="noopener noreferrer">MC-185019</a> structures 参数为空的世界生成设置会以极高的频率生成所有结构</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176836" target="_blank" rel="noopener noreferrer">MC-176836</a> 空手的卫道士在攻击时会以挑衅的方式举起手臂</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176778" target="_blank" rel="noopener noreferrer">MC-176778</a> 当方块因服务器延迟过高而重新出现时，相机视角会被重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166718" target="_blank" rel="noopener noreferrer">MC-166718</a> 生物不再会在灵魂沙、耕地或草径中窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-158735" target="_blank" rel="noopener noreferrer">MC-158735</a> 没有弩的掠夺者会举起手臂，这种姿势可能会冒犯某些人</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153230" target="_blank" rel="noopener noreferrer">MC-153230</a> 旁观模式下的玩家可以停下矿车</li>
+</ul>

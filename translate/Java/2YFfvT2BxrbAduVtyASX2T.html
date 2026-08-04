@@ -1,0 +1,518 @@
+<p>我们现在为 Minecraft: Java Edition 发布 1.19.3。此版本为恼鬼带来了全新外观，同时还包含技术改进和漏洞修复。</p>
+<h1>1.19.3 中的新特性</h1>
+<ul>
+<li>某些实验性功能现在可通过内置的实验性数据包使用</li>
+<li>新增了一个“全景图滚动速度”辅助功能选项</li>
+<li>为离线玩家新增了默认皮肤</li>
+<li>新的木质方块音效</li>
+</ul>
+<h2>音效</h2>
+<ul>
+<li>各种木质方块在放置、破坏或行走时现在会发出独特的声音<ul>
+<li>共有三组独特的声音：主世界木质类型、下界木质类型和竹子（启用时）</li>
+</ul></li>
+<li>现在在地毯、睡莲和小型紫水晶芽上行走时可以听到脚步声</li>
+<li>现在在下界苗、发光地衣、绯红菌索和诡异菌索中行走时可以听到脚步声</li>
+</ul>
+<h1>1.19.3 中的更改</h1>
+<ul>
+<li>重新设计了创造模式物品栏标签页</li>
+<li>在控制菜单中新增了“管理员物品标签页”选项，默认关闭</li>
+<li>恼鬼现在有了新外观</li>
+<li>在下界维度中，末影人、骷髅和凋灵骷髅现在只在光照等级 7 及以下生成（之前是 11 及以下）</li>
+<li>对方块支撑的更改</li>
+<li>对刷怪笼方块的更改</li>
+<li>对聊天的更改</li>
+<li>新增了草稿版玩家举报</li>
+<li>对开放到局域网屏幕的改进</li>
+<li>Realms 新闻按钮现在会在打开链接前显示确认屏幕</li>
+<li>要塞放置代码已更改为更高效，导致要塞位置发生偏移<ul>
+<li>它们仍以同心圆环的方式放置，但在圆环中的位置可能会偏移几度</li>
+</ul></li>
+<li>旁观者菜单中的“传送到队员”选项现在只对存在有效目标玩家的队伍显示</li>
+<li>对提示信息的更改</li>
+<li>荒野更新的音乐已调整得稍微不那么响亮</li>
+</ul>
+<h2>创造模式物品栏</h2>
+<p>创造模式物品栏中的标签页顺序和内容已进行调整，使查找相关方块和物品的体验更加轻松。</p>
+<ul>
+<li>方块和物品已移动到更适合它们的类别中</li>
+<li>方块现在尽可能按材质排序<ul>
+<li>例如，所有橡木方块及其变体现在都相邻排列</li>
+</ul></li>
+<li>某些物品现在可以在多个标签页中找到</li>
+<li>多个标签页已重命名或合并到其他标签页</li>
+<li>搜索标签页现在按其他标签页分组顺序列出物品<ul>
+<li>例如，在建筑方块中找到的物品总是出现在红石方块中的物品之前</li>
+</ul></li>
+<li>新增了“彩色方块”标签页，其中包含所有具有 16 种颜色变体的方块</li>
+<li>石化橡木台阶已从创造模式物品栏中移除<ul>
+<li>它仍然可以通过命令访问</li>
+</ul></li>
+<li>以下缺失的物品已添加到创造模式物品栏：<ul>
+<li>迷之炖菜<ul>
+<li>提示信息会在从创造模式物品栏中拿起炖菜前显示其效果</li>
+<li>只会列出可以通过合成或哞菇获得的具有效果的炖菜</li>
+</ul></li>
+<li>龙蛋</li>
+<li>不祥之旗</li>
+<li>刷怪笼</li>
+<li>所有 3 种飞行时长的烟花</li>
+<li>仅管理员可用的方块和物品<ul>
+<li>只有在同时满足以下条件时，它们才会出现在“管理员工具”标签页中：<ul>
+<li>控制菜单中的“管理员物品标签页”选项设置为 <code>ON</code></li>
+<li>拥有所需的管理员权限</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>创造模式菜单中，单类别标签页之外的物品提示信息将显示该物品所在的类别<ul>
+<li>之前这仅在搜索标签页中出现</li>
+</ul></li>
+</ul>
+<h2>恼鬼</h2>
+<ul>
+<li>对恼鬼模型和纹理的更改<ul>
+<li>恼鬼保留了旧版（现在略显过大）的碰撞箱，以便更容易战斗</li>
+</ul></li>
+</ul>
+<h2>方块支撑</h2>
+<ul>
+<li>栅栏门不再为下方提供中心支撑</li>
+<li>打开时，潜影盒会弹开附着在开启面上的方块（如火把）<ul>
+<li>当潜影盒打开时，需要支撑的方块无法放置在这些开启面上</li>
+</ul></li>
+</ul>
+<h2>刷怪笼</h2>
+<ul>
+<li>玩家放置时不再有默认的生物生成类型（以前是猪）</li>
+<li>未定义生物生成类型时不会发出火焰粒子</li>
+<li>更名为“刷怪笼”以与基岩版匹配，并移除了紫色文本颜色</li>
+<li>选取方块现在对刷怪笼方块有效</li>
+<li>生物类型现在显示在刷怪笼物品堆的悬停描述中<ul>
+<li>如果尚未定义生物类型，悬停描述将说明如何设置</li>
+</ul></li>
+</ul>
+<h2>物品</h2>
+<ul>
+<li>在创造模式中新增了末影龙、铁傀儡、雪傀儡和凋灵生物的刷怪蛋物品<ul>
+<li>末影龙和凋灵刷怪蛋只能通过命令获得，以防止意外破坏玩家建筑</li>
+</ul></li>
+<li>北极熊刷怪蛋的颜色已更改，以与恶魂刷怪蛋区分</li>
+</ul>
+<h2>聊天</h2>
+<ul>
+<li>移除了聊天预览</li>
+<li>被服务器管理员删除的聊天消息将不再完全隐藏，而是替换为文本“此聊天消息已被服务器删除。”</li>
+<li>被删除的聊天消息现在会在聊天窗口中至少显示 3 秒后再隐藏</li>
+<li>聊天信任状态指示器已调整：<ul>
+<li>对于仅修改了样式的服务器修改消息，不再显示“已修改”标签</li>
+<li>“已修改”标签图标和指示器现在为深灰色</li>
+<li>“不安全”标签现在为浅灰色，且没有图标</li>
+</ul></li>
+<li>部分被过滤的聊天消息现在将过滤后的文本显示为灰色井号，并带有悬停文本说明其已被过滤</li>
+<li>聊天举报屏幕现在会显示被举报的玩家何时重新加入聊天</li>
+</ul>
+<h2>新增草稿版玩家举报</h2>
+<p>现在，在连接到服务器时，玩家举报可以暂时保存为草稿。</p>
+<ul>
+<li>退出玩家举报屏幕时，可以选择丢弃举报或将其保存为草稿<ul>
+<li>如果屏幕被强制关闭（例如玩家死亡），草稿将始终保留</li>
+</ul></li>
+<li>草稿举报会一直保留到玩家离开当前服务器或世界<ul>
+<li>离开时，玩家会被提示丢弃或完成并发送举报</li>
+</ul></li>
+</ul>
+<h2>局域网屏幕</h2>
+<ul>
+<li>该屏幕现在允许选择托管局域网世界的端口</li>
+<li>游戏模式和允许作弊按钮现在会以世界的默认值进行初始化</li>
+</ul>
+<h2>提示信息</h2>
+<ul>
+<li>使用 Tab 键切换按钮时，提示信息会显示在其上方或下方</li>
+<li>悬停时显示的提示信息会显示在光标旁边</li>
+<li>来自焦点按钮（通过按 Tab 键获得焦点）的提示信息优先于悬停按钮的提示信息</li>
+</ul>
+<h1>1.19.3 中的技术性更改</h1>
+<ul>
+<li>新增了功能开关——用于启用或禁用某些实验性或未完成功能（如方块、实体和物品）的世界选项</li>
+<li>命令更改</li>
+<li>新增了遥测事件</li>
+<li>新增了游戏规则</li>
+<li>自定义玩家头颅音符盒音效</li>
+<li>新的实体子谓词类型</li>
+<li>具有配方书的配方类型实例现在包含 <code>category</code> 字段以确定放置位置</li>
+<li>对纹理加载和拼接的更改</li>
+<li>网络协议更改</li>
+<li>将线性代数类型迁移到 Java OpenGL 数学库 (JOML)</li>
+<li>末影人携带的方块现在使用战利品表在死亡时生成掉落物</li>
+</ul>
+<h2>功能开关</h2>
+<h3>一般说明</h3>
+<ul>
+<li>功能开关是启用或禁用某些游戏元素组（如方块、实体和物品）的选项，后文称为“功能”</li>
+<li>由开关控制的游戏元素是硬编码的</li>
+<li>功能开关存储在世界中</li>
+</ul>
+<h3>配置和数据包更改</h3>
+<ul>
+<li>功能开关通过数据包启用<ul>
+<li>新增了名为 <code>features</code> 的包元数据部分，其中包含名为 <code>enabled</code> 的列表，列出已启用的功能开关</li>
+</ul></li>
+<li>游戏现在包含内置数据包（类似于“程序员美术”资源包），用于启用功能并提供相关的配方、进度、战利品表等</li>
+<li>在 <code>server.properties</code> 中新增了字段，以允许初始选择包（仅在世界创建期间有效）<ul>
+<li><code>initial-enabled-packs</code> - 要启用的包的逗号分隔列表（功能包需要显式启用）</li>
+<li><code>initial-disabled-packs</code> - 不自动启用的包的逗号分隔列表</li>
+</ul></li>
+<li>在世界创建后发现的数据包，如果它们需要已加载世界未启用的功能，则将被禁用</li>
+<li>新增了实体子谓词类型：<code>axolotl</code>、<code>boat</code>、<code>fox</code>、<code>mushroom</code>、<code>painting</code>、<code>rabbit</code>、<code>horse</code>、<code>llama</code>、<code>villager</code>、<code>parrot</code>、<code>tropical_fish</code></li>
+</ul>
+<h3>功能开关的影响</h3>
+<h4>方块</h4>
+<ul>
+<li>被禁用的方块 ID 不会被可以创建新方块的命令识别</li>
+<li>被禁用方块的方块物品会被禁用</li>
+<li>被禁用的方块不会在结构中生成</li>
+<li>被禁用的方块不会作为实体的一部分加载（例如下落的沙子或末影人携带的方块）</li>
+<li>玩家无法与被禁用的方块互动</li>
+</ul>
+<h4>实体</h4>
+<ul>
+<li>被禁用的实体 ID 不会被可以召唤新实体的命令识别</li>
+<li>被禁用的实体不会生成或加载</li>
+<li>被禁用实体的刷怪蛋物品会被禁用</li>
+</ul>
+<h4>物品</h4>
+<ul>
+<li>被禁用的物品会从创造模式菜单中隐藏</li>
+<li>配方和战利品表会阻止生成被禁用的物品</li>
+<li>被禁用的物品 ID 不会被可以创建新物品的命令识别</li>
+<li>被禁用的物品不能用于互动或攻击</li>
+</ul>
+<h2>命令</h2>
+<ul>
+<li>新命令：<code>fillbiome</code></li>
+<li>新的 execute 子命令：<code>execute if|unless biome</code></li>
+<li>对 <code>publish</code> 命令的改进</li>
+</ul>
+<h3><code>fillbiome</code></h3>
+<p>更改区域的生物群系条目。请注意，生物群系不是按方块存储的，因此受影响的位置可能无法与输入完全匹配。</p>
+<p>语法：</p>
+<p><code>fillbiome &#x3C;from> &#x3C;to> &#x3C;biome> [replace &#x3C;filter>]</code></p>
+<p>参数：</p>
+<ul>
+<li><code>from</code>：要填充区域的一个角</li>
+<li><code>to</code>：要填充区域的另一个角</li>
+<li><code>biome</code>：要设置的生物群系</li>
+<li><code>filter</code>：要替换的生物群系或生物群系标签</li>
+</ul>
+<h3><code>execute</code></h3>
+<p>execute 命令现在可以以生物群系为条件。</p>
+<p>语法：</p>
+<p><code>execute if|unless biome &#x3C;pos> &#x3C;biome></code></p>
+<h3><code>publish</code></h3>
+<p><code>publish</code> 命令新增了参数，用于启用命令和设置默认游戏模式。</p>
+<p>语法：</p>
+<p><code>publish [allowCommands] [gamemode] [port]</code></p>
+<h2>遥测</h2>
+<p>此版本包含 WorldUnloaded 事件（必需事件）以及多个自愿加入的事件。诊断跟踪是一种帮助我们了解你喜欢 Minecraft 的哪些方面，从而让我们改进这些方面的工具。</p>
+<p>WorldUnloaded 与 <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-21w38a" target="_blank" rel="noopener noreferrer">WorldLoaded</a> 之所以是必需事件，是因为我们查看的信息确实是必需的。作为 Xbox 的一部分，我们都需要遵循一套实践标准，你可以<a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer">在此处</a>找到详细说明。我们认为对工作至关重要的数据参数由 Mojang Studios 团队与 Xbox 保持一致来设定。</p>
+<p>我们想了解的是你认为 Minecraft 有多有趣。有许多方法可以实现这一点，例如反馈、游戏测试、体验和魔法。我们希望在数据方面也加入其中，这就是 WorldLoaded 和 WorldUnloaded 的用武之地。WorldLoaded 衡量你启动会话的时间，WorldUnloaded 衡量你关闭会话的时间。它们将共同通过游戏时长和玩家选择的游戏模式等指标来衡量 Minecraft 的趣味性。仅此而已。我们收集的所有数据，无论是必需的还是自愿加入的，都遵循 GDPR 和 CCPA 最佳实践来保护你的信息安全。</p>
+<p>当前其他遥测事件均为自愿加入，这意味着你可以选择是否向我们发送额外数据。唯一不能自愿加入的玩家是 Microsoft 儿童账户，但每个人仍然可以将所有反馈发送到 <a href="http://feedback.minecraft.net/" target="_blank" rel="noopener noreferrer">feedback.minecraft.net</a>。</p>
+<p>就像我们在反馈网站上收到的你的所有想法和评论一样，这极大地帮助我们改进 Minecraft。我们想制作一款你想玩的游戏，所以我们需要了解这款游戏需要什么。即使只是更多的岩浆。</p>
+<h3>透明度</h3>
+<ul>
+<li>新增了遥测数据收集屏幕<ul>
+<li>此屏幕显示有关所发送数据类型的信息</li>
+<li>发送数据的级别可以在“最小”和“全部”之间控制<ul>
+<li>“最小”仅发送必需数据</li>
+<li>“全部”发送必需数据以及可选数据</li>
+</ul></li>
+<li>默认数据级别为“最小”（仅必需数据）</li>
+</ul></li>
+<li>客户端发送的每个遥测事件现在都会记录到磁盘<ul>
+<li>旧日志文件会在 7 天后移除</li>
+<li>这些文件可以在 <code>logs/telemetry</code> 目录下找到<ul>
+<li>通过遥测数据收集屏幕上的“打开我的数据”按钮可以访问此目录的快捷方式</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>必需事件</h3>
+<ul>
+<li>新增了 WorldUnloaded 事件</li>
+<li>从 WorldLoaded 事件中移除了客户端 Java 版本</li>
+</ul>
+<h4>WorldLoaded 与 WorldUnloaded</h4>
+<p>了解 Minecraft 的游玩方式使我们能够将游戏更新和改进集中在与玩家最相关的领域。告诉我们这些的数据包括游戏模式、客户端或服务器是否安装模组的状态以及游戏版本。</p>
+<p>WorldLoaded 和 WorldUnloaded 是两个配对事件，用于计算世界会话持续了多长时间（以秒和刻为单位）。WorldLoaded 的数据在世界启动时发送，WorldUnloaded 的数据在世界关闭时发送（退回到标题界面、从服务器断开连接）。</p>
+<h3>可选事件</h3>
+<ul>
+<li>新增了 PerformanceMetrics 和 WorldLoadTimes 事件</li>
+</ul>
+<h4>PerformanceMetrics</h4>
+<p>了解 Minecraft 的整体性能概况有助于我们针对各种机器规格和操作系统调整和优化游戏。</p>
+<p>定期的性能指标包括帧速率、渲染性能、内存使用情况、操作系统以及客户端和服务器的模组状态等数据。</p>
+<p>包含游戏版本是为了帮助我们比较 Minecraft 新版本的性能概况。</p>
+<h4>WorldLoadTimes</h4>
+<p>了解加入世界需要多长时间以及随时间的变化对我们来说很重要。例如，当我们添加新功能或进行较大的技术更改时，我们需要看看这对加载时间产生了什么影响。</p>
+<p>此事件包括世界加载的总时间（以毫秒为单位）、是否是新建世界，以及游戏版本和平台详细信息。</p>
+<h2>游戏规则</h2>
+<ul>
+<li>新增了 <code>blockExplosionDropDecay</code>、<code>mobExplosionDropDecay</code> 和 <code>tntExplosionDropDecay</code> 游戏规则<ul>
+<li>设置为 <code>false</code> 时，所有方块都会掉落战利品</li>
+<li>设置为 <code>true</code> 时，方块会根据距离爆炸中心的远近随机掉落战利品</li>
+<li>TNT 默认为 <code>false</code>，方块和生物默认为 <code>true</code></li>
+</ul></li>
+<li>新增了 <code>snowAccumulationHeight</code> 游戏规则<ul>
+<li>当下雪时，此游戏规则决定每个方块可以积累的最大层数</li>
+<li>默认值为 <code>1</code></li>
+<li>设置为 <code>0</code> 时不会形成任何雪</li>
+<li>设置为 <code>8</code> 或以上时，雪可以形成到完整方块的高度</li>
+</ul></li>
+<li>新增了 <code>waterSourceConversion</code> 和 <code>lavaSourceConversion</code> 游戏规则<ul>
+<li>设置为 <code>true</code> 时，允许该流体形成新的源头</li>
+<li>水默认为 <code>true</code>，熔岩默认为 <code>false</code></li>
+</ul></li>
+<li>新增了 <code>globalSoundEvents</code> 游戏规则，用于控制某些游戏时刻是否无论位置都被所有玩家听到<ul>
+<li>默认值为 <code>true</code></li>
+</ul></li>
+</ul>
+<h2>配方</h2>
+<h3>配方书类别</h3>
+<ul>
+<li>配方书类别/标签页现在可以由配方定义控制</li>
+<li>适用于 <code>shaped</code>/<code>shapeless</code> 和各种特殊合成配方的类别：<ul>
+<li><code>building</code></li>
+<li><code>redstone</code></li>
+<li><code>equipment</code></li>
+<li><code>misc</code>（默认）</li>
+</ul></li>
+<li>适用于 <code>smelting</code>、<code>blasting</code>、<code>smoking</code>、<code>campfire_cooking</code> 的类别：<ul>
+<li><code>food</code></li>
+<li><code>blocks</code></li>
+<li><code>misc</code>（默认）</li>
+</ul></li>
+<li>某些配方书会将多个类别合并到单个标签页中</li>
+<li>确切的映射关系将来可能会更改</li>
+</ul>
+<h2>资源包</h2>
+<ul>
+<li>资源包版本现在为 12</li>
+<li>移除了版本 3 和 4（扁平化之前）资源包的“修复器”<ul>
+<li>游戏将不再尝试将这些版本的包适配到当前版本</li>
+</ul></li>
+<li>游戏现在会加载适当目录中的所有方块模型和方块状态定义<ul>
+<li>这意味着如果包中存在无效模型，将阻止包加载，即使该模型未被使用</li>
+</ul></li>
+</ul>
+<h3>纹理加载更改</h3>
+<ul>
+<li>背景：当游戏加载方块和物品模型使用的所有纹理时，需要将它们拼接（合并）为单个图像，称为“图集”<ul>
+<li>被拼接在图集上的单个纹理称为“精灵”</li>
+</ul></li>
+<li>为了提高加载性能，方块和物品纹理现在在方块和物品模型处理之前加载<ul>
+<li>默认情况下，不在 <code>textures/item</code> 和 <code>textures/block</code> 目录中的纹理将不再被自动识别，并且会加载失败</li>
+</ul></li>
+<li>资源包现在可以在 <code>atlases</code> 目录中包含配置文件，用于控制哪些图像包含在图集中</li>
+</ul>
+<h4>图集配置文件</h4>
+<ul>
+<li>资源包现在新增了 <code>atlases</code> 目录</li>
+<li>此目录包含用于配置图集的 JSON 条目：<ul>
+<li><code>blocks</code> - 方块和物品模型使用的纹理</li>
+<li><code>banner_patterns</code>、<code>beds</code>、<code>chests</code>、<code>shield_patterns</code>、<code>shulker_boxes</code>、<code>signs</code> - 用于渲染某些特殊情况的模型</li>
+<li><code>mob_effects</code> - UI 中效果图标使用的纹理</li>
+<li><code>paintings</code> - 画使用的纹理</li>
+<li><code>particles</code> - 粒子使用的纹理（由 <code>particles</code> 目录中的文件内的 <code>textures</code> 字段引用）</li>
+</ul></li>
+<li>如果多个包包含这些文件，它们将按包内的顺序合并（与数据包中的标签相同）</li>
+<li>这些文件内部是一个 JSON 对象，其中包含一个名为 <code>sources</code> 的列表<ul>
+<li><code>sources</code> 中的每个条目都会在加载时按定义顺序运行，向纹理列表中添加或移除新文件；以供稍后由方块模型、粒子等引用</li>
+</ul></li>
+<li>源的类型：<ul>
+<li><code>directory</code> - 列出目录及其子目录中的所有文件，涵盖所有命名空间<ul>
+<li><code>source</code> - 要列出的包中的目录（相对于 <code>textures</code> 目录）</li>
+<li><code>prefix</code> - 加载时附加到精灵名称的字符串</li>
+</ul></li>
+<li><code>single</code> - 添加单个文件<ul>
+<li><code>resource</code> - 包中资源的位置（相对于 <code>textures</code> 目录，隐式包含 <code>.png</code> 扩展名）</li>
+<li><code>sprite</code> - 精灵名称（可选，默认为 <code>resource</code>）</li>
+</ul></li>
+<li><code>filter</code> - 移除匹配给定模式的精灵<ul>
+<li><code>namespace</code>、<code>path</code> - 要移除的 ID 的模式（正则表达式）（仅对已在列表中的条目有效）<ul>
+<li>如果省略，则会匹配任何值</li>
+</ul></li>
+</ul></li>
+<li><code>unstitch</code> - 从其他图像复制矩形区域<ul>
+<li><code>resource</code> - 包中资源的位置（相对于 <code>textures</code> 目录，隐式包含 <code>.png</code> 扩展名）</li>
+<li><code>divisor_x</code>、<code>divisor_y</code> - 用于确定区域使用的单位</li>
+<li><code>regions</code> - 要从源图像复制的区域列表<ul>
+<li><code>sprite</code> - 精灵名称</li>
+<li><code>x</code>、<code>y</code> - 区域左上角的坐标</li>
+<li><code>width</code>、<code>height</code> - 区域的大小</li>
+</ul></li>
+<li>诸如 <code>x</code> 之类的值会通过除以各自的除数，然后乘以真实图像大小来转换为真实图像坐标</li>
+</ul></li>
+</ul></li>
+<li>示例：如果包中有一个名为 <code>assets/test/textures/fancy/iridium.png</code> 的文件，且源为 <code>{"type": "directory", "source": "fancy", "prefix": "custom/"}</code>，则该纹理将在模型中作为 <code>test:custom/iridium</code> 使用</li>
+</ul>
+<h2>自定义玩家头颅音符盒音效</h2>
+<ul>
+<li>玩家头颅现在可以包含 <code>note_block_sound</code> 字段<ul>
+<li>存在时，此字段决定当头颅放置在音符盒上方时音符盒发出的声音</li>
+</ul></li>
+</ul>
+<h2>新的实体子谓词类型</h2>
+<ul>
+<li>为一些具有变体的实体类型新增了实体子谓词：</li>
+<li><code>axolotl</code><ul>
+<li><code>variant</code> - 值：<code>lucy</code>、<code>wild</code>、<code>gold</code>、<code>cyan</code>、<code>blue</code></li>
+</ul></li>
+<li><code>boat</code><ul>
+<li>适用于船、箱子船和竹筏</li>
+<li><code>variant</code> - 值：<code>oak</code>、<code>spruce</code>、<code>birch</code>、<code>jungle</code>、<code>acacia</code>、<code>dark_oak</code>、<code>mangrove</code>、<code>bamboo</code></li>
+</ul></li>
+<li><code>fox</code><ul>
+<li><code>variant</code> - 值：<code>red</code>、<code>snow</code></li>
+</ul></li>
+<li><code>mooshroom</code><ul>
+<li><code>variant</code> - 值：<code>red</code>、<code>brown</code></li>
+</ul></li>
+<li><code>painting</code><ul>
+<li><code>variant</code> - 值：参见 <code>painting_variant</code> 注册表</li>
+</ul></li>
+<li><code>rabbit</code><ul>
+<li><code>variant</code> - 值：<code>brown</code>、<code>white</code>、<code>black</code>、<code>white_splotched</code>、<code>gold</code>、<code>salt</code>、<code>evil</code></li>
+</ul></li>
+<li><code>horse</code><ul>
+<li><code>variant</code> - 值：<code>white</code>、<code>creamy</code>、<code>chestnut</code>、<code>brown</code>、<code>black</code>、<code>gray</code>、<code>dark_brown</code></li>
+<li>斑纹是独立的值，不会被匹配</li>
+</ul></li>
+<li><code>llama</code><ul>
+<li><code>variant</code> - 值：<code>creamy</code>、<code>white</code>、<code>brown</code>、<code>gray</code></li>
+</ul></li>
+<li><code>villager</code><ul>
+<li><code>variant</code> - 值：参见 <code>villager_type</code> 注册表</li>
+<li>也适用于僵尸村民</li>
+<li>职业和等级是独立的值，不会被匹配</li>
+</ul></li>
+<li><code>parrot</code><ul>
+<li><code>variant</code> - 值：<code>red_blue</code>、<code>blue</code>、<code>green</code>、<code>yellow_blue</code>、<code>gray</code></li>
+</ul></li>
+<li><code>tropical_fish</code><ul>
+<li><code>variant</code> - 值：<code>kob</code>、<code>sunstreak</code>、<code>snooper</code>、<code>dasher</code>、<code>brinely</code>、<code>spotty</code>、<code>flopper</code>、<code>stripey</code>、<code>glitter</code>、<code>blockfish</code>、<code>betty</code>、<code>clayfish</code></li>
+</ul></li>
+</ul>
+<h2>网络协议</h2>
+<ul>
+<li>网络协议现在支持将玩家实体添加到世界，而无需添加到“Tab”玩家列表中</li>
+<li>服务器现在可以与玩家的第一个聊天数据包一起按需分发其档案公钥</li>
+<li>发送私密消息时，安全聊天协议中的消息“标头”不再需要分发</li>
+<li>安全聊天网络协议中的上下文消息引用现在会为了效率而进行去重</li>
+<li>服务器现在可以与玩家的第一个聊天数据包一起按需分发其档案公钥</li>
+<li>档案公钥现在无需重新连接即可刷新</li>
+<li>客户端现在在收到登录数据包时会重置其聊天会话</li>
+</ul>
+<h1>1.19.3 中的实验性特性</h1>
+<ul>
+<li>某些实验性特性现在需要启用才会在世界中出现</li>
+<li>此类特性通过在创建世界时添加内置数据包来启用</li>
+<li>功能开关旨在隐藏未完成或实验性的特性，以确保你的现有世界不受影响</li>
+<li>使用实验性特性的世界将在世界选择列表中标记为“实验性”</li>
+<li>现有世界无法切换实验性特性</li>
+</ul>
+<h2>收纳袋</h2>
+<ul>
+<li>收纳袋现在作为实验性特性提供</li>
+</ul>
+<h2>新增骆驼</h2>
+<p>启用 1.20 更新实验性特性后，骆驼现在可用。</p>
+<ul>
+<li>骆驼可以装备鞍，并可容纳两名玩家骑行</li>
+<li>骆驼会自然生成在沙漠村庄中</li>
+<li>骆驼很高<ul>
+<li>当你骑在骆驼上时，大多数敌对生物无法够到你</li>
+<li>它们可以轻松走过栅栏和墙</li>
+</ul></li>
+<li>骆驼非常优雅，但脾气暴躁<ul>
+<li>它们会随机坐下</li>
+<li>坐下时，很难说服它们移动</li>
+</ul></li>
+<li>骆驼既可以缓慢行走，也可以快速冲刺</li>
+<li>它们也可以向前猛冲，但这样做会暂时失去体力</li>
+</ul>
+<h2>竹制方块组</h2>
+<p>启用 1.20 更新实验性特性后，新的竹制方块组现在可用。</p>
+<ul>
+<li>新的木质方块<ul>
+<li>竹块</li>
+<li>去皮竹块</li>
+<li>竹木板</li>
+<li>竹门</li>
+<li>竹活板门</li>
+<li>竹告示牌</li>
+<li>竹楼梯</li>
+<li>竹台阶</li>
+<li>竹栅栏</li>
+<li>竹栅栏门</li>
+<li>竹按钮</li>
+<li>竹压力板</li>
+</ul></li>
+<li>竹块可以由 9 个竹子合成，并且可以像其他原木一样去皮</li>
+<li>由竹块合成的竹木板只能得到 2 块木板，而原木可以得到 4 块</li>
+<li>新增了一种竹子独有的“马赛克”木板变体，称为竹马赛克<ul>
+<li>它可以通过竖直放置 1x2 竹台阶来合成</li>
+<li>你可以合成竹马赛克的楼梯和台阶变体</li>
+<li>竹马赛克方块不能作为其他木质方块使用的合成材料，但可以用作燃料</li>
+</ul></li>
+<li>新增了独特的竹筏和竹箱筏，可以像普通船一样合成，但使用竹木板<ul>
+<li>它们的功能与普通船相同，但外观独特</li>
+</ul></li>
+</ul>
+<h2>錾制书架</h2>
+<p>启用 1.20 更新实验性特性后，新的錾制书架变体现在可用。</p>
+<ul>
+<li>由 6 个木板和 3 个木质台阶合成</li>
+<li>可以存储书、书与笔、成书和附魔书<ul>
+<li>最多容纳 6 本书</li>
+<li>安全保存你世界中的故事和传说</li>
+<li>可以通过对准特定槽位来添加或移除这些书</li>
+</ul></li>
+<li>比较器可以检测最后放置/移除的书<ul>
+<li>非常适合在阴森的图书馆中隐藏秘密</li>
+</ul></li>
+<li>可以与漏斗配合使用</li>
+</ul>
+<h2>悬挂式告示牌</h2>
+<p>是否曾经想悬挂你的告示牌？拿几条锁链，剥一些原木，现在你可以了！启用 1.20 更新实验性特性后，悬挂式告示牌现在可用。</p>
+<ul>
+<li>悬挂式告示牌是普通告示牌的更昂贵版本<ul>
+<li>由 2 条锁链和 6 个你喜欢的木质类型的去皮原木合成</li>
+<li>合成结果为 6 个悬挂式告示牌</li>
+</ul></li>
+<li>可以通过以下方式悬挂：<ul>
+<li>在可以从中心提供支撑的方块下方，例如完整方块或栅栏</li>
+<li>附着在方块的实心侧面</li>
+<li>附着在另一个悬挂式告示牌的侧面或下方</li>
+</ul></li>
+<li>与普通告示牌不同，它们不能在没有侧面或上方支撑的情况下直接放置在地面上<ul>
+<li>但是，带有横杆的悬挂式告示牌在支撑方块被移除时不会弹出</li>
+</ul></li>
+</ul>
+<h2>音符盒上的生物头颅互动</h2>
+<ul>
+<li>当在音符盒上放置生物头颅时，该音符盒现在会在被玩家演奏或被红石充能时播放该生物的其中一个环境声音</li>
+</ul>
+<h2>猪灵头颅</h2>
+<ul>
+<li>猪灵现在在被高压苦力怕杀死时会掉落它们的头颅</li>
+<li>将猪灵头颅放在音符盒上会播放猪灵的一个环境声音</li>
+<li>猪灵头颅在被红石充能时，或当玩家佩戴行走时，会扇动耳朵</li>
+</ul>
+<h2>进度</h2>
+<ul>
+<li>繁殖骆驼现在计入“鹦鹉与蝙蝠”进度，并且现在是“成双成对”所必需的</li>
+<li>悬挂式告示牌现在计入“发光吧”进度</li>
+</ul>
+<h1>1.19.3 中修复的漏洞</h1>
+<p>此版本修复了约 200 个漏洞。查看<a href="https://bugs.mojang.com/issues/?filter=27487" target="_blank" rel="noopener noreferrer">问题追踪器上的列表</a>。</p>

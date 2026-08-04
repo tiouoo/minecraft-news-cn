@@ -1,0 +1,73 @@
+<p>We're now releasing 1.18.2 for Minecraft: Java Edition. This release adds universal tags and the placefeature command. It also introduces the possibility for experimental data packs to customize cave generation and to add new custom structures to worlds.</p>
+<p>Additionally, this version contains compliance updates for South Korean players.</p>
+<p>Enjoy!</p>
+<h1>Changes in 1.18.2</h1>
+<ul>
+<li>Users running Minecraft in a 32-bit environment will receive a warning in the main menu about the upcoming end of 32-bit environment support</li>
+<li>If you’re playing in South Korea, we added gameplay timers and notices in compliance with gaming laws to help remind players to take occasional breaks from gameplay</li>
+<li>A seed of the number zero is no longer handled as a special case</li>
+<li>Any spaces before/after an inputted seed will now be trimmed</li>
+<li>Dolphins will now more accurately pick the closest structure regardless of type</li>
+<li>Ender chests are no longer gift wrapped around Christmas</li>
+</ul>
+<h1>Technical Changes in 1.18.2</h1>
+<ul>
+<li>Added command: <code>placefeature</code></li>
+<li>The <code>locate</code> command now uses a namespaced id parameter</li>
+<li>The <code>locate</code> command parameter is now a configured structure rather than a structure type. For instance, you can now use <code>/locate village_desert</code> or <code>/locate shipwreck_beached</code></li>
+<li><code>locate</code> and <code>locatebiome</code> commands now support tags (prefix with <code>#</code> to distinguish from normal ids)</li>
+<li>It is now possible to add custom structures in experimental datapacks</li>
+<li>A lot of the cave generation is now configurable through experimental datapacks</li>
+<li>Any type present in registries (blocks, items, biomes, etc.) can now have tags</li>
+<li>The datapack version is now 9</li>
+</ul>
+<h2><code>placefeature</code> Command</h2>
+<p>New command that places a configured feature at a given location. Syntax: <code>placefeature &#x3C;id> [pos]</code>
+Parameters:</p>
+<ul>
+<li><code>id</code>: The namespaced id of a configured feature to place</li>
+<li><code>pos</code>: The position to use as the origin for the feature placement (if omitted, <code>~ ~ ~</code> is used)</li>
+</ul>
+<h2>Configurable caves</h2>
+<ul>
+<li>A new registry was added for Density functions (caves are created by combining those together)</li>
+<li>Noise settings got a new field <code>noise_router</code> (and lost a couple of flags), see <code>worldgen/noise_settings</code> folder in the worldgen report</li>
+<li>Noise router wires data-driven parts of the cave generation with the rest of the code</li>
+</ul>
+<h2>Configured Structures and Structure Sets</h2>
+<p>The game now generates and stores data-driven configured structures.</p>
+<ul>
+<li>Experimental datapacks can add new structure sets</li>
+<li>The <code>feature</code> field in location predicates now references a configured feature</li>
+<li>The <code>exploration_map</code> loot table function <code>destination</code> field is now a configured feature tag id</li>
+<li>The <code>exploration_map</code> loot table function no longer automatically sets the display name of the map</li>
+</ul>
+<h2>Universal tags</h2>
+<ul>
+<li>Tags can now be defined for any registry (blocks, items, biomes, etc. - see <code>registries.json</code> in report)</li>
+<li>New tags are stored in datapacks under <code>tags</code> directory (same as old ones)<ul>
+<li>Names of new tag directories are the same as registry names (so <code>/data/[namespace]/tags/potion</code> and <code>/data/[namespace]/tags/worldgen/biome</code>)</li>
+<li>Existing tags (<code>blocks</code>, <code>items</code>, <code>fluids</code>, <code>entity_types</code>, <code>game_events</code> and <code>functions</code>) keep their name (for now)</li>
+</ul></li>
+<li>Some fields in worldgen structures that previously accepted only lists of element ids now accept tags<ul>
+<li>Those entries now accept <code>[id, ...]</code>, <code>id</code> (shortcut for <code>[id]</code>) and <code>#tag</code></li>
+<li>Changed fields are:<ul>
+<li><code>feature.glow_lichen</code> configuration: <code>can_be_placed_on</code></li>
+<li><code>feature.spring_feature</code> configuration: <code>valid_blocks</code></li>
+<li><code>feature.simple_random_selector</code> configuration: <code>features</code></li>
+<li><code>block_predicate_type.matching_blocks</code>: <code>blocks</code></li>
+<li><code>block_predicate_type.matching_fluids</code>: <code>fluids</code></li>
+<li><code>biome</code>: inner list in <code>features</code>, map value in <code>carvers</code></li>
+<li><code>biome_source.checkerboard</code>: <code>biomes</code></li>
+</ul></li>
+</ul></li>
+<li>Some tag fields now require id to be prepended with <code>#</code> (however they are not yet accepting element list)<ul>
+<li><code>dimension_type</code>: <code>infiniburn</code></li>
+<li><code>feature.geode</code> configration: <code>blocks.cannot_replace</code>, <code>blocks.invalid_blocks</code></li>
+<li><code>feature.vegetation_patch</code>, <code>feature.waterlogged_vegetation_patch</code> configuration: <code>replaceable</code></li>
+<li><code>feature.root_system</code> configuration: <code>root_replaceable</code></li>
+<li><code>structure_processor.protected_blocks</code>: <code>value</code></li>
+</ul></li>
+</ul>
+<h1>Fixed Bugs in 1.18.2</h1>
+<p>In addition to crashes and other stability improvements, around 100 player-reported bugs were fixed in this release. View the <a href="https://bugs.mojang.com/issues/?filter=26771" target="_blank" rel="noopener noreferrer">list on the issue tracker</a>.</p>

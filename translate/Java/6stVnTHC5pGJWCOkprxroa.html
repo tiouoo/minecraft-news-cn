@@ -1,0 +1,97 @@
+<p>本周我们发布了一个稍微小一点的快照。不过，如果你热衷于切换游戏模式和完成进度，那么这个快照正合你意！</p>
+<p><strong>编辑：</strong>我们现在已发布 20w20b 来修复一个 bug。</p>
+<h1>20w20b 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-183769" target="_blank" rel="noopener noreferrer">MC-183769</a> 服务器初始化时的 NPE</li>
+</ul>
+<h1>20w20a 的新特性</h1>
+<ul>
+<li>添加了新的游戏模式切换器调试菜单</li>
+<li>添加了新的下界进度</li>
+</ul>
+<p>​</p>
+<h2>游戏模式切换器</h2>
+<p>新的 F3 调试功能，允许你使用传统的“Tab”循环方式来切换游戏模式。
+​</p>
+<ul>
+<li>按住 F3 并轻点 F4 打开菜单</li>
+<li>轻点 F4 将循环切换游戏模式，或使用鼠标</li>
+<li>松开 F3 以应用</li>
+<li>你的上一个游戏模式会被记住，并作为第一个选中的选项，这样你就可以通过单次按下 F3 + F4 在两个游戏模式之间快速切换！</li>
+</ul>
+<p>​</p>
+<h3>F3 + N（切换旁观模式）</h3>
+<p>对这个调试组合键做了一个小改动。
+​</p>
+<ul>
+<li>默认情况下，使用此键会从旁观模式切换回创造模式。现在它会切换回你之前所处的游戏模式。</li>
+<li>例如，如果你处于生存模式，然后切换到旁观模式再切换回来，你将被设置回生存模式。</li>
+</ul>
+<p>​</p>
+<h2>新进度</h2>
+<ul>
+<li><code>隐藏于深处</code> 在获取远古残骸时解锁</li>
+<li><code>用残骸覆盖我</code> 在获取全套下界合金盔甲时解锁</li>
+<li><code>乡村矿脉，带我回家</code> 在对磁石使用指南针时解锁</li>
+<li><code>谁在切洋葱？</code> 在获取哭泣的黑曜石时解锁</li>
+<li><code>并非“九”命</code> 在将重生锚设置到最大时解锁</li>
+<li><code>这艘船有腿</code> 在手持蘑菇钓竿骑乘炽足兽时解锁</li>
+<li><code>热门旅游景点</code> 在访问下界所有生物群系时解锁</li>
+<li><code>往日时光</code> 在进入堡垒时解锁</li>
+<li><code>战猪</code> 在堡垒中搜刮箱子时解锁</li>
+<li><code>哦，闪闪发光</code> 在用黄金分散愤怒猪灵的注意力时解锁</li>
+</ul>
+<p>​</p>
+<h1>20w20a 中的更改</h1>
+<ul>
+<li><code>靶心</code> 进度现在需要在至少 30 米外击中标靶的靶心才能解锁</li>
+<li><code>认真的奉献</code> 进度现在通过获得下界合金锄来授予</li>
+<li>获取黑石现在也算作 <code>石器时代</code> 进度</li>
+<li>繁殖炽足兽现在计入 <code>鹦鹉与蝙蝠</code> 进度，并且现在也是 <code>成双成对</code> 进度所必需的</li>
+</ul>
+<p>​</p>
+<h1>20w20a 中的技术更改</h1>
+<ul>
+<li>带有 “NoAI” 的潜影贝现在可以带着旋转角度召唤。</li>
+<li>添加了 <code>thrown_item_picked_up_by_entity</code> 进度触发器</li>
+<li>添加了 <code>player_generates_container_loot</code> 进度触发器</li>
+<li>添加了 <code>item_used_on_block</code> 进度触发器</li>
+<li>移除了 <code>safely_harvest_honey</code> 进度触发器</li>
+</ul>
+<p>​</p>
+<h2>进度</h2>
+<h3><code>item_used_on_block</code> 触发器类型</h3>
+<p>属性：</p>
+<ul>
+<li><code>item</code> 匹配被拾起的投掷物品</li>
+<li><code>entity</code> 匹配拾取物品的实体</li>
+</ul>
+<p>​</p>
+<h3><code>player_generates_container_loot</code> 触发器类型</h3>
+<p>属性：</p>
+<ul>
+<li><code>loot_table</code> 匹配所生成战利品表的资源路径</li>
+</ul>
+<p>​</p>
+<h3><code>item_used_on_block</code> 触发器类型</h3>
+<p>属性：</p>
+<ul>
+<li><code>location</code> 匹配使用物品时该方块中心的位置</li>
+<li><code>item</code> 匹配使用在该方块上的物品</li>
+</ul>
+<p>​</p>
+<h2>其他触发器更改</h2>
+<ul>
+<li><code>location</code> 新增了一个属性 <code>smokey</code>，用于检查该位置是否紧邻营火上方</li>
+<li><code>entity_properties</code> 新增了属性 <code>vehicle</code> 和 <code>targetedEntity</code>，分别匹配生物乘坐的载具或生物瞄准的实体</li>
+</ul>
+<p>​</p>
+<h1>20w20a 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-182967" target="_blank" rel="noopener noreferrer">MC-182967</a> 骑乘时投掷末影珍珠不会传送你</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179481" target="_blank" rel="noopener noreferrer">MC-179481</a> 结构方块偏移不能大于 32</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175992" target="_blank" rel="noopener noreferrer">MC-175992</a> 炽足兽不属于“成双成对”进度挑战的一部分</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173756" target="_blank" rel="noopener noreferrer">MC-173756</a> 可以通过从以物易物中收集黑曜石来获得“冰桶挑战”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173207" target="_blank" rel="noopener noreferrer">MC-173207</a> 使用非箭矢投射物也可以完成“靶心”进度，尽管描述中明确提到了箭矢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118234" target="_blank" rel="noopener noreferrer">MC-118234</a> “今天不行，谢谢”进度可以被非箭矢投射物触发</li>
+</ul>

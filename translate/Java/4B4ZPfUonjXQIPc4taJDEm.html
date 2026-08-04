@@ -1,0 +1,94 @@
+<p>你准备好迎接 1.20.2 预发布版 1 了吗？进入预发布版阶段意味着，从现在开始，除了错误修复和调整之外，你将看不到任何重大变化，直到下一个快照周期。这也意味着我们将比只在周三发布更频繁，所以请保持关注！</p>
+<p>祝合成愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>配方书搜索已更新，更改如下：<ul>
+<li>搜索将仅匹配物品名称中任意单词的开头</li>
+<li>例如，搜索“tor”仍会显示火把和红石火把，但不再显示日光传感器</li>
+</ul></li>
+<li>所有配方，包括尚未解锁的配方，现在都会出现在搜索结果中</li>
+<li>这将使经验丰富的玩家能够找到他们想要的配方（即使尚未解锁），而不会让新玩家不堪重负</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 18</li>
+<li>加入服务器时，客户端选项现在在配置网络阶段发送</li>
+</ul>
+<h2>数据包版本 18</h2>
+<p>此数据包版本移除了最近引入的 <code>execute if function</code> 和 <code>return run</code> 功能。这些命令的缺陷（参见错误 <a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a>、<a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> 和 <a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a>）需要一些重大更改来修复，我们不希望在临近发布时做出这些更改。</p>
+<p>这些命令将在下一个快照系列中尽早重新引入，届时我们可以花时间与数据包制作者一起迭代和测试。</p>
+<ul>
+<li>移除了 <code>execute if|unless function</code> 命令形式</li>
+<li>移除了 <code>return run</code> 命令形式</li>
+<li>用作宏参数的数值现在总是无后缀插入，无论数值类型如何</li>
+<li>添加了游戏规则 <code>enderPearlsVanishOnDeath</code>，控制投出的末影珍珠在投掷者死亡时是否消失（默认值 <code>true</code>）</li>
+</ul>
+<h1>实验性功能</h1>
+<h2>村民交易再平衡 第二部分</h2>
+<p>此预发布版更新了村民交易再平衡实验。此实验对普通世界没有影响。如果你想尝试这些更改，你必须在创建新世界时在实验菜单中打开功能开关。你可以在<a href="https://www.minecraft.net/article/testing-new-minecraft-features/feature-toggles-java-edition" target="_blank" rel="noopener noreferrer">此处</a>找到关于功能开关的更多信息。</p>
+<p>感谢所有就实验性交易更改发送建议和反馈的人！我们正在尝试这些更改，以重新平衡村民交易系统，使其对每个人都更加公平和有趣。然而，这些更改尚未最终确定，在我们继续完善它们时，它们将保持为实验性功能。我们感谢您对此更改的反馈。访问<a href="https://aka.ms/VillagerTradingFeedback" target="_blank" rel="noopener noreferrer">此链接</a>分享您的想法！我们一直在关注之前关于图书管理员和流浪商人更新的讨论，并期待看到对话继续。</p>
+<h3>制图师</h3>
+<p>在此之前，制图师只出售通往海底神殿和林地府邸的地图。在此实验中，制图师还可以出售七张新地图。这些新地图每张都指向不同的村庄或结构，可用于找到七种不同的生物群系。这将帮助那些想快速找到特定位置而不必等待偶然遇到的玩家。</p>
+<p>来自不同生物群系的制图师将出售不同的地图选择。从一个村庄开始，通过沿着地图从一个村庄到另一个村庄，可以找到所有其他类型的村庄。</p>
+<p>制图师现在出售 7 张新地图：沙漠村庄地图、丛林探险者地图、平原村庄地图、热带草原村庄地图、雪原村庄地图、沼泽探险者地图和针叶林村庄地图。</p>
+<h3>盔甲匠</h3>
+<p>盔甲匠的交易已更新，包含许多更改。</p>
+<p>最大的更改是，购买钻石盔甲现在需要支付少量钻石以及绿宝石。这是为了使盔甲匠的钻石盔甲交易在游戏开始时玩家没有钻石时不太有用，同时仍然为花时间收集钻石的高级玩家提供强大的优势。</p>
+<p>早期游戏玩家会发现盔甲匠作为铁盔甲、盾牌和绿宝石的重要来源非常有用。</p>
+<p>其他更改包括：</p>
+<ul>
+<li>大多数大师级盔甲匠购买铁块（并且为此付钱很高）</li>
+<li>锁链盔甲仅由秘密的丛林和沼泽盔甲匠出售</li>
+<li>热带草原盔甲匠以折扣价出售受诅咒的钻石盔甲</li>
+<li>针叶林盔甲匠可以用一件钻石盔甲交换另一件</li>
+</ul>
+<h3>结构战利品</h3>
+<p>某些附魔书现在在部分结构中生成几率较高：</p>
+<ul>
+<li>远古城市：经验修补</li>
+<li>矿井：效率（I 至 V）</li>
+<li>掠夺者前哨站：快速装填（I 至 III）</li>
+<li>沙漠神殿：耐久（I 至 III）</li>
+<li>丛林神庙：耐久（I 至 III）</li>
+</ul>
+<h1>1.20.2 预发布版 1 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-70127" target="_blank" rel="noopener noreferrer">MC-70127</a> 某些方块状态更改未传达给客户端</li>
+<li><a href="https://bugs.mojang.com/browse/MC-72721" target="_blank" rel="noopener noreferrer">MC-72721</a> 死亡后聊天消息显示，与聊天设置无关</li>
+<li><a href="https://bugs.mojang.com/browse/MC-103800" target="_blank" rel="noopener noreferrer">MC-103800</a> 有时盔甲架不会更新其视觉旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-119873" target="_blank" rel="noopener noreferrer">MC-119873</a> 标题屏幕中用于致谢按钮的文本不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154827" target="_blank" rel="noopener noreferrer">MC-154827</a> 闪烁文字中的拼写错误“Verlet intregration!”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177172" target="_blank" rel="noopener noreferrer">MC-177172</a> 村民/商人界面中的破折号是硬编码/不可翻译的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248778" target="_blank" rel="noopener noreferrer">MC-248778</a> 潜影盒提示框内的物品数量符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248833" target="_blank" rel="noopener noreferrer">MC-248833</a> 语言菜单中警告标签前后使用的括号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248844" target="_blank" rel="noopener noreferrer">MC-248844</a> 配方书 GUI 中的页码指示符符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248846" target="_blank" rel="noopener noreferrer">MC-248846</a> 死亡屏幕中显示玩家分数所用的冒号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249355" target="_blank" rel="noopener noreferrer">MC-249355</a> 统计菜单中用于显示空值的连字符不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252295" target="_blank" rel="noopener noreferrer">MC-252295</a> 几条死亡消息中的“whilst”一词不是美式英语拼写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252298" target="_blank" rel="noopener noreferrer">MC-252298</a> 与荆棘附魔相关的死亡消息在适当位置没有包含连词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252316" target="_blank" rel="noopener noreferrer">MC-252316</a> 一些死亡消息中的“burnt”一词不是美式英语拼写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253241" target="_blank" rel="noopener noreferrer">MC-253241</a> 多人游戏菜单中的玩家数量指示符符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253269" target="_blank" rel="noopener noreferrer">MC-253269</a> 进度菜单中的进度指示符符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253270" target="_blank" rel="noopener noreferrer">MC-253270</a> 袭击中Boss条使用的连字符不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253278" target="_blank" rel="noopener noreferrer">MC-253278</a> 世界加载屏幕中用于显示世界加载进度的百分号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253281" target="_blank" rel="noopener noreferrer">MC-253281</a> 当高级提示框隐藏时，已填充地图提示框内的文本不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253283" target="_blank" rel="noopener noreferrer">MC-253283</a> 优化世界菜单中使用的百分比和区块指示符符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253638" target="_blank" rel="noopener noreferrer">MC-253638</a> 潜影盒提示框内用于显示随机战利品表内容的符号不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255418" target="_blank" rel="noopener noreferrer">MC-255418</a> 放置在投掷器/发射器/漏斗上的垂直红石粉，当上方红石粉被移除时，不会在视觉上消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256777" target="_blank" rel="noopener noreferrer">MC-256777</a> 玩家列表中用于显示玩家生命值的两个字符不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260819" target="_blank" rel="noopener noreferrer">MC-260819</a> “death.attack.message_too_long”字符串在单词“stripped”之前缺少冠词</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263133" target="_blank" rel="noopener noreferrer">MC-263133</a> 内存不足屏幕中词语使用不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264233" target="_blank" rel="noopener noreferrer">MC-264233</a> 玩家死亡并重生后显示为 Anonymous</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264574" target="_blank" rel="noopener noreferrer">MC-264574</a> 符号链接不适用于根世界文件夹</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264615" target="_blank" rel="noopener noreferrer">MC-264615</a> 获得吸收效果后，吸收效果图标需要几秒钟才能显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264656" target="_blank" rel="noopener noreferrer">MC-264656</a> 如果你之前吃了附魔金苹果并受到伤害，普通金苹果不会增加金色心形的数量</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264657" target="_blank" rel="noopener noreferrer">MC-264657</a> 吸收金色心形的补充取决于低级别和高级别是否具有相同的 hideParticles 参数</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264658" target="_blank" rel="noopener noreferrer">MC-264658</a> 宏中只能使用整数数值数据类型</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264809" target="_blank" rel="noopener noreferrer">MC-264809</a> 红石比较器导致红石粉连接问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265053" target="_blank" rel="noopener noreferrer">MC-265053</a> 附魔台界面中的 Programmer Art 青金石轮廓纹理错误地使用了旧格式</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265060" target="_blank" rel="noopener noreferrer">MC-265060</a> 织布机界面中缺少错误精灵（loom.png）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265126" target="_blank" rel="noopener noreferrer">MC-265126</a> 进度中的“requirements”字段不能再跳过</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265151" target="_blank" rel="noopener noreferrer">MC-265151</a> 因未知原因被服务器封禁时显示的“(Unknown)”字符串不可翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265209" target="_blank" rel="noopener noreferrer">MC-265209</a> 切换到“CONFIGURATION”协议导致竞态条件</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265213" target="_blank" rel="noopener noreferrer">MC-265213</a> /random 命令的聊天消息显示“between 1 and 6”而不是“1 to 6”</li>
+</ul>

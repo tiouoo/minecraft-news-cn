@@ -1,0 +1,113 @@
+<p>大家好！这个技术性很强的快照包含了振动机制变更、数据包与资源包更改、一些网络优化、新的调试工具，以及一些错误修复。玩得开心！</p>
+<h1>更改</h1>
+<ul>
+<li>振动机制变更</li>
+</ul>
+<h2>振动</h2>
+<ul>
+<li>振动不再会因模拟距离限制而丢失</li>
+<li>卸下物品会发出频率为 4 的新的 <code>unequip</code> 振动</li>
+<li>雕纹书架从漏斗接收书时会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>海龟蛋开裂时会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>海龟蛋孵化时会发出频率为 12 的 <code>block_destroy</code> 振动</li>
+<li>使用骨粉会发出频率为 3 的 <code>item_interact_finish</code> 振动</li>
+<li>火被水瓶扑灭时会发出频率为 12 的 <code>block_destroy</code> 振动</li>
+<li>唤魔者召唤恼鬼或尖牙时会发出频率为 14 的 <code>entity_place</code> 振动</li>
+<li>兔子吃胡萝卜时会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>狐狸吃甜浆果时会发出频率为 11 的 <code>block_change</code> 振动</li>
+<li>骆驼吃仙人掌时会发出频率为 8 的 <code>eat</code> 振动</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>资源包版本现在为 17</li>
+<li>上个快照随附的 slicer 工具中，一个涉及饥饿值图标的错误已被修复。这里是<a href="https://github.com/Mojang/slicer/releases/tag/v1.1.1" target="_blank" rel="noopener noreferrer">新版本</a></li>
+<li>数据包版本现在为 17</li>
+<li>优化了网络传输，以改善低带宽连接下的体验</li>
+</ul>
+<h2>资源包版本 17</h2>
+<ul>
+<li>文本框背景现在是位于 <code>widget/text_field</code> 和 <code>widget/text_field_highlighted</code> 的九宫格切片精灵图</li>
+<li>列表和文本框中的滚动条现在是位于 <code>widget/scroller</code> 的九宫格切片精灵图</li>
+</ul>
+<h2>数据包版本 17</h2>
+<ul>
+<li>更改了物品、实体和方块实体上状态效果的存储方式</li>
+</ul>
+<h3>状态效果存储更改</h3>
+<ul>
+<li>游戏在将状态效果存储到世界中时不再使用数值（例如，<code>4</code> 会变成 <code>minecraft:mining_fatigue</code>）</li>
+<li>各种状态效果字段已重命名，以与新结构保持一致</li>
+</ul>
+<h4>状态效果实例</h4>
+<p>此结构在许多地方使用，因此单独描述其更改。</p>
+<ul>
+<li><code>Id</code> -> <code>id</code>，并且从数字 ID 改为字符串 ID</li>
+<li><code>Ambient</code> -> <code>ambient</code></li>
+<li><code>Amplifier</code> -> <code>amplifier</code></li>
+<li><code>Duration</code> -> <code>duration</code></li>
+<li><code>ShowParticles</code> -> <code>show_particles</code></li>
+<li><code>ShowIcon</code> -> <code>show_icon</code></li>
+<li><code>HiddenEffect</code> -> <code>hidden_effect</code>，同时因为它本身是状态效果实例，所以更改会递归应用</li>
+<li><code>FactorCalculationData</code> -> <code>factor_calculation_data</code></li>
+</ul>
+<h4>物品</h4>
+<h5><code>potion</code>, <code>lingering_potion</code>, <code>splash_potion</code>, <code>tipped_arrow</code></h5>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h5><code>suspicous_stew</code></h5>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>，对于每个条目：<ul>
+<li><code>EffectId</code> -> <code>id</code>，并且从数字 ID 改为字符串 ID</li>
+<li><code>EffectDuration</code> -> <code>duration</code></li>
+</ul></li>
+</ul>
+<h4>实体</h4>
+<h5><code>mooshroom</code></h5>
+<ul>
+<li>移除了 <code>EffectId</code> 和 <code>EffectDuration</code></li>
+<li>添加了 <code>stew_effects</code>，其格式与 <code>suspicious_stew.effects</code> 标签相同（即效果 ID 和持续时间的列表）</li>
+</ul>
+<h5><code>area_effect_cloud</code></h5>
+<ul>
+<li><code>Effects</code> -> <code>effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h5><code>arrow</code></h5>
+<ul>
+<li><code>CustomPotionEffects</code> -> <code>custom_potion_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h5>玩家、盔甲架和生物</h5>
+<ul>
+<li><code>ActiveEffects</code> -> <code>active_effects</code>，内容转换为状态效果实例列表</li>
+</ul>
+<h4>方块实体</h4>
+<h5><code>beacon</code></h5>
+<ul>
+<li><code>Primary</code> -> <code>primary_effect</code>，并且从数字 ID 改为字符串 ID</li>
+<li><code>Secondary</code> -> <code>secondary_effect</code>，并且从数字 ID 改为字符串 ID</li>
+</ul>
+<h3>战利品表</h3>
+<ul>
+<li>添加了 <code>sequence</code> 战利品函数<ul>
+<li>包含 1 个字段：<ul>
+<li><code>functions</code>：按顺序运行的子函数数组</li>
+</ul></li>
+<li>也可以声明为不带类型的内联数组<ul>
+<li>这与现有的行为一致，即战利品函数 JSON 文件可以声明为复合函数数组</li>
+</ul></li>
+</ul></li>
+<li>战利品表中的 <code>all_of</code> 谓词现在可以隐式声明为一个不带类型的内联数组<ul>
+<li>这也与现有的行为类似，即战利品谓词 JSON 文件可以声明为子谓词数组</li>
+</ul></li>
+</ul>
+<h2>网络优化</h2>
+<ul>
+<li>游戏数据包现在被打包进更大的 TCP 数据包中，以减少 TCP 标头带来的开销，显著降低网络使用量</li>
+<li>按 CTRL + F3 打开调试屏幕时，现在会显示 ping 和接收网络流量的图表</li>
+</ul>
+<h2>安全聊天</h2>
+<ul>
+<li>客户端在收到无效的聊天消息时不再自行断开连接<ul>
+<li>而是会在聊天中显示一条占位消息</li>
+</ul></li>
+</ul>

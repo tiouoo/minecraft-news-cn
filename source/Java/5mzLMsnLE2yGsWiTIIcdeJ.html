@@ -1,0 +1,29 @@
+<p>Hi everyone,</p>
+<p>Before we jump into today's pre-release, we would like to take a moment and dedicate some thoughts to a person who over the years has made an incredible impact on the Minecraft community and touched the lives of many. <strong>Technoblade</strong> became synonymous with a source of good – a positive force that time and time again made many, many people happy and someone we are proud to have as part of our giant family.</p>
+<p>Minecraft is its community, which is why it should come as no surprise that so many of us mourn the loss of him, with tributes and love pouring in from across the world.</p>
+<p>On behalf of the Java Team – thank you Technoblade for the memories, for all the fun and the laughter. You will be dearly missed. Our thoughts are with your family and friends.</p>
+<hr>
+<p>Regarding 1.19.1: We still have a number of fixes in the pipeline, set for another pre-release in the near future. After that, once everything is tested and verified, we'll be aiming for a release candidate.</p>
+<h1>Changes in 1.19.1 Pre-Release 3</h1>
+<ul>
+<li>Moved the chat scrollbar to the right of the chat window</li>
+<li>System messages (non-player chat, such as those outputted by commands) are displayed with a gray color indicator</li>
+</ul>
+<h1>Technical changes in 1.19.1 Pre-Release 3</h1>
+<ul>
+<li>Custom servers can set their own auto-completion options for regular chat via a new network packet</li>
+<li>The list of players on the Social Interactions screen now places entries for players with recently seen messages at the top of the list</li>
+<li>The <code>msg_command</code> chat type has been split apart into <code>msg_command_incoming</code> and <code>msg_command_outgoing</code></li>
+<li>The <code>team_name</code> chat type parameter has been renamed to <code>target</code><ul>
+<li>This chat type parameter is now used by <code>msg_command_outgoing</code></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 1.19.1 Pre-Release 3</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253182" target="_blank" rel="noopener noreferrer">MC-253182</a> The second instance of a reflexive pronoun is used incorrectly within the "gui.abuseReport.reason.self_harm_or_suicide.description" string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253214" target="_blank" rel="noopener noreferrer">MC-253214</a> Tooltips will become offset in certain cases</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253223" target="_blank" rel="noopener noreferrer">MC-253223</a> A preposition is incorrectly used within the "gui.abuseReport.reason.terrorism_or_violent_extremism.description" string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253496" target="_blank" rel="noopener noreferrer">MC-253496</a> /execute as {player} run say counts to the report system</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253742" target="_blank" rel="noopener noreferrer">MC-253742</a> The chat scroll bar overlaps the colored indicators used to show the trust status of messages</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253773" target="_blank" rel="noopener noreferrer">MC-253773</a> Whispers appear as modified by the server</li>
+</ul>

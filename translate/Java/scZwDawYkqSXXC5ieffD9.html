@@ -1,0 +1,151 @@
+<p>红树！暖蛙！泥巴！更多的红树！今天，我们很高兴为你带来迄今为止最泥泞的 Java 快照！</p>
+<p>当然，这可能是我们迄今为止唯一的泥泞快照——但重要的是，我们的新生物群系红树林沼泽现在可供测试，同时还有诸如追溯指南针等具体特性以及其他更多的技术性细节。</p>
+<p>玩得开心！</p>
+<h1>22w14a 中的新特性</h1>
+<ul>
+<li>添加了黏土的可再生获取</li>
+<li>添加了红树</li>
+<li>添加了红树林沼泽生物群系</li>
+<li>添加了回响碎片和追溯指南针</li>
+</ul>
+<h2>黏土的可再生获取</h2>
+<ul>
+<li>将泥巴放置在下方有滴水石锥的方块上方，最终泥巴会转变为黏土。</li>
+</ul>
+<h2>红树</h2>
+<p>引入一种适应水环境的新型树木，它们会由根部支撑着生成。</p>
+<ul>
+<li>有几率生成蜂巢</li>
+<li>由红树胎生苗生长而成</li>
+</ul>
+<h2>红树林沼泽</h2>
+<p>泥泞！混浊！壮丽！欢迎来到最新的生物群系——红树林沼泽。</p>
+<ul>
+<li>生成于你通常会在 Minecraft 中找到沼泽生物群系的更温暖、更潮湿的地区。</li>
+<li>在这里你可以找到蜜蜂和暖蛙。</li>
+<li>这个生物群系的地表覆盖着厚厚的一层泥巴，所以一定要带上你最好的靴子。</li>
+<li>乘船在红树巨型根部的下方和周围愉快地航行吧。</li>
+</ul>
+<h2>追溯指南针</h2>
+<p>新的追溯指南针可以使用回响碎片合成，回响碎片只在远古城市的箱子中生成，且为该结构独有。</p>
+<ul>
+<li>与普通指南针不同，追溯指南针会指向你最后一次死亡的地点。</li>
+<li>如果你不在你最后死亡的维度中，或者在你的世界中还没有死亡过，它就会随机旋转。</li>
+<li>可以用 1 个指南针和 8 个回响碎片合成，回响碎片可以在远古城市中找到。</li>
+</ul>
+<h1>22w14a 中的更改</h1>
+<ul>
+<li>监守者现在会对所有碰撞到它的活体生物发怒，而不仅仅是玩家。</li>
+</ul>
+<h1>22w14a 中的技术性更改</h1>
+<ul>
+<li><code>CatType</code> 字段在类型为 <code>minecraft:cat</code> 的实体上已被替换为 <code>variant</code>，数字值被替换为字符串 ID（例如，<code>5</code> 变为 <code>minecraft:calico</code>）</li>
+<li>实体谓词中的一些互斥测试（<code>player</code>、<code>fishing_hook</code>、<code>lightning_bolt</code> 和 <code>catType</code>）已被合并为 <code>type_specific</code> 字段</li>
+<li>添加了 <code>item_delivered_to_player</code> 进度触发器</li>
+<li>添加了 <code>allay_drop_item_on_block</code> 进度触发器</li>
+</ul>
+<h2>谓词</h2>
+<h3>实体谓词</h3>
+<ul>
+<li>字段 <code>player</code>、<code>fishing_hook</code>、<code>lightning_bolt</code> 和 <code>catType</code> 已被替换为 <code>type_specific</code></li>
+<li><code>type_specific</code> 有字段 <code>type</code>（其值为 <code>player</code>、<code>fishing_hook</code>、<code>lightning_bolt</code> 或 <code>cat</code> 之一）以及与被移除字段相同的字段</li>
+<li>示例：<ul>
+<li>之前：</li>
+</ul><pre><code> "lightning_bolt": {
+   "blocks_set_on_fire": 0
+ }
+</code></pre><ul>
+<li>之后</li>
+</ul><pre><code>  "type_specific": {
+    "type": "lightning",
+    "blocks_set_on_fire": 0
+  }
+</code></pre></li>
+<li><code>catType</code> 已被包装以匹配新格式，并且现在使用新的猫变体名称而不是纹理名称：<ul>
+<li>之前</li>
+</ul><pre><code> "catType": "minecraft:textures/entity/cat/british_shorthair.png"
+</code></pre><ul>
+<li>之后</li>
+</ul><pre><code> "type_specific": {
+    "type": "cat",
+    "variant": "minecraft:british"
+ }
+</code></pre></li>
+<li>新的 <code>type_specific</code> 选项：<ul>
+<li><code>frog</code> 有 <code>variant</code> 字段，匹配青蛙变体（<code>minecraft:warm</code>、<code>minecraft:temperate</code> 或 <code>minecraft:cold</code>）</li>
+<li><code>slime</code> 适用于史莱姆和岩浆怪，有 <code>size</code> 字段，匹配史莱姆体型（最小为 <code>1</code>）</li>
+</ul></li>
+</ul>
+<h2>进度</h2>
+<ul>
+<li>从触发器 <code>location</code>、<code>slept_in_bed</code>、<code>hero_of_the_village</code> 和 <code>voluntary_exile</code> 中移除了字段 <code>location</code> - 它之前与 <code>player.location</code> 的处理方式完全相同</li>
+</ul>
+<h3>新触发器</h3>
+<h4><code>item_delivered_to_player</code></h4>
+<ul>
+<li>当悦灵将物品交付给玩家时触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 此触发器所作用于的玩家</li>
+</ul></li>
+</ul>
+<h4><code>allay_drop_item_on_block</code></h4>
+<ul>
+<li>当悦灵将物品掉落在方块上时触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 此触发器所作用于的玩家</li>
+<li><code>location</code> - 对物品掉落所在方块的谓词</li>
+<li><code>item</code> - 对掉落物品的谓词</li>
+</ul></li>
+</ul>
+<h1>22w14a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-207289" target="_blank" rel="noopener noreferrer">MC-207289</a> 幽匿感测体的羊毛遮挡存在方向偏差</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207635" target="_blank" rel="noopener noreferrer">MC-207635</a> 幽匿感测体对羊毛遮挡的反应会根据全局方向而不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249075" target="_blank" rel="noopener noreferrer">MC-249075</a> 幽匿尖啸体没有在创造模式物品栏的装饰品标签中与其他幽匿相关方块归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249122" target="_blank" rel="noopener noreferrer">MC-249122</a> block.sculk_catalyst.bloom 没有字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249254" target="_blank" rel="noopener noreferrer">MC-249254</a> 青蛙吃下有名字的史莱姆或岩浆怪时，控制台中没有日志记录</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249384" target="_blank" rel="noopener noreferrer">MC-249384</a> 监守者挖掘时会产生光源方块、屏障或结构空位粒子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249386" target="_blank" rel="noopener noreferrer">MC-249386</a> 监守者的实体阴影相对于其模型大小来说太小了</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249387" target="_blank" rel="noopener noreferrer">MC-249387</a> 监守者的挖掘音效与其钻出的音效相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249400" target="_blank" rel="noopener noreferrer">MC-249400</a> 监守者在液体中的垂直移动过于灵敏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249401" target="_blank" rel="noopener noreferrer">MC-249401</a> 监守者刷怪蛋没有按字母顺序正确排列</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249415" target="_blank" rel="noopener noreferrer">MC-249415</a> 监守者不会在岩浆中寻路，即使它们免疫岩浆伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249422" target="_blank" rel="noopener noreferrer">MC-249422</a> 一些与监守者相关的字幕没有在合适的位置使用所有格撇号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249426" target="_blank" rel="noopener noreferrer">MC-249426</a> 愤怒的监守者在生存模式中受到攻击时，除了受伤音效外，还会播放“监守者愤怒地注意到”音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249430" target="_blank" rel="noopener noreferrer">MC-249430</a> 监守者会记住创造模式中的玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249434" target="_blank" rel="noopener noreferrer">MC-249434</a> 当被多个实体攻击时，监守者会无限咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249445" target="_blank" rel="noopener noreferrer">MC-249445</a> 激活的幽匿尖啸体在被破坏时无法召唤监守者</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249447" target="_blank" rel="noopener noreferrer">MC-249447</a> 如果你逃跑，激活的幽匿尖啸体无法召唤监守者</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249451" target="_blank" rel="noopener noreferrer">MC-249451</a> 监守者不会出现在刷怪笼中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249455" target="_blank" rel="noopener noreferrer">MC-249455</a> 序列化被激怒的监守者时，日志中出现“Not a string”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249473" target="_blank" rel="noopener noreferrer">MC-249473</a> 有些监守者的音效会在和平难度下播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249476" target="_blank" rel="noopener noreferrer">MC-249476</a> 监守者可以在水中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249479" target="_blank" rel="noopener noreferrer">MC-249479</a> 监守者会攻击它们的队友</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249499" target="_blank" rel="noopener noreferrer">MC-249499</a> 使用“Silent”标签召唤的监守者仍然会播放心跳声</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249504" target="_blank" rel="noopener noreferrer">MC-249504</a> 监守者愤怒呻吟的音效不受“敌对生物”音量滑块控制</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249509" target="_blank" rel="noopener noreferrer">MC-249509</a> 当通过刷怪笼或刷怪蛋生成时，监守者会瞬间隐形</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249517" target="_blank" rel="noopener noreferrer">MC-249517</a> 监守者无法检测到碰撞到它们的非玩家生物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249526" target="_blank" rel="noopener noreferrer">MC-249526</a> 当玩家骑乘某物时，幽匿尖啸体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249530" target="_blank" rel="noopener noreferrer">MC-249530</a> 监守者的碰撞箱会在和平难度下出现</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249531" target="_blank" rel="noopener noreferrer">MC-249531</a> 当攻击目标无敌时，监守者会无限咆哮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249646" target="_blank" rel="noopener noreferrer">MC-249646</a> 监守者在杀死生物后会过度嗅探</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249659" target="_blank" rel="noopener noreferrer">MC-249659</a> 幽匿催发体和幽匿脉络只有在使用精准采集附魔的锄破坏时才会掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a> 监守者在远离后会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249674" target="_blank" rel="noopener noreferrer">MC-249674</a> 监守者在世界重载后会忘记它们的目标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249712" target="_blank" rel="noopener noreferrer">MC-249712</a> 加载包含有悦灵结构体的区块时，服务器会挂起，游戏停止响应</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249714" target="_blank" rel="noopener noreferrer">MC-249714</a> 悦灵在死亡动画期间，翅膀上可以看到 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249720" target="_blank" rel="noopener noreferrer">MC-249720</a> 悦灵的翅膀没有连接到它的身体上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249727" target="_blank" rel="noopener noreferrer">MC-249727</a> 监守者在世界重载后停止感知振动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249728" target="_blank" rel="noopener noreferrer">MC-249728</a> 远古城市中可能生成岩浆，烧毁羊毛/使结构悬浮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249729" target="_blank" rel="noopener noreferrer">MC-249729</a> 悦灵头部底面可以看到 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249751" target="_blank" rel="noopener noreferrer">MC-249751</a> 监守者 UV 重叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249758" target="_blank" rel="noopener noreferrer">MC-249758</a> 当悦灵的手臂与身体交叉时，可以看到 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249761" target="_blank" rel="noopener noreferrer">MC-249761</a> 远古城市中冰盒的活板门默认是打开的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249764" target="_blank" rel="noopener noreferrer">MC-249764</a> 远古城市中心区域的第二个灯缺少其幽匿感测体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249768" target="_blank" rel="noopener noreferrer">MC-249768</a> entrance_path_5 永远不会生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249769" target="_blank" rel="noopener noreferrer">MC-249769</a> 远古城市中未使用的结构</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249780" target="_blank" rel="noopener noreferrer">MC-249780</a> 需要支撑的方块可能会在远古城市中悬空生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249785" target="_blank" rel="noopener noreferrer">MC-249785</a> 监守者在钻出和挖掘时可以被推动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249800" target="_blank" rel="noopener noreferrer">MC-249800</a> 吃东西不会激活远古城市中心的红石门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249816" target="_blank" rel="noopener noreferrer">MC-249816</a> 监守者的碰撞箱在钻出和挖掘时不会调整</li>
+</ul>

@@ -1,0 +1,31 @@
+<p>We're now releasing the first (and hopefully only) release candidate for Minecraft 1.19.1. We have also now created a help article on chat reporting, available <a href="https://help.minecraft.net/hc/articles/7149823936781" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>If there are no major issues following this release, no further changes will be done before the full release on Tuesday.</p>
+<p>Happy mining!</p>
+<h1>Changes in 1.19.1 Release Candidate 1</h1>
+<ul>
+<li>Updated the categories for chat reporting<ul>
+<li>The "Profanity", "Nudity or pornography" and "Extreme violence or gore" categories have been removed</li>
+<li>The description for the "Drugs and alcohol" category has been updated to "Someone is encouraging others to partake in illegal drug related activities or encouraging underage drinking"</li>
+<li>The description of the "Harassment and bullying" category has been extended with the following: or posting private personal information about you or someone else without consent ("doxing").</li>
+</ul></li>
+</ul>
+<h1>Technical changes in 1.19.1 Release Candidate 1</h1>
+<ul>
+<li>The <code>run_command</code> click event for text components no longer supports sending chat messages directly<ul>
+<li>Only commands are supported, so a command such as <code>/say</code> should be used instead</li>
+<li>This means values now always need to be '/'-prefixed</li>
+</ul></li>
+<li>Increased the amount of chat context sent with each chat report</li>
+</ul>
+<h1>Fixed bugs in 1.19 Release Candidate 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-250020" target="_blank" rel="noopener noreferrer">MC-250020</a> Allay doesn't ignore items when mobGriefing is set to false</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252511" target="_blank" rel="noopener noreferrer">MC-252511</a> Bedrock not generating on the new blending border between old and new blending</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252987" target="_blank" rel="noopener noreferrer">MC-252987</a> Illegal character '\n' in text component clickEvent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253114" target="_blank" rel="noopener noreferrer">MC-253114</a> Selection boxes within the "Select Chat Messages to Report" menu don't disappear when deselecting fields after reentering the menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253188" target="_blank" rel="noopener noreferrer">MC-253188</a> Selection boxes within the "Select Chat Messages to Report" menu differ in size ever so slightly depending on how they're selected</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253225" target="_blank" rel="noopener noreferrer">MC-253225</a> Selection boxes of fields within player reporting menu lists don't contain white outlines when selected using the TAB key</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253227" target="_blank" rel="noopener noreferrer">MC-253227</a> Players can only be reported using the reporting system if they're present within the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253336" target="_blank" rel="noopener noreferrer">MC-253336</a> Using the eye of ender "crashes" game in the seed: -3721742095548798177</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253422" target="_blank" rel="noopener noreferrer">MC-253422</a> The selection of the "Please report breaches of our Community Standards" text within the "Select Report Category" menu is slightly confusing due to the words "Community Standards" being underlined by default</li>
+</ul>

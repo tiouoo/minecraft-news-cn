@@ -1,0 +1,454 @@
+<p>这周我们发布了今年第二次更新的最终特性。今天的快照带来了可合成的鞍，以及一些由 Amos Roddy 创作的惊艳曲目。我们还新增了一个选项，可以在游戏内的暂停菜单中显示当前正在播放的歌曲。
+<h1>新特性</h1>
+<ul><li>添加了一张新音乐唱片，收录了 Amos Roddy 的曲目“Tears”
+<li>使鞍可以合成，并可用剪刀取下
+<li>更新了主界面全景图
+</ul>
+<h2>音乐</h2>
+<ul><li>在樱花树林、森林、沙漠、雪林和繁茂洞穴生物群系中添加了以下 Amos Roddy 的新音乐曲目：
+<ul><li>Below and Above
+<li>Broken Clocks
+<li>Fireflies
+<li>Lilypad
+<li>O's Piano
+</ul>
+<li>这些歌曲也加入到了菜单音乐的轮播中
+</ul>
+<h2>鞍的更新</h2>
+<h3>合成鞍</h3>
+<ul><li>鞍现在可以用 3 个皮革和 1 个铁锭合成
+<li>玩家拾取第一个皮革时解锁配方
+</ul>
+<h3>移除鞍和装备</h3>
+<ul><li>鞍、马铠、挽具和地毯现在可以使用剪刀从可装备的生物身上移除
+<li>当生物有骑乘者时，无法使用剪刀移除鞍、马铠、挽具和地毯
+<li>玩家潜行时，无法使用剪刀移除鞍、马铠、挽具和地毯
+<li>无法使用剪刀从劫掠兽身上移除鞍
+<li>装有剪刀的发射器无法移除生物身上装备的鞍、马铠、挽具或地毯
+</ul>
+<h3>战利品表更改</h3>
+<p>某些战利品表中的鞍已被移除，并替换为 1-5 个皮革：
+<ul><li>地牢箱子
+<li>远古城市箱子
+<li>沙漠神殿箱子
+<li>丛林神庙箱子
+<li>要塞祭坛箱子
+</ul>
+<h1>更改</h1>
+<ul><li>雾现在会应用到 3D 界面元素上，例如第一人称视角下的玩家手部和手中的物品
+<li>恶魂现在被玩家弹回的火球杀死时，会掉落“Tears”音乐唱片
+<li>对 <a href=https://bugs.mojang.com/browse/MC-3697 rel="noopener noreferrer"target=_blank>MC-3697</a> 的修复已被部分回退。装饰性悬挂实体（例如画和物品展示框）现在对水下 TNT 的爆炸免疫，而物品和盔甲架则再次会受到影响
+<li>更新了音乐和音效
+<li>下雨和雷暴天气的雾现在稍微减少了
+<li>雨雾对室内的影响减少了
+<li>鞍现在可以合成，使用 3 个皮革和 1 个铁锭即可合成
+<li>鞍、马铠和地毯现在可以使用剪刀从可装备的生物身上移除
+<li>某些战利品表已修改，改为掉落皮革而非鞍
+<li>干恶魂块不再因水流入而碎裂
+</ul>
+<h2>音乐与音效</h2>
+<ul><li>游戏暂停时现在也会播放音乐
+<li>在音乐与声音设置中添加了一个选项，允许玩家更改游戏世界中音乐播放的频率
+<li>在音乐与声音设置中添加了一个选项，启用后每当歌曲开始播放时就会显示音乐弹窗
+<ul><li>启用此选项后，当前正在播放的歌曲将始终显示在游戏内暂停菜单的左上角
+</ul>
+</ul>
+<h2>Realms</h2>
+<ul><li>在 Realms 加载界面中添加了 Realms 标志
+<li>连接到 Realm 时添加了区域信息
+</ul>
+<h1>技术性更改</h1>
+<ul><li>数据包版本现在是 77
+<li>资源包版本现在是 61
+<li>“命令语法”报告现在包含所需的权限等级信息
+</ul>
+<h1>数据包版本 77</h1>
+<ul><li>在 <code>equippable</code> 物品组件中添加了新的可选字段 <code>can_be_sheared</code> 和 <code>shearing_sound</code>
+<li>添加了一种向用户显示非常简单的对话框的方法
+<li>为文本组件添加了新的 <code>click_event</code> 操作类型：<code>custom</code>
+<li>当书和聊天中的 <code>run_command</code> 点击操作所执行的命令无法解析或需要更高权限（即高于 0）时，用户现在需要先进行确认
+</ul>
+<h2>对话框</h2>
+<ul><li>添加了一种向用户显示简单模态对话框的方法
+<li>对话框存储在 <code>minecraft:dialog</code> 注册表中，但也可以内联定义
+<li>对话框是一个实验性功能
+<li>为避免用户困惑，对话框屏幕在标题旁边标有警告标志
+<ul><li>单击此警告会弹出一个对话框，向用户说明此屏幕由自定义内容提供
+<li>它还会给用户一个选择，可以退出当前世界，以避免被锁定在对话框的无限循环中
+</ul>
+<li>服务器可以在 <code>play</code> 和 <code>configuration</code> 连接阶段显示对话框
+<ul><li>但是，在 <code>configuration</code> 阶段只允许内联注册表，因为该阶段还未提供注册表
+</ul>
+<li>用户选择任何操作后，对话框总会关闭
+<li>默认情况下，按 Esc 键后对话框也会关闭
+<ul><li>发生这种情况时，对话框将运行下文描述为“退出操作”的特定于对话框类型的操作
+<li>此行为是可配置的
+</ul>
+<li>关闭对话框屏幕时，游戏会返回到之前显示的非对话框屏幕或返回游戏
+<ul><li>这意味着新对话框总是替换已打开的对话框（如果有）
+</ul>
+<li>在单人游戏模式下，对话框屏幕将暂停游戏
+<li>对话框可以配置为可从暂停菜单访问
+<ul><li>这取代并扩展了先前版本中添加的“服务器链接”按钮
+</ul>
+<li>大多数对话框遵循通用布局，但具体内容取决于类型：
+<ul><li>带有标题和警告按钮的头部
+<li>正文元素（标签、输入框、按钮和提交操作），可根据需要滚动
+<li>可选的底部，包含主要按钮和提交操作
+</ul>
+</ul>
+<blockquote><p><strong>开发者注记</strong>：<em>对话框并非用于完整描述任何游戏内 UI，而只是允许自定义内容显示简单消息并从用户那里获取输入。此功能特意限制以匹配此用例。</em></blockquote>
+<h3>对话框描述格式</h3>
+<ul><li>对话框存储在 <code>minecraft:dialog</code> 注册表中，该注册表可由数据包提供
+</ul>
+<p>字段：
+<ul><li><code>type</code> - 来自 <code>minecraft:dialog_type</code> 注册表的对话框类型之一
+<li><code>&#60type-specific></code> - 见下文
+</ul>
+<h4>通用对话框字段</h4>
+<ul><li>大多数对话框类型共享一些字段。为避免重复，它们在本节中列出
+</ul>
+<p>字段：
+<ul><li><code>title</code> - 屏幕标题，文本组件
+<ul><li>无论具体类型如何，都应始终在屏幕上可见
+</ul>
+<li><code>external_title</code> - 用于指向此对话框的按钮的名称（例如从暂停界面），可选的文本组件
+<ul><li>如果不存在，则使用 <code>title</code> 代替
+</ul>
+<li><code>body</code> - 可选的正文元素列表或单个元素，见下文
+<li><code>can_close_with_escape</code> - 对话框是否可以通过 Esc 键关闭，默认为 <code>true</code>
+</ul>
+<h4>通用按钮数据</h4>
+<ul><li>对话框类型中的大多数操作共享以下字段，这些字段描述了与该操作关联的按钮的外观：
+<li><code>label</code> - 文本组件
+<li><code>tooltip</code> - 可选文本组件，在按钮高亮或悬停时显示
+<li><code>width</code> - 按钮宽度，正整数，默认为 <code>150</code>
+</ul>
+<h3>点击操作</h3>
+<ul><li>用于表示对话框上可点击操作的通用对象
+<li>字段：
+<ul><li>通用按钮数据（见上文）
+<li><code>on_click</code> - 可选的点击事件（与文本组件上的 <code>click_event</code> 格式相同）
+<ul><li>如果不存在，点击按钮将只是关闭屏幕，不执行任何操作
+</ul>
+</ul>
+</ul>
+<h4>对话框类型</h4>
+<h5><code>minecraft:notice</code></h5>
+<ul><li>一个简单的屏幕，底部有一个操作
+<li>退出操作：同 <code>action</code>
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>action</code> - 点击操作（见上文），默认为带有 <code>gui.ok</code> 标签且没有操作或工具提示的按钮
+</ul>
+<h5><code>minecraft:confirmation</code></h5>
+<ul><li>一个简单的屏幕，底部有两个操作
+<li>退出操作：同 <code>no</code> 操作
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>yes</code> - 用于肯定结果的点击操作（见上文）
+<li><code>no</code> - 用于否定结果的点击操作（见上文）
+</ul>
+<h5><code>minecraft:multi_action</code></h5>
+<ul><li>一个可滚动的操作列表，按列排列
+<li>屏幕底部也有一个按钮，用于运行退出操作并关闭屏幕
+<ul><li>如果对话框定义了退出操作，标签为 <code>gui.cancel</code>；如果没有副作用，则为 <code>gui.back</code>
+</ul>
+<li>退出操作：在 <code>on_cancel</code> 字段中定义
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>actions</code> - 非空的点击操作列表（见上文）
+<li><code>on_cancel</code> - 可选的点击事件（与文本组件上的 <code>click_event</code> 格式相同）
+<li><code>columns</code> - 描述列数的正整数，默认：<code>2</code>
+</ul>
+<h5><code>minecraft:server_links</code></h5>
+<ul><li>一个可滚动的链接列表，这些链接在 <code>minecraft:server_links</code> 数据包中从服务器接收，按列排列
+<li>屏幕底部也有一个按钮，用于运行退出操作并关闭屏幕
+<ul><li>如果对话框定义了退出操作，标签为 <code>gui.cancel</code>；如果没有副作用，则为 <code>gui.back</code>
+</ul>
+<li>注意：这是对先前“服务器链接”界面的替代，但现在带有一个附加正文
+<li>退出操作：在 <code>on_cancel</code> 字段中定义
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>on_cancel</code> - 可选的点击事件（与文本组件上的 <code>click_event</code> 格式相同）
+<li><code>columns</code> - 描述列数的正整数，默认：<code>2</code>
+<li><code>button_width</code> - 列表中按钮的宽度，正整数，默认为 <code>150</code>
+</ul>
+<h5><code>minecraft:dialog_list</code></h5>
+<ul><li>一个可滚动的按钮列表，直接指向其他对话框，按列排列
+<ul><li>这些按钮的标题将取自目标对话框的 <code>external_title</code> 字段
+</ul>
+<li>屏幕底部也有一个按钮，用于运行退出操作并关闭屏幕
+<ul><li>如果对话框定义了退出操作，标签为 <code>gui.cancel</code>；如果没有副作用，则为 <code>gui.back</code>
+</ul>
+<li>退出操作：在 <code>on_cancel</code> 字段中定义
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>dialogs</code> - 对话框、对话框列表或对话框标签
+<li><code>on_cancel</code> - 可选的点击事件（与文本组件上的 <code>click_event</code> 格式相同）
+<li><code>columns</code> - 描述列数的正整数，默认：<code>2</code>
+<li><code>button_width</code> - 列表中按钮的宽度，正整数，默认为 <code>150</code>
+</ul>
+<h5><code>minecraft:simple_input_form</code></h5>
+<ul><li>一个接受用户输入的屏幕
+<li>底部有一个提交操作
+<li>退出操作：无（提交数据会关闭屏幕，但除了向服务器发送数据外，不会运行任何操作）
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>inputs</code> - 非空的输入控件列表，见下文
+<li><code>action</code> - 提交操作，见下文
+</ul>
+<h5><code>minecraft:multi_action_input_form</code></h5>
+<ul><li>一个接受用户输入的屏幕
+<li>可以有多个提交操作
+<li>没有底部，提交操作附加到正文中
+<li>退出操作：无（提交数据会关闭屏幕，但除了向服务器发送数据外，不会运行任何操作）
+</ul>
+<p>字段：
+<ul><li>通用对话框字段（见上文）
+<li><code>inputs</code> - 非空的输入控件列表，见下文
+<li><code>actions</code> - 非空的提交操作列表，见下文
+</ul>
+<h4>对话框正文类型</h4>
+<ul><li>所有对话框都有一个正文元素列表，描述标题与操作或输入之间的内容
+</ul>
+<p>字段：
+<ul><li><code>type</code> - 来自 <code>minecraft:dialog_body_type</code> 注册表的对话框正文类型之一
+<li><code>&#60type-specific></code> - 见下文
+</ul>
+<h5><code>minecraft:plain_message</code></h5>
+<ul><li>一个多行标签
+</ul>
+<p>字段：
+<ul><li><code>contents</code> - 文本组件
+<li><code>width</code> - 消息的最大宽度，正整数，默认为 <code>200</code>
+</ul>
+<h5><code>minecraft:item</code></h5>
+<ul><li>带有可选描述的物品
+<ul><li>如果存在描述，则会渲染在物品右侧
+</ul>
+<li>物品将像在物品栏槽位中一样渲染
+<li>即使 <code>width</code> 和 <code>height</code> 设置为非默认值，物品也不会缩放
+</ul>
+<p>字段：
+<ul><li><code>item</code> - 带有数量的物品堆叠
+<li><code>description</code> - 可选对象，包含字段：
+<ul><li><code>contents</code> - 文本组件
+<li><code>width</code> - 内容的最大宽度，正整数，默认为 <code>200</code>
+<li>也可以是文本组件
+</ul>
+<li><code>show_decorations</code> - 如果为 <code>true</code>，则会在物品上渲染数量和耐久条，默认：<code>true</code>
+<li><code>show_tooltip</code> - 如果为 <code>true</code>，当物品悬停时会出现物品工具提示，默认：<code>true</code>
+<li><code>width</code> - 元素的水平尺寸，默认：<code>16</code>
+<li><code>height</code> - 元素的垂直尺寸，默认：<code>16</code>
+</ul>
+<h4>输入控件类型</h4>
+<ul><li>输入对话框使用一组控件来接受用户输入
+<li>提交时，输入的当前值将转换为字符串，并按下文“提交操作”部分所述发送到服务器
+</ul>
+<p>字段：
+<ul><li><code>type</code> - 来自 <code>minecraft:input_control_type</code> 注册表的输入控件类型之一
+<li><code>key</code> - 提交数据时所用值的字符串标识符，必须是有效的模板参数（字母、数字和 <code>_</code>）
+<li><code>&#60type-specific></code> - 见下文
+</ul>
+<h5><code>minecraft:text</code></h5>
+<ul><li>简单的文本输入
+<li>发送当前内容而不作修改
+</ul>
+<p>字段：
+<ul><li><code>width</code> - 输入框的宽度，正整数，默认：<code>200</code>
+<li><code>label</code> - 在控件左侧显示的文本组件
+<li><code>label_visible</code> - 控制标签可见性，默认：<code>true</code>
+<li><code>initial</code> - 初始内容，默认：<code>""</code>（空）
+</ul>
+<h5><code>minecraft:boolean</code></h5>
+<ul><li>一个带有标签的普通复选框
+</ul>
+<p>字段：
+<ul><li><code>label</code> - 在控件右侧显示的文本组件
+<li><code>initial</code> - 初始值，默认：<code>false</code>（即未选中）
+<li><code>on_true</code> - 控件选中时发送的字符串值，默认：'true'
+<li><code>on_false</code> - 控件未选中时发送的字符串值，默认：'false'
+</ul>
+<h5><code>minecraft:single_option</code></h5>
+<ul><li>一个在点击时在一组选项中循环的按钮
+<li>发送与当前选中预设关联的值
+</ul>
+<p>字段：
+<ul><li><code>label</code> - 在按钮上显示的文本组件
+<li><code>label_visible</code> - 如果为 <code>true</code>，标签将合并到按钮文本中，默认：<code>true</code>
+<li><code>width</code> - 按钮宽度，正整数，默认：<code>200</code>
+<li><code>options</code> - 一个对象列表，包含字段：
+<ul><li><code>id</code> - 提交时发送的字符串值
+<li><code>display</code> - 在按钮上显示的文本组件，可选（如果不存在，则使用 <code>id</code>）
+<li><code>initial</code> - 可选的布尔标志，用于选择初始选项（只能有一个选项将其设置为 <code>true</code>）
+<li>此外，列表也可能包含纯字符串——在这种情况下，它等同于一个条目，其中字段 <code>id</code> 设置为该字符串，其他字段设置为默认值
+</ul>
+</ul>
+<h5><code>minecraft:number_range</code></h5>
+<ul><li>一个用于在某个范围内选择数值的滑块
+<li>发送当前选中的值
+<ul><li>整数将不带小数点发送
+</ul>
+</ul>
+<p>字段：
+<ul><li><code>label</code> - 用作滑块标签的文本组件
+<li><code>label_format</code> - 用于构建标签的翻译键（第一个参数是 <code>label</code> 字段的内容，第二个参数是当前值），默认：<code>options.generic_value</code>
+<li><code>width</code> - 输入框的宽度，正整数，默认：<code>200</code>
+<li><code>start</code> - 起始值（滑块位于最左侧时）（包含），浮点数
+<li><code>end</code> - 结束值（滑块位于最右侧时）（包含），浮点数
+<li><code>steps</code> - 增量数量，正整数
+<ul><li>注意：<code>1</code> 表示滑块将有两个位置（起始和结束）
+</ul>
+<li><code>initial</code> - 滑块的初始值，向下舍入到最近的步长值，必须在范围内，默认为 <code>min</code>
+</ul>
+<h4>提交操作</h4>
+<ul><li>输入对话框上的每个提交操作都有一个关联的按钮
+<li>当点击其中一个按钮时，将收集所有输入的值，并使用下文描述的方法之一发送到服务器
+<li>提交操作的 <code>id</code> 字段将作为键为 <code>action</code> 的输入包含在内
+<li>提交操作字段：
+<ul><li>通用按钮数据（见上文）
+<li><code>id</code> - 操作的字符串标识符
+<li><code>on_submit</code> - 点击按钮时运行的提交方法，包含以下字段的对象：
+<ul><li><code>type</code> - 来自 <code>minecraft:submit_method_type</code> 注册表的提交方法类型之一
+<li><code>&#60type-specific></code> - 见下文
+</ul>
+</ul>
+<li>注意：服务器不会验证各个值，因为它们以填充的命令或自定义负载形式到达
+</ul>
+<h4>提交方法类型</h4>
+<h5><code>minecraft:command_template</code></h5>
+<ul><li>此方法将使用提供的宏模板构建命令，并请求服务器运行它（与 <code>minecraft:run_command</code> 点击事件相同）
+<li>如果命令需要高于 <code>0</code> 的权限（即需要任何操作员权限），将显示确认对话框
+<li>宏将使用输入中的值进行展开
+<ul><li>例如，如果宏是 <code>some_command $(action)</code>，则 <code>action</code> 参数将展开为提交操作的 <code>id</code> 字段
+<li>宏中未使用的输入将被忽略，而未匹配任何输入的宏参数将替换为空字符串
+</ul>
+</ul>
+<p>字段：
+<ul><li><code>template</code> - 包含宏模板的字符串，将被解释为命令
+</ul>
+<h5><code>minecraft:custom_template</code></h5>
+<ul><li>此方法将使用提供的宏模板构建自定义服务器点击操作，并将其发送到服务器（与 <code>minecraft:custom</code> 点击事件相同）
+<li>宏将使用输入中的值进行展开
+<ul><li>宏中未使用的输入将被忽略，而未匹配任何输入的宏参数将替换为空字符串
+</ul>
+</ul>
+<p>字段：
+<ul><li><code>template</code> - 包含宏模板的字符串，用作负载
+<li><code>id</code> - 命名空间 ID
+</ul>
+<h5><code>minecraft:custom_form</code></h5>
+<ul><li>此方法将从所有值构建自定义服务器点击操作，并请求服务器运行它（与 <code>minecraft:custom</code> 点击事件相同）
+<li>格式：
+<ul><li>键与值之间用水平制表符（<code>U+0009</code>）分隔
+<li>键值条目之间用换行符（<code>U+000A</code>）分隔
+<li>如果任何键或值中存在 <code>U+0009</code> 和 <code>U+000A</code> 字符，它们将被转义为 <code>\t</code> 和 <code>\n</code>
+</ul>
+</ul>
+<p>字段：
+<ul><li><code>id</code> - 命名空间 ID
+</ul>
+<h4>内置对话框</h4>
+<p>内置数据包包含一些自定义对话框，用于定制客户端使用的特定界面
+<h5><code>minecraft:server_links</code></h5>
+<ul><li>替代先前存在的“服务器链接”界面
+<li>旨在简化先前使用此功能的服务器的迁移
+</ul>
+<h5><code>minecraft:custom_options</code></h5>
+<ul><li>显示 <code>minecraft:pause_screen_additions</code> 标签的内容（见下文）
+<li>如果此标签包含多个条目，则允许用户选择特定的对话框
+<li>注意：由于此标签用于互操作性，任何替换此对话框的内容都应小心不要隐藏其他对话框提供者
+</ul>
+<h3>对话框命令</h3>
+<ul><li>添加了新命令，用于向客户端显示对话框
+</ul>
+<p>语法：
+<ul><li><code>dialog show &#60targets> &#60dialog></code> - 向玩家显示对话框
+<ul><li><code>&#60targets></code> - 玩家名称、UUID 或玩家选择器
+<li><code>&#60dialog></code> - 来自 <code>minecraft:dialog</code> 注册表的命名空间 ID，或如上所述的内联对话框值
+<li>返回 <code>targets</code> 参数中的玩家数量
+</ul>
+<li><code>dialog clear &#60targets></code> - 清除玩家的对话框（如果有任何可见的）
+<ul><li><code>&#60targets></code> - 玩家名称、UUID 或玩家选择器
+<li>返回 <code>targets</code> 参数中的玩家数量
+</ul>
+</ul>
+<h3>暂停界面配置</h3>
+<ul><li>数据包可以请求从暂停界面访问某些可用的对话框
+<li>此功能取代“服务器链接”按钮，并按照相同的规则放置在暂停界面上
+<li>指向以此方式公开的对话框的按钮将使用 <code>external_title</code> 字段中描述的标签
+<li>此功能由 <code>minecraft:pause_screen_additions</code> 对话框标签配置：
+<ul><li>如果此标签未指定或为空，但服务器已发送 <code>server_links</code> 数据包，则该标签将被视为包含 <code>minecraft:server_links</code> 对话框
+<ul><li>注意：这与先前“服务器链接”功能的行为一致
+<li>如果此对话框被移除，标签将保持为空
+</ul>
+<li>如果此标签仍然为空，则按钮不可见（改为显示“发送反馈”和“报告漏洞”按钮）
+<li>如果此标签只有一个元素，暂停界面按钮将直接指向此对话框
+<li>如果此标签有多个元素，暂停界面按钮将指向 <code>minecraft:custom_options</code>，它（默认）允许用户选择标签元素之一
+<ul><li>如果此对话框被移除，按钮不可见
+</ul>
+</ul>
+</ul>
+<h2>文本组件</h2>
+<h3>点击事件</h3>
+<ul><li>添加了新的点击操作 <code>minecraft:custom</code>
+<ul><li>当用户点击带有此点击操作的组件时，客户端将向服务器发送专用数据包 <code>minecraft:custom_click_action</code>
+<li>其预期用途是作为 <code>run_command</code> 的替代方案，供模组服务器使用，而无需担心必须添加自定义命令
+<li>此数据包在原版服务器上没有任何功能
+<li>字段：
+<ul><li><code>id</code> - 命名空间 ID
+<li><code>payload</code> - 可选的字符串字段
+</ul>
+</ul>
+</ul>
+<h3>对话框点击事件</h3>
+<ul><li>添加了新的操作 <code>show_dialog</code>
+<ul><li>当用户点击此组件时，将为他们打开一个对话框
+<li>字段：
+<ul><li><code>dialog</code> - 来自 <code>minecraft:dialog</code> 注册表的命名空间 ID，或如上所述的内联对话框值
+</ul>
+</ul>
+</ul>
+<h2>属性</h2>
+<h3>恶魂的 <code>flying_speed</code> 属性</h3>
+<ul><li>恶魂现在拥有一个影响其飞行速度的 <code>flying_speed</code> 属性
+</ul>
+<h2>数据组件</h2>
+<h3><code>equippable</code> 物品组件</h3>
+<ul><li>添加了新的可选字段：<code>can_be_sheared</code>（布尔值）
+<ul><li>如果为 <code>true</code>，玩家可以使用剪刀通过右键单击从目标生物身上移除该可装备物品，前提是满足所有其他剪下条件
+<li>如果未指定，默认为 <code>false</code>
+</ul>
+<li>添加了新的可选字段：<code>shearing_sound</code>（音效事件）
+<ul><li>这是一个音效事件，在剪下可装备物品时播放
+<li>如果未指定，默认为 <code>item.shears.snip</code> 音效事件
+</ul>
+</ul>
+<h1>资源包版本 61</h1>
+<h2>UI 贴图</h2>
+<ul><li>添加了 <code>icon/music_notes</code> 和 <code>toast/now_playing</code> 贴图
+</ul>
+<h1>修复了 25w20a 中的漏洞</h1>
+<ul><li><a href=https://bugs.mojang.com/browse/MC-97423 rel="noopener noreferrer"target=_blank>MC-97423</a> 马在玩家下马后暂时卡在跳跃动画中
+<li><a href=https://bugs.mojang.com/browse/MC-103511 rel="noopener noreferrer"target=_blank>MC-103511</a> 调整音量后声音/歌曲停止播放
+<li><a href=https://bugs.mojang.com/browse/MC-118081 rel="noopener noreferrer"target=_blank>MC-118081</a> 在某些界面屏幕中，游戏暂停时声音不会暂停
+<li><a href=https://bugs.mojang.com/browse/MC-248682 rel="noopener noreferrer"target=_blank>MC-248682</a> 被活塞移动的半透明方块没有正确受到雾的影响
+<li><a href=https://bugs.mojang.com/browse/MC-248688 rel="noopener noreferrer"target=_blank>MC-248688</a> 下落的半透明方块没有正确受到雾的影响
+<li><a href=https://bugs.mojang.com/browse/MC-269744 rel="noopener noreferrer"target=_blank>MC-269744</a> 使用带有大层级的预设时发生内存不足崩溃
+<li><a href=https://bugs.mojang.com/browse/MC-276665 rel="noopener noreferrer"target=_blank>MC-276665</a> 在菜单中切换音乐时，音乐永远不会开启
+<li><a href=https://bugs.mojang.com/browse/MC-277991 rel="noopener noreferrer"target=_blank>MC-277991</a> 苍白橡木船物品上两个最亮的像素颜色仍然互换了
+<li><a href=https://bugs.mojang.com/browse/MC-296311 rel="noopener noreferrer"target=_blank>MC-296311</a> 接触水的 TNT 会破坏方块并伤害实体，但会忽略装饰性实体
+<li><a href=https://bugs.mojang.com/browse/MC-296836 rel="noopener noreferrer"target=_blank>MC-296836</a> 当拴绳因超过最大范围而断裂时，快乐恶魂的鞍模型不会改变
+<li><a href=https://bugs.mojang.com/browse/MC-296843 rel="noopener noreferrer"target=_blank>MC-296843</a> 在某些 Mac 系统上，云渲染不正确
+<li><a href=https://bugs.mojang.com/browse/MC-297524 rel="noopener noreferrer"target=_blank>MC-297524</a> 与 Realm 的连接产生奇怪的 HTML 文本
+<li><a href=https://bugs.mojang.com/browse/MC-297535 rel="noopener noreferrer"target=_blank>MC-297535</a> 附魔闪光在第一人称视角或物品栏中无法渲染
+<li><a href=https://bugs.mojang.com/browse/MC-297544 rel="noopener noreferrer"target=_blank>MC-297544</a> 雨雾不影响第一人称视角下的手部或物品
+<li><a href=https://bugs.mojang.com/browse/MC-297570 rel="noopener noreferrer"target=_blank>MC-297570</a> 方块破坏动画叠加层不受环境雾的影响
+</ul>

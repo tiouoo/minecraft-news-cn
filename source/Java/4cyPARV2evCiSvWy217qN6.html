@@ -1,0 +1,70 @@
+<p>We are now releasing the second pre-release for Minecraft 1.20. This pre-release contains bug fixes.</p>
+<p>Happy Mining!</p>
+<h1>Technical Changes</h1>
+<ul>
+<li>Game will now display message box on startup if user enabled text-to-speech functionality, but it is not available</li>
+<li><code>"item": "minecraft:air"</code> can now be used in datapack recipes to denote an ingredient that will match an empty slot.<ul>
+<li>The following recipe types, however, do not allow for an empty ingredient:<ul>
+<li><code>minecraft:crafting_shaped</code></li>
+<li><code>minecraft:crafting_shapeless</code></li>
+<li><code>minecraft:smelting</code></li>
+<li><code>minecraft:blasting</code></li>
+<li><code>minecraft:smoking</code></li>
+<li><code>minecraft:campfire_cooking</code></li>
+<li><code>minecraft:stonecutting</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 1.20 Pre-release 2</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1310" target="_blank" rel="noopener noreferrer">MC-1310</a> Dispensed boats and rafts get stuck inside of dispensers used to place them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-124327" target="_blank" rel="noopener noreferrer">MC-124327</a> Changing the name of an item and then emptying the text field in an anvil doesn't make the rename unavailable, keeps last non-empty name on output item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132076" target="_blank" rel="noopener noreferrer">MC-132076</a> Lowercase Letters  in controls menu + "Not Bound" is missing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159633" target="_blank" rel="noopener noreferrer">MC-159633</a> Command feedback messages are unnecessarily created during function execution</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165562" target="_blank" rel="noopener noreferrer">MC-165562</a> Command suggestion report "incorrect argument" when cursor is at the start of a node without suggestions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175504" target="_blank" rel="noopener noreferrer">MC-175504</a> Single quotation marks are not supported in NBT paths</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220096" target="_blank" rel="noopener noreferrer">MC-220096</a> Graphics warning button(s) improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224976" target="_blank" rel="noopener noreferrer">MC-224976</a> NativeImage.setPixelRGBA throws exception with message getPixelRGBA</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226344" target="_blank" rel="noopener noreferrer">MC-226344</a> Changing the "Owner" tag of a projectile doesn't affect the outcome of the projectile unless the world is reloaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237960" target="_blank" rel="noopener noreferrer">MC-237960</a> New potion effect GUI doesn't work when using Programmer Art</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250197" target="_blank" rel="noopener noreferrer">MC-250197</a> Glass bottles are inconsistently referred to throughout some advancement description strings</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252216" target="_blank" rel="noopener noreferrer">MC-252216</a> 65540: Invalid scancode -1 logged in key bind menu when an option is unbound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252408" target="_blank" rel="noopener noreferrer">MC-252408</a> Chat restriction strings consist of inconsistent concluding punctuation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256833" target="_blank" rel="noopener noreferrer">MC-256833</a> Ridable entities that can be steered build up fall damage when on climbable blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257052" target="_blank" rel="noopener noreferrer">MC-257052</a> You cannot double-click on languages within the "Language" menu to select them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257370" target="_blank" rel="noopener noreferrer">MC-257370</a> Buckets of fish are not sorted in the same order as the fish items</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257512" target="_blank" rel="noopener noreferrer">MC-257512</a> Dead tube coral in creative inventory is in wrong order</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258360" target="_blank" rel="noopener noreferrer">MC-258360</a> Horse armor loses its NBT data when equipped on horses via right-clicking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258461" target="_blank" rel="noopener noreferrer">MC-258461</a> The "Detect structure size and position:" string displayed within the structure block GUI is improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260468" target="_blank" rel="noopener noreferrer">MC-260468</a> Wither rose is not grouped with other small flowers in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260602" target="_blank" rel="noopener noreferrer">MC-260602</a> 'data modify from string' index failure does not return 0 for 'execute store success'</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260711" target="_blank" rel="noopener noreferrer">MC-260711</a> Some words within "/datapack list" command feedback messages are always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260712" target="_blank" rel="noopener noreferrer">MC-260712</a> Some words within "/scoreboard" command feedback messages are always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260713" target="_blank" rel="noopener noreferrer">MC-260713</a> Some words within "/team" command feedback messages are always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260715" target="_blank" rel="noopener noreferrer">MC-260715</a> Some words within "/bossbar" command feedback messages are always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260716" target="_blank" rel="noopener noreferrer">MC-260716</a> Some words within "/fill", "/fillbiome", and "/clone" command feedback messages are always pluralized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261024" target="_blank" rel="noopener noreferrer">MC-261024</a> /execute if loaded does not guarantee entities are loaded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261080" target="_blank" rel="noopener noreferrer">MC-261080</a> Player can fall through scaffolding when loading a world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261233" target="_blank" rel="noopener noreferrer">MC-261233</a> Minecart movement is not reliably detected by sculk sensors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261349" target="_blank" rel="noopener noreferrer">MC-261349</a> Chiseled Bookshelf won't rotate when placed as part of a structure</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261433" target="_blank" rel="noopener noreferrer">MC-261433</a> Shield doesn't block TNT explosion</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261816" target="_blank" rel="noopener noreferrer">MC-261816</a> Most two block tall flowers do not block enchanting tables / are part of #minecraft:replaceable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261988" target="_blank" rel="noopener noreferrer">MC-261988</a> Inconsistency with Mangrove Roots and Leaves in the Creative Tab</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262033" target="_blank" rel="noopener noreferrer">MC-262033</a> The command block GUI remains open when the said command block is destroyed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262106" target="_blank" rel="noopener noreferrer">MC-262106</a> Smithing recipe must have template to work</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262135" target="_blank" rel="noopener noreferrer">MC-262135</a> Recipe book GUI is positioned incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262181" target="_blank" rel="noopener noreferrer">MC-262181</a> NBSP is a valid invisible character that can be used to rename items to have blank names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262213" target="_blank" rel="noopener noreferrer">MC-262213</a> Baby sniffer's head is smaller on the first frame of existing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262310" target="_blank" rel="noopener noreferrer">MC-262310</a> Telemetry description strings consist of inconsistent concluding punctuation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262311" target="_blank" rel="noopener noreferrer">MC-262311</a> The "telemetry.event.game_load_times.description" string is missing an article before the word "execution"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262355" target="_blank" rel="noopener noreferrer">MC-262355</a> Death messages for falling from climbable blocks do not work</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262440" target="_blank" rel="noopener noreferrer">MC-262440</a> Sniffers can sniff while in love and pathfinding to their lover</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262441" target="_blank" rel="noopener noreferrer">MC-262441</a> Baby sniffers stand a bit too far away from players that are tempting them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262445" target="_blank" rel="noopener noreferrer">MC-262445</a> The text cursor no longer renders above text</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262446" target="_blank" rel="noopener noreferrer">MC-262446</a> Text within buttons renders above the semi-transparent black lines at the edges of menus</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262471" target="_blank" rel="noopener noreferrer">MC-262471</a> Random skylight underwater where it shouldn't be, that cuts off at the chunk border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262506" target="_blank" rel="noopener noreferrer">MC-262506</a> Parts of beds render through the alternative recipe GUI in the recipe book</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262508" target="_blank" rel="noopener noreferrer">MC-262508</a> Torchflower_crop causes the game to crash and locks the world when pollinated by bees</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262518" target="_blank" rel="noopener noreferrer">MC-262518</a> The "mco.configure.world.uninvite.player" string contains an unnecessary space before the question mark</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262531" target="_blank" rel="noopener noreferrer">MC-262531</a> "death.attack.genericKill.player" displays raw translation string (is untranslated)</li>
+</ul>

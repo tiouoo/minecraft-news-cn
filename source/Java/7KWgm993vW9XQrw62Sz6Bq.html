@@ -1,0 +1,81 @@
+<p>We are making some important updates to our Player Reporting Tool in this Snapshot to better protect the online safety of our players.</p>
+<p>Playing Minecraft should be an inclusive and safe experience for everyone, which is why alongside in-game chat messages, you will now be able to report player skins and usernames that violate our Community Standards in Java Edition.</p>
+<p>Just like with chat reports, nothing is automated. Any reported skin or username will be reviewed manually by a team of trained Minecraft moderators, who will use the submitted evidence to decide whether the skin and/or username is in breach of our Community Standards. Skins that are in violation of these standards will be removed from Minecraft and will no longer be accessible for use by any player. Usernames that are in violation of these standards will need to be changed before that player can play online via a shared server or Realm; though single player mode will still be accessible. To find out more about this and other safety policies, including more detail on the suspension procedure, appeals process, and how we handle malicious or repeat reporting, please visit our dedicated FAQ page.</p>
+<h1>New Features</h1>
+<h2>Player Skin &#x26; Name Reporting</h2>
+<ul>
+<li>Player Skins and Names can now be reported in the Social Interactions Screen</li>
+<li>If a skin or name is reported, and found to be violating the <a href="https://www.minecraft.net/community-standards" target="_blank" rel="noopener noreferrer">Community Standards</a>, our team of human moderators can action in a few ways:<ul>
+<li>Ban the skin from being used by any player</li>
+<li>Ban the name from being used by any player</li>
+<li>Suspend the player from online play in the case of repeated offences</li>
+</ul></li>
+<li>When a skin is banned, players with that skin:<ul>
+<li>Will have their skin removed</li>
+<li>Will be notified when they launch the game</li>
+<li>Will be automatically assigned one of the default skins</li>
+<li>Can still play multiplayer and singleplayer</li>
+<li>Can select a new custom skin at any time</li>
+</ul></li>
+<li>When a player's name is banned, that player:<ul>
+<li>Will need to choose a new name</li>
+<li>Will be notified when they launch the game</li>
+<li>Will not be able to play online until they change their name</li>
+<li>Can still play singleplayer</li>
+</ul></li>
+<li>A skin or name that has been banned cannot be used by any player in the future</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Sponges and Wet Sponges now have their own custom sounds</li>
+<li>The calculations to determine whether a mob can attack a player or other mobs have been changed</li>
+<li>Added the "Narrator Hotkey" accessibility option<ul>
+<li>Allows the narrator to be toggled on and off with <code>Ctrl+B</code></li>
+</ul></li>
+<li>Added "I want to report them" Player Reporting category</li>
+<li>A change has been reverted where armor trim patterns would be masked by the underlying armor texture</li>
+</ul>
+<h2>Mob attack reach changes</h2>
+<p>The calculations to determine whether a mob can attack a player or other mobs have been changed. Previously a mob's horizontal width was used to determine their attack reach and their height had no effect. The area where a mob can attack is now their bounding box extended in horizontal directions.</p>
+<p>Here are some situations where the new rules will affect the reach of mobs:</p>
+<ul>
+<li>If a mob is entirely below you, or entirely above you, it will not be able to reach you</li>
+<li>While riding on a medium-sized mob, like a Horse, you will be protected from small mobs, like Baby Zombies</li>
+<li>While riding on a tall mob, like a Camel, you will be protected from standard-size mobs, like Zombies</li>
+<li>Also, Ravagers won't be able to attack you through a few block thick walls anymore</li>
+<li>However, to escape from an Enderman, you need to be at least 3 blocks above the ground, not 1.5 as before</li>
+<li>Mobs will be able to attack you with the bottom of their hitbox, assuming your head is in range</li>
+<li>Builds that trap hostile mobs might need to be adjusted to be safe</li>
+</ul>
+<p>This change does not affect the reach of players, and mobs still need to see their target to attack it. We believe this new system will be more intuitive and will result in a more consistent behavior, and we welcome all feedback on this change.</p>
+<h1>Technical Changes</h1>
+<ul>
+<li>The charts on the debug screen can now be toggled with F3+1 (pie chart), F3+2 (FPS and TPS) and F3+3 (bandwidth and ping) instead of holding Shift, Alt or Ctrl while opening the screen</li>
+</ul>
+<h2>Data Pack Changes</h2>
+<ul>
+<li>Added <code>decal</code> field to armor trim patterns (default: <code>false</code>)<ul>
+<li>If <code>true</code>, the pattern texture will be masked based on the underlying armor</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 23w33a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-2310" target="_blank" rel="noopener noreferrer">MC-2310</a> Wrong attack radius calculation damages/kills entities through blocks and corners</li>
+<li><a href="https://bugs.mojang.com/browse/MC-112133" target="_blank" rel="noopener noreferrer">MC-112133</a> Eating chorus fruit does not reset fall distance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118616" target="_blank" rel="noopener noreferrer">MC-118616</a> The sounds of magma cubes and slimes aren't controlled by the "Hostile Creatures" sound slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122645" target="_blank" rel="noopener noreferrer">MC-122645</a> Narrator hotkey cannot be customized or disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-125046" target="_blank" rel="noopener noreferrer">MC-125046</a> "RepairCost" NBT tag is created on any renamed item using anvils which can cause items to not stack properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181109" target="_blank" rel="noopener noreferrer">MC-181109</a> Grindstone adds RepairCost: 0</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182820" target="_blank" rel="noopener noreferrer">MC-182820</a> Repeaters and comparators use wood sounds for placing/breaking despite being made mostly of stone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197473" target="_blank" rel="noopener noreferrer">MC-197473</a> Renamed block entities don't stack properly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200484" target="_blank" rel="noopener noreferrer">MC-200484</a> Jukeboxes use stone sounds despite being composed predominantly of wood</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214126" target="_blank" rel="noopener noreferrer">MC-214126</a> Bees don't pollinate themselves with spore blossoms or chorus flowers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217628" target="_blank" rel="noopener noreferrer">MC-217628</a> Levers use wood sounds rather than stone</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217629" target="_blank" rel="noopener noreferrer">MC-217629</a> Tripwire hooks use stone sounds, rather than wood</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257909" target="_blank" rel="noopener noreferrer">MC-257909</a> Zoglins, hoglins, and pandas can still attack players riding camels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264741" target="_blank" rel="noopener noreferrer">MC-264741</a> Unequip vibration only works in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264743" target="_blank" rel="noopener noreferrer">MC-264743</a> The "Debug" line on the debug screen that shows which debug graphs are enabled doesn't mention the ping and network traffic chart</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264746" target="_blank" rel="noopener noreferrer">MC-264746</a> Armor trims no longer render their second layer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264753" target="_blank" rel="noopener noreferrer">MC-264753</a> Eye armor trim on chainmail helmets now has absolutely no effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264773" target="_blank" rel="noopener noreferrer">MC-264773</a> There's a misplaced label in the network traffic graph, overlapping minimum B/s rate text</li>
+</ul>

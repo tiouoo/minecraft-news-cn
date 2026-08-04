@@ -1,0 +1,70 @@
+<p>我们现在发布了 Minecraft 1.20 的第二个预发布版。此预发布版包含错误修复。</p>
+<p>挖矿愉快！</p>
+<h1>技术更改</h1>
+<ul>
+<li>如果用户启用了文本转语音功能但该功能不可用，游戏现在会在启动时显示消息框。</li>
+<li><code>"item": "minecraft:air"</code> 现在可以在数据包配方中使用，表示匹配空槽位的原料。<ul>
+<li>但以下配方类型不允许使用空原料：<ul>
+<li><code>minecraft:crafting_shaped</code></li>
+<li><code>minecraft:crafting_shapeless</code></li>
+<li><code>minecraft:smelting</code></li>
+<li><code>minecraft:blasting</code></li>
+<li><code>minecraft:smoking</code></li>
+<li><code>minecraft:campfire_cooking</code></li>
+<li><code>minecraft:stonecutting</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>1.20 预发布版 2 中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1310" target="_blank" rel="noopener noreferrer">MC-1310</a> 发射器发射的船和筏会卡在用于放置它们的发射器内部。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-124327" target="_blank" rel="noopener noreferrer">MC-124327</a> 更改物品名称后，清空铁砧中的文本字段不会使重命名不可用，而是会在输出物品上保留最后一个非空名称。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132076" target="_blank" rel="noopener noreferrer">MC-132076</a> 控制菜单中的小写字母和“未绑定”缺失。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159633" target="_blank" rel="noopener noreferrer">MC-159633</a> 函数执行期间会不必要地生成命令反馈消息。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165562" target="_blank" rel="noopener noreferrer">MC-165562</a> 当光标位于没有建议的节点开头时，命令建议会报告“不正确的参数”。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175504" target="_blank" rel="noopener noreferrer">MC-175504</a> NBT 路径中不支持单引号。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220096" target="_blank" rel="noopener noreferrer">MC-220096</a> 图形警告按钮的字母大小写不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224976" target="_blank" rel="noopener noreferrer">MC-224976</a> NativeImage.setPixelRGBA 会抛出异常，其消息为 getPixelRGBA。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226344" target="_blank" rel="noopener noreferrer">MC-226344</a> 更改射弹的“Owner”标签不会影响射弹的结果，除非重新加载世界。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237960" target="_blank" rel="noopener noreferrer">MC-237960</a> 使用 Programmer Art 材质包时，新的药水效果 GUI 无法正常工作。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250197" target="_blank" rel="noopener noreferrer">MC-250197</a> 某些进度描述字符串中对玻璃瓶的称呼不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252216" target="_blank" rel="noopener noreferrer">MC-252216</a> 当某个选项未绑定时，键位绑定菜单中会记录“65540：无效的扫描码 -1”。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252408" target="_blank" rel="noopener noreferrer">MC-252408</a> 聊天限制字符串的结尾标点不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256833" target="_blank" rel="noopener noreferrer">MC-256833</a> 可骑乘且可控制的实体在可攀爬方块上时会积累摔落伤害。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257052" target="_blank" rel="noopener noreferrer">MC-257052</a> 无法在“语言”菜单中通过双击语言来选中它们。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257370" target="_blank" rel="noopener noreferrer">MC-257370</a> 鱼桶的排序顺序与鱼物品的排序顺序不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257512" target="_blank" rel="noopener noreferrer">MC-257512</a> 创造模式物品栏中，失活的管珊瑚排序错误。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258360" target="_blank" rel="noopener noreferrer">MC-258360</a> 通过右键单击给马装备马铠时，马铠会丢失其 NBT 数据。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258461" target="_blank" rel="noopener noreferrer">MC-258461</a> 结构方块 GUI 中显示的“Detect structure size and position:”字符串大小写不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260468" target="_blank" rel="noopener noreferrer">MC-260468</a> 凋灵玫瑰在创造模式物品栏中未与其他小花归为一组。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260602" target="_blank" rel="noopener noreferrer">MC-260602</a> 对于“execute store success”，'data modify from string' 的索引失败不会返回 0。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260711" target="_blank" rel="noopener noreferrer">MC-260711</a> “/datapack list”命令反馈消息中的某些单词总是使用复数形式。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260712" target="_blank" rel="noopener noreferrer">MC-260712</a> “/scoreboard”命令反馈消息中的某些单词总是使用复数形式。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260713" target="_blank" rel="noopener noreferrer">MC-260713</a> “/team”命令反馈消息中的某些单词总是使用复数形式。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260715" target="_blank" rel="noopener noreferrer">MC-260715</a> “/bossbar”命令反馈消息中的某些单词总是使用复数形式。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260716" target="_blank" rel="noopener noreferrer">MC-260716</a> “/fill”、“/fillbiome”和“/clone”命令反馈消息中的某些单词总是使用复数形式。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261024" target="_blank" rel="noopener noreferrer">MC-261024</a> /execute if loaded 并不能保证实体已加载。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261080" target="_blank" rel="noopener noreferrer">MC-261080</a> 加载世界时，玩家可能会穿过脚手架掉落。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261233" target="_blank" rel="noopener noreferrer">MC-261233</a> 伏聆振动传感器无法可靠地检测到矿车的移动。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261349" target="_blank" rel="noopener noreferrer">MC-261349</a> 当作为结构的一部分放置时，雕纹书架不会旋转。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261433" target="_blank" rel="noopener noreferrer">MC-261433</a> 盾牌无法阻挡 TNT 爆炸。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261816" target="_blank" rel="noopener noreferrer">MC-261816</a> 大多数两格高的花不会阻挡附魔台 / 是 #minecraft:replaceable 的一部分。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261988" target="_blank" rel="noopener noreferrer">MC-261988</a> 创造模式物品栏中红树根与红树树叶的排列不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262033" target="_blank" rel="noopener noreferrer">MC-262033</a> 当命令方块被破坏时，命令方块 GUI 仍然保持打开。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262106" target="_blank" rel="noopener noreferrer">MC-262106</a> 锻造配方必须要有模板才能工作。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262135" target="_blank" rel="noopener noreferrer">MC-262135</a> 配方书 GUI 的位置不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262181" target="_blank" rel="noopener noreferrer">MC-262181</a> NBSP 是一个有效的不可见字符，可以用来将物品重命名为空白名称。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262213" target="_blank" rel="noopener noreferrer">MC-262213</a> 嗅探者幼体在生成的第一帧时头部较小。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262310" target="_blank" rel="noopener noreferrer">MC-262310</a> 遥测描述字符串的结尾标点不一致。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262311" target="_blank" rel="noopener noreferrer">MC-262311</a> “telemetry.event.game_load_times.description”字符串中“execution”前缺少冠词。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262355" target="_blank" rel="noopener noreferrer">MC-262355</a> 从可攀爬方块上摔落的死亡消息不起作用。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262440" target="_blank" rel="noopener noreferrer">MC-262440</a> 嗅探者在处于繁殖状态并寻找伴侣时仍能嗅探。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262441" target="_blank" rel="noopener noreferrer">MC-262441</a> 被玩家引诱时，嗅探者幼体站得离玩家有点太远。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262445" target="_blank" rel="noopener noreferrer">MC-262445</a> 文本光标不再渲染在文本上方。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262446" target="_blank" rel="noopener noreferrer">MC-262446</a> 按钮内的文本渲染在菜单边缘的半透明黑线上方。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262471" target="_blank" rel="noopener noreferrer">MC-262471</a> 水下出现本不该有的随机天光，并在区块边界处截断。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262506" target="_blank" rel="noopener noreferrer">MC-262506</a> 床的某些部分会透过配方书中的替代配方 GUI 显示出来。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262508" target="_blank" rel="noopener noreferrer">MC-262508</a> 火把花作物在被蜜蜂授粉时会导致游戏崩溃并锁定世界。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262518" target="_blank" rel="noopener noreferrer">MC-262518</a> “mco.configure.world.uninvite.player”字符串中问号前有一个多余的空格。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262531" target="_blank" rel="noopener noreferrer">MC-262531</a> “death.attack.genericKill.player”显示原始翻译字符串（未翻译）。</li>
+</ul>

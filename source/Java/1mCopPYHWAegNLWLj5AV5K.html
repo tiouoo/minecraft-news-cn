@@ -1,0 +1,136 @@
+<p>For this week's Snapshot, we've made improvements to the Decorated Pots!</p>
+<p>Additionally, Realms is now available in Snapshots moving forward! Any player who has an active Realms subscription is eligible to create a free Snapshot Realm. This Snapshot Realm will be separate from your regular Realm to prevent any issues from impacting your regular Realm. For more information on how Snapshot Realms work, please see Realms in <a href="https://help.minecraft.net/hc/en-us/articles/20143730191245" target="_blank" rel="noopener noreferrer">Minecraft: Java Edition Snapshot FAQ</a>.</p>
+<h1>New Features</h1>
+<h2>Snapshot Realms</h2>
+<ul>
+<li>Realms is now available in Snapshots, Pre-Releases, and Release Candidates</li>
+<li>The version of the last played world on a Realm is displayed in the Realms list</li>
+<li>Experiments are available for newly created worlds</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Decorated Pots can now store items, and can be smashed by projectiles</li>
+</ul>
+<h2>Decorated Pots</h2>
+<ul>
+<li>Decorated Pots now store up to a single stack of items</li>
+<li>Hoppers, Hopper Minecarts and Droppers can now insert and/or extract items from Decorated Pots</li>
+<li>Comparators can now read the number of items in Decorated Pots</li>
+<li>Players can interact with Decorated Pots to insert items into them</li>
+<li>Decorated Pots have no GUI, and need to be broken to retrieve or discover their content by players</li>
+<li>Player interactions with Decorated Pots cause the Decorated Pot to wobble and trigger the vibration frequency of 11</li>
+<li>Decorated Pots can be smashed by projectiles which cause them to shatter and drop their content</li>
+<li>Decorated Pots now stack up to 64</li>
+</ul>
+<p>We want to hear your feedback on these improvements to Decorated Pots - let us know what you think in <a href="https://feedback.minecraft.net/hc/en-us/community/posts/20289952762637-Let-s-talk-about-Decorated-Pot-improvements-" target="_blank" rel="noopener noreferrer">our dedicated feedback site post</a>!</p>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 20</li>
+<li>The name of non-living entities will now be shown if looked at and a CustomName is set, or always displayed if CustomNameVisible is set, similar to living entities</li>
+</ul>
+<h1>Data Pack Version 20</h1>
+<ul>
+<li>Changed <code>function</code> command results</li>
+<li>Adjusted check for gamerule <code>maxCommandChainLength</code></li>
+<li>Added new gamerule <code>maxCommandForkCount</code></li>
+<li>Reintroduced form of the <code>execute</code> command: <code>execute if function</code></li>
+<li>Reintroduced form of the <code>return</code> command: <code>return run</code></li>
+<li>Decorated Pots with <code>cracked</code> state set to true will always shatter when broken</li>
+<li>Added new <code>dust_plume</code> particle type</li>
+</ul>
+<h2>Commands</h2>
+<h3>Functions</h3>
+<ul>
+<li><code>function</code> command has been changed to better accomodate new <code>return</code> command</li>
+<li>Functions no longer have any result unless they use <code>return</code> or there was error during lookup or instantiation<ul>
+<li>That means <code>function</code> command will no longer return (or even display) number of commands run during execution</li>
+<li>Error conditions:<ul>
+<li>Calling non-existent function</li>
+<li>Calling empty function tag</li>
+<li>Macro instantiation failure</li>
+</ul></li>
+</ul></li>
+<li>"Result" in this context means values that would be stored with <code>execute store</code></li>
+<li>The previous behavior where every command in function would perform store if a function was called with <code>execute store ... run function</code> is removed<ul>
+<li>That means that a single call to <code>function</code> will store at most once (zero times if <code>return</code> was not called)</li>
+<li>For function tags with multiple entries, function results will be accumulated, but partial results will be stored at the end of every function</li>
+</ul></li>
+</ul>
+<h4>Limits</h4>
+<p>Existing limits for functions have been refined to accomodate new execution rules and prevent wider range of exploits:</p>
+<ul>
+<li>Limits apply even if run from command line (so it will now always behave as if they were placed in a function)<ul>
+<li>For example, all functions called by <code>execute as @e run function</code> will count towards same limit</li>
+<li>Executions from command blocks still count as separate ones</li>
+</ul></li>
+<li>Limit <code>maxCommandChainLength</code> for functions will now count "operations" like:<ul>
+<li>execution of command for a single context</li>
+<li>execution of a stage in <code>execute</code> (no matter how many contexts were modified)</li>
+<li>invocation of function</li>
+</ul></li>
+<li>New limit with game rule <code>maxCommandForkCount</code> now restricts total amount of context that can be created by single state of functions like <code>execute</code><ul>
+<li>Example: if there are 5 entities in world, <code>execute as @e</code> creates 5 contexts, while <code>execute as @e at @e</code> creates 5*5 = 25 contexts</li>
+</ul></li>
+</ul>
+<h3><code>execute if function</code></h3>
+<p>An <code>execute</code> sub-command that runs a function or function tag and matches the return value(s).
+This is a reintroduction of functionality removed in previous version.
+If a tag is given, all functions run regardless of the results of prior functions.</p>
+<p>Syntax:
+<code>execute if|unless function &#x3C;function> &#x3C;continuation></code></p>
+<p>Parameters:</p>
+<ul>
+<li><code>function</code>: The function or tag to run</li>
+</ul>
+<h4>Matching</h4>
+<p>The matching of the result value of the function(s) that run:</p>
+<ul>
+<li>At least one of the functions must succeed for the match to succeed</li>
+<li>A succeessful call is defined as a function that:<ul>
+<li>Uses the <code>return</code> command to return a value</li>
+<li>The return value is not 0</li>
+</ul></li>
+<li>If no functions exited with <code>return</code>, neither <code>if</code> or <code>unless</code> will run</li>
+</ul>
+<h3><code>return run</code></h3>
+<p>A form of the <code>return</code> command is now available, <code>return run</code>.
+This is a reintroduction of functionality removed in previous version.</p>
+<p>Syntax:
+<code>return run &#x3C;command></code></p>
+<p>This takes the <code>result</code> value from running the specified <code>command</code> and returns that as the return value of the function.</p>
+<ul>
+<li>If command did not return any value (like, for example, call to a <code>function</code> without <code>return</code>), return will not execute and function will continue execution</li>
+<li>If the given command fails, the return value is <code>0</code></li>
+<li>In all other aspects, it works like <code>return</code> with a specified return value</li>
+<li>In case of fork (for example <code>return run execute as @e run some_command</code>) the first execution of the command will return<ul>
+<li>If there are no executions (for example in <code>return run execute if @e[something_impossible] run some_command</code>) function will not return and will continue execution</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w41a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-16937" target="_blank" rel="noopener noreferrer">MC-16937</a> Shooting an arrow into the nether portal can hurt anybody when PvP is disabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-50319" target="_blank" rel="noopener noreferrer">MC-50319</a> Player owned projectiles lose their player ownership when exiting portals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-81656" target="_blank" rel="noopener noreferrer">MC-81656</a> Field determining whether or not a wither skull is blue is not saved to and read from NBT</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118403" target="_blank" rel="noopener noreferrer">MC-118403</a> Vexes summoned by evoker do not have evoker team applied</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143266" target="_blank" rel="noopener noreferrer">MC-143266</a> Nested function calls reevaluate maxCommandChainLength before queueing commands</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143269" target="_blank" rel="noopener noreferrer">MC-143269</a> Nested intermediate functions are skipped when maxCommandChainLength commands are already queued</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189227" target="_blank" rel="noopener noreferrer">MC-189227</a> First time tutorial uses old textures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198113" target="_blank" rel="noopener noreferrer">MC-198113</a> Incomplete commands do not prevent functions from loading</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233276" target="_blank" rel="noopener noreferrer">MC-233276</a> You can feed adult donkeys, horses, llamas or mules with maximum Temper value, and hand animation is not played</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234323" target="_blank" rel="noopener noreferrer">MC-234323</a> Performance issue with text parsing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236501" target="_blank" rel="noopener noreferrer">MC-236501</a> Renamed minecarts and boats don't show their name tag in the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249408" target="_blank" rel="noopener noreferrer">MC-249408</a> Boats with Chests lose their name when placed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257786" target="_blank" rel="noopener noreferrer">MC-257786</a> The game takes a long time to process players leaving realms groups or accepting or declining realms invitations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260576" target="_blank" rel="noopener noreferrer">MC-260576</a> Incomplete 'execute summon' command still runs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261682" target="_blank" rel="noopener noreferrer">MC-261682</a> Brushing can continue when block goes out of range</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262105" target="_blank" rel="noopener noreferrer">MC-262105</a> Entities can block brushing actions when players look very close to their hitboxes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263575" target="_blank" rel="noopener noreferrer">MC-263575</a> When an item is extracted from suspicious sand/gravel, gravity does not work on this block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263660" target="_blank" rel="noopener noreferrer">MC-263660</a> "Sign wobbles" subtitle is the same for signs and hanging signs, causing translation issues</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264595" target="_blank" rel="noopener noreferrer">MC-264595</a> Return command cannot run function when inside another function</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264699" target="_blank" rel="noopener noreferrer">MC-264699</a> Functions return the output of commands only if the command doesn't start with return run</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264710" target="_blank" rel="noopener noreferrer">MC-264710</a> "/execute if function" always fails and "/execute unless function" always succeeds if run from a function</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264880" target="_blank" rel="noopener noreferrer">MC-264880</a> GUI slider uses new texture with programmer art</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265516" target="_blank" rel="noopener noreferrer">MC-265516</a> The "Cancel" button within some realms menus can be deselected using keyboard navigation despite it being the only element within the said menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265647" target="_blank" rel="noopener noreferrer">MC-265647</a> Shield arm position is incorrect while in a boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265656" target="_blank" rel="noopener noreferrer">MC-265656</a> Pumpkins can no longer be sheared</li>
+</ul>

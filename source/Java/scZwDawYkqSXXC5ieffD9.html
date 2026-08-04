@@ -1,0 +1,151 @@
+<p>Mangrove trees! Warm frogs! Mud blocks! More mangrove trees! Today, we’re happy to bring you the most mud-tastic Java snapshot to date!</p>
+<p>Sure, it might be our only mud-tastic snapshot to date – but the important thing is that our new biome, mangrove swamp, now is available for testing, along with nitty-gritty features like the recovery compass and other, more technical tidbits.</p>
+<p>Enjoy!</p>
+<h1>New Features in 22w14a</h1>
+<ul>
+<li>Added Clay renewability</li>
+<li>Added Mangrove Trees</li>
+<li>Added Mangrove Swamp biome</li>
+<li>Added Echo Shard and Recovery Compass</li>
+</ul>
+<h2>Clay renewability</h2>
+<ul>
+<li>Placing Mud above a block that has Pointed Dripstone underneath will eventually turn the mud block into Clay</li>
+</ul>
+<h2>Mangrove trees</h2>
+<p>Introducing a new type of water-adapted tree that spawns propped up on roots</p>
+<ul>
+<li>Have a chance of spawning a Bee Nest</li>
+<li>Grows from Mangrove Propagules</li>
+</ul>
+<h2>Mangrove Swamp</h2>
+<p>Muddy! Murky! Magnificent! Welcome to the newest biome - the Mangrove Swamp</p>
+<ul>
+<li>Located in warmer, more humid places where you'd normally find the Swamp biome in Minecraft</li>
+<li>Here you can find Bees and Warm Frogs</li>
+<li>The floor of this biome is coated with a thick layer of Mud, so be sure to pack your best boots</li>
+<li>Have a nice boat ride under and around the larger-than-life roots of mangrove trees</li>
+</ul>
+<h2>Recovery Compass</h2>
+<p>A new Recovery Compass can be crafted with Echo Shards which can only be found and are unique to Ancient City chests</p>
+<ul>
+<li>Unlike a normal Compass, the Recovery Compass will point to the last place you died</li>
+<li>If you are not in the dimension you last died, or you haven't died yet in your world, it will randomly spin</li>
+<li>It can be crafted with 1 Compass surrounded by 8 Echo Shards, which can be found in Ancient Cities</li>
+</ul>
+<h1>Changes in 22w14a</h1>
+<ul>
+<li>The Warden will now get angry at ALL living mobs that bump into it, not just players</li>
+</ul>
+<h1>Technical Changes in 22w14a</h1>
+<ul>
+<li><code>CatType</code> fields on enitites with type <code>minecraft:cat</code> have been replaced with <code>variant</code>, with numeric values being replaced with string ids (so, for example, <code>5</code> becomes <code>minecraft:calico</code>)</li>
+<li>Some mutually exclusive tests in entity predicate (<code>player</code>, <code>fishing_hook</code>, <code>lightning_bolt</code> and <code>catType</code>) have been collapsed to <code>type_specific</code> field</li>
+<li>Added <code>item_delivered_to_player</code> advancement trigger</li>
+<li>Added <code>allay_drop_item_on_block</code> advancement trigger</li>
+</ul>
+<h2>Predicates</h2>
+<h3>Entity predicate</h3>
+<ul>
+<li><code>player</code>, <code>fishing_hook</code>, <code>lightning_bolt</code> and <code>catType</code> fields have been replaced with <code>type_specific</code></li>
+<li><code>type_specific</code> has field <code>type</code> (one of <code>player</code>, <code>fishing_hook</code>, <code>lightning_bolt</code> or <code>cat</code>) and same fields as removed fields</li>
+<li>Example:<ul>
+<li>Before:</li>
+</ul><pre><code> "lightning_bolt": {
+   "blocks_set_on_fire": 0
+ }
+</code></pre><ul>
+<li>After</li>
+</ul><pre><code>  "type_specific": {
+    "type": "lightning",
+    "blocks_set_on_fire": 0
+  }
+</code></pre></li>
+<li><code>catType</code> has been wrapped to match new format and now uses new cat variant names instead of texture names:<ul>
+<li>Before</li>
+</ul><pre><code> "catType": "minecraft:textures/entity/cat/british_shorthair.png"
+</code></pre><ul>
+<li>After</li>
+</ul><pre><code> "type_specific": {
+    "type": "cat",
+    "variant": "minecraft:british"
+ }
+</code></pre></li>
+<li>New <code>type_specific</code> options:<ul>
+<li><code>frog</code> has <code>variant</code> field matching frog variant (<code>minecraft:warm</code>, <code>minecraft:temperate</code> or <code>minecraft:cold</code>)</li>
+<li><code>slime</code> applies for slimes and magma creams, has <code>size</code> field matching slime size (smallest is <code>1</code>)</li>
+</ul></li>
+</ul>
+<h2>Advancements</h2>
+<ul>
+<li>Removed field <code>location</code> from triggers <code>location</code>, <code>slept_in_bed</code>, <code>hero_of_the_village</code> and <code>voluntary_exile</code> - it was handled exactly the same as <code>player.location</code></li>
+</ul>
+<h3>New triggers</h3>
+<h4><code>item_delivered_to_player</code></h4>
+<ul>
+<li>Triggered when an allay delivers an item to a player</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+</ul></li>
+</ul>
+<h4><code>allay_drop_item_on_block</code></h4>
+<ul>
+<li>Triggered when an allay drops an item on a block</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+<li><code>location</code> - a predicate for the block that the item was dropped on</li>
+<li><code>item</code> - a predicate for the item that was dropped</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in 22w14a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-207289" target="_blank" rel="noopener noreferrer">MC-207289</a> Sculk sensor wool occlusion has directional bias</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207635" target="_blank" rel="noopener noreferrer">MC-207635</a> Sculk sensors react differently to wool occlusion depending on the global direction.</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249075" target="_blank" rel="noopener noreferrer">MC-249075</a> Sculk shrieker isn't grouped with other sculk related blocks in the decorations tab of creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249122" target="_blank" rel="noopener noreferrer">MC-249122</a> block.sculk_catalyst.bloom has no subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249254" target="_blank" rel="noopener noreferrer">MC-249254</a> Frogs eating named slimes or magma cubes isn't logged in console</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249384" target="_blank" rel="noopener noreferrer">MC-249384</a> Warden can create Light, barriers or structure voids particles when digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249386" target="_blank" rel="noopener noreferrer">MC-249386</a> The entity shadows of wardens are too small in relation to the size of their models</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249387" target="_blank" rel="noopener noreferrer">MC-249387</a> Warden's digging sound is the same as its emerging sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249400" target="_blank" rel="noopener noreferrer">MC-249400</a> The vertical movement of wardens when they're in liquids is too sensitive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249401" target="_blank" rel="noopener noreferrer">MC-249401</a> Warden spawn egg isn't alphabetized correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249415" target="_blank" rel="noopener noreferrer">MC-249415</a> Wardens won't pathfind through lava even though they're immune to it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249422" target="_blank" rel="noopener noreferrer">MC-249422</a> Some subtitles relating to the warden don't contain possessive apostrophes where appropriate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249426" target="_blank" rel="noopener noreferrer">MC-249426</a> Angered wardens play the "warden takes notice angrily" sound when hit in survival on top of their hurt sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249430" target="_blank" rel="noopener noreferrer">MC-249430</a> Wardens remember players in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249434" target="_blank" rel="noopener noreferrer">MC-249434</a> The warden indefinitely roars when attacked by multiple entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249445" target="_blank" rel="noopener noreferrer">MC-249445</a> Activated sculk shriekers fail to summon the warden when broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249447" target="_blank" rel="noopener noreferrer">MC-249447</a> Activated sculk shriekers fail to summon the warden if you run away</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249451" target="_blank" rel="noopener noreferrer">MC-249451</a> Warden doesn't appear in spawner</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249455" target="_blank" rel="noopener noreferrer">MC-249455</a> "Not a string" appears in log when serializing angered Warden</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249473" target="_blank" rel="noopener noreferrer">MC-249473</a> Some Warden sounds play in Peaceful difficulty</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249476" target="_blank" rel="noopener noreferrer">MC-249476</a> Warden can spawn in water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249479" target="_blank" rel="noopener noreferrer">MC-249479</a> Wardens will attack their teammates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249499" target="_blank" rel="noopener noreferrer">MC-249499</a> Warden summoned with 'Silent' tag still plays heartbeat sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249504" target="_blank" rel="noopener noreferrer">MC-249504</a> The sounds of wardens groaning angrily aren't controlled by the "Hostile Creatures" sound slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249509" target="_blank" rel="noopener noreferrer">MC-249509</a> Warden is invisible for a split second when spawned in by spawner or spawn egg</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249517" target="_blank" rel="noopener noreferrer">MC-249517</a> Warden doesn't detect non-player mobs colliding with them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249526" target="_blank" rel="noopener noreferrer">MC-249526</a> Sculk shriekers are not activated when the player is riding something</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249530" target="_blank" rel="noopener noreferrer">MC-249530</a> Warden's hitbox shows up in peaceful difficulty</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249531" target="_blank" rel="noopener noreferrer">MC-249531</a> Warden indefinitely roars when the attack target is invulnerable</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249646" target="_blank" rel="noopener noreferrer">MC-249646</a> The warden sniffs excessively after killing a mob</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249659" target="_blank" rel="noopener noreferrer">MC-249659</a> Sculk Catalyst and Sculk Veins only drop when broken by Silk Touch hoe</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249664" target="_blank" rel="noopener noreferrer">MC-249664</a> Warden despawns when far away</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249674" target="_blank" rel="noopener noreferrer">MC-249674</a> Wardens forget their targets on world reload</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249712" target="_blank" rel="noopener noreferrer">MC-249712</a> Server hangs and game stops responding when loading a chunk containing a structure with an allay</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249714" target="_blank" rel="noopener noreferrer">MC-249714</a> Z-fighting can be seen on the wings of allays during their death animation</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249720" target="_blank" rel="noopener noreferrer">MC-249720</a> Allay's wings are not attached to its body</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249727" target="_blank" rel="noopener noreferrer">MC-249727</a> Wardens stop sensing vibrations after world reload</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249728" target="_blank" rel="noopener noreferrer">MC-249728</a> Lava can generate in ancient cities and burn wool/make structures fly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249729" target="_blank" rel="noopener noreferrer">MC-249729</a> Z-fighting can be seen on the underside of allays' heads</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249751" target="_blank" rel="noopener noreferrer">MC-249751</a> Warden UV overlapping</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249758" target="_blank" rel="noopener noreferrer">MC-249758</a> Z-fighting can be seen when the arms of allays intersect their bodies</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249761" target="_blank" rel="noopener noreferrer">MC-249761</a> Trapdoor of Ice Box in Ancient Cities is by default open</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249764" target="_blank" rel="noopener noreferrer">MC-249764</a> Second lamp in the centres of ancient cities is missing its sculk sensor</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249768" target="_blank" rel="noopener noreferrer">MC-249768</a> entrance_path_5 can never generate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249769" target="_blank" rel="noopener noreferrer">MC-249769</a> Unused structures in ancient cities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249780" target="_blank" rel="noopener noreferrer">MC-249780</a> Blocks that require support can generate floating in ancient cities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249785" target="_blank" rel="noopener noreferrer">MC-249785</a> Warden can be pushed when emerging and digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249800" target="_blank" rel="noopener noreferrer">MC-249800</a> Eating doesn't activate redstone door in the Ancient City center</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249816" target="_blank" rel="noopener noreferrer">MC-249816</a> Wardens hitbox doesn't adjust when emerging and digging</li>
+</ul>

@@ -1,0 +1,185 @@
+<p>New year, new Snapshot - we're now releasing the third Snapshot of Minecraft 1.20.5. This time around, we're bringing some updates to the Armadillo, the Breeze, as well as accessibility improvements.</p>
+<p>In addition to a big bundle of bug fixes, we're bringing some changes to how spawn chunks are handled.</p>
+<p>The spawn chunks are an area of the Overworld located at the world spawn which are always loaded in memory. These are useful for some players but use more of your computer’s resources and make the game load and run more slowly. (You can read more about spawn chunks at the <a href="https://minecraft.wiki/w/Spawn_chunk" target="_blank" rel="noopener noreferrer">community wiki</a>!)</p>
+<p>In this snapshot we made the size of the spawn chunks configurable by adding a new gamerule: <code>spawnChunkRadius</code>.
+The new default setting is 2 (which creates a 48x48 block area). This is 98% smaller than the previous area and will result in a noticeable performance improvement for most players.</p>
+<p>If you would like to keep your spawn chunks working like they did before, you can use the game rule to change the spawn chunk radius value to 10. This will make your spawn chunks work the same as they did before, but you will miss out on the performance gains.</p>
+<p>We're interested in hearing your feedback on this change and how the new default setting affects you.</p>
+<p><a href="https://aka.ms/spawnchunksfeedback" target="_blank" rel="noopener noreferrer">Let's talk about spawn chunks!</a></p>
+<h1>New Features</h1>
+<h2>Armadillo</h2>
+<p>Armadillo visual update! We gathered feedback from the first Armadillo snapshot, and the next step in the look of the Armadillo, the Armadillo Scutes and the Wolf Armor are now here.</p>
+<ul>
+<li>Armadillos now also spawn in Badlands</li>
+</ul>
+<h3>Armadillo Rolling Up Behavior</h3>
+<ul>
+<li>Spiders and Cave Spiders will run away from Armadillos not in a rolled up state</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>Adjusted the texture of the Wolf Collar layer to be more consistent with the new Wolf Armor</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>The default focus is now always set when entering or exiting any menu while navigating using tab or arrow keys</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 28</li>
+<li>The Resource Pack version is now 24</li>
+<li>Custom Villager trades can be configured to accept items that have different tags from the expected item by
+adding <code>ignoreTags: true</code> in the trade's NBT</li>
+<li>When entities leave or enter the end the area they arrive in will now stay loaded for 15 seconds, matching the behavior of nether portals</li>
+<li>Added transfer packets</li>
+<li>Added cookie packets</li>
+<li>Decreased the default size of the spawn chunks and made the value configurable</li>
+</ul>
+<h2>Transfer Packets</h2>
+<ul>
+<li>Custom servers can now request that clients connect to another server with a new packet</li>
+<li>When a client is transferred it will connect to the target server with a new transfer intent (id 3)</li>
+<li>By default servers will not accept incoming transfers and will disconnect the client</li>
+<li>This can be changed by setting the <code>accepts-transfers</code> property to <code>true</code> in the <code>server.properties</code> file</li>
+<li>Resource packs are maintained across transfers</li>
+<li>In the case of a transfer custom servers can skip authentication with a new flag</li>
+</ul>
+<h2>Cookie Packets</h2>
+<ul>
+<li>Cookie packets allow custom servers to request and store data on a client<ul>
+<li>Each cookie may be up to 5 KiB in size</li>
+<li>Cookies may be requested during login, configuration and play phases — but only stored during the configuration and play phases</li>
+</ul></li>
+<li>Cookies are persisted across server transfers but are not persisted when the player disconnects<ul>
+<li>This allows servers to pass along information such as authentication or custom game data to the new server</li>
+</ul></li>
+</ul>
+<h2>Spawn Chunk Changes</h2>
+<ul>
+<li>The size of the spawn chunks changed from radius 10 (19x19 entity ticking chunks) to radius 2 (3x3 entity ticking chunks)<ul>
+<li>This was done to reduce memory usage, loading times and CPU usage</li>
+<li>We opted to not fully remove spawn chunks to allow players who currently utilize this functionality to continue to do so</li>
+</ul></li>
+<li>Added a new gamerule <code>spawnChunkRadius</code> to set the size of the spawn chunks<ul>
+<li>Possible values are 0 to 32, where 0 completely disables the spawn chunks and 10 is equivalent to the functionality before this change</li>
+<li>Default value is 2, equivalent to 3x3 entity ticking chunks</li>
+</ul></li>
+</ul>
+<h1>Data Pack Version 28</h1>
+<ul>
+<li>The <code>minecraft:sweeping</code> enchantment has been renamed to <code>minecraft:sweeping_edge</code></li>
+<li>Added Advancement Criteria trigger <code>default_block_use</code> which triggers due to the default interaction of a block by a player, such as opening a door</li>
+<li>Added Advancement Criteria trigger <code>any_block_use</code> which triggers due to any type of interaction with a block by a player, such as using an item on the block or its default usage</li>
+</ul>
+<h2>Tags</h2>
+<h3>Item Tags</h3>
+<p>New item tags controlling what enchantments can be added to what gear:</p>
+<ul>
+<li><code>minecraft:enchantable/foot_armor</code></li>
+<li><code>minecraft:enchantable/leg_armor</code></li>
+<li><code>minecraft:enchantable/chest_armor</code></li>
+<li><code>minecraft:enchantable/head_armor</code></li>
+<li><code>minecraft:enchantable/armor</code></li>
+<li><code>minecraft:enchantable/weapon</code></li>
+<li><code>minecraft:enchantable/sword</code></li>
+<li><code>minecraft:enchantable/mining</code></li>
+<li><code>minecraft:enchantable/mining_loot</code></li>
+<li><code>minecraft:enchantable/fishing</code></li>
+<li><code>minecraft:enchantable/trident</code></li>
+<li><code>minecraft:enchantable/durability</code></li>
+<li><code>minecraft:enchantable/bow</code></li>
+<li><code>minecraft:enchantable/equippable</code></li>
+<li><code>minecraft:enchantable/crossbow</code></li>
+<li><code>minecraft:enchantable/vanishing</code></li>
+</ul>
+<h3>Entity Type Tags:</h3>
+<ul>
+<li>Added <code>minecraft:ignores_poison_and_regen</code> for entities that cannot be affected by Poison and Regeneration effects</li>
+<li>Added <code>minecraft:illager_friends</code> for entities that Illagers will consider allies (unless on a different team)</li>
+<li>Added <code>minecraft:inverted_healing_and_harm</code> for entities that have inverted meanings of the Healing and Harm effects</li>
+<li>Added <code>minecraft:not_scary_for_pufferfish</code> for entities that will not cause Pufferfish to puff</li>
+<li>Added <code>minecraft:sensitive_to_bane_of_arthropods</code> for entities sensitive to Bane of Arthropods</li>
+<li>Added <code>minecraft:sensitive_to_impaling</code> for entities sensitive to Impaling</li>
+<li>Added <code>minecraft:wither_friends</code> for entities that the Wither will not target and which cannot harm the Wither</li>
+</ul>
+<h1>Resource Pack 24</h1>
+<ul>
+<li>The <code>ttf</code> font provider transforms have been adjusted to have more reasonable defaults<ul>
+<li><code>shift</code> is no longer applied double, and now directly represents a number of pixels in the game UI</li>
+<li>The font EM square is fitted to <code>size</code> pixels in the game UI, instead of between the font ascender and font descender</li>
+<li>The font baseline is positioned consistently with the default font (7 pixels below line top)</li>
+<li>This means that generally, any font with a <code>size</code> of 9 and no <code>shift</code> should look correct by default</li>
+</ul></li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Breeze</h2>
+<ul>
+<li>Breeze now deflects all projectiles</li>
+<li>Deflected projectiles now deflect in the direction of the shooter</li>
+</ul>
+<h2>Trade Rebalance</h2>
+<ul>
+<li>In the Trade Rebalance Experiment, Villagers who buy armor now ignore durability and can buy damaged armor</li>
+</ul>
+<h1>Fixed bugs in Snapshot 24w03a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-153160" target="_blank" rel="noopener noreferrer">MC-153160</a> Villagers don't auto-fill items if NBT data doesn't match</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155857" target="_blank" rel="noopener noreferrer">MC-155857</a> Team command doesn't affect illagers and witches' AI</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171981" target="_blank" rel="noopener noreferrer">MC-171981</a> Map of fuel times is created anew every time an item is placed in a furnace, instead of being cached</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187372" target="_blank" rel="noopener noreferrer">MC-187372</a> There is no space between fps limit/vsync and graphics level in the debug screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260889" target="_blank" rel="noopener noreferrer">MC-260889</a> Players can use water buckets and lava buckets on blocks that are out of reach</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261596" target="_blank" rel="noopener noreferrer">MC-261596</a> Crafting Table search keyboard shortcut not working</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265273" target="_blank" rel="noopener noreferrer">MC-265273</a> The tab list in create world screen does not indicate it's tab-focused by highlight or rendering borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265520" target="_blank" rel="noopener noreferrer">MC-265520</a> Switching connection protocols sometimes produces errors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265749" target="_blank" rel="noopener noreferrer">MC-265749</a> Tooltips flash when the values of buttons or fields are changed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266078" target="_blank" rel="noopener noreferrer">MC-266078</a> The output of Crafting and Stonecutting Copper Grates is inconsistent with each other</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267044" target="_blank" rel="noopener noreferrer">MC-267044</a> Tick status strings contain inconsistent word usage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267045" target="_blank" rel="noopener noreferrer">MC-267045</a> Some tick strings are missing articles and are unclear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267086" target="_blank" rel="noopener noreferrer">MC-267086</a> Compass does not indicate spawn point correctly when game is frozen with /tick</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267104" target="_blank" rel="noopener noreferrer">MC-267104</a> The bottom face textures of breezes' rods are incorrect and don't match with surrounding colors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267149" target="_blank" rel="noopener noreferrer">MC-267149</a> Crafter top face has an inverted UV texture map</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267366" target="_blank" rel="noopener noreferrer">MC-267366</a> You cannot use Spider Eyes on Baby Armadillos to age them up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267367" target="_blank" rel="noopener noreferrer">MC-267367</a> Wolf armor flashes red when the wolf takes damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267371" target="_blank" rel="noopener noreferrer">MC-267371</a> Shulkers hitbox doesn't scale with generic.scale</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267377" target="_blank" rel="noopener noreferrer">MC-267377</a> Applying bone meal to mangrove leaves no longer produces any particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267378" target="_blank" rel="noopener noreferrer">MC-267378</a> Armor stand interaction points do not change with scale</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267379" target="_blank" rel="noopener noreferrer">MC-267379</a> Applying bone meal to rooted dirt no longer produces any particles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267380" target="_blank" rel="noopener noreferrer">MC-267380</a> Cannot open inventories beyond default block reach</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267383" target="_blank" rel="noopener noreferrer">MC-267383</a> Can't place water and lava with extended attribute "block_interaction_range"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267384" target="_blank" rel="noopener noreferrer">MC-267384</a> Unused duplicate wolf armor sound events</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267385" target="_blank" rel="noopener noreferrer">MC-267385</a> Attribute entity_interaction_range is capped by block_interaction_range</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267388" target="_blank" rel="noopener noreferrer">MC-267388</a> The subtitle for brushing armadillos is inconsistent with other item usage subtitles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267389" target="_blank" rel="noopener noreferrer">MC-267389</a> Armadillos don't always stand in close proximity to one another when breeding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267392" target="_blank" rel="noopener noreferrer">MC-267392</a> Armadillos are scared of players in spectator mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267395" target="_blank" rel="noopener noreferrer">MC-267395</a> Armadillos panic when receiving fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267397" target="_blank" rel="noopener noreferrer">MC-267397</a> Armadillos and baby armadillos stand a bit too far away from players that are tempting them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267398" target="_blank" rel="noopener noreferrer">MC-267398</a> Armadillos don't play a roll out sound after finishing hiding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267402" target="_blank" rel="noopener noreferrer">MC-267402</a> Head of armadillo in boat is twitching when turning the boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267404" target="_blank" rel="noopener noreferrer">MC-267404</a> Scared armadillo pushed into boat is scared of player riding the boat</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267405" target="_blank" rel="noopener noreferrer">MC-267405</a> Scared armadillo can move when having a passenger</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267406" target="_blank" rel="noopener noreferrer">MC-267406</a> Armadillos with their "Silent" NBT tag set to "1b" still play their landing and rolling up sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267413" target="_blank" rel="noopener noreferrer">MC-267413</a> Feeding an armadillo a spider eye doesn't cancel eating it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267416" target="_blank" rel="noopener noreferrer">MC-267416</a> Particles created from Slimes do not account for the scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267417" target="_blank" rel="noopener noreferrer">MC-267417</a> Suffocation overlay shown when on solid almost-full blocks at scale &#x3C; .06</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267418" target="_blank" rel="noopener noreferrer">MC-267418</a> Warden sonic boom attack doesn't account for the scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267420" target="_blank" rel="noopener noreferrer">MC-267420</a> Boat placement ignores custom "block_interaction_range" attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267422" target="_blank" rel="noopener noreferrer">MC-267422</a> Attribute entity_interaction_range is classified as 'generic', but has no effect on mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267427" target="_blank" rel="noopener noreferrer">MC-267427</a> Rendering offset of sleeping entities does not account for scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267428" target="_blank" rel="noopener noreferrer">MC-267428</a> Phantom wing particles do not account for scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267434" target="_blank" rel="noopener noreferrer">MC-267434</a> Upside-down mobs with big scale attribute are displayed above hitbox</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267435" target="_blank" rel="noopener noreferrer">MC-267435</a> Baby armadillos do not follow parents consistently or closely</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267454" target="_blank" rel="noopener noreferrer">MC-267454</a> Baby striders are visually the same size as normal striders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267456" target="_blank" rel="noopener noreferrer">MC-267456</a> Changes to item_used_on_block advancement criteria breaks previous functionality</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267465" target="_blank" rel="noopener noreferrer">MC-267465</a> 1.20.3 upload error: "Cannot invoke "ctt.c()" because "this.b" is null"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267470" target="_blank" rel="noopener noreferrer">MC-267470</a> The regeneration effect granted from beacons is no longer applied to players</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267479" target="_blank" rel="noopener noreferrer">MC-267479</a> Inventory view model scales with generic.scale</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267497" target="_blank" rel="noopener noreferrer">MC-267497</a> Baby armadillos do not sound high pitched when curling up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267538" target="_blank" rel="noopener noreferrer">MC-267538</a> Putting placeable blocks inside decorated pots also places them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267565" target="_blank" rel="noopener noreferrer">MC-267565</a> Low scale attribute lets you breathe underwater</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267588" target="_blank" rel="noopener noreferrer">MC-267588</a> The hand animation is no longer played when putting items inside decorated pots</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267706" target="_blank" rel="noopener noreferrer">MC-267706</a> Evoker and illusioner summon particles do not account for scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267707" target="_blank" rel="noopener noreferrer">MC-267707</a> Wither particles do not account for scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267708" target="_blank" rel="noopener noreferrer">MC-267708</a> The wither's skull projectile attacks do not account for the scale attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267725" target="_blank" rel="noopener noreferrer">MC-267725</a> Players' experience levels no longer render above the health and hunger bars</li>
+<li><a href="https://bugs.mojang.com/browse/MC-267726" target="_blank" rel="noopener noreferrer">MC-267726</a> Applying bone meal to blocks underwater no longer produces any particles</li>
+</ul>

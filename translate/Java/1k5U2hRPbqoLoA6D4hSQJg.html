@@ -1,0 +1,16 @@
+<p>此预发布版修复了在创建玩家举报时，有关聊天上下文证据的一个漏洞。</p>
+<h1>1.19.1 预发布版 4 中的技术变更</h1>
+<ul>
+<li>自定义服务器可以通过新的网络数据包隐藏玩家聊天消息，使其不显示<ul>
+<li>这不会从聊天日志中删除玩家聊天消息</li>
+</ul></li>
+<li>服务器中记录的不安全聊天消息会带有 <code>[Not Secure]</code> 前缀标签</li>
+<li>聊天消息的顺序现在经过加密验证<ul>
+<li>这将用于验证玩家举报时聊天消息的上下文</li>
+</ul></li>
+</ul>
+<h1>1.19.1 预发布版 4 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253743" target="_blank" rel="noopener noreferrer">MC-253743</a> 服务器控制台不会说明聊天消息是否不安全或已被修改</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253813" target="_blank" rel="noopener noreferrer">MC-253813</a> 带有实体选择器的聊天命令经常被报告为“此消息不安全”</li>
+</ul>

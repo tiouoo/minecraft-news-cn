@@ -1,0 +1,90 @@
+<p>一个真正非凡的快照登场了！本快照为我们的渲染管线带来了根本性的变化，引入了全新的 OpenGL Core 3.2 技术。此外，我们终于加入了繁茂洞穴生物群系。不过，与溶洞一样，目前只能通过创建自定义世界来体验。</p>
+<p>对于使用较旧电脑的玩家，关于本快照有一个重要提示：随着 OpenGL Core 3.2 的引入，Minecraft Java 版有可能无法在不满足<a href="https://help.minecraft.net/hc/en-us/articles/360035131371-Minecraft-Java-Edition-system-requirements-" target="_blank" rel="noopener noreferrer">最低系统要求</a>的电脑上运行。满足<a href="https://help.minecraft.net/hc/en-us/articles/360035131371-Minecraft-Java-Edition-system-requirements-" target="_blank" rel="noopener noreferrer">最低系统要求</a>的电脑不会受到影响。</p>
+<h1>21w10a 的新特性</h1>
+<ul>
+<li>加入了繁茂洞穴地下生物群系！</li>
+<li>加入了裂纹深板岩砖和裂纹深板岩瓦</li>
+<li>地下现在会出现深板岩的虫蚀变种</li>
+<li>虽然默认不会在世界中生成，但深板岩版本的铜矿石、绿宝石矿石和煤矿石已加入，供地图与数据包创作者使用</li>
+</ul>
+<h2>繁茂洞穴生物群系</h2>
+<p>繁茂洞穴地下生物群系现在可用于单一生物群系世界。它尚未在其他世界类型中生成。</p>
+<ul>
+<li>苔藓覆盖地面和天花板</li>
+<li>孢子花从天花板长出并滴落粒子</li>
+<li>包含黏土池，垂滴叶植物从中生长出来</li>
+<li>包含杜鹃花丛和盛开的杜鹃花丛</li>
+<li>杜鹃花树喜欢将根扎在繁茂洞穴中，所以如果你找到一棵杜鹃花树（无论在地表还是洞穴中），就会知道脚下有一个繁茂洞穴</li>
+<li>带有发光浆果的洞穴藤蔓从天花板垂下，照亮洞穴</li>
+</ul>
+<h1>21w10a 的更改</h1>
+<ul>
+<li>现在可以将深板岩圆石烧炼为深板岩。</li>
+<li>深板岩现在可以沿任意轴放置</li>
+<li>避雷针现在可以含水</li>
+<li>地下最深处的化石会生成深板岩钻石矿石，而非煤矿石</li>
+<li>部分矿石纹理已更新</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-texture-comparison.jpg" alt="Minecraft Snapshot 21w10a texture comparison (cropped)"></p>
+<p>快照 21w10a 中的矿石纹理变化。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w10atexturecomparisonfullresolution.jpg" target="_blank" rel="noopener noreferrer">单击此处</a>查看完整分辨率图像。</p>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-texture-comparison2.jpg" alt="Minecraft Snapshot 21w10a texture comparison 2 (cropped)"></p>
+<p>深板岩中绿宝石、煤炭和铜的新纹理。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w10atexturecomparison2fullresolution.jpg" target="_blank" rel="noopener noreferrer">单击此处</a>查看完整分辨率图像。</p>
+<h2>矿石分布</h2>
+<p>主世界的矿石生成已经过调整。</p>
+<ul>
+<li>在山地生成更多绿宝石</li>
+<li>更多青金石</li>
+<li>更少的铜、金和红石</li>
+<li>钻石矿团更小，但出现频率略高。不过钻石矿石总量更少</li>
+<li>铁更少，且生成在更低处</li>
+<li>煤炭暴露在空气中的概率降低</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w10a-ores-distribution-cropped.jpg" alt="Minecraft Snapshot 21w10a ores distribution (cropped)"></p>
+<p>快照 21w10a 中的矿石分布。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w10aoredistributionfull.jpg" target="_blank" rel="noopener noreferrer">单击此处</a>查看完整分辨率图像。</p>
+<h1>21w10a 的技术性更改</h1>
+<ul>
+<li>游戏现在使用 OpenGL 3.2 核心配置文件运行</li>
+<li>史莱姆可召唤的最大尺寸现在为 128</li>
+<li><code>give</code> 命令一次最多只能给予 100 组物品（例如 6400 个石头或 100 把铁剑）</li>
+</ul>
+<h2>OpenGL</h2>
+<p>渲染现在使用 OpenGL 3.2 核心配置文件。所有固定功能渲染都已被基于着色器的渲染所取代。</p>
+<h3>着色器</h3>
+<p>现在所有受支持的渲染状态都包含了着色器。除 <code>blit</code> 着色器外，任何着色器也可以在资源包中被替换。目前，替换这些着色器<strong>不受官方支持</strong>，其工作方式将来可能会改变。</p>
+<p>当前的渲染引擎使用一个与后期处理着色器管线类似的系统。两个系统之间存在一些差异，以适应略有不同的需求。</p>
+<h1>21w10a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29318" target="_blank" rel="noopener noreferrer">MC-29318</a> 玩家操作物品时，客户端缺少库存更新，导致物品不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84121" target="_blank" rel="noopener noreferrer">MC-84121</a> 发光效果的形状基于生物的基础层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-87019" target="_blank" rel="noopener noreferrer">MC-87019</a> 在物品栏界面中时，客户端只会更新可见的槽位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154094" target="_blank" rel="noopener noreferrer">MC-154094</a> 讲台运行 /clear 会将物品变成幽灵物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175964" target="_blank" rel="noopener noreferrer">MC-175964</a> 由讲台上的书运行 setblock 命令以清除物品栏，在命令方块中运行会导致幽灵物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-201316" target="_blank" rel="noopener noreferrer">MC-201316</a> /give 命令可以生成太多物品，导致游戏卡死</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207818" target="_blank" rel="noopener noreferrer">MC-207818</a> 用副手放置告示牌会立即关闭告示牌界面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208301" target="_blank" rel="noopener noreferrer">MC-208301</a> /clear 在合成后无法正确影响鼠标指针上的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210408" target="_blank" rel="noopener noreferrer">MC-210408</a> /spawnpoint 允许玩家将出生点设置到越界坐标，尝试重生时会使游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211666" target="_blank" rel="noopener noreferrer">MC-211666</a> 守卫者会攻击隐形的美西螈</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212127" target="_blank" rel="noopener noreferrer">MC-212127</a> 普通墨囊和荧光墨囊在创造模式物品栏中没有被分组在一起</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212144" target="_blank" rel="noopener noreferrer">MC-212144</a> 字幕将荧光物品展示框显示为“物品展示框”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212168" target="_blank" rel="noopener noreferrer">MC-212168</a> Ctrl + 选取方块无法复制“lit”方块状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212236" target="_blank" rel="noopener noreferrer">MC-212236</a> 无法对荧光鱿鱼造成可视化暴击（没有声音/粒子）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212314" target="_blank" rel="noopener noreferrer">MC-212314</a> 荧光鱿鱼即使在旁边有光源方块的情况下仍保持黑暗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212325" target="_blank" rel="noopener noreferrer">MC-212325</a> 荧光鱿鱼的实体数据（药水效果、自定义名称等）无法保存</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214629" target="_blank" rel="noopener noreferrer">MC-214629</a> 无论“FOV 效果”辅助功能设置如何，在水下 FOV 都会降低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214781" target="_blank" rel="noopener noreferrer">MC-214781</a> 熔岩不会在噪声洞穴的最底层生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214784" target="_blank" rel="noopener noreferrer">MC-214784</a> 化石可以在洞穴中悬空生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214836" target="_blank" rel="noopener noreferrer">MC-214836</a> 含水洞穴会导致陆地被过度淹没</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214844" target="_blank" rel="noopener noreferrer">MC-214844</a> 新洞穴最底层的基岩可能会暴露在空气中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214970" target="_blank" rel="noopener noreferrer">MC-214970</a> 幻翼会持续发出过多的拍打声</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215194" target="_blank" rel="noopener noreferrer">MC-215194</a> 结构方块在 y=0 以下不工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215838" target="_blank" rel="noopener noreferrer">MC-215838</a> 目前没有方法合成深板岩瓦和深板岩砖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215850" target="_blank" rel="noopener noreferrer">MC-215850</a> 在创造模式物品栏中，深板岩瓦墙排在深板岩砖墙之前，但深板岩砖排在深板岩瓦之前</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215939" target="_blank" rel="noopener noreferrer">MC-215939</a> 绿宝石矿石在 y=100 以上的生成频率低于应有值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216136" target="_blank" rel="noopener noreferrer">MC-216136</a> 磨制深板岩台阶在创造模式物品栏中没有与其他深板岩台阶分组在一起</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216363" target="_blank" rel="noopener noreferrer">MC-216363</a> 使用 /setblock 在高气泡柱下方将灵魂沙或岩浆块替换为另一种时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216735" target="_blank" rel="noopener noreferrer">MC-216735</a> 深板岩中生成石头青金石矿石</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216736" target="_blank" rel="noopener noreferrer">MC-216736</a> 熔岩湖生成在洞穴中并暴露在外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216765" target="_blank" rel="noopener noreferrer">MC-216765</a> 煤矿石在附着于化石时可以生成在 Y=0 以下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216817" target="_blank" rel="noopener noreferrer">MC-216817</a> 不一致：深板岩圆石无法烧炼回深板岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218139" target="_blank" rel="noopener noreferrer">MC-218139</a> 旁观模式视野问题</li>
+</ul>

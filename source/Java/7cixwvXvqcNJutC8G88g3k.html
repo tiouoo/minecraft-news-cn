@@ -1,0 +1,102 @@
+<p><strong>Allay</strong>, the mob that nobody is really sure how to pronounce, is now entering the latest Minecraft: Java Edition snapshot. Along with our new shiny blue friend, we've added the <strong>ancient</strong> <strong>cities</strong>, which have seen some pretty drastic changes since the experimental snapshot a few weeks ago, so make sure you check them out.</p>
+<p>Happy mining!</p>
+<h1>New Features in 22w13a</h1>
+<ul>
+<li>Added Allay mob</li>
+<li>Added Ancient Cities</li>
+</ul>
+<h2>Allay</h2>
+<ul>
+<li>Allays will collect all the surrounding items that match the item they are holding</li>
+<li>Allays will like a player who hands them an item and will bring the items they collect to their liked player</li>
+<li>If the Allay hears a noteblock play, that noteblock becomes the Allay's favorite noteblock for 30 seconds. The Allay will stay near that noteblock for that duration and bring its collected items to the noteblock instead of to the player</li>
+<li>Interacting with an Allay with an empty hand will remove the item the Allay is holding</li>
+<li>Allays can be found in Pillager Outposts and Woodland Mansions</li>
+</ul>
+<h2>Ancient City</h2>
+<p>Wander the halls of these long-abandoned structures in the Deep Dark depths to uncover some relics long forgotten.</p>
+<ul>
+<li>Ancient City structures spawn in the Deep Dark biome</li>
+<li>In chests, guarded by sculk sensors and shriekers, you can find the new Swift Sneaking enchantment</li>
+<li>You can also find a new mysterious block called Reinforced Deepslate here, which cannot be obtained in Survival</li>
+<li>Mobs cannot spawn in Ancient Cities</li>
+</ul>
+<h3>Differences compared to the Experimental Deep Dark snapshot</h3>
+<ul>
+<li>Many adjustments have been made to Ancient Cities, with new and tweaked structures</li>
+<li>Loot tables have been adjusted for Ancient Cities, including a separate loot table for the "ice box" structures</li>
+</ul>
+<h1>Changes in 22w13a</h1>
+<ul>
+<li>The recipes for minecart with chest/furnace/tnt/hopper are now shapeless</li>
+<li>When broken each minecart variant drops itself as item, instead of splitting into two items (such as chest and minecart)</li>
+<li>Only wool and wool carpets now block the sounds coming from noteblocks</li>
+</ul>
+<h1>Technical Changes in 22w13a</h1>
+<ul>
+<li>Added <code>kill_mob_near_sculk_catalyst</code> advancement trigger</li>
+<li>Sculk shrieker block state changes</li>
+<li>Renamed some game events</li>
+</ul>
+<h2>Advancements</h2>
+<h3>New triggers</h3>
+<h4><code>kill_mob_near_sculk_catalyst</code></h4>
+<ul>
+<li>Triggered when a player kills an entity next to Sculk Catalyst</li>
+<li>Conditions:<ul>
+<li><code>player</code> - a player for which this trigger runs</li>
+<li><code>entity</code> - a predicate for the entity that was killed</li>
+<li><code>killing_blow</code> - a predicate for how the entity was killed</li>
+</ul></li>
+</ul>
+<h2>Sculk Shrieker</h2>
+<ul>
+<li>Added <code>can_summon</code> blockstate to the Sculk Shrieker that determines whether a Shrieker can summon a Warden or not</li>
+<li>Shriekers placed via worldgen will have <code>can_summon</code> set to true</li>
+<li>When a Shrieker is placed or generated via Sculk spread, <code>can_summon</code> is set to false</li>
+</ul>
+<h2>Game Events</h2>
+<p>Some game events have been renamed, with some of those changes to make them more gramatically consistent:</p>
+<ul>
+<li><code>drinking_finish</code> -> <code>drink</code></li>
+<li><code>entity_killed</code> -> <code>entity_die</code></li>
+<li><code>entity_damaged</code> -> <code>entity_damage</code></li>
+<li><code>elytra_free_fall</code> -> <code>elytra_glide</code></li>
+<li><code>mob_interact</code> -> <code>entity_interact</code></li>
+<li><code>ravager_roar</code> -> <code>entity_roar</code></li>
+<li><code>wolf_shaking</code> -> <code>entity_shake</code></li>
+</ul>
+<p>The following events have been collapsed into <code>block_activate</code> and <code>block_deactivate</code>:</p>
+<ul>
+<li><code>block_press</code></li>
+<li><code>block_unpress</code></li>
+<li><code>block_switch</code></li>
+<li><code>block_unswitch</code></li>
+</ul>
+<p>Other miscellaneous changes to game events:</p>
+<ul>
+<li><code>ring_bell</code> has been removed and replaced with <code>block_change</code></li>
+<li>Both <code>shulker_open</code> and <code>shulker_close</code> have been removed in favour of using <code>container_open</code> and <code>container_close</code></li>
+<li><code>fishing_rod_cast</code> and <code>fishing_rod_reel_in</code> have been renamed to <code>item_interact_start</code> and <code>item_interact_finish</code></li>
+<li>Added <code>ignore_vibrations_on_occluding_block</code> game event tag with subsequent logic</li>
+<li><code>entity_interact</code> should be dispatched more often when interacting with various mobs</li>
+</ul>
+<h1>Fixed bugs in 22w13a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-249103" target="_blank" rel="noopener noreferrer">MC-249103</a> Z-fighting can be seen on the underside of frogs' feet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249110" target="_blank" rel="noopener noreferrer">MC-249110</a> Z-fighting textures inside the frog's mouth</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249115" target="_blank" rel="noopener noreferrer">MC-249115</a> Frogs spawn with wrong color in some biomes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249132" target="_blank" rel="noopener noreferrer">MC-249132</a> Frogs are not required to be bred for the Two by Two advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249349" target="_blank" rel="noopener noreferrer">MC-249349</a> Dispensing a Bucket of Tadpole dispenses the item, instead of water with a tadpole</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249380" target="_blank" rel="noopener noreferrer">MC-249380</a> The locks of chests within chest boats are positioned slightly too high</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249382" target="_blank" rel="noopener noreferrer">MC-249382</a> Boats with chest do not drop items contained in chest when destroyed in Creative</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249389" target="_blank" rel="noopener noreferrer">MC-249389</a> GUI Scale is a slider instead of a button</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249392" target="_blank" rel="noopener noreferrer">MC-249392</a> Options have missing or untranslated names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249397" target="_blank" rel="noopener noreferrer">MC-249397</a> Bottom face of Warden's right arm missing in 'warden_bioluminescent_layer' texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249398" target="_blank" rel="noopener noreferrer">MC-249398</a> Game crash regarding warden</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249404" target="_blank" rel="noopener noreferrer">MC-249404</a> Boats with Chest aren't grouped in the recipe book</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249405" target="_blank" rel="noopener noreferrer">MC-249405</a> chatScale option defaults to 0.0 instead of 1.0, causing chat to disappear</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249409" target="_blank" rel="noopener noreferrer">MC-249409</a> Furnaces, blast furnaces and smokers don't cook without fuel in the bottom slot, even if they are already fired up</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249474" target="_blank" rel="noopener noreferrer">MC-249474</a> Four-legged mobs do not sit correctly in a boat with a chest</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249642" target="_blank" rel="noopener noreferrer">MC-249642</a> Wardens can't pass over rails</li>
+</ul>

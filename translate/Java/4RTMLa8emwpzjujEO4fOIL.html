@@ -1,0 +1,135 @@
+<p>又是一个周三，又一个快照。本周的快照引入了一些新的游戏规则和游戏玩法改动，其中包括又一轮物品栏调整。一如既往，也修复了一些漏洞。</p>
+<p>挖矿愉快！</p>
+<h1>22w44a 中的更改</h1>
+<ul>
+<li>竹马赛克现在可用作燃料</li>
+<li>雕纹书架现在可与漏斗交互</li>
+<li>创造模式物品栏的更多更改</li>
+<li>刷怪笼更改</li>
+<li>刷怪蛋更改</li>
+<li>脚步声音更改</li>
+</ul>
+<h2>创造模式物品栏更改</h2>
+<p>为回应反馈，我们对创造标签页的排序进行了（希望是）最后一轮更改：</p>
+<ul>
+<li>如果拥有所需权限，现在可以在红石方块标签页中找到仅限操作员的方块和物品</li>
+<li>功能方块<ul>
+<li>新增：<ul>
+<li>遮光玻璃</li>
+<li>蜂巢</li>
+</ul></li>
+<li>将重生锚移至床之前</li>
+<li>按功能重新排序压力板</li>
+<li>将末地传送门框架和虫蚀方块从自然方块标签页移至本标签页</li>
+</ul></li>
+<li>红石方块<ul>
+<li>新增：<ul>
+<li>箱子</li>
+<li>木桶</li>
+<li>炼药锅</li>
+<li>熔炉</li>
+<li>堆肥桶</li>
+</ul></li>
+</ul></li>
+<li>建筑方块<ul>
+<li>新增：<ul>
+<li>锁链</li>
+<li>紫水晶块</li>
+</ul></li>
+<li>将红石块和煤炭块从自然方块标签页移至本标签页</li>
+</ul></li>
+<li>合成<ul>
+<li>新增：<ul>
+<li>远古残骸</li>
+</ul></li>
+</ul></li>
+<li>为保持一致性，重新排序了以下标签页<ul>
+<li>建筑方块</li>
+<li>自然方块</li>
+<li>消耗品</li>
+</ul></li>
+<li>重新排序了矿物材料与方块，使其在各标签页间更一致</li>
+</ul>
+<h2>刷怪笼</h2>
+<ul>
+<li>玩家放置刷怪笼时，不再有默认的生物生成类型（此前为猪）</li>
+<li>未定义生物生成类型时不再发出火焰粒子</li>
+<li>更名为“刷怪笼”以匹配基岩版，并移除了紫色文字颜色</li>
+<li>现在可对刷怪笼使用选取方块功能</li>
+<li>现在刷怪笼物品堆的悬停描述中会显示生物类型<ul>
+<li>如果尚未定义生物类型，悬停描述将说明如何设置它</li>
+</ul></li>
+</ul>
+<h2>刷怪蛋</h2>
+<ul>
+<li>在创造模式中新增了末影龙、铁傀儡、雪傀儡和凋灵的刷怪蛋物品<ul>
+<li>末影龙和凋灵刷怪蛋只能通过命令获得，以防止意外破坏玩家的建筑</li>
+</ul></li>
+<li>北极熊刷怪蛋的颜色已更改，以与恶魂刷怪蛋区分</li>
+</ul>
+<h2>声音</h2>
+<ul>
+<li>现在在以下方块上行走时可以听到脚步声音：<ul>
+<li>地毯</li>
+<li>睡莲</li>
+<li>小型紫水晶芽</li>
+</ul></li>
+<li>现在穿过以下方块时可以听到脚步声音：<ul>
+<li>下界苗</li>
+<li>发光地衣</li>
+<li>绯红菌索</li>
+<li>诡异菌索</li>
+</ul></li>
+</ul>
+<h1>22w44a 中的技术性更改</h1>
+<ul>
+<li>新增了游戏规则</li>
+</ul>
+<h2>游戏规则</h2>
+<ul>
+<li>新增了 <code>blockExplosionDropDecay</code>、<code>mobExplosionDropDecay</code> 和 <code>tntExplosionDropDecay</code> 游戏规则<ul>
+<li>设为 <code>false</code> 时，所有方块都会掉落战利品</li>
+<li>设为 <code>true</code> 时，方块会根据与爆炸中心的距离随机掉落战利品</li>
+<li>TNT 默认为 <code>false</code>，方块和生物默认为 <code>true</code></li>
+</ul></li>
+<li>新增了 <code>snowAccumulationHeight</code> 游戏规则<ul>
+<li>下雪时，该游戏规则决定每个方块中可累积的雪层的最大数量</li>
+<li>默认为 <code>1</code></li>
+<li>设为 <code>0</code> 将完全不会形成雪</li>
+<li>设为 <code>8</code> 或以上可让雪累积到完整方块的高度</li>
+</ul></li>
+<li>新增了 <code>waterSourceConversion</code> 和 <code>lavaSourceConversion</code> 游戏规则<ul>
+<li>设为 <code>true</code> 时，允许形成该流体的新源方块</li>
+<li>水默认为 <code>true</code>，熔岩默认为 <code>false</code></li>
+</ul></li>
+<li>新增了 <code>globalSoundEvents</code> 游戏规则，用于控制某些游戏事件是否会被所有玩家听到，无论其位置如何<ul>
+<li>默认为 <code>true</code></li>
+</ul></li>
+</ul>
+<h1>22w44 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-30403" target="_blank" rel="noopener noreferrer">MC-30403</a> 疾跑时从可骑乘实体上下来不会取消疾跑</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137136" target="_blank" rel="noopener noreferrer">MC-137136</a> 睡莲使用了错误的声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-137306" target="_blank" rel="noopener noreferrer">MC-137306</a> 海龟没有繁殖间隔</li>
+<li><a href="https://bugs.mojang.com/browse/MC-191790" target="_blank" rel="noopener noreferrer">MC-191790</a> 重新创建世界时无法使用空白种子，而是会使用被重新创建世界的种子而非随机种子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195780" target="_blank" rel="noopener noreferrer">MC-195780</a> “Data mode”和“Load mode”没有像“Save Mode”和“Corner Mode”那样使用首字母大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244721" target="_blank" rel="noopener noreferrer">MC-244721</a> “Erase cached data”没有使用首字母大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253387" target="_blank" rel="noopener noreferrer">MC-253387</a> 青蛙在拥有缓慢降落效果时行走动画会变慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254435" target="_blank" rel="noopener noreferrer">MC-254435</a> 使用 --server 参数加入服务器时，玩家既不会看到安全聊天警告弹窗，也不会看到聊天预览警告界面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255115" target="_blank" rel="noopener noreferrer">MC-255115</a> 在睡莲上行走时不会发出声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256463" target="_blank" rel="noopener noreferrer">MC-256463</a> 骆驼无法寻路越过 1.5 格高的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256480" target="_blank" rel="noopener noreferrer">MC-256480</a> 非易燃木材物品标签在禁用时仍包含 1.20 内容</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256526" target="_blank" rel="noopener noreferrer">MC-256526</a> 竹栅栏门存在纹理缺失/剔除问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256606" target="_blank" rel="noopener noreferrer">MC-256606</a> 骆驼在拥有缓慢降落效果时行走动画会变慢</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256623" target="_blank" rel="noopener noreferrer">MC-256623</a> 竹马赛克台阶不可燃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256637" target="_blank" rel="noopener noreferrer">MC-256637</a> 部分竹方块不能作为熔炉燃料</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256647" target="_blank" rel="noopener noreferrer">MC-256647</a> 生物即使指定了旋转值也会朝向南方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256768" target="_blank" rel="noopener noreferrer">MC-256768</a> 从刷怪蛋生成的实体不再具有随机旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256879" target="_blank" rel="noopener noreferrer">MC-256879</a> 测重压力板在创造模式物品栏中的位置错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256881" target="_blank" rel="noopener noreferrer">MC-256881</a> 在保存了聊天举报草稿的情况下按 ESC 键会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256887" target="_blank" rel="noopener noreferrer">MC-256887</a> 遮光玻璃不被视为“功能方块”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256934" target="_blank" rel="noopener noreferrer">MC-256934</a> 当仅输入了举报类别时，系统不会提示你将聊天举报保存为草稿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257058" target="_blank" rel="noopener noreferrer">MC-257058</a> 仙人掌在创造模式物品栏中未与甘蔗归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257059" target="_blank" rel="noopener noreferrer">MC-257059</a> 在创造模式物品栏中，蘑菇柄位于下界真菌菌柄之后，而蘑菇方块位于疣块之前</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257060" target="_blank" rel="noopener noreferrer">MC-257060</a> 蜂巢未出现在功能方块中</li>
+</ul>

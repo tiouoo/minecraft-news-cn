@@ -1,0 +1,60 @@
+<p>《我的世界》1.20：踪迹与故事更新的首个预发布版本现已到来！</p>
+<p>从现在开始，更新内容将以漏洞修复为主。另外，预发布版本不再遵循每周三快照的常规发布节奏，请持续留意后续预发布版本。</p>
+<p>一如既往，非常感谢社区提供的反馈、提交的漏洞报告以及一系列快照开发周期中各种精彩创意。预发布阶段正式开启！</p>
+<h1>改动内容</h1>
+<ul>
+<li>各色羊毛、地毯与床现在可以直接染成其他任意颜色</li>
+</ul>
+<h1>技术性改动</h1>
+<ul>
+<li>新增伤害类型：<code>outside_border</code> 和 <code>generic_kill</code></li>
+<li>战利品表的随机序列现在具备确定性</li>
+<li>调整 <code>server.properties</code> 文件编码相关逻辑</li>
+<li><code>data</code> 命令的字符串数据源现支持负数边界值，代表从字符串末尾向前计数索引</li>
+</ul>
+<h2>伤害类型</h2>
+<ul>
+<li>处于世界边界外的玩家受到的伤害类型由 <code>in_wall</code> 改为 <code>outside_border</code></li>
+<li>使用 <code>/kill</code> 等方式强制移除实体时，伤害类型由 <code>out_of_world</code> 改为 <code>generic_kill</code></li>
+</ul>
+<h2>战利品表随机序列</h2>
+<p>游戏现在使用命名随机序列，让战利品表的生成结果具备确定性。每条随机序列依据世界种子与序列ID生成独有的随机数列，意味着在同一个世界、相同参数下运行同一份战利品表，产出结果保持一致。</p>
+<p>战利品表需要使用的随机序列ID，在新增字段 <code>random_sequence</code> 中指定。</p>
+<h2><code>server.properties</code></h2>
+<ul>
+<li>文件优先以 UTF-8 编码读取，读取失败时回退使用旧编码（ISO 8859-1/Latin 1）</li>
+<li>文件写入时统一采用 UTF-8 编码</li>
+</ul>
+<h1>1.20 预发布版本1 修复漏洞列表</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-180" target="_blank" rel="noopener noreferrer">MC-180</a> 通过下界传送门抵达另一侧时传送动画无限循环，直至玩家走出传送门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-2215" target="_blank" rel="noopener noreferrer">MC-2215</a> server.properties 文件存在编码错误问题</li>
+<li><a href="https://bugs.mojang.com/browse/MC-18060" target="_blank" rel="noopener noreferrer">MC-18060</a> 多处领域相关文本无法本地化翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-35078" target="_blank" rel="noopener noreferrer">MC-35078</a> 方块破坏动画存在一帧偏移</li>
+<li><a href="https://bugs.mojang.com/browse/MC-123081" target="_blank" rel="noopener noreferrer">MC-123081</a> 进入末地时放置末地水晶会导致末影龙无法生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-146582" target="_blank" rel="noopener noreferrer">MC-146582</a> 站在地面切换至旁观模式时玩家向下偏移0.19051格，出现坠落效果</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195781" target="_blank" rel="noopener noreferrer">MC-195781</a> 结构方块界面内“Include entities:”文本大小写书写不规范</li>
+<li><a href="https://bugs.mojang.com/browse/MC-195825" target="_blank" rel="noopener noreferrer">MC-195825</a> 文本中“datapacks”与“data pack”用词格式不统一</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198202" target="_blank" rel="noopener noreferrer">MC-198202</a> 设置界面背景纹理与泥土纹理不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203039" target="_blank" rel="noopener noreferrer">MC-203039</a> 选项提示文本内冒号使用格式有误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-206548" target="_blank" rel="noopener noreferrer">MC-206548</a> 拴绳结字幕大小写不规范</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226454" target="_blank" rel="noopener noreferrer">MC-226454</a> 成就“轻如兔子”描述中省略号后缺少空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236606" target="_blank" rel="noopener noreferrer">MC-236606</a> 闪电相关文本首字母未大写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241736" target="_blank" rel="noopener noreferrer">MC-241736</a> 鸣谢名单内公司名称写法不统一，存在拼写错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250571" target="_blank" rel="noopener noreferrer">MC-250571</a> 创建世界界面内游戏规则描述结尾标点不统一</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256424" target="_blank" rel="noopener noreferrer">MC-256424</a> 部分文本对游戏模式的英文写法混用大小写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257336" target="_blank" rel="noopener noreferrer">MC-257336</a> 部分雕纹书架交互字幕大小写不规范</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262006" target="_blank" rel="noopener noreferrer">MC-262006</a> 西瓜与南瓜被归入默认标签#maintains_farmland，但二者无法维持耕地状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262208" target="_blank" rel="noopener noreferrer">MC-262208</a> 鸣谢名单一处将“Lionbridge”拼写错误（缺少字母g）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262253" target="_blank" rel="noopener noreferrer">MC-262253</a> 音乐作曲家名单未写入鸣谢列表</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262265" target="_blank" rel="noopener noreferrer">MC-262265</a> 切换覆盖字体的资源包会造成Java虚拟机崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262296" target="_blank" rel="noopener noreferrer">MC-262296</a> 跳跃提升效果不再对兔子生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262300" target="_blank" rel="noopener noreferrer">MC-262300</a> 菜单文字渲染在Mojang Studios加载淡出动画上层</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262304" target="_blank" rel="noopener noreferrer">MC-262304</a> stepping_on条件判定器无法正确识别活板门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262308" target="_blank" rel="noopener noreferrer">MC-262308</a> 若实体中心不在蜂蜜块上方，被活塞推动的蜂蜜块无法粘住实体</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262313" target="_blank" rel="noopener noreferrer">MC-262313</a> 升级存档后下界维度无法加载</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262317" target="_blank" rel="noopener noreferrer">MC-262317</a> 掉落物不会继承下方支撑方块的相关属性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262351" target="_blank" rel="noopener noreferrer">MC-262351</a> 支撑方块检测逻辑引发世界生成死锁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262363" target="_blank" rel="noopener noreferrer">MC-262363</a> 把握时机仍可从蜂蜜块正常起跳</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262424" target="_blank" rel="noopener noreferrer">MC-262424</a> 方块边缘奔跑产生的粒子效果依旧异常</li>
+</ul>

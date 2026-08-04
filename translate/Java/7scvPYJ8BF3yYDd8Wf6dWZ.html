@@ -1,0 +1,100 @@
+<p>在本快照中，我们添加了对自定义世界设置和自定义维度的支持。这是一个早期版本，用于听取你对这项功能的反馈——请注意，此支持被视为实验性且不受支持。任何自定义世界设置都可能随着快照更新而发生变化，使用自定义设置的世界将在你的世界列表中被明确标记为实验性。
+​</p>
+<h1>20w21a 的新特性</h1>
+<p>​</p>
+<ul>
+<li>新增了在红石线的十字形和点状之间切换的功能</li>
+<li>新增了导入/导出世界设置的功能</li>
+<li>新增了 disableMultiplayer 命令行选项——使用后，多人游戏按钮将被禁用</li>
+<li>新增了 disableChat 命令行选项——使用后，接收和发送在线聊天将被禁用</li>
+</ul>
+<p>​</p>
+<h2>红石切换</h2>
+<p>​</p>
+<ul>
+<li>右键单击单个红石时，会在十字形和点状之间切换</li>
+<li>点状红石不会为其周围的方块充能</li>
+</ul>
+<p>​</p>
+<h1>20w21a 的更改</h1>
+<p>​</p>
+<ul>
+<li>猪灵在欣赏金锭时不再四处走动</li>
+<li>如果你在猪灵欣赏金锭时伤害它，金锭现在会消失</li>
+<li>提高了玄武岩三角洲中矿石的生成几率，以平衡该生物群系中下界岩数量减少的问题</li>
+<li>睡莲现在被视为垃圾钓鱼战利品而非宝藏</li>
+<li>更新了 Mojang Studios 和 Minecraft 的徽标</li>
+<li>暂时从超平坦世界预设字符串中移除了结构设置（变通方法：使用导入/导出设置功能）</li>
+</ul>
+<p>​</p>
+<h1>20w21a 的技术性更改</h1>
+<p>​</p>
+<ul>
+<li>新增了控制 <code>spreadplayers</code> 命令高度的功能</li>
+<li>新增了自定义世界和自定义维度</li>
+</ul>
+<p>​</p>
+<h2>命令</h2>
+<p>​</p>
+<h3><code>spreadplayers</code></h3>
+<p>​
+新增了一个可选参数，用于指定最大高度。
+新语法：<code>spreadplayers &#x3C;center> &#x3C;spreadDistance> &#x3C;maxRange> [under &#x3C;maxHeight>] &#x3C;respectTeams> &#x3C;targets></code>
+​</p>
+<ul>
+<li><code>maxHeight</code> - 指定结果位置的最大高度</li>
+</ul>
+<p>​</p>
+<h3><code>locate</code></h3>
+<p>​</p>
+<ul>
+<li>结构名称现在使用全小写字母指定</li>
+</ul>
+<p>​</p>
+<h2>自定义世界</h2>
+<p>​</p>
+<ul>
+<li>加入了实验性的自定义世界支持</li>
+<li>编辑世界界面现在有一个选项，可以将世界设置导出为 JSON 文件</li>
+<li>在创建世界期间，你可以导入之前导出的世界设置</li>
+<li>大量新参数被开放，但被标记为实验性，这意味着你可以尝试使用它们，但不能保证其中任何一项还能继续正常工作（即使在下个快照中也不行！）</li>
+<li>超平坦世界预设字符串丢失了结构设置（它们现在以通用格式存储在所有世界中），我们将很快恢复某种形式的功能</li>
+<li>无法再从 server.properties 创建自助式世界，超平坦世界设置略有改动；即将为服务器端提供更好的自定义世界创建支持</li>
+</ul>
+<p>​</p>
+<h1>20w21a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-97247" target="_blank" rel="noopener noreferrer">MC-97247</a> 制作地图时的声音使用了装备音效的字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-97507" target="_blank" rel="noopener noreferrer">MC-97507</a> 使用会修改手持物品的物品时显示“装备：装备”字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-107103" target="_blank" rel="noopener noreferrer">MC-107103</a> 尝试与 3 格或更远处且看不到其眼睛的实体交互时，交互只在客户端生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113068" target="_blank" rel="noopener noreferrer">MC-113068</a> 僵尸砸门的声音字幕显示为“方块：被破坏”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-123155" target="_blank" rel="noopener noreferrer">MC-123155</a> 当任何非玩家实体进入末地传送门时，黑曜石平台不会重新生成，实体可能落入虚空</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147516" target="_blank" rel="noopener noreferrer">MC-147516</a> 敌对生物有时会在紧邻目标时停止攻击/跟随目标</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166292" target="_blank" rel="noopener noreferrer">MC-166292</a> 狐狸吃紫颂果时的字幕显示为“玩家：传送”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169764" target="_blank" rel="noopener noreferrer">MC-169764</a> 鱼扑腾的声音显示“脚步声”字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170930" target="_blank" rel="noopener noreferrer">MC-170930</a> 第一人称视角下，手中持有的下界苗物品不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172090" target="_blank" rel="noopener noreferrer">MC-172090</a> 猪灵宁愿手持金制物品也不愿拿弩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172207" target="_blank" rel="noopener noreferrer">MC-172207</a> 鹦鹉不会模仿疣猪兽、僵尸疣猪兽和猪灵</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172255" target="_blank" rel="noopener noreferrer">MC-172255</a> 猪灵会立即从它们骑乘的任何实体上下来</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177075" target="_blank" rel="noopener noreferrer">MC-177075</a> 从切石机中取出产品时不显示字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177088" target="_blank" rel="noopener noreferrer">MC-177088</a> 北极熊的脚步声没有字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177438" target="_blank" rel="noopener noreferrer">MC-177438</a> 海龟蛋的名称在不同字幕中的大小写不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177830" target="_blank" rel="noopener noreferrer">MC-177830</a> 黑石和玄武岩会阻止远古残骸和其他下界矿石生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178130" target="_blank" rel="noopener noreferrer">MC-178130</a> 僵尸村民在某些字幕中被称作“僵尸”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178212" target="_blank" rel="noopener noreferrer">MC-178212</a> 下界木板、其变体和菌核比菌柄更硬</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178298" target="_blank" rel="noopener noreferrer">MC-178298</a> 远古残骸和下界金矿石无法在玄武岩三角洲中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180257" target="_blank" rel="noopener noreferrer">MC-180257</a> 将指南针的 LodestonePos 设置为非 NBT 复合标签的内容时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180852" target="_blank" rel="noopener noreferrer">MC-180852</a> 信标界面中的辅助效果没有间距</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181270" target="_blank" rel="noopener noreferrer">MC-181270</a> 在快照中尝试打开没有版本信息的旧世界（Region 格式？）时不显示警告屏幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181298" target="_blank" rel="noopener noreferrer">MC-181298</a> 尝试生成带废弃传送门的下界生物群系超平坦世界时游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181463" target="_blank" rel="noopener noreferrer">MC-181463</a> 在新建世界界面中使用 Tab 键时，按钮未按正确顺序选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181499" target="_blank" rel="noopener noreferrer">MC-181499</a> 桶无法倒空到源方块中，但尝试时仍会产生声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181511" target="_blank" rel="noopener noreferrer">MC-181511</a> 包含红石的区块被移除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181522" target="_blank" rel="noopener noreferrer">MC-181522</a> 自 1.13 以来未被探索的区块正在重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181611" target="_blank" rel="noopener noreferrer">MC-181611</a> 卫道士离你非常近时会停止攻击你</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182514" target="_blank" rel="noopener noreferrer">MC-182514</a> 世界升级期间每个子区块的方块状态限制为 15</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182743" target="_blank" rel="noopener noreferrer">MC-182743</a> 凋灵骷髅不会在凋灵玫瑰中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182912" target="_blank" rel="noopener noreferrer">MC-182912</a> 猪灵仍然不会将当前弩换成新的附魔弩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183249" target="_blank" rel="noopener noreferrer">MC-183249</a> 为较低的区块状态创建了雕刻掩码 BitSet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183786" target="_blank" rel="noopener noreferrer">MC-183786</a> 非数字的命名种子无法被识别</li>
+</ul>

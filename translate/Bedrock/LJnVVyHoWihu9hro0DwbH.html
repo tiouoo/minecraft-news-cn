@@ -1,0 +1,11 @@
+<p>已发布新更新，以解决 1.19.80 更新引入的一些问题。</p>
+<ul>
+<li>修复了游戏过程中可能发生的多次崩溃</li>
+<li>拨动左摇杆时，物品栏光标不再会吸附到随机位置（<a href="https://bugs.mojang.com/MCPE-169176" target="_blank" rel="noopener noreferrer">MCPE-169176</a>）</li>
+<li>修复了使用纹理列表覆盖带有 aux 元数据的 'minecraft' 方块的自定义纹理</li>
+<li>对自定义刷怪蛋进行了几项修复（<a href="https://bugs.mojang.com/MCPE-170184" target="_blank" rel="noopener noreferrer">MCPE-170184</a>）<ul>
+<li>重新启用在命令中使用 aux 值引用自定义刷怪蛋的功能，适用于 1.19.80 及更高版本，例如："/give @s spawn_egg 1 654"</li>
+<li>重新启用在配方中使用 Molang 查询来引用物品 data 字段的功能，适用于 1.19.80 及更高版本，例如：{ "item": "spawn_egg", "data": "query.get_actor_info_id('namespace:actor')" }</li>
+<li>重新启用在战利品表中使用 "set_actor_id" 引用自定义刷怪蛋的功能，适用于 1.19.80 及更高版本</li>
+</ul></li>
+</ul>

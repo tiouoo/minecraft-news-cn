@@ -1,0 +1,76 @@
+<p>Now with twice as much Java version.</p>
+<p>Starting with this snapshot, Candles, Bundles, and Sculk Sensors are only accessible through commands. We do not feel that they are at the quality we want for Part 1 of the Caves &#x26; Cliffs release. To keep trying these features out in survival mode, use the Preview data pack!</p>
+<h1>Changes in 21w19a</h1>
+<ul>
+<li>The maximum length of item names in the anvil UI has been increased from 35 to 50</li>
+<li>Made geodes significantly rarer</li>
+<li>Unfinished items (Sculk Sensor, Bundle and Candles) have been removed from the creative inventory</li>
+<li>Recipes for unfinished items (Bundle, Candles) have been removed</li>
+</ul>
+<h1>Changes to the Caves &#x26; Cliffs Preview</h1>
+<p>Download the <a href="https://launcher.mojang.com/v1/objects/a6b56d6f14869646eb8d399e99a0149bdd954490/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">updated datapack</a>.</p>
+<ul>
+<li>The pack now includes recipes related to bundles and candles</li>
+</ul>
+<h1>Technical changes in 21w19a</h1>
+<ul>
+<li>Upgraded to Java 16</li>
+<li>Added <code>mineable/axe</code>, <code>mineable/hoe</code>, <code>mineable/pickaxe</code> and <code>mineable/shovel</code> block tags. Blocks with these tags can be destroyed more quickly with the matching tool.</li>
+<li>Added  <code>needs_stone_tool</code>, <code>needs_iron_tool</code> and <code>needs_diamond_tool</code> block tags. If a block requires the correct tool to drop, these tags determine which tier of that tool is required.</li>
+<li>Changed the syntax of the <code>/item</code> command</li>
+</ul>
+<h2>Java 16</h2>
+<p>Minecraft now uses a more recent version of Java. If you are using a default setup the Launcher will download and install the correct version. If you are using a custom Java setup or a third-party launcher, you will need to ensure that your Java installation is version 16 or above.</p>
+<h2>Item command</h2>
+<p>New syntax:</p>
+<ul>
+<li><code>/item replace &#x3C;target> with &#x3C;item stack> [&#x3C;count>]</code> - same as old <code>replaceitem</code></li>
+<li><code>/item replace &#x3C;target> from &#x3C;source> [&#x3C;modifier>]</code> - copies item for source to target(s), optionally applying modifier</li>
+<li><code>/item modify &#x3C;target> &#x3C;modifier></code> - modifies item (without copying)</li>
+</ul>
+<p>For example, <code>/item replace block ~ ~ ~ container.0 from entity @s enderchest.0</code> will copy first item from player's enderchest to first slot of container player is currently standing on.</p>
+<h1>Bugs fixed in 21w19a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-105080" target="_blank" rel="noopener noreferrer">MC-105080</a> Ender Dragon is respawned if all Exit End Portal blocks are removed / legacy scanning is done for worlds with new dragon fight</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136647" target="_blank" rel="noopener noreferrer">MC-136647</a> Leads don't work with Squids</li>
+<li><a href="https://bugs.mojang.com/browse/MC-200009" target="_blank" rel="noopener noreferrer">MC-200009</a> Crash when using a non-mushroom block in a huge mushroom feature's cap</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203606" target="_blank" rel="noopener noreferrer">MC-203606</a> "X Candle Cake" should be "Cake with X Candle"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203718" target="_blank" rel="noopener noreferrer">MC-203718</a> Lightning rod stays activated when struck by lighting at the same time as being moved by a piston</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203757" target="_blank" rel="noopener noreferrer">MC-203757</a> Anvil character limit is too low for items with long names</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204244" target="_blank" rel="noopener noreferrer">MC-204244</a> Sheep are rendered like white sheared sheep through tinted glass blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205626" target="_blank" rel="noopener noreferrer">MC-205626</a> The command syntax order of /item is inconsistent</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208663" target="_blank" rel="noopener noreferrer">MC-208663</a> Pufferfish don't defend themselves from axolotls</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208740" target="_blank" rel="noopener noreferrer">MC-208740</a> Withers attack axolotls that are playing dead</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209533" target="_blank" rel="noopener noreferrer">MC-209533</a> Amethyst shard is not grouped with other gemstones in the Creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212206" target="_blank" rel="noopener noreferrer">MC-212206</a> Shulkers generating outside the world border bug out when trying to spawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213774" target="_blank" rel="noopener noreferrer">MC-213774</a> Hanging roots float in your hand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213922" target="_blank" rel="noopener noreferrer">MC-213922</a> Shulkers are not spawned in the correct place</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213943" target="_blank" rel="noopener noreferrer">MC-213943</a> Flying slightly above a big dripleaf can cause it to tilt without touching it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214127" target="_blank" rel="noopener noreferrer">MC-214127</a> Despite being a type of berry plant, bees don't pollinate cave vines</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214220" target="_blank" rel="noopener noreferrer">MC-214220</a> Items in water streams don't fall from big dripleaves, but constantly try</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214283" target="_blank" rel="noopener noreferrer">MC-214283</a> Hanging roots break sound event uses break3 twice, excluding break4</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217626" target="_blank" rel="noopener noreferrer">MC-217626</a> Spore blossom is positioned rather strangely among flowers in Creative</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219445" target="_blank" rel="noopener noreferrer">MC-219445</a> Bonemealing big dripleaf in flowing water doesn't update the water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219873" target="_blank" rel="noopener noreferrer">MC-219873</a> Lightning Bolt detecting lightning rod incorrectly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220106" target="_blank" rel="noopener noreferrer">MC-220106</a> Lightning hitting an entity on copper slabs on top another copper block fully cleans the bottom block first</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220215" target="_blank" rel="noopener noreferrer">MC-220215</a> Opening a shulker box while an entity is standing on top of it pushes it too high for a short amount of time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221309" target="_blank" rel="noopener noreferrer">MC-221309</a> Experience orbs produce particles whilst moving through powder snow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221756" target="_blank" rel="noopener noreferrer">MC-221756</a> Snow particles do not render at all when the block light level is 7 or more</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221844" target="_blank" rel="noopener noreferrer">MC-221844</a> Powder snow doesn’t produce particles when broken by burning mobs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221957" target="_blank" rel="noopener noreferrer">MC-221957</a> Pick Block used on a level 15 light block returns a different item from the default light block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222738" target="_blank" rel="noopener noreferrer">MC-222738</a> Leads don't work with Glow Squids</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222882" target="_blank" rel="noopener noreferrer">MC-222882</a> Spyglass in Search tab of creative inventory is mixed with block types instead of tools where it belongs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223132" target="_blank" rel="noopener noreferrer">MC-223132</a> Powder snow doesn't produce a breaking sound or subtitle, when destroyed through extinguishing a burning player, mob, or flame arrow</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223171" target="_blank" rel="noopener noreferrer">MC-223171</a> Budding Amethyst and Copper variants are far away in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223227" target="_blank" rel="noopener noreferrer">MC-223227</a> Floating water caves in caves under the ocean</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223446" target="_blank" rel="noopener noreferrer">MC-223446</a> Shulkers appear in the wrong place when riding an entity</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223820" target="_blank" rel="noopener noreferrer">MC-223820</a> Azalea &#x26; Flowering Azalea aren't part of the block or item tags for #saplings</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223907" target="_blank" rel="noopener noreferrer">MC-223907</a> Moss block appears in the #lush_ground_replaceable.json twice</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224322" target="_blank" rel="noopener noreferrer">MC-224322</a> Powder snow can create ghost blocks in creative mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224325" target="_blank" rel="noopener noreferrer">MC-224325</a> minecraft.used:minecraft.COMPOSTABLE_ITEM doesn't increase when placing an item into a composter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224388" target="_blank" rel="noopener noreferrer">MC-224388</a> Ores and raw materials in smelting preview are off center</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224389" target="_blank" rel="noopener noreferrer">MC-224389</a> Copper Ingots are no longer grouped in the crafting table</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224927" target="_blank" rel="noopener noreferrer">MC-224927</a> Infested blocks take twice as long instead of half the time</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224972" target="_blank" rel="noopener noreferrer">MC-224972</a> Infested blocks have no effective tool</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225025" target="_blank" rel="noopener noreferrer">MC-225025</a> Server side performance drop with dragon's breath area effect clouds</li>
+</ul>

@@ -1,0 +1,170 @@
+<p>在本周的快照中，我们正在用所有新方块扩展 1.21 更新的实验性内容！还有恰逢恐怖秋季的蝙蝠焕新如何？祝你们合成愉快！</p>
+<h1>实验性特性</h1>
+<h2>铜制方块家族</h2>
+<ul>
+<li>铜制方块家族已扩展，包括：<ul>
+<li>雕纹铜块</li>
+<li>铜格栅</li>
+<li>铜灯</li>
+<li>铜门</li>
+<li>铜活板门</li>
+<li>以上所有方块的氧化和涂蜡变种</li>
+</ul></li>
+</ul>
+<h3>雕纹铜块</h3>
+<ul>
+<li>使用 2 个相同氧化等级的切制铜台阶合成</li>
+<li>可以在切石机中合成</li>
+</ul>
+<h3>铜格栅</h3>
+<ul>
+<li>铜制方块家族独有的新型装饰性方块</li>
+<li>使用 4 个相同氧化等级的铜块合成<ul>
+<li>可以在切石机中合成</li>
+</ul></li>
+<li>特性：<ul>
+<li>透明，允许光线穿过</li>
+<li>生物不会在其中窒息</li>
+<li>不能传导红石信号</li>
+<li>敌对生物无法在其上自然生成</li>
+</ul></li>
+</ul>
+<h3>铜灯</h3>
+<ul>
+<li>一种发光的方块，可以通过红石脉冲切换其发光状态</li>
+<li>像其他铜块一样氧化，氧化程度越高，发出的光越少<ul>
+<li>铜灯：亮度等级 15</li>
+<li>斑驳的铜灯：亮度等级 12</li>
+<li>风化的铜灯：亮度等级 8</li>
+<li>氧化的铜灯：亮度等级 4</li>
+</ul></li>
+<li>放置时，其灯光默认关闭<ul>
+<li>当铜灯未通入红石信号时，接收到红石脉冲会切换开关状态</li>
+<li>即使移除红石信号源，铜灯也会保持点亮，直到再次收到红石脉冲将其关闭</li>
+</ul></li>
+<li>当铜灯被红石信号激活时，其中心会有一个红石水晶发光</li>
+<li>如果铜灯处于点亮状态，比较器会检测到信号强度 15</li>
+<li>不传导红石信号</li>
+<li>可以用以下材料合成 4 个铜灯：<ul>
+<li>3 个相同氧化等级的铜块</li>
+<li>1 个烈焰棒</li>
+<li>1 个红石粉</li>
+</ul></li>
+</ul>
+<h3>铜门和铜活板门</h3>
+<ul>
+<li>门和活板门的铜制变种，会随时间氧化，也可以涂蜡</li>
+<li>与木门类似，既可以通过交互打开和关闭，也可以通过红石信号控制</li>
+<li>使用相同氧化等级的铜块合成</li>
+</ul>
+<h2>凝灰岩家族</h2>
+<ul>
+<li>凝灰岩已扩展为拥有自己的方块家族，包括：<ul>
+<li>楼梯、台阶、墙和雕纹变种</li>
+<li>凝灰岩砖，以及其楼梯、台阶、墙和雕纹变种</li>
+<li>磨光凝灰岩，以及其楼梯、台阶和墙变种</li>
+</ul></li>
+<li>所有凝灰岩变种都可以在切石机中合成</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>蝙蝠现在有了新外观</li>
+<li>投掷的末影珍珠在落地时产生传送音效</li>
+<li>对遥测数据收集屏幕进行了小幅调整</li>
+</ul>
+<h2>蝙蝠</h2>
+<ul>
+<li>蝙蝠的模型、动画和纹理已更新</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 22</li>
+<li>资源包版本现在为 20</li>
+</ul>
+<h1>数据包版本 22</h1>
+<ul>
+<li>新增 <code>tick</code> 命令</li>
+<li>在拼图方块编辑界面新增“选择优先级”和“放置优先级”两个输入字段</li>
+<li>向 <code>minecraft:arrow</code> 和 <code>minecraft:spectral_arrow</code> 添加了 <code>item</code> 字段，用于指定将被拾取的物品</li>
+<li>将 <code>minecraft:trident</code> 中的 <code>Trident</code> 重命名为 <code>item</code></li>
+</ul>
+<h2><code>tick</code> 命令</h2>
+<p>新增了 <code>tick</code> 命令。这是一个管理和调试命令，允许控制游戏刻流程并测量游戏性能。该命令需要提升权限（管理员及以上），因此默认情况下在命令方块和数据包中不可用。</p>
+<p>语法：</p>
+<p><code>tick query</code> - 输出当前目标游戏刻速率，以及有关游戏刻时间性能的信息。</p>
+<p><code>tick rate &#x3C;rate></code> - 将自定义目标游戏刻速率设置为指定值。该值必须大于 1.0 且小于 10000.0。设置过低的游戏刻速率会让游戏感觉无响应，而为系统设置过高的游戏刻速率可能导致游戏崩溃，因为游戏会认为自身持续落后于目标刻速。请使用 <code>tick query</code> 或 <code>&#x3C;F3> + 2</code>（仅限内置服务端）调试屏幕来测量游戏性能，并相应调整游戏刻速率。将目标刻速设置为低于默认值 <code>20.0</code> 也会导致玩家以较低的速率进行模拟（包括玩家移动和输入控制），而设置更高的刻速率则会让玩家以默认的每秒 <code>20</code> 刻速率进行模拟，以维持预期的游戏响应性，但可能会导致实体插值出现伪影。</p>
+<p><code>tick freeze</code> - 冻结所有游戏元素，但玩家以及玩家骑乘的任何实体除外。这对于调试和隔离游戏问题非常有用，允许玩家自由移动并检查世界。</p>
+<p><code>tick step &#x3C;time></code> - 仅在游戏被冻结时有效。它运行指定数量的游戏刻，然后再次冻结游戏。这样可以一次步进固定数量的游戏刻。</p>
+<p><code>tick step stop</code> - 停止当前的步进过程，并重新冻结游戏。</p>
+<p><code>tick unfreeze</code> - 解冻游戏并恢复所有游戏元素。</p>
+<p><code>tick sprint &#x3C;time></code> - 在忽略已设置的目标刻速率（即让游戏尽可能快地运行）的情况下运行指定数量的游戏刻。冲刺结束后，游戏将恢复之前的目标刻速，并显示冲刺期间游戏刻时间的性能信息。这对于测试依赖时间的游戏元素尤其有用，例如红石机械或允许更快模拟的隔离环境中的生物行为。</p>
+<p><code>tick sprint stop</code> - 停止当前的刻冲刺，并恢复之前的目标刻速。</p>
+<h2>拼图方块选择与放置优先级</h2>
+<ul>
+<li>选择优先级<ul>
+<li>当处理父部件的连接时，这将控制此拼图方块尝试连接到目标部件的顺序</li>
+<li>拼图方块将按优先级从高到低处理，同一优先级内随机处理</li>
+</ul></li>
+<li>放置优先级<ul>
+<li>当此拼图方块连接到一个部件时，这决定了该部件在更大结构中处理连接的顺序</li>
+<li>部件将按优先级从高到低处理，同一优先级内默认按插入顺序处理</li>
+</ul></li>
+<li>已添加此功能，以支持拼图结构以深度优先顺序生成分支，并更精细地控制连接顺序</li>
+<li>所有现有拼图方块的选择和放置优先级默认值为 0，因此行为与引入这两个可配置值之前相同</li>
+</ul>
+<h1>资源包版本 20</h1>
+<ul>
+<li><code>bat.png</code> 已针对新的蝙蝠模型更新</li>
+<li>为以下方块添加了方块模型、物品模型和方块状态定义：<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>tuff_stairs</code></li>
+<li><code>tuff_slab</code></li>
+<li><code>tuff_wall</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>polished_tuff_stairs</code></li>
+<li><code>polished_tuff_slab</code></li>
+<li><code>polished_tuff_wall</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>tuff_brick_stairs</code></li>
+<li><code>tuff_brick_slab</code></li>
+<li><code>tuff_brick_wall</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+<li>为以下方块添加了独特纹理：<ul>
+<li><code>chiseled_copper</code>, <code>exposed_chiseled_copper</code>, <code>weathered_chiseled_copper</code>, <code>oxidized_chiseled_copper</code></li>
+<li><code>copper_grate</code>, <code>expxosed_copper_grate</code>, <code>weathered_copper_grate</code>, <code>oxidized_copper_grate</code></li>
+<li><code>copper_bulb</code>, <code>exposed_copper_bulb</code>, <code>weathered_copper_bulb</code>, <code>oxidized_copper_bulb</code></li>
+<li><code>copper_door</code>, <code>exposed_copper_door</code>, <code>weathered_copper_door</code>, <code>oxidized_copper_door</code></li>
+<li><code>copper_trapdoor</code>, <code>exposed_copper_trapdoor</code>, <code>weathered_copper_trapdoor</code>, <code>oxidized_copper_trapdoor</code></li>
+<li><code>chiseled_tuff</code></li>
+<li><code>polished_tuff</code></li>
+<li><code>tuff_bricks</code></li>
+<li><code>chiseled_tuff_bricks</code></li>
+</ul></li>
+</ul>
+<h1>修复 23w43a 快照中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1981" target="_blank" rel="noopener noreferrer">MC-1981</a> 所有种类的箭在射出并被拾起后会丢失其名称/NBT 数据</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257786" target="_blank" rel="noopener noreferrer">MC-257786</a> 游戏在处理玩家离开 Realms 组或接受/拒绝 Realms 邀请时需要很长时间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263263" target="_blank" rel="noopener noreferrer">MC-263263</a> Realms 玩家菜单中的管理员按钮与滚动条重叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263272" target="_blank" rel="noopener noreferrer">MC-263272</a> 在 Realms 世界选项菜单中，你无法点击区域来设置出生点保护滑块的值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-263309" target="_blank" rel="noopener noreferrer">MC-263309</a> 你可以使用 TAB 键在 Realm 创建之前对其进行配置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265872" target="_blank" rel="noopener noreferrer">MC-265872</a> recover_world.no_fallback 字符串中的“available”拼写错误，写成了“availible”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265874" target="_blank" rel="noopener noreferrer">MC-265874</a> 右键点击和键盘输入可以禁用或启用合成器中的槽位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265880" target="_blank" rel="noopener noreferrer">MC-265880</a> 合成器合成物品时的字幕使用了不一致的时态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265884" target="_blank" rel="noopener noreferrer">MC-265884</a> recover_world.message 字符串中的“occurred”拼写错误，写成了“occured”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265885" target="_blank" rel="noopener noreferrer">MC-265885</a> selectWorld.incompatible.description 中“cannot”一词有多余空格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265886" target="_blank" rel="noopener noreferrer">MC-265886</a> 内置的 update_1_21 包包含与原版包重复的文件</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265891" target="_blank" rel="noopener noreferrer">MC-265891</a> 将物品放入合成器的输出槽位会将其删除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265896" target="_blank" rel="noopener noreferrer">MC-265896</a> 合成器合成时，其正面会出现额外的线条</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265899" target="_blank" rel="noopener noreferrer">MC-265899</a> gamerule.commandModificationBlockLimit 的翻译采用了标题大小写，而非句子大小写</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265901" target="_blank" rel="noopener noreferrer">MC-265901</a> 使用合成器合成时，比较器有时不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265938" target="_blank" rel="noopener noreferrer">MC-265938</a> Realms 菜单中“上次备份以来的更改”列表内的元素无法通过鼠标光标选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265939" target="_blank" rel="noopener noreferrer">MC-265939</a> Realms 邀请菜单中的“无待处理邀请！”文字无法被朗读或选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265961" target="_blank" rel="noopener noreferrer">MC-265961</a> 合成器侧面灯光附近有不协调的像素</li>
+</ul>

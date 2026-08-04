@@ -1,0 +1,116 @@
+<p>We are now releasing the first pre-release for Minecraft 1.19.4. This pre-release contains a new high contrast accessibility setting, some updates to the Create World tab visuals, a new execute subcommand, improvements to startup performance, and lots of bug fixes!</p>
+<p>For the remainder of the 1.19.4 cycle, you should mostly see bugs being fixed. In addition to that, pre-releases don't follow the regular snapshot cadence of releasing on Wednesdays, so keep an eye out for the next pre-release.</p>
+<p>Happy mining!</p>
+<h1>Important Note</h1>
+<ul>
+<li>Experimental 1.20 worlds created in the previous snapshot (23w07a) can no longer be opened in this version</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>The enchantment glint for items in the inventory has been made more visible</li>
+<li>The default value of the "Glint Strength" setting has been reduced to 75%</li>
+<li>Potions no longer have an enchantment glint due to it obscuring the color of the potion contents</li>
+<li>Added a notification system for Realms to tell you about important information about your Realm</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Added a built-in resource pack that enhances the contrast of UI elements<ul>
+<li>The resource pack can be enabled in the Accessibility Options screen
+or manually in the Resource Pack screen</li>
+<li>This is only available in the menus for now, but we’ll be looking to bring this to gameplay UIs in the future as well</li>
+</ul></li>
+</ul>
+<h2>Updated Create New World Screen</h2>
+<ul>
+<li>The appearance of the tab bar in the Create New World screen has been updated<ul>
+<li>Tabs now have unique visuals instead of being traditional buttons</li>
+<li>The tabs now align to the center of the screen</li>
+<li>The content has been aligned to the top of the screen</li>
+</ul></li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The resource pack version is now 13</li>
+<li>Changed the following game events:<ul>
+<li><code>item_interact_finish</code> now has a vibration frequency of 2 instead of 14</li>
+</ul></li>
+<li>New Damage Type Tag: <code>bypasses_cooldown</code> - damage types with this tag bypass the regular invincibility time after taking damage</li>
+<li>New Entity Type Tag: <code>fall_damage_immune</code> - entity types with this tag do not take fall damage</li>
+</ul>
+<h2>Resource Pack format</h2>
+<ul>
+<li>The enchantment glint now has two separate texture files: <code>enchanted_glint_entity.png</code> and <code>enchanted_glint_item.png</code></li>
+</ul>
+<h2>Commands</h2>
+<h4><code>execute positioned over</code></h4>
+<p>New <code>execute</code> sub-command for finding positions on top of a heightmap. Changes the height of the execution position to be on top of the given heightmap. Syntax:</p>
+<ul>
+<li><code>execute positioned over &#x3C;heightmap></code></li>
+</ul>
+<h5>Heightmaps</h5>
+<p>A heightmap records the highest position in a column of blocks according to some criteria. Available options:</p>
+<ul>
+<li><code>world_surface</code>: Any non-air block</li>
+<li><code>motion_blocking</code>: Any motion blocking material (e.g. ignores flowers and grass)</li>
+<li><code>motion_blocking_no_leaves</code>: Any non-leaf motion blocking material</li>
+<li><code>ocean_floor</code>: Any non-fluid motion blocking material</li>
+</ul>
+<h1>Changes for Experimental Features</h1>
+<ul>
+<li>The Brush crafting recipe now uses a Feather, Copper Ingot and Stick in a vertical line</li>
+<li>The Sniffer Spawn Egg colors have been updated</li>
+<li>The recipe for the Decorated Pot made of all Bricks can now be found in the Recipe Book</li>
+</ul>
+<h1>Fixed bugs in 1.19.4 Pre-release 1</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-106484" target="_blank" rel="noopener noreferrer">MC-106484</a> Some potions are indistinguishable by color</li>
+<li><a href="https://bugs.mojang.com/browse/MC-132200" target="_blank" rel="noopener noreferrer">MC-132200</a> Ghost block hoppers appear if summoned by command to powered location</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253210" target="_blank" rel="noopener noreferrer">MC-253210</a> Goats will panic when receiving fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253211" target="_blank" rel="noopener noreferrer">MC-253211</a> Frogs will panic when receiving fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256484" target="_blank" rel="noopener noreferrer">MC-256484</a> Sitting camels don't stand up and begin following players that are tempting them with their favorite food</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256489" target="_blank" rel="noopener noreferrer">MC-256489</a> Sitting camels that are in love don't attempt to stand up and approach one another to breed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256731" target="_blank" rel="noopener noreferrer">MC-256731</a> The sounds of camels recovering aren't controlled by the "Friendly Creatures" sound slider</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256861" target="_blank" rel="noopener noreferrer">MC-256861</a> Camels panic when receiving fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259192" target="_blank" rel="noopener noreferrer">MC-259192</a> Server/client position desync when running /ride too fast and manually dismounting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259246" target="_blank" rel="noopener noreferrer">MC-259246</a> Passengers on an ender dragon ride too high</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259576" target="_blank" rel="noopener noreferrer">MC-259576</a> Passenger's riding position is too high on a phantom</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259613" target="_blank" rel="noopener noreferrer">MC-259613</a> Enchantment glint is hardly noticeable on some items, even when the Glint Strength is set to 100%</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259630" target="_blank" rel="noopener noreferrer">MC-259630</a> Camels, horses and mules bounce high into the air when being ridden across water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259882" target="_blank" rel="noopener noreferrer">MC-259882</a> Axolotls no longer give the Regeneration effect to nearby players after they kill a mob, and do not grant "The Healing Power of Friendship!" advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259893" target="_blank" rel="noopener noreferrer">MC-259893</a> Long texts on buttons scroll too fast</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259917" target="_blank" rel="noopener noreferrer">MC-259917</a> Entities immune to fall damage are damaged when using minecraft:fall damage type in /damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259918" target="_blank" rel="noopener noreferrer">MC-259918</a> Text scrolling speed isn't accessible-friendly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259920" target="_blank" rel="noopener noreferrer">MC-259920</a> The "ITEM_INTERACT_FINISH" game event overrides other game events causing several actions to not produce their intended vibration frequency</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260030" target="_blank" rel="noopener noreferrer">MC-260030</a> Starting data.Main for data generation crashes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260033" target="_blank" rel="noopener noreferrer">MC-260033</a> Torchflowers cannot be used to craft suspicious stew</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260035" target="_blank" rel="noopener noreferrer">MC-260035</a> Chickens and parrots are not tempted by torchflower seeds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260051" target="_blank" rel="noopener noreferrer">MC-260051</a> Bees are not tempted by or attempt to pollinate Pink Petals and Torchflowers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260059" target="_blank" rel="noopener noreferrer">MC-260059</a> Pigs do not seem to spawn in Cherry Grove biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260071" target="_blank" rel="noopener noreferrer">MC-260071</a> Sniffer Digging Sounds can be heard from way too far</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260089" target="_blank" rel="noopener noreferrer">MC-260089</a> Sniffers panic when receiving fall damage</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260092" target="_blank" rel="noopener noreferrer">MC-260092</a> Sniffers' hitboxes are too small resulting in sniffers not being rendered from certain angles despite being visible on the screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260098" target="_blank" rel="noopener noreferrer">MC-260098</a> Sniffers aren't required for the "Two by Two" advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260102" target="_blank" rel="noopener noreferrer">MC-260102</a> Torchflower seeds don't contribute to the "A Seedy Place" advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260107" target="_blank" rel="noopener noreferrer">MC-260107</a> Sniffers don't swim properly and their walking animations freeze when in water</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260109" target="_blank" rel="noopener noreferrer">MC-260109</a> Sniffers do not rotate their head to look at the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260118" target="_blank" rel="noopener noreferrer">MC-260118</a> Disabling experimental features on the world creation screen causes pack validation to fail</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260121" target="_blank" rel="noopener noreferrer">MC-260121</a> Hoppers are ghost blocks for other players when placed on jukeboxes that are playing music</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260125" target="_blank" rel="noopener noreferrer">MC-260125</a> Sniffer's head occasionally disappears</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260126" target="_blank" rel="noopener noreferrer">MC-260126</a> Using pick block function on grown torchflower crop gives torchflower seeds instead of the plant item</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260149" target="_blank" rel="noopener noreferrer">MC-260149</a> Cherry logs can't be used to craft campfires</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260156" target="_blank" rel="noopener noreferrer">MC-260156</a> The sound of the torchflower being broken after growing is different than the sound of it breaking after being placed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260157" target="_blank" rel="noopener noreferrer">MC-260157</a> On existing snapshot servers, cherry grove biomes cannot be found with "/locate", nor do they generate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260168" target="_blank" rel="noopener noreferrer">MC-260168</a> Torchflower crop aren't part of the #crops block tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260171" target="_blank" rel="noopener noreferrer">MC-260171</a> Cherry Leaves and Pink Petals aren't part of the #flower block tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260172" target="_blank" rel="noopener noreferrer">MC-260172</a> Torchflower isn't part of the #flowers block or item tags</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260181" target="_blank" rel="noopener noreferrer">MC-260181</a> Torchflower seeds are not grouped with other seeds in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260185" target="_blank" rel="noopener noreferrer">MC-260185</a> Pink Petals aren't insta-mined</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260189" target="_blank" rel="noopener noreferrer">MC-260189</a> Cherry Sapling is not part of the #saplings item tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260191" target="_blank" rel="noopener noreferrer">MC-260191</a> Cherry Leaves aren't part of the #leaves and #complete_find_tree_tutorial item tags</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260192" target="_blank" rel="noopener noreferrer">MC-260192</a> You can't make Charcoal with Cherry Logs or Wood</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260193" target="_blank" rel="noopener noreferrer">MC-260193</a> Cherry Logs and Wood can't be used as fuel in furnaces</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260194" target="_blank" rel="noopener noreferrer">MC-260194</a> Create new world screen appears even when world is created; clicking on button causes freeze or crash</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260195" target="_blank" rel="noopener noreferrer">MC-260195</a> Cherry Logs and Wood are missing from the #log, #logs_that_burn and #complete_find_tree_tutorial item tags</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260209" target="_blank" rel="noopener noreferrer">MC-260209</a> breaks_decorated_pots Item Tag is in the Vanilla datapack, not 1.20</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260210" target="_blank" rel="noopener noreferrer">MC-260210</a> Brush Recipe is in the Vanilla datapack, not 1.20</li>
+</ul>

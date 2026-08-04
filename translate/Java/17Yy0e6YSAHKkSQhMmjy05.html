@@ -1,0 +1,104 @@
+<p>嘿！今天我们为你带来上周 Minecraft Live 中展示的首个特性：合成器！</p>
+<h1>实验性特性</h1>
+<h2>合成器</h2>
+<ul>
+<li>合成器是一种可通过红石合成物品和方块的新方块</li>
+<li>合成器在接收到新的红石信号/脉冲（而非持续信号）时，每次会弹出一个已合成的物品</li>
+<li>接收到新信号后，合成器会从正面弹出合成结果</li>
+<li>如果输出结果包含多种物品，所有结果物品将一起弹出</li>
+<li>放置时，合成器可以朝向任意方向</li>
+</ul>
+<h3>合成器界面</h3>
+<ul>
+<li>合成器拥有一个 3x3 的可交互合成网格</li>
+<li>合成器的合成网格槽位可切换，意味着玩家可以通过空手点击或按压某个槽位来改变其行为</li>
+<li>被“切换”的槽位无法容纳任何物品，也因此不能由其他方块（如漏斗和投掷器）放入物品</li>
+<li>与工作台不同，合成器会显示将要合成的物品预览，该物品将在下一次红石脉冲时被合成并弹出，但玩家无法手动取出</li>
+<li>合成器的界面在所有与其交互的玩家之间共享，这意味着多个玩家可以同时与合成器交互，类似于箱子和漏斗</li>
+</ul>
+<h3>合成器与其他方块的交互</h3>
+<ul>
+<li>比较器的信号强度为 0-9，每个非空或已切换的槽位增加 1 点强度</li>
+<li>漏斗可用于向合成器放入物品或从中取出物品</li>
+<li>投掷器可用于向合成器放入物品</li>
+<li>从其他方块（例如漏斗、投掷器）移入物品时，会按照以下规则优先将物品填充到槽位中：<ul>
+<li>优先选择第一个空槽位（从左到右，从上到下）</li>
+<li>如果没有空槽位，则优先选择同种物品的最小堆叠（若有多个则选择第一个）</li>
+<li>如果遇到已切换的槽位则会跳过。然后物品会被移入容器</li>
+<li>如果物品无法被移动，它将被弹出到世界中</li>
+</ul></li>
+</ul>
+<p>我们想听听你对合成器的反馈，请在我们的专门反馈帖子中告诉我们你的想法。</p>
+<h1>更改</h1>
+<ul>
+<li>新增了一个辅助功能选项，允许隐藏主菜单中的黄色闪烁文本</li>
+<li>为数据缺失的世界新增了恢复界面（例如，由于意外关机导致保存失败时）</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 21</li>
+<li>资源包版本现在为 19</li>
+<li>对聊天组件序列化进行了小幅更改</li>
+</ul>
+<h2>聊天组件</h2>
+<h3>序列化</h3>
+<ul>
+<li>可选的 <code>type</code> 字段新增了一个允许值：<code>selector</code></li>
+<li>类型为 <code>nbt</code> 的组件现在拥有 <code>source</code> 字段，允许值为 <code>entity</code>、<code>block</code>、<code>storage</code></li>
+</ul>
+<h1>数据包版本 21</h1>
+<ul>
+<li>引入了 Jigsaw 结构池别名，可用于重新连接池的选择</li>
+<li>为 <code>tnt</code> 实体添加了 <code>block_state</code> 字段，以允许替换渲染的方块模型</li>
+<li>将 <code>tnt</code> 实体上的 <code>Fuse</code> 字段重命名为 <code>fuse</code></li>
+<li>新增了 <code>playersNetherPortalDefaultDelay</code> 和 <code>playersNetherPortalCreativeDelay</code> 游戏规则，用于控制玩家在切换维度前需要站在下界传送门中的时间（以刻为单位）</li>
+<li>新增了游戏规则 <code>projectilesCanBreakBlocks</code>，用于控制弹射物在撞击时是否会破坏可被其破坏的方块，例如紫颂花、滴水石锥和饰纹陶罐</li>
+<li>添加了 <code>white_smoke</code> 粒子类型</li>
+</ul>
+<h2>Jigsaw 池别名</h2>
+<ul>
+<li>为 Jigsaw 结构添加了可选的 <code>pool_aliases</code> 列表</li>
+<li>别名表示通过重定向单个结构实例上的池引用来重新连接 Jigsaw 池连接的可能性</li>
+<li>别名变体在 <code>type</code> 中表示，可以是以下之一：<ul>
+<li><code>direct</code> 从别名到新池的 1:1 映射<ul>
+<li><code>alias</code> 要替换的池</li>
+<li><code>target</code> 用于替换的池</li>
+</ul></li>
+<li><code>random</code> 1:n 映射，其中从 <code>n</code> 个池中随机选择一个用于结构实例<ul>
+<li><code>alias</code> 要替换的池</li>
+<li><code>targets</code> 用于替换 <code>alias</code> 的候选池随机列表</li>
+</ul></li>
+<li><code>random_group</code><ul>
+<li><code>groups</code> 每个组都是上述别名类型的随机列表</li>
+<li>每个结构实例只选择一个组</li>
+<li>这样可以模拟诸如“如果池 X 被替换为 X1，同时将池 Y 替换为 Y1”的选择</li>
+</ul></li>
+</ul></li>
+</ul>
+<h1>资源包版本 19</h1>
+<ul>
+<li>为 <code>crafter</code> 添加了方块模型、物品模型和方块状态定义</li>
+<li>为 <code>crafter</code> 添加了 GUI 容器纹理和精灵图</li>
+<li>添加了 <code>white_smoke</code> 粒子定义</li>
+</ul>
+<h1>修复快照 23w34a 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-189261" target="_blank" rel="noopener noreferrer">MC-189261</a> 各种 Realms 按钮和文本的大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223774" target="_blank" rel="noopener noreferrer">MC-223774</a> 烟花火箭无法用于破坏紫颂花</li>
+<li><a href="https://bugs.mojang.com/browse/MC-232719" target="_blank" rel="noopener noreferrer">MC-232719</a> 单人游戏菜单中的滚动条在搜索世界时不会将位置重置到列表顶部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234483" target="_blank" rel="noopener noreferrer">MC-234483</a> 在多个 Realms 菜单中，世界槽位框架的左侧可以看到一些奇怪的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262888" target="_blank" rel="noopener noreferrer">MC-262888</a> 在新快照中加载世界时，点击世界加载屏幕上的“我知道我在做什么！”声音过于响亮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-264966" target="_blank" rel="noopener noreferrer">MC-264966</a> 由于玩家头颅，“Signature is missing from Property textures”出现在某些 Minecraft 世界的日志中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265515" target="_blank" rel="noopener noreferrer">MC-265515</a> Realms 菜单中的“你似乎没有 Realm”元素无法通过鼠标光标选择</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265517" target="_blank" rel="noopener noreferrer">MC-265517</a> 打开“添加 Realm”界面时，“购买 Realm！”按钮会自动被选中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265551" target="_blank" rel="noopener noreferrer">MC-265551</a> Realms 中的“没有待处理的邀请！”提示文本现在无法翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265744" target="_blank" rel="noopener noreferrer">MC-265744</a> 登录期间被踢出导致客户端错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265745" target="_blank" rel="noopener noreferrer">MC-265745</a> 无法用弩发射的烟花破坏饰纹陶罐</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265751" target="_blank" rel="noopener noreferrer">MC-265751</a> 饰纹陶罐的字幕不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265758" target="_blank" rel="noopener noreferrer">MC-265758</a> 在冒险模式中，饰纹陶罐可以被弹射物破坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265761" target="_blank" rel="noopener noreferrer">MC-265761</a> 饰纹陶罐在创造模式物品栏的红石方块标签页中缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265767" target="_blank" rel="noopener noreferrer">MC-265767</a> 命令不在聊天中显示错误消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265773" target="_blank" rel="noopener noreferrer">MC-265773</a> 作为进度奖励执行的函数在顶层执行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265778" target="_blank" rel="noopener noreferrer">MC-265778</a> “gamerule maxCommandChainLength 0”会阻止世界中后续命令的执行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265789" target="_blank" rel="noopener noreferrer">MC-265789</a> Realms 弹出字符串的结尾标点不一致</li>
+</ul>

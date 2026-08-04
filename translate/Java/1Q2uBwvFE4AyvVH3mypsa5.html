@@ -1,0 +1,57 @@
+<p>这是来自搅拌机的一份快照！在此快照中，旧世界边缘附近的世界生成将进行调整，以实现更平滑的过渡！这是该系统的首个迭代版本，我们预计会不断改进。请记住，如果你现在尝试，结果将永久保存到你的世界中——众所周知，那是相当长的时间。有备无患，在尝试之前请先备份！</p>
+<p>另外，现有区块下方的空间现在会被填充，但只会用深板岩填充。我们之后会在这个位置添加完整的洞穴生成，所以如果你希望在世界上拥有它，请在尝试之前先备份！</p>
+<p>由于此快照对地形生成进行了一些更新，种子已再次洗牌，因此世界看起来不会与上一个快照相同。我们预计此快照之后世界种子将保持稳定。</p>
+<p>哦，对了，我们提到过备份是个好主意吗？</p>
+<h1>21w43a 的新特性</h1>
+<ul>
+<li>升级世界时，旧世界与新世界生成的边缘现在会被调整</li>
+</ul>
+<h2>旧世界的升级</h2>
+<ul>
+<li>在靠近旧区块生成新地形时，会对地形进行调节，以更好地匹配边界处的现有地形</li>
+<li>在旧区块中，如果 y=0 处有基岩，其下方的柱状区域将被深板岩填充<ul>
+<li>在此快照中升级的世界将永久保留这些深板岩，因此如果你之后希望在高度 0 以下生成新洞穴，请确保在升级前保留备份</li>
+</ul></li>
+<li>旧区块中 y=0 到 y=4 之间的旧基岩将被深板岩替换</li>
+<li>新的基岩层将放置在 y=-64 处</li>
+</ul>
+<h1>21w43a 中的更改</h1>
+<ul>
+<li>视频设置中的“优先级更新”已更名为“区块构建器”</li>
+<li>减少了河流和海洋海岸线附近被水淹没的洞穴数量</li>
+<li>含水层的水位变化频率降低，因此你更常看到更大范围的一致水位。这意味着地下瀑布稍少一些，地下乘船旅行也稍微容易一些</li>
+<li>岩浆含水层稍微少见一些</li>
+<li>将大型垂滴叶的放置限制在黏土、草方块、泥土、耕地、苔藓块、缠根泥土、灰化土和菌丝上</li>
+</ul>
+<h1>21w43a 中的技术更改</h1>
+<ul>
+<li>方块和流体刻的一些内部细节已被更改，以改善保存时间。虽然其行为应与之前完全一致，但这或许是测试你的红石装置的好时机（当然，是在世界副本或备份上进行）</li>
+<li>区块格式已更新</li>
+</ul>
+<h2>世界数据：区块格式</h2>
+<ul>
+<li>移除了区块的 <code>Level</code>，并将其包含的所有内容上移</li>
+<li>区块的 <code>Level.Entities</code> 已移至 <code>entities</code></li>
+<li>区块的 <code>Level.TileEntities</code> 已移至 <code>block_entities</code></li>
+<li>区块的 <code>Level.TileTicks</code> 和 <code>Level.ToBeTicked</code> 已移至 <code>block_ticks</code></li>
+<li>区块的 <code>Level.LiquidTicks</code> 和 <code>Level.LiquidsToBeTicked</code> 已移至 <code>fluid_ticks</code></li>
+<li>区块的 <code>Level.Sections</code> 已移至 <code>sections</code></li>
+<li>区块的 <code>Level.Structures</code> 已移至 <code>structures</code></li>
+<li>区块的 <code>Level.Structures.Starts</code> 已移至 <code>structures.starts</code></li>
+<li>区块的 <code>Level.Sections[].BlockStates</code> 和 <code>Level.Sections[].Palette</code> 已移至 <code>sections[].block_states</code> 中的容器结构</li>
+<li>区块的 <code>Level.Biomes</code> 现在使用调色板，并位于 <code>sections[].biomes</code> 中的类似容器结构内</li>
+<li>新增 <code>yPos</code>，表示区块中最小区块节的 y 坐标</li>
+<li>新增 <code>below_zero_retrogen</code>，包含用于支持零层以下生成的数据</li>
+<li>新增 <code>blending_data</code>，包含用于支持将新世界生成与现有区块混合的数据</li>
+</ul>
+<h1>21w43a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-131930" target="_blank" rel="noopener noreferrer">MC-131930</a> 暖水深海中生成时没有珊瑚和海泡菜</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156616" target="_blank" rel="noopener noreferrer">MC-156616</a> 恶地地层无法正确生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217379" target="_blank" rel="noopener noreferrer">MC-217379</a> 河豚不会在暖水深海中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236624" target="_blank" rel="noopener noreferrer">MC-236624</a> 暖水深海不计入“探索时光”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236970" target="_blank" rel="noopener noreferrer">MC-236970</a> 恶地的地层在 Y=160 及以上被橙色陶瓦覆盖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238073" target="_blank" rel="noopener noreferrer">MC-238073</a> 装饰器与世界种子无关</li>
+<li><a href="https://bugs.mojang.com/browse/MC-238939" target="_blank" rel="noopener noreferrer">MC-238939</a> 下界中会生成石头</li>
+<li><a href="https://bugs.mojang.com/browse/MC-239397" target="_blank" rel="noopener noreferrer">MC-239397</a> 冰山中会生成岩浆池</li>
+</ul>

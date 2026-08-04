@@ -1,0 +1,45 @@
+<p>我们现在发布了 Minecraft 1.18.2 的首个预发布版。该预发布版引入了数据包自定义洞穴生成以及向世界添加新自定义结构的功能。</p>
+<p>如果一切顺利，我们计划在 2 月 28 日发布此版本。</p>
+<p>挖矿愉快！</p>
+<h1>1.18.2 预发布版 1 中的更改</h1>
+<ul>
+<li>在 32 位环境中运行 Minecraft 的用户将在主菜单中收到关于即将停止支持 32 位环境的警告</li>
+</ul>
+<h1>1.18.2 预发布版 1 中的技术性更改</h1>
+<ul>
+<li>数据包版本现为 9</li>
+<li>现在可以在实验性数据包中添加自定义结构</li>
+<li><code>locate</code> 和 <code>locatebiome</code> 命令现在支持标签（以 <code>#</code> 为前缀以区别于常规 ID）</li>
+<li><code>locate</code> 命令参数现在是一个已配置结构，而非结构类型。例如，你现在可以使用 <code>/locate village_desert</code> 或 <code>/locate shipwreck_beached</code></li>
+<li>大量洞穴生成现在可通过数据包配置</li>
+</ul>
+<h2>可配置的洞穴</h2>
+<ul>
+<li>为密度函数添加了新的注册表（洞穴是通过组合这些函数生成的）</li>
+<li>噪声设置新增字段 <code>noise_router</code>（并移除了几个标志），参见世界生成报告中的 <code>worldgen/noise_settings</code> 文件夹</li>
+<li>噪声路由器将洞穴生成的数据驱动部分与其余代码连接起来</li>
+</ul>
+<h2>已配置结构与结构集</h2>
+<p>游戏现在会生成并存储数据驱动的已配置结构。</p>
+<ul>
+<li>实验性数据包可以添加新的结构集</li>
+<li>位置谓词中的 <code>feature</code> 字段现在引用一个已配置地物</li>
+<li><code>exploration_map</code> 战利品表函数中的 <code>destination</code> 字段现在是一个已配置地物标签 ID</li>
+<li><code>exploration_map</code> 战利品表函数不再自动设置地图的显示名称</li>
+</ul>
+<h3>副作用</h3>
+<p>本次改动影响了一些游戏玩法上的异常现象。</p>
+<ul>
+<li>海豚现在会无论类型如何都更精确地选择最近的结构</li>
+<li>堡垒遗迹的边界框现在与结构的形状更加吻合</li>
+</ul>
+<h1>1.18.2 预发布版 1 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-3524" target="_blank" rel="noopener noreferrer">MC-3524</a> 结构相关生物不会在超平坦类型的世界生成中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-146854" target="_blank" rel="noopener noreferrer">MC-146854</a> 玩家在角落时移动偏向 X 轴</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179315" target="_blank" rel="noopener noreferrer">MC-179315</a> 废弃传送门默认永远不会在超平坦世界中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210612" target="_blank" rel="noopener noreferrer">MC-210612</a> 某些自定义世界中不会生成要塞，尽管 /locate 显示并非如此</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241288" target="_blank" rel="noopener noreferrer">MC-241288</a> 自定义结构的支持已被移除</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244137" target="_blank" rel="noopener noreferrer">MC-244137</a> "level-seed" 选项默认不在 server.properties 中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248532" target="_blank" rel="noopener noreferrer">MC-248532</a> 双持烟花时鞘翅烟花粒子生成在错误的手上</li>
+</ul>

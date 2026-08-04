@@ -1,0 +1,99 @@
+<p>在快照 22w16a 中，一个重温美好旧时光的机会出现了——可以将唱片碎片拼成一张唱片，准确地说，是一张新的音乐唱片！这个快照还带来了更多新音乐，对悦灵进行了调整，最重要的是，它让一些随机的游戏事件变得稍微更可预测。</p>
+<p>尽情享受吧！</p>
+<h1>22w16a 的新特性</h1>
+<ul>
+<li>新增音乐</li>
+<li>新增唱片碎片 5 和音乐唱片 5</li>
+</ul>
+<h2>四首新音乐曲目</h2>
+<ul>
+<li>新曲目名为 Ancestry、Aerie、Firebugs 和 Labyrinthine</li>
+<li>它们会在特定生物群系和主菜单中播放</li>
+</ul>
+<h2>音乐唱片 5</h2>
+<p>游戏新增了一张音乐唱片。</p>
+<ul>
+<li>与其他唱片不同，它只能通过找到 9 个唱片碎片并将它们合成在一起来获得</li>
+<li>这些唱片碎片可以罕见地在远古城市的箱子中找到</li>
+</ul>
+<h1>22w16a 中的更改</h1>
+<ul>
+<li>悦灵调整</li>
+<li>改善了许多游戏元素的可预测性</li>
+<li>青蛙现在可以在草方块、泥巴、苔藓地毯、红树根和沾泥的红树根上生成</li>
+<li>蛙明灯现在可以被活塞推动</li>
+</ul>
+<h2>悦灵调整</h2>
+<ul>
+<li>悦灵的生命值从 10 提升至 20</li>
+<li>投出物品后的延迟从 5 秒降低至 3 秒</li>
+<li>物品搜索范围从 9 提升至 32</li>
+<li>移动速度变化：<ul>
+<li>悦灵在单纯游荡时速度变慢</li>
+<li>悦灵在收集物品、飞向玩家或飞向音符盒时速度变快</li>
+</ul></li>
+<li>根据社区反馈更改了投掷弧线</li>
+</ul>
+<h2>随机事件的可预测性</h2>
+<p>某些随机事件现在更加可预测，并且不再可能出现极端行为。</p>
+<ul>
+<li>投掷器/发射器掉落物品的位置和速度</li>
+<li>容器被破坏时生成的物品的位置和速度</li>
+<li>生物随机化的 <code>follow_range</code> 组件属性</li>
+<li>骷髅陷阱生成出的马的速度</li>
+<li>烈焰人的随机位置以及烈焰人弹射物的随机速度</li>
+<li>箭的随机伤害比例和速度</li>
+<li>烟花火箭的随机飞行路径</li>
+<li>钓鱼竿的浮动模式以及上钩时间</li>
+</ul>
+<h1>22w16a 中的技术性更改</h1>
+<ul>
+<li><code>LWJGL</code> 库已更新至版本 3.3.1</li>
+<li>向 F3 调试屏幕添加了堆内存分配指标</li>
+<li>添加了 doWardenSpawning 游戏规则</li>
+<li>画作的更新</li>
+</ul>
+<h2>画作</h2>
+<ul>
+<li>在生存模式中可放置的画作现在可以通过 <code>painting_variant/placeable</code> 标签控制</li>
+<li>添加了来自基岩版的未使用的画作（<code>earth</code>、<code>wind</code>、<code>fire</code>、<code>water</code>）<ul>
+<li>这些画作默认不可放置，但可以通过数据包添加</li>
+</ul></li>
+</ul>
+<h1>22w16a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-81870" target="_blank" rel="noopener noreferrer">MC-81870</a> 编辑画作的实体数据后，直到区块重新加载才会在游戏中生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111809" target="_blank" rel="noopener noreferrer">MC-111809</a> 当实体数据快速更新时，画作不再渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187188" target="_blank" rel="noopener noreferrer">MC-187188</a> 画作的 NBT 和注册表包含一个拼写错误：应为“Motif”而不是“Motive”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226184" target="_blank" rel="noopener noreferrer">MC-226184</a> 美西螈在寻路前往水中时有时会掉进宽洞里</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228049" target="_blank" rel="noopener noreferrer">MC-228049</a> 美西螈无法穿过开启的门寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-228174" target="_blank" rel="noopener noreferrer">MC-228174</a> 美西螈尝试穿过 2 格高的墙寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-244957" target="_blank" rel="noopener noreferrer">MC-244957</a> 在社交互动屏幕中，使用 Tab 键时“搜索”选项的标签顺序不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-245001" target="_blank" rel="noopener noreferrer">MC-245001</a> 社交互动菜单中的“使用 Microsoft 帐户管理”按钮未居中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249084" target="_blank" rel="noopener noreferrer">MC-249084</a> 放置蝌蚪桶时没有声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249092" target="_blank" rel="noopener noreferrer">MC-249092</a> 去皮红树原木、去皮红树木和红树木在创造模式物品栏中的顺序不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249176" target="_blank" rel="noopener noreferrer">MC-249176</a> 蛙明灯不会在地图上显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249193" target="_blank" rel="noopener noreferrer">MC-249193</a> 青蛙无法穿过开启的门寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249217" target="_blank" rel="noopener noreferrer">MC-249217</a> 蛙明灯旁边的流体液面过低</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249245" target="_blank" rel="noopener noreferrer">MC-249245</a> 海龟无法穿过开启的门寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249246" target="_blank" rel="noopener noreferrer">MC-249246</a> 炽足兽无法穿过开启的门寻路</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249265" target="_blank" rel="noopener noreferrer">MC-249265</a> 某些方块无法放置在蛙明灯上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249459" target="_blank" rel="noopener noreferrer">MC-249459</a> 仙人掌不会被蛙明灯破坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249663" target="_blank" rel="noopener noreferrer">MC-249663</a> 某些鹦鹉模仿声音的字幕与原声音的字幕不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249679" target="_blank" rel="noopener noreferrer">MC-249679</a> 监守者的嗅探动画和行为的激活不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249715" target="_blank" rel="noopener noreferrer">MC-249715</a> 悦灵死亡时不会掉落它们手持的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249766" target="_blank" rel="noopener noreferrer">MC-249766</a> 悦灵在被给予物品后，如果它们还没有拾取任何物品，则可能会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249790" target="_blank" rel="noopener noreferrer">MC-249790</a> 悦灵会跟随旁观模式下的玩家，并为其掉落物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249838" target="_blank" rel="noopener noreferrer">MC-249838</a> 悦灵一旦开始移动就会失去闲置动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249855" target="_blank" rel="noopener noreferrer">MC-249855</a> 一致性问题：Java 版中悦灵没有飞行动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249912" target="_blank" rel="noopener noreferrer">MC-249912</a> minecraft:ancient_city/city_center_3 比其他远古城市中心矮一格</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249928" target="_blank" rel="noopener noreferrer">MC-249928</a> 红树树根在生成时不会更新周围的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250039" target="_blank" rel="noopener noreferrer">MC-250039</a> 监守者会对世界边界外的生物发怒</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250040" target="_blank" rel="noopener noreferrer">MC-250040</a> 监守者能听到世界边界之外的生物的声音</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250041" target="_blank" rel="noopener noreferrer">MC-250041</a> 监守者可以在世界边界外生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250044" target="_blank" rel="noopener noreferrer">MC-250044</a> 当树生长时，观察者不会检测到红树根</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250094" target="_blank" rel="noopener noreferrer">MC-250094</a> 监守者在钻出或钻入时会忽略 /kill 的执行</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250095" target="_blank" rel="noopener noreferrer">MC-250095</a> 监守者可以在非常狭窄的地方生成，导致其窒息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250293" target="_blank" rel="noopener noreferrer">MC-250293</a> “allay_dust”粒子未被使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250294" target="_blank" rel="noopener noreferrer">MC-250294</a> 一致性问题：悦灵的物品检测范围比基岩版小得多</li>
+</ul>

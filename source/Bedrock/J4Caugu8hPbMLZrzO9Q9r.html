@@ -1,0 +1,176 @@
+<p>A new Minecraft update is ready to play! Since releasing the Trails &#x26; Tales update, the team has been hard at work on even more improvements to the game. Here are just a few of the highlights:</p>
+<ul>
+<li>Players can now sneak under 1.5 block gaps</li>
+<li>Shovels are no longer needed to craft Boats</li>
+<li>Many more actions now emit vibrations detected by Sculk Sensors</li>
+<li>Fixes to over 50 community-reported issues</li>
+</ul>
+<h1>Vanilla Parity</h1>
+<h2>Short Sneaking</h2>
+<ul>
+<li>Player's hitbox height now reduces to 1.5 blocks while sneaking<ul>
+<li>Sneaking will automatically be initiated while stuck in a gap of less than 1.8 blocks</li>
+<li>Sneaking will lower the player camera height respective of these changes</li>
+<li>Sneaking now requires enough space to stand in order to exit sneaking</li>
+<li>Players will transition from swimming to sneaking if they are unable to stand up but would be able to sneak</li>
+</ul></li>
+<li>Players are no longer able to sneak while riding (<a href="https://bugs.mojang.com/browse/MCPE-170613" target="_blank" rel="noopener noreferrer">MCPE-170613</a>)</li>
+<li>Players will no longer suffocate when short sneaking in certain scenarios</li>
+<li>Players will no longer suffocate when riding on a Camel in 2 block gaps (<a href="https://bugs.mojang.com/browse/MCPE-166451" target="_blank" rel="noopener noreferrer">MCPE-166451</a>)</li>
+<li>Players will no longer be pushed slightly when short sneaking is by being pushed by a block (<a href="https://bugs.mojang.com/browse/MCPE-166411" target="_blank" rel="noopener noreferrer">MCPE-166411</a>)</li>
+<li>Fixed many interactions where being forced into sneaking acted the same as holding the sneak button (<a href="https://bugs.mojang.com/browse/MCPE-170610" target="_blank" rel="noopener noreferrer">MCPE-170610</a>)</li>
+</ul>
+<h2>Other Changes</h2>
+<ul>
+<li>Items dropped by storage entities are now centered inside the nearest block (<a href="https://bugs.mojang.com/browse/MCPE-160189" target="_blank" rel="noopener noreferrer">MCPE-160189</a>)</li>
+<li>Shovel has been removed from Boat recipe</li>
+<li>Barrel recipe has been modified to use Planks instead of Sticks</li>
+<li>The Cobweb to String recipe has been removed</li>
+<li>Fixed a bug where Zombie Villager did not drop given item after curing (<a href="https://bugs.mojang.com/browse/MCPE-163670" target="_blank" rel="noopener noreferrer">MCPE-163670</a>)</li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Crawling</h2>
+<ul>
+<li>Added the ability to crawl behind the Short Sneaking and Crawling Experimental toggle</li>
+<li>Created new player crawling animation</li>
+<li>Players will now begin crawling when in a 1 block gap, similar to sneaking</li>
+<li>Crawling is the same speed as sneaking</li>
+<li>Players will automatically stand up or begin sneaking if they leave the 1 block gap</li>
+<li>Players will begin swimming if they enter water while crawling, or vice-versa</li>
+<li>Player's model is now centered around their hitbox when swimming (<a href="https://bugs.mojang.com/browse/MCPE-122663" target="_blank" rel="noopener noreferrer">MCPE-122663</a>)</li>
+<li>Players will now always spawn projectiles from the camera position when sneaking, swimming, or gliding</li>
+<li>Players will now spawn particle effects when eating in the correct position if they are sneaking, swimming, or gliding</li>
+<li>Loyalty Tridents will always return to the player's camera</li>
+<li>Players will no longer be stuck inside Cauldrons or Composters when crawling inside with a Trapdoor (<a href="https://bugs.mojang.com/browse/MCPE-170836" target="_blank" rel="noopener noreferrer">MCPE-170836</a>)</li>
+<li>The paper doll will now show up properly when crawling</li>
+<li>Fixed an issue where gliding or swimming could sometimes give the player an incorrect bounding box (<a href="https://bugs.mojang.com/browse/MCPE-170882" target="_blank" rel="noopener noreferrer">MCPE-170882</a>)</li>
+</ul>
+<h2>Recipe Unlocking</h2>
+<ul>
+<li>Recipe unlocking - now in Bedrock!<ul>
+<li>Added recipe unlocking as an experiment</li>
+<li>Collect materials to unlock relevant recipes</li>
+<li>A notification will tell you when you've found a new crafting material</li>
+<li>Picking up an item teaches you how to craft that item. Great for when a friend gives you a tool you haven't crafted before</li>
+<li>We'd love to hear what you think of this feature, so please send us your feedback at <a href="https://aka.ms/MCRecipeUnlocks" target="_blank" rel="noopener noreferrer">aka.ms/MCRecipeUnlocks</a></li>
+</ul></li>
+</ul>
+<h1>Fixes and Changes</h1>
+<h2>General</h2>
+<ul>
+<li>Fixed the "Communication Error" message appearing when leaving a Local Network game as the host on Nintendo Switch</li>
+<li>Reduce cases where players might see 'Unable to connect' errors due to 'Expired Auth from Discovery' (<a href="https://bugs.mojang.com/browse/MCPE-170814" target="_blank" rel="noopener noreferrer">MCPE-170814</a>)</li>
+</ul>
+<h2>Gameplay</h2>
+<ul>
+<li>Camera position is now used for audio system listening and ambient sounds</li>
+<li>Previously the player position and rotation were sometimes used for audio listening</li>
+<li>This effectively flips audio panning when using 'third person front' camera perspective</li>
+</ul>
+<h2>Mobs</h2>
+<ul>
+<li>Farmer Villagers will now interact with Torchflower Seeds and Pitcher Pods. They can pick up the seeds and plant them, but they will not harvest the Torchflower or Pitcher Crop (<a href="https://bugs.mojang.com/browse/MCPE-169758" target="_blank" rel="noopener noreferrer">MCPE-169758</a>)</li>
+<li>The sound played when a Camel is dashing is no longer played repeatedly (<a href="https://bugs.mojang.com/browse/MCPE-164064" target="_blank" rel="noopener noreferrer">MCPE-164064</a>)</li>
+<li>Fixed issue with Jump Boost effect not affecting Magma Cubes (<a href="https://bugs.mojang.com/browse/MCPE-54294" target="_blank" rel="noopener noreferrer">MCPE-54294</a>)</li>
+<li>Fixed Boats on Ice disappearing when Client-Side Chunk-Generation was enabled (<a href="https://bugs.mojang.com/browse/MCPE-169313" target="_blank" rel="noopener noreferrer">MCPE-169313</a>)</li>
+<li>Mobs are back to normal despawn rate during night (<a href="https://bugs.mojang.com/browse/MCPE-170208" target="_blank" rel="noopener noreferrer">MCPE-170208</a>)</li>
+<li>Camels now play a walking animation when taking damage while standing still (<a href="https://bugs.mojang.com/browse/MCPE-166566" target="_blank" rel="noopener noreferrer">MCPE-166566</a>)</li>
+<li>Sniffer can no longer dig up seeds in the air</li>
+<li>Mobs no longer continue to freeze without Powder Snow if there is a Powder Snow block near the west and north side (<a href="https://bugs.mojang.com/browse/MCPE-169453" target="_blank" rel="noopener noreferrer">MCPE-169453</a>)</li>
+</ul>
+<h2>Blocks</h2>
+<ul>
+<li>Polished Basalt and Chiseled Deepslate can no longer be replaced by Sculk during world generation</li>
+<li>Polished Deepslate can now be replaced by Sculk during world generation (<a href="https://bugs.mojang.com/browse/MCPE-160238" target="_blank" rel="noopener noreferrer">MCPE-160238</a>)</li>
+<li>Decorated Pots crafted with at least one Sherd now have a hover tooltip displaying the Sherd and Brick ingredients</li>
+<li>Players without permission to open/close containers can no longer interact with Chiseled Bookshelves</li>
+<li>The correct sound effect is now played when removing an enchanted Book from Chiseled Bookshelf (<a href="https://bugs.mojang.com/browse/MCPE-168119" target="_blank" rel="noopener noreferrer">MCPE-168119</a>)</li>
+<li>Chiseled Bookshelf slot interactions are now symmetrical (<a href="https://bugs.mojang.com/browse/MCPE-164801" target="_blank" rel="noopener noreferrer">MCPE-164801</a>)</li>
+<li>Cauldron water texture is now the correct version (<a href="https://bugs.mojang.com/browse/MCPE-170427" target="_blank" rel="noopener noreferrer">MCPE-170427</a>)</li>
+<li>Note Block on top of Soul Soil now produces the Harp sound instead of the Snare sound</li>
+<li>Shovel can no longer mine Packed Mud as fast as Pickaxe (<a href="https://bugs.mojang.com/browse/MCPE-161207" target="_blank" rel="noopener noreferrer">MCPE-161207</a>)</li>
+<li>Placing blocks on Top Snow and Tall Grass while moving side to side will no longer cause them to stack up continuously (<a href="https://bugs.mojang.com/browse/MCPE-162785" target="_blank" rel="noopener noreferrer">MCPE-162785</a>)</li>
+<li>Suspicious Gravel and Suspicious Sand blocks now display correctly on Maps</li>
+<li>Mushrooms are now able to spawn on fallen tree trunks (<a href="https://bugs.mojang.com/browse/MCPE-138333" target="_blank" rel="noopener noreferrer">MCPE-138333</a>)</li>
+<li>Conduit now has the correct lighting when placed on ground (<a href="https://bugs.mojang.com/browse/MCPE-169732" target="_blank" rel="noopener noreferrer">MCPE-169732</a>)</li>
+</ul>
+<h2>Items</h2>
+<ul>
+<li>Fixed black pixels being generated on maps when Client-Side Chunk Generation was enabled</li>
+<li>Shield no longer clips inside the Armor Stand model while in the riposte pose</li>
+</ul>
+<h2>Sculk Vibrations</h2>
+<ul>
+<li>Placing, rotating, or removing an item in an Item Frame or in a Glow Item Frame now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-166741" target="_blank" rel="noopener noreferrer">MCPE-166741</a>)</li>
+<li>Charging a Respawn Anchor now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-157409" target="_blank" rel="noopener noreferrer">MCPE-157409</a>)</li>
+<li>Scraping or applying wax to blocks of the Copper block set now emits vibrations</li>
+<li>Switching a Daylight Detector to an Inverted Daylight Detector, or vice-versa, now emits vibrations</li>
+<li>Adding food to a Campfire now emits vibrations</li>
+<li>Adding or removing a Music Disc to a Jukebox now emits vibrations</li>
+<li>Mud turning into Clay now emits vibrations</li>
+<li>Harvesting Sweet Berries now emits vibrations</li>
+<li>Placing an Eye of Ender in an End Portal Frame now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-155372" target="_blank" rel="noopener noreferrer">MCPE-155372</a>)</li>
+<li>Bees now emit vibrations when entering or exiting a Beehive or a Bee Nest (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Interacting with a Composter now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Attaching or detaching a Lead from a Fence now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Attaching or detaching a Lead from a mob now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Dying a Sheep now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Picking Glow Berries now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Farmland turning into Dirt now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Using a Spawn Egg on a Monster Spawner now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Silverfish merging with blocks now emit vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Using a Hoe on Rooted Dirt now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Using a Shovel to create Dirt Paths now emits vibrations (<a href="https://bugs.mojang.com/browse/MCPE-156199" target="_blank" rel="noopener noreferrer">MCPE-156199</a>)</li>
+<li>Placing a Door now emits vibrations</li>
+<li>Planting seeds in Farmland now emits vibrations</li>
+</ul>
+<h2>Realms</h2>
+<ul>
+<li>Updated the contrast ratio of the close button in realms feed menu</li>
+<li>Updated the contrast ratio of the New Post header banner</li>
+<li>An error message is now shown when attempting to upload a cross-platform restricted world to Realms, instead of uploading a corrupted world</li>
+<li>The focus indicator no longer auto selects the Find Friend button when the Members tab is selected</li>
+</ul>
+<h2>Accessibility</h2>
+<ul>
+<li>Improved the Xbox on-screen keyboard experience, including better positioning, updating fields with typed input, and no more screen dimming while on screen keyboard is open (<a href="https://bugs.mojang.com/browse/MCPE-156575" target="_blank" rel="noopener noreferrer">MCPE-156575</a>)</li>
+<li>Added a toggle to all platforms enabling extra-large GUI scaling beyond what the GUI slider allows</li>
+<li>Text-to-speech now reads item names when selecting items in the hotbar</li>
+</ul>
+<h2>User Interface</h2>
+<ul>
+<li>Added support for detecting Brazilian Portuguese as the preferred system language on Nintendo Switch</li>
+<li>Horse and Donkey jump bar, and camel dash bar, now scale properly to the experience bar (<a href="https://bugs.mojang.com/browse/MCPE-156444" target="_blank" rel="noopener noreferrer">MCPE-156444</a>)</li>
+<li>Changed the Pause Menu disconnection text to be platform agnostic</li>
+<li>Fixed an issue that caused the inventory to get locked up after auto placing (<a href="https://bugs.mojang.com/browse/MCPE-46795" target="_blank" rel="noopener noreferrer">MCPE-46795</a>)</li>
+<li>Imported worlds now get their last played date modified to the time they were imported</li>
+<li>Reordered the gamepad tooltips for UI screens so that the buttons align with the same side as a controller</li>
+</ul>
+<h2>Mouse Input</h2>
+<ul>
+<li>Default chat duration is now set to 10 seconds while default toast notification duration remains at 3 seconds</li>
+<li>Improved handling of simultaneous mouse clicks, triggering each individual associated action/response</li>
+<li>Fixed issues with unresponsive or laggy input when using mouse together with a controller (<a href="https://bugs.mojang.com/browse/MCPE-167447" target="_blank" rel="noopener noreferrer">MCPE-167447</a>)</li>
+<li>Text-to-speech now reads "Slash button" when hovering over the "/" button in the chat screen</li>
+</ul>
+<h2>Graphical</h2>
+<ul>
+<li>Fixed issues with highlighted blocks and mob shadows appearing through the Pumpkin head overlay on Switch</li>
+<li>Rendering of snow or rain is now based on camera position instead of player position</li>
+<li>Shields no longer flicker when held in both hands on RTX</li>
+<li>Fixed sleep and camera fade effect not covering the screen until after first-person rendering happens</li>
+<li>Underwater and fog effects are now based on camera position rather than player position</li>
+<li>Fancy Leaves setting is now applied immediately and will no longer cause x-ray effect (<a href="https://bugs.mojang.com/browse/MCPE-123608" target="_blank" rel="noopener noreferrer">MCPE-123608</a>)</li>
+<li>Fixed player capes not properly flapping when moving forward but looking sideways (fixed for real this time!) (<a href="https://bugs.mojang.com/browse/MCPE-153446" target="_blank" rel="noopener noreferrer">MCPE-153446</a>)</li>
+</ul>
+<h1>Technical Updates</h1>
+<h2>Updated Add-On Template Packs</h2>
+<ul>
+<li>Updated Add-On templates for 1.20.10 with new resources, behaviors, and documentation are available to download at <a href="https://aka.ms/MCAddonPacks" target="_blank" rel="noopener noreferrer">aka.ms/MCAddonPacks</a></li>
+</ul>
+<h2>Dedicated Server</h2>
+<ul>
+<li><strong>Note for Linux users:</strong> Ubuntu 18.04 LTS (Bionic Beaver) will reach End of Standard Support in 2023. Accordingly, the Linux Minecraft Dedicated Server will also raise its minimum target Ubuntu version to 20.04 LTS (Focal Fossa) in a later 1.20 update (exact release to be determined). Minecraft server operators using Ubuntu are encouraged to prepare for this transition by updating their deployments to 20.04 LTS as soon as possible.</li>
+<li>Fixed invalid entries in allowlist.json causing a crash (<a href="https://bugs.mojang.com/browse/BDS-18133" target="_blank" rel="noopener noreferrer">BDS-18133</a>)</li>
+</ul>
+<p>The full list of technical changes can be viewed in the <a href="https://feedback.minecraft.net/hc/en-us/articles/17381681401357" target="_blank" rel="noopener noreferrer">full changelog</a>.</p>

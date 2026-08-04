@@ -1,0 +1,149 @@
+<p>Another pre-release is now available for Minecraft: Java Edition! This pre-release fixes a bunch of bugs, but we also made a few minor tweaks. The Nether Update is closing in and we aim to release the update within a couple of weeks.</p>
+<h1>Changes in 1.16 Pre-release 3</h1>
+<p>​</p>
+<ul>
+<li>Food can now be placed on unlit campfires</li>
+<li>Made Nether Fortresses slightly more common</li>
+<li>Visibility under lava is now slightly better when under the effect of fire resistance</li>
+<li>Piglins now hear you break a chest or block of gold (or similar) even if your are our of line of sight, and will assume you are stealing</li>
+<li>Game rule descriptions now span multiple lines if needed on the game rules screen</li>
+<li>A loading screen is now displayed while the game is reading world data for loading, creating or re-creating a world</li>
+<li>The game will now attempt to recover worlds broken in 1.16 Pre-release 1</li>
+</ul>
+<p>​</p>
+<h1>Technical changes in 1.16 Pre-release 3</h1>
+<p>​
+Region files are now only opened in synchronous mode on Windows, not on other operating systems. Status of this feature can be manually controlled by following options:</p>
+<ul>
+<li>For dedicated servers: <code>sync-chunk-writes</code> within <code>server.properties</code></li>
+<li>For clients: <code>syncChunkWrites</code> within <code>options.txt</code></li>
+</ul>
+<h1>Fixed Bugs in 1.16 Pre-Release 3</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-13823" target="_blank" rel="noopener noreferrer">MC-13823</a> Leads are incorrectly positioned on certain entities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-14680" target="_blank" rel="noopener noreferrer">MC-14680</a> Lead is shifted upwards or downwards based on leashed entity height</li>
+<li><a href="https://bugs.mojang.com/browse/MC-27535" target="_blank" rel="noopener noreferrer">MC-27535</a> Mobs can sometimes still despawn, even if named with a name tag</li>
+<li><a href="https://bugs.mojang.com/browse/MC-84610" target="_blank" rel="noopener noreferrer">MC-84610</a> Off-hand hotkey doesn't work in inventories</li>
+<li><a href="https://bugs.mojang.com/browse/MC-131286" target="_blank" rel="noopener noreferrer">MC-131286</a> Attack will use right hand instead of left hand when swimming (main hand: left)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134608" target="_blank" rel="noopener noreferrer">MC-134608</a> Certain Spawner Tag Conditions Induce Game Crash</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143473" target="_blank" rel="noopener noreferrer">MC-143473</a> Teleporting a mob while it is pathfinding will make it navigate back to where it was originally going</li>
+<li><a href="https://bugs.mojang.com/browse/MC-152157" target="_blank" rel="noopener noreferrer">MC-152157</a> "Marie Stålkrantz" is not the right color in game credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159371" target="_blank" rel="noopener noreferrer">MC-159371</a> Leads are incorrectly positioned on bees</li>
+<li><a href="https://bugs.mojang.com/browse/MC-159502" target="_blank" rel="noopener noreferrer">MC-159502</a> Bees don't avoid water; killing themselves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160520" target="_blank" rel="noopener noreferrer">MC-160520</a> Bee's wandering AI tries to go through three-way corners</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163921" target="_blank" rel="noopener noreferrer">MC-163921</a> Placing a block while looking at redstone ore plays no sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166346" target="_blank" rel="noopener noreferrer">MC-166346</a> Transparent blocks do not render properly with tripwire above</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166880" target="_blank" rel="noopener noreferrer">MC-166880</a> Pufferfish spikes model seems to be broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167043" target="_blank" rel="noopener noreferrer">MC-167043</a> Enchantment glint does only apply to the handle of shields with banners</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169008" target="_blank" rel="noopener noreferrer">MC-169008</a> Using End portal in the Nether teleports the player to the End, but at the same coordinates the player was in the Nether</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171618" target="_blank" rel="noopener noreferrer">MC-171618</a> Players wearing armor take less damage from burning when standing in fire under certain conditions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171810" target="_blank" rel="noopener noreferrer">MC-171810</a> Some Mojang employees are not mentioned in the credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171969" target="_blank" rel="noopener noreferrer">MC-171969</a> Fall damage is negated when stepping up after falling</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172053" target="_blank" rel="noopener noreferrer">MC-172053</a> Nether particles get stuck on the bottom of blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172105" target="_blank" rel="noopener noreferrer">MC-172105</a> When a piglin is dancing, targeting or looking at an item, the chestplate the piglin is wearing does not adjust to the piglin's pose</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172110" target="_blank" rel="noopener noreferrer">MC-172110</a> Texture of turtle shells is missing when worn by a piglin or zombified piglin</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172871" target="_blank" rel="noopener noreferrer">MC-172871</a> Unable to spawn wither in horizontal arrangement below y level 2</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173310" target="_blank" rel="noopener noreferrer">MC-173310</a> Observer powered texture doesn't match unpowered</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173404" target="_blank" rel="noopener noreferrer">MC-173404</a> Desync when mounting an entity while sneaking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173825" target="_blank" rel="noopener noreferrer">MC-173825</a> Bats break turtle eggs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176094" target="_blank" rel="noopener noreferrer">MC-176094</a> Baby zombified piglin chicken jockeys can spawn riding striders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177336" target="_blank" rel="noopener noreferrer">MC-177336</a> 'Failed to access level' when opening a world from a CIFS mount on Ubuntu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177530" target="_blank" rel="noopener noreferrer">MC-177530</a> The new minecraft:attributes registry is plural, while all the others are singular</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177542" target="_blank" rel="noopener noreferrer">MC-177542</a> Chunk loading and saving is extremely slow when sync-chunk-writes=true</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177626" target="_blank" rel="noopener noreferrer">MC-177626</a> Spruce generation is broken</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177694" target="_blank" rel="noopener noreferrer">MC-177694</a> Zombified Piglin Spawn Egg is placed before Zombie Villager Spawn Egg in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177712" target="_blank" rel="noopener noreferrer">MC-177712</a> Nether portal blocks do not have loot tables</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177795" target="_blank" rel="noopener noreferrer">MC-177795</a> Overworld music can start playing in the Nether</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177863" target="_blank" rel="noopener noreferrer">MC-177863</a> Shroomlights cannot be composted</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177876" target="_blank" rel="noopener noreferrer">MC-177876</a> Striders are now much rarer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178010" target="_blank" rel="noopener noreferrer">MC-178010</a> Lena Raine does not appear in credits</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178338" target="_blank" rel="noopener noreferrer">MC-178338</a> Striders only get warm when lava touches their legs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179140" target="_blank" rel="noopener noreferrer">MC-179140</a> Sea guardians have an odd swimming behavior</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180603" target="_blank" rel="noopener noreferrer">MC-180603</a> Wrong structures are generated in superflat worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181630" target="_blank" rel="noopener noreferrer">MC-181630</a> Advancement trigger "minecraft:tick" does not support standard "player" predicate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181813" target="_blank" rel="noopener noreferrer">MC-181813</a> Edit "g"ame "r"ules are not capitalized in the Game Rules menu title</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181884" target="_blank" rel="noopener noreferrer">MC-181884</a> Falling quickly/Flying with Elytra/Swimming with Riptide Trident and throwing a projectile will cause it to hit the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182076" target="_blank" rel="noopener noreferrer">MC-182076</a> Horse jumping sound is unused</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182249" target="_blank" rel="noopener noreferrer">MC-182249</a> Problems with potted_cactus.json block model file</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182766" target="_blank" rel="noopener noreferrer">MC-182766</a> Recipe book search function does not work if recipe book was not open before</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182909" target="_blank" rel="noopener noreferrer">MC-182909</a> Esc from Customised World's Biome selection screen kicks us back to main menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183018" target="_blank" rel="noopener noreferrer">MC-183018</a> When sneaking while flying underwater in Creative, the player exits flying mode after a few seconds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183402" target="_blank" rel="noopener noreferrer">MC-183402</a> Tutorial doesn't advance when breaking nether tree</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183554" target="_blank" rel="noopener noreferrer">MC-183554</a> Ruined portals generated in lava lakes unnaturally displace lava, resulting in weird borders</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183588" target="_blank" rel="noopener noreferrer">MC-183588</a> Stray emerald block in structure bastion/treasure/big_air_full</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183594" target="_blank" rel="noopener noreferrer">MC-183594</a> The 5th large inner and outer hoglin stables do not generate in bastions</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183599" target="_blank" rel="noopener noreferrer">MC-183599</a> Some hoglin stable stair structures do not generate</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183762" target="_blank" rel="noopener noreferrer">MC-183762</a> Description of F3+N in help menu still describes the old functionality</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183809" target="_blank" rel="noopener noreferrer">MC-183809</a> Large Oak Trees replace blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183880" target="_blank" rel="noopener noreferrer">MC-183880</a> Distracting baby piglins with gold grants the 'Oh Shiny' advancement</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183915" target="_blank" rel="noopener noreferrer">MC-183915</a> Wall Heads &#x26; Skulls are slightly offset from block selection outline</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183931" target="_blank" rel="noopener noreferrer">MC-183931</a> nether fortress mobs no longer spawn in extended bounding box</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183933" target="_blank" rel="noopener noreferrer">MC-183933</a> show_text tellraw hover events don't work for components that need resolving (nbt, score, selector)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184093" target="_blank" rel="noopener noreferrer">MC-184093</a> Using an end gateway teleports the player half a block too high</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184250" target="_blank" rel="noopener noreferrer">MC-184250</a> Font of the enchantments displayed in the enchanting table is italic</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184608" target="_blank" rel="noopener noreferrer">MC-184608</a> "Unknown biome, defaulting to plains" error upon launching the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184612" target="_blank" rel="noopener noreferrer">MC-184612</a> Import Settings "s" isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184613" target="_blank" rel="noopener noreferrer">MC-184613</a> End Stone generates in Floating Islands setting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184644" target="_blank" rel="noopener noreferrer">MC-184644</a> Cave buffet generator generates with netherrack, even if using a non-nether biome</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184653" target="_blank" rel="noopener noreferrer">MC-184653</a> [Crash] "java.lang.IllegalArgumentException: value already present:" Game crashes when worldgen dimension type presets are not unique</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184675" target="_blank" rel="noopener noreferrer">MC-184675</a> Superflat void preset doesn't have a starting platform again</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184699" target="_blank" rel="noopener noreferrer">MC-184699</a> '/spreadplayers under' does not prevent invalid values</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184723" target="_blank" rel="noopener noreferrer">MC-184723</a> The "i" in "World Type: Floating islands" is not capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184757" target="_blank" rel="noopener noreferrer">MC-184757</a> [Crash] "java.lang.NullPointerException: Ticking memory connection" on loading a dimension with debug chunk generator</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184887" target="_blank" rel="noopener noreferrer">MC-184887</a> You can spawn in the bedrock ceiling of a Caves world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184900" target="_blank" rel="noopener noreferrer">MC-184900</a> Newline in tellraw adds a space at the beginning of the new line</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184984" target="_blank" rel="noopener noreferrer">MC-184984</a> Game crashes after generating multiple worlds in succession</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185004" target="_blank" rel="noopener noreferrer">MC-185004</a> [Crash] java.lang.NullPointerException Crash on entering end/nether portal when dimension is removed in worldgen settings</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185164" target="_blank" rel="noopener noreferrer">MC-185164</a> Bottom half of icebergs always generate at y=62 regardless of sea_level</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185285" target="_blank" rel="noopener noreferrer">MC-185285</a> Entering the End or the Nether after creating and reentering a debug world crashes the game</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185299" target="_blank" rel="noopener noreferrer">MC-185299</a> Villagers cannot be summoned with a specific type unless you also specify a profession</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185363" target="_blank" rel="noopener noreferrer">MC-185363</a> sync-chunk-writes often takes over a minute to close a world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185417" target="_blank" rel="noopener noreferrer">MC-185417</a> Maps reset on upgrade</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185616" target="_blank" rel="noopener noreferrer">MC-185616</a> Turtle eggs can't hatch on red sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185949" target="_blank" rel="noopener noreferrer">MC-185949</a> Copy "C" in Click to Copy to Clipboard isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186078" target="_blank" rel="noopener noreferrer">MC-186078</a> Transparent items render in front of transparent blocks on some graphics cards when graphics setting is set to fabulous</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186084" target="_blank" rel="noopener noreferrer">MC-186084</a> Piglin head and torso floats and detaches during celebration dance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186085" target="_blank" rel="noopener noreferrer">MC-186085</a> Player is unable to interact with the world after dismounting a boat while it's moving</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186091" target="_blank" rel="noopener noreferrer">MC-186091</a> When you stop swimming, "diving underwater" sound occurs and vision flashes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186092" target="_blank" rel="noopener noreferrer">MC-186092</a> The head of a piglin becomes offset after performing their celebration dance</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186097" target="_blank" rel="noopener noreferrer">MC-186097</a> Pigs are moving very slowly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186248" target="_blank" rel="noopener noreferrer">MC-186248</a> "m" in Safe Mode button isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186263" target="_blank" rel="noopener noreferrer">MC-186263</a> "b" &#x26; "l" in Create Backup &#x26; Load isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186337" target="_blank" rel="noopener noreferrer">MC-186337</a> The lighting of the "Client" doesn't correspond to that of the "Server"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186353" target="_blank" rel="noopener noreferrer">MC-186353</a> The "s" and "m" in "Edit sign message" are uncapitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186403" target="_blank" rel="noopener noreferrer">MC-186403</a> Swimming up on the side of flowing water no longer prevents the player from drowning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186492" target="_blank" rel="noopener noreferrer">MC-186492</a> Lily pad placement in creative mode causes item on hotbar to flicker/vanish</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186905" target="_blank" rel="noopener noreferrer">MC-186905</a> "Superflat Customization" screen resets every time you open it and does not show previously saved settings</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187363" target="_blank" rel="noopener noreferrer">MC-187363</a> Charged respawn anchors no longer light up blocks around them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187367" target="_blank" rel="noopener noreferrer">MC-187367</a> Netherite recipes show up in crafting table despite requiring a smithing table to use</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187371" target="_blank" rel="noopener noreferrer">MC-187371</a> Game crashes when attempting to change cloud settings on some graphics cards</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187392" target="_blank" rel="noopener noreferrer">MC-187392</a> Items in waterlogged stairs don't float up high enough to be caught by a water stream above the stair</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187394" target="_blank" rel="noopener noreferrer">MC-187394</a> Dying Ender dragons are rendered completely white when using Fabulous graphics</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187402" target="_blank" rel="noopener noreferrer">MC-187402</a> Lighting in the End dimension is much darker when on a server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187405" target="_blank" rel="noopener noreferrer">MC-187405</a> /seed is no longer available without cheats enabled</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187411" target="_blank" rel="noopener noreferrer">MC-187411</a> Particles and clouds not rendering properly behind stained glass and solid blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187437" target="_blank" rel="noopener noreferrer">MC-187437</a> Held item is invisible in inventory menu</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187449" target="_blank" rel="noopener noreferrer">MC-187449</a> Zombie Pigmen/Zombified Piglins do not drop XP and rare drops anymore if killed by anything other than the player while in angered state</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187466" target="_blank" rel="noopener noreferrer">MC-187466</a> Mobs killed in creative mode don't drop experience</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187468" target="_blank" rel="noopener noreferrer">MC-187468</a> Enchantment glint does not render for certain things on "Fabulous" setting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187483" target="_blank" rel="noopener noreferrer">MC-187483</a> The advancement "Two by Two" can be achieved by just breeding turtles</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187504" target="_blank" rel="noopener noreferrer">MC-187504</a> Mobs do not drop rare drop items when killed by a player in Creative Mode</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187552" target="_blank" rel="noopener noreferrer">MC-187552</a> Piglins and Hoglins shake in the nether on servers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187585" target="_blank" rel="noopener noreferrer">MC-187585</a> Dolphins with NoAI:1b can drown</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187592" target="_blank" rel="noopener noreferrer">MC-187592</a> Piglins constantly picking up gold nuggets and dropping them</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187611" target="_blank" rel="noopener noreferrer">MC-187611</a> White squares when in first person with fabulous video settings and F1</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187618" target="_blank" rel="noopener noreferrer">MC-187618</a> Demo world not saving after saving and quitting then quiting out of minecraft</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187673" target="_blank" rel="noopener noreferrer">MC-187673</a> [Crash] "java.lang.IllegalStateException: Unregistered dimension type"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187676" target="_blank" rel="noopener noreferrer">MC-187676</a> "d" in Reset to default isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187677" target="_blank" rel="noopener noreferrer">MC-187677</a> "b" in Go back isn't capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187679" target="_blank" rel="noopener noreferrer">MC-187679</a> Bees stay angry far longer</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187730" target="_blank" rel="noopener noreferrer">MC-187730</a> Newly spawned Zombified Piglins do not pick up the aggro of older spawned aggravated Zombified Piglins</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187739" target="_blank" rel="noopener noreferrer">MC-187739</a> NeutralMob.playerDied(Player) does not return if forgiveDeadPlayers = false</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187796" target="_blank" rel="noopener noreferrer">MC-187796</a> Wolves only use their hostile appearance after being attacked</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187811" target="_blank" rel="noopener noreferrer">MC-187811</a> Ender dragon death animation suddenly flashes right after it has ended</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187978" target="_blank" rel="noopener noreferrer">MC-187978</a> /seed availiable to all players on multiplayer server</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188070" target="_blank" rel="noopener noreferrer">MC-188070</a> Glitched skin while swimming (left hand)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188088" target="_blank" rel="noopener noreferrer">MC-188088</a> Overworld superflat preset no longer generates with terrain decorations</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188216" target="_blank" rel="noopener noreferrer">MC-188216</a> Superflat biome selection overrides block selection on "Create New World" screen</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188393" target="_blank" rel="noopener noreferrer">MC-188393</a> K in "4k" should be capitalized</li>
+</ul>

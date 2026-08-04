@@ -1,0 +1,194 @@
+<p>第一个 1.17 预发布版来了！</p>
+<p>从现在开始，你主要会看到各种 bug 被修复。此外，预发布版不会遵循常规快照的周三发布节奏，所以请留意！</p>
+<p>另外，根据社区的反馈，我们决定在洞穴与山崖第一部分中重新加入蜡烛。蜡烛将在第一部分发布后不久在基岩版中可用。</p>
+<h1>1.17 预发布版 1 的新特性</h1>
+<ul>
+<li>添加了新进度</li>
+</ul>
+<h2>进度</h2>
+<ul>
+<li>添加了“随波逐羊！”进度，要求与山羊一起乘船漂浮。</li>
+<li>添加了“涂蜡”进度，要求对铜块打蜡！</li>
+<li>添加了“刮蜡”进度，要求刮去铜块上的蜡！</li>
+<li>添加了“最可爱的捕食者”进度，要求在桶中捕捉美西螈！</li>
+<li>添加了“友谊的治愈之力！”进度，要求与美西螈并肩作战并赢得战斗。</li>
+<li>添加了“看，发光了！”进度，要求让告示牌发光。</li>
+<li>添加了“轻如兔子”进度，要求穿着皮革靴子走在细雪上。</li>
+<li>添加了“电涌保护器！”进度，要求闪电击中村民附近的避雷针，且不引起火灾。</li>
+<li>添加了“是鸟吗？”进度，要求通过望远镜观察鹦鹉。</li>
+<li>添加了“是气球吗？”进度，要求通过望远镜观察恶魂。</li>
+<li>添加了“是飞机吗？”进度，要求通过望远镜观察龙。</li>
+</ul>
+<h1>1.17 预发布版 1 中的更改</h1>
+<ul>
+<li>蜡烛已重新加入创造模式物品栏。</li>
+<li>蜡烛的合成和染色配方再次可用。</li>
+<li>点燃的蜡烛现在拥有不同的纹理。</li>
+<li>告示牌上的发光文字现在带有外发光，使深色文字在黑暗中更易辨认。</li>
+<li>在制作人员名单中按住空格键现在会加快滚动速度。</li>
+</ul>
+<h1>洞穴与山崖预览</h1>
+<p>下载<a href="https://launcher.mojang.com/v1/objects/233aa01c6db99ffcf95594e384e72671ae279ced/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">更新后的数据包</a>。</p>
+<h1>1.17 预发布版 1 中的技术更改</h1>
+<ul>
+<li>添加了 <code>started_riding</code>、<code>lightning_strike</code> 和 <code>using_item</code> 进度触发器。</li>
+<li>为 <code>effects_changed</code> 触发器添加了 <code>source</code> 条件。</li>
+<li>添加了 <code>lightning_bolt</code> 子谓词。</li>
+<li>为实体谓词添加了 <code>passenger</code>、<code>stepping_on</code> 和 <code>lightning_bolt</code> 属性。</li>
+<li>为玩家子谓词添加了 <code>looking_at</code> 条件。</li>
+<li>将物品谓词中的 <code>item</code> 字段扩展为 <code>items</code>。</li>
+<li>将方块谓词中的 <code>block</code> 字段扩展为 <code>blocks</code>。</li>
+<li>添加了 F3+L 快捷键，用于在游戏中生成并保存性能指标。
+<ul>
+<li>在单人游戏世界中，F3+L 也会包含集成服务器的报告。</li>
+</ul>
+</li>
+<li>移除了调试报告命令（使用 perf start/stop 进行服务器性能测量）。</li>
+<li>专用服务器上的 perf start/stop 命令现在将生成并保存服务器性能指标。</li>
+</ul>
+<h2>进度</h2>
+<h3>新触发器</h3>
+<h4><code>started_riding</code></h4>
+<ul>
+<li>当玩家开始骑乘载具，或实体开始骑乘玩家当前骑乘的载具时触发。</li>
+<li>条件：
+<ul>
+<li><code>player</code> - 开始骑乘的玩家，或船上的乘客之一。</li>
+</ul>
+</li>
+</ul>
+<h4><code>lightning_strike</code></h4>
+<ul>
+<li>当闪电结束时触发（即实体消失时）。</li>
+<li>为服务器上的任何玩家触发。</li>
+<li>条件
+<ul>
+<li><code>player</code> - 此触发器所运行的玩家。</li>
+<li><code>lightning</code> - 闪电实体的谓词。</li>
+<li><code>bystander</code> - 雷击点周围特定区域内未受到伤害的实体之一的谓词。</li>
+</ul>
+</li>
+</ul>
+<h4><code>using_item</code></h4>
+<ul>
+<li>在使用物品的每个游戏刻触发（例如弩、望远镜、钓鱼竿等）。</li>
+<li>条件
+<ul>
+<li><code>player</code> - 使用物品的玩家。</li>
+<li><code>item</code> - 正在使用的物品。</li>
+</ul>
+</li>
+</ul>
+<h3>更改的触发器</h3>
+<h4><code>effects_changed</code></h4>
+<ul>
+<li>添加了 <code>source</code> 触发器，用于匹配触发更改的实体。</li>
+<li>可能为空，当：
+<ul>
+<li>没有实体时（例如，从信标获得的效果）。</li>
+<li>效果是自身施加的。</li>
+<li>效果被移除时。</li>
+</ul>
+</li>
+</ul>
+<h3>更改的谓词</h3>
+<h4>物品谓词</h4>
+<ul>
+<li><code>item</code> 字段已扩展为 <code>items</code>，现在接受物品类型数组。</li>
+</ul>
+<h4>方块谓词</h4>
+<ul>
+<li><code>block</code> 字段已扩展为 <code>blocks</code>，现在接受方块类型数组。</li>
+</ul>
+<h4>实体谓词</h4>
+<ul>
+<li><code>passenger</code> - 直接骑乘此载具的乘客的新子谓词（如果存在，必须匹配一个或多个）。</li>
+<li><code>stepping_on</code> - 实体当前所站方块的位置谓词。</li>
+<li><code>lightning_bolt</code> - 仅对闪电实体有效的子谓词。</li>
+</ul>
+<h4>玩家谓词</h4>
+<ul>
+<li><code>looking_at</code> - 玩家当前正在观看的实体。
+<ul>
+<li>使用与攻击生物相同的视线规则。</li>
+<li>实际检测半径将来可能会更改。</li>
+</ul>
+</li>
+</ul>
+<h3>闪电实体</h3>
+<ul>
+<li><code>blocks_set_on_fire</code> - 此实体点燃的方块数量的范围检查。</li>
+<li><code>entity_struck</code> - 被此闪电击中的实体的谓词（如果存在，必须匹配一个或多个）。</li>
+</ul>
+<h2>性能指标报告</h2>
+<p>这些内容将保存到 <code>debug/profiling/&#x3C;yyyy-MM-dd_HH.mm.ss-[levelname]-[version]>.zip</code> 的 zip 文件中，如果包含在错误报告中，可用于性能回归分析。</p>
+<p>确切的指标、输出格式和名称在不同版本之间可能会有变化。我们的计划是继续迭代要捕获的指标。</p>
+<h3>客户端 F3+L 快捷键</h3>
+<p>在游戏中按 F3+L 将开始记录 10 秒，捕获游戏刻持续时间、已用堆大小以及其他更详细的统计信息。</p>
+<p>在 10 秒结束前再次按 F3+L 将提前结束记录。</p>
+<p>此快捷键始终可用于客户端，即使在多人服务器上，它也会记录客户端性能。</p>
+<h3>专用服务器 perf start/stop 命令</h3>
+<p><code>perf start</code> 将开始记录 10 秒，捕获游戏刻持续时间、已用堆大小以及其他更详细的统计信息。</p>
+<p>在 10 秒结束前执行 <code>perf stop</code> 将提前结束记录。</p>
+<h1>1.17 预发布版 1 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-19690" target="_blank" rel="noopener noreferrer">MC-19690</a> 降低 maxHealth / max_health 可能导致假死。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-65587" target="_blank" rel="noopener noreferrer">MC-65587</a> 加载玩家头颅纹理/玩家皮肤时出现卡顿尖峰。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-104897" target="_blank" rel="noopener noreferrer">MC-104897</a> 放置在 1.9 之前生成的末地传送门上的末影水晶不会重生末影龙。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117708" target="_blank" rel="noopener noreferrer">MC-117708</a> 制作人员名单背景抖动。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118757" target="_blank" rel="noopener noreferrer">MC-118757</a> 增加游戏状态降雨等级值会使游戏越来越卡顿，并扭曲 UI。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148809" target="_blank" rel="noopener noreferrer">MC-148809</a> 结构方块数据长度限制为 12。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163945" target="_blank" rel="noopener noreferrer">MC-163945</a> 交叉的结构可能产生损坏的方块实体（刷怪笼 / 箱子）。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189336" target="_blank" rel="noopener noreferrer">MC-189336</a> 在服务器列表中移动服务器会导致游戏崩溃（ArrayIndexOutOfBoundsException）。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-192889" target="_blank" rel="noopener noreferrer">MC-192889</a> 放置某些头颅或将它们放入实体头部槽时游戏会卡顿。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197942" target="_blank" rel="noopener noreferrer">MC-197942</a> 熔岩池附近的树叶会变成石头（MC-48340 的复发）。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198957" target="_blank" rel="noopener noreferrer">MC-198957</a> 熔岩池附近的末地传送门框架会变成石头。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-202249" target="_blank" rel="noopener noreferrer">MC-202249</a> 在远离已生成区块的新下界区块中激怒被动生物，然后进入下界传送门会导致服务器完全冻结。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203131" target="_blank" rel="noopener noreferrer">MC-203131</a> 将模板池中的权重设置为高值会导致世界卡顿，并可能引发内存不足错误。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203558" target="_blank" rel="noopener noreferrer">MC-203558</a> 有时点燃蜡烛会延迟。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203661" target="_blank" rel="noopener noreferrer">MC-203661</a> 透过遮光玻璃看流动液体时看起来非常暗。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203704" target="_blank" rel="noopener noreferrer">MC-203704</a> 当粒子设置为“最少”时，蜡烛不显示火焰动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-204649" target="_blank" rel="noopener noreferrer">MC-204649</a> 某些生物踩在紫水晶块上时不会发出叮当声。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205035" target="_blank" rel="noopener noreferrer">MC-205035</a> 细雪桶未与雪球或桶在创造模式物品栏中分组。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208604" target="_blank" rel="noopener noreferrer">MC-208604</a> 当主手为空且副手持有已装填的弩时，主手会显示为隐形。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209819" target="_blank" rel="noopener noreferrer">MC-209819</a> 当寻路到正在传送离开的玩家时服务器崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-211601" target="_blank" rel="noopener noreferrer">MC-211601</a> 实体在计划刻处理后被加载，导致探测铁轨、压力板等关闭。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212142" target="_blank" rel="noopener noreferrer">MC-212142</a> 在告示牌上使用发光墨囊后，如果没有同时应用自定义颜色，文字不会显示为明亮。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212146" target="_blank" rel="noopener noreferrer">MC-212146</a> 发光地衣可以在地下结构内悬空生成。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212207" target="_blank" rel="noopener noreferrer">MC-212207</a> 晶洞生成在冰山中。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213062" target="_blank" rel="noopener noreferrer">MC-213062</a> 废弃传送门生成在末地传送门中。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213799" target="_blank" rel="noopener noreferrer">MC-213799</a> 滴水叶在玩家手中未正确持有。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214057" target="_blank" rel="noopener noreferrer">MC-214057</a> 实体同时处于水中/熔岩中时不再显示火焰动画。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214636" target="_blank" rel="noopener noreferrer">MC-214636</a> 小型滴水叶的叶片会相互重叠，导致 z-fighting。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214684" target="_blank" rel="noopener noreferrer">MC-214684</a> 杜鹃花不能放入花盆中。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216276" target="_blank" rel="noopener noreferrer">MC-216276</a> 使用自定义世界生成时，熔岩池会破坏基岩。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218112" target="_blank" rel="noopener noreferrer">MC-218112</a> SynchedEntityData 使用锁的方式不正确。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218831" target="_blank" rel="noopener noreferrer">MC-218831</a> 游戏资源中缺少大量着色器。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218972" target="_blank" rel="noopener noreferrer">MC-218972</a> 如果实体不可见，发光效果轮廓会省略实体的某些部分。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219762" target="_blank" rel="noopener noreferrer">MC-219762</a> 在 BlendedNoise 中使用更高效的噪声混合算法。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221554" target="_blank" rel="noopener noreferrer">MC-221554</a> 在搜索时，山羊刷怪蛋出现在不同船只类型的中间。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221820" target="_blank" rel="noopener noreferrer">MC-221820</a> 不一致：末影人能够捡起盛开的杜鹃花，却无法拿起普通的杜鹃花丛。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223021" target="_blank" rel="noopener noreferrer">MC-223021</a> 在某些 AMD 驱动上 glShaderSource 失败，导致在 1.17 中崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223843" target="_blank" rel="noopener noreferrer">MC-223843</a> enderman_holdable.json 中菌丝体出现了两次。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224159" target="_blank" rel="noopener noreferrer">MC-224159</a> 吸收生命值的心没有凋灵之心效果。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224445" target="_blank" rel="noopener noreferrer">MC-224445</a> 在极佳画质下重新加载资源包会导致屏幕变黑，重复几次后会导致 AMD 驱动崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224778" target="_blank" rel="noopener noreferrer">MC-224778</a> 当 #wall_corals 中存在没有 facing 方块状态的方块，且暖海洋尝试生成时，游戏崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224861" target="_blank" rel="noopener noreferrer">MC-224861</a> 下落方块在着陆时会短暂消失。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224862" target="_blank" rel="noopener noreferrer">MC-224862</a> 杜鹃花和盛开的杜鹃花即使在粘土上也能使用骨粉。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225010" target="_blank" rel="noopener noreferrer">MC-225010</a> 在创造模式中，当光标上有物品时关闭物品栏会将其变成幽灵物品。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225129" target="_blank" rel="noopener noreferrer">MC-225129</a> 玩家在重生前不会消失。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225193" target="_blank" rel="noopener noreferrer">MC-225193</a> 山羊会尝试撞击世界边界外的实体。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225315" target="_blank" rel="noopener noreferrer">MC-225315</a> 告示牌上选中的文字会闪烁。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225404" target="_blank" rel="noopener noreferrer">MC-225404</a> 斧头仍然是苔藓地毯的合适工具。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225722" target="_blank" rel="noopener noreferrer">MC-225722</a> java.lang.IllegalArgumentException: bound must be positive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225773" target="_blank" rel="noopener noreferrer">MC-225773</a> 美西螈在装死时会发出环境音效。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225843" target="_blank" rel="noopener noreferrer">MC-225843</a> 雪层仍可能生成在湖泊上方悬浮。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225850" target="_blank" rel="noopener noreferrer">MC-225850</a> 草、高草丛、花、双花、蕨、大型蕨和树木可以生成在沙子或砾石上。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225853" target="_blank" rel="noopener noreferrer">MC-225853</a> 第一次尝试启动 21w20a 时 Minecraft 有时会崩溃。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225895" target="_blank" rel="noopener noreferrer">MC-225895</a> 悬浮的草仍可能生成在熔岩湖上方。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225916" target="_blank" rel="noopener noreferrer">MC-225916</a> 未涂蜡的氧化铜块不需要至少石质等级即可开采。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225919" target="_blank" rel="noopener noreferrer">MC-225919</a> 化石中的煤矿石可以穿过基岩生成。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225929" target="_blank" rel="noopener noreferrer">MC-225929</a> 物品统计排序无法正常运作。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-225978" target="_blank" rel="noopener noreferrer">MC-225978</a> 未涂蜡的风化铜块在 needs_stone_tool.json 中出现了两次。</li>
+<li><a href="https://bugs.mojang.com/browse/MC-226192" target="_blank" rel="noopener noreferrer">MC-226192</a> 尝试创建新的记分板目标时崩溃：java.lang.NullPointerException: Cannot invoke "String.toLowerCase(java.util.Locale)" because "â˜ƒ" is null</li>
+</ul>

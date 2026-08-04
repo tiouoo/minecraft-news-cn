@@ -1,0 +1,140 @@
+<p>We are now releasing Snapshot 23w14a, containing changes to Sculk blocks and Enchanting Tables, a new Quick Play functionality, an updated logo for Java Edition, a new main menu panorama, and lots of bug fixes!</p>
+<p>Happy mining!</p>
+<h1>Changes</h1>
+<ul>
+<li>Changes to Sculk blocks</li>
+<li>Replaceable blocks no longer block the connection between Enchanting Tables and Bookshelves</li>
+<li>In the Desert Temple, the new room has more of its roof collapsed and one block of Suspicious Sand is always visible in the top layer</li>
+<li>Updated the Minecraft: Java Edition logo</li>
+<li>The main menu background is now a Trails &#x26; Tales panorama</li>
+</ul>
+<h2>Sculk Shrieker</h2>
+<ul>
+<li>Waterlogging them will now silence their shriek sounds</li>
+<li>Added to the Redstone Blocks tab in the creative menu</li>
+</ul>
+<h2>Sculk Sensor</h2>
+<ul>
+<li>For both normal and calibrated Sculk Sensors, the following changes have been made:<ul>
+<li>Default redstone output has been modified to be more reliable for distance calculations</li>
+<li>Now strongly powers the block they are placed on</li>
+</ul></li>
+</ul>
+<h2>Calibrated Sculk Sensor</h2>
+<ul>
+<li>Has an active cooldown of 1 second instead of 2 seconds</li>
+<li>Detects vibrations up to 16 blocks away instead of 8 blocks</li>
+<li>Accepts signals into the calibration input side more consistently with other Redstone components<ul>
+<li>For example, signals can now be received through a block</li>
+</ul></li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>Signs with click commands can now be interacted with even if the Sign is not waxed<ul>
+<li>Signs with non-<code>text</code> chat components can no longer be edited</li>
+</ul></li>
+<li>Added new loot table function called <code>reference</code></li>
+<li>Added support for Quick Play</li>
+<li>Removed the <code>server</code> &#x26; <code>port</code> arguments as their functionality has been replaced by Quick Play</li>
+<li>Changes to tags</li>
+<li>The resource pack version is now 14<ul>
+<li>Updated the sprite layout of <code>minecraft.png</code></li>
+<li>Removed the overriding <code>minecraft.png</code> from the Programmer Art resource pack</li>
+<li>Updated the sprite layout of <code>invite_icon.png</code></li>
+</ul></li>
+</ul>
+<h2>Loot tables</h2>
+<h3><code>reference</code></h3>
+<p>New function <code>reference</code> allows functions to call sub-functions (similar to <code>reference</code> condition).
+Fields:</p>
+<ul>
+<li><code>name</code> - location of function to call</li>
+</ul>
+<h2>Quick Play</h2>
+<ul>
+<li>Added support for four new command line arguments that allow the game to be launched directly into a world</li>
+<li><code>quickPlayPath</code> takes a specified path for logging (relative to the run directory)<ul>
+<li>If a path is provided the following will be logged upon joining a world:<ul>
+<li><code>type</code>: is either <code>singleplayer</code>, <code>multiplayer</code>, or <code>realms</code></li>
+<li><code>identifier</code>: represents the world you want to join<ul>
+<li>For singleplayer, the folder name of the world</li>
+<li>For multiplayer, the IP address of the server</li>
+<li>For realms, the Realms ID</li>
+</ul></li>
+<li><code>port</code>: represents the server port and is only logged for multiplayer</li>
+<li><code>name</code>: The name of the world</li>
+<li><code>gamemode</code>: The gamemode of the world</li>
+<li><code>lastPlayedTime</code>: The time you joined the world</li>
+</ul></li>
+<li>Example:<ul>
+<li><code>--quickPlayPath "quickPlay/log.json"</code> will resolve into <code>.minecraft/quickPlay/log.json</code></li>
+</ul></li>
+</ul></li>
+<li><code>quickPlaySingleplayer</code>, <code>quickPlayMultiplayer</code> and <code>quickPlayRealms</code> all take their respective <code>identifier</code><ul>
+<li>If one of these arguments is provided, the game will try to launch directly into the given world</li>
+<li>Examples:<ul>
+<li><code>--quickPlaySingleplayer "New World"</code></li>
+<li><code>--quickPlayMultiplayer "localhost:25565"</code></li>
+<li><code>--quickPlayRealms "1234"</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>Tags</h2>
+<ul>
+<li>Added <code>replaceable_by_trees</code>, to better express blocks that are replaced when the tree grows through them</li>
+<li>Removed <code>replaceable_plants</code> since it was only used as a subset of the blocks for the tag above, and not as universally</li>
+<li>Added <code>sword_efficient</code>, to represent blocks that are broken slightly faster by a sword than normal</li>
+</ul>
+<h1>Fixed bugs in 23w14a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-2474" target="_blank" rel="noopener noreferrer">MC-2474</a> Transparent blocks placed between bookshelves and enchanting tables negate bonuses received from bookshelves</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138358" target="_blank" rel="noopener noreferrer">MC-138358</a> Levers on top of item frames Z-fighting with blocks in item frames</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155084" target="_blank" rel="noopener noreferrer">MC-155084</a> Horses' armor, reins, and bridles experience z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165773" target="_blank" rel="noopener noreferrer">MC-165773</a> /execute run does not cause syntax error when arguments are missing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176309" target="_blank" rel="noopener noreferrer">MC-176309</a> Illusioner has a few misplaced pixels left in their texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203399" target="_blank" rel="noopener noreferrer">MC-203399</a> Hoppers use the side texture on the bottom</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203406" target="_blank" rel="noopener noreferrer">MC-203406</a> Kelp and seagrass models appear to reference biome tints despite not using any</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212271" target="_blank" rel="noopener noreferrer">MC-212271</a> Glow squid and squid show Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224433" target="_blank" rel="noopener noreferrer">MC-224433</a> Clouds texture contains semi-transparent background</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230792" target="_blank" rel="noopener noreferrer">MC-230792</a> Cat's tail shows Z-Fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237556" target="_blank" rel="noopener noreferrer">MC-237556</a> Legs of black cat model are white at the top</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241314" target="_blank" rel="noopener noreferrer">MC-241314</a> Filled cauldrons' bottom faces are still culled when they should not be</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246459" target="_blank" rel="noopener noreferrer">MC-246459</a> Drowned have some transparent pixels within their inner body texture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249514" target="_blank" rel="noopener noreferrer">MC-249514</a> Button UV appears to be upside-down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251536" target="_blank" rel="noopener noreferrer">MC-251536</a> Desert zombie villager feet still mismatch the sides of the feet</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251537" target="_blank" rel="noopener noreferrer">MC-251537</a> Desert (zombie) villager has solid-color on inner of arm, unlike other villagers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251538" target="_blank" rel="noopener noreferrer">MC-251538</a> Desert villager missing some pixels for the sandals</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252099" target="_blank" rel="noopener noreferrer">MC-252099</a> Incorrect texture mapping in potted mangrove propagule (mirror effect)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254588" target="_blank" rel="noopener noreferrer">MC-254588</a> Miscolored pixel on slowness effect icon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256419" target="_blank" rel="noopener noreferrer">MC-256419</a> Incomplete commands run through aliases don't produce errors</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256540" target="_blank" rel="noopener noreferrer">MC-256540</a> The top texture of the camel's front left leg contains some redundant gray pixels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258939" target="_blank" rel="noopener noreferrer">MC-258939</a> Non-atomic cached state can cause multithreaded crashes</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259873" target="_blank" rel="noopener noreferrer">MC-259873</a> Skeleton/Zombie Horse's chests are outdated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260036" target="_blank" rel="noopener noreferrer">MC-260036</a> Can't plant cactus and sugar cane on suspicious sand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260042" target="_blank" rel="noopener noreferrer">MC-260042</a> Cannot waterlog a decorated pot by using a water bucket or dispenser</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260105" target="_blank" rel="noopener noreferrer">MC-260105</a> The name tags of sniffers are partly inside their models</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260152" target="_blank" rel="noopener noreferrer">MC-260152</a> Sculk sensors are not activated by sniffers digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260202" target="_blank" rel="noopener noreferrer">MC-260202</a> The sound of using the brush isn't affected by blocks</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260237" target="_blank" rel="noopener noreferrer">MC-260237</a> Sniffers can sniff while panicking</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260240" target="_blank" rel="noopener noreferrer">MC-260240</a> Sniffers that are in love sometimes don't attempt to approach one another to breed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260347" target="_blank" rel="noopener noreferrer">MC-260347</a> Falling suspicious sand does not break when reopening the world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260348" target="_blank" rel="noopener noreferrer">MC-260348</a> Sniffers will never dig in normal mud despite being a "sniffer_diggable" block</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260401" target="_blank" rel="noopener noreferrer">MC-260401</a> When Brush is broken in offhand, the broken Particle is the Item in mainhand</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260459" target="_blank" rel="noopener noreferrer">MC-260459</a> Baby sniffers don't sound high pitched when sniffing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260467" target="_blank" rel="noopener noreferrer">MC-260467</a> Torchflower is not grouped with other small flowers in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260478" target="_blank" rel="noopener noreferrer">MC-260478</a> Torchflower crop hitboxes don't change in size according to their age</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260527" target="_blank" rel="noopener noreferrer">MC-260527</a> The coordinates of the sniffer  "minecraft:sniffer_explored_positions" tag do not check the dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260778" target="_blank" rel="noopener noreferrer">MC-260778</a> Sniffer tries to sniff out blocks outside the world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260779" target="_blank" rel="noopener noreferrer">MC-260779</a> Sniffers can dig into blocks outside the world border</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260810" target="_blank" rel="noopener noreferrer">MC-260810</a> Villagers can't pick up torchflower seeds, despite being able to farm torchflowers</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261167" target="_blank" rel="noopener noreferrer">MC-261167</a> Suspicious gravel does not have an assigned tool</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261171" target="_blank" rel="noopener noreferrer">MC-261171</a> You can't plant bamboo on suspicious gravel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261172" target="_blank" rel="noopener noreferrer">MC-261172</a> Pitcher crop hitboxes don't change in size according to their age</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261174" target="_blank" rel="noopener noreferrer">MC-261174</a> Suspicious gravel is not part of the #overworld_carver_replaceables tag, causing carvers to not cut through it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261176" target="_blank" rel="noopener noreferrer">MC-261176</a> Pitchers don't maintain the farmland used to grow it</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261179" target="_blank" rel="noopener noreferrer">MC-261179</a> Attempting to interact with a waxed sign plays a sound but displays no subtitle</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261183" target="_blank" rel="noopener noreferrer">MC-261183</a> Sniffer egg sound events are listed under "entity" instead of "block"</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261186" target="_blank" rel="noopener noreferrer">MC-261186</a> Entities don't recognize sniffer eggs as obstacles when pathfinding</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261187" target="_blank" rel="noopener noreferrer">MC-261187</a> Entities will often spin while pathfinding on top of sniffer eggs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261189" target="_blank" rel="noopener noreferrer">MC-261189</a> Inconsistent naming of block states for sniffer and turtle eggs</li>
+</ul>

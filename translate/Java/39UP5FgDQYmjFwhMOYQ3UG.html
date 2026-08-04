@@ -1,0 +1,96 @@
+<p>快照 21w16a 介绍了对杜鹃花和滴水石的一些更改。除此之外，我们还调整了粗矿的材质。洞穴与山崖预览数据包也有一些新增内容。</p>
+<h1>21w16a 中的新特性</h1>
+<ul>
+<li>现在可以对杜鹃花和盛开的杜鹃花使用骨粉来生成杜鹃花树</li>
+<li>添加了滴水石生长</li>
+</ul>
+<h2>滴水石生长</h2>
+<ul>
+<li>如果钟乳石悬挂在滴水石块下方，且其上方有水源，则会缓慢生长，使上方钟乳石和下方石笋同时生长</li>
+<li>生长速度是随机的，但非常缓慢，单次生长可能需要数个 Minecraft 天</li>
+<li>钟乳石最多只会生长到 7 格长</li>
+<li>只有当下方的地面或石笋在 10 格以内时，钟乳石才会促使石笋生长</li>
+<li>如果钟乳石尖端位于水中，就不会滴水，因此也不会触发任何生长</li>
+<li>如果石笋尖端位于水中，就不会接收到滴落的水，因此不会因滴水钟乳石而生长。如果两个尖端之间存在任何流体，情况亦然</li>
+<li>石笋或钟乳石永远都不会生长到流体中</li>
+</ul>
+<h1>21w16a 中的更改</h1>
+<ul>
+<li>调整了粗矿和粗矿石块的材质</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w16a-ore-texture-comparison.png" alt="快照 21w16a 材质对比">
+快照 21w16a 中新的粗矿材质。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w16aoretexturecomparisonfull.png" target="_blank" rel="noopener noreferrer">点击此处</a>查看完整分辨率图像链接。</p>
+<h1>洞穴与山崖预览的更改</h1>
+<p>在此下载更新的<a href="https://launcher.mojang.com/v1/objects/ebe5698b1f6787e30662691f57511a08587db502/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">数据包</a>
+<img src="https://launchercontent.mojang.com/images/snapshot-21w16a-carousel.jpg" alt="Minecraft 快照 21w16a 熔岩含水层">
+快照 21w16a 中的熔岩含水层。<a href="https://launchercontent.mojang.com/v2/images/snapshot21w16acarouselfull.png" target="_blank" rel="noopener noreferrer">点击此处</a>查看完整分辨率图像链接。</p>
+<ul>
+<li>高度低于 0 的含水层有时会是熔岩含水层，而非水含水层</li>
+<li>矿脉现在可以生成在地下</li>
+</ul>
+<h2>矿脉</h2>
+<ul>
+<li>矿脉是大型、稀有、蛇形的地下矿石结构</li>
+<li>铜矿脉形成于高度 0 以上，并与花岗岩混合</li>
+<li>铁矿脉形成于高度 0 以下，并与凝灰岩混合</li>
+</ul>
+<h1>21w16a 中的技术更改</h1>
+<ul>
+<li>之前永久拒绝服务器资源包的用户，如果资源包为强制要求，现在仍会看到资源包提示（而不是立即被断开连接）</li>
+<li>游玩时间的统计已被重命名为 <code>play_time</code></li>
+<li>现在有一个“世界开启时间”（<code>total_world_time</code>）的统计，其中也包括游戏暂停的时间</li>
+</ul>
+<h1>21w16a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-29522" target="_blank" rel="noopener noreferrer">MC-29522</a> stat.playOneMinute 每游戏刻都会增加 1 的值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-55775" target="_blank" rel="noopener noreferrer">MC-55775</a> 统计界面有时不显示最新信息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-111534" target="_blank" rel="noopener noreferrer">MC-111534</a> 烟花火箭使用统计不计算用于鞘翅加速的火箭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-117653" target="_blank" rel="noopener noreferrer">MC-117653</a> 在大多数 GUI 打开时，不会授予配方和进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136560" target="_blank" rel="noopener noreferrer">MC-136560</a> minecraft.used:minecraft.elytra 无法生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-136681" target="_blank" rel="noopener noreferrer">MC-136681</a> 调试棒在不允许使用时，使用统计仍会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157116" target="_blank" rel="noopener noreferrer">MC-157116</a> 可种植的食物在对方块右击时会计入使用统计</li>
+<li><a href="https://bugs.mojang.com/browse/MC-190128" target="_blank" rel="noopener noreferrer">MC-190128</a> 使用打火石点燃 TNT 不会记入游戏内统计</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203637" target="_blank" rel="noopener noreferrer">MC-203637</a> 生物在寻路时不会避开熔岩炼药锅，尽管它们会因此着火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205236" target="_blank" rel="noopener noreferrer">MC-205236</a> 在服务器上重生后冰冻状态不会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-208598" target="_blank" rel="noopener noreferrer">MC-208598</a> 小美西螈从下方接触固体方块时会受到伤害/眼睛高度不在其碰撞箱内</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212113" target="_blank" rel="noopener noreferrer">MC-212113</a> 发光地衣可以在不是洞穴的水下生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212863" target="_blank" rel="noopener noreferrer">MC-212863</a> 发光地衣在地图上使用与藤蔓相同的颜色</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213927" target="_blank" rel="noopener noreferrer">MC-213927</a> 对苔藓块上的树苗使用骨粉会消耗骨粉，但不会生长成树</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213998" target="_blank" rel="noopener noreferrer">MC-213998</a> root_vines_head 在游戏文件中未使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214129" target="_blank" rel="noopener noreferrer">MC-214129</a> 若干泥土方块不属于 #minecraft:lush_plants_replaceable 标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-214293" target="_blank" rel="noopener noreferrer">MC-214293</a> 生物可以在杜鹃花上方生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215270" target="_blank" rel="noopener noreferrer">MC-215270</a> 苔藓在可替换方块上方需要有空气才能扩散</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216787" target="_blank" rel="noopener noreferrer">MC-216787</a> 废弃矿井中的蜘蛛网可以生成得如同被锁链支撑一样</li>
+<li><a href="https://bugs.mojang.com/browse/MC-217411" target="_blank" rel="noopener noreferrer">MC-217411</a> 铁砧仅下落一格也会受到损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218590" target="_blank" rel="noopener noreferrer">MC-218590</a> commands.give.failed.toomanyitems 的错误信息不翻译物品名称</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218592" target="_blank" rel="noopener noreferrer">MC-218592</a> 杜鹃花树可以在湖中生成（甚至完全浸没在水中）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218614" target="_blank" rel="noopener noreferrer">MC-218614</a> 不一致性：被感染的深板岩不能沿轴向放置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218637" target="_blank" rel="noopener noreferrer">MC-218637</a> 不一致性：被感染的深板岩不会像普通深板岩一样随机旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219155" target="_blank" rel="noopener noreferrer">MC-219155</a> 抛出的钓鱼线未与钓鱼竿连接</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219211" target="_blank" rel="noopener noreferrer">MC-219211</a> 配方书图标左上角可以看到两个神秘白色像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219851" target="_blank" rel="noopener noreferrer">MC-219851</a> 对含水的大型垂滴叶茎使用骨粉会生成更多含水的大型垂滴叶茎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219903" target="_blank" rel="noopener noreferrer">MC-219903</a> 蠹虫感染深板岩会导致其旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220024" target="_blank" rel="noopener noreferrer">MC-220024</a> 多行注释中的星号越多，着色器编译越慢或失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220307" target="_blank" rel="noopener noreferrer">MC-220307</a> TrueType 字体的字形渲染错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220641" target="_blank" rel="noopener noreferrer">MC-220641</a> 当你的物品栏已满时，忠诚三叉戟会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-220887" target="_blank" rel="noopener noreferrer">MC-220887</a> 文件末尾缺少换行符时，着色器包含文件无法正确编译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221560" target="_blank" rel="noopener noreferrer">MC-221560</a> 深板岩团簇中的铜矿/煤矿不是深板岩矿石</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221628" target="_blank" rel="noopener noreferrer">MC-221628</a> 实体在失去发光效果后仍会继续发光</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221652" target="_blank" rel="noopener noreferrer">MC-221652</a> 传送至玩家的命令不像以前版本那样工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221655" target="_blank" rel="noopener noreferrer">MC-221655</a> 发光鱿鱼和美西螈会在海底神殿中生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222004" target="_blank" rel="noopener noreferrer">MC-222004</a> 草方块不属于 #dirt 方块标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222517" target="_blank" rel="noopener noreferrer">MC-222517</a> 大量黏液块或蜂蜜块会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222684" target="_blank" rel="noopener noreferrer">MC-222684</a> 无法通过对杜鹃花使用骨粉来生成杜鹃花树</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222778" target="_blank" rel="noopener noreferrer">MC-222778</a> 将蜡烛放在蛋糕上时，minecraft.used:minecraft.candle 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223260" target="_blank" rel="noopener noreferrer">MC-223260</a> 绿宝石矿石不会按预期生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223553" target="_blank" rel="noopener noreferrer">MC-223553</a> 对告示牌使用发光墨囊时，minecraft.used:minecraft.glow_ink_sac 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223554" target="_blank" rel="noopener noreferrer">MC-223554</a> 对告示牌使用墨囊时，minecraft.used:minecraft.ink_sac 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223555" target="_blank" rel="noopener noreferrer">MC-223555</a> 对告示牌使用染料时，minecraft.used:minecraft.COLOR_dye 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223557" target="_blank" rel="noopener noreferrer">MC-223557</a> 使用桶从炼药锅中取出细雪、熔岩或水时，minecraft.used:minecraft.bucket 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223558" target="_blank" rel="noopener noreferrer">MC-223558</a> 使用玻璃瓶从炼药锅中取水时，minecraft.used:minecraft.glass_bottle 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223563" target="_blank" rel="noopener noreferrer">MC-223563</a> 从蜂箱或蜂窝收集蜂蜜时，minecraft.used:minecraft.glass_bottle 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223638" target="_blank" rel="noopener noreferrer">MC-223638</a> 雕刻南瓜时，minecraft.used:minecraft.shears 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223639" target="_blank" rel="noopener noreferrer">MC-223639</a> 从蜂箱或蜂窝收集蜜脾时，minecraft.used:minecraft.shears 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223756" target="_blank" rel="noopener noreferrer">MC-223756</a> 使用细雪桶填充炼药锅时，minecraft.used:minecraft.powder_snow_bucket 不会增加</li>
+<li><a href="https://bugs.mojang.com/browse/MC-223757" target="_blank" rel="noopener noreferrer">MC-223757</a> 使用熔岩桶填充炼药锅时，minecraft.used:minecraft.lava_bucket 不会增加</li>
+</ul>

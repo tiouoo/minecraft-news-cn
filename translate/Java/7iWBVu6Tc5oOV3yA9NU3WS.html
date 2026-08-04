@@ -1,0 +1,197 @@
+<p>我们现在为 Minecraft 1.19.3 发布快照 22w46a，其中加入了<a href="https://www.minecraft.net/article/playable-mob-sounds-coming-minecraft-1-20" target="_blank" rel="noopener noreferrer">可播放的生物声音</a>作为实验性特性，改进了遥测数据，并进行了多项技术改进。</p>
+<p>挖矿愉快！</p>
+<h1>22w46a 中的新实验性特性</h1>
+<ul>
+<li>现在可以通过对准特定槽位，向雕纹书架的任意槽位中添加书或从中移除书</li>
+</ul>
+<h2>生物头颅与音符盒的交互</h2>
+<ul>
+<li>现在将生物头颅放在音符盒上后，当玩家演奏或被红石充能时，该音符盒会播放该生物的一种环境音效</li>
+</ul>
+<h2>猪灵生物头颅</h2>
+<ul>
+<li>猪灵现在被闪电苦力怕杀死时会掉落自己的头颅</li>
+<li>将猪灵头颅放在音符盒上会播放猪灵的一种环境音效</li>
+<li>猪灵头颅在被红石激活时，或被玩家佩戴行走时，会扇动耳朵</li>
+</ul>
+<h1>22w46a 中的更改</h1>
+<ul>
+<li>在地狱维度中，末影人、骷髅和凋灵骷髅现在只会在光照等级 7 及以下生成（原来是 11 及以下）<ul>
+<li>这是为了削弱某些基于传送门的刷怪塔</li>
+<li>我们欢迎对此提供反馈</li>
+</ul></li>
+<li>为竹子块和去皮竹子块添加了新的顶部纹理</li>
+<li>调整了竹板的纹理，使其与其他木板变体的平铺图案一致</li>
+</ul>
+<h2>创造模式物品栏的更改</h2>
+<ul>
+<li>根据反馈重新排列了红石选项卡</li>
+<li>在“工具与实用物品”选项卡中，将铁轨添加到了矿车旁边</li>
+</ul>
+<h1>22w46a 中的技术性更改</h1>
+<ul>
+<li>末影人携带的方块现在会在被杀死时使用战利品表生成掉落物</li>
+<li>对纹理加载和拼接的更改</li>
+<li>翻译文件和 <code>pack.mcmeta</code> 现在直接包含非 ASCII 字符（以 UTF-8 编码），而不是使用转义序列</li>
+<li>添加了新的遥测事件</li>
+</ul>
+<h2>遥测</h2>
+<p>此版本包含 WorldUnloaded 事件（一个必需事件），以及几个可选事件。诊断跟踪是一种工具，可帮助我们了解你喜欢 Minecraft 的哪些方面，从而让我们改进这些方面。</p>
+<p>WorldUnloaded 与 <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-21w38a" target="_blank" rel="noopener noreferrer">WorldLoaded</a> 一样是必需事件，原因在于我们查看的信息属于必需信息。作为 Xbox 的一部分，我们都需遵循一定的操作标准，你可以<a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer">此处</a>查看详细说明。我们 Mojang Studios 团队与 Xbox 协同确定了哪些数据对我们的工作至关重要。</p>
+<p>我们想要了解的是你认为 Minecraft 有多有趣。有很多方法可以做到这一点，例如反馈、试玩、体验和魔法。我们希望在数据中增加这些内容，这就是 WorldLoaded 和 WorldUnloaded 的用武之地。WorldLoaded 测量你启动游戏会话的时间，WorldUnloaded 测量你关闭它的时间。两者结合，将使用游戏时长以及玩家选择的游戏模式等指标来衡量 Minecraft 的趣味性。仅此而已。我们收集的所有数据，无论是必需的还是可选的，都遵循 GDPR 和 CCPA 的最佳实践，以保护你的信息安全。</p>
+<p>当前的其他遥测事件都是可选的，这意味着你可以选择是否向我们发送额外数据。唯一无法选择加入的是 Microsoft 儿童帐户，但所有人都仍然可以将反馈发送到 <a href="http://feedback.minecraft.net/" target="_blank" rel="noopener noreferrer">feedback.minecraft.net</a>。</p>
+<p>就像我们在反馈网站上从你那里获得的所有想法和评论一样，这能极大地帮助我们改进 Minecraft。我们希望制作一款你想玩的游戏，因此我们想知道这款游戏需要什么。即使是更多岩浆也没关系。</p>
+<h3>遥测透明度</h3>
+<ul>
+<li>添加了遥测数据收集界面<ul>
+<li>此界面显示所发送数据类型的信息</li>
+<li>发送的数据级别可在“最小”和“全部”之间控制<ul>
+<li>“最小”仅发送必需数据</li>
+<li>“全部”发送必需数据以及可选数据</li>
+</ul></li>
+<li>默认数据级别为“最小”（仅必需数据）</li>
+</ul></li>
+<li>现在客户端发送的每个遥测事件都会记录到磁盘上<ul>
+<li>旧日志文件会在 7 天后删除</li>
+<li>这些文件可在 <code>logs/telemetry</code> 目录下找到<ul>
+<li>可通过遥测数据收集界面上的“打开我的数据”按钮打开该目录的快捷方式</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>必需遥测事件</h3>
+<ul>
+<li>添加了 WorldUnloaded 事件</li>
+<li>从 WorldLoaded 事件中移除了客户端 Java 版本</li>
+</ul>
+<h4>WorldLoaded 与 WorldUnloaded</h4>
+<p>了解 Minecraft 的游玩方式有助于我们将游戏更新和改进集中在与玩家最相关的领域。让我们了解这些的数据包括游戏模式、客户端或服务器是否安装模组的状态，以及游戏版本。</p>
+<p>WorldLoaded 和 WorldUnloaded 是一对事件，用于计算世界会话持续了多长时间（以秒和刻为单位）。世界启动时发送 WorldLoaded 数据，世界关闭时（退出到标题画面、从服务器断开连接）发送 WorldUnloaded 数据。</p>
+<h3>可选遥测事件</h3>
+<ul>
+<li>添加了 PerformanceMetrics 和 WorldLoadTimes 事件</li>
+</ul>
+<h4>PerformanceMetrics</h4>
+<p>了解 Minecraft 的总体性能概况有助于我们针对各种机器规格和操作系统调整和优化游戏。</p>
+<p>定期性能指标包括帧率、渲染性能、内存使用量、操作系统以及客户端和服务器的模组状态等数据。</p>
+<p>其中包含游戏版本，以帮助我们比较 Minecraft 新版本的性能概况。</p>
+<h4>WorldLoadTimes</h4>
+<p>了解加入世界所需的时间以及随时间的变化对我们来说非常重要。例如，当我们添加新功能或进行较大的技术更改时，我们需要查看这对加载时间产生了什么影响。</p>
+<p>此事件包括世界加载的总毫秒数、这是否为新世界，以及游戏版本和平台详细信息。</p>
+<h2>纹理加载更改</h2>
+<ul>
+<li>背景：游戏加载方块和物品模型使用的所有纹理时，需要将其拼接（合并）为单个图像，称为“图集”（atlas）<ul>
+<li>被拼接在图集上的单个纹理称为“精灵图”（sprite）</li>
+</ul></li>
+<li>为了提高加载性能，方块和物品纹理现在会在被方块和物品模型处理之前加载<ul>
+<li>默认情况下，不在 <code>textures/item</code> 和 <code>textures/block</code> 目录中的纹理将不再被自动识别，并且会加载失败</li>
+</ul></li>
+<li>资源包现在可以在 <code>atlases</code> 目录中放置配置文件，以控制图集包含哪些图像</li>
+</ul>
+<h3>图集配置文件</h3>
+<ul>
+<li>资源包现在新增了 <code>atlases</code> 目录</li>
+<li>此目录包含用于配置图集的 JSON 条目：<ul>
+<li><code>blocks</code> - 方块和物品模型使用的纹理</li>
+<li><code>banner_patterns</code>、<code>beds</code>、<code>chests</code>、<code>shield_patterns</code>、<code>shulker_boxes</code>、<code>signs</code> - 用于渲染某些特殊情况的模型</li>
+<li><code>mob_effects</code> - 用于 UI 中效果图标的纹理</li>
+<li><code>paintings</code> - 用于画的纹理</li>
+<li><code>particles</code> - 用于粒子的纹理（由 <code>particles</code> 目录内文件中的 <code>textures</code> 字段引用）</li>
+</ul></li>
+<li>如果多个包包含这些文件，则按照包内的顺序合并（与数据包中的标签相同）</li>
+<li>这些文件内部是一个 JSON 对象，其中只有一个名为 <code>sources</code> 的列表<ul>
+<li><code>sources</code> 中的每个条目都会在加载时按定义顺序运行，向纹理列表添加或移除新文件；以供之后方块模型、粒子等引用</li>
+</ul></li>
+<li>来源类型：<ul>
+<li><code>directory</code> - 列出目录及其子目录中的所有文件，跨所有命名空间<ul>
+<li><code>source</code> - 要列出的包内目录（相对于 <code>textures</code> 目录）</li>
+<li><code>prefix</code> - 加载时要附加到精灵图名称的字符串</li>
+</ul></li>
+<li><code>single</code> - 添加单个文件<ul>
+<li><code>resource</code> - 包内资源的位置（相对于 <code>textures</code> 目录，隐含 <code>.png</code> 扩展名）</li>
+<li><code>sprite</code> - 精灵图名称（可选，默认为 <code>resource</code>）</li>
+</ul></li>
+<li><code>filter</code> - 移除与给定模式匹配的精灵图<ul>
+<li><code>namespace</code>、<code>path</code> - 要移除的 ID 的模式（正则表达式）（仅对列表中已有的条目生效）<ul>
+<li>如果省略，则匹配任何值</li>
+</ul></li>
+</ul></li>
+<li><code>unstitch</code> - 从其他图像复制矩形区域<ul>
+<li><code>resource</code> - 包内资源的位置（相对于 <code>textures</code> 目录，隐含 <code>.png</code> 扩展名）</li>
+<li><code>divisor_x</code>、<code>divisor_y</code> - 用于确定区域使用的单位</li>
+<li><code>regions</code> - 要从源图像复制的区域列表<ul>
+<li><code>sprite</code> - 精灵图名称</li>
+<li><code>x</code>、<code>y</code> - 区域左上角的坐标</li>
+<li><code>width</code>、<code>height</code> - 区域的大小</li>
+</ul></li>
+<li>像 <code>x</code> 这样的值会先除以其除数，再乘以真实图像尺寸，从而转换为真实图像坐标</li>
+</ul></li>
+</ul></li>
+<li>示例：如果某个包具有名为 <code>assets/test/textures/fancy/iridium.png</code> 的文件，且来源为 <code>{"type": "directory", "source": "fancy", "prefix": "custom/"}</code>，则该纹理会以 <code>test:custom/iridium</code> 的形式在模型中可用</li>
+</ul>
+<h2>命令</h2>
+<ul>
+<li>新命令：<code>fillbiome</code></li>
+<li>新的 execute 子命令：<code>execute if|unless biome</code></li>
+</ul>
+<h3><code>fillbiome</code></h3>
+<p>更改某个区域的生物群系条目。请注意，生物群系并非按方块存储，因此受影响的位置可能与输入不完全一致。</p>
+<p>语法：</p>
+<p><code>fillbiome &#x3C;from> &#x3C;to> &#x3C;biome></code></p>
+<p>参数：</p>
+<ul>
+<li><code>from</code>：要填充区域的一个角</li>
+<li><code>to</code>：要填充区域的另一个角</li>
+<li><code>biome</code>：要设置的生物群系</li>
+</ul>
+<h3><code>execute</code></h3>
+<p>execute 命令现在可以基于生物群系作为条件。</p>
+<p>语法：</p>
+<p><code>execute if|unless biome &#x3C;pos> &#x3C;biome></code></p>
+<h1>22w46a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-121865" target="_blank" rel="noopener noreferrer">MC-121865</a> 长时间的药水效果持续时间显示为 <strong>:</strong> 具有误导性</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147605" target="_blank" rel="noopener noreferrer">MC-147605</a> 文本光标可以同时存在于多个字段中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-151412" target="_blank" rel="noopener noreferrer">MC-151412</a> “编辑服务器信息”窗口不会自动聚焦“服务器名称”文本字段</li>
+<li><a href="https://bugs.mojang.com/browse/MC-187539" target="_blank" rel="noopener noreferrer">MC-187539</a> “tick”函数标签在“load”之前运行，而不是相反</li>
+<li><a href="https://bugs.mojang.com/browse/MC-205563" target="_blank" rel="noopener noreferrer">MC-205563</a> 末影人携带细雪时被杀死会掉落细雪桶</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209621" target="_blank" rel="noopener noreferrer">MC-209621</a> 末影人携带盆栽植物时被杀死不会掉落花盆或植物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221722" target="_blank" rel="noopener noreferrer">MC-221722</a> 使用 Programmer Art 时，鱿鱼会使用新纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222099" target="_blank" rel="noopener noreferrer">MC-222099</a> 末影人携带蜡烛蛋糕时被杀死不会掉落蜡烛或蛋糕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233042" target="_blank" rel="noopener noreferrer">MC-233042</a> 打开“直接连接”菜单时，服务器地址字段未被聚焦</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234029" target="_blank" rel="noopener noreferrer">MC-234029</a> 打开物品栏后，无法按住任意键来快速在元素之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234161" target="_blank" rel="noopener noreferrer">MC-234161</a> 无法在“优化世界”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234240" target="_blank" rel="noopener noreferrer">MC-234240</a> 无法在“自定义超平坦”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234408" target="_blank" rel="noopener noreferrer">MC-234408</a> 无法在 Realms 的“重置世界”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234409" target="_blank" rel="noopener noreferrer">MC-234409</a> 无法在 Realms 的“世界选项”菜单中按住任意键快速执行同一功能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234572" target="_blank" rel="noopener noreferrer">MC-234572</a> 无法在“删除服务器”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234621" target="_blank" rel="noopener noreferrer">MC-234621</a> 无法在 Realms 的“移除玩家”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234782" target="_blank" rel="noopener noreferrer">MC-234782</a> 无法在 Realms 的“关闭 Realm”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234846" target="_blank" rel="noopener noreferrer">MC-234846</a> 无法在 Realms 的“切换世界”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-234904" target="_blank" rel="noopener noreferrer">MC-234904</a> 无法在“数据包”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-248926" target="_blank" rel="noopener noreferrer">MC-248926</a> 将“spectatorsGenerateChunks”设置为 false 并重新登录后，游戏会卡在“加载地形”界面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249059" target="_blank" rel="noopener noreferrer">MC-249059</a> “加载地形”界面在 2 秒过去之前无法关闭</li>
+<li><a href="https://bugs.mojang.com/browse/MC-250262" target="_blank" rel="noopener noreferrer">MC-250262</a> 玩家在死亡状态下切换维度后有时会卡在“加载地形...”界面</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256308" target="_blank" rel="noopener noreferrer">MC-256308</a> 使用“arbitrary”（任意）排序时，“limit”选择器参数不会提前停止搜索</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256472" target="_blank" rel="noopener noreferrer">MC-256472</a> 骆驼不是完成“成双成对”进度所必需的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256509" target="_blank" rel="noopener noreferrer">MC-256509</a> 头颅和骷髅头放置时方向相反</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256510" target="_blank" rel="noopener noreferrer">MC-256510</a> 对悬挂式告示牌使用荧光墨囊不会获得“发光吧！”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256669" target="_blank" rel="noopener noreferrer">MC-256669</a> 竹制悬挂式告示牌的合成配方会因拥有任意去皮原木而解锁</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256878" target="_blank" rel="noopener noreferrer">MC-256878</a> 无法在“编辑聊天举报草稿”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256882" target="_blank" rel="noopener noreferrer">MC-256882</a> 蝙蝠以栖息姿势飞行，且垂直移动不流畅</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256935" target="_blank" rel="noopener noreferrer">MC-256935</a> “选择要举报的聊天消息”菜单中较长的玩家名称可能会超出滚动条</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256993" target="_blank" rel="noopener noreferrer">MC-256993</a> 末地水晶击退漏洞</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257073" target="_blank" rel="noopener noreferrer">MC-257073</a> 无法在“实验性特性警告”菜单中按住 TAB 键快速在按钮之间导航</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257105" target="_blank" rel="noopener noreferrer">MC-257105</a> 青蛙和骆驼缓慢移动时不会播放行走动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257113" target="_blank" rel="noopener noreferrer">MC-257113</a> 1.13 之前的末影龙、凋灵、雪傀儡和铁傀儡刷怪蛋无法正确转换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257114" target="_blank" rel="noopener noreferrer">MC-257114</a> 不一致：在“创建新世界”的种子文本字段界面上，尽管有“留空以使用随机种子”的标签，却已经生成了随机种子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257188" target="_blank" rel="noopener noreferrer">MC-257188</a> 在死亡界面中使用“标题画面”按钮断开与世界连接时，系统不会提示你的举报草稿将被丢弃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257266" target="_blank" rel="noopener noreferrer">MC-257266</a> 当“snowAccumulationHeight”游戏规则设置为大于 1 的任何值时，积雪堆积时实体会下沉或陷入雪中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257329" target="_blank" rel="noopener noreferrer">MC-257329</a> 创造模式物品栏右侧的选项卡未对齐</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257334" target="_blank" rel="noopener noreferrer">MC-257334</a> 堆叠的物品不会显示创造模式物品栏选项卡标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257354" target="_blank" rel="noopener noreferrer">MC-257354</a> 局域网世界的主机发送的消息现在被视为未经验证，无法举报</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257355" target="_blank" rel="noopener noreferrer">MC-257355</a> “社交互动”菜单现在错误地声称所选玩家没有可举报的消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257378" target="_blank" rel="noopener noreferrer">MC-257378</a> 村民和猪灵无法打开或关闭门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257386" target="_blank" rel="noopener noreferrer">MC-257386</a> 启用 Programmer Art 后，物品栏菜单出现损坏的纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257401" target="_blank" rel="noopener noreferrer">MC-257401</a> 青蛙被食物引诱或追逐史莱姆时，行走动画会大幅加速</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257410" target="_blank" rel="noopener noreferrer">MC-257410</a> 暂停菜单上的“游戏菜单”是可点击的</li>
+</ul>

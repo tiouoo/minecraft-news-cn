@@ -1,0 +1,43 @@
+<p>大家好！你们中有些人可能已经注意到，我们决定推迟 1.19.1 的发布，现在我们将重新进入预发布模式。这是为了解决一些比较明显的问题。我们尚未完全确定新的发布日期，但不会太遥远。</p>
+<p>我们收到了很多关于“玩家聊天举报”功能的反馈，我们在新发布的文章 <a href="https://www.minecraft.net/article/addressing-player-chat-reporting-tool" target="_blank" rel="noopener noreferrer">这里</a> 以及我们的 <a href="https://aka.ms/chatreportingfaq" target="_blank" rel="noopener noreferrer">FAQ</a> 中对此进行了专门说明，希望这能解答你们的所有问题！</p>
+<h1>1.19.1 预发布版 2 中的更改</h1>
+<p>我们增加了查看聊天消息签名状态的功能——这样你就可以轻松判断服务器是否在篡改或移除其玩家消息的签名安全性。</p>
+<h2>聊天信任状态</h2>
+<ul>
+<li>未使用安全聊天系统签名、或已被服务器篡改的消息现在将被标记<ul>
+<li>缺少签名或签名无效的消息会被标记为“不安全”</li>
+<li>检测到被修改的消息会被标记为“已修改”</li>
+</ul></li>
+<li>消息的信任状态同时以彩色指示器和图标显示<ul>
+<li>彩色指示器始终可见</li>
+<li>图标仅在聊天界面打开时可见</li>
+</ul></li>
+<li>将鼠标悬停在图标上会提供更多关于信任状态的信息<ul>
+<li>对于已修改的消息，原始安全文本也会显示在工具提示中</li>
+</ul></li>
+</ul>
+<h1>1.19.1 预发布版 2 中的技术更改</h1>
+<h2>聊天类型</h2>
+<ul>
+<li>添加到 <code>chat_types</code> 注册表中的聊天类型现在仅用于玩家聊天，不用于系统消息<ul>
+<li><code>system</code> 和 <code>game_info</code> 聊天类型已被移除</li>
+</ul></li>
+<li>聊天类型已简化，现在只需定义 <code>chat</code> 和 <code>narration</code> 装饰<ul>
+<li>聊天类型不再支持叠加层</li>
+<li>应改用系统消息来显示叠加层</li>
+</ul></li>
+</ul>
+<h2>server.properties</h2>
+<ul>
+<li>对于专用服务器，<code>enforce-secure-profile</code> 现在默认为 <code>true</code></li>
+</ul>
+<h1>1.19.1 预发布版 2 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-253112" target="_blank" rel="noopener noreferrer">MC-253112</a> 在命令中使用实体选择器时，游戏输出控制台会记录有关带有无效签名的聊天数据包的警告</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253121" target="_blank" rel="noopener noreferrer">MC-253121</a> 实体和其他非玩家聊天消息来源会作为玩家出现在“选择要举报的聊天消息”界面中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253493" target="_blank" rel="noopener noreferrer">MC-253493</a> 举报类别的描述再次可能与“描述：”副标题重叠</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253495" target="_blank" rel="noopener noreferrer">MC-253495</a> 使用 Tab 键选择“选择举报类别”菜单列表中的字段时，选择框不包含白色轮廓</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253497" target="_blank" rel="noopener noreferrer">MC-253497</a> 实体和其他非玩家聊天消息来源会出现在社交互动菜单中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253501" target="_blank" rel="noopener noreferrer">MC-253501</a> “选择要举报的聊天消息”菜单中的长消息可能会超出选择框并越过滚动条</li>
+<li><a href="https://bugs.mojang.com/browse/MC-253517" target="_blank" rel="noopener noreferrer">MC-253517</a> 在线玩家无法连接到离线服务器，因为“无效的配置文件公钥签名”</li>
+</ul>

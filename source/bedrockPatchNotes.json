@@ -1,0 +1,1043 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "title": "26.30 - Chaos Cubed",
+      "version": "26.30",
+      "patchNoteType": "retail",
+      "date": "2026-06-16T15:39:44.434Z",
+      "image": {
+        "title": "26.30.jpg",
+        "url": "/v2/images/26.30.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6.json",
+      "id": "f7d2d5f5380fb29c45850cfbb9862bf881b3ba66c41b4bbb8e1cd525b39595d6",
+      "shortText": "Chaos Cubed has landed in Minecraft! Hunt for vibrant Sulfur springs in the Overworld to discover a striking cave biome hidden below. Swim in bubbling Sulfur pools if you dare, build with colorful Cinnabar and Sulfur, but best of all – uncover the Sulfur C",
+      "needsTranslation": false
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.20 Changelog",
+      "version": "26.20",
+      "patchNoteType": "retail",
+      "date": "2026-05-05T15:41:47.683Z",
+      "image": {
+        "title": "26.20.jpg",
+        "url": "/v2/images/26.20.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/836e028cbc075d74fafc83c998f151bca82287c30b0b74649bc2ef1e9d5c1665.json",
+      "id": "836e028cbc075d74fafc83c998f151bca82287c30b0b74649bc2ef1e9d5c1665",
+      "shortText": "We've got an exciting release for you today – because alongside chaos and cubes in testing, we have Closed Captions coming in this release! Closed Captions have been a hotly requested feature – and now you can try it out for yourself alongside customisable",
+      "needsTranslation": false
+    },
+    {
+      "title": "26.10 - Tiny Takeover",
+      "version": "26.10",
+      "patchNoteType": "retail",
+      "date": "2026-03-24T16:03:49.423Z",
+      "image": {
+        "title": "26.10.png",
+        "url": "/v2/images/26.10.png"
+      },
+      "contentPath": "bedrockPatchNotes/a85e4952d3b347bbdf41dd131e838a6adfe4a3226a94aebcf71339a50b69ba81.json",
+      "id": "a85e4952d3b347bbdf41dd131e838a6adfe4a3226a94aebcf71339a50b69ba81",
+      "shortText": "Ready or not, here comes the Tiny Takeover drop! New versions of baby mobs have stormed Minecraft, causing cuteness overload across biomes and builds. Listen out for heart-melting sounds, craft name tags for your pets, and keep babies forever young with th",
+      "needsTranslation": false
+    },
+    {
+      "title": "26.0 Update",
+      "version": "26.0",
+      "patchNoteType": "retail",
+      "date": "2026-02-10",
+      "image": {
+        "title": "26.0.jpg",
+        "url": "/v2/images/26.0.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/8d2342d74297decc49a0ea75d35410b7147876e46bbe4314ea9631e1f8e945a9.json",
+      "id": "8d2342d74297decc49a0ea75d35410b7147876e46bbe4314ea9631e1f8e945a9",
+      "shortText": "I'm not sure what to start with today – the baby mob redesigns and craftable name tags coming into testing? Or the fact that this release is the first that follows our new numbering system? Actually, why choose! In this release we're entering 26.0, and tha",
+      "needsTranslation": false
+    },
+    {
+      "title": "1.21.130 - Mounts of Mayhem",
+      "version": "1.21.130",
+      "patchNoteType": "retail",
+      "date": "2025-12-09",
+      "image": {
+        "title": "1.21.130.png",
+        "url": "/v2/images/1.21.130.png"
+      },
+      "contentPath": "bedrockPatchNotes/75e38bfa18dddbddb4d3e2e75edcc9947d858a1e76ec413000616cd0195cb933.json",
+      "id": "75e38bfa18dddbddb4d3e2e75edcc9947d858a1e76ec413000616cd0195cb933",
+      "shortText": "Today Mounts of Mayhem charges into Minecraft, bringing a new weapon to wield, mounts to tame, foes to face, and strategies to master! Challengers await beneath scorching suns, night skies, and deep in the ocean's depths - and each clash will demand a fres",
+      "needsTranslation": false
+    },
+    {
+      "title": "1.21.120 Update",
+      "version": "1.21.120",
+      "patchNoteType": "retail",
+      "date": "2025-10-28T15:41:47.069Z",
+      "image": {
+        "title": "1.21.120.png",
+        "url": "/v2/images/1.21.120.png"
+      },
+      "contentPath": "bedrockPatchNotes/afd40959c629647ba573474a43938611d0a195fe43509b8d2faaf53adb3653f6.json",
+      "id": "afd40959c629647ba573474a43938611d0a195fe43509b8d2faaf53adb3653f6",
+      "shortText": "While you've been having mayhem with mounts, we've been squashing bugs and implementing important fixes! Alongside adding animated lantern textures, the copper golem statues will now glow when placed in a glow item frame, and interacting with the copper go",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.111 - The Copper Age",
+      "version": "1.21.111",
+      "patchNoteType": "retail",
+      "date": "2025-09-30",
+      "image": {
+        "title": "1.21.111.jpg",
+        "url": "/v2/images/1.21.111.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/2fc70ab38598b311f5f1619f0a40c1ee0d0bee7289be3ad178eb6ff17f9f6ead.json",
+      "id": "2fc70ab38598b311f5f1619f0a40c1ee0d0bee7289be3ad178eb6ff17f9f6ead",
+      "shortText": "Minecraft has entered The Copper Age! Express yourself in every shade of copper as you transform this versatile metal into handy tools, shiny armor, gleaming light sources, oxidizing decor, smart storage, and even lively mechanical companions known as copp",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.100 Update",
+      "version": "1.21.100",
+      "patchNoteType": "retail",
+      "date": "2025-08-05",
+      "image": {
+        "title": "1.21.100_540.jpg",
+        "url": "/v2/images/1.21.100540.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/44f3ea0e8212a9132dca5b35889e9d3544477d97b301962adabd941c42bbe51b.json",
+      "id": "44f3ea0e8212a9132dca5b35889e9d3544477d97b301962adabd941c42bbe51b",
+      "shortText": "Clonk! Clonk! Clonk! If you thought that's the sound of a copper golem trying jazzercise, think again. It's actually us digging deeper into experimental features only to discover that the Overworld is flat. Hang on, that's not right either? But the Flat Wo",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.90 - Chase the Skies",
+      "version": "1.21.90",
+      "patchNoteType": "retail",
+      "date": "2025-06-17",
+      "image": {
+        "title": "1.21.90.jpg",
+        "url": "/v2/images/1.21.90.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/ce65f9b19e61286f8bf18613ae3d2353d3826811cea843216ac41266514b8341.json",
+      "id": "ce65f9b19e61286f8bf18613ae3d2353d3826811cea843216ac41266514b8341",
+      "shortText": "Experience the joy of soaring above the Overworld with our Chase the Skies drop! This drop not only brings an exciting flying mount to Minecraft but opens up the skies for exploring, building - and more. Raise your ghastling with care and it'll let you soa",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.80 Update",
+      "version": "1.21.80",
+      "patchNoteType": "retail",
+      "date": "2025-05-06",
+      "image": {
+        "title": "1.21.80.jpg",
+        "url": "/v2/images/1.21.80.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/d6541fe97a38fdb0bf89d8556dab89f5b76df1f6c56b63966f82d378ea3fdeba.json",
+      "id": "d6541fe97a38fdb0bf89d8556dab89f5b76df1f6c56b63966f82d378ea3fdeba",
+      "shortText": "Have you ever looked out across the Overworld and just wished it was... flatter? Well, good news! Flat world presets are now available in Bedrock Edition! Whether you prefer to build on a clean slate or have an aversion to pointy landscapes, now you can ha",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.70 Update",
+      "version": "1.21.70",
+      "patchNoteType": "retail",
+      "date": "2025-03-25T15:57:06.452Z",
+      "image": {
+        "title": "1.21.70.jpg",
+        "url": "/v2/images/1.21.70.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/30e779273d6d1591b0f179ffbfd876dba962fa49b9516a2f6333e40189d6abfe.json",
+      "id": "30e779273d6d1591b0f179ffbfd876dba962fa49b9516a2f6333e40189d6abfe",
+      "shortText": "The Spring to Life drop brings more reasons to explore both near and far! Warm winds have swept across biomes, bringing new mob variants, ambient sounds, and lush plants for you to discover. Befriend fluffy pigs, marvel at glittering firefly bushes, listen",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.60 Update",
+      "version": "1.21.60",
+      "patchNoteType": "retail",
+      "date": "2025-02-11T16:51:46.830Z",
+      "image": {
+        "title": "1.21.60.jpg",
+        "url": "/v2/images/1.21.60.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/a0ff524bba299d1f1761f384cd3812f5e7989f05307f4f59a24ab320c5ceb6f7.json",
+      "id": "a0ff524bba299d1f1761f384cd3812f5e7989f05307f4f59a24ab320c5ceb6f7",
+      "shortText": "Hold on tight, because this changelog is quite a pig deal! Not only do have we fixed a bunch of bugs, there are also several features available in the experimental toggle. Meet the two new pig variants trotting into the Overworld, make leaves fall from tre",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.50 Update",
+      "version": "1.21.50",
+      "patchNoteType": "retail",
+      "date": "2024-12-03",
+      "image": {
+        "title": "1.21.50.png",
+        "url": "/v2/images/1.21.50.png"
+      },
+      "contentPath": "bedrockPatchNotes/ad129a698d744275a3f18073ac578319f728d11a54fa464313fde1f132314aef.json",
+      "id": "ad129a698d744275a3f18073ac578319f728d11a54fa464313fde1f132314aef",
+      "shortText": "Shh! I'm writing this changelog from behind a pale oak tree - and I have to be very quiet because the Garden Awakens drop is finally here - and creakings are spawning in pale gardens all across the Overworld! The Garden Awakens brings with it an eerie biom",
+      "needsTranslation": null
+    },
+    {
+      "title": "Minecraft 1.21.40 Bedrock Changelog",
+      "version": "1.21.40",
+      "patchNoteType": "retail",
+      "date": "2024-10-22T15:09:32.338Z",
+      "image": {
+        "title": "1.21.40_launcher.jpg",
+        "url": "/v2/images/1.21.40launcher.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/cfde52315b4e304ad035c8d763f9b4a9161126e6efe77afd5c88773bc96d513f.json",
+      "id": "cfde52315b4e304ad035c8d763f9b4a9161126e6efe77afd5c88773bc96d513f",
+      "shortText": "Today marks the launch of our third game drop: Bundles of Bravery! Featuring space-saving bundles and the hardest Survival mode out there (Hardcore mode!) this drop is all about embarking on a new adventure, collecting everything you can along the way, and",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.31 Update",
+      "version": "1.21.31",
+      "patchNoteType": "retail",
+      "date": "2024-09-30T17:06:16.880Z",
+      "image": {
+        "title": "1.21.31.png",
+        "url": "/v2/images/1.21.31.png"
+      },
+      "contentPath": "bedrockPatchNotes/62560d8d6d794b8cade50d94729c434b0ca65d8ae8703bfcb6e2fa3843a69a36.json",
+      "id": "62560d8d6d794b8cade50d94729c434b0ca65d8ae8703bfcb6e2fa3843a69a36",
+      "shortText": "Fixes:Fixed several crashes that could occur during gameplayFixed a crash that could occur when trading with Villagers using only the second slot (MCPE-186676)An issue where some commands did not recognize certain block or item names has been fixedFixed an",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.30 Update",
+      "version": "1.21.30",
+      "patchNoteType": "retail",
+      "date": "2024-09-17T15:58:09.183Z",
+      "image": {
+        "title": "1.21.30.jpg",
+        "url": "/v2/images/1.21.30.jpg"
+      },
+      "contentPath": "bedrockPatchNotes/ee91e1ac2f3650f928c2c0dca81050e975f75756cd1784eefa1d268ee1662ada.json",
+      "id": "ee91e1ac2f3650f928c2c0dca81050e975f75756cd1784eefa1d268ee1662ada",
+      "shortText": "A new update has been released with a variety of quality-of-life improvements and fixes to the Minecraft experience! In this week’s changelog, villagers can finally sleep soundly, foxes are getting more hearts, and we’ve got bundles of information about – ",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.23 Update",
+      "version": "1.21.23",
+      "patchNoteType": "retail",
+      "date": "2024-09-03T17:37:24.718Z",
+      "image": {
+        "title": "1.21.23.png",
+        "url": "/v2/images/1.21.23.png"
+      },
+      "contentPath": "bedrockPatchNotes/b349820d34c02c22f6c19d0816e5fe195bead53f9c08b15f411667febd69aeec.json",
+      "id": "b349820d34c02c22f6c19d0816e5fe195bead53f9c08b15f411667febd69aeec",
+      "shortText": "Fixes:Fixed several crashes that could occur during gameplay",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.22 Update",
+      "version": "1.21.22",
+      "patchNoteType": "retail",
+      "date": "2024-08-26T21:27:34.598Z",
+      "image": {
+        "title": "1.21.22.png",
+        "url": "/v2/images/1.21.22.png"
+      },
+      "contentPath": "bedrockPatchNotes/3dc2ff3e3d78452bbeea3995468a97e50cabac911975483cc40eeff6021452ea.json",
+      "id": "3dc2ff3e3d78452bbeea3995468a97e50cabac911975483cc40eeff6021452ea",
+      "shortText": "A new update has been released to address a few issues with the 1.21.20 release.Fixes:Fixed several crashes that could occur during gameplayImproved loading of add-ons from MarketplaceFixed a bug where all custom blocks were rotated 180 degrees in the UI",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.21 Update",
+      "version": "1.21.21",
+      "patchNoteType": "retail",
+      "date": "2024-08-16T16:45:22.691Z",
+      "image": {
+        "title": "1.21.21.png",
+        "url": "/v2/images/1.21.21.png"
+      },
+      "contentPath": "bedrockPatchNotes/9e5fdc83e6b05c677d7dbf48fd72050e81fcc01fb40b4786a124d963ba8f2e72.json",
+      "id": "9e5fdc83e6b05c677d7dbf48fd72050e81fcc01fb40b4786a124d963ba8f2e72",
+      "shortText": "A new update has been released to address issues with connecting to Realms.Fixes:Improved reliability of connecting to Realms",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.20 Update",
+      "version": "1.21.20",
+      "patchNoteType": "retail",
+      "date": "2024-08-13T15:51:31.802Z",
+      "image": {
+        "title": "1.21.20.png",
+        "url": "/v2/images/1.21.20.png"
+      },
+      "contentPath": "bedrockPatchNotes/b85e7f1b0347075968336e7c9ec2d542bd938c326129344d516705c027572655.json",
+      "id": "b85e7f1b0347075968336e7c9ec2d542bd938c326129344d516705c027572655",
+      "shortText": "A new update has been released with a variety of quality-of-life improvements and fixes to the Minecraft experience!Fixes and Changes:Performance / Stability:Fixed a number of bugs related to downloading content getting stuck, including errors related to: ",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.2 Update",
+      "version": "1.21.2",
+      "patchNoteType": "retail",
+      "date": "2024-07-09T16:01:53.124Z",
+      "image": {
+        "title": "1.21.2.png",
+        "url": "/v2/images/1.21.2.png"
+      },
+      "contentPath": "bedrockPatchNotes/84eff81cda0311a53b74ffe65e5b4889c38cf28a6b5f1c4f6f120e74d2636a79.json",
+      "id": "84eff81cda0311a53b74ffe65e5b4889c38cf28a6b5f1c4f6f120e74d2636a79",
+      "shortText": "A new hotfix is now available to address some of the top issues that have been encountered since the 1.21 update.Features and Bug Fixes:Ominous Trial SpawnerMobs spawned by Ominous Trial Spawners now drop items they picked up (MCPE-182630)Ominous VaultRare",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21.1 Update",
+      "version": "1.21.1",
+      "patchNoteType": "retail",
+      "date": "2024-06-21T15:27:37.283Z",
+      "image": {
+        "title": "1.21.1.png",
+        "url": "/v2/images/1.21.1.png"
+      },
+      "contentPath": "bedrockPatchNotes/9c87662fe67411d52ec0479b6a9bace84609d91d6a094316a117e3a31baeb9a1.json",
+      "id": "9c87662fe67411d52ec0479b6a9bace84609d91d6a094316a117e3a31baeb9a1",
+      "shortText": "Fixes:Fixed a hardlock that could occur when playing splitscreen multiplayer on PlayStation®4Fixed a bug where players with a freshly installed Minecraft needed to restart before being able to see Realms Stories",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.21 Update - Tricky Trials",
+      "version": "1.21.0",
+      "patchNoteType": "retail",
+      "date": "2024-06-13T15:52:56.810Z",
+      "image": {
+        "title": "1.21.0.png",
+        "url": "/v2/images/1.21.0.png"
+      },
+      "contentPath": "bedrockPatchNotes/cc4c9452ca14bf8d4e6af2d9cb3d37802f6db5d63c702128329e6f0dd887589c.json",
+      "id": "cc4c9452ca14bf8d4e6af2d9cb3d37802f6db5d63c702128329e6f0dd887589c",
+      "shortText": "New Features:Added a new underground structure called the Trial ChambersAdded 2 new mobsBreezeBoggedAdded a new weapon, the MaceAdded 3 new enchantments exclusive to the MaceDensityBreachWind BurstAdded the following blocks:CrafterTrial SpawnerOminous Tria",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.81 Update",
+      "version": "1.20.81",
+      "patchNoteType": "retail",
+      "date": "2024-04-29T16:03:14.177Z",
+      "image": {
+        "title": "1.20.81.png",
+        "url": "/v2/images/1.20.81.png"
+      },
+      "contentPath": "bedrockPatchNotes/74f28a4f4ecd2fa2eb9d5e43cb1a7dee84d45fd5fc68db3d714383d8285f892a.json",
+      "id": "74f28a4f4ecd2fa2eb9d5e43cb1a7dee84d45fd5fc68db3d714383d8285f892a",
+      "shortText": "A new update is now available to address stability issues introduced with the 1.20.80 update.Fixes:Fixed several crashes that could occur during gameplayCamera no longer lags one frame behind after teleporting",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.80 Update",
+      "version": "1.20.80",
+      "patchNoteType": "retail",
+      "date": "2024-04-23",
+      "image": {
+        "title": "1.20.80.png",
+        "url": "/v2/images/1.20.80.png"
+      },
+      "contentPath": "bedrockPatchNotes/15b27cf2fecd6583799007a57e39c0c2c6d04c0a416c7da47510bc1140b31e32.json",
+      "id": "15b27cf2fecd6583799007a57e39c0c2c6d04c0a416c7da47510bc1140b31e32",
+      "shortText": "Eight new wolf variations, wolf armor, and armadillos are dropping in Minecraft today! Meet the armadillo, a mob found in the savanna or badlands biomes, and craft wolf armor from its scutes! Explore far and wide to gather a pack of all nine wolf variation",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.73 Update",
+      "version": "1.20.73",
+      "patchNoteType": "retail",
+      "date": "2024-04-01",
+      "image": {
+        "title": "1.20.73.png",
+        "url": "/v2/images/1.20.73.png"
+      },
+      "contentPath": "bedrockPatchNotes/e19f9e9e628dd65677f28241ec0cc090692437ef6b4dcff5f701db4e5b016a62.json",
+      "id": "e19f9e9e628dd65677f28241ec0cc090692437ef6b4dcff5f701db4e5b016a62",
+      "shortText": "A new update is now available to address stability issues introduced with the 1.20.70 update.Fixes:Fixed a crash that could occur during gameplay",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.72 Update",
+      "version": "1.20.72",
+      "patchNoteType": "retail",
+      "date": "2024-03-25T23:12:29.965Z",
+      "image": {
+        "title": "1.20.72.png",
+        "url": "/v2/images/1.20.72.png"
+      },
+      "contentPath": "bedrockPatchNotes/1cee2814868e10feba2f20679613b7a585b62bf802d6d0b6ab2ade758dcc3914.json",
+      "id": "1cee2814868e10feba2f20679613b7a585b62bf802d6d0b6ab2ade758dcc3914",
+      "shortText": "A new update is now available to address stability issues introduced with the 1.20.70 update.Fixes:Fixed several crashes that could occur during gameplay",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.70 Update",
+      "version": "1.20.70",
+      "patchNoteType": "retail",
+      "date": "2024-03-12",
+      "image": {
+        "title": "1.20.70.png",
+        "url": "/v2/images/1.20.70.png"
+      },
+      "contentPath": "bedrockPatchNotes/f03aaa34bacc53bea4c99b3bb016e9c2f2c3e41d41f2b3b15b75e2c72c3e25dc.json",
+      "id": "f03aaa34bacc53bea4c99b3bb016e9c2f2c3e41d41f2b3b15b75e2c72c3e25dc",
+      "shortText": "Vanilla Parity:MobsWolves can now withstand the same amount of damage as in Java EditionRather than halving all damage dealt to tamed Wolves by entities other than Players or Arrows, as currently done in Java Edition, the maximum health of tamed Wolves has",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.62 Update",
+      "version": "1.20.62",
+      "patchNoteType": "retail",
+      "date": "2024-02-15",
+      "image": {
+        "title": "launcher_r20u6h1.png",
+        "url": "/v2/images/launcherr20u6h1.png"
+      },
+      "contentPath": "bedrockPatchNotes/cd015638036b9ebfac1a5e70e8214e518f5ddeeb91c6f66631fd5f1aa2e82fe8.json",
+      "id": "cd015638036b9ebfac1a5e70e8214e518f5ddeeb91c6f66631fd5f1aa2e82fe8",
+      "shortText": "A new update is now available to address crash issues introduced with the 1.20.60 update.Fixes:Fixed several crashes that could occur during gameplay",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.60 Update",
+      "version": "1.20.60",
+      "patchNoteType": "retail",
+      "date": "2024-02-06",
+      "image": {
+        "title": "1.20.60.png",
+        "url": "/v2/images/1.20.60.png"
+      },
+      "contentPath": "bedrockPatchNotes/49f17064062fbb55ca64b02e5f54d2ca0c7068b63af3a98419d8c506617e0f60.json",
+      "id": "49f17064062fbb55ca64b02e5f54d2ca0c7068b63af3a98419d8c506617e0f60",
+      "shortText": "A new update for Minecraft is available now, bringing several changes, fixes, and experimental features! Check out the highlights from this release:Fixes to a whole bunch of bugs and parity changesExperimental features from the upcoming 1.21 update, includ",
+      "needsTranslation": null
+    },
+    {
+      "title": "1.20.51 Update",
+      "version": "1.20.51",
+      "patchNoteType": "retail",
+      "date": "2023-12-14",
+      "image": {
+        "url": "/v2/images/4bR6pBOPfKGkXW9fmKEVxr12051.jpeg",
+        "title": "1-20-51"
+      },
+      "contentPath": "bedrockPatchNotes/7BgoMfh4ljip1yIUblEcvI.json",
+      "id": "7BgoMfh4ljip1yIUblEcvI",
+      "shortText": "A hotfix is now available for Minecraft: Bedrock Edition that resolves some issues introduced with the latest update.\nFixes:\n\nFixed a crash that could occur when playing on Realms\nItems no longer have the possibility of duplicating after switching selectin"
+    },
+    {
+      "title": "1.20.50 Update",
+      "version": "1.20.50",
+      "patchNoteType": "retail",
+      "date": "2023-12-05",
+      "image": {
+        "url": "/v2/images/4cbQFTsJyawjt2Pl4gsKArr20u5launcher.jpeg",
+        "title": "r20u5 launcher"
+      },
+      "contentPath": "bedrockPatchNotes/5LOlDazW4jrv1xGBYMhbWP.json",
+      "id": "5LOlDazW4jrv1xGBYMhbWP",
+      "shortText": "The latest Minecraft update brings a brand new look for bats, smashable pots, and some new experimental features like the crafter block. Let’s take a look at the highlights!\n\nThe Bat has a brand new look\nImprovements to Decorated Pots, like the ability to "
+    },
+    {
+      "title": "1.20.41 Update",
+      "version": "1.20.41",
+      "patchNoteType": "retail",
+      "date": "2023-11-02",
+      "image": {
+        "url": "/v2/images/1Rmj9y5K9AjNV52KpkbMx4launcherr20u4h1.jpeg",
+        "title": "launcher r20u4h1"
+      },
+      "contentPath": "bedrockPatchNotes/3aYbOsIrp6Lx5axYPqbPdc.json",
+      "id": "3aYbOsIrp6Lx5axYPqbPdc",
+      "shortText": "A new update has been released to address some issues that were introduced with the 1.20.40 update.\nFixes:\n\nFixed a crash that could occur when joining a Realm after doing other things for a while\nFixed a crash that could occur when joining Featured Server"
+    },
+    {
+      "title": "1.20.40 Update",
+      "version": "1.20.40",
+      "patchNoteType": "retail",
+      "date": "2023-10-24",
+      "image": {
+        "url": "/v2/images/655KMGBvViSE4lY0qtXV6xr20u4launcher.jpeg",
+        "title": "r20u4 launcher"
+      },
+      "contentPath": "bedrockPatchNotes/5KOCcohrDIRudWXZPuyGCc.json",
+      "id": "5KOCcohrDIRudWXZPuyGCc",
+      "shortText": "A new update has been released, bringing several changes to the game! Here are the highlights:\n\nExperimental: Rebalanced several Villager trades\nUpdated and improved several in-game sounds\nTweaked the splash sounds when entering and leaving water\nBuckets c"
+    },
+    {
+      "title": "1.20.32 Update",
+      "version": "1.20.32",
+      "patchNoteType": "retail",
+      "date": "2023-10-05",
+      "image": {
+        "url": "/v2/images/5noUirXuH9XGio5BdCnhOplauncherr20u3h2.jpeg",
+        "title": "launcher r20u3h2"
+      },
+      "contentPath": "bedrockPatchNotes/4tjNUkNlgFhZ6Xsyh49pxf.json",
+      "id": "4tjNUkNlgFhZ6Xsyh49pxf",
+      "shortText": "Fixes:\n\nFixed “§” text modifiers overwriting text when next to a line break on iOS (MCPE-174480)\nFixed an issue that caused the keyboard to become unresponsive when placing multiple Signs successively (MCPE-175072)\nButtons and some other non-full blocks on"
+    },
+    {
+      "title": "1.20.31 Update",
+      "version": "1.20.31",
+      "patchNoteType": "retail",
+      "date": "2023-09-26",
+      "image": {
+        "url": "/v2/images/3xzIsGS00AAOgHacCrTpzIlauncherr20u3h1.jpeg",
+        "title": "launcher r20u3h1"
+      },
+      "contentPath": "bedrockPatchNotes/7A1AYwW0FwJ9a9FxoIY5CB.json",
+      "id": "7A1AYwW0FwJ9a9FxoIY5CB",
+      "shortText": "Fixes:\n\nFixed a crash that could occur when opening the Realms Plus page\nImproved server performance when Villagers are grouped together (MCPE-175100)\nFixed an issue that caused Marketplace to become inaccessible after leaving the game on for extended peri"
+    },
+    {
+      "title": "1.20.30 Update",
+      "version": "1.20.30",
+      "patchNoteType": "retail",
+      "date": "2023-09-19",
+      "image": {
+        "url": "/v2/images/1vcIoAtFGRi7z2lrhkN55glauncherr20u3.jpeg",
+        "title": "launcher r20u3"
+      },
+      "contentPath": "bedrockPatchNotes/5t5YfmjI2OGvuzsjqpf2vc.json",
+      "id": "5t5YfmjI2OGvuzsjqpf2vc",
+      "shortText": "A new update has been released, bringing several changes to the game! Here are the highlights:\n\nUpdated “You died” experience\nPlayers can now crawl under single block gaps\nA new \"Recipe Unlocked\" notification will now tell you when you've found a new craft"
+    },
+    {
+      "title": "1.20.12 Update",
+      "version": "1.20.12",
+      "patchNoteType": "retail",
+      "date": "2023-07-18",
+      "image": {
+        "url": "/v2/images/6q57OmGaVM5lrH7NwhDCuRlauncherr20u1h2.jpeg",
+        "title": "launcher r20u1h2"
+      },
+      "contentPath": "bedrockPatchNotes/75o3xX1oiSZ3tRWXAeOePU.json",
+      "id": "75o3xX1oiSZ3tRWXAeOePU",
+      "shortText": "A new update has been released to address some issues that were introduced with the 1.20.10 update.\nFixes:\n\nFixed resource pack crashes with launch of 1.20.10\nFixed a crash that could occur on iOS\nFixed connection stability related to \"Abandoned connection"
+    },
+    {
+      "title": "1.20.10 Update",
+      "version": "1.20.10",
+      "patchNoteType": "retail",
+      "date": "2023-07-11",
+      "image": {
+        "url": "/v2/images/6pVhs25895t1do1EKBHcOQpatchnotesr20u1.jpeg",
+        "title": "patchnotes r20u1"
+      },
+      "contentPath": "bedrockPatchNotes/J4Caugu8hPbMLZrzO9Q9r.json",
+      "id": "J4Caugu8hPbMLZrzO9Q9r",
+      "shortText": "A new Minecraft update is ready to play! Since releasing the Trails &#x26; Tales update, the team has been hard at work on even more improvements to the game. Here are just a few of the highlights:\n\nPlayers can now sneak under 1.5 block gaps\nShovels are no"
+    },
+    {
+      "title": "1.20.1 Update",
+      "version": "1.20.1",
+      "patchNoteType": "retail",
+      "date": "2023-06-21",
+      "image": {
+        "url": "/v2/images/4XnuiZspsijGuZuEyZV8Gvlauncherr120h1.jpeg",
+        "title": "launcher r120h1"
+      },
+      "contentPath": "bedrockPatchNotes/7GxQyLOOgd69mLvBEvbbCF.json",
+      "id": "7GxQyLOOgd69mLvBEvbbCF",
+      "shortText": "A new update has been released to address some issues that were introduced with the 1.20 update.\nFixes:\n\nImproved the reliability of unlocking achievements on Nintendo Switch (MCPE-163948)\nBoats now retain the ability to carry passengers when a world is up"
+    },
+    {
+      "title": "1.20.0 Update - Trails & Tales",
+      "version": "1.20.0",
+      "patchNoteType": "retail",
+      "date": "2023-06-07",
+      "image": {
+        "url": "/v2/images/32rSrRgUjIfpNDkdyaXsVTlauncherr20.jpeg",
+        "title": "launcher r20"
+      },
+      "contentPath": "bedrockPatchNotes/4tqZfkdpK36qqlA1jGGR4s.json",
+      "id": "4tqZfkdpK36qqlA1jGGR4s",
+      "shortText": "The Trails &#x26; Tales Update brings your stories to life! Ride a camel with a companion to find archeological sites or a cherry grove. Hatch a sniffer egg to bring it back from extinction. Create playable mob sounds, craft with bamboo, trim your armor, a"
+    },
+    {
+      "title": "1.19.83 Update",
+      "version": "1.19.83",
+      "patchNoteType": "retail",
+      "date": "2023-05-17",
+      "image": {
+        "url": "/v2/images/5DInzTaBlzNlZtgLVQWvzRlauncherr19u8h3.jpeg",
+        "title": "launcher r19u8h3"
+      },
+      "contentPath": "bedrockPatchNotes/LJnVVyHoWihu9hro0DwbH.json",
+      "id": "LJnVVyHoWihu9hro0DwbH",
+      "shortText": "A new update has been released to address some issues that were introduced with the 1.19.80 update.\n\nFixed several crashes that could occur during gameplay\nThe inventory cursor no longer snaps to a random spot when flicking the left thumbstick (MCPE-169176"
+    },
+    {
+      "title": "1.19.81 Update",
+      "version": "1.19.81",
+      "patchNoteType": "retail",
+      "date": "2023-04-27",
+      "image": {
+        "url": "/v2/images/494YPmtVgeW8p2E4Ngbdgwlauncherr19u8h1.jpeg",
+        "title": "launcher r19u8h1"
+      },
+      "contentPath": "bedrockPatchNotes/7mnWcsd4rnwg4V753vXf4g.json",
+      "id": "7mnWcsd4rnwg4V753vXf4g",
+      "shortText": "A new update has been released to address some issues that were introduced with the 1.19.80 update.\nFixes:\n\nFixed a crash with the ‘/tell’ command (and some other commands) that could occur on Realms\nFixed an issue with Purchase buttons loading infinitely "
+    },
+    {
+      "title": "1.19.80 Update",
+      "version": "1.19.80",
+      "patchNoteType": "retail",
+      "date": "2023-04-26",
+      "image": {
+        "url": "/v2/images/18SePubsq78F4k2Bv5QpWmLauncherR19U8.jpeg",
+        "title": "Launcher R19U8"
+      },
+      "contentPath": "bedrockPatchNotes/7sJl6BUDYOzYYgfRO5ndAB.json",
+      "id": "7sJl6BUDYOzYYgfRO5ndAB",
+      "shortText": "It’s time for a new quality-of-life update containing a variety of changes, fixes, and experimental features! Let’s jump into the highlights:\n\nFixed multiple crashes that could occur during gameplay\nAdded settings to adjust item enchantment glint strength "
+    },
+    {
+      "title": "1.19.73 Update",
+      "version": "1.19.73",
+      "patchNoteType": "retail",
+      "date": "2023-03-29",
+      "image": {
+        "url": "/v2/images/62Uzm0d4MZXfhgkWrOlogrlauncherr19u7h3.jpeg",
+        "title": "launcher r19u7h3"
+      },
+      "contentPath": "bedrockPatchNotes/ifbEMz1Vst9WeWwUx9iFD.json",
+      "id": "ifbEMz1Vst9WeWwUx9iFD",
+      "shortText": "An update has been released to fix several issues that addresses a few issues that occurred since the release of 1.19.70.\nFixes:\n\nFixed several crashes that could occur during gameplay\nFixed a crash that could occur with Command Blocks using teleport comma"
+    },
+    {
+      "title": "1.19.71 Update",
+      "version": "1.19.71",
+      "patchNoteType": "retail",
+      "date": "2023-03-17",
+      "image": {
+        "url": "/v2/images/uZmDzxqShDArnzytpq61Olauncherr19u7h1.jpeg",
+        "title": "launcher r19u7h1"
+      },
+      "contentPath": "bedrockPatchNotes/7fNoJ2zOxYH2MxOq6kpw64.json",
+      "id": "7fNoJ2zOxYH2MxOq6kpw64",
+      "shortText": "An update has been released to fix several issues that addresses a few issues that occurred since the release of 1.19.70.\nFixes:\n\nFixed an issue that could cause the game to get stuck at 66% when loading at launch (MCPE-168284)\nFixed a crash that could occ"
+    },
+    {
+      "title": "1.19.70 Update",
+      "version": "1.19.70",
+      "patchNoteType": "retail",
+      "date": "2023-03-14",
+      "image": {
+        "url": "/v2/images/3LNRJFNiL9HFDCIJyQ3dswlauncherr19u7.jpeg",
+        "title": "launcher r19u7"
+      },
+      "contentPath": "bedrockPatchNotes/1BFc89ztG4j4FXYUKtS2fM.json",
+      "id": "1BFc89ztG4j4FXYUKtS2fM",
+      "shortText": "The latest Minecraft update has arrived! This release brings several quality of life improvements to the game, changes to horse breeding, plus early versions of Archaeology and the Sniffer as new experimental features from the upcoming 1.20 update. Let’s s"
+    },
+    {
+      "title": "1.19.63 Update",
+      "version": "1.19.63",
+      "patchNoteType": "retail",
+      "date": "2023-02-24",
+      "image": {
+        "url": "/v2/images/5LOT7HOhwVPskzpM8pUV1Elauncherr19u6h3.jpeg",
+        "title": "launcher r19u6h3"
+      },
+      "contentPath": "bedrockPatchNotes/2Ch0WP0XeaEyeDYzkUp41t.json",
+      "id": "2Ch0WP0XeaEyeDYzkUp41t",
+      "shortText": "A new update is available that addresses some issues that have occurred since the release of 1.19.60.\nFixes:\n\nFixed an issue that was causing continuous freezes when playing on Nintendo Switch (MCPE-166760)\nFixed a crash that could occur when playing on iO"
+    },
+    {
+      "title": "1.19.62 Update",
+      "version": "1.19.62",
+      "patchNoteType": "retail",
+      "date": "2023-02-16",
+      "image": {
+        "url": "/v2/images/2LuhkQBWvztPJqsLkYOBkQlauncherr19u6h2.jpeg",
+        "title": "launcher r19u6h2"
+      },
+      "contentPath": "bedrockPatchNotes/12D9q6fuZB80UAryVsMVbL.json",
+      "id": "12D9q6fuZB80UAryVsMVbL",
+      "shortText": "A new update is available that addresses some issues that have occurred since the release of 1.19.60.\nFixes:\n\nFixed a crash that could occur during gameplay\nFixed a crash that occurred upon creating a world from a template on Realms\nFixed servers being una"
+    },
+    {
+      "title": "1.19.60 Update",
+      "version": "1.19.60",
+      "patchNoteType": "retail",
+      "date": "2023-02-07",
+      "image": {
+        "url": "/v2/images/50t7qO51GWujVZU5JlFYhlauncherr19u6.jpeg",
+        "title": "launcher r19u6"
+      },
+      "contentPath": "bedrockPatchNotes/5B3NqUP95vgX3k77eyCgk4.json",
+      "id": "5B3NqUP95vgX3k77eyCgk4",
+      "shortText": "It's time for a new update to Minecraft Bedrock Edition! This time, we're focusing on quality of life improvements with quite a few fixes to the game, including over 70 bugs reported by the community. There's also a nice amount of Vanilla parity tweaks and"
+    },
+    {
+      "title": "1.19.51 Update",
+      "version": "1.19.51",
+      "patchNoteType": "retail",
+      "date": "2022-12-13",
+      "image": {
+        "url": "/v2/images/2BI3u5BVdPC1WJZ3voskBllauncherr19u5h1.jpeg",
+        "title": "launcher r19u5h1"
+      },
+      "contentPath": "bedrockPatchNotes/kdGB9BP2WPd5nc4ObPNar.json",
+      "id": "kdGB9BP2WPd5nc4ObPNar",
+      "shortText": "Fixes:\n\nFixed a crash that could occur during gameplay\nPistons can no longer recreate moving blocks that were destroyed mid-move\nHorses can no longer be pushed over Fences with Carpets on top (MCPE-164717)\nTouch control selection screen will no longer appe"
+    },
+    {
+      "title": "1.19.50 Update",
+      "version": "1.19.50",
+      "patchNoteType": "retail",
+      "date": "2022-11-29",
+      "image": {
+        "url": "/v2/images/60F7Fe5sC216Aqjnz1XhPilauncherr19u5.jpeg",
+        "title": "launcher r19u5"
+      },
+      "contentPath": "bedrockPatchNotes/b41BV5n8b3pwrmKkj2z85.json",
+      "id": "b41BV5n8b3pwrmKkj2z85",
+      "shortText": "A new update has been released for Minecraft, bringing Spectator Mode fully into the game! For players using touch controls, you'll find some new control schemes to make gameplay on your device much better. A new cast of default character skins have been a"
+    },
+    {
+      "title": "1.19.41 Update",
+      "version": "1.19.41",
+      "patchNoteType": "retail",
+      "date": "2022-11-03",
+      "image": {
+        "url": "/v2/images/52pRZzpmkYSB8q92GOouT3launcherr19u4h1.jpeg",
+        "title": "launcher r19u4h1"
+      },
+      "contentPath": "bedrockPatchNotes/2R5I5avTP8FqljPCf8XJJB.json",
+      "id": "2R5I5avTP8FqljPCf8XJJB",
+      "shortText": "A new update is available that addresses some issues that have occurred since the release of 1.19.40.\nFixes:\n\nFixed choppy performance after resuming due to incorrectly presented frames on Xbox Series X|S consoles (MCPE-155879)\nFixed the brightness of the "
+    },
+    {
+      "title": "1.19.40 Update",
+      "version": "1.19.40",
+      "patchNoteType": "retail",
+      "date": "2022-10-25",
+      "image": {
+        "url": "/v2/images/5LgiBmytUcV6KFHGlOlvSDlauncherr19u4.jpeg",
+        "title": "launcher r19u4"
+      },
+      "contentPath": "bedrockPatchNotes/1B1WSaVHEz1p3fjmRd39nJ.json",
+      "id": "1B1WSaVHEz1p3fjmRd39nJ",
+      "shortText": "A new update is available for Minecraft, bringing a variety of gameplay improvements, vanilla parity changes, and bug fixes.\nVanilla Parity:\nGeneral\n\nGetting killed by a renamed weapon now produces a death message with the item name\nGetting killed by a mob"
+    },
+    {
+      "title": "1.19.31 Update",
+      "version": "1.19.31",
+      "patchNoteType": "retail",
+      "date": "2022-10-04",
+      "image": {
+        "url": "/v2/images/59xRxAWg3wHGXb5ofSQqrolauncherr19u3h1.jpeg",
+        "title": "launcher r19u3h1"
+      },
+      "contentPath": "bedrockPatchNotes/6iE1JuQtA7MLzjx0Q6e2jF.json",
+      "id": "6iE1JuQtA7MLzjx0Q6e2jF",
+      "shortText": "A new update is available that addresses some issues that have occurred since the release of 1.19.30.\nFixes:\n\nFixed several crashes that could occur during gameplay\nFixed terrain on Maps getting replaced with black pixels (MCPE-162421)\nFixed a bug that unb"
+    },
+    {
+      "title": "1.19.30 Update",
+      "version": "1.19.30",
+      "patchNoteType": "retail",
+      "date": "2022-09-20",
+      "image": {
+        "url": "/v2/images/7cre7urqNWj5HdCojf32YYlauncherr19u3.jpeg",
+        "title": "launcher r19u3"
+      },
+      "contentPath": "bedrockPatchNotes/4N44qXfYBGOAA0DOPsLqcO.json",
+      "id": "4N44qXfYBGOAA0DOPsLqcO",
+      "shortText": "Vanilla Parity:\nGameplay\n\nModified the Fireball entity's collision box to match Java Edition\nThe Enchanting Table now produces a sound when enchanting an item\nAmethyst blocks no longer produce sound when jumping off them\nFixed the bottom texture of the Mel"
+    },
+    {
+      "title": "1.19.22 Update",
+      "version": "1.19.22",
+      "patchNoteType": "retail",
+      "date": "2022-09-01",
+      "image": {
+        "url": "/v2/images/67QOwkBYz6liyI1twx6UNBlauncherr19u2h2.jpeg",
+        "title": "launcher r19u2h2"
+      },
+      "contentPath": "bedrockPatchNotes/1mqMzy6o7sxGomWkFC6neD.json",
+      "id": "1mqMzy6o7sxGomWkFC6neD",
+      "shortText": "A new update has been released to address a few more issues that have occurred since the release of 1.19.20.\nFixes:\n\nFixed a crash that could occur on some devices when loading in worlds with texture packs applied (MCPE-160800)\nFixed a bug where deleting c"
+    },
+    {
+      "title": "1.19.21 Update",
+      "version": "1.19.21",
+      "patchNoteType": "retail",
+      "date": "2022-08-23",
+      "image": {
+        "url": "/v2/images/2mo5QFv6nW4Xzig4o0DVhGlauncherr19u2h1.jpeg",
+        "title": "launcher r19u2h1"
+      },
+      "contentPath": "bedrockPatchNotes/5XgXFYc0CX85HCv0U3rOqk.json",
+      "id": "5XgXFYc0CX85HCv0U3rOqk",
+      "shortText": "A new update is available on Minecraft to address some issues since the release of version 1.19.20.\nFixes:\n\nFixed several crashes that could occur during gameplay\nFixed an issue that caused Villagers' professions to not reflect in their clothing (MCPE-1604"
+    },
+    {
+      "title": "1.19.20 Update",
+      "version": "1.19.20",
+      "patchNoteType": "retail",
+      "date": "2022-08-09",
+      "image": {
+        "url": "/v2/images/4yCQ6zzuxGQXTLQ2RJtg3Qlauncherr19u2.jpeg",
+        "title": "launcher r19u2"
+      },
+      "contentPath": "bedrockPatchNotes/3f6dUSUUcNYft4jAxwVTRU.json",
+      "id": "3f6dUSUUcNYft4jAxwVTRU",
+      "shortText": "A new update is now available for Minecraft that introduces a swath of changes and fixes!\nNew Features:\n\nAdded the updated Create New World screen on Nintendo Switch\n\nChanges:\n\nAdded support for middle mouse click on iOS\nZombies now have a 10% chance to be"
+    },
+    {
+      "title": "1.19.11 Update",
+      "version": "1.19.11",
+      "patchNoteType": "retail",
+      "date": "2022-07-26",
+      "image": {
+        "url": "/v2/images/2EPrgamC3KU72LlHR10WUllauncherr19u1h1.jpeg",
+        "title": "launcher r19u1h1"
+      },
+      "contentPath": "bedrockPatchNotes/3ut4Wl5MM3ZIp1dbtGT3fX.json",
+      "id": "3ut4Wl5MM3ZIp1dbtGT3fX",
+      "shortText": "A new update is available on Minecraft to address some issues since the release of version 1.19.10.\nFixes:\n\nFixed a bug that could cause mobs to not load into the world if their saved y-position was greater than or equal to 25\nFixed incorrect texture rendi"
+    },
+    {
+      "title": "1.19.10 Update",
+      "version": "1.19.10",
+      "date": "2022-07-12",
+      "image": {
+        "url": "/v2/images/1VeqDwA8x9KPqrccwdfp2plauncherr19u1.jpeg",
+        "title": "launcher r19u1"
+      },
+      "contentPath": "bedrockPatchNotes/46RUEyiYqfMBKlbDmPgOOw.json",
+      "id": "46RUEyiYqfMBKlbDmPgOOw",
+      "shortText": "A new update is now available for Minecraft, featuring allay duplication, locate biome command capabilities, and a swath of new improvements.\nNew Features:\nAllay Duplication\n\nWhen an Allay hears a Jukebox playing, it will do a dance animation\nIf the Jukebo"
+    },
+    {
+      "title": "1.19.2 Update",
+      "version": "1.19.2",
+      "date": "2022-06-25",
+      "image": {
+        "url": "/v2/images/4nsEShOojVgWwEAHopdX2Slauncherr19h2.jpeg",
+        "title": "launcher r19h2"
+      },
+      "contentPath": "bedrockPatchNotes/2rAVXm8eTuXCdxaSek59W7.json",
+      "id": "2rAVXm8eTuXCdxaSek59W7",
+      "shortText": "A new update is available for Minecraft that addresses some issues that have occurred since the release of 1.19.0.\nFixes:\n\nFixed several crashes that could occur during gameplay\nFixed a bug on certain flat worlds where below-0 terrain was accidentally bein"
+    },
+    {
+      "title": "1.19.0 Update - The Wild Update",
+      "version": "1.19.0",
+      "date": "2022-06-07",
+      "image": {
+        "url": "/v2/images/Z6FjNeVNbgFS4s0AEjjJVlauncherr19.jpeg",
+        "title": "launcher r19"
+      },
+      "contentPath": "bedrockPatchNotes/18eQHqCAmqYaKjfS7d7Yo2.json",
+      "id": "18eQHqCAmqYaKjfS7d7Yo2",
+      "shortText": "Set your sights for adventure, wander aimlessly, or seek out something new in The Wild Update!\n\nTread carefully in the deep dark or risk waking a warden\nClimb to the top of a mangrove tree and leap through the swamps with Frogs\nFind allays to help gather i"
+    },
+    {
+      "title": "1.18.31 Update",
+      "version": "1.18.31",
+      "date": "2022-04-27",
+      "image": {
+        "url": "/v2/images/6BDMYl08UDPb1GAdCfZRJulauncher11831.jpeg",
+        "title": "launcher 1-18-31"
+      },
+      "contentPath": "bedrockPatchNotes/1DifPN2h96s98aiQYeJohP.json",
+      "id": "1DifPN2h96s98aiQYeJohP",
+      "shortText": "A new update is available for Minecraft that addresses some issues that have occurred since the release of 1.18.30.\nChanges:\n\nIntroducing Spectator Mode experimental toggle. Players can now try out an early development version of Spectator Mode\nFor now, we"
+    },
+    {
+      "title": "1.18.30 Update",
+      "version": "1.18.30",
+      "date": "2022-04-19",
+      "image": {
+        "url": "/v2/images/3GynS4Px6cwSgNkK2WBT7elauncherr18u3.jpeg",
+        "title": "launcher r18u3"
+      },
+      "contentPath": "bedrockPatchNotes/7eBJdHibh46KypJC88NV6R.json",
+      "id": "7eBJdHibh46KypJC88NV6R",
+      "shortText": "A new update is now available for Minecraft, featuring a swath of new improvements:\n\nAn updated Create New World experience will gradually be rolled out to players starting today\nWorlds can now be created with 64-bit seeds\nMany changes to improve damage an"
+    },
+    {
+      "title": "1.18.12 Update",
+      "version": "1.18.12",
+      "date": "2022-02-16",
+      "image": {
+        "url": "/v2/images/31V7EYfNwpyucZaZhByHgylauncherr18u1h2.jpeg",
+        "title": "launcher r18u1h2"
+      },
+      "contentPath": "bedrockPatchNotes/3a8t7dmaTL1i0JSfZhOqM0.json",
+      "id": "3a8t7dmaTL1i0JSfZhOqM0",
+      "shortText": "A new update is available for Minecraft that addresses some top issues that have occurred since the release of 1.18.10.\nFixes:\n\nImproved the smoothness of player movement (MCPE-152176)\nFixed a bug where animation timeline events at 0.0 would sometimes not "
+    },
+    {
+      "title": "1.18.10 Update",
+      "version": "1.18.10",
+      "date": "2022-02-08",
+      "image": {
+        "url": "/v2/images/43CM0I6FTGPqlSyybk8gI7launcher1.18.10.jpeg",
+        "title": "launcher 1.18.10"
+      },
+      "contentPath": "bedrockPatchNotes/3a9JfL11LYIxNdEuDzeTyR.json",
+      "id": "3a9JfL11LYIxNdEuDzeTyR",
+      "shortText": "It's time for a new Minecraft game update! This time around, we're bringing a boat load of fixes and quality of life changes. With well over 100 fixes, there's a lot to cover. Let's dive into the highlights!\n\nAdded Globe Banner Pattern\nIron Golems now show"
+    },
+    {
+      "title": "1.18.2 Update",
+      "version": "1.18.2",
+      "date": "2021-12-09",
+      "image": {
+        "url": "/v2/images/79prceonQAz2lKpi2RCUsGlauncherr18h2.jpeg",
+        "title": "launcher r18h2"
+      },
+      "contentPath": "bedrockPatchNotes/5wglhaSKyg7LyiyewZdFIW.json",
+      "id": "5wglhaSKyg7LyiyewZdFIW",
+      "shortText": "A new update is now available for Minecraft that addresses some issues found since the release of Caves &#x26; Cliffs: Part II.\nFixes:\n\nFixed an issue that affected some large world saves on PlayStation, resulting in corrupted textures and loss of data, in"
+    },
+    {
+      "title": "1.18.1 Update",
+      "version": "1.18.1",
+      "date": "2021-12-06",
+      "image": {
+        "url": "/v2/images/301jVfbprIF3veqLskClaapatchnotesr18h1.jpeg",
+        "title": "patchnotes r18h1"
+      },
+      "contentPath": "bedrockPatchNotes/7oaf4Pqx0nqC8rVDJRpqf9.json",
+      "id": "7oaf4Pqx0nqC8rVDJRpqf9",
+      "shortText": "A new update is now available for Minecraft that addresses some issues found since the release of Caves &#x26; Cliffs: Part II.\nFixes:\n\nFixed a crash that could occur when chatting and playing on Realms\nDecreased the amount of Diamond Ore that generates to"
+    },
+    {
+      "title": "1.18.0 Update - Caves & Cliffs: Part II",
+      "version": "1.18.0",
+      "date": "2021-11-30",
+      "image": {
+        "url": "/v2/images/5WaGZ3Xmk2MnRexm2ZAccZlauncher1.18.0.jpeg",
+        "title": "launcher 1.18.0"
+      },
+      "contentPath": "bedrockPatchNotes/1aUuVloReoujxiu7W7YsWH.json",
+      "id": "1aUuVloReoujxiu7W7YsWH",
+      "shortText": "The day has arrived and Minecraft Caves &#x26; Cliffs: Part II has officially released to the world! It is, indeed, a very special day when we all get to boot up our devices and see a new update ready to download and play. It represents years of hard work "
+    },
+    {
+      "title": "1.17.41 Update",
+      "version": "1.17.41",
+      "date": "2021-10-26",
+      "image": {
+        "url": "/v2/images/3uas3eQLO8kdMAnf4obWFc1.17.41Update.jpeg",
+        "title": "1.17.41 Update"
+      },
+      "contentPath": "bedrockPatchNotes/2lwTDiZAUIJqFgCmNG42Gj.json",
+      "id": "2lwTDiZAUIJqFgCmNG42Gj",
+      "shortText": "Fixes:\n\nFixed a crash that could occur when starting a split screen session while playing on PlayStation\nFixed a problem that caused certain worlds to drastically increase in size, causing high memory usage (MCPE-143156)\n\n"
+    },
+    {
+      "title": "1.17.40 Update",
+      "version": "1.17.40",
+      "date": "2021-10-20",
+      "image": {
+        "url": "/v2/images/2FoSRcCfXQwMINRRKsDTDGBedrock1.17.40.jpeg",
+        "title": "Bedrock 1.17.40"
+      },
+      "contentPath": "bedrockPatchNotes/1SEgEneQj5sW0K7jL4h9Gk.json",
+      "id": "1SEgEneQj5sW0K7jL4h9Gk",
+      "shortText": "The 1.17.40 update has arrived! This release brings new bug fixes to the game, as well as some new experimental features.\nExperimental Features:\nReminder: We are still tweaking world generation and features may change. Please remember to make regular backu"
+    },
+    {
+      "title": "1.17.34 Update",
+      "version": "1.17.34",
+      "date": "2021-10-06",
+      "image": {
+        "url": "/v2/images/1w1JLIEjUvp3bE447vpuV8Bedrock1.17.34.jpeg",
+        "title": "Bedrock 1.17.34"
+      },
+      "contentPath": "bedrockPatchNotes/4NYFodNvky77oEFREdrkUe.json",
+      "id": "4NYFodNvky77oEFREdrkUe",
+      "shortText": "A new Minecraft update is available to address issues with redeeming codes.\nFixes:\n\nFixed an issue with owned content not appearing in the inventory after redeeming a retail code\n\n"
+    },
+    {
+      "title": "1.17.32 Update",
+      "version": "1.17.32",
+      "date": "2021-10-01",
+      "image": {
+        "url": "/v2/images/4hy44oTZeZlsSqNo9z0gbYBedrock1.17.32.jpeg",
+        "title": "Bedrock 1.17.32"
+      },
+      "contentPath": "bedrockPatchNotes/4TWIzIhnHXjUuyldT4hOLx.json",
+      "id": "4TWIzIhnHXjUuyldT4hOLx",
+      "shortText": "A new Minecraft hotfix is now available with several fixes to improve your gameplay experience.\nFixes:\n\nFixed several crashes that could occur during gameplay\nFixed a crash that could occur when navigating the Marketplace sidebar\nFixed issues with content "
+    },
+    {
+      "title": "1.17.30 Update",
+      "version": "1.17.30",
+      "date": "2021-09-22",
+      "image": {
+        "url": "/v2/images/2xilUFgWQarXcudT8DxW4gBedrock1.17.30image.jpeg",
+        "title": "Bedrock 1.17.30 image"
+      },
+      "contentPath": "bedrockPatchNotes/5TdtSB7TZtw2EiuYWOQHjG.json",
+      "id": "5TdtSB7TZtw2EiuYWOQHjG",
+      "shortText": "It's time for the Minecraft 1.17.30 update! The team has been working hard on bug fixes and changes to the Caves &#x26; Cliffs: Part I experience. Those who are feeling adventurous can even check out experimental world generation to discover the highest pe"
+    },
+    {
+      "title": "1.17.11 Update",
+      "version": "1.17.11",
+      "date": "2021-08-10",
+      "image": {
+        "url": "/v2/images/6yiaO5w1Imb359Bctg9wOtBedrock1.17.11.jpeg",
+        "title": "Bedrock 1.17.11"
+      },
+      "contentPath": "bedrockPatchNotes/2zOCfCWGLlC87WxEDk2Xfs.json",
+      "id": "2zOCfCWGLlC87WxEDk2Xfs",
+      "shortText": "Fixes:\n\nPlayers no longer die and instantly respawn after traveling back to Overworld from the End in certain circumstances (MCPE-135226)\nPlayers no longer die and get stuck on the respawn screen when entering an End Portal after dying in the End in certai"
+    },
+    {
+      "title": "1.17.10 Update",
+      "version": "1.17.10",
+      "date": "2021-07-14",
+      "image": {
+        "url": "/v2/images/ZJhBIbkseV1JNmP6dFwHpBedrock1.17.10.jpeg",
+        "title": "Bedrock 1.17.10"
+      },
+      "contentPath": "bedrockPatchNotes/5Lzb0dUMMx67Uoa4KwkeXN.json",
+      "id": "5Lzb0dUMMx67Uoa4KwkeXN",
+      "shortText": "Welcome to the Minecraft 1.17.10 update! The team has been working hard on gameplay improvements since the release Caves &#x26; Cliffs: Part I. We have also introduced some fun new additions, as well as some Caves &#x26; Cliffs: Part II features as part of"
+    },
+    {
+      "title": "1.17.2 Update",
+      "version": "1.17.2",
+      "date": "2021-06-23",
+      "image": {
+        "url": "/v2/images/4OGJ7wkUuaSkvtpz3B8H1vBedrock1.17.2.jpeg",
+        "title": "Bedrock 1.17.2"
+      },
+      "contentPath": "bedrockPatchNotes/STpDEEWkB37RHRkzAv4d9.json",
+      "id": "STpDEEWkB37RHRkzAv4d9",
+      "shortText": "Fixes:\n\nAndesite, Diorite, and Diamond Ore now generate in expected amounts, as they did prior to version 1.17.0 (MCPE-127555, MCPE-130185)\n\n"
+    },
+    {
+      "title": "1.17.0 Update - Caves & Cliffs: Part I",
+      "version": "1.17.0",
+      "date": "2021-06-09",
+      "image": {
+        "url": "/v2/images/2admghFnyjRMErVNOZtndeBedrock1.17.0.jpeg",
+        "title": "Bedrock 1.17.0"
+      },
+      "contentPath": "bedrockPatchNotes/2riBWi5UnQguOu08miv0eP.json",
+      "id": "2riBWi5UnQguOu08miv0eP",
+      "shortText": "Delve into Part I of the Caves &#x26; Cliffs update with fun mobs, blocks, and items! Go underwater to team up with the Axolotl and swim alongside the Glow Squid. When you reach higher ground, tread carefully because the Goats might ram you! Want to build "
+    }
+  ]
+}

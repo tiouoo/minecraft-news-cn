@@ -1,0 +1,138 @@
+<p>对我们来说，这是忙碌的一周，但我们仍然想挤出一个快照，因为我们一直在忙着修复一堆漏洞。</p>
+<h1>实验性渲染更改</h1>
+<p>我们在本快照中加入了一些图形渲染的实验性更改，这可能会在少数较旧的显卡上暴露出一些问题。</p>
+<p>如果你确实发现了任何新的图形漏洞，请将你的显卡品牌和型号以及所使用的操作系统一同报告到漏洞追踪器。
+​</p>
+<h1>20w22a 中的新特性</h1>
+<p>​</p>
+<ul>
+<li>猪灵现在有时会跳舞庆祝狩猎完成</li>
+</ul>
+<p>​</p>
+<h1>20w22a 中的更改</h1>
+<p>​</p>
+<ul>
+<li>村民工作站逻辑更改</li>
+<li>钟现在可以悬挂在更多方块的下方</li>
+<li>当被交易过的村民被闪电击中时，其转化成的女巫将不再消失</li>
+<li>玩家在按住潜行键时不能再骑乘其他实体</li>
+</ul>
+<p>​</p>
+<h2>村民工作站逻辑</h2>
+<p>​</p>
+<ul>
+<li>村民不再尝试在同一工作站工作</li>
+<li>与你添加的工作站相对应职业的附近村民中，经验最丰富的那个将获得该工作站</li>
+<li>村民必须先走到并到达工作站，才能获得该职业/在那里工作</li>
+<li>村民在袭击期间或夜间不再能认领工作站/职业。</li>
+<li>只要村民距离其工作站 16 个方块以内，他们就会在一天中的任何时候检查并确保工作站有效。</li>
+</ul>
+<p>​</p>
+<h1>20w22a 中的技术性更改</h1>
+<p>​</p>
+<ul>
+<li>略微更改了数据包加载方式，以防止自定义数据包崩溃</li>
+<li>缓存了寻路过程中重复的方块类型查找和碰撞，以提高性能</li>
+<li>碰撞检测中的次要优化</li>
+<li>谓词文件中的顶层元素现在可以是数组（所有内容将进行与运算）</li>
+<li>添加了对访问深度缓冲区的着色器支持。</li>
+<li>渲染器现在对一些透明元素使用逐像素混合层。</li>
+</ul>
+<p>​</p>
+<h2>数据包加载</h2>
+<p>​</p>
+<ul>
+<li>如果数据包重新加载失败，更改将不会被应用，游戏将继续使用之前的数据</li>
+<li>如果现有数据包阻止世界加载，游戏将提供以安全模式加载世界的选项，该模式仅加载原版数据包</li>
+<li>数据包列表的更改仅在成功重新加载后才会被保存</li>
+<li>为服务器添加了 <code>--safeMode</code> 选项，以仅加载原版数据包</li>
+<li>游戏现在将检测关键的数据包问题，如缺少必需的标签，并阻止世界被加载</li>
+</ul>
+<p>​</p>
+<h1>20w22a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-667" target="_blank" rel="noopener noreferrer">MC-667</a> 睡莲可以被放置在与其他实体相交的位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-4065" target="_blank" rel="noopener noreferrer">MC-4065</a> 在床上时发送的消息/命令不会被记录在发送历史中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-112131" target="_blank" rel="noopener noreferrer">MC-112131</a> 地牢相交：刷怪笼被圆石替换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-118594" target="_blank" rel="noopener noreferrer">MC-118594</a> 移除 Log4J2Plugins.dat 导致启动时变慢 3 秒，因为它必须重新扫描所有类</li>
+<li><a href="https://bugs.mojang.com/browse/MC-120805" target="_blank" rel="noopener noreferrer">MC-120805</a> 当玩家看到其他人骑着用胡萝卜钓竿控制的猪时，猪的旋转是错误的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-124812" target="_blank" rel="noopener noreferrer">MC-124812</a> 手持方块的末影人可以消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-125006" target="_blank" rel="noopener noreferrer">MC-125006</a> 要塞和地牢会彼此重叠生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-134755" target="_blank" rel="noopener noreferrer">MC-134755</a> 所有矮小生物都会在水面下不远处溺水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143443" target="_blank" rel="noopener noreferrer">MC-143443</a> 如果红石线被活塞破坏，红石粉的方块状态不会正确更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148893" target="_blank" rel="noopener noreferrer">MC-148893</a> 狐狸刷怪笼不会在方块内渲染狐狸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-150806" target="_blank" rel="noopener noreferrer">MC-150806</a> 多个村民被连接到同一个职业方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-153787" target="_blank" rel="noopener noreferrer">MC-153787</a> 僵尸增援可以在玻璃上生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156161" target="_blank" rel="noopener noreferrer">MC-156161</a> 与 1.14 之前不同，某些箱子战利品在同一种子下是随机化的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156866" target="_blank" rel="noopener noreferrer">MC-156866</a> 村民从学徒升级到工匠时消耗的经验少于经验条显示的经验</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157303" target="_blank" rel="noopener noreferrer">MC-157303</a> 村民住在 2 格高的房子里时会醒来并寻找新的“家”（床）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-157436" target="_blank" rel="noopener noreferrer">MC-157436</a> 在创造模式中用剑或三叉戟点击地面时，玩家位置会不断重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162340" target="_blank" rel="noopener noreferrer">MC-162340</a> 世界边界在透明方块后面渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162665" target="_blank" rel="noopener noreferrer">MC-162665</a> 用锹/水瓶熄灭营火时，食物不会掉落</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163910" target="_blank" rel="noopener noreferrer">MC-163910</a> 高延迟时，手臂动画有时会第二次播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-164233" target="_blank" rel="noopener noreferrer">MC-164233</a> 没有工作站的“熟练”村民不会优先于失业村民</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165549" target="_blank" rel="noopener noreferrer">MC-165549</a> 喝物品时仍会播放手臂挥动动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166135" target="_blank" rel="noopener noreferrer">MC-166135</a> 蜂巢/蜂箱内的蜜蜂不会成长，繁殖计时器也不会重置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-167039" target="_blank" rel="noopener noreferrer">MC-167039</a> 用与刷怪笼中相同的生物蛋右键点击刷怪笼时会播放手臂动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169891" target="_blank" rel="noopener noreferrer">MC-169891</a> 在下界（困难难度）中，即使光照等级高于 9，僵尸增援也可以生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171515" target="_blank" rel="noopener noreferrer">MC-171515</a> 半透明物品在半透明方块前不能正确渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171553" target="_blank" rel="noopener noreferrer">MC-171553</a> 玄武岩可以在下界要塞内生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172079" target="_blank" rel="noopener noreferrer">MC-172079</a> /clear 命令的输出不会计算物品栏合成网格中的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172142" target="_blank" rel="noopener noreferrer">MC-172142</a> 拾取物品时物品不可见</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172197" target="_blank" rel="noopener noreferrer">MC-172197</a> 菌岩被镐破坏时不会掉落下界岩</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172272" target="_blank" rel="noopener noreferrer">MC-172272</a> /clear 会清除合成网格中的所有物品，无论物品类型如何</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172479" target="_blank" rel="noopener noreferrer">MC-172479</a> 疣猪兽会立即攻击隐形的玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172980" target="_blank" rel="noopener noreferrer">MC-172980</a> 光不能正确传播到区块边界</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173032" target="_blank" rel="noopener noreferrer">MC-173032</a> 化石可以覆盖要塞的末地传送门</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173063" target="_blank" rel="noopener noreferrer">MC-173063</a> 通过命令放置红石线时，向上的连接不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173197" target="_blank" rel="noopener noreferrer">MC-173197</a> 僵尸猪灵不会像僵尸那样将手臂向上举起</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173404" target="_blank" rel="noopener noreferrer">MC-173404</a> 潜行时骑乘实体发生不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173552" target="_blank" rel="noopener noreferrer">MC-173552</a> 下界化石的支撑岛屿有时在区块边界处被截断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174307" target="_blank" rel="noopener noreferrer">MC-174307</a> 下界化石会阻断玄武岩柱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174325" target="_blank" rel="noopener noreferrer">MC-174325</a> 蘑菇或下界真菌可以替换大型下界真菌（树木）的茎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174692" target="_blank" rel="noopener noreferrer">MC-174692</a> 菌光体、疣块和藤蔓可以覆盖大型下界真菌的茎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174932" target="_blank" rel="noopener noreferrer">MC-174932</a> 游戏开始后，从右到左的文本会以从左到右的顺序显示，直到语言被更改</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175553" target="_blank" rel="noopener noreferrer">MC-175553</a> 猪灵被转化为僵尸猪灵时不会掉落其物品栏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176020" target="_blank" rel="noopener noreferrer">MC-176020</a> 如果玩家骑着炽足兽，其他玩家看不到炽足兽的动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176051" target="_blank" rel="noopener noreferrer">MC-176051</a> 副手中的荧石既设置重生点又同时为重生锚充能</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176147" target="_blank" rel="noopener noreferrer">MC-176147</a> 玄武岩随机被截断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176628" target="_blank" rel="noopener noreferrer">MC-176628</a> 冰霜行者保护玩家免受火焰伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177150" target="_blank" rel="noopener noreferrer">MC-177150</a> 实体滴答  java.lang.IllegalStateException: 标签 minecraft:fire 在其被绑定之前已被使用</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177265" target="_blank" rel="noopener noreferrer">MC-177265</a> 猪灵和僵尸猪灵的右臂/腿/缠腰布纹理与左臂/腿/缠腰布纹理相同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177626" target="_blank" rel="noopener noreferrer">MC-177626</a> 云杉生成损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177870" target="_blank" rel="noopener noreferrer">MC-177870</a> 灵魂营火造成的伤害不是普通营火的两倍</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177888" target="_blank" rel="noopener noreferrer">MC-177888</a> 黑石不能用于修复石制工具和武器（使用铁砧）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177962" target="_blank" rel="noopener noreferrer">MC-177962</a> 大型真菌生长时可以替换含水方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177970" target="_blank" rel="noopener noreferrer">MC-177970</a> 玩家偶尔会在 1 格高的空间中被迫进入爬行状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178003" target="_blank" rel="noopener noreferrer">MC-178003</a> 化石可以在沙漠神殿内生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178441" target="_blank" rel="noopener noreferrer">MC-178441</a> 末影人不躲避凋灵之首投射物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179020" target="_blank" rel="noopener noreferrer">MC-179020</a> 当结构通过初始 jigsaw 方块使用“生成”操作生成时，jigsaw 方块在生成后不会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179890" target="_blank" rel="noopener noreferrer">MC-179890</a> 如果 gamerule doFireTick 被设置为 false 一次，火就会永远停止滴答</li>
+<li><a href="https://bugs.mojang.com/browse/MC-179909" target="_blank" rel="noopener noreferrer">MC-179909</a> 2x2 树有时无法生长，但如果它们生长，总是在地表生长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180098" target="_blank" rel="noopener noreferrer">MC-180098</a> 农民村民的耕种行为损坏</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180771" target="_blank" rel="noopener noreferrer">MC-180771</a> 树在其前方长叶子时，侦测器不会更新</li>
+<li><a href="https://bugs.mojang.com/browse/MC-180877" target="_blank" rel="noopener noreferrer">MC-180877</a> 火不会从下界岩蔓延到其他方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181108" target="_blank" rel="noopener noreferrer">MC-181108</a> 从右到左的文本始终以从左到右的顺序显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181464" target="_blank" rel="noopener noreferrer">MC-181464</a> 当猪灵捡起盾牌时，装备音效无限循环播放</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181529" target="_blank" rel="noopener noreferrer">MC-181529</a> Ctrl + 选取方块不再正确复制头颅/头颅 NBT 数据</li>
+<li><a href="https://bugs.mojang.com/browse/MC-181555" target="_blank" rel="noopener noreferrer">MC-181555</a> 当用草方块、灰化土或菌丝替换雪层时，方块具有“snowy=true”方块状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182666" target="_blank" rel="noopener noreferrer">MC-182666</a> 一致性问题：猪灵在庆祝胜利时没有跳舞动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182888" target="_blank" rel="noopener noreferrer">MC-182888</a> 指南针和时钟在村民交易界面中正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182919" target="_blank" rel="noopener noreferrer">MC-182919</a> 如果你通过右键点击为马装备鞍，马铠会停止渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182967" target="_blank" rel="noopener noreferrer">MC-182967</a> 骑乘时投掷末影珍珠不会传送你</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183275" target="_blank" rel="noopener noreferrer">MC-183275</a> 玄武岩柱在 Java 版中结束于熔岩上方，但在基岩版中结束于熔岩内部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183374" target="_blank" rel="noopener noreferrer">MC-183374</a> 告示牌上的文字在视野内时停止渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183496" target="_blank" rel="noopener noreferrer">MC-183496</a> 附魔闪光在船内部不渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183718" target="_blank" rel="noopener noreferrer">MC-183718</a> 要塞的末地传送门可以被海洋废墟覆盖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183808" target="_blank" rel="noopener noreferrer">MC-183808</a> “Bee Our Guest”进度在从蜂巢收获蜂蜜时不会触发</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183860" target="_blank" rel="noopener noreferrer">MC-183860</a> 由村民转化的僵尸村民是否会获得 PersistenceRequired 取决于攻击它的僵尸是否具有该标签</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184482" target="_blank" rel="noopener noreferrer">MC-184482</a> 击败末影龙后末地折跃门不会生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184609" target="_blank" rel="noopener noreferrer">MC-184609</a> 文本以错误的顺序渲染</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184619" target="_blank" rel="noopener noreferrer">MC-184619</a> 骑乘在其他实体上的猪灵会浮空</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184629" target="_blank" rel="noopener noreferrer">MC-184629</a> 骑在疣猪兽或其他猪灵上的猪灵会自动让它们解除骑乘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184730" target="_blank" rel="noopener noreferrer">MC-184730</a> [崩溃] “java.lang.NullPointerException: mouseClicked event handler” 某些超平坦预设尝试生成时立即崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184740" target="_blank" rel="noopener noreferrer">MC-184740</a> 在之前版本中生成的结构不被识别为有效结构，导致生物无法生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184778" target="_blank" rel="noopener noreferrer">MC-184778</a> 红石粉可以在冒险模式中在十字和点之间切换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-184936" target="_blank" rel="noopener noreferrer">MC-184936</a> 终末之诗/制作人员名单中的旧 Minecraft 标志</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185156" target="_blank" rel="noopener noreferrer">MC-185156</a> 世界生成设置未经过验证，可能导致崩溃</li>
+</ul>

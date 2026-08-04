@@ -1,0 +1,73 @@
+<p>我们现在发布了Minecraft: Java版1.18.2。本次发布增加了通用标签和placefeature命令。它还引入了实验性数据包自定义洞穴生成和向世界添加新自定义结构的可能性。</p>
+<p>此外，此版本包含针对韩国玩家的合规性更新。</p>
+<p>祝您游戏愉快！</p>
+<h1>1.18.2 中的更改</h1>
+<ul>
+<li>在32位环境中运行Minecraft的用户将在主菜单中收到关于即将终止32位环境支持的警告</li>
+<li>如果你在韩国游玩，我们根据游戏法律添加了游戏时长计时器和提醒，以帮助提醒玩家适时休息</li>
+<li>数字0的种子不再作为特例处理</li>
+<li>输入的种子前后多余空格现在将被去除</li>
+<li>海豚现在将更准确地选择最近的结构，无论其类型如何</li>
+<li>末影箱在圣诞节期间不再被包装成礼物</li>
+</ul>
+<h1>1.18.2 中的技术性更改</h1>
+<ul>
+<li>新增命令：<code>placefeature</code></li>
+<li><code>locate</code>命令现在使用命名空间ID参数</li>
+<li><code>locate</code>命令的参数现在是已配置结构而非结构类型。例如，你现在可以使用<code>/locate village_desert</code>或<code>/locate shipwreck_beached</code></li>
+<li><code>locate</code>和<code>locatebiome</code>命令现在支持标签（以<code>#</code>为前缀，区别于普通ID）</li>
+<li>现在可以在实验性数据包中添加自定义结构</li>
+<li>大部分洞穴生成现在可以通过实验性数据包进行配置</li>
+<li>注册表中的任何类型（方块、物品、生物群系等）现在都可以拥有标签</li>
+<li>数据包版本现在为9</li>
+</ul>
+<h2><code>placefeature</code>命令</h2>
+<p>用于在指定位置放置一个已配置特性的新命令。语法：<code>placefeature &#x3C;id> [pos]</code>
+参数：</p>
+<ul>
+<li><code>id</code>：要放置的已配置特性的命名空间ID</li>
+<li><code>pos</code>：作为特性放置原点的位置（如果省略，则使用<code>~ ~ ~</code>）</li>
+</ul>
+<h2>可配置的洞穴</h2>
+<ul>
+<li>为密度函数添加了一个新注册表（通过组合这些函数来生成洞穴）</li>
+<li>噪声设置新增了一个字段<code>noise_router</code>（并移除了几个标志），参见世界生成报告中的<code>worldgen/noise_settings</code>文件夹</li>
+<li>噪声路由器将洞穴生成的数据驱动部分与其余代码连接起来</li>
+</ul>
+<h2>已配置结构和结构集</h2>
+<p>游戏现在生成并存储数据驱动的已配置结构。</p>
+<ul>
+<li>实验性数据包可以添加新的结构集</li>
+<li>位置谓词中的<code>feature</code>字段现在引用已配置特性</li>
+<li><code>exploration_map</code>战利品表函数中的<code>destination</code>字段现在是已配置特性的标签ID</li>
+<li><code>exploration_map</code>战利品表函数不再自动设置地图的显示名称</li>
+</ul>
+<h2>通用标签</h2>
+<ul>
+<li>现在可以为任何注册表（方块、物品、生物群系等）定义标签 - 参见报告中的<code>registries.json</code></li>
+<li>新标签存储在数据包的<code>tags</code>目录下（与旧标签相同）<ul>
+<li>新标签目录的名称与注册表名称相同（例如<code>/data/[namespace]/tags/potion</code>和<code>/data/[namespace]/tags/worldgen/biome</code>）</li>
+<li>现有标签（<code>blocks</code>、<code>items</code>、<code>fluids</code>、<code>entity_types</code>、<code>game_events</code>和<code>functions</code>）暂时保留其名称</li>
+</ul></li>
+<li>世界生成结构中一些先前只接受元素ID列表的字段现在接受标签<ul>
+<li>这些条目现在接受<code>[id, ...]</code>、<code>id</code>（<code>[id]</code>的简写）和<code>#tag</code></li>
+<li>已更改的字段有：<ul>
+<li><code>feature.glow_lichen</code>配置：<code>can_be_placed_on</code></li>
+<li><code>feature.spring_feature</code>配置：<code>valid_blocks</code></li>
+<li><code>feature.simple_random_selector</code>配置：<code>features</code></li>
+<li><code>block_predicate_type.matching_blocks</code>：<code>blocks</code></li>
+<li><code>block_predicate_type.matching_fluids</code>：<code>fluids</code></li>
+<li><code>biome</code>：<code>features</code>中的内部列表，<code>carvers</code>中的映射值</li>
+<li><code>biome_source.checkerboard</code>：<code>biomes</code></li>
+</ul></li>
+</ul></li>
+<li>一些标签字段现在要求ID以<code>#</code>为前缀（但它们尚不接受元素列表）<ul>
+<li><code>dimension_type</code>：<code>infiniburn</code></li>
+<li><code>feature.geode</code>配置：<code>blocks.cannot_replace</code>、<code>blocks.invalid_blocks</code></li>
+<li><code>feature.vegetation_patch</code>、<code>feature.waterlogged_vegetation_patch</code>配置：<code>replaceable</code></li>
+<li><code>feature.root_system</code>配置：<code>root_replaceable</code></li>
+<li><code>structure_processor.protected_blocks</code>：<code>value</code></li>
+</ul></li>
+</ul>
+<h1>1.18.2 中修复的漏洞</h1>
+<p>除了崩溃问题和其他稳定性改进之外，此版本还修复了约100个玩家报告的漏洞。查看<a href="https://bugs.mojang.com/issues/?filter=26771" target="_blank" rel="noopener noreferrer">问题追踪器上的列表</a>。</p>

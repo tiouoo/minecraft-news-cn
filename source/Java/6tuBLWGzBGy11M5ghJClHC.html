@@ -1,0 +1,54 @@
+<p>Bastion remnants, or "home sweet home" as Piglins would call them, are finally here! This snapshot introduces the home of the Piglins. If you scour the world you might also find ruins of some old portals.</p>
+<h1>New Features in 20w16a</h1>
+<ul>
+<li>Added Bastion Remnants!</li>
+<li>Added Ruined Portals</li>
+<li>Added chain blocks</li>
+<li>Added a new music disc titled "Pigstep" by Lena Raine which can only be found in Bastions Remnants</li>
+</ul>
+<h2>Bastion Remnants</h2>
+<p>What's made of Blackstone and full of piglins and hoglins? Bastion Remnants!</p>
+<ul>
+<li>Added 4 separate Bastion Remnant types: Bridge, Hoglin Stable, Housing Units, and Treasure Room</li>
+<li>You can find these sizable structures in all biomes in the Nether except the treacherous ash-dusted towers of Basalt Deltas</li>
+<li>Explore, loot, and conquer a Bastion Remnant to call it your home...but beware, Piglins don't take kindly to intruders stealing their things</li>
+</ul>
+<h2>Ruined Portals</h2>
+<p>Shattered remains of ancient nether portals. Wonder who built them?</p>
+<ul>
+<li>They can be found in any overworld or nether biome</li>
+<li>Some are hidden underground, under the sea, or buried in sand</li>
+</ul>
+<h1>Changes in 20w16a</h1>
+<ul>
+<li>The piglin banner pattern can now be found in Bastion Remnants</li>
+<li>Increased the amount of lava pools to make the deltas more "deltary"</li>
+</ul>
+<h1>Technical Changes in 20w16a</h1>
+<ul>
+<li>Added a button in the GUI that generates a jigsaw structure starting from the jigsaw block, using given generation depth.</li>
+<li>Expanded the max size per axis of Structure Blocks from 32 to 48</li>
+<li>Added a JMX MBean to monitor dedicated server tick times</li>
+</ul>
+<h2>JMX Monitoring</h2>
+<p>It is now possible to monitor the server tick times though JMX.
+The rationale for this is that JMX is a well known and supported monitoring technology with existing integrations and tools.</p>
+<p>This enables server admins to hook alerts and graphing tools using ordinary JMX clients and dashboards.</p>
+<h3>Enabling JMX Monitoring</h3>
+<ul>
+<li>A new flag <code>enable-jmx-monitoring</code> has been added to the server.properties file which if set to <code>true</code> will expose an MBean with the Object name <code>net.minecraft.server:type=Server</code> and two attributes <code>averageTickTime</code> and <code>tickTimes</code> exposing the tick times in milliseconds.</li>
+<li>In order for enabling JMX on the Java runtime you also need to add a couple of JVM flags to the startup as documented <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html" target="_blank" rel="noopener noreferrer">here</a>.</li>
+</ul>
+<h1>Fixed bugs in 20w16a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-37557" target="_blank" rel="noopener noreferrer">MC-37557</a> Sometimes a minecart sound plays/subtitle shown when loading a world</li>
+<li><a href="https://bugs.mojang.com/browse/MC-91163" target="_blank" rel="noopener noreferrer">MC-91163</a> Certain subtitles show up when the player is too far away to hear the sound</li>
+<li><a href="https://bugs.mojang.com/browse/MC-154617" target="_blank" rel="noopener noreferrer">MC-154617</a> Server hangs on stop due to rcon</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171020" target="_blank" rel="noopener noreferrer">MC-171020</a> New nether biomes don't work properly in buffet worlds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-175919" target="_blank" rel="noopener noreferrer">MC-175919</a> Villagers sometimes stop farming</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177136" target="_blank" rel="noopener noreferrer">MC-177136</a> All compasses and lodestone compasses point to the same target, regardless of what type of compass it is</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177238" target="_blank" rel="noopener noreferrer">MC-177238</a> Windows symbolic link in saves/ is no longer followed as of 20w14a</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177253" target="_blank" rel="noopener noreferrer">MC-177253</a> Running a set_attributes function throws java.lang.NullPointerException if it contains an undefined attribute</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177316" target="_blank" rel="noopener noreferrer">MC-177316</a> Lodestone compass in item frame does not update after turning</li>
+<li><a href="https://bugs.mojang.com/browse/MC-178368" target="_blank" rel="noopener noreferrer">MC-178368</a> When rotating a lodestone compass is put in the item frame the compass don't work</li>
+</ul>

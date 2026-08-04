@@ -1,0 +1,108 @@
+<p>在本周的快照中，我们为你带来了古迹废墟的调整、新的命令功能、一个新的进度触发器，以及更多内容！</p>
+<p>挖矿愉快！</p>
+<p>编辑：我们已经为此快照中的崩溃问题发布了修复。如果你遇到崩溃，请尝试关闭所有游戏实例并重新启动启动器。</p>
+<h1>更改</h1>
+<ul>
+<li>所有“Pottery Shards”已更名为“Pottery Sherds”</li>
+<li>如果振动被安排由幽匿感测体或幽匿尖啸体接收，那么它们将保持排队状态，直到所有相邻区块都已加载并开始 tick<ul>
+<li>防止振动共振装置在从远处卸载其区块时失效</li>
+</ul></li>
+<li>游戏的应用程序图标已更新<ul>
+<li>在正式版中它将是一个草方块，在快照版中则是一个泥土块</li>
+</ul></li>
+<li>添加了对 Windows 上 ARM64 机器架构的原生支持<ul>
+<li>要试用此功能，你需要手动在启动器中指定一个原生 Java 可执行文件</li>
+</ul></li>
+</ul>
+<h2>嗅探兽</h2>
+<ul>
+<li>嗅探兽现在可以被火把花种子吸引</li>
+</ul>
+<h2>古迹废墟</h2>
+<ul>
+<li>根据社区反馈重制了结构</li>
+<li>添加了更多结构变体</li>
+<li>沙子不再生成于结构内部</li>
+<li>调整了沙砾和泥土的数量</li>
+<li>调整了可疑的沙砾的数量</li>
+<li>拆分了结构中可疑的沙砾的战利品表。现在有专门的战利品表用于稀有战利品物品（如陶罐碎片、锻造模板），以及专门的战利品表用于更常见的战利品掉落物（如染色玻璃板、工具、蜡烛等）</li>
+<li>由于这些更改，你可能会在旧的快照世界中看到类似 <code>Failed to get element ResourceKey[minecraft:worldgen/processor_list / minecraft:trail_ruins_suspicious_sand]</code> 的错误。这些错误是无害的，但之前未被完全加载的现有古迹废墟结构可能会缺少部分结构</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在为 14，以处理物品显示方向的变化</li>
+<li>添加了 <code>return</code> 命令</li>
+<li>添加了 <code>recipe_crafted</code> 进度触发器</li>
+</ul>
+<h2>命令</h2>
+<h3><code>return</code></h3>
+<p><code>return</code> 命令可用于控制函数内的执行流程并更改其返回值。效果：</p>
+<ul>
+<li>当前执行函数中剩余的其他顶层命令（如果有）将被跳过</li>
+<li>触发该函数的 <code>function</code> 命令的结果值将从已执行命令的数量更改为 <code>value</code></li>
+<li><code>return</code> 命令的结果值也是 <code>value</code></li>
+</ul>
+<p>语法：</p>
+<p><code>return &#x3C;value></code></p>
+<p>参数：</p>
+<ul>
+<li><code>value</code>：一个整数返回值</li>
+</ul>
+<h2>进度</h2>
+<h3>新触发器</h3>
+<h4><code>recipe_crafted</code></h4>
+<ul>
+<li>在合成配方时触发</li>
+<li>条件：<ul>
+<li><code>recipe_id</code> - 所制作配方的资源位置</li>
+<li><code>ingredients</code> - 一个用于配方中物品堆叠的谓词数组<ul>
+<li>单个物品堆叠只能用于满足一个谓词</li>
+<li>每个谓词都需要被满足才能触发进度。这允许区分具有相同标识符但使用不同配料的配方</li>
+<li>此字段是可选的。当未提供或留空时，只有 <code>recipe_id</code> 会决定触发的成功与否</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>标签</h2>
+<ul>
+<li>添加了 <code>villager_plantable_seeds</code> 来表示村民能够种植哪些种类的种子</li>
+<li>添加了 <code>maintains_farmland</code> 来表示哪些方块放置在其上时不会导致耕地变成泥土</li>
+</ul>
+<h2>显示实体</h2>
+<h3>渲染更改</h3>
+<ul>
+<li><code>item_display</code> 物品已围绕 Y 轴旋转 180 度，以更好地匹配在盔甲架头部和物品展示框中渲染物品时应用的变换<ul>
+<li>作为参考，应用于模型的变换顺序（从最内层开始）为 <code>item_transform</code>、Y 轴旋转 180 度、<code>transformation</code> 字段、实体朝向（billboard 选项 + <code>Rotation</code> 字段 + <code>Pos</code> 字段）</li>
+</ul></li>
+</ul>
+<h1>修复 23w16a 中的 bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-162253" target="_blank" rel="noopener noreferrer">MC-162253</a> 跨越某些区块边界时出现卡顿尖峰</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169498" target="_blank" rel="noopener noreferrer">MC-169498</a> 在某些情况下，空的顶部子区块不会更新天光</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170010" target="_blank" rel="noopener noreferrer">MC-170010</a> 天光光照图未正确初始化</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170012" target="_blank" rel="noopener noreferrer">MC-170012</a> 初始天光缺少光照图</li>
+<li><a href="https://bugs.mojang.com/browse/MC-199752" target="_blank" rel="noopener noreferrer">MC-199752</a> 磨制黑石按钮比其他按钮破坏时间更长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-207251" target="_blank" rel="noopener noreferrer">MC-207251</a> 幽匿感测体和幽匿尖啸体在被克隆、在超平坦世界中生成或通过自定义结构放置时无法正常工作</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249450" target="_blank" rel="noopener noreferrer">MC-249450</a> 使用 NBT 放置的幽匿尖啸体无法接收来自附近幽匿感测体的信号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252786" target="_blank" rel="noopener noreferrer">MC-252786</a> SculkSensorBlockEntity 和 SculkShriekerBlockEntity 在更新时会泄漏 VibrationListener</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254410" target="_blank" rel="noopener noreferrer">MC-254410</a> 将 /setidletimeout 设置为大于 35791 的计时器会立即断开空闲玩家</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257178" target="_blank" rel="noopener noreferrer">MC-257178</a> 雕纹书架的红石行为不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260038" target="_blank" rel="noopener noreferrer">MC-260038</a> 嗅探兽的某些动画（如嗅探）没有平滑的动画过渡</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260219" target="_blank" rel="noopener noreferrer">MC-260219</a> 当喂食嗅探兽一组火把花种子中的最后一颗时，不会播放进食音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260221" target="_blank" rel="noopener noreferrer">MC-260221</a> 嗅探兽在受到漂浮状态效果影响而漂浮时仍能挖掘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260237" target="_blank" rel="noopener noreferrer">MC-260237</a> 嗅探兽在恐慌时仍能嗅探</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260466" target="_blank" rel="noopener noreferrer">MC-260466</a> 火把花不会维持用于种植它的耕地</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260849" target="_blank" rel="noopener noreferrer">MC-260849</a> 嗅探兽无法进入矿车</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261214" target="_blank" rel="noopener noreferrer">MC-261214</a> 校准幽匿感测体中的紫水晶被着色且未被拉伸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261286" target="_blank" rel="noopener noreferrer">MC-261286</a> 在液体附近行走会导致播放石头脚步声</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261515" target="_blank" rel="noopener noreferrer">MC-261515</a> 如果有掉落物挡在你和方块之间，你就无法刷拭方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261605" target="_blank" rel="noopener noreferrer">MC-261605</a> 闪烁文字有时会遮住“Java Edition”的几个字母</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261608" target="_blank" rel="noopener noreferrer">MC-261608</a> 幽匿感测体和校准幽匿感测体缺少冷却状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261620" target="_blank" rel="noopener noreferrer">MC-261620</a> 修改瓶子草作物的 age 属性时崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261625" target="_blank" rel="noopener noreferrer">MC-261625</a> “Programmer Art”和“High contrast”内置资源包不兼容</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261643" target="_blank" rel="noopener noreferrer">MC-261643</a> 村民在拾取火把花种子和瓶子草荚果后，却无法种植它们</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261646" target="_blank" rel="noopener noreferrer">MC-261646</a> 嗅探兽产卵时的字幕为“鸡扑通”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261740" target="_blank" rel="noopener noreferrer">MC-261740</a> 在嗅探兽挖掘时喂食会导致它静止不动一段时间，然后无动画地再次挖掘</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261746" target="_blank" rel="noopener noreferrer">MC-261746</a> 音效事件 ID 拼写错误：“block.sniffer.egg_crack”和“block.sniffer.egg_hatch”</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261804" target="_blank" rel="noopener noreferrer">MC-261804</a> 过期的密钥导致玩家无法在服务器上登录</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261857" target="_blank" rel="noopener noreferrer">MC-261857</a> 使用“/setblock”、“/fill”或“/clone”命令在完全隔离的区域中创建少量方块会导致客户端出现严重卡顿</li>
+</ul>

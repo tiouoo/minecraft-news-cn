@@ -1,0 +1,102 @@
+<p><strong>悦灵</strong>，这个没人真正确定怎么发音的生物，现在进入了最新的 Minecraft: Java Edition 快照。伴随着我们闪亮的蓝色新朋友，我们还加入了<strong>远古</strong> <strong>城市</strong>，自从几周前的实验性快照以来，它们经历了一些相当巨大的变化，所以务必去看看。</p>
+<p>采矿愉快！</p>
+<h1>22w13a 中的新特性</h1>
+<ul>
+<li>加入了悦灵生物</li>
+<li>加入了远古城市</li>
+</ul>
+<h2>悦灵</h2>
+<ul>
+<li>悦灵会收集周围所有与它们手持物品相同的物品</li>
+<li>悦灵会喜欢将物品交给它们的玩家，并将收集到的物品带给它们喜欢的玩家</li>
+<li>如果悦灵听到音符盒奏响，该音符盒将成为悦灵最喜欢的音符盒，持续30秒。在此期间，悦灵会待在音符盒附近，并将收集到的物品带到音符盒处而不是带给玩家</li>
+<li>空手与悦灵互动会取下悦灵手持的物品</li>
+<li>悦灵可以在掠夺者前哨站和林地府邸中找到</li>
+</ul>
+<h2>远古城市</h2>
+<p>在深暗之域深处游荡于这些废弃已久的结构大厅中，以发掘一些被遗忘的遗物。</p>
+<ul>
+<li>远古城市结构会在深暗之域生物群系中生成</li>
+<li>在由幽匿感测体和幽匿尖啸体守卫的箱子中，你可以找到新的迅捷潜行附魔</li>
+<li>你还可以在这里找到一种名为强化深板岩的神秘新方块，它无法在生存模式中获得</li>
+<li>生物不能在远古城市中生成</li>
+</ul>
+<h3>与实验性深暗之域快照相比的差异</h3>
+<ul>
+<li>远古城市进行了许多调整，包含新增和调整过的结构</li>
+<li>远古城市的战利品表已进行调整，包括为“冰盒”结构单独设置了一个战利品表</li>
+</ul>
+<h1>22w13a 中的更改</h1>
+<ul>
+<li>带有箱子/熔炉/TNT/漏斗的矿车的配方现在变为无序合成</li>
+<li>每种矿车变体被破坏时现在会掉落自身作为物品，而不是拆分为两个物品（例如箱子和矿车）</li>
+<li>现在只有羊毛和羊毛地毯会阻挡来自音符盒的声音</li>
+</ul>
+<h1>22w13a 中的技术性更改</h1>
+<ul>
+<li>加入了 <code>kill_mob_near_sculk_catalyst</code> 进度触发器</li>
+<li>幽匿尖啸体的方块状态更改</li>
+<li>重命名了一些游戏事件</li>
+</ul>
+<h2>进度</h2>
+<h3>新触发器</h3>
+<h4><code>kill_mob_near_sculk_catalyst</code></h4>
+<ul>
+<li>当玩家在幽匿催化体旁边杀死一个实体时触发</li>
+<li>条件：<ul>
+<li><code>player</code> - 此触发器所针对的玩家</li>
+<li><code>entity</code> - 对被杀死实体的谓词</li>
+<li><code>killing_blow</code> - 对实体死亡方式的谓词</li>
+</ul></li>
+</ul>
+<h2>幽匿尖啸体</h2>
+<ul>
+<li>为幽匿尖啸体加入了 <code>can_summon</code> 方块状态，用于决定尖啸体是否能召唤循声守卫</li>
+<li>通过世界生成放置的尖啸体将把 <code>can_summon</code> 设为 true</li>
+<li>当尖啸体被放置或通过幽匿块扩散生成时，<code>can_summon</code> 会被设为 false</li>
+</ul>
+<h2>游戏事件</h2>
+<p>一些游戏事件已被重命名，其中部分更改是为了让它们在语法上更加一致：</p>
+<ul>
+<li><code>drinking_finish</code> -> <code>drink</code></li>
+<li><code>entity_killed</code> -> <code>entity_die</code></li>
+<li><code>entity_damaged</code> -> <code>entity_damage</code></li>
+<li><code>elytra_free_fall</code> -> <code>elytra_glide</code></li>
+<li><code>mob_interact</code> -> <code>entity_interact</code></li>
+<li><code>ravager_roar</code> -> <code>entity_roar</code></li>
+<li><code>wolf_shaking</code> -> <code>entity_shake</code></li>
+</ul>
+<p>以下事件已合并为 <code>block_activate</code> 和 <code>block_deactivate</code>：</p>
+<ul>
+<li><code>block_press</code></li>
+<li><code>block_unpress</code></li>
+<li><code>block_switch</code></li>
+<li><code>block_unswitch</code></li>
+</ul>
+<p>游戏事件的其他杂项更改：</p>
+<ul>
+<li><code>ring_bell</code> 已被移除，替换为 <code>block_change</code></li>
+<li><code>shulker_open</code> 和 <code>shulker_close</code> 均已被移除，改用 <code>container_open</code> 和 <code>container_close</code></li>
+<li><code>fishing_rod_cast</code> 和 <code>fishing_rod_reel_in</code> 已重命名为 <code>item_interact_start</code> 和 <code>item_interact_finish</code></li>
+<li>加入了 <code>ignore_vibrations_on_occluding_block</code> 游戏事件标签及其后续逻辑</li>
+<li>与各种生物互动时，<code>entity_interact</code> 应该会更频繁地触发</li>
+</ul>
+<h1>22w13a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-249103" target="_blank" rel="noopener noreferrer">MC-249103</a> 在青蛙脚底可以看到 Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249110" target="_blank" rel="noopener noreferrer">MC-249110</a> 青蛙口腔内部的 Z-fighting 纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249115" target="_blank" rel="noopener noreferrer">MC-249115</a> 青蛙在某些生物群系中生成颜色错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249132" target="_blank" rel="noopener noreferrer">MC-249132</a> “成双成对”进度未要求繁殖青蛙</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249349" target="_blank" rel="noopener noreferrer">MC-249349</a> 发射蝌蚪桶时发射出的是物品，而不是装着蝌蚪的水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249380" target="_blank" rel="noopener noreferrer">MC-249380</a> 箱子船内箱子的锁扣位置略高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249382" target="_blank" rel="noopener noreferrer">MC-249382</a> 带有箱子的船在创造模式下被破坏时不会掉落箱子中存储的物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249389" target="_blank" rel="noopener noreferrer">MC-249389</a> GUI 缩放是一个滑块而不是按钮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249392" target="_blank" rel="noopener noreferrer">MC-249392</a> 一些选项名称缺失或未被翻译</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249397" target="_blank" rel="noopener noreferrer">MC-249397</a> 循声守卫右臂底面在'warden_bioluminescent_layer'纹理中缺失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249398" target="_blank" rel="noopener noreferrer">MC-249398</a> 与循声守卫相关的游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249404" target="_blank" rel="noopener noreferrer">MC-249404</a> 箱子船未在配方书中分组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249405" target="_blank" rel="noopener noreferrer">MC-249405</a> chatScale 选项默认值为 0.0 而不是 1.0，导致聊天信息消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249409" target="_blank" rel="noopener noreferrer">MC-249409</a> 熔炉、高炉和烟熏炉即使已经烧起来，如果底部燃料槽没有燃料也不会烹饪</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249474" target="_blank" rel="noopener noreferrer">MC-249474</a> 四足生物坐在箱子船上时姿势不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249642" target="_blank" rel="noopener noreferrer">MC-249642</a> 循声守卫无法越过铁轨</li>
+</ul>

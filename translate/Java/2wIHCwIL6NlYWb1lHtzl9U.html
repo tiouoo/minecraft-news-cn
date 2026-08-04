@@ -1,0 +1,140 @@
+<p>我们现在发布了快照23w14a，其中包含对幽匿方块和附魔台的更改、新的快速游戏功能、Java版更新后的徽标、新的主菜单全景图，以及大量错误修复！</p>
+<p>挖矿愉快！</p>
+<h1>更改</h1>
+<ul>
+<li>幽匿方块的更改</li>
+<li>可替换方块不再阻挡附魔台与书架之间的连接</li>
+<li>在沙漠神殿中，新房间的屋顶塌陷得更多，并且顶层总是能看到一个可疑的沙子方块</li>
+<li>更新了 Minecraft: Java Edition 徽标</li>
+<li>主菜单背景现在是“足迹与故事”全景图</li>
+</ul>
+<h2>幽匿尖啸体</h2>
+<ul>
+<li>现在对它们进行含水处理将使尖啸声静音</li>
+<li>已添加到创造模式菜单中的红石方块选项卡</li>
+</ul>
+<h2>幽匿感测体</h2>
+<ul>
+<li>对于普通和校准过的幽匿感测体，已进行以下更改：<ul>
+<li>默认红石输出已修改，以便在距离计算中更可靠</li>
+<li>现在会对放置它们的方块进行强充能</li>
+</ul></li>
+</ul>
+<h2>校准幽匿感测体</h2>
+<ul>
+<li>主动冷却时间为1秒，而不是2秒</li>
+<li>可检测最远16格外的振动，而不是8格</li>
+<li>在校准输入侧接受信号的方式与其他红石组件更加一致<ul>
+<li>例如，现在可以通过方块接收信号</li>
+</ul></li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>带有点击命令的告示牌现在即使未涂蜡也可以交互<ul>
+<li>带有非<code>text</code>聊天组件的告示牌将无法再编辑</li>
+</ul></li>
+<li>添加了名为<code>reference</code>的新战利品表函数</li>
+<li>添加了对快速游戏的支持</li>
+<li>移除了<code>server</code> &#x26; <code>port</code>参数，因为其功能已被快速游戏取代</li>
+<li>标签的更改</li>
+<li>资源包版本现为14<ul>
+<li>更新了<code>minecraft.png</code>的精灵图布局</li>
+<li>从 Programmer Art 资源包中移除了覆盖的<code>minecraft.png</code></li>
+<li>更新了<code>invite_icon.png</code>的精灵图布局</li>
+</ul></li>
+</ul>
+<h2>战利品表</h2>
+<h3><code>reference</code></h3>
+<p>新函数<code>reference</code>允许函数调用子函数（类似于<code>reference</code>条件）。</p>
+<p>字段：</p>
+<ul>
+<li><code>name</code> - 要调用的函数的位置</li>
+</ul>
+<h2>快速游戏</h2>
+<ul>
+<li>添加了对四个新命令行参数的支持，允许游戏直接启动到世界中</li>
+<li><code>quickPlayPath</code> 接受用于记录的指定路径（相对于运行目录）<ul>
+<li>如果提供了路径，加入世界时将记录以下内容：<ul>
+<li><code>type</code>：<code>singleplayer</code>、<code>multiplayer</code>或<code>realms</code>之一</li>
+<li><code>identifier</code>：表示你想要加入的世界<ul>
+<li>对于单人游戏，为世界的文件夹名称</li>
+<li>对于多人游戏，为服务器的IP地址</li>
+<li>对于Realms，为Realms ID</li>
+</ul></li>
+<li><code>port</code>：表示服务器端口，仅对多人游戏记录</li>
+<li><code>name</code>：世界的名称</li>
+<li><code>gamemode</code>：世界的游戏模式</li>
+<li><code>lastPlayedTime</code>：你加入世界的时间</li>
+</ul></li>
+<li>示例：<ul>
+<li><code>--quickPlayPath "quickPlay/log.json"</code> 将解析为 <code>.minecraft/quickPlay/log.json</code></li>
+</ul></li>
+</ul></li>
+<li><code>quickPlaySingleplayer</code>、<code>quickPlayMultiplayer</code>和<code>quickPlayRealms</code>都接受各自的<code>identifier</code><ul>
+<li>如果提供了这些参数之一，游戏将尝试直接启动到给定世界中</li>
+<li>示例：<ul>
+<li><code>--quickPlaySingleplayer "New World"</code></li>
+<li><code>--quickPlayMultiplayer "localhost:25565"</code></li>
+<li><code>--quickPlayRealms "1234"</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2>标签</h2>
+<ul>
+<li>添加了<code>replaceable_by_trees</code>，以更好地表示树木生长穿过时会被替换的方块</li>
+<li>移除了<code>replaceable_plants</code>，因为它仅用作上述标签方块的一个子集，且并非通用</li>
+<li>添加了<code>sword_efficient</code>，表示用剑破坏比正常略快的方块</li>
+</ul>
+<h1>23w14a中修复的错误</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-2474" target="_blank" rel="noopener noreferrer">MC-2474</a> 放置在书架和附魔台之间的透明方块会抵消从书架获得的附魔加成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-138358" target="_blank" rel="noopener noreferrer">MC-138358</a> 物品展示框顶部的拉杆与物品展示框中的方块产生Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-155084" target="_blank" rel="noopener noreferrer">MC-155084</a> 马的盔甲、缰绳和马勒会出现z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-165773" target="_blank" rel="noopener noreferrer">MC-165773</a> 当参数缺失时，/execute run不会引发语法错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-176309" target="_blank" rel="noopener noreferrer">MC-176309</a> 幻术师纹理中残留了一些错位的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203399" target="_blank" rel="noopener noreferrer">MC-203399</a> 漏斗底部使用了侧面纹理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203406" target="_blank" rel="noopener noreferrer">MC-203406</a> 海带和海草模型似乎引用了生物群系色调，尽管并未使用任何色调</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212271" target="_blank" rel="noopener noreferrer">MC-212271</a> 发光鱿鱼和鱿鱼会出现Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-224433" target="_blank" rel="noopener noreferrer">MC-224433</a> 云纹理包含半透明背景</li>
+<li><a href="https://bugs.mojang.com/browse/MC-230792" target="_blank" rel="noopener noreferrer">MC-230792</a> 猫的尾巴会出现Z-fighting</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237556" target="_blank" rel="noopener noreferrer">MC-237556</a> 黑猫模型的腿部顶部是白色的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-241314" target="_blank" rel="noopener noreferrer">MC-241314</a> 装有液体的炼药锅的底面仍被剔除，尽管不应如此</li>
+<li><a href="https://bugs.mojang.com/browse/MC-246459" target="_blank" rel="noopener noreferrer">MC-246459</a> 溺尸的内部身体纹理中有一些透明像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249514" target="_blank" rel="noopener noreferrer">MC-249514</a> 按钮的UV看起来是倒置的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251536" target="_blank" rel="noopener noreferrer">MC-251536</a> 沙漠僵尸村民的脚部仍与脚侧面不匹配</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251537" target="_blank" rel="noopener noreferrer">MC-251537</a> 沙漠（僵尸）村民的手臂内侧是纯色的，与其他村民不同</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251538" target="_blank" rel="noopener noreferrer">MC-251538</a> 沙漠村民的凉鞋缺少一些像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252099" target="_blank" rel="noopener noreferrer">MC-252099</a> 盆栽红树胎生苗中的纹理映射不正确（镜像效果）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-254588" target="_blank" rel="noopener noreferrer">MC-254588</a> 缓慢效果图标上有颜色错误的像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256419" target="_blank" rel="noopener noreferrer">MC-256419</a> 通过别名运行的不完整命令不会产生错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-256540" target="_blank" rel="noopener noreferrer">MC-256540</a> 骆驼左前腿的顶部纹理包含一些多余的灰色像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258939" target="_blank" rel="noopener noreferrer">MC-258939</a> 非原子缓存状态可能导致多线程崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259873" target="_blank" rel="noopener noreferrer">MC-259873</a> 骷髅马/僵尸马的箱子已过时</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260036" target="_blank" rel="noopener noreferrer">MC-260036</a> 无法在可疑的沙子上种植仙人掌和甘蔗</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260042" target="_blank" rel="noopener noreferrer">MC-260042</a> 无法使用水桶或发射器对饰纹陶罐进行含水处理</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260105" target="_blank" rel="noopener noreferrer">MC-260105</a> 嗅探兽的名称标签部分位于其模型内部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260152" target="_blank" rel="noopener noreferrer">MC-260152</a> 幽匿感测体不会被嗅探兽挖掘激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260202" target="_blank" rel="noopener noreferrer">MC-260202</a> 使用刷子的声音不受方块影响</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260237" target="_blank" rel="noopener noreferrer">MC-260237</a> 嗅探兽在恐慌时也能嗅探</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260240" target="_blank" rel="noopener noreferrer">MC-260240</a> 处于爱情模式的嗅探兽有时不会尝试接近彼此进行繁殖</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260347" target="_blank" rel="noopener noreferrer">MC-260347</a> 重新打开世界时，下落的可疑沙子不会破碎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260348" target="_blank" rel="noopener noreferrer">MC-260348</a> 嗅探兽永远不会在普通泥巴中挖掘，尽管它是“sniffer_diggable”方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260401" target="_blank" rel="noopener noreferrer">MC-260401</a> 当刷子在副手被破坏时，破坏粒子显示的是主手物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260459" target="_blank" rel="noopener noreferrer">MC-260459</a> 幼年嗅探兽嗅探时声音没有变高</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260467" target="_blank" rel="noopener noreferrer">MC-260467</a> 火把花在创造模式物品栏中没有与其他小花归为一组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260478" target="_blank" rel="noopener noreferrer">MC-260478</a> 火把花作物的碰撞箱不会随年龄改变大小</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260527" target="_blank" rel="noopener noreferrer">MC-260527</a> 嗅探兽的“minecraft:sniffer_explored_positions”标签的坐标不检查维度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260778" target="_blank" rel="noopener noreferrer">MC-260778</a> 嗅探兽会试图嗅探世界边界外的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260779" target="_blank" rel="noopener noreferrer">MC-260779</a> 嗅探兽可以挖掘世界边界外的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-260810" target="_blank" rel="noopener noreferrer">MC-260810</a> 村民无法拾取火把花种子，尽管它们能种植火把花</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261167" target="_blank" rel="noopener noreferrer">MC-261167</a> 可疑的沙砾没有指定工具</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261171" target="_blank" rel="noopener noreferrer">MC-261171</a> 无法在可疑的沙砾上种植竹子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261172" target="_blank" rel="noopener noreferrer">MC-261172</a> 瓶子草作物的碰撞箱不会随年龄改变大小</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261174" target="_blank" rel="noopener noreferrer">MC-261174</a> 可疑的沙砾不属于#overworld_carver_replaceables标签，导致雕刻器无法切割它</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261176" target="_blank" rel="noopener noreferrer">MC-261176</a> 瓶子草不会保持用于种植它的耕地</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261179" target="_blank" rel="noopener noreferrer">MC-261179</a> 尝试与涂蜡告示牌交互时会播放声音，但不显示字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261183" target="_blank" rel="noopener noreferrer">MC-261183</a> 嗅探兽蛋的声音事件被列在“entity”下，而不是“block”下</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261186" target="_blank" rel="noopener noreferrer">MC-261186</a> 实体在寻路时不会将嗅探兽蛋视为障碍物</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261187" target="_blank" rel="noopener noreferrer">MC-261187</a> 实体在嗅探兽蛋上方寻路时经常会旋转</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261189" target="_blank" rel="noopener noreferrer">MC-261189</a> 嗅探兽蛋和海龟蛋的方块状态命名不一致</li>
+</ul>

@@ -1,0 +1,107 @@
+<p>在这个快照中，你可以穿着新附魔的靴子，在美丽的灵魂沙谷中愉快地前行。说实话那里有点吓人，所以这双靴子能帮你缓解一下……</p>
+<p>本次更新也发布在 <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-20w12a" target="_blank" rel="noopener noreferrer">minecraft.net</a> 上。</p>
+<p>如果你发现了任何漏洞，请在上报到官方 <a href="https://aka.ms/snapshotbugs?ref=reddit" target="_blank" rel="noopener noreferrer">Minecraft 漏洞追踪器</a>。</p>
+<h1>20w12a 的新内容</h1>
+<ul>
+<li>新增了重生锚，可以在下界设置你的重生点。手持荧光石对其使用可充能，最多充能四次——每次重生消耗一次充能</li>
+<li>新增了磨制玄武岩！熔炼玄武岩即可得到干净闪亮的磨制玄武岩！</li>
+<li>诡异菌岩和绯红菌岩现在可以使用骨粉来催生更多奇特的新植被</li>
+<li>锄现在是对海绵和湿海绵的合适挖掘工具</li>
+</ul>
+<h1>20w12a 中的更改</h1>
+<ul>
+<li>钓鱼时，宝藏战利品现在只能在开阔水域中钓到</li>
+<li>蜜蜂在随机游走时，能离开蜂巢的最大距离减少到了约 22 格</li>
+<li>下界金矿石现在可以用任何种类的镐挖掘，并会掉落几个金粒</li>
+<li>鹦鹉模仿敌对生物的频率降低了</li>
+<li>在和平模式下，鹦鹉不再随机模仿敌对生物</li>
+<li>为洞穴声音引入了新的氛围探测算法</li>
+</ul>
+<h1>20w12a 中的技术性更改</h1>
+<h2>命令</h2>
+<h3>spawnpoint</h3>
+<p>spawnpoint 命令现在支持在任何维度中执行。</p>
+<h3>NBT 中的 UUID</h3>
+<p>NBT 中存储的 UUID 现在表示为四个整数的数组。
+示例：<code>{UUID:[I;1498693494,1027158888,1898994005,860320107]}</code>
+同时，一些字段被重命名了：</p>
+<ul>
+<li>被驯服动物、区域效果云、唤魔者尖牙和投射物的 <code>OwnerUUID</code> 现在简称为 <code>Owner</code></li>
+<li>狐狸的 <code>TrustedUUIDs</code> 现在为 <code>Trusted</code></li>
+<li>潮涌核心的 <code>target_uuid</code> 现在为 <code>Target</code></li>
+</ul>
+<h2>战利品表</h2>
+<h3>实体谓词</h3>
+<ul>
+<li>新增了 <code>fishing_hook</code> 子谓词</li>
+</ul>
+<h4><code>fishing_hook</code></h4>
+<p>检查钓鱼钩的属性</p>
+<h5>参数</h5>
+<ul>
+<li><code>in_open_water</code> - 匹配钓鱼位置是否属于开阔水域钓鱼。钓鱼位置的判定条件为：水域上方没有方块，周围没有固体的水下方块，所有水方块都是水源方块，并且没有气泡柱。</li>
+</ul>
+<h1>20w11a 中修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-3328" target="_blank" rel="noopener noreferrer">MC-3328</a> 从实体上下来时，骑乘实体/玩家会出现在半格过高的位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-64242" target="_blank" rel="noopener noreferrer">MC-64242</a> Silent 标签对某些实体不生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-100342" target="_blank" rel="noopener noreferrer">MC-100342</a> 多个非 tick 方块被标记为 tick 方块，导致生长算法不必要地检查区块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-113809" target="_blank" rel="noopener noreferrer">MC-113809</a> 当支撑方块被替换为同类型方块时，紫颂花、竹子、甘蔗、仙人掌等植物会瞬间生长</li>
+<li><a href="https://bugs.mojang.com/browse/MC-114000" target="_blank" rel="noopener noreferrer">MC-114000</a> 鼠标点击会发出猫的嘶嘶声</li>
+<li><a href="https://bugs.mojang.com/browse/MC-122128" target="_blank" rel="noopener noreferrer">MC-122128</a> 配方书在死亡后重置为关闭状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-129137" target="_blank" rel="noopener noreferrer">MC-129137</a> 鹦鹉在和平模式下模仿敌对生物并不和平</li>
+<li><a href="https://bugs.mojang.com/browse/MC-130137" target="_blank" rel="noopener noreferrer">MC-130137</a> 草和菌丝不会在水下枯萎</li>
+<li><a href="https://bugs.mojang.com/browse/MC-140545" target="_blank" rel="noopener noreferrer">MC-140545</a> 寻路倾向于向北（负 Z）方向</li>
+<li><a href="https://bugs.mojang.com/browse/MC-148936" target="_blank" rel="noopener noreferrer">MC-148936</a> 使用负 Age 值召唤的鹦鹉拥有更小的碰撞箱</li>
+<li><a href="https://bugs.mojang.com/browse/MC-149375" target="_blank" rel="noopener noreferrer">MC-149375</a> 摄像机可以进入雪层内部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-160959" target="_blank" rel="noopener noreferrer">MC-160959</a> 白天点击床不会获得“甜蜜的梦”进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-161754" target="_blank" rel="noopener noreferrer">MC-161754</a> 与带有箱子的驴、骡和羊驼相关的物品复制漏洞</li>
+<li><a href="https://bugs.mojang.com/browse/MC-163918" target="_blank" rel="noopener noreferrer">MC-163918</a> 蜜蜂在采集花粉时没有动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-166980" target="_blank" rel="noopener noreferrer">MC-166980</a> 蜜蜂完成任务后会卡住并向西北方向游走，或者大量随机游走</li>
+<li><a href="https://bugs.mojang.com/browse/MC-168384" target="_blank" rel="noopener noreferrer">MC-168384</a> NBT 标签“Silent:1b”对蜜蜂不生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-169965" target="_blank" rel="noopener noreferrer">MC-169965</a> 如果以递减顺序施加了多个同等级效果，更高等级的药水效果计时器在更高等级效果结束后可能停留在 0:00</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170584" target="_blank" rel="noopener noreferrer">MC-170584</a> 僵尸村庄中的结构 taiga_meeting_point_2 有一根原木旋转错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170591" target="_blank" rel="noopener noreferrer">MC-170591</a> desert_tool_smith_1 地下室中有旋转错误的地板方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170773" target="_blank" rel="noopener noreferrer">MC-170773</a> 配方书和“只显示可合成”筛选在（重新）加载世界后不会在高炉和烟熏炉中保持打开状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-170940" target="_blank" rel="noopener noreferrer">MC-170940</a> 下界合金锭的配方没有被分组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-171133" target="_blank" rel="noopener noreferrer">MC-171133</a> 摄像机可以进入灵魂沙内部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172188" target="_blank" rel="noopener noreferrer">MC-172188</a> 疣猪兽没有被“成双成对”进度所要求</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172690" target="_blank" rel="noopener noreferrer">MC-172690</a> 熔炼下界合金碎片不提供正确的经验值</li>
+<li><a href="https://bugs.mojang.com/browse/MC-172820" target="_blank" rel="noopener noreferrer">MC-172820</a> 猪灵在主世界可以变成成年的鸡骑士</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173199" target="_blank" rel="noopener noreferrer">MC-173199</a> 下界中的化石会导致洞穴/浮岛生成，并可突破下界顶部</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173220" target="_blank" rel="noopener noreferrer">MC-173220</a> 被骑乘的实体死亡时，骑乘者下移到了附近的方块上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173420" target="_blank" rel="noopener noreferrer">MC-173420</a> 各种木材的告示牌合成配方没有被分组</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173487" target="_blank" rel="noopener noreferrer">MC-173487</a> 从水中掉出的死亡消息仍然不会显示</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173552" target="_blank" rel="noopener noreferrer">MC-173552</a> 下界化石支撑岛屿在区块边界被切断</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173791" target="_blank" rel="noopener noreferrer">MC-173791</a> 生物只在船前下船，即使前方有危险</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173828" target="_blank" rel="noopener noreferrer">MC-173828</a> 村庄教堂入口生成不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173832" target="_blank" rel="noopener noreferrer">MC-173832</a> 绯红菌柄、诡异菌柄及对应的去皮菌柄在创造模式物品栏中位置颠倒了</li>
+<li><a href="https://bugs.mojang.com/browse/MC-173837" target="_blank" rel="noopener noreferrer">MC-173837</a> 使用剪刀移除火和灵魂火会消耗剪刀的耐久度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174049" target="_blank" rel="noopener noreferrer">MC-174049</a> 从弩射出的烟花火箭在击中固体方块时不会立即爆炸</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174071" target="_blank" rel="noopener noreferrer">MC-174071</a> savanna_mason_1 的屋顶被切掉了</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174072" target="_blank" rel="noopener noreferrer">MC-174072</a> 结构 savanna_temple_2 中有一个方块旋转错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174073" target="_blank" rel="noopener noreferrer">MC-174073</a> savanna_small_house_5 中有两个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174075" target="_blank" rel="noopener noreferrer">MC-174075</a> savanna_butchers_shop_1 中有一个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174076" target="_blank" rel="noopener noreferrer">MC-174076</a> savanna_small_house_4 中窗户下方的原木旋转不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174077" target="_blank" rel="noopener noreferrer">MC-174077</a> 结构 snowy_library_1 的屋顶下不再有雪</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174078" target="_blank" rel="noopener noreferrer">MC-174078</a> snowy_armorer_house_2 中有三个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174079" target="_blank" rel="noopener noreferrer">MC-174079</a> snowy_weapon_smith_1 中有一个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174082" target="_blank" rel="noopener noreferrer">MC-174082</a> snowy_small_house_2 中有三个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174083" target="_blank" rel="noopener noreferrer">MC-174083</a> snowy_butchers_shop_1 中有三个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174174" target="_blank" rel="noopener noreferrer">MC-174174</a> 使用火焰弓引爆 TNT 时，箭矢动画会卡在循环状态</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174234" target="_blank" rel="noopener noreferrer">MC-174234</a> 村庄结构 snowy_masons_house_1 中有两个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174258" target="_blank" rel="noopener noreferrer">MC-174258</a> 固定的物品展示框不会受到虚空伤害</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174391" target="_blank" rel="noopener noreferrer">MC-174391</a> snowy_medium_house_2 中有多个旋转错误的方块</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174429" target="_blank" rel="noopener noreferrer">MC-174429</a> 紫颂花会移除箭和三叉戟的速度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174464" target="_blank" rel="noopener noreferrer">MC-174464</a> 灵魂疾行在创造模式下会消耗靴子的耐久度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174466" target="_blank" rel="noopener noreferrer">MC-174466</a> 灵魂疾行粒子会在旁观者模式下生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174467" target="_blank" rel="noopener noreferrer">MC-174467</a> 在灵魂沙上放置火不会放置灵魂火</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174476" target="_blank" rel="noopener noreferrer">MC-174476</a> 灵魂火把在 piglin_repellents 物品标签中出现了两次</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174480" target="_blank" rel="noopener noreferrer">MC-174480</a> 猪灵不会被下界金矿石吸引</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174489" target="_blank" rel="noopener noreferrer">MC-174489</a> 真菌灯的合适工具现在既是斧也是锄</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174502" target="_blank" rel="noopener noreferrer">MC-174502</a> 灵魂疾行 III 在水中的灵魂土上会保持并增加玩家动量</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174513" target="_blank" rel="noopener noreferrer">MC-174513</a> 通过与猪灵以物易物获得的灵魂疾行附魔书在铁砧中不生效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174522" target="_blank" rel="noopener noreferrer">MC-174522</a> 灵魂疾行不会损坏靴子</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174690" target="_blank" rel="noopener noreferrer">MC-174690</a> 灵魂疾行附魔书可以在箱子中找到</li>
+<li><a href="https://bugs.mojang.com/browse/MC-174785" target="_blank" rel="noopener noreferrer">MC-174785</a> 斧不会影响绯红和诡异墙上的告示牌的挖掘速度</li>
+</ul>

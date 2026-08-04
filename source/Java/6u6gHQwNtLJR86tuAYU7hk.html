@@ -1,0 +1,144 @@
+<p>In this snapshot we're bringing you an additional advancement, updates to telemetry, as well as a fix for an 11 year old bug!</p>
+<p>Happy stepping!</p>
+<h1>New Features</h1>
+<h2>New advancements</h2>
+<h3>Adventure advancements</h3>
+<ul>
+<li><code>The Power of Books</code> : Read the power signal of a Chiseled Bookshelf using a Comparator</li>
+</ul>
+<h1>Changes</h1>
+<ul>
+<li>For ease of use, the Smithing Table no longer requires a Smithing Template to be in the template slot before placing an itemstack into the other slots</li>
+<li>Jukebox has been added to the Redstone Blocks creative tab</li>
+</ul>
+<h2>Step Sounds</h2>
+<ul>
+<li>Walking on a block will now always play a step sound<ul>
+<li>It was previously not the case if you were walking along the edge of a block with air or fluid besides it</li>
+</ul></li>
+<li>Walking on the ocean floor will produce a step sound for the block you are walking on at a lower volume and pitch</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The data pack version is now 15, accounting for sign data format, item display orientation and advancement changes</li>
+<li>Advancement trigger changes:<ul>
+<li>Added <code>recipe_crafted</code></li>
+<li>Changed format of <code>placed_block</code>, <code>item_used_on_block</code> and <code>allay_drop_item_on_block</code> triggers</li>
+</ul></li>
+<li>Loot table condition/predicate changes:<ul>
+<li>Renamed <code>alternative</code> to <code>any_of</code></li>
+<li>Added <code>all_of</code></li>
+</ul></li>
+<li>Updates to telemetry<ul>
+<li>A new property has been added to every event: <code>launcher_name</code></li>
+<li>The <code>world_loaded</code> event now has a new property: <code>realms_map_content</code></li>
+<li>Added two new opt-in telemetry events: <code>game_load_times</code> and <code>advancement_made</code></li>
+</ul></li>
+</ul>
+<h2>Advancements</h2>
+<h3>Changed triggers</h3>
+<ul>
+<li>All fields in <code>placed_block</code>, <code>item_used_on_block</code> and <code>allay_drop_item_on_block</code> have been collapsed to a single <code>location</code> field</li>
+<li>New <code>location</code> is similar to <code>player</code> field - it's a list of loot conditions/predicates</li>
+<li>All conditions in this list must match for a trigger to run</li>
+<li>Conditions are evaluated in a new loot context called <code>advancement_location</code>. It has access to:<ul>
+<li>Player as <code>this</code> entity</li>
+<li>Position of placed block</li>
+<li>Block state of placed/interacted block</li>
+<li>Held/used item as "tool"</li>
+</ul></li>
+<li>Migration guide:<ul>
+<li>Contents of old <code>location</code> field should be migrated to <code>location_check</code> condition</li>
+<li>Contents of <code>item</code> field should be migrated to <code>match_tool</code> condition</li>
+<li>Contents of <code>block</code> + <code>state</code> fields should be migrated to <code>block_state_property</code> condition</li>
+</ul></li>
+</ul>
+<p><strong>Example</strong> (from <code>make_a_sign_glow</code> advancement):</p>
+<p>Before:</p>
+<pre><code>{
+    "conditions": {
+        "item": {
+            "items": [
+                "minecraft:glow_ink_sac"
+            ]
+        },
+        "location": {
+            "block": {
+                "tag": "minecraft:all_signs"
+            }
+        }
+    },
+    "trigger": "minecraft:item_used_on_block"
+}
+</code></pre>
+<p>After:</p>
+<pre><code>{
+    "conditions": {
+        "location": [
+            {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                    "items": [
+                        "minecraft:glow_ink_sac"
+                    ]
+                }
+            },
+            {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "block": {
+                        "tag": "minecraft:all_signs"
+                    }
+                }
+            }
+        ]
+    },
+    "trigger": "minecraft:item_used_on_block"
+}
+</code></pre>
+<h2>Loot tables</h2>
+<h3><code>any_of</code>/<code>all_of</code></h3>
+<ul>
+<li>Loot condition <code>alternative</code> has been renamed to <code>any_of</code></li>
+<li>Added new loot condition <code>all_of</code> that passes only when all sub-conditions pass. It has the same syntax as <code>any_of</code></li>
+</ul>
+<h2>Telemetry</h2>
+<p>This release includes a new global property sent with every event, a new property in the required WorldLoaded event, as well as two new opt-in events. The updated required events will help us troubleshoot launcher bugs more efficiently, and understand how Java Realms content is interacted with. The updated optional events will help inform game design decisions, and allow us to track and improve game load speeds.</p>
+<h3>All events</h3>
+<ul>
+<li>Added new property: <code>launcher_name</code><ul>
+<li>This is set based on the <code>minecraft.launcher.brand</code> system property. This will help us troubleshoot game launch related bugs more effectively, as we will be able to see whether the issue originated in the Minecraft launcher or a third-party program.</li>
+</ul></li>
+</ul>
+<h3>Updated required events</h3>
+<ul>
+<li><code>world_loaded</code><ul>
+<li>Added new property: <code>realms_map_content</code><ul>
+<li>When loading into a Realms Map Content world (Minigame), the <code>world_loaded</code> event will receive the name of that map. This is to help us understand how Java Realms users interact with Java Realms adventure or minimap content.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>New optional events</h3>
+<ul>
+<li><code>advancement_made</code><ul>
+<li>This event is triggered when a player completes an advancement, and allows us to see the advancement ID and the time when the advancement was completed. This helps us as a studio understand player progress and limits, which informs our game design.</li>
+</ul></li>
+<li><code>game_load_times</code><ul>
+<li>An event that is triggered when the game client is loaded and includes the time it took for the client to load. This is so that we can work on improving and reducing the time it takes to load the game client.</li>
+</ul></li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w18a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-1133" target="_blank" rel="noopener noreferrer">MC-1133</a> Whether or not a player experiences some effect is calculated based on the block under the center of the player</li>
+<li><a href="https://bugs.mojang.com/browse/MC-48923" target="_blank" rel="noopener noreferrer">MC-48923</a> Slime/magma cubes not affected by jump boost potion effect</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257269" target="_blank" rel="noopener noreferrer">MC-257269</a> Sculk sensor detects player walking between carpet and wool</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261417" target="_blank" rel="noopener noreferrer">MC-261417</a> The hitboxes of sniffers are not adjusted when they lay down</li>
+<li><a href="https://bugs.mojang.com/browse/MC-261952" target="_blank" rel="noopener noreferrer">MC-261952</a> Clocks flicker rapidly when enchanted and in an unnatural dimension</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262003" target="_blank" rel="noopener noreferrer">MC-262003</a> Bundle tooltip does not show its interface</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262067" target="_blank" rel="noopener noreferrer">MC-262067</a> The type of sniffer digging particles that are produced is determined by the block that sniffers are located on instead of the block that sniffers are digging</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262069" target="_blank" rel="noopener noreferrer">MC-262069</a> Sniffers continue digging after their target block is destroyed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262104" target="_blank" rel="noopener noreferrer">MC-262104</a> Rendering of FPS graph seems to be performing worse than before</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262123" target="_blank" rel="noopener noreferrer">MC-262123</a> Advancement titles of new advancements introduced in 23w17a are improperly capitalized</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262133" target="_blank" rel="noopener noreferrer">MC-262133</a> Strong lag spikes when moving above a cleared area with exposed void</li>
+<li><a href="https://bugs.mojang.com/browse/MC-262218" target="_blank" rel="noopener noreferrer">MC-262218</a> Block light updates don't cross chunk borders properly in 23w17a</li>
+</ul>

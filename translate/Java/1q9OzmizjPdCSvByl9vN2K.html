@@ -1,0 +1,154 @@
+<p>雪比以前更雪了。</p>
+<p>对于今天的快照，我们更改了上一个快照中引入的大部分纹理。这仅仅是为了测试这些纹理是否能带来更好的探索和建造体验。我们很想听听你的看法。请记住，某些纹理将来可能会被还原或再次更改。</p>
+<h1>20w46a 的新特性</h1>
+<ul>
+<li>加入了细雪！</li>
+</ul>
+<h2>细雪</h2>
+<p>更雪白的雪！</p>
+<ul>
+<li>细雪是一种陷阱方块，任何实体走入其中都会陷入</li>
+<li>你可以用桶采集和放置细雪</li>
+<li>穿上皮革靴子可以防止你陷入细雪方块中</li>
+<li>将炼药锅放在下雪的环境中，它会慢慢装满细雪</li>
+</ul>
+<h3>冰冻</h3>
+<ul>
+<li>站在细雪中会使实体慢慢被冻伤</li>
+<li>一旦被冻住，被冰冻的实体每隔几秒就会受到一次冰冻伤害</li>
+<li>每件皮革盔甲都能减缓实体的冰冻速度</li>
+<li>穿上全套皮革盔甲可以完全免疫冰冻</li>
+</ul>
+<h1>20w46a 的更改</h1>
+<ul>
+<li>避雷针吸引闪电的范围翻倍</li>
+<li>铜块现在由 4 个铜锭合成</li>
+<li>在不同生物群系之间移动时，天空颜色现在会平滑变化</li>
+<li>改变值的按钮（如<code>难度</code>）现在可以用鼠标滚轮控制</li>
+<li>按住 Shift 键点击改变值的按钮会切换到上一个值</li>
+<li>现在可以在按住 Alt 键的同时访问“调试”世界类型（之前是 Shift）</li>
+</ul>
+<h2>纹理</h2>
+<p>更改了上一个快照中引入的一些方块和物品纹理：</p>
+<ul>
+<li>切制铜块</li>
+<li>避雷针</li>
+<li>方解石</li>
+<li>紫水晶块</li>
+<li>紫水晶芽床</li>
+<li>遮光玻璃</li>
+<li>蜡烛物品图标</li>
+<li>铜锭物品图标</li>
+<li>紫水晶碎片物品图标</li>
+<li>收纳袋物品图标</li>
+</ul>
+<h1>20w46a 的技术更改</h1>
+<ul>
+<li>移除了<code>/replaceitem</code>命令</li>
+<li>添加了<code>/item</code>命令</li>
+<li>添加了物品修饰器，它重用战利品表函数语法来描述<code>/item</code>命令中的物品修改。</li>
+<li>数据包版本现在为 7</li>
+<li>战利品表现在可以通过 UUID 访问计分板数值。</li>
+<li>战利品表中随机数生成器内的值现在可以嵌套。</li>
+<li>结构方块的默认模式现在是<code>加载</code>。<code>数据</code>模式现在被隐藏（但可以通过按住 Alt 键点击模式按钮来访问）</li>
+</ul>
+<h2>物品修饰器</h2>
+<p>战利品表的函数部分现在可以定义为数据包资源中独立的 <code>item_modifiers</code> 目录。
+此类文件可以包含单个函数（即单个 JSON 对象）或函数数组。</p>
+<h2>命令</h2>
+<h3><code>item</code></h3>
+<p>修改物品或方块容器。</p>
+<p>此命令有三种形式：</p>
+<ul>
+<li><code>/item &#x3C;目标> replace &#x3C;物品堆叠> [&#x3C;数量>]</code> - 与旧的 <code>replaceitem</code> 相同</li>
+<li><code>/item &#x3C;目标> modify &#x3C;修饰器></code> - 修改物品（不复制）。</li>
+<li><code>/item &#x3C;目标> copy &#x3C;来源> [&#x3C;修饰器>]</code> - 将物品从来源复制到目标，可选择应用修饰器</li>
+</ul>
+<p>可能的来源和目标：</p>
+<ul>
+<li><code>entity &#x3C;选择器> &#x3C;槽位></code></li>
+<li><code>block &#x3C;x> &#x3C;y> &#x3C;z> &#x3C;槽位></code></li>
+</ul>
+<p>例如，<code>/item block ~ ~ ~ container.0 copy entity @s enderchest.0</code> 会将玩家末影箱中的第一个物品复制到玩家当前所站方块的第一个容器槽位中。</p>
+<h2>战利品表</h2>
+<h3>新条件</h3>
+<h4><code>value_check</code></h4>
+<p>检查值的范围。</p>
+<p>参数：</p>
+<ul>
+<li><code>value</code> - 参见“新值提供器”部分（目前是随机数生成器和计分板的组合）</li>
+<li><code>range</code> - 最小/最大范围</li>
+</ul>
+<h3>更改的条件</h3>
+<h4><code>score</code></h4>
+<p><code>entity</code> 参数现在已被替换为 <code>target</code>。
+它既可以包含旧 <code>entity</code> 字段中的值（如 <code>this</code>），也可以是计分板持有者名称，形式为 <code>{"name": "..."}</code>。</p>
+<h3>更改的函数</h3>
+<h4><code>set_damage</code></h4>
+<p>此函数现在有 <code>add</code> 参数。如果为 <code>true</code>，更改将相对于当前耐久度。如果为 <code>false</code>，耐久度将被替换为当前值（默认行为）</p>
+<h4><code>set_count</code></h4>
+<p>此函数现在有 <code>add</code> 参数。如果为 <code>true</code>，更改将相对于当前物品数量。如果为 <code>false</code>，物品数量将被替换为当前值（默认行为）</p>
+<h4><code>copy_nbt</code></h4>
+<p><code>source</code> 参数现在可以设置为 <code>{"storage": &#x3C;命名空间 ID>}</code>，以访问命令存储。</p>
+<h3>新函数</h3>
+<h4><code>set_enchantments</code></h4>
+<p>修改物品上的附魔</p>
+<h5>参数</h5>
+<ul>
+<li><code>enchantments</code> - 附魔 ID 到等级值的映射（可以是计分板或随机数）</li>
+<li><code>add</code> - 如果为 <code>true</code>，更改将相对于当前等级。如果为 <code>false</code>，等级将被替换为当前值（默认行为）</li>
+</ul>
+<h3>新值提供器</h3>
+<p>注意：值提供器可以在与随机数生成器相同的地方使用。</p>
+<h4><code>score</code></h4>
+<p>返回缩放后的计分板数值。</p>
+<h5>参数</h5>
+<ul>
+<li><code>score</code> - 计分板名称</li>
+<li><code>target</code> - 与 <code>score</code> 谓词中的 <code>target</code> 相同</li>
+<li><code>scale</code> - 缩放因子（浮点数）</li>
+</ul>
+<h2>数据包</h2>
+<p>版本 7 的数据包更改：</p>
+<ul>
+<li>移除了 <code>/replaceitem</code>（替换为 <code>/item replace</code>）</li>
+<li><code>score</code> 战利品表条件：<code>entity</code> 参数已被替换为 <code>target</code></li>
+</ul>
+<h1>资源包</h1>
+<p>版本 7 的资源包更改：</p>
+<ul>
+<li>溺尸的纹理镜像已更改（参见 MC-174685）</li>
+<li>游戏模式选择器的槽位现在为 26 像素，而不是 25</li>
+</ul>
+<h1>20w46a 修复的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-2490" target="_blank" rel="noopener noreferrer">MC-2490</a> TNT 动画在 80 刻结束，忽略引信长度更改</li>
+<li><a href="https://bugs.mojang.com/browse/MC-53518" target="_blank" rel="noopener noreferrer">MC-53518</a> 末影人不攻击使用刷怪蛋或 /summon 生成的末影螨</li>
+<li><a href="https://bugs.mojang.com/browse/MC-80468" target="_blank" rel="noopener noreferrer">MC-80468</a> 方块名称之间的不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-99259" target="_blank" rel="noopener noreferrer">MC-99259</a> 自 1.9 起，凋灵的生命值条在生成期间不会上升</li>
+<li><a href="https://bugs.mojang.com/browse/MC-110903" target="_blank" rel="noopener noreferrer">MC-110903</a> 无法使用 /replaceitem 移除马鞍</li>
+<li><a href="https://bugs.mojang.com/browse/MC-143821" target="_blank" rel="noopener noreferrer">MC-143821</a> 在创造模式下使用空地图可以创建额外的 ID 为 0 的地图</li>
+<li><a href="https://bugs.mojang.com/browse/MC-147729" target="_blank" rel="noopener noreferrer">MC-147729</a> 如果在合成时捡起物品，通过配方书合成可能会删除物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-162910" target="_blank" rel="noopener noreferrer">MC-162910</a> 在新创建的世界中于创造模式使用空地图时会创建额外地图</li>
+<li><a href="https://bugs.mojang.com/browse/MC-182954" target="_blank" rel="noopener noreferrer">MC-182954</a> “block.minecraft.banner.base.<color>”显示原始翻译字符串（未翻译）</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183771" target="_blank" rel="noopener noreferrer">MC-183771</a> F3+F4 菜单中的游戏模式切换图标未居中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-183917" target="_blank" rel="noopener noreferrer">MC-183917</a> entity_scores 条件中最小值和最大值都是必需的</li>
+<li><a href="https://bugs.mojang.com/browse/MC-185605" target="_blank" rel="noopener noreferrer">MC-185605</a> 海带会生成在岩浆块上</li>
+<li><a href="https://bugs.mojang.com/browse/MC-188448" target="_blank" rel="noopener noreferrer">MC-188448</a> 熄灭营火时食物会弹出</li>
+<li><a href="https://bugs.mojang.com/browse/MC-189482" target="_blank" rel="noopener noreferrer">MC-189482</a> 使用 Tab 键时局域网世界屏幕按钮的选中顺序错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-196425" target="_blank" rel="noopener noreferrer">MC-196425</a> 失真效果和视野效果滑块中的“关”未完全大写，与其他滑块不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-197276" target="_blank" rel="noopener noreferrer">MC-197276</a> 河豚给予中毒 IV 而不是 II</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198514" target="_blank" rel="noopener noreferrer">MC-198514</a> 创建只有空气的超平坦世界会导致游戏崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198725" target="_blank" rel="noopener noreferrer">MC-198725</a> 在将超平坦预设设置为不存在的生物群系后点击“预设”会崩溃</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203562" target="_blank" rel="noopener noreferrer">MC-203562</a> 潜影盒在潜影贝活动时也会动画</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203574" target="_blank" rel="noopener noreferrer">MC-203574</a> 装饰不会在下界生成</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203621" target="_blank" rel="noopener noreferrer">MC-203621</a> 无法拾取经验球</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203622" target="_blank" rel="noopener noreferrer">MC-203622</a> 多人游戏中使用望远镜时手臂对齐错误</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203631" target="_blank" rel="noopener noreferrer">MC-203631</a> 紫水晶芽用精准采集采集时不会掉落自身</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203643" target="_blank" rel="noopener noreferrer">MC-203643</a> 命令修改的收纳袋进度条比槽位大</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203644" target="_blank" rel="noopener noreferrer">MC-203644</a> 猫和豹猫缺少一条腿</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203646" target="_blank" rel="noopener noreferrer">MC-203646</a> 某些生物在切换到和平模式时不会消失</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203648" target="_blank" rel="noopener noreferrer">MC-203648</a> 盔甲架模型漂浮在其底座上方</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203746" target="_blank" rel="noopener noreferrer">MC-203746</a> 被飘浮的苦力怕杀死后飘浮粒子永远持续</li>
+<li><a href="https://bugs.mojang.com/browse/MC-203880" target="_blank" rel="noopener noreferrer">MC-203880</a> 飘浮的苦力怕 / 没有 AI 的苦力怕</li>
+</ul>

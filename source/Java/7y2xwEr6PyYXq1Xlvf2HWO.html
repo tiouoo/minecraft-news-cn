@@ -1,0 +1,136 @@
+<p>We're happy to share another snapshot, this time offering an early look at some exciting new adventures waiting for you underground in the form of Trial Chambers!</p>
+<p>Trial Chambers are designed to be challenging moments of combat and exploration hidden medium-deep below the surface of the Overworld. Trial Chambers bring new decorative and lighting blocks, new Trial Spawners to deliver a different style of multi-mob fights, and the bushy-browed Breeze, a new mob specific to Trial Chambers which will add quite a bit of chaos to your combats.</p>
+<p>Happy Mining!</p>
+<h1>Changes</h1>
+<ul>
+<li>Monster Spawner now renders their inner faces when looking inside</li>
+</ul>
+<h1>Technical Changes</h1>
+<ul>
+<li>The Data Pack version is now 24</li>
+<li>The Resource Pack version is now 21</li>
+</ul>
+<h1>Data Pack Version 24</h1>
+<ul>
+<li>Added experimental Breeze mob</li>
+<li>Added experimental Trial Spawner block</li>
+<li>Increased maximum value of Jigsaw structure variable <code>size</code> from 7 to 20</li>
+<li>Added <code>trial_chambers_copper_bulb_degradation</code> structure processor list</li>
+</ul>
+<h1>Resource Pack Version 21</h1>
+<ul>
+<li><code>uniform</code> font has been updated to use Unifont 15.1.04 (from 15.0.06)</li>
+<li>The only supported texture format is now .png</li>
+</ul>
+<h2>Breeze Mob</h2>
+<ul>
+<li>Added entity models and textures for experimental Breeze mob:<ul>
+<li><code>breeze</code>, <code>wind_charge</code></li>
+</ul></li>
+<li>Added shader:<ul>
+<li><code>breeze_wind</code></li>
+</ul></li>
+</ul>
+<h1>Experimental Features</h1>
+<h2>Added Breeze mob</h2>
+<ul>
+<li>The Breeze is a cunning, hostile mob that can spawn via Trial Spawner in some rooms within the Trial Chambers</li>
+<li>The Breeze moves primarily by leaping around the target, sometimes jumping quite long distances</li>
+<li>An aggressive adversary, the Breeze shoots volatile wind energy in the form of wind charge projectiles at its target</li>
+<li>Wind charges deal a small amount of damage when colliding directly with an entity</li>
+<li>After colliding with an entity or a block, wind charge projectiles produce a wind burst, which knocks back entities in the area by several blocks</li>
+<li>Wind bursts also have the effect of 'activating' certain blocks:<ul>
+<li>Non-Iron Doors and Trapdoors are flipped</li>
+<li>Fence Gates are flipped</li>
+<li>Buttons are pressed</li>
+<li>Levers are flipped</li>
+<li>Bells are rung and swung</li>
+<li>Lit Candles (both standalone and on cake) are extinguished</li>
+</ul></li>
+<li>Wind bursts do not have any effect on Iron Doors, Iron Trapdoors, or any block being held in its position by a Redstone signal</li>
+</ul>
+<h2>Trial Spawner</h2>
+<ul>
+<li>Trial Spawner is a new variant of Monster Spawners that ejects rewards upon completion and can have variable levels of challenge in multiplayer</li>
+<li>The challenge level will increase for each new player a Trial Spawner notices nearby<ul>
+<li>Challenge level will not decrease until it is reset during a Trial Spawner's cooldown</li>
+</ul></li>
+<li>Unlike normal spawners, a Trial Spawner will spawn a limited number of mobs proportional to its current challenge level<ul>
+<li>It can only spawn a mob at positions that are within line of sight</li>
+<li>It can spawn a mob regardless of any light level requirement the mob has</li>
+<li>Spawned mobs are persistent</li>
+</ul></li>
+<li>Once all mobs are defeated, the Trial Spawner will eject a set of rewards proportional to the current challenge level<ul>
+<li>After the rewards have been ejected, the Trial Spawner goes into cooldown for 30 minutes during which it will no longer spawn mobs</li>
+</ul></li>
+<li>Trial Spawners cannot be crafted nor obtained by players in Survival - instead, they can be found naturally placed throughout Trial Chambers</li>
+<li>Trial Spawners are extremely slow to mine and resistant to explosions, and will not drop even with Silk Touch</li>
+<li>When placed in Creative, Trial Spawners have no mob type set by default<ul>
+<li>The mob type can be set by interacting with it while holding a Spawn Egg</li>
+</ul></li>
+<li>Creative and Spectator players cannot be detected or noticed by Trial Spawners</li>
+</ul>
+<h2>Trial Chambers</h2>
+<ul>
+<li>Trial Chambers are a new structure in the Overworld where players can explore and take on combat challenges during the mid-game<ul>
+<li>Trial Chambers are made out of a variety of Copper and Tuff blocks and can be found in different sizes from large to small</li>
+<li>Trial Chambers are a relatively common find throughout the Deepslate layer of the underground</li>
+</ul></li>
+<li>The layout of each Trial Chamber is procedurally generated, and can include traps, reward chests and a variety of combat spaces<ul>
+<li>Supply chests can be found between different rooms, and give you blocks and items which help you navigate your trials</li>
+<li>Reward chests are guarded by challenges in each room, and can be a source of many high level enchanted books and equipment</li>
+<li>The loot found in reward chests are still being iterated, and are absolutely not final</li>
+</ul></li>
+<li>Each Trial Chamber will include Trial Spawners with a melee, small melee, or ranged category:<ul>
+<li>Melee<ul>
+<li>Zombie</li>
+<li>Husk</li>
+<li>Slime</li>
+</ul></li>
+<li>Small Melee<ul>
+<li>Spider</li>
+<li>Cave Spider</li>
+<li>Baby Zombie</li>
+<li>Silverfish</li>
+</ul></li>
+<li>Ranged<ul>
+<li>Skeleton</li>
+<li>Stray</li>
+<li>Skeleton with Poison Tipped Arrows</li>
+</ul></li>
+</ul></li>
+<li>Each Trial Spawner category will only use one mob for the entire structure when generated, and these mobs are randomized for each Trial Chamber<ul>
+<li>For example, one Trial Chamber might only spawn Zombies, Cave Spiders and Strays, while another might only spawn Slimes, Silverfish and Skeletons</li>
+<li>The exceptions to this are some Trial Spawners in unique rooms which always spawn Breezes</li>
+</ul></li>
+</ul>
+<h3>Known issues</h3>
+<ul>
+<li>The corridors sometimes end with a dead end</li>
+<li>Aquifers, Lush Caves, and Sculk Veins sometimes intersect with the Trial Chamber</li>
+</ul>
+<h2>Trial Key</h2>
+<ul>
+<li>An item that can only be obtained from Trial Spawners</li>
+<li>Trial Keys do not currently have any functionality</li>
+</ul>
+<h1>Fixed bugs in Snapshot 23w45a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-131646" target="_blank" rel="noopener noreferrer">MC-131646</a> Drowned spawners only work in biomes where drowned spawn</li>
+<li><a href="https://bugs.mojang.com/browse/MC-177446" target="_blank" rel="noopener noreferrer">MC-177446</a> "RootVehicle" tag in playerdata entry is not upgraded</li>
+<li><a href="https://bugs.mojang.com/browse/MC-186797" target="_blank" rel="noopener noreferrer">MC-186797</a> Functioning clock and compasses in crafting output slot</li>
+<li><a href="https://bugs.mojang.com/browse/MC-255244" target="_blank" rel="noopener noreferrer">MC-255244</a> NBT link/reference when using /fill</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265702" target="_blank" rel="noopener noreferrer">MC-265702</a> Text components in commands accept malformed JSON</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265747" target="_blank" rel="noopener noreferrer">MC-265747</a> Punching a TNT Minecart in creative mode drops the minecart</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265875" target="_blank" rel="noopener noreferrer">MC-265875</a> Compasses, Clocks and Recovery Compasses work normally within the output slot of the crafter</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266054" target="_blank" rel="noopener noreferrer">MC-266054</a> Side Water texture on Copper bulbs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266056" target="_blank" rel="noopener noreferrer">MC-266056</a> Mobs suffocate inside most copper grate block variants</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266063" target="_blank" rel="noopener noreferrer">MC-266063</a> Copper Doors and Trapdoors make generic metal sounds when placing</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266090" target="_blank" rel="noopener noreferrer">MC-266090</a> Light can pass through copper bulbs</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266091" target="_blank" rel="noopener noreferrer">MC-266091</a> Copper Bulbs do not cull faces correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266096" target="_blank" rel="noopener noreferrer">MC-266096</a> Mobs can spawn on oxidized or waxed copper grates</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266248" target="_blank" rel="noopener noreferrer">MC-266248</a> No error message when granting/revoking an advancement that is already granted/revoked</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266256" target="_blank" rel="noopener noreferrer">MC-266256</a> Accessibility button in the Welcome screen still needs its own string</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266287" target="_blank" rel="noopener noreferrer">MC-266287</a> Can't load .dat and .nbt files (server list &#x26; saved hotbar)</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266289" target="_blank" rel="noopener noreferrer">MC-266289</a> Could not save data raids.dat and random_sequences.dat</li>
+</ul>

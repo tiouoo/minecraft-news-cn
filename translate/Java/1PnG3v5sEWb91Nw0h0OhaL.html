@@ -1,0 +1,76 @@
+<p>本次快照带来了一些专注于红石的更改。值得注意的是，我们调整了合成器和铜灯的刻延迟行为，这些内容仍处于实验性开发中。</p>
+<p>通过这些更改，我们旨在使合成器与其他掉落或弹出物品的方块更加一致，使铜灯与其他在连接的红石信号变化时做出反应或改变状态的方块更加一致。因此，在最近几个快照中搭建的一些装置可能不再正常工作。</p>
+<p>我们非常兴奋这两个新的红石方块为世界带来的改造机会。请继续将您的所有想法发送到 Minecraft Feedback，这样我们就可以一起继续建设 Minecraft！</p>
+<p>尽情享受！</p>
+<h1>更改</h1>
+<ul>
+<li>更新了合成器的纹理</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>数据包版本现在是 25</li>
+</ul>
+<h1>数据包版本 25</h1>
+<ul>
+<li>为记分板条目添加了个性化显示名称</li>
+</ul>
+<h2>命令</h2>
+<h3><code>scoreboard</code></h3>
+<h4>显示名称</h4>
+<ul>
+<li>每个记分板条目现在都可以有一个自定义显示名称</li>
+<li>这些值按目标和得分持有者分别保存</li>
+<li>如果名称不存在，则使用得分持有者的名称（即旧行为）</li>
+<li>如果分数被重置或整个目标被移除，则名称不会被保留</li>
+<li>队伍装饰仍将正常应用于名称</li>
+<li>管理名称的子命令：<ul>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective> &#x3C;text component></code> - 设置显示名称</li>
+<li><code>scoreboard players display name &#x3C;targets> &#x3C;objective></code> - 清除显示名称</li>
+</ul></li>
+</ul>
+<h4>显示名称自动更新</h4>
+<ul>
+<li>为了使显示名称管理更简单，目标还可以配置为在每次分数更新时自动更新显示名称</li>
+<li>此选项默认禁用</li>
+<li>如果得分持有者没有显示名称（因为它无法归属于任何当前加载的实体），则保留当前名称</li>
+<li>控制目标自动更新的命令：<ul>
+<li><code>scoreboard objectives modify &#x3C;scoreboard> displayautoupdate [true|false]</code></li>
+</ul></li>
+</ul>
+<h4>数字格式化</h4>
+<ul>
+<li>数字形式的分数现在可以格式化</li>
+<li>格式可以同时为目标和单个分数设置</li>
+<li>设置了格式的分数将在所有上下文中以相同方式显示（侧边栏、玩家名称下方等）</li>
+<li>管理格式的子命令：<ul>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat &#x3C;format></code> - 用于设置目标的默认格式</li>
+<li><code>scoreboard objectives modify &#x3C;objective> numberformat</code> - 用于清除目标的默认格式</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score> &#x3C;format></code> - 用于为特定得分持有者设置格式</li>
+<li><code>scoreboard players display numberformat &#x3C;targets> &#x3C;score></code> - 用于清除特定得分持有者的格式</li>
+</ul></li>
+</ul>
+<p>格式：</p>
+<ul>
+<li><code>styled &#x3C;style></code> - 分数将以所选样式显示（例如 <code>{"bold":true}</code>）</li>
+<li><code>fixed &#x3C;text component></code> - 分数将被文本替换</li>
+<li><code>blank</code> - 分数将不会显示</li>
+</ul>
+<h1>快照 23w46a 中修复的 Bug</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-259321" target="_blank" rel="noopener noreferrer">MC-259321</a> 刷怪笼将相关实体计入 MaxNearbyEntities</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265662" target="_blank" rel="noopener noreferrer">MC-265662</a> 在非局域网的单人游戏世界中尝试踢出自己时，显示“无法在局域网游戏中踢出服务器所有者”消息</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265873" target="_blank" rel="noopener noreferrer">MC-265873</a> 讲述人热键描述在 macOS 上提到了错误的修饰键</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265910" target="_blank" rel="noopener noreferrer">MC-265910</a> 合成器方块有一游戏刻的冷却时间</li>
+<li><a href="https://bugs.mojang.com/browse/MC-265950" target="_blank" rel="noopener noreferrer">MC-265950</a> 合成器在将物品输出到雕纹书架时会堆叠物品</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266076" target="_blank" rel="noopener noreferrer">MC-266076</a> 铜格栅无法含水</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266099" target="_blank" rel="noopener noreferrer">MC-266099</a> 旁观受到伤害的实体会导致镜头抖动</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266120" target="_blank" rel="noopener noreferrer">MC-266120</a> 1.21 方块配方的部分进度位于常规数据包中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266148" target="_blank" rel="noopener noreferrer">MC-266148</a> 当实验性内容被禁用时，新铜方块的部分合成配方仍会出现</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266190" target="_blank" rel="noopener noreferrer">MC-266190</a> 凝灰岩方块组的调色板自相矛盾</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266437" target="_blank" rel="noopener noreferrer">MC-266437</a> 风弹字幕的大小写不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266445" target="_blank" rel="noopener noreferrer">MC-266445</a> 旋风人不会计入怪物猎人进度</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266455" target="_blank" rel="noopener noreferrer">MC-266455</a> 旋风人生成蛋在创造模式物品栏中的位置不正确</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266459" target="_blank" rel="noopener noreferrer">MC-266459</a> 风弹的碰撞箱和模型未对齐</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266538" target="_blank" rel="noopener noreferrer">MC-266538</a> 试炼刷怪笼可以被熔岩池和其他地物替换</li>
+<li><a href="https://bugs.mojang.com/browse/MC-266622" target="_blank" rel="noopener noreferrer">MC-266622</a> 风弹无法关闭拉杆</li>
+</ul>

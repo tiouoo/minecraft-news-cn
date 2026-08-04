@@ -1,0 +1,101 @@
+<p>In today’s snapshot, we’re making a few needed changes that directly relate to our <a href="https://www.minecraft.net/article/a-caves---cliffs-announcement" target="_blank" rel="noopener noreferrer">recent announcement</a>. If you haven’t yet read it, we strongly recommend you do. You can also check out <a href="https://youtu.be/6YgKUZnUyak" target="_blank" rel="noopener noreferrer">this Caves &#x26; Cliffs video</a> from Agnes and Henrik to learn more about our plans for the update.</p>
+<p>Even though some features will be released later than we’d planned, you can still try them out through a separate data pack. More information, as well as our latest tweaks, can be found here below.</p>
+<h1>Caves &#x26; Cliffs World Generation</h1>
+<p>The riskier and technically more complex world generation changes for the Caves &#x26; Cliffs update will be shipped in a later update and have been switched off in this snapshot. This means:</p>
+<ul>
+<li>World height has been switched back to the 1.16 levels</li>
+<li>Noise caves and aquifers have been switched off</li>
+<li>Cave and ravine carvers have been returned to their old settings</li>
+<li>Crack carvers have been switched off</li>
+<li>Ore distribution has been returned to the 1.16 setup</li>
+<li>Copper now generates between the bottom of the world and height 192, being most common around height 96</li>
+<li>Tuff now generates in blobs between heights 0 and 16</li>
+<li>Worlds created in snapshot 21w05b or any earlier version can now once again be opened</li>
+<li>Worlds created in any version between snapshot 21w06a and 21w14a can no longer be opened</li>
+</ul>
+<h2>The Caves &#x26; Cliffs Prototype Data Pack</h2>
+<p>You can still try out the world generation for the later update using a datapack which activates the changes as an experimental custom world:</p>
+<ul>
+<li><a href="https://launcher.mojang.com/v1/objects/643b1f8f7f71c74ffc913e8572f52fd5bca88282/CavesAndCliffsPreview.zip" target="_blank" rel="noopener noreferrer">Download the data pack</a></li>
+<li>Launch the game, go to the "Create New World" screen, and click the “Data Packs” button</li>
+<li>Drag the downloaded zip file onto the Minecraft window</li>
+<li>The game will ask you if you want to add the data pack – click “Yes”</li>
+<li>Click the play arrow on the data pack that just appeared in the list – this will move it to the list on the right-hand side of the screen</li>
+<li>Click the "Done" button and continue creating your world as normal</li>
+</ul>
+<p>Keep in mind that the world you create with the data pack will be flagged as experimental by the game, and such worlds are not guaranteed to work in future versions. Also, please note that you can’t add data packs that change the world generation to existing worlds, so you must create a new world to access the experimental features.</p>
+<h1>New Features in 21w15a</h1>
+<ul>
+<li>Goats will ram anything that moves... and also armor stands</li>
+</ul>
+<h1>Changes in 21w15a</h1>
+<ul>
+<li>A crinkly, crunchy sound now plays when Bone Meal is used</li>
+<li>Reordered some blocks in the Building Blocks Tab in Creative Menu</li>
+<li>Goats will avoid walking on powder snow</li>
+<li>Creepers know not to mess with goats</li>
+<li>The main menu background has been updated</li>
+<li>Tweaked the textures of raw ore items</li>
+<li>Just like other ore materials, you can craft a compact version with raw ore items in order to save inventory space</li>
+</ul>
+<p><img src="https://launchercontent.mojang.com/images/snapshot-21w15a-ore-texture-comparison.png" alt="Minecraft Snapshot 21w15a Texture Comparison">
+New raw ore textures in snapshot 21w15a. <a href="https://launchercontent.mojang.com/v2/images/snapshot21w15aoretexturecomparisonfull.png" target="_blank" rel="noopener noreferrer">Click here</a> for a link to the full resolution image.</p>
+<h2>Building Blocks tab</h2>
+<ul>
+<li>All ores have been reordered to be in the same location in the creative inventory.</li>
+<li>Compact forms of raw and refined underground materials have been reordered.</li>
+</ul>
+<h1>Technical Changes in 21w15a</h1>
+<ul>
+<li>Added the Marker entity</li>
+<li>Added <code>/debug function</code></li>
+<li><code>selector</code> and <code>nbt</code> chat components can now configure separators between elements</li>
+<li>Servers can now customize a message to display when prompting players about custom resource packs</li>
+</ul>
+<h2>Markers</h2>
+<p>Markers are a new type of entity meant for custom use cases like map making and data packs.</p>
+<ul>
+<li>Only exist on the server side, are never sent to clients</li>
+<li>Do not do any updates of their own</li>
+<li>Have a <code>data</code> compound field that can contain any data</li>
+</ul>
+<h2><code>/debug function</code></h2>
+<p>New debug subcommand executes command with same syntax as function</p>
+<ul>
+<li>Every executed command, message (even if it would be normally invisible), result or error is stored to file</li>
+<li>Cannot be run from inside functions</li>
+</ul>
+<h2>Chat component separators</h2>
+<ul>
+<li>Components that print lists of names, like <code>selector</code> or <code>nbt</code> can now override separator (<code>", "</code> by default) with <code>separator</code> element</li>
+<li>Examples:<ul>
+<li><code>{"selector": "@e[type=chicken]", "separator": "|"}</code></li>
+<li><code>{"nbt": "CustomName", "entity": "@e[type=chicken]", "interpret": true, "separator": {"text": "*", "color": "red"}}</code></li>
+</ul></li>
+</ul>
+<h2>Custom server resource packs</h2>
+<p>When <code>require-resource-pack</code> is used in <code>server.properties</code>, there's now an option for servers to add a custom message.</p>
+<ul>
+<li>A dedicated server can configure additional message to be shown on resource pack prompt (<code>resource-pack-prompt</code> in <code>server.properties</code>, expects chat component syntax, can contain multiple lines)</li>
+</ul>
+<h1>Bugs fixed in 21w15a</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-203855" target="_blank" rel="noopener noreferrer">MC-203855</a> A geode configured_feature causes a crash when use_alternate_layer0_chance is used with no entries in inner_placements</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212145" target="_blank" rel="noopener noreferrer">MC-212145</a> Summoning Glow Lichen using /setblock doesn't place any lichen but creates light until the block is updated</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212273" target="_blank" rel="noopener noreferrer">MC-212273</a> Glow Lichen doesn't render when being held by an Enderman</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215836" target="_blank" rel="noopener noreferrer">MC-215836</a> Deepslate uses the same color as stone on maps</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215844" target="_blank" rel="noopener noreferrer">MC-215844</a> Stone still generates around lava pools at low levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-216588" target="_blank" rel="noopener noreferrer">MC-216588</a> Feature placement - java.lang.IllegalArgumentException: bound must be positive</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218588" target="_blank" rel="noopener noreferrer">MC-218588</a> Cracked deepslate bricks &#x26; tiles are in the incorrect position in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218698" target="_blank" rel="noopener noreferrer">MC-218698</a> Infested deepslate makes the old "stone" sounds</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218705" target="_blank" rel="noopener noreferrer">MC-218705</a> Deepslate emerald ore is separated from other deepslate ores in the creative inventory</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218749" target="_blank" rel="noopener noreferrer">MC-218749</a> Deepslate coal ore doesn't drop experience</li>
+<li><a href="https://bugs.mojang.com/browse/MC-218944" target="_blank" rel="noopener noreferrer">MC-218944</a> Copper ore and deepslate copper ore have inconsistent textures</li>
+<li><a href="https://bugs.mojang.com/browse/MC-219972" target="_blank" rel="noopener noreferrer">MC-219972</a> Deepslate gold ore has an inconsistent pixel</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221501" target="_blank" rel="noopener noreferrer">MC-221501</a> Water splash potions don't give the axolotl 1.5 minutes of moisture</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221718" target="_blank" rel="noopener noreferrer">MC-221718</a> Lava fog repeatedly fails to render each block at certain y-levels</li>
+<li><a href="https://bugs.mojang.com/browse/MC-221798" target="_blank" rel="noopener noreferrer">MC-221798</a> Blindness doesn't render correctly</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222104" target="_blank" rel="noopener noreferrer">MC-222104</a> Beacon beam fog is incorrectly computed</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222266" target="_blank" rel="noopener noreferrer">MC-222266</a> Goats don't attack</li>
+<li><a href="https://bugs.mojang.com/browse/MC-222522" target="_blank" rel="noopener noreferrer">MC-222522</a> Nether Gold Ore is no longer smeltable</li>
+</ul>

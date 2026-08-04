@@ -1,0 +1,263 @@
+<p>今天，我们为你带来了 <code>damage</code> 命令和新的展示实体。</p>
+<p>安全造成伤害！</p>
+<h1>更改</h1>
+<ul>
+<li>唱片机现在在播放音乐唱片时会在其上方发出音符粒子，以与基岩版保持一致</li>
+</ul>
+<h2>辅助功能</h2>
+<ul>
+<li>在辅助功能菜单中新增了一个名为“伤害倾斜”的选项，用于控制受伤时镜头抖动的程度</li>
+<li>在按键绑定界面添加了一个提示，标明哪些按键绑定存在冲突</li>
+<li>将辅助功能选项“通知显示时间”重命名为“通知时间”</li>
+</ul>
+<h2>更新后的创建新世界界面</h2>
+<ul>
+<li>现在可以使用键盘按 Ctrl+Tab 和 Ctrl+Shift+Tab 来切换标签页</li>
+<li>也可以通过按 Ctrl+Tab 加数字键跳转到特定标签页<ul>
+<li>例如，Ctrl+2 跳转到第二个标签页</li>
+</ul></li>
+<li>新增了一个界面，可轻松启用/禁用实验性功能<ul>
+<li>该界面始终可以在“更多”标签页下找到</li>
+<li>在快照中，“游戏”标签页下会有一个快捷按钮</li>
+</ul></li>
+</ul>
+<h2>创造模式物品栏</h2>
+<ul>
+<li>在创造模式物品栏中添加了画作变种</li>
+<li>现在悬停在具有预定义变种的画作上时，其描述中会显示作者和标题</li>
+</ul>
+<h1>技术性更改</h1>
+<ul>
+<li>添加了展示实体，用于灵活展示物品、方块和文本</li>
+<li>添加了 <code>damage</code> 命令，用于对实体造成伤害</li>
+<li>为专用服务器命令行添加了 <code>--pidFile</code> 参数，用于将进程 ID 输出到文件</li>
+<li>添加了以下游戏事件：<ul>
+<li><code>entity_dismount</code>，振动频率为 6</li>
+<li><code>entity_mount</code>，振动频率为 7</li>
+</ul></li>
+<li>添加了一组用于展示物品、方块和文本的实体</li>
+<li>添加了 <code>execute summon</code> 以允许定制新生成的实体</li>
+</ul>
+<h2>展示实体</h2>
+<p>新增了三种实体，用于灵活展示物品、方块和文本</p>
+<ul>
+<li>这些实体与 <code>marker</code> 类似，不会接收游戏刻（tick），也没有碰撞或物理效果</li>
+<li>模型在实体位置渲染，可围绕 X 轴和 Y 轴正常旋转（因此可以通过传送命令控制），同时还支持额外的任意模型变换</li>
+</ul>
+<h3>通用数据类型</h3>
+<p>这些实体的标签内容包含一些结构复杂的新数据类型。可以使用任何形式来修改数据，但保存时只会使用一种形式。</p>
+<h4><code>rotation</code></h4>
+<ul>
+<li>四元数形式（用于保存）：包含 4 个数字的数组，描述分量 (x, y, z, w)</li>
+<li>轴角形式：包含以下字段的对象：<ul>
+<li><code>axis</code> - 三维向量</li>
+<li><code>angle</code> - 角度（弧度）</li>
+</ul></li>
+</ul>
+<h3><code>transformation</code></h3>
+<p>任意仿射变换</p>
+<ul>
+<li>矩阵形式：包含 16 个数字的数组，描述行主序矩阵</li>
+<li>分解形式（用于保存）：包含以下字段的对象：<ul>
+<li><code>translation</code> - 三维向量</li>
+<li><code>left_rotation</code>、<code>right_rotation</code> - <code>rotation</code></li>
+<li><code>scale</code> - 三维向量</li>
+<li>变换按以下顺序组合：<code>translation</code>、<code>left_rotation</code>、<code>scale</code>、<code>right_rotation</code></li>
+</ul></li>
+</ul>
+<h3>插值</h3>
+<p>展示实体的某些属性可以进行插值。这意味着客户端会看到随时间逐渐变化，而不是瞬间跳变。</p>
+<p>展示实体会跟踪插值属性的当前值和先前值：</p>
+<ul>
+<li>所有标记为“可插值”的属性都属于同一个插值集合</li>
+<li>对任一可插值属性的任何更新都会导致插值集合中的所有值被保存为“当前”值<ul>
+<li>如果 data 命令的执行没有更改属性值（即使该值存在于 NBT 中），则不视为更新</li>
+<li>更新最多每游戏刻同步到客户端一次，因此命令中的多次更新仍会被视为一次更新</li>
+</ul></li>
+<li>先前的当前值会被保存为“先前”值</li>
+<li>如果启用了插值，实体将随时间在“先前”值和“当前”值之间过渡</li>
+<li>插值的起始点（实体完全处于“先前”状态）由字段 <code>interpolation_start</code>（游戏时间，以游戏刻为单位）定义<ul>
+<li>设置为 <code>-1</code> 将改为加载当前游戏时间）</li>
+</ul></li>
+<li>插值的结束点（实体完全处于“当前”状态）定义为 <code>interpolation_start</code> + <code>interpolation_duration</code>（以游戏刻为单位）</li>
+</ul>
+<h3>通用属性</h3>
+<p>该家族中的每个实体都有以下字段：</p>
+<ul>
+<li><code>transformation</code> - 应用于模型的 <code>transformation</code>（在正常实体朝向后）。默认为单位变换。可插值</li>
+<li><code>billboard</code> - 控制实体在渲染时是否应旋转面向玩家的选项：<ul>
+<li><code>fixed</code> - 不旋转（默认）</li>
+<li><code>vertical</code> - 实体可围绕垂直轴旋转</li>
+<li><code>horizontal</code> - 实体可围绕水平轴旋转</li>
+<li><code>center</code> - 实体可围绕中心点旋转</li>
+</ul></li>
+<li><code>brightness</code> - 如果存在，将覆盖用于渲染的光照值。默认省略（这意味着渲染使用实体位置的光照值）。对象包含两个字段：<ul>
+<li><code>sky</code> - 天空光照值，0..15</li>
+<li><code>block</code> - 方块光照值，0..15</li>
+</ul></li>
+<li><code>view_range</code> - 此实体的最大可视范围。实际距离取决于客户端的渲染距离和实体距离缩放。默认值为 1.0（与火球大致相同）</li>
+<li><code>shadow_radius</code> - 阴影的大小。默认为 0（无阴影）。可插值</li>
+<li><code>shadow_strength</code> - 阴影的强度。根据与下方方块的距离控制阴影的不透明度。默认为 1。可插值</li>
+<li><code>width</code>、<code>height</code> - 描述剔除包围盒的大小。包围盒在垂直方向上从 <code>y</code> 延伸到 <code>y+height</code>，在水平方向上从实体位置向各个方向延伸 <code>width/2</code>。如果任一字段设置为 0，则禁用剔除。两者默认均为 0</li>
+<li><code>glow_color_override</code> - 覆盖发光边框颜色。默认为 0（使用队伍颜色）</li>
+</ul>
+<h3><code>item_display</code></h3>
+<p>展示单个物品堆叠。</p>
+<ul>
+<li>可以使用命令通过设置物品栏槽位 <code>inventory.0</code> 来更改堆叠</li>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>item</code> - 要展示的物品堆叠。格式与物品栏中的相同（例如：<code>{id: "minecraft:dirt", Count: 1}</code>）</li>
+<li><code>item_display</code> - 描述应用于物品的物品模型变换（如模型 JSON 中的 <code>display</code> 部分所定义）<ul>
+<li>值：<code>none</code>（默认）、<code>thirdperson_lefthand</code>、<code>thirdperson_righthand</code>、<code>firstperson_lefthand</code>、<code>firstperson_righthand</code>、<code>head</code>、<code>gui</code>、<code>ground</code>、<code>fixed</code></li>
+</ul></li>
+</ul>
+<h3><code>block_display</code></h3>
+<p>展示一个方块状态。</p>
+<ul>
+<li>不展示方块实体，即使它们通常会在方块放置时生成（如箱子）</li>
+</ul>
+<p>字段：</p>
+<ul>
+<li><code>block_state</code> - 要展示的方块状态。格式与末影人手持的物品相同（例如 <code>{Name:"minecraft:dirt"}</code>）</li>
+</ul>
+<h3><code>text_display</code></h3>
+<p>展示一个文本组件。</p>
+<p>字段：</p>
+<ul>
+<li><code>text</code> - 要展示的文本。组件将使用展示实体的上下文进行解析</li>
+<li><code>line_width</code> - 用于换行的行宽（注意：也可以使用 <code>\n</code> 字符添加换行）。默认为 200</li>
+<li><code>text_opacity</code> - 渲染文本的不透明度（Alpha 分量）。默认为 255。可插值</li>
+<li><code>background</code> - 背景颜色。包含 Alpha 通道。默认为 0x40000000。可插值</li>
+<li><code>default_background</code> - 若为 true，渲染时使用默认的文本背景颜色（与聊天中相同）。默认为 false</li>
+<li><code>shadow</code> - 文本是否应显示阴影。默认为 false</li>
+<li><code>see_through</code> - 文本是否应透过方块可见。默认为 false</li>
+<li><code>alignment</code> - 文本应如何对齐<ul>
+<li>值：<code>center</code>（默认）、<code>left</code>、<code>right</code></li>
+</ul></li>
+</ul>
+<p>注意：文本展示背景使用新的着色器类型 <code>rendertype_text_background</code> 和 <code>rendertype_text_background_see_through</code></p>
+<h2>伤害类型</h2>
+<p>伤害类型是一个新的注册表，可以通过数据包进行扩展。伤害类型决定了游戏如何处理伤害。这包括伤害具有哪些属性，以及实体因该类型伤害死亡时使用哪条死亡消息。</p>
+<p>示例：</p>
+<pre><code>{
+  "exhaustion": 0.1,
+  "message_id": "arrow",
+  "scaling": "when_caused_by_living_non_player"
+}
+</code></pre>
+<p>字段：</p>
+<ul>
+<li><code>message_id</code>：用于此伤害类型造成的死亡的消息 ID<ul>
+<li>将与其他字符串片段组合以形成翻译键</li>
+</ul></li>
+<li><code>exhaustion</code>：此伤害类型造成的饥饿值消耗量</li>
+<li><code>scaling</code>：此伤害类型是否随难度等级变化。可能的值：<ul>
+<li><code>never</code>：伤害始终相同</li>
+<li><code>always</code>：伤害始终随难度变化</li>
+<li><code>when_caused_by_living_non_player</code>：如果伤害由非玩家的生物实体造成，则伤害随难度变化</li>
+</ul></li>
+<li><code>effects</code>：可选字段，控制对玩家造成伤害时的表现形式。可能的值：<ul>
+<li><code>hurt</code>（默认）：默认的受伤声音</li>
+<li><code>thorns</code>：荆棘受伤声音</li>
+<li><code>drowning</code>：溺水声音</li>
+<li><code>burning</code>：一次燃烧音效（单游戏刻）</li>
+<li><code>poking</code>：浆果丛刺伤声音</li>
+<li><code>freezing</code>：冰冻刻声音</li>
+</ul></li>
+<li><code>death_message_type</code>：可选字段，控制是否使用特殊死亡消息变体。可能的值：<ul>
+<li><code>default</code>（默认）：不应用特殊死亡消息逻辑</li>
+<li><code>fall_variants</code>：显示摔落伤害死亡的变体消息，而不是常规死亡消息，例如 <code>death.fell.assist.item</code></li>
+<li><code>intentional_game_design</code>：显示“故意的游戏设计”消息，而不是常规死亡消息</li>
+</ul></li>
+</ul>
+<p>伤害类型标签控制着来自不同来源的伤害被解释的许多方面。</p>
+<h2>命令</h2>
+<h3><code>damage</code></h3>
+<p>用于对实体造成伤害的新命令。</p>
+<p>语法：</p>
+<ul>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [at &#x3C;location>]</code></li>
+<li><code>damage &#x3C;target> &#x3C;amount> [&#x3C;damageType>] [by &#x3C;entity>] [from &#x3C;cause>]</code></li>
+</ul>
+<p>参数：</p>
+<ul>
+<li><code>target</code>：要伤害的实体</li>
+<li><code>amount</code>：造成的伤害量</li>
+<li><code>damageType</code>：造成的伤害类型<ul>
+<li>这决定了伤害如何影响实体，以及显示哪条死亡消息</li>
+</ul></li>
+<li><code>entity</code>：造成伤害的实体</li>
+<li><code>cause</code>：间接伤害情况下的伤害来源<ul>
+<li>示例：当被箭射中时，<code>entity</code> 是箭矢投射物，而 <code>cause</code> 可能是骷髅</li>
+</ul></li>
+<li><code>location</code>：伤害起始的位置（当没有实体造成伤害时）<ul>
+<li>例如，<code>location</code> 可能表示床在下界爆炸时的位置</li>
+</ul></li>
+</ul>
+<h3><code>execute summon</code></h3>
+<p>新的 <code>execute</code> 子命令，用于生成新实体并将上下文（<code>@s</code>）绑定到该实体。旨在简化实体设置并减少对原始 NBT 编辑的需求。</p>
+<ul>
+<li><code>execute summon &#x3C;entity id></code></li>
+</ul>
+<h2>谓词</h2>
+<h3>伤害类型谓词</h3>
+<p>以下字段已从伤害类型谓词中移除：<code>is_projectile</code>、<code>is_explosion</code>、<code>bypasses_armor</code>、<code>bypasses_invulnerability</code>、<code>bypasses_magic</code>、<code>is_fire</code>、<code>is_magic</code>、<code>is_lightning</code>。</p>
+<p>新增了一个 <code>tags</code> 数组。每个条目包含两个字段：</p>
+<ul>
+<li><code>id</code>：伤害类型标签的 ID</li>
+<li><code>expected</code>：伤害是否应拥有该标签（或不应拥有）以使谓词匹配</li>
+</ul>
+<h2>游戏规则</h2>
+<ul>
+<li>新增了 <code>doVinesSpread</code> 游戏规则，决定藤蔓是否会蔓延到附近的方块<ul>
+<li>默认为 <code>true</code></li>
+</ul></li>
+</ul>
+<h1>修复了快照 23w06a 中的漏洞</h1>
+<ul>
+<li><a href="https://bugs.mojang.com/browse/MC-12729" target="_blank" rel="noopener noreferrer">MC-12729</a> 实体穿戴的护腿和靴子上会出现 Z 冲突</li>
+<li><a href="https://bugs.mojang.com/browse/MC-145765" target="_blank" rel="noopener noreferrer">MC-145765</a> “文本背景”设置中的两个字符串都超出了按钮范围</li>
+<li><a href="https://bugs.mojang.com/browse/MC-156443" target="_blank" rel="noopener noreferrer">MC-156443</a> 在某些语言中，文本过长而超出按钮</li>
+<li><a href="https://bugs.mojang.com/browse/MC-198874" target="_blank" rel="noopener noreferrer">MC-198874</a> 打开漏斗矿车会激怒猪灵，而打开漏斗不会激怒它们</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209622" target="_blank" rel="noopener noreferrer">MC-209622</a> 幽匿感测体无法检测物品展示框 / 荧光物品展示框的交互</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209896" target="_blank" rel="noopener noreferrer">MC-209896</a> 将荧石放入重生锚时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-209929" target="_blank" rel="noopener noreferrer">MC-209929</a> 填充堆肥桶时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210276" target="_blank" rel="noopener noreferrer">MC-210276</a> 踩踏耕地时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210294" target="_blank" rel="noopener noreferrer">MC-210294</a> 骑乘或下乘任何非生物实体时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210334" target="_blank" rel="noopener noreferrer">MC-210334</a> 羊被染色时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210707" target="_blank" rel="noopener noreferrer">MC-210707</a> 关闭箱子船、箱子筏或箱子矿车时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-210715" target="_blank" rel="noopener noreferrer">MC-210715</a> 给实体拴上或解开拴绳时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-212501" target="_blank" rel="noopener noreferrer">MC-212501</a> 从讲台上取走书时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-213803" target="_blank" rel="noopener noreferrer">MC-213803</a> 从洞穴藤蔓上采集荧光浆果时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-215767" target="_blank" rel="noopener noreferrer">MC-215767</a> 幽匿感测体无法检测海龟产卵</li>
+<li><a href="https://bugs.mojang.com/browse/MC-233972" target="_blank" rel="noopener noreferrer">MC-233972</a> 在按键绑定菜单中为功能分配按键，或将多个功能分配给同一按键时，文本可能会出现在按钮之外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-236988" target="_blank" rel="noopener noreferrer">MC-236988</a> 对洞穴藤蔓、缠怨藤、垂泪藤或海带使用剪刀时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237450" target="_blank" rel="noopener noreferrer">MC-237450</a> “模拟距离”文本可能会出现在其滑块之外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-237879" target="_blank" rel="noopener noreferrer">MC-237879</a> 村民使用堆肥桶工作时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-249878" target="_blank" rel="noopener noreferrer">MC-249878</a> 在音乐和声音选项菜单中，文本可能会出现在“设备”按钮之外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251917" target="_blank" rel="noopener noreferrer">MC-251917</a> 将盾牌放入副手槽位时，没有装备音效或字幕</li>
+<li><a href="https://bugs.mojang.com/browse/MC-251934" target="_blank" rel="noopener noreferrer">MC-251934</a> 青蛙产下青蛙卵时，幽匿感测体不会被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-252434" target="_blank" rel="noopener noreferrer">MC-252434</a> 手持拴绳与栅栏交互时，幽匿感测体被激活</li>
+<li><a href="https://bugs.mojang.com/browse/MC-257873" target="_blank" rel="noopener noreferrer">MC-257873</a> 将一件盔甲与同类型的另一件盔甲交换时，不会播放装备音效</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258156" target="_blank" rel="noopener noreferrer">MC-258156</a> 在困难模式下，循声守卫对玩家和实体造成的伤害量不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-258622" target="_blank" rel="noopener noreferrer">MC-258622</a> 火焰弹不在创造模式物品栏的“合成材料”标签页中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259193" target="_blank" rel="noopener noreferrer">MC-259193</a> “通知显示时间”文本可能会出现在其滑块之外</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259195" target="_blank" rel="noopener noreferrer">MC-259195</a> 对另一维度中的实体使用 /ride 会导致客户端/服务器不同步</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259197" target="_blank" rel="noopener noreferrer">MC-259197</a> 伤害倾斜效果对无障碍支持不友好</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259221" target="_blank" rel="noopener noreferrer">MC-259221</a> 对无效实体使用“/ride”命令会将玩家传送到其位置</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259224" target="_blank" rel="noopener noreferrer">MC-259224</a> 使用盾牌格挡攻击时，会播放伤害倾斜效果并显示红色受击色调</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259227" target="_blank" rel="noopener noreferrer">MC-259227</a> 单独使用 /execute if loaded <pos> 时总是失败</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259233" target="_blank" rel="noopener noreferrer">MC-259233</a> 针对低数值的参数错误消息拼写不一致</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259245" target="_blank" rel="noopener noreferrer">MC-259245</a> 当玩家看着末影人的眼睛时，被 /ride 骑乘的末影人会不断传送</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259247" target="_blank" rel="noopener noreferrer">MC-259247</a> execute on owner 子命令不会选择马、驴、羊驼或骡的主人</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259360" target="_blank" rel="noopener noreferrer">MC-259360</a> “selectWorld.mapFeatures.info”字符串中“Shipwrecks”一词后缺少逗号</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259432" target="_blank" rel="noopener noreferrer">MC-259432</a> “chestplate_trim”物品纹理中缺少单个像素</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259442" target="_blank" rel="noopener noreferrer">MC-259442</a> 无法将物品 Shift 点击到铁砧的第二个槽位</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259454" target="_blank" rel="noopener noreferrer">MC-259454</a> 疣猪兽棚的箱子战利品表使用了桥的箱子的战利品表</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259468" target="_blank" rel="noopener noreferrer">MC-259468</a> empty_slot_amethyst_shard 不会显示在锻造台的槽位中</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259599" target="_blank" rel="noopener noreferrer">MC-259599</a> 可以通过在快捷栏中右键交换盔甲来移除绑定诅咒的盔甲</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259635" target="_blank" rel="noopener noreferrer">MC-259635</a> “iron”和“iron_darker”纹饰的颜色调色板颠倒了</li>
+<li><a href="https://bugs.mojang.com/browse/MC-259640" target="_blank" rel="noopener noreferrer">MC-259640</a> “iron”和“iron_darker”调色板中最浅的三种颜色相同</li>
+</ul>
