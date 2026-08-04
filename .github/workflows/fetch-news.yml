@@ -1,4 +1,4 @@
-name: Fetch Minecraft Patch Notes
+name: Fetch and Translate Minecraft Patch Notes
 
 on:
   schedule:
@@ -25,17 +25,26 @@ jobs:
       - name: Fetch latest patch notes
         run: node scripts/fetch-news.js
 
-      - name: Check for changes
+      - name: Check for new patch notes
+        id: new-items
+        run: |
+          node -e "const fs=require('fs'); const items=fs.existsSync('new-items.json') ? JSON.parse(fs.readFileSync('new-items.json','utf8')) : []; fs.appendFileSync(process.env.GITHUB_OUTPUT, 'found=' + (items.length > 0) + '\n');"
+
+      - name: Translate new patch notes
+        id: translate
+        if: steps.new-items.outputs.found == 'true'
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: node scripts/translate.js
+
+      - name: Check for content changes
         id: git-diff
         run: |
-          set +e
-          git diff --exit-code -- source/ > /dev/null
-          STATUS=$?
-          set -e
-          if [ $STATUS -ne 0 ]; then
-            echo "changes=true" >> $GITHUB_OUTPUT
+          if git diff --quiet -- source/ translate/; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
           else
-            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "changes=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Commit and push changes
@@ -47,104 +56,90 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update Minecraft patch notes (auto)"
           git push
 
-      - name: Create translation issues
-        if: steps.git-diff.outputs.changes == 'true'
+      - name: Create translation status issues
+        if: always() && steps.new-items.outputs.found == 'true'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const LABEL = '待翻译';
-
-            // 读取 new-items.json，如果不存在则直接退出
+            const pendingLabel = '待翻译';
+            const successLabel = 'AI 翻译完成';
+            const failureLabel = 'AI 翻译失败';
             const itemsPath = path.join(process.cwd(), 'new-items.json');
-            if (!fs.existsSync(itemsPath)) {
-              console.log('new-items.json not found, nothing to do.');
-              return;
-            }
-            const items = JSON.parse(fs.readFileSync(itemsPath, 'utf-8'));
-            if (!items || items.length === 0) {
-              console.log('No new items.');
-              return;
-            }
+            const resultsPath = path.join(process.cwd(), 'translation-results.json');
+            const items = fs.existsSync(itemsPath) ? JSON.parse(fs.readFileSync(itemsPath, 'utf8')) : [];
+            const results = fs.existsSync(resultsPath)
+              ? JSON.parse(fs.readFileSync(resultsPath, 'utf8'))
+              : items.map(item => ({ ...item, status: 'failed', error: '翻译脚本未生成结果，请检查工作流日志。' }));
 
-            // 确保 "待翻译" 标签存在
-            try {
-              await github.rest.issues.getLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                name: LABEL,
-              });
-            } catch (e) {
-              if (e.status === 404) {
-                await github.rest.issues.createLabel({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  name: LABEL,
-                  color: 'f29513',
-                  description: '需要翻译的内容',
-                });
-              } else {
-                throw e;
+            for (const [name, color, description] of [
+              [pendingLabel, 'f29513', '等待人工翻译的内容'],
+              [successLabel, '0e8a16', '已由 AI 翻译，等待人工审核'],
+              [failureLabel, 'b60205', 'AI 自动翻译失败，需要处理'],
+            ]) {
+              try {
+                await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name, color, description });
               }
             }
 
-            // 拉取当前 open 的带该标签的 issue 用于去重
-            const existingIssues = await github.paginate(github.rest.issues.listForRepo, {
+            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: LABEL,
               state: 'open',
               per_page: 100,
             });
-            const existingTitles = new Set(existingIssues.map(i => i.title));
+            const issueTitles = new Set(openIssues.map(issue => issue.title));
 
-            // 为每条新新闻创建 Issue
-            for (const item of items) {
-              const issueTitle = `[待翻译][${item.edition}] ${item.title}`;
-              if (existingTitles.has(issueTitle)) {
-                console.log(`Skip existing issue: ${issueTitle}`);
+            for (const result of results) {
+              const prefix = result.status === 'success' ? '[AI 翻译完成]' : '[AI 翻译失败]';
+              const title = `${prefix}[${result.edition}] ${result.title}`;
+              const oldTitle = `[待翻译][${result.edition}] ${result.title}`;
+
+              if (result.status === 'success') {
+                for (const issue of openIssues.filter(issue => issue.title === oldTitle)) {
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    state: 'closed',
+                    state_reason: 'completed',
+                  });
+                  console.log(`Closed superseded issue #${issue.number}`);
+                }
+              }
+
+              if (issueTitles.has(title)) {
+                console.log(`Skip existing issue: ${title}`);
                 continue;
               }
 
-              const dateStr = item.date
-                ? new Date(item.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })
-                : '未知';
+              const body = result.status === 'success'
+                ? [
+                    '该补丁说明已由 DeepSeek 自动翻译，请贡献者审核术语、上下文和 HTML 结构后再确认质量。',
+                    '',
+                    `- 版本分支: ${result.edition}`,
+                    `- 源文件: \`${result.file}\``,
+                    `- 已翻译 HTML: \`${result.targetFile}\``,
+                    `- 已更新索引: \`translate/${result.edition === 'Java' ? 'javaPatchNotes.json' : 'bedrockPatchNotes.json'}\``,
+                  ].join('\n')
+                : [
+                    'DeepSeek 自动翻译在多次重试后仍然失败，请检查工作流日志并人工处理。',
+                    '',
+                    `- 版本分支: ${result.edition}`,
+                    `- 源文件: \`${result.file}\``,
+                    `- 错误: ${result.error || '未知错误'}`,
+                  ].join('\n');
 
-              const shortText = (item.shortText || '无').replace(/\n/g, ' ');
-              const filename = path.basename(item.file);
-              const targetFile = `translate/${item.edition}/${filename}`;
-
-              const body = [
-                '## 基本信息',
-                '',
-                `- **版本**: ${item.version || 'N/A'}`,
-                `- **日期**: ${dateStr}`,
-                `- **类型**: ${item.type || 'N/A'}`,
-                `- **版本分支**: ${item.edition}`,
-                `- **文件名**: \`${filename}\``,
-                `- **源文件**: \`${item.file}\``,
-                `- **翻译目标**: \`${targetFile}\``,
-                '',
-                '## 简介',
-                '',
-                `> ${shortText}`,
-                '',
-                '## 待办',
-                '',
-                `- [ ] 将 \`${item.file}\` 翻译为中文`,
-                `- [ ] 将翻译后的文件保存为 \`${targetFile}\``,
-                '',
-                '---',
-                '_此 Issue 由 GitHub Actions 自动创建_',
-              ].join('\n');
-
-              const resp = await github.rest.issues.create({
+              await github.rest.issues.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                title: issueTitle,
-                body: body,
-                labels: [LABEL],
+                title,
+                body,
+                labels: [result.status === 'success' ? successLabel : failureLabel],
               });
-              console.log(`Created issue #${resp.data.number}: ${issueTitle}`);
+              console.log(`Created issue: ${title}`);
             }
