@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Snapshot 7",
+      "version": "26.3-snapshot-7",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-7 540x540.jpg",
+        "url": "/v2/images/26.3snapshot7540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2.json",
+      "id": "50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2",
+      "date": "2026-08-04T14:00:02.101Z",
+      "shortText": "Step up your building and exploring with the final features entering testing! You can now find different maps in some abandoned camps and craft Concrete Stairs &#38 Slabs in 16 colors. Out now in 26.3 Snapshot 7!Happy exploring!New FeaturesAdded Concrete S",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 6",
       "version": "26.3-snapshot-6",
       "type": "snapshot",
