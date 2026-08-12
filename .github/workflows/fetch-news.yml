@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       found: ${{ steps.new-items.outputs.found }}
+      commit: ${{ steps.push.outputs.commit }}
 
     steps:
       - name: Checkout repository
@@ -40,6 +41,7 @@ jobs:
           node -e "const fs=require('fs'); const items=fs.existsSync('new-items.json') ? JSON.parse(fs.readFileSync('new-items.json','utf8')) : []; fs.appendFileSync(process.env.GITHUB_OUTPUT, 'found=' + (items.length > 0) + '\n');"
 
       - name: Commit and push English content first
+        id: push
         if: steps.new-items.outputs.found == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -47,6 +49,7 @@ jobs:
           git add source/
           git diff --cached --quiet || git commit -m "chore: add new English patch notes (auto)"
           git push
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Upload new items metadata
         if: steps.new-items.outputs.found == 'true'
@@ -67,6 +70,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 检出 fetch-news 提交后的确切 commit，避免分支引用传播延迟导致拿到旧快照
+          ref: ${{ needs.fetch-news.outputs.commit }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -101,7 +107,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add source/ translate/
           git diff --cached --quiet || git commit -m "chore: update Minecraft patch notes translations (auto)"
-          git push
+          git push origin HEAD:${{ github.ref_name }}
 
       - name: Create translation status issues
         if: always()
