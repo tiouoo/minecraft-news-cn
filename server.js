@@ -31,14 +31,36 @@ function fileExists(filepath) {
   return fs.existsSync(filepath);
 }
 
-// 优先使用 translate 目录下的 JSON（包含已翻译的 shortText），
-// 若不存在则回退到 source 目录下的原始 JSON。
-function resolveJsonPath(config) {
-  const translatedJson = path.join(TRANSLATE_DIR, config.jsonFile);
-  if (fileExists(translatedJson)) {
-    return translatedJson;
+// 以 source（Mojang 英文源）为全集，用 translate 的译文条目覆盖已翻译项；
+// 未翻译的新条目（译文缺失）会用英文原文返回并标记 needsTranslation: true。
+// 这样即使翻译还没完成，列表顶部也会出现最新的英文条目，而不是被整个丢弃。
+function buildEntries(config) {
+  const sourcePath = path.join(SOURCE_DIR, config.jsonFile);
+  const translatePath = path.join(TRANSLATE_DIR, config.jsonFile);
+
+  const sourceEntries = fileExists(sourcePath) ? (readJson(sourcePath).entries || []) : [];
+  const translateEntries = fileExists(translatePath) ? (readJson(translatePath).entries || []) : [];
+
+  const translatedById = new Map(translateEntries.map(entry => [entry.id, entry]));
+
+  const entries = sourceEntries.map(entry => {
+    const translated = translatedById.get(entry.id);
+    if (translated) {
+      return { ...entry, ...translated, needsTranslation: false };
+    }
+    return { ...entry, needsTranslation: true };
+  });
+
+  // source 里没有但 translate 里有的条目（历史遗留），也一并返回
+  const ids = new Set(entries.map(entry => entry.id));
+  for (const entry of translateEntries) {
+    if (!ids.has(entry.id)) {
+      entries.push({ ...entry, needsTranslation: false });
+      ids.add(entry.id);
+    }
   }
-  return path.join(SOURCE_DIR, config.jsonFile);
+
+  return entries;
 }
 
 app.use((req, res, next) => {
@@ -52,20 +74,17 @@ function handlePatchNotes(edition, req, res) {
     return res.status(404).json({ error: 'Unknown edition' });
   }
 
-  const jsonPath = resolveJsonPath(config);
-  if (!fileExists(jsonPath)) {
+  const sourcePath = path.join(SOURCE_DIR, config.jsonFile);
+  const translatePath = path.join(TRANSLATE_DIR, config.jsonFile);
+  if (!fileExists(sourcePath) && !fileExists(translatePath)) {
     return res.status(404).json({ error: 'Patch notes data not found' });
   }
 
-  const data = readJson(jsonPath);
-  // 列表接口的 needsTranslation 反映 shortText 是否已翻译：
-  // 使用 translate 目录的 JSON 即表示 shortText 已翻译完成
-  const shortTextTranslated = jsonPath.startsWith(TRANSLATE_DIR);
+  const data = fileExists(sourcePath) ? readJson(sourcePath) : readJson(translatePath);
 
-  const entries = (data.entries || []).map(entry => ({
+  const entries = buildEntries(config).map(entry => ({
     ...entry,
     contentPath: `${config.contentPathPrefix}/${entry.id}`,
-    needsTranslation: !shortTextTranslated,
   }));
 
   entries.sort((a, b) => {
@@ -111,12 +130,8 @@ function handleContent(req, res, edition) {
     return res.status(404).json({ error: 'Content not found' });
   }
 
-  // 从 patchNotes JSON 里查找对应条目，拿到 title/version/date/type 等元数据
-  const jsonPath = resolveJsonPath(config);
-  const data = fileExists(jsonPath) ? readJson(jsonPath) : null;
-  const meta = (data && Array.isArray(data.entries))
-    ? data.entries.find(e => e.id === hash)
-    : null;
+  // 从聚合后的条目里查找对应条目的元数据（未翻译条目也能拿到英文 title/shortText）
+  const meta = buildEntries(config).find(e => e.id === hash) || null;
 
   if (meta) {
     res.json({

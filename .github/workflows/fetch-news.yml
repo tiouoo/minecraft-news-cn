@@ -20,7 +20,6 @@ jobs:
   fetch-news:
     runs-on: ubuntu-latest
     outputs:
-      found: ${{ steps.new-items.outputs.found }}
       commit: ${{ steps.push.outputs.commit }}
 
     steps:
@@ -35,14 +34,8 @@ jobs:
       - name: Fetch latest patch notes
         run: node scripts/fetch-news.js
 
-      - name: Check for new patch notes
-        id: new-items
-        run: |
-          node -e "const fs=require('fs'); const items=fs.existsSync('new-items.json') ? JSON.parse(fs.readFileSync('new-items.json','utf8')) : []; fs.appendFileSync(process.env.GITHUB_OUTPUT, 'found=' + (items.length > 0) + '\n');"
-
       - name: Commit and push English content first
         id: push
-        if: steps.new-items.outputs.found == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -52,19 +45,20 @@ jobs:
           echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Upload new items metadata
-        if: steps.new-items.outputs.found == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: new-items
           path: |
             new-items.json
             new-items-summary.md
+          if-no-files-found: warn
           retention-days: 1
 
-  # Job 2: 英文原文已提交后，再启动耗时的 AI 翻译
+  # Job 2: 英文原文已提交后，再启动耗时的 AI 翻译。
+  # 每次运行都会全量检查 source/ 中还没有译文的内容（不含本次新增），
+  # 所以上次翻译失败/遗留的条目也会被自动重新翻译。
   translate:
     needs: fetch-news
-    if: needs.fetch-news.outputs.found == 'true'
     runs-on: ubuntu-latest
 
     steps:

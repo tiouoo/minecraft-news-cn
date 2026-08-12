@@ -11,7 +11,6 @@ const RETRY_MAX_DELAY = 10 * 60_000;
 const CONCURRENCY = 2;
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const NEW_ITEMS_PATH = path.join(ROOT_DIR, 'new-items.json');
 const RESULTS_PATH = path.join(ROOT_DIR, 'translation-results.json');
 const EDITIONS = {
   Java: { json: 'javaPatchNotes.json', directory: 'Java' },
@@ -136,15 +135,50 @@ async function translateItem(item, translatedIndexes) {
   return { ...item, targetFile: path.relative(ROOT_DIR, targetHtmlPath) };
 }
 
+// 扫描 source/ 下所有「还没有译文 HTML」的条目。
+// 不依赖 new-items.json：上次运行翻译失败 / 中断的条目，下次运行会自动重新尝试。
+function collectUntranslatedItems() {
+  const items = [];
+  for (const [editionName, edition] of Object.entries(EDITIONS)) {
+    const data = readJson(path.join(ROOT_DIR, 'source', edition.json));
+    for (const entry of data.entries || []) {
+      const targetHtmlPath = path.join(ROOT_DIR, 'translate', edition.directory, `${entry.id}.html`);
+      if (fs.existsSync(targetHtmlPath)) continue;
+      const sourceFile = path.join(ROOT_DIR, 'source', edition.directory, `${entry.id}.html`);
+      items.push({
+        id: entry.id,
+        title: entry.title,
+        version: entry.version,
+        date: entry.date,
+        type: entry.type,
+        shortText: entry.shortText,
+        edition: editionName,
+        file: path.relative(ROOT_DIR, sourceFile),
+      });
+    }
+  }
+  return items;
+}
+
 async function main() {
   if (!API_KEY) throw new Error('DEEPSEEK_API_KEY is required');
-  if (!fs.existsSync(NEW_ITEMS_PATH)) throw new Error('new-items.json is missing; run fetch-news first');
 
-  const items = readJson(NEW_ITEMS_PATH);
-  const translatedIndexes = Object.fromEntries(Object.entries(EDITIONS).map(([name, edition]) => [
-    name,
-    readJson(path.join(ROOT_DIR, 'translate', edition.json)),
-  ]));
+  const items = collectUntranslatedItems();
+  if (items.length === 0) {
+    console.log('Nothing to translate. All source content is already translated.');
+    return;
+  }
+  console.log(`Found ${items.length} untranslated item(s):`);
+  for (const item of items) console.log(`  - [${item.edition}] ${item.id} ${item.title}`);
+
+  const translatedIndexes = Object.fromEntries(Object.entries(EDITIONS).map(([name, edition]) => {
+    const indexPath = path.join(ROOT_DIR, 'translate', edition.json);
+    if (fs.existsSync(indexPath)) {
+      return [name, readJson(indexPath)];
+    }
+    const sourceData = readJson(path.join(ROOT_DIR, 'source', edition.json));
+    return [name, { version: sourceData.version || 1, entries: [] }];
+  }));
   const results = [];
   let nextIndex = 0;
 
