@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const API_KEY = process.env.DEEPSEEK_API_KEY;
-const BASE_API_URL = 'https://tokenrhythm.studio/v1';
-// const BASE_API_URL = 'https://api.deepseek.com/v1';
+// const BASE_API_URL = 'https://tokenrhythm.studio/v1';
+const BASE_API_URL = 'https://api.deepseek.com/v1';
 const MODEL = 'deepseek-v4-flash';
 const MAX_RETRIES = 7;
 const RETRY_BASE_DELAY = 30_000;
