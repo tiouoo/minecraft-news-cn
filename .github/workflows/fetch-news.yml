@@ -9,9 +9,18 @@ permissions:
   contents: write
   issues: write
 
+# 串行执行：翻译耗时较长，避免定时任务与翻译任务并发修改仓库
+concurrency:
+  group: fetch-and-translate
+  cancel-in-progress: false
+
 jobs:
+  # Job 1: 抓取最新补丁说明，并立刻把英文原文提交推送到仓库，
+  # 这样翻译尚未完成时，用户也能先看到最新的英文内容。
   fetch-news:
     runs-on: ubuntu-latest
+    outputs:
+      found: ${{ steps.new-items.outputs.found }}
 
     steps:
       - name: Checkout repository
@@ -30,9 +39,47 @@ jobs:
         run: |
           node -e "const fs=require('fs'); const items=fs.existsSync('new-items.json') ? JSON.parse(fs.readFileSync('new-items.json','utf8')) : []; fs.appendFileSync(process.env.GITHUB_OUTPUT, 'found=' + (items.length > 0) + '\n');"
 
+      - name: Commit and push English content first
+        if: steps.new-items.outputs.found == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add source/
+          git diff --cached --quiet || git commit -m "chore: add new English patch notes (auto)"
+          git push
+
+      - name: Upload new items metadata
+        if: steps.new-items.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: new-items
+          path: |
+            new-items.json
+            new-items-summary.md
+          retention-days: 1
+
+  # Job 2: 英文原文已提交后，再启动耗时的 AI 翻译
+  translate:
+    needs: fetch-news
+    if: needs.fetch-news.outputs.found == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download new items metadata
+        uses: actions/download-artifact@v4
+        with:
+          name: new-items
+
       - name: Translate new patch notes
         id: translate
-        if: steps.new-items.outputs.found == 'true'
         continue-on-error: true
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -47,17 +94,17 @@ jobs:
             echo "changes=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit and push changes
+      - name: Commit and push translated changes
         if: steps.git-diff.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add source/ translate/
-          git diff --cached --quiet || git commit -m "chore: update Minecraft patch notes (auto)"
+          git diff --cached --quiet || git commit -m "chore: update Minecraft patch notes translations (auto)"
           git push
 
       - name: Create translation status issues
-        if: always() && steps.new-items.outputs.found == 'true'
+        if: always()
         uses: actions/github-script@v7
         with:
           script: |
