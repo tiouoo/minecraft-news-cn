@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Snapshot 8",
+      "version": "26.3-snapshot-8",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-8 540x540.jpg",
+        "url": "/v2/images/26.3snapshot8540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/1f573e65572785dbb791fc64ff8290a6ff0d72052a4f5a3e505467e31cecb15f.json",
+      "id": "1f573e65572785dbb791fc64ff8290a6ff0d72052a4f5a3e505467e31cecb15f",
+      "date": "2026-08-12T11:03:15.491Z",
+      "shortText": "本周三，一个火热的新 Snapshot 将进入 Realm！没错，在 26.3 Snapshot 8 中，Realm 所有者现在可以创建和管理 Invite Codes，让加入乐趣变得前所未有的简单。除了这些新增内容，我们还对 World O 进行了进一步改进。",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 7",
       "version": "26.3-snapshot-7",
       "type": "snapshot",
