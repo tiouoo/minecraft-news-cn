@@ -6,7 +6,12 @@
   "scripts": {
     "fetch-news": "node scripts/fetch-news.js",
     "translate": "node scripts/translate.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "pages:build": "node scripts/build-pages.mjs",
+    "deploy": "node scripts/build-pages.mjs && wrangler pages deploy dist"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.17"
   },
   "dependencies": {
     "express": "^4.19.2"

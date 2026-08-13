@@ -3,6 +3,11 @@ new-items.json
 new-items-summary.md
 translation-results.json
 
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+dist/
+
 # Node
 node_modules/
 npm-debug.log*
