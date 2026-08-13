@@ -1,14 +1,24 @@
 const fs = require('fs');
 const path = require('path');
 
+// 注意：脚本内硬编码的密钥有泄露风险，仅作为本地调试兜底。
+// 推荐始终通过环境变量 DEEPSEEK_API_KEY 传入，尤其不要把它提交到仓库。
 const API_KEY = process.env.DEEPSEEK_API_KEY;
-// const BASE_API_URL = 'https://tokenrhythm.studio/v1';
-const BASE_API_URL = 'https://api.deepseek.com/v1';
-const MODEL = 'deepseek-v4-flash';
+const BASE_API_URL = process.env.DEEPSEEK_BASE_URL || 'https://tokenrhythm.studio/v1';
+const MODEL = process.env.DEEPSEEK_MODEL || 'deepseek-v4-flash';
 const MAX_RETRIES = 7;
 const RETRY_BASE_DELAY = 30_000;
 const RETRY_MAX_DELAY = 10 * 60_000;
 const CONCURRENCY = 2;
+
+// 建立连接后，多久收不到第一个字节视为超时（网关 504 常表现为连接挂起）
+const CONNECT_TIMEOUT_MS = 120_000;
+// 流式输出中途，多久没有新数据视为卡住并触发重试
+const STALL_TIMEOUT_MS = 120_000;
+// 终端（TTY）下用 \r 原地刷新进度行的频率
+const TTY_PROGRESS_INTERVAL_MS = 500;
+// 非终端（GitHub Actions / 管道）下打印进度行的频率
+const LOG_PROGRESS_INTERVAL_MS = 5_000;
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const RESULTS_PATH = path.join(ROOT_DIR, 'translation-results.json');
@@ -21,6 +31,9 @@ const HTML_PROMPT = `Translate the visible English text in this Minecraft patch-
 Keep all HTML tags, attributes, URLs, entities, whitespace structure, code blocks, commands, identifiers, bug IDs, versions, and numbers unchanged. Use established Chinese Minecraft terminology. Return only the translated HTML, without Markdown fences or explanations.`;
 const SHORT_TEXT_PROMPT = `Translate this Minecraft patch-note summary into natural Simplified Chinese.
 Keep Minecraft names, commands, identifiers, bug IDs, versions, URLs, HTML entities, and numbers unchanged where appropriate. Return only the translation, without explanations.`;
+
+const isTty = Boolean(process.stdout.isTTY);
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 function sleep(milliseconds) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -46,10 +59,118 @@ function cleanResponse(content) {
   return fenced ? fenced[1].trim() : trimmed;
 }
 
+// 流式进度：终端用 \r 原地刷新；GitHub Actions / 管道按时间间隔打印完整行，避免刷屏。
+class StreamProgress {
+  constructor(description) {
+    this.description = description;
+    this.received = 0;
+    this.startedAt = Date.now();
+    this.lastFlushAt = 0;
+  }
+
+  add(byteCount) {
+    this.received += byteCount;
+    const now = Date.now();
+    const interval = isTty ? TTY_PROGRESS_INTERVAL_MS : LOG_PROGRESS_INTERVAL_MS;
+    if (now - this.lastFlushAt < interval) return;
+    this.lastFlushAt = now;
+    const elapsed = ((now - this.startedAt) / 1000).toFixed(1);
+    if (isTty) {
+      process.stdout.write(`\r  ${this.description}: streaming ${this.received} bytes in ${elapsed}s`);
+    } else {
+      console.log(`  ${this.description}: streaming ${this.received} bytes in ${elapsed}s`);
+    }
+  }
+
+  finish() {
+    const elapsed = ((Date.now() - this.startedAt) / 1000).toFixed(1);
+    if (isTty) {
+      process.stdout.write(`\r  ${this.description}: streamed ${this.received} bytes in ${elapsed}s\n`);
+    } else {
+      console.log(`  ${this.description}: streamed ${this.received} bytes in ${elapsed}s`);
+    }
+  }
+
+  abort(message) {
+    if (isTty) process.stdout.write('\n');
+    console.warn(`  ${this.description}: ${message}`);
+  }
+}
+
+// 读取并解析 SSE 流，累加 content。兼容网关忽略 stream:true 时返回普通 JSON 的情况。
+async function readStreamedContent(response, description, resetStall) {
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('text/event-stream') || !response.body) {
+    resetStall(STALL_TIMEOUT_MS);
+    const data = await response.json();
+    return data.choices?.[0]?.message?.content ?? '';
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder('utf-8');
+  const progress = new StreamProgress(description);
+  let content = '';
+  let buffer = '';
+
+  const handleLine = (line) => {
+    if (!line.startsWith('data:')) return;
+    const payload = line.slice(5).trim();
+    if (!payload || payload === '[DONE]') return;
+    try {
+      const chunk = JSON.parse(payload);
+      const delta = chunk.choices?.[0]?.delta?.content;
+      if (typeof delta === 'string') content += delta;
+    } catch {
+      // 忽略无法解析的 SSE 行（如空 keep-alive 心跳）
+    }
+  };
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value || value.byteLength === 0) continue;
+
+      resetStall(STALL_TIMEOUT_MS);
+      progress.add(value.byteLength);
+      buffer += decoder.decode(value, { stream: true });
+
+      let newlineIndex;
+      while ((newlineIndex = buffer.indexOf('\n')) !== -1) {
+        const line = buffer.slice(0, newlineIndex).replace(/\r$/, '');
+        buffer = buffer.slice(newlineIndex + 1);
+        handleLine(line);
+      }
+    }
+    // 处理最后一段可能没有换行符的 SSE 事件，避免丢数据
+    if (buffer.trim()) handleLine(buffer.replace(/\r$/, ''));
+    buffer += decoder.decode();
+    progress.finish();
+  } catch (error) {
+    progress.abort(error.message);
+    throw error;
+  }
+  return content;
+}
+
 async function translate(text, systemPrompt, description) {
   let lastError;
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const controller = new AbortController();
+    let stallTimer = null;
+    const clearStall = () => {
+      if (stallTimer) {
+        clearTimeout(stallTimer);
+        stallTimer = null;
+      }
+    };
+    const resetStall = (ms) => {
+      clearStall();
+      stallTimer = setTimeout(() => controller.abort(), ms);
+    };
+
     try {
+      resetStall(CONNECT_TIMEOUT_MS);
       const response = await fetch(getApiUrl(), {
         method: 'POST',
         headers: {
@@ -62,9 +183,11 @@ async function translate(text, systemPrompt, description) {
             { role: 'system', content: systemPrompt },
             { role: 'user', content: text },
           ],
-          stream: false,
+          stream: true,
         }),
+        signal: controller.signal,
       });
+      clearStall();
 
       if (!response.ok) {
         const error = new Error(`DeepSeek API ${response.status}: ${(await response.text()).slice(0, 500)}`);
@@ -73,19 +196,23 @@ async function translate(text, systemPrompt, description) {
         throw error;
       }
 
-      const data = await response.json();
-      const content = data.choices?.[0]?.message?.content;
+      const content = await readStreamedContent(response, description, resetStall);
+      clearStall();
       if (typeof content !== 'string' || !content.trim()) {
         throw new Error('DeepSeek API returned an empty translation');
       }
       return cleanResponse(content);
     } catch (error) {
-      lastError = error;
-      const retryable = error.status === undefined || error.status === 408 || error.status === 429 || error.status >= 500;
+      clearStall();
+      const err = controller.signal.aborted
+        ? new Error(`${description}: timed out (no data received)`)
+        : error;
+      lastError = err;
+      const retryable = err.status === undefined || err.status === 408 || err.status === 429 || err.status >= 500;
       if (!retryable || attempt === MAX_RETRIES) break;
 
-      const delay = getRetryDelay(attempt, error.retryAfter);
-      console.warn(`${description}: retry ${attempt + 1}/${MAX_RETRIES} in ${Math.ceil(delay / 1000)}s (${error.message})`);
+      const delay = getRetryDelay(attempt, err.retryAfter);
+      console.warn(`${description}: retry ${attempt + 1}/${MAX_RETRIES} in ${Math.ceil(delay / 1000)}s (${err.message})`);
       await sleep(delay);
     }
   }
@@ -162,6 +289,13 @@ function collectUntranslatedItems() {
 
 async function main() {
   if (!API_KEY) throw new Error('DEEPSEEK_API_KEY is required');
+  if (!process.env.DEEPSEEK_API_KEY) {
+    console.warn('WARNING: DEEPSEEK_API_KEY 环境变量未设置，正在使用脚本内硬编码的密钥。该密钥已被提交到工作树，存在泄露风险，请改用环境变量。');
+  }
+  if (isGithubActions) {
+    console.log(`::group::Translate (model=${MODEL}, base=${BASE_API_URL})`);
+    console.log(`::notice::使用流式输出，${CONCURRENCY} 并发。`);
+  }
 
   const items = collectUntranslatedItems();
   if (items.length === 0) {
@@ -185,6 +319,7 @@ async function main() {
   async function worker() {
     while (nextIndex < items.length) {
       const item = items[nextIndex++];
+      console.log(`[${item.edition}] translating ${item.id}`);
       try {
         const result = await translateItem(item, translatedIndexes);
         results.push({ ...result, status: 'success' });
@@ -204,10 +339,12 @@ async function main() {
 
   const failed = results.filter(result => result.status === 'failed');
   console.log(`Translation complete: ${results.length - failed.length} succeeded, ${failed.length} failed.`);
+  if (isGithubActions) console.log('::endgroup::');
   if (failed.length) process.exitCode = 1;
 }
 
 main().catch(error => {
+  if (isGithubActions) console.log('::endgroup::');
   console.error(error.message);
   process.exitCode = 1;
 });
