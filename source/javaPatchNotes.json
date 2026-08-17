@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Snapshot 9",
+      "version": "26.3-snapshot-9",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-9 540x540.jpg",
+        "url": "/v2/images/26.3snapshot9540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306.json",
+      "id": "c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306",
+      "date": "2026-08-17T14:04:38.215Z",
+      "shortText": "Looks like this Snapshot couldn't wait until Tuesday! Arriving a day early, it brings new customization options for Realms. Owners can now increase render distance up to 25 chunks and separately configure render and simulation distance to find the balance ",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 8",
       "version": "26.3-snapshot-8",
       "type": "snapshot",
