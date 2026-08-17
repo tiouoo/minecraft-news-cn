@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Snapshot 9",
+      "version": "26.3-snapshot-9",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-9 540x540.jpg",
+        "url": "/v2/images/26.3snapshot9540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306.json",
+      "id": "c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306",
+      "date": "2026-08-17T14:04:38.215Z",
+      "shortText": "看来这个快照等不及到周二了！它提前一天到来，为Realms带来了新的自定义选项。所有者现在可以增加渲染距离至多25个区块，并分别配置渲染和模拟距离，以找到平衡。",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 8",
       "version": "26.3-snapshot-8",
       "type": "snapshot",
