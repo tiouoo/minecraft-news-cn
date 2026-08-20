@@ -9,7 +9,7 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(rootDir, '..');
 const outDir = path.join(projectRoot, 'dist');
 
-const filesToCopy = ['_worker.js', 'source', 'translate'];
+const filesToCopy = ['_worker.js', 'source', 'translate', '.assetsignore'];
 
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
