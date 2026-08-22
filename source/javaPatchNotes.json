@@ -11,7 +11,7 @@
       },
       "contentPath": "javaPatchNotes/c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306.json",
       "id": "c467c83eb0b270ec2e2fce567022fc7e6db49b3e4d238655a07741ee76edf306",
-      "date": "2026-08-17T14:04:38.215Z",
+      "date": "2026-08-17T14:04:38.178Z",
       "shortText": "Looks like this Snapshot couldn't wait until Tuesday! Arriving a day early, it brings new customization options for Realms. Owners can now increase render distance up to 25 chunks and separately configure render and simulation distance to find the balance ",
       "needsTranslation": false
     },
@@ -25,7 +25,7 @@
       },
       "contentPath": "javaPatchNotes/1f573e65572785dbb791fc64ff8290a6ff0d72052a4f5a3e505467e31cecb15f.json",
       "id": "1f573e65572785dbb791fc64ff8290a6ff0d72052a4f5a3e505467e31cecb15f",
-      "date": "2026-08-12T11:03:15.513Z",
+      "date": "2026-08-12T11:03:15.531Z",
       "shortText": "This Wednesday, a hot new Snapshot enters the Realm! That's right, in 26.3 Snapshot 8, Realm owners can now create and manage Invite Codes, making it easier than ever to join the fun.Alongside these additions, we've made further improvements to the World O",
       "needsTranslation": false
     },
@@ -39,7 +39,7 @@
       },
       "contentPath": "javaPatchNotes/50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2.json",
       "id": "50a6e5c5d834b50e99b2d397b43cea8152e8070884e21303a812cedba069d1b2",
-      "date": "2026-08-04T14:00:02.101Z",
+      "date": "2026-08-04T14:00:02.449Z",
       "shortText": "Step up your building and exploring with the final features entering testing! You can now find different maps in some abandoned camps and craft Concrete Stairs &#38 Slabs in 16 colors. Out now in 26.3 Snapshot 7!Happy exploring!New FeaturesAdded Concrete S",
       "needsTranslation": false
     },
@@ -53,7 +53,7 @@
       },
       "contentPath": "javaPatchNotes/0845b0f76a36df91e1e68e997bf5ea3cabecd3f32c084e64022fcb0f47a1a6ca.json",
       "id": "0845b0f76a36df91e1e68e997bf5ea3cabecd3f32c084e64022fcb0f47a1a6ca",
-      "date": "2026-07-28T13:56:26.487Z",
+      "date": "2026-07-28T13:56:26.566Z",
       "shortText": "It's yet another Tuesday, and it seems that we've officially run out of quippy snapshot intros until the next delivery. Anyway, here's Snapshot 6, bringing some tweaks and improvements to the Abandoned Camp, a new World Options UI, as well as changing up h",
       "needsTranslation": false
     },
@@ -67,7 +67,7 @@
       },
       "contentPath": "javaPatchNotes/9dca6ac5b8d66187b24b60b554ae74720987e5c50530276b932efbd20c4bd13d.json",
       "id": "9dca6ac5b8d66187b24b60b554ae74720987e5c50530276b932efbd20c4bd13d",
-      "date": "2026-07-21T12:59:33.997Z",
+      "date": "2026-07-21T12:59:34.010Z",
       "shortText": "Happy Snapshot day! Today we are shipping the 5th snapshot of 26.3 with a fresh batch of updates and improvements.Happy mining!Technical ChangesThe Data Pack version is now 112.0The Resource Pack version is now 93.0Data Pack Version 112.0Codec for element ",
       "needsTranslation": false
     },
@@ -81,7 +81,7 @@
       },
       "contentPath": "javaPatchNotes/21f9a68189304d9d7ddaba6e0fbe5e4c9d0e9c4571e22ab165277c196cc29752.json",
       "id": "21f9a68189304d9d7ddaba6e0fbe5e4c9d0e9c4571e22ab165277c196cc29752",
-      "date": "2026-07-16T14:40:23.487Z",
+      "date": "2026-07-16T14:40:23.504Z",
       "shortText": "Known IssuesExclusive fullscreen mode on Windows may cause the game to crash in certain situations, especially when using multiple monitorsEntering Exclusive fullscreen mode crashes the game on WaylandNew FeaturesPlayers in spectator mode can now interact ",
       "needsTranslation": false
     },
@@ -95,7 +95,7 @@
       },
       "contentPath": "javaPatchNotes/b25a8cf2637ff6243021f3dd2feec4873b21b8ac64d8a7e5249fcbf50b107597.json",
       "id": "b25a8cf2637ff6243021f3dd2feec4873b21b8ac64d8a7e5249fcbf50b107597",
-      "date": "2026-07-07T13:59:02.346Z",
+      "date": "2026-07-07T13:59:02.811Z",
       "shortText": "Tuesday? Pfft. It's snapshot day! Today's snapshot introduces two brand-new features coming to 26.3: perfect for anyone that loves to camp in comfort. The cushion, coming in 16 color variants, finally brings the ability to sit down around a campfire. To go",
       "needsTranslation": false
     },
@@ -109,7 +109,7 @@
       },
       "contentPath": "javaPatchNotes/470a6a68414e0047b96c69055590c9ff6cbcfb1f7090c1d365b407efd73027da.json",
       "id": "470a6a68414e0047b96c69055590c9ff6cbcfb1f7090c1d365b407efd73027da",
-      "date": "2026-06-30T13:59:13.962Z",
+      "date": "2026-06-30T13:59:14.020Z",
       "shortText": "We're back with the second snapshot for 26.3! This week brings a new rendering option designed to improve transparency handling in Minecraft Java. We've also optimized certain mob behaviors when players aren't nearby, made a few gameplay adjustments, inclu",
       "needsTranslation": false
     },
