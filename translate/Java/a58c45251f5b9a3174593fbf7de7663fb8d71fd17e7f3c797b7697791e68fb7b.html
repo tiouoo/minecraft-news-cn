@@ -1,0 +1,345 @@
+<p>我们已经安全到达 26.3 快照 10！本周，斑驳森林全景图已经登陆主菜单，每次启动游戏时都会带来舒适的秋日气息。此快照还包括各种技术更改和改进，请尽情体验！</p>
+<p>祝您挖矿愉快！</p>
+<h1>新特性</h1>
+<h2>Realms</h2>
+<ul>
+<li>添加了一个新的 Realms 介绍界面，展示 Realms 的主要功能
+<ul>
+<li>可通过“添加 Realm”按钮访问</li>
+<li>进入 Realms 时如果有试用可用，会自动显示</li>
+</ul>
+</li>
+</ul>
+<h1>更改</h1>
+<ul>
+<li>主菜单现在有一个更新的背景全景图，展示新的斑驳森林生物群系，并包含一个废弃营地</li>
+<li>将游戏模式切换器中的冒险模式图标改为埋藏的宝藏地图</li>
+<li>改进了定位结构时的性能</li>
+<li>撤回了本发布周期中关于溺尸行为和动画的近期更改</li>
+</ul>
+<h2>对方块、物品和实体的微调</h2>
+<ul>
+<li>现在，附魔会应用到因保护亡灵生物免受阳光照射而受损的物品上</li>
+<li>食用紫颂果后随机传送现在会显示朝向传送方向的粒子</li>
+</ul>
+<h2>探险家地图</h2>
+<ul>
+<li>以下探险家地图已重命名，以保持命名一致性：
+<ul>
+<li>海洋神殿探险家地图 → 海洋神殿地图</li>
+<li>沼泽小屋探险家地图 → 沼泽小屋地图</li>
+<li>试炼密室探险家地图 → 埋藏的试炼密室地图</li>
+<li>林地府邸探险家地图 → 林地府邸地图</li>
+<li>丛林神庙探险家地图 → 丛林神庙地图</li>
+</ul>
+</li>
+</ul>
+<h2>无障碍功能</h2>
+<ul>
+<li>字幕现在指向范围内的最近声音</li>
+</ul>
+<h1>技术更改</h1>
+<ul>
+<li>数据包版本现为 118.0</li>
+<li>资源包版本现为 97.0</li>
+<li>重新添加了 `none` 摆动动画类型
+<ul>
+<li>这会影响 `/swing` 命令以及 `minecraft:attack_animation` 和 `minecraft:interact_animation` 组件</li>
+</ul>
+</li>
+</ul>
+<h1>数据包版本 118</h1>
+<h2>命令</h2>
+<h3>添加 `compute`</h3>
+<ul>
+<li>在各种上下文中评估 `minecraft:number_provider`</li>
+<li>在所有上下文中，`origin` 设置为当前命令上下文位置，而 `this` 实体设置为 `@s`</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li><code>/compute &#60target> &#60provider> [&#60scale>|integer]</code>，其中：
+<ul>
+<li><code>&#60target></code> - 以下之一：
+<ul>
+<li><code>default</code> - 在 `minecraft:command_compute_default` 上下文中运行提供器，该上下文只提供公共参数（位置和 `this` 实体）</li>
+<li><code>block &#60pos></code> - 在 `minecraft:command_compute_position` 上下文中运行提供器，其中方块状态和方块位置基于位置 `&#60pos>` 处的方块设置</li>
+<li><code>entity &#60entity selector></code> - 在 `minecraft:command_compute_entity` 上下文中运行提供器，其中 `target_entity` 设置为选择器结果</li>
+</ul>
+</li>
+<li><code>&#60provider></code> - 可以是 `minecraft:number_provider` 注册表中的一个元素，或内联值</li>
+<li><code>&#60scale></code> - 可选比例值，默认值为 `1.0`
+<ul>
+<li>最终结果将乘以 `&#60scale>` 并向负无穷取整</li>
+</ul>
+</li>
+<li><code>integer</code> - 用于整数模式的可选标记
+<ul>
+<li>由于中间步骤之间的截断，即使比例为 `1.0`，此模式也不等同于浮点模式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>对 `data` 的更改</h3>
+<ul>
+<li>向 `/data modify ... append|insert|merge|prepend|set` 添加了名为 `compute` 的新来源</li>
+<li>新来源将评估一个 `minecraft:number_provider`，然后以整数或浮点标签形式提供结果</li>
+<li>语法：<code>compute &#60target> &#60provider> [integer]</code>，其中 `target`、`provider` 和 `integer` 的语法与 `/compute` 函数中的相同</li>
+<li>示例：<code>/data modify storage foo bar set compute entity @n[type=minecraft:armor_stand] {type:score,target:{type:context,target:target_entity},score:baz}</code></li>
+</ul>
+<h2>数据组件</h2>
+<h3>更改 `minecraft:consumable`</h3>
+<ul>
+<li>在 `teleport_randomly` 消耗效果中添加了一个新的可选字段：
+<ul>
+<li><code>directional_particles</code> - 布尔值，是否显示朝向传送方向的粒子尾迹
+<ul>
+<li>如果不存在，默认为 `true`</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>更新 `minecraft:block_transformer`</h3>
+<ul>
+<li>内容已移至单独的注册表中</li>
+<li>组件现在必须始终引用 `minecraft:block_transformer` 注册表 - 现有内联组件已移除</li>
+</ul>
+<h3>更改 `minecraft:attack_animation` 和 `minecraft:interact_animation`</h3>
+<ul>
+<li>`duration` 字段现在是一个非负整数</li>
+</ul>
+<h2>战利品表</h2>
+<h3>战利品表类型</h3>
+<h4>添加 `minecraft:command_compute_default`</h4>
+<ul>
+<li>目前用于 `/compute default` 命令</li>
+<li>它采用以下参数：
+<ul>
+<li>`origin`，命令执行时的位置</li>
+<li>`this` 实体，命令执行的 `@s` 实体（可选）</li>
+</ul>
+</li>
+</ul>
+<h4>添加 `minecraft:command_compute_position`</h4>
+<ul>
+<li>目前用于 `/compute block` 命令</li>
+<li>它采用以下参数：
+<ul>
+<li>`minecraft:command_compute_default` 中的所有内容</li>
+<li>`block_entity`，命令中给定位置方块的方块实体</li>
+<li>`block_state`，命令中给定位置方块的当前状态</li>
+</ul>
+</li>
+</ul>
+<h4>添加 `minecraft:command_compute_entity`</h4>
+<ul>
+<li>目前用于 `/compute entity` 命令</li>
+<li>它采用以下参数：
+<ul>
+<li>`minecraft:command_compute_default` 中的所有内容</li>
+<li>`target_entity`，命令中选择器选择的实体</li>
+</ul>
+</li>
+</ul>
+<h2>战利品函数</h2>
+<h3>更改 `minecraft:set_loot_table`</h3>
+<ul>
+<li>移除了未使用的字段 `type`</li>
+<li>`tag` 字段，以前称为 `name`，已重命名为 `loot_table_id`</li>
+</ul>
+<h2>方块转换器</h2>
+<ul>
+<li>添加了包含将方块转换为另一个方块规则的 `minecraft:block_transformer` 注册表</li>
+<li>格式：对象列表，包含以下字段：
+<ul>
+<li>`block_state_provider` - 方块状态提供器，用于提供转换后方块的状态
+<ul>
+<li>如果方块状态提供器返回无结果（例如 `rule_based_state_provider`），将尝试列表中的下一个规则</li>
+<li>方块状态提供器集合与世界生成中使用的方块状态提供器相同</li>
+</ul>
+</li>
+<li>`sound` - 可选字段，交互时播放的声音事件，例如 `minecraft:item.axe.strip`
+<ul>
+<li>如果不存在，默认为不播放声音事件</li>
+</ul>
+</li>
+<li>`particle` - 可选字段，交互时播放的粒子
+<ul>
+<li>如果不存在，默认为 `none`
+<ul>
+<li>`none`</li>
+<li>`scrape`</li>
+<li>`wax_on`</li>
+<li>`wax_off`</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>`disallowed_faces` - 可选字段，Direction 列表，指定被点击方块上不能交互的面
+<ul>
+<li>如果交互了禁止的面，将尝试列表中的下一个规则</li>
+<li>如果不存在，默认为空列表</li>
+<li>值：
+<ul>
+<li>`up`</li>
+<li>`down`</li>
+<li>`north`</li>
+<li>`south`</li>
+<li>`east`</li>
+<li>`west`</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>`loot` - 可选战利品表，用于在成功转换时掉落物品，例如 `minecraft:till/rooted_dirt`
+<ul>
+<li>如果不存在，默认为不使用战利品表</li>
+</ul>
+</li>
+<li>`drop_strategy` - 可选字段，配置任何战利品应从方块中的哪个位置掉落
+<ul>
+<li>如果不存在，默认为 `from_middle`</li>
+<li>值：
+<ul>
+<li>`from_middle` - 从方块中部</li>
+<li>`clicked_face` - 从交互的面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>`update_from_neighbors` - 可选布尔值，转换后的方块是否应根据相邻方块更新。例如，这允许栅栏连接
+<ul>
+<li>如果不存在，默认为 true</li>
+</ul>
+</li>
+<li>`transform_type` - 可选字段，配置附近方块应如何受转换影响
+<ul>
+<li>如果不存在，默认为 `single_block`</li>
+<li>值：
+<ul>
+<li>`single_block` - 仅影响被交互的方块</li>
+<li>`copper_chest` - 如果输入和输出方块都是任何风化状态、涂蜡或未涂蜡的铜箱子，则此转换将影响双箱子的两侧</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>`consume_on_use` - 可选布尔值，决定物品是否应被消耗
+<ul>
+<li>仅适用于可堆叠物品</li>
+<li>如果不存在，默认为 `true`</li>
+</ul>
+</li>
+<li>`item_damage_per_use` - 可选整数，决定每次使用物品受到的伤害
+<ul>
+<li>仅适用于不可堆叠物品</li>
+<li>如果不存在，默认为 `0`</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>原版中的默认值：
+<ul>
+<li>`minecraft:shovel` - 锹的默认值</li>
+<li>`minecraft:axe` - 斧的默认值</li>
+<li>`minecraft:hoe` - 锄的默认值</li>
+</ul>
+</li>
+</ul>
+<h2>世界生成</h2>
+<h3>噪声设置</h3>
+<ul>
+<li>将 `preliminary_surface_level` 重命名为 `chunk_surface_level`
+<ul>
+<li>此密度函数不再隐式地在整个区块中插值</li>
+</ul>
+</li>
+<li>`ore_veins_enabled` 字段已移除，并替换为 `minecraft:ore_vein` 材质规则</li>
+<li>移除了 `noise.size_horizontal` 和 `noise.size_vertical` 字段，这些现在在 `interpolated` 密度函数中指定</li>
+<li>添加了可选的 `debug_functions` 字段 - 对象列表，包含字段，要在 `chunk_generation_stats` 调试条目中显示的密度函数值
+<ul>
+<li>字段：
+<ul>
+<li>`label` - 字符串，用于识别此密度函数的标签</li>
+<li>`function` - 密度函数，要计算并显示在玩家位置处的密度函数</li>
+</ul>
+</li>
+<li>如果未指定，则不显示密度函数值</li>
+</ul>
+</li>
+</ul>
+<h3>材质规则</h3>
+<h4>添加 `minecraft:ore_vein`</h4>
+<ul>
+<li>格式：对象，包含字段：
+<ul>
+<li>`ore_block` - 方块状态，要放置的矿石方块</li>
+<li>`raw_ore_block` - 方块状态，要放置的粗矿石方块</li>
+<li>`filler_block` - 方块状态，要放置的填充方块</li>
+<li>`raw_ore_chance` - 0 到 1 之间的浮点数，放置 `raw_ore_block` 而非 `ore_block` 的概率</li>
+<li>`density` - 密度函数，0 到 1 之间的概率，矿脉替换方块
+<ul>
+<li>如果为 `0` 或更低，则不会替换任何方块</li>
+</ul>
+</li>
+<li>`richness` - 密度函数，0 到 1 之间的概率，放置 `ore_block` 或 `raw_ore_block`（相对于 `filler_block`）
+<ul>
+<li>如果为 `0` 或更低，则所有方块都是 `filler_block`</li>
+<li>如果为 `1` 或更高，则没有方块是 `filler_block`</li>
+</ul>
+</li>
+<li>`filler_gap` - 密度函数，作为 `richness` 的覆盖：如果为正，则始终放置 `filler_block`</li>
+</ul>
+</li>
+</ul>
+<h4>更改 `minecraft:noise`</h4>
+<p>引入了以下字段：</p>
+<ul>
+<li>`shift_x` - 可选密度函数，应用于 x 的域扭曲
+<ul>
+<li>如果未指定，则不应用扭曲（相当于 `0`）</li>
+</ul>
+</li>
+<li>`shift_y` - 可选密度函数，应用于 y 的域扭曲
+<ul>
+<li>如果未指定，则不应用扭曲（相当于 `0`）</li>
+</ul>
+</li>
+<li>`shift_z` - 可选密度函数，应用于 z 的域扭曲
+<ul>
+<li>如果未指定，则不应用扭曲（相当于 `0`）</li>
+</ul>
+</li>
+</ul>
+<h4>移除 `minecraft:shifted_noise`</h4>
+<ul>
+<li>由 `minecraft:noise` 替代</li>
+</ul>
+<h4>更新 `minecraft:interpolated`</h4>
+<p>添加了字段：</p>
+<ul>
+<li>`cell_size_xz` - 正整数，XZ 轴上插值网格单元的大小（以方块为单位）</li>
+<li>`cell_size_y` - 正整数，Y 轴上插值网格单元的大小（以方块为单位）</li>
+</ul>
+<h4>更新 `minecraft:cache`（从 `minecraft:cache_once` 重命名）</h4>
+<ul>
+<li>格式没有更改</li>
+</ul>
+<h4>移除 `minecraft:cache_2d`、`minecraft:cache_all_in_cell` 和 `minecraft:flat_cache`</h4>
+<ul>
+<li>可以用 `minecraft:cache` 替代</li>
+<li>`minecraft:slice` 可以用来始终选择 Y=0，正如以前由 `minecraft:flat_cache` 处理的那样</li>
+</ul>
+<h2>标签</h2>
+<h3>方块标签</h3>
+<ul>
+<li>添加了 `#nether_portal_frame` - 可用于创建下界传送门的方块</li>
+<li>添加了 `#conduit_effect_block` - 可用于建造潮涌核心的方块</li>
+</ul>
+<h3>结构标签</h3>
+<ul>
+<li>将 `#on_woodland_explorer_maps` 重命名为 `#on_woodland_mansion_maps`</li>
+<li>将 `#on_ocean_explorer_maps` 重命名为 `#on_ocean_monument_maps`</li>
+<li>将 `#on_jungle_explorer_maps` 重命名为 `#on_jungle_pyramid_maps`</li>
+<li>将 `#on_swamp_explorer_maps` 重命名为 `#on_swamp_hut_maps`</li>
+<li>将 `#on_trial_explorer_map` 重命名为 `#on_buried_trial_chambers_map`</li>

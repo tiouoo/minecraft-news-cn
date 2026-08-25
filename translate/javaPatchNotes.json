@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "26.3-snapshot-10",
+      "version": "26.3-snapshot-10",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-snapshot-10 540x540.jpg",
+        "url": "/v2/images/26.3snapshot10540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/a58c45251f5b9a3174593fbf7de7663fb8d71fd17e7f3c797b7697791e68fb7b.json",
+      "id": "a58c45251f5b9a3174593fbf7de7663fb8d71fd17e7f3c797b7697791e68fb7b",
+      "date": "2026-08-25T14:01:09.567Z",
+      "shortText": "我们已安全抵达26.3 Snapshot 10！本周，斑斓森林的全景图已登上主菜单，让你每次启动游戏时都能感受到舒适的秋日氛围。此次快照还包含各种技术性改动与提升，快深入探索吧",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Snapshot 9",
       "version": "26.3-snapshot-9",
       "type": "snapshot",
