@@ -3,15 +3,26 @@ name: Deploy to Cloudflare Workers
 on:
   push:
     branches: [main]
+  # Commits pushed with the repository's GITHUB_TOKEN (as used by the
+  # fetch/translate workflow) do not trigger a second push workflow. Deploy
+  # after that workflow completes so the API receives the newly fetched data.
+  workflow_run:
+    workflows: [Fetch and Translate Minecraft Patch Notes]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # workflow_run is based on the workflow event, but translation may
+          # push a follow-up commit. Always deploy the current main branch.
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
