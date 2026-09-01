@@ -142,6 +142,20 @@
       "needsTranslation": false
     },
     {
+      "title": "Minecraft 26.3 Pre-Release 1",
+      "version": "26.3-pre-1",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-pre-1 540x540.jpg",
+        "url": "/v2/images/26.3pre1540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/9459bbbb7dd85b60a7c0034f11c032eac19b66a91fe04c799f6c6149c12302c4.json",
+      "id": "9459bbbb7dd85b60a7c0034f11c032eac19b66a91fe04c799f6c6149c12302c4",
+      "date": "2026-09-01T14:50:12.860Z",
+      "shortText": "The first pre-release for 26.3 is here! There are technical changes, but we are now mainly fixing bugs, making improvements and putting on the final touches ahead of release.Happy mining!ChangesUIOn macOS, Exclusive Fullscreen is now available againOn macO",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.2 Snapshot 8",
       "version": "26.2-snapshot-8",
       "type": "snapshot",
