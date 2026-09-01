@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Pre-Release 1",
+      "version": "26.3-pre-1",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-pre-1 540x540.jpg",
+        "url": "/v2/images/26.3pre1540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/9459bbbb7dd85b60a7c0034f11c032eac19b66a91fe04c799f6c6149c12302c4.json",
+      "id": "9459bbbb7dd85b60a7c0034f11c032eac19b66a91fe04c799f6c6149c12302c4",
+      "date": "2026-09-01T14:50:12.860Z",
+      "shortText": "26.3的第一个预发布版本来了！这里有一些技术性变更，不过我们现在主要在修复漏洞、进行改进，并在发布前做最后的润色。祝挖矿愉快！变更UI在macOS上，独占全屏模式现在再次可用。",
+      "needsTranslation": false
+    },
+    {
       "title": "26.3-snapshot-10",
       "version": "26.3-snapshot-10",
       "type": "snapshot",
