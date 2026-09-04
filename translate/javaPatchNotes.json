@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Pre-Release 2",
+      "version": "26.3-pre-2",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-pre-2 540x540.jpg",
+        "url": "/v2/images/26.3pre2540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/2d614235aefd68fb1cdc8202d674f3d2717c80efdeb73f5364e63482b874fb9c.json",
+      "id": "2d614235aefd68fb1cdc8202d674f3d2717c80efdeb73f5364e63482b874fb9c",
+      "date": "2026-09-04T14:02:06.263Z",
+      "shortText": "一周内发布了两个预发布版！？没错！既然我们已经进入了预发布阶段，就不再遵循常规的快照日程了。这也意味着我们在为正式发布做准备时，会花更多时间排查错误，而这次预发布版就是",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Pre-Release 1",
       "version": "26.3-pre-1",
       "type": "snapshot",
