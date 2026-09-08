@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Pre-Release 3",
+      "version": "26.3-pre-3",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-pre-3 540x540.jpg",
+        "url": "/v2/images/26.3pre3540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/ce09401e76e06d061699760968d6afa49e1fd852b51c23bc2c4784510092d901.json",
+      "id": "ce09401e76e06d061699760968d6afa49e1fd852b51c23bc2c4784510092d901",
+      "date": "2026-09-08T14:11:44.234Z",
+      "shortText": "通往正式版的道路还在继续，现在我们带来了预发布版3！今天，我们正在处理又一批错误修复，为26.3的正式发布做准备。祝挖矿愉快！技术性改动数据包版本现已更新至121.0数字提供器改变了minecraft:mod浮点数提供器",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Pre-Release 2",
       "version": "26.3-pre-2",
       "type": "snapshot",
