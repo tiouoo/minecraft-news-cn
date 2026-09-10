@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Release Candidate 1",
+      "version": "26.3-rc-1",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-rc-1 540x540.jpg",
+        "url": "/v2/images/26.3rc1540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/b4b6b172445c758986c9814c768719a4ddaf4da3d4ba4a2ea0a13fc04296a462.json",
+      "id": "b4b6b172445c758986c9814c768719a4ddaf4da3d4ba4a2ea0a13fc04296a462",
+      "date": "2026-09-10T14:03:33.852Z",
+      "shortText": "今天我们发布了 26.3 的第一个发布候选版本，即 Wilderness Bound 游戏更新！如果没有发现关键问题，这将是最终完整版发布的版本。祝挖矿愉快！\n\n26.3 Release Candidate 1 中修复的漏洞：\nMC-311607 -",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Pre-Release 3",
       "version": "26.3-pre-3",
       "type": "snapshot",
