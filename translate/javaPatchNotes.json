@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Release Candidate 2",
+      "version": "26.3-rc-2",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-rc-2 540x540.jpg",
+        "url": "/v2/images/26.3rc2540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/26-3-release-candidate-2.json",
+      "id": "26-3-release-candidate-2",
+      "date": "2026-09-11T12:32:17.471Z",
+      "shortText": "今天我们正在发布26.3的第二个候选版本，这个名为“荒野之旅”的游戏更新将于9月15日推出！如果没有发现关键问题，这将是最终完整版发布的版本。祝您挖矿愉快！26.3发布版中修复的漏洞",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Release Candidate 1",
       "version": "26.3-rc-1",
       "type": "snapshot",
