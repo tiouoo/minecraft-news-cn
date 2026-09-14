@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.3 Release Candidate 3",
+      "version": "26.3-rc-3",
+      "type": "snapshot",
+      "image": {
+        "title": "26.3-rc-3 540x540.jpg",
+        "url": "/v2/images/26.3rc3540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/26-3-release-candidate-3.json",
+      "id": "26-3-release-candidate-3",
+      "date": "2026-09-14T12:58:38.000Z",
+      "shortText": "They say that third time's the charm! Release Candidate 3 for 26.3 is here with yet another handful of fixes as we put the final touches on the Wilderness Bound game drop.Happy mining!Fixed bugs in 26.3 Release Candidate 3MC-311456 - VSync can be disabled ",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.3 Release Candidate 2",
       "version": "26.3-rc-2",
       "type": "snapshot",
