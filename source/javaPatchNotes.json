@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.4 Snapshot 1",
+      "version": "26.4-snapshot-1",
+      "type": "snapshot",
+      "image": {
+        "title": "2026-09-22_16.02.58 540x540.jpg",
+        "url": "/v2/images/2026092216.02.58540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/26-4-snapshot-1.json",
+      "id": "26-4-snapshot-1",
+      "date": "2026-09-22T13:38:53.000Z",
+      "shortText": "Welcome to the first snapshot of 26.4! We're kicking things off with a range of technical updates and improvements, including Vulkan becoming the default graphics API.ChangesWorld GenerationUpgrading worlds from before Caves and Cliffs will now also genera",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft: Java Edition 26.3",
       "version": "26.3",
       "type": "release",
