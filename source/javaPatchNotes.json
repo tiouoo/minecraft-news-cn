@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.4 Snapshot 2",
+      "version": "26.4-snapshot-2",
+      "type": "snapshot",
+      "image": {
+        "title": "26.4-snapshot-2 540x540.jpg",
+        "url": "/v2/images/26.4snapshot2540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/26-4-snapshot-2.json",
+      "id": "26-4-snapshot-2",
+      "date": "2026-09-29T11:32:57.000Z",
+      "shortText": "Hi there! It is time for the second snapshot for 26.4, featuring improved render distance fog, a new celestial occluder, and a fresh redesign of the F3 screen.Happy mining!ChangesWhen \"Improved Transparency\" is on, sky background and clouds that are behind",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.4 Snapshot 1",
       "version": "26.4-snapshot-1",
       "type": "snapshot",
