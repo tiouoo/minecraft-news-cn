@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.4 Snapshot 3",
+      "version": "26.4-snapshot-3",
+      "type": "snapshot",
+      "image": {
+        "title": "26_4_snapshot_3 540x540.jpg",
+        "url": "/v2/images/264snapshot3540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/8df071b98ac92911ae6caae35feb68506bca66894d16f41797164b9a9c6d1824.json",
+      "id": "8df071b98ac92911ae6caae35feb68506bca66894d16f41797164b9a9c6d1824",
+      "date": "2026-10-06T12:54:26.000Z",
+      "shortText": "Brr! Does it feel colder all of a sudden? Minecraft LIVE revealed the first look at our next game drop – and it's frosty. Explore ice caves filled with glittering icicles and ice crystals, plus meet a not-so-chill new hostile mob! This frozen zombie varian",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.4 Snapshot 2",
       "version": "26.4-snapshot-2",
       "type": "snapshot",
