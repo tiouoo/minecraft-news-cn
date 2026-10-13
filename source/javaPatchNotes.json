@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "title": "Minecraft 26.4 Snapshot 4",
+      "version": "26.4-snapshot-4",
+      "type": "snapshot",
+      "image": {
+        "title": "2026-10-13_13.44.02 540x540.jpg",
+        "url": "/v2/images/2026101313.44.02540x540.jpg"
+      },
+      "contentPath": "javaPatchNotes/26-4-snapshot-4.json",
+      "id": "26-4-snapshot-4",
+      "date": "2026-10-13T12:05:46.000Z",
+      "shortText": "With 26.4 Snapshot 4, we're breaking out a cool new block, introducing Brittle Ice! And Jukeboxes can now keep the music going with playlists by putting your music discs in a chest above them, making dance parties much easier. Just be careful not to dance ",
+      "needsTranslation": false
+    },
+    {
       "title": "Minecraft 26.4 Snapshot 3",
       "version": "26.4-snapshot-3",
       "type": "snapshot",
